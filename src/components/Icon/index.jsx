@@ -10,59 +10,62 @@ import LinkExternal01 from "./variants/link-external-01";
 import XClose from "./variants/x-close";
 import Menu01 from "./variants/menu-01";
 import Discord from "./variants/social/discord";
+import SvgTwitter from "./variants/Socials/White/Twitter";
 
-export const Icon = ({size, variant}) => {
-  let IconComponent = null
-  
-  if (variant == 'placeholder') {
-    IconComponent = Placeholder
+export const Icon = ({ size, variant }) => {
+  let IconComponent = null;
+
+  if (variant == "placeholder") {
+    IconComponent = Placeholder;
   }
-  
-  if (variant == 'arrow-narrow-right') {
-    IconComponent = ArrowNarrowRight
+
+  if (variant == "arrow-narrow-right") {
+    IconComponent = ArrowNarrowRight;
   }
-  
-  if (variant == 'arrow-right') {
-    IconComponent = ArrowRight
+
+  if (variant == "arrow-right") {
+    IconComponent = ArrowRight;
   }
-  
-  if (variant == 'arrow-left') {
-    IconComponent = ArrowLeft
+
+  if (variant == "arrow-left") {
+    IconComponent = ArrowLeft;
   }
-  
-  if (variant == 'moon-star') {
-    IconComponent = MoonStar
+
+  if (variant == "moon-star") {
+    IconComponent = MoonStar;
   }
-  
-  if (variant == 'moon-star-filled') {
-    IconComponent = MoonStarFilled
+
+  if (variant == "moon-star-filled") {
+    IconComponent = MoonStarFilled;
   }
-  
-  if (variant == 'sun') {
-    IconComponent = Sun
+
+  if (variant == "sun") {
+    IconComponent = Sun;
   }
-  
-  if (variant == 'sun-filled') {
-    IconComponent = SunFilled
+
+  if (variant == "sun-filled") {
+    IconComponent = SunFilled;
   }
-  
-  if (variant == 'link-external-01') {
-    IconComponent = LinkExternal01
+
+  if (variant == "link-external-01") {
+    IconComponent = LinkExternal01;
   }
-  
-  if (variant == 'x-close') {
-    IconComponent = XClose
+
+  if (variant == "x-close") {
+    IconComponent = XClose;
   }
-  
-  if (variant == 'menu-01') {
-    IconComponent = Menu01
+
+  if (variant == "menu-01") {
+    IconComponent = Menu01;
   }
-  
-  if (variant == 'discord') {
-    IconComponent = Discord
+
+  if (variant == "discord") {
+    IconComponent = Discord;
   }
-  
-  return IconComponent ? (
-    <IconComponent width={size} height={size}/>
-  ) : null
-}
+
+  if (variant == "twitter") {
+    IconComponent = SvgTwitter;
+  }
+
+  return IconComponent ? <IconComponent width={size} height={size} /> : null;
+};

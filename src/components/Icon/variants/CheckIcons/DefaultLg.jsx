@@ -1,0 +1,19 @@
+import * as React from "react";
+const SvgDefaultLg = (props) => (
+  <svg
+    width={32}
+    height={32}
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    {...props}
+  >
+    <rect width={32} height={32} rx={16} fill="#F2F4F7" />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="m22.795 9.853-9.546 9.214-2.534-2.707c-.466-.44-1.2-.467-1.733-.093-.52.386-.667 1.066-.347 1.613l3 4.88c.294.453.8.733 1.374.733a1.63 1.63 0 0 0 1.36-.733c.48-.627 9.64-11.547 9.64-11.547 1.2-1.226-.254-2.306-1.214-1.373v.013Z"
+      fill="#667085"
+    />
+  </svg>
+);
+export default SvgDefaultLg;

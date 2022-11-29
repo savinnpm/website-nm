@@ -1,5 +1,9 @@
+import { FeaturedIcon } from "../FeaturedIcon";
+
 export const SocialLinks = () => {
   return (
-    <p>links</p>
-  )
-}
+    <div>
+      <FeaturedIcon size={24} variant="twitter" />
+    </div>
+  );
+};
