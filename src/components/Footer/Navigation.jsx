@@ -1,17 +1,17 @@
-import Link from "next/link"
-import styled, { useTheme } from "styled-components"
-import { colors } from "../../../styles/colors"
-import { typography } from "../../../styles/typography"
-import NpmLogo from "../logos/npm-full"
-import NpmLogoInverse from "../logos/npm-full-inverse"
-import { nav } from "./data"
+import Link from 'next/link'
+import styled, { useTheme } from 'styled-components'
+import { colors } from '../../../styles/colors'
+import { typography } from '../../../styles/typography'
+import NpmLogo from '../logos/npm-full'
+import NpmLogoInverse from '../logos/npm-full-inverse'
+import { nav } from './data'
 
 export const Navigation = () => {
   const theme = useTheme()
 
   return (
     <Container>
-      <LogoContainer href={'/'}>
+      <LogoContainer href='/'>
         {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
       </LogoContainer>
 
@@ -24,8 +24,9 @@ export const Navigation = () => {
                 {list.links.map(link => {
                   return (
                     <Li key={link.href}>
-                      {link.isExternal ? <a href={link.href} target='_blank' rel="noreferrer">{link.text}</a> :
-                        <Link href={link.href}>{link.text}</Link>}
+                      {link.isExternal
+                        ? <a href={link.href} target='_blank' rel='noreferrer'>{link.text}</a>
+                        : <Link href={link.href}>{link.text}</Link>}
                     </Li>
                   )
                 })}
@@ -54,14 +55,14 @@ const LogoContainer = styled(Link)`
 
 const Nav = styled.nav`
   --gap: 32px;
-  /* flex: 1; */
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
-`
+  `
 
 const ListContainer = styled.section`
+  flex: 1;
   min-width: 200px;
 
   @media (max-width: 768px) {

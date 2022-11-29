@@ -1,16 +1,16 @@
-import styled from "styled-components"
-import { colors, primaryColorKey } from "../../../../../styles/colors"
-import { typography } from "../../../../../styles/typography"
-import { NavMenuItemLink } from "../../NavMenuItem/Link"
+import styled from 'styled-components'
+import { colors, primaryColorKey } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { NavMenuItemLink } from '../../NavMenuItem/Link'
 
-export const Section = ({section}) => {
+export const Section = ({ section }) => {
   return (
     <div>
       <Title>{section.title}</Title>
       <Content>
         {section.links.map((link, idx) => {
           return (
-            <NavMenuItemLink key={idx} item={link}/>
+            <NavMenuItemLink key={idx} item={link} />
           )
         })}
       </Content>
@@ -20,7 +20,7 @@ export const Section = ({section}) => {
 
 const Title = styled.h4`
   padding: 0 16px;
-  color: ${props => colors[primaryColorKey]['600']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textSm};
   ${typography.weights.semibold};
