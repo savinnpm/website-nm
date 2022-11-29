@@ -1,20 +1,23 @@
 export const features = [
   {
-    icon: "placeholder",
+    icon: "code-square-one",
     title: "Write Less Code",
-    content: "Write less code and plug in your own Web3 provider. Get complete access to all DeFi cover features."
+    content:
+      "Write less code and plug in your own Web3 provider. Get complete access to all DeFi cover features.",
   },
   {
-    icon: "placeholder",
+    icon: "bell-02",
     title: "Use Anywhere",
-    content: "Built on Typescript, the Cover SDK works on both frontend and backend environments, on any framework."
+    content:
+      "Built on Typescript, the Cover SDK works on both frontend and backend environments, on any framework.",
   },
   {
-    icon: "placeholder",
+    icon: "chart-breakout-square",
     title: "Attract Liquidity",
-    content: "With our support, you can get more visibility to bootstrap liquidity into your own DeFi cover pool."
-  }
-]
+    content:
+      "With our support, you can get more visibility to bootstrap liquidity into your own DeFi cover pool.",
+  },
+];
 
 export const codeSnippet = `import { ChainId, liquidity } from '@neptunemutual/sdk'
 
@@ -38,4 +41,4 @@ const add = async () => {
   }
 }
 *******************************************************************/
-`
+`;
