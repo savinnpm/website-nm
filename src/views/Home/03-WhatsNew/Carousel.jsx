@@ -1,38 +1,10 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import Slider from 'react-slick'
 import styled from 'styled-components'
 import { blurs } from '../../../../styles/blurs'
 import { colors } from '../../../../styles/colors'
 import { Icon } from '../../../components/Icon'
 import { Card } from './Card'
-
-const settings = {
-  dots: false,
-  arrows: false,
-  infinite: false,
-  slidesToShow: 3,
-  rows: 1,
-  centerMode: false,
-  responsive: [
-    {
-      breakpoint: 1365,
-      settings: {
-        slidesToShow: 2,
-      }
-    },
-    {
-      breakpoint: 767,
-      settings: {
-        slidesToShow: 1,
-      }
-    }
-  ],
-  slidesToScroll: 1,
-  autoplay: false,
-  autoplaySpeed: 2000,
-  pauseOnHover: false,
-  beforeChange: console.log
-}
 
 function NextArrow(props) {
   return (
@@ -50,9 +22,52 @@ function PrevArrow(props) {
   )
 }
 
+const initialSlide = 0
+
 export const Carousel = ({ posts = [] }) => {
-  const sliderRef= useRef(null)
-  
+  const [currentIndex, setCurrentIndex] = useState(initialSlide)
+  const [isLast, setIsLast] = useState(initialSlide == posts.length - 1)
+  const sliderRef = useRef(null)
+
+  const handleBeforeChange = (oldIndex, newIndex) => {
+    // Hack to find if we are on last slide
+    // This has few bugs, it's better dropping idea to disable the buttons and remove both states `currentIndex` and `isLast`
+    if (oldIndex == newIndex) {
+      setIsLast(true)
+    } else {
+      setIsLast(false)
+    }
+  }
+
+  const settings = {
+    dots: false,
+    arrows: false,
+    infinite: false,
+    slidesToShow: 3,
+    rows: 1,
+    centerMode: false,
+    responsive: [
+      {
+        breakpoint: 1365,
+        settings: {
+          slidesToShow: 2,
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          slidesToShow: 1,
+        }
+      }
+    ],
+    slidesToScroll: 1,
+    autoplay: false,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    beforeChange: handleBeforeChange,
+    afterChange: setCurrentIndex
+  }
+
   return (
     <Container>
       <Slider
@@ -66,8 +81,8 @@ export const Carousel = ({ posts = [] }) => {
       </Slider>
 
       <Arrows>
-        <PrevArrow onClick={() => {sliderRef.current.slickPrev()}}></PrevArrow>
-        <NextArrow onClick={() => {sliderRef.current.slickNext()}}></NextArrow>
+        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex == 0}></PrevArrow>
+        <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast}></NextArrow>
       </Arrows>
 
     </Container>
@@ -92,6 +107,7 @@ const Container = styled.div`
 
     &[aria-hidden="true"] {
       visibility: hidden;
+      transition: visibility 0.3s 1s linear;
     }
   }
 `
@@ -116,7 +132,7 @@ const ArrowContainer = styled.button`
   backdrop-filter: ${blurs.sm};
   border-radius: 50%;
 
-  :hover {
+  :not(:disabled):hover {
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
     color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
   }

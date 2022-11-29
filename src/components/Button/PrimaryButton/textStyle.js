@@ -26,8 +26,8 @@ const getTextStyleLg = (size) => {
 };
 
 const getTextStyleMd = (size) => {
-  if (size == "xl") {
-    return typography.styles.textLg;
+  if (size == "2xl" || size == "xl") {
+    return typography.styles.textMd;
   }
 
   if (size == "lg") {
@@ -35,7 +35,7 @@ const getTextStyleMd = (size) => {
   }
 
   if (size == "md") {
-    return typography.styles.textMd;
+    return typography.styles.textSm;
   }
 
   if (size == "sm") {

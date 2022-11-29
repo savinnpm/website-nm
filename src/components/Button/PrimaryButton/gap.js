@@ -9,6 +9,10 @@ const getGapLg = (size) => {
 };
 
 const getGapMd = (size) => {
+  if (size == "2xl") {
+    return "8px";
+  }
+
   return "8px";
 };
 

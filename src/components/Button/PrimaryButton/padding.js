@@ -25,19 +25,19 @@ const getPaddingLg = (size) => {
 };
 
 const getPaddingMd = (size) => {
-  if (size == "2xl") {
+  if (size == "2xl" || size == "xl") {
     return "12px 20px";
   }
 
-  if (size == "xl") {
+  if (size == "lg") {
     return "10px 18px";
   }
 
-  if (size == "lg") {
+  if (size == "md") {
     return "10px 16px";
   }
 
-  if (size == "md") {
+  if (size == "sm") {
     return "8px 14px";
   }
 
