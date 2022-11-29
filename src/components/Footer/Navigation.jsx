@@ -5,9 +5,11 @@ import { typography } from '../../../styles/typography'
 import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import { nav } from './data'
+import { useTranslation } from "react-i18next";
 
 export const Navigation = () => {
-  const theme = useTheme()
+  const theme = useTheme();
+  const { t } = useTranslation("common");
 
   return (
     <Container>
@@ -19,25 +21,25 @@ export const Navigation = () => {
         {nav.map((list, idx) => {
           return (
             <ListContainer key={idx}>
-              <H3>{list.title}</H3>
+              <H3>{t(list.title)}</H3>
               <Ul>
-                {list.links.map(link => {
+                {list.links.map((link) => {
                   return (
                     <Li key={link.href}>
                       {link.isExternal
-                        ? <a href={link.href} target='_blank' rel='noreferrer'>{link.text}</a>
-                        : <Link href={link.href}>{link.text}</Link>}
+                        ? <a href={link.href} target='_blank' rel='noreferrer'>{t(link.text)}</a>
+                        : <Link href={link.href}>{t(link.text)}</Link>}
                     </Li>
-                  )
+                  );
                 })}
               </Ul>
             </ListContainer>
-          )
+          );
         })}
       </Nav>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   display: flex;
@@ -47,11 +49,11 @@ const Container = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
-`
+`;
 
 const LogoContainer = styled(Link)`
   display: block;
-`
+`;
 
 const Nav = styled.nav`
   --gap: 32px;
@@ -66,16 +68,17 @@ const ListContainer = styled.section`
   min-width: 200px;
 
   @media (max-width: 768px) {
-    width: calc(50% - var(--gap) / 2); 
+    width: calc(50% - var(--gap) / 2);
   }
-`
+`;
 
 const H3 = styled.h3`
-  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['400']};
+  color: ${(props) =>
+    props.theme.isLightMode ? colors.gray["500"] : colors.gray["400"]};
 
   ${typography.styles.textSm};
   ${typography.weights.semibold};
-`
+`;
 
 const Ul = styled.ul`
   margin-top: 16px;
@@ -84,11 +87,11 @@ const Ul = styled.ul`
   display: flex;
   flex-direction: column;
   gap: 12px;
-`
+`;
 
 const Li = styled.li`
-  color: ${props => props.theme.secondaryColor};
-  
+  color: ${(props) => props.theme.secondaryColor};
+
   ${typography.styles.textMd};
   ${typography.weights.semibold};
 `

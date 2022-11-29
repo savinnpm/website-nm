@@ -1,28 +1,38 @@
-import styled from "styled-components"
-import { colors } from "../../../../styles/colors"
-import { typography } from "../../../../styles/typography"
-import { utils } from "../../../../styles/utils"
-import { Button } from "../../../components/Button"
-import { Carousel } from "./Carousel"
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import { colors } from "../../../../styles/colors";
+import { typography } from "../../../../styles/typography";
+import { utils } from "../../../../styles/utils";
+import { Button } from "../../../components/Button";
+import { Carousel } from "./Carousel";
 
-export const WhatsNew = ({blogPosts}) => {
+export const WhatsNew = ({ blogPosts }) => {
+  const { t } = useTranslation("home");
   return (
     <Container>
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Heading>What’s New?</Heading>
-            <SupportingText>The latest news, updates, and announcements from our team.</SupportingText>
+            <Heading>{t("WHATS_NEW")}</Heading>
+            <SupportingText>{t("WHATS_NEW_SUBTEXT")}</SupportingText>
           </TextContainer>
 
-          <Button href='https://blog.neptunemutual.com/' target="_blank" link hierarchy='primary' size='xl'>View All Posts</Button>
+          <Button
+            href="https://blog.neptunemutual.com/"
+            target="_blank"
+            link
+            hierarchy="primary"
+            size="xl"
+          >
+            {t("VIEW_ALL")}
+          </Button>
         </TextAndCta>
 
         <Carousel posts={blogPosts}></Carousel>
       </InnerContainer>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   padding-top: 96px;
@@ -32,11 +42,11 @@ const Container = styled.div`
     padding-top: 64px;
     padding-bottom: 64px;
   }
-`
+`;
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
-`
+`;
 
 const TextAndCta = styled.div`
   display: flex;
@@ -48,15 +58,15 @@ const TextAndCta = styled.div`
     flex-direction: column;
     align-items: stretch;
   }
-`
+`;
 
 const TextContainer = styled.div`
   max-width: 768px;
-`
+`;
 
 const Heading = styled.h2`
-  color: ${props => props.theme.color};
-  
+  color: ${(props) => props.theme.color};
+
   ${typography.styles.displayMd};
   ${typography.weights.semibold};
 
@@ -64,11 +74,11 @@ const Heading = styled.h2`
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
   }
-`
+`;
 
 const SupportingText = styled.p`
   margin-top: 20px;
-  color: ${props => props.theme.secondaryColor};
+  color: ${(props) => props.theme.secondaryColor};
 
   ${typography.styles.textXl};
   ${typography.weights.regular};
@@ -78,5 +88,4 @@ const SupportingText = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
-`
-
+`;
