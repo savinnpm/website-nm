@@ -1,16 +1,17 @@
-import styled from "styled-components";
-import { colors, primaryColorKey } from "../../../../styles/colors";
-import { typography } from "../../../../styles/typography";
-import { utils } from "../../../../styles/utils";
+import styled from 'styled-components'
+import { colors, primaryColorKey } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { getFormattedDate } from '../../../utils'
 
 export const Card = ({ post }) => {
   return (
-    <Container href={post.slug} target="_blank" rel="noreferrer">
+    <Container href={post.slug} target='_blank' rel='noreferrer'>
       <ImageContainer>
         <img src={`/${post.image}`} alt={post.title} />
       </ImageContainer>
 
-      <Time itemprop="published" datetime={post.date}>{new Date(post.date).toDateString()}</Time>
+      <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
 
       <Title>{post.title}</Title>
 
@@ -22,12 +23,12 @@ export const Card = ({ post }) => {
         ))}
       </TagsContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.a`
   display: block;
-`;
+`
 
 const ImageContainer = styled.div`
   height: 240px;
@@ -38,7 +39,7 @@ const ImageContainer = styled.div`
     object-fit: cover;
     display: block;
   }
-`;
+`
 
 const Time = styled.time`
   display: inline-block;
@@ -46,21 +47,21 @@ const Time = styled.time`
   ${typography.styles.textSm};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
-`;
+`
 
 const Title = styled.h3`
   margin-top: 8px;
   color: ${props => props.theme.color};
   ${typography.styles.displayXs};
   ${typography.weights.medium};
-  `;
+  `
 
 const Intro = styled.p`
   margin-top: 8px;
   color: ${props => props.theme.secondaryColor};
   ${typography.styles.textMd};
   ${typography.weights.regular};
-`;
+`
 
 const TagsContainer = styled.div`
   margin-top: 24px;
