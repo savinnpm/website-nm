@@ -24,7 +24,7 @@ export const Hero = () => {
         </TextAndCta>
 
         <ImageContainer>
-          <img src="https://picsum.photos/1080/1080" alt="as" />
+          <img src="/assets/images/hero/cover.png" alt="Neptune" />
         </ImageContainer>
       </Container>
   )
