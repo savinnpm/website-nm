@@ -9,6 +9,7 @@ export { default as GitHub } from "./GitHub";
 export { default as Google } from "./Google";
 export { default as Instagram } from "./Instagram";
 export { default as LinkedIn } from "./LinkedIn";
+export { default as Medium } from "./Medium";
 export { default as Pinterest } from "./Pinterest";
 export { default as Reddit } from "./Reddit";
 export { default as Signal } from "./Signal";
