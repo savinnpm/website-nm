@@ -1,32 +1,32 @@
-import styled, { useTheme } from "styled-components"
-import { colors } from "../../../styles/colors"
-import { utils } from "../../../styles/utils"
+import styled, { useTheme } from 'styled-components'
+import { utils } from '../../../styles/utils'
 
-import { LocaleSelector } from "../LocaleSelector"
-import { ThemeToggle } from "../ThemeToggle"
-import NpmLogo from "../logos/npm-full"
-import NpmLogoInverse from "../logos/npm-full-inverse"
-import Link from "next/link"
-import { NavMenuButton } from "../Nav/NavMenuButton"
+import { LocaleSelector } from '../LocaleSelector'
+import { ThemeToggle } from '../ThemeToggle'
+import NpmLogo from '../logos/npm-full'
+import NpmLogoInverse from '../logos/npm-full-inverse'
+import Link from 'next/link'
+import { NavMenuButton } from '../Nav/NavMenuButton'
+import { typography } from '../../../styles/typography'
 
-export const Header = ({isMenuOpen, setIsMenuOpen}) => {
+export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const theme = useTheme()
 
   return (
     <StyledHeader>
       <InnerContainer>
         <div>
-          <LogoContainer href={'/'}>
+          <LogoContainer href='/'>
             {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
           </LogoContainer>
         </div>
 
         <Actions>
-          <LocaleSelector/>
+          <LocaleSelector />
           <ThemeToggle />
         </Actions>
 
-        <NavMenuButton onClick={() => setIsMenuOpen(prev => !prev)} isOpen={isMenuOpen}/>
+        <NavMenuButton onClick={() => setIsMenuOpen(prev => !prev)} isOpen={isMenuOpen} />
       </InnerContainer>
     </StyledHeader>
   )
@@ -44,10 +44,14 @@ const InnerContainer = styled.div`
   align-items: center;
 
   ${utils.fullWidthContainer};
+
+  @media (max-width: 768px) {
+    padding: 16px 12px 16px 16px;
+  }
 `
 
 const LogoContainer = styled(Link)`
-  display: block;
+  display: flex;
 `
 
 const Actions = styled.div`
@@ -58,4 +62,9 @@ const Actions = styled.div`
   @media (max-width: 768px) {
    display: none; 
   }
+
+  color: ${props => props.theme.secondaryColor};
+  
+  ${typography.styles.textMd};
+  ${typography.weights.semibold};
 `

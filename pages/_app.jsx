@@ -1,19 +1,18 @@
-import { useState } from 'react';
-import { TooltipProvider } from '@radix-ui/react-tooltip';
-import { appWithTranslation } from "next-i18next";
+import { useState } from 'react'
+import { TooltipProvider } from '@radix-ui/react-tooltip'
+import { appWithTranslation } from 'next-i18next'
 
 import '@fontsource/inter/latin.css'
 import 'slick-carousel/slick/slick.css'
 
-import { ThemeProvider } from "../src/theme/ThemeContext";
-import { Footer } from "../src/components/Footer";
-import { Header } from "../src/components/Header";
-import styled from 'styled-components';
-import { colors } from '../styles/colors';
-import { constants } from '../styles/constants';
-import { MobileNavContainer } from '../src/components/Nav/MobileNavContainer';
+import { ThemeProvider } from '../src/theme/ThemeContext'
+import { Footer } from '../src/components/Footer'
+import { Header } from '../src/components/Header'
+import styled from 'styled-components'
+import { colors } from '../styles/colors'
+import { MobileNavContainer } from '../src/components/Nav/MobileNavContainer'
 
-function MyApp({ Component, pageProps }) {
+function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
@@ -29,10 +28,10 @@ function MyApp({ Component, pageProps }) {
         <Footer />
       </ThemeProvider>
     </TooltipProvider>
-  );
+  )
 }
 
-export default appWithTranslation(MyApp);
+export default appWithTranslation(MyApp)
 
 const HeaderContainer = styled.div`
   /* position: fixed;
@@ -44,7 +43,7 @@ const HeaderContainer = styled.div`
 `
 
 const MainContainer = styled.div`
-  /* padding-top: ${constants.headerHeight}px; */
+  /* padding-top: var(--header-height); */
   position: relative;
   z-index: 1;
 `

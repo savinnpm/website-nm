@@ -1,24 +1,24 @@
-import styled from "styled-components"
-import { colors } from "../../../styles/colors"
-import { utils } from "../../../styles/utils"
-import { RiskWarning } from "./RiskWarning"
-import { Navigation } from "./Navigation"
-import { SocialLinks } from "./SocialLinks"
-import { typography } from "../../../styles/typography"
+import styled from 'styled-components'
+import { colors } from '../../../styles/colors'
+import { utils } from '../../../styles/utils'
+import { RiskWarning } from './RiskWarning'
+import { Navigation } from './Navigation'
+import { SocialLinks } from './SocialLinks'
+import { typography } from '../../../styles/typography'
 
 export const Footer = () => {
   return (
     <StyledFooter>
       <InnerContainer>
 
-      <Navigation />
+        <Navigation />
 
-      <RiskWarning/>
+        <RiskWarning />
 
-      <CopyrightContainer>
-        <CopyrightText>Neptune Mutual &copy; 2022 </CopyrightText>
-        <SocialLinks/>
-      </CopyrightContainer>
+        <CopyrightContainer>
+          <CopyrightText>Neptune Mutual &copy; 2022 </CopyrightText>
+          <SocialLinks />
+        </CopyrightContainer>
       </InnerContainer>
     </StyledFooter>
   )
@@ -51,6 +51,12 @@ const CopyrightContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    gap: 24px;
+  }
 `
 
 const CopyrightText = styled.p`

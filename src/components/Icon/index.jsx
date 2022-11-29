@@ -16,6 +16,7 @@ import {
   ArrowSquareUpRight,
   ChevronDown,
   ChevronRight,
+  ChevronUp,
 } from "./variants/Arrows";
 import { MoonStar, Sun } from "./variants/Weather";
 import {
@@ -39,8 +40,22 @@ import { Clock } from "./variants/Time";
 import { MarkerPin01 } from "./variants/MapsAndTravel";
 import { FaceSmile, User01 } from "./variants/Users";
 
+// custom icons
+import MoonStarFilled from "./variants/moon-star-filled";
+import SunFilled from "./variants/sun-filled";
+
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
+
+  // custom icon
+  if (variant == "moon-star-filled") {
+    IconComponent = MoonStarFilled;
+  }
+
+  // custom icon
+  if (variant == "sun-filled") {
+    IconComponent = SunFilled;
+  }
 
   if (variant == "placeholder") {
     IconComponent = Placeholder;
@@ -160,6 +175,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant == "chevron-down") {
     IconComponent = ChevronDown;
+  }
+
+  if (variant == "chevron-up") {
+    IconComponent = ChevronUp;
   }
 
   if (variant == "target-05") {

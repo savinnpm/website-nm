@@ -1,22 +1,19 @@
 import { Disclosure } from '@headlessui/react'
-import { useState } from "react"
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { colors } from "../../../../styles/colors"
-import { constants } from "../../../../styles/constants"
-import { typography } from "../../../../styles/typography"
-import { Icon } from "../../Icon"
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { Icon } from '../../Icon'
 import { Content } from './Content'
 
 export const MobileSubMenu = ({ item }) => {
-
   return (
     <Disclosure>
       {({ open }) => (
         <Container>
           <SubmenuTriggerContainer>
             <Title>{item.title}</Title>
-            <Icon size={20} variant={open ? 'placeholder' : 'sun'} />
+            <Icon size={20} variant={open ? 'chevron-up' : 'chevron-down'} />
           </SubmenuTriggerContainer>
           <Disclosure.Panel>
             <Content item={item} />

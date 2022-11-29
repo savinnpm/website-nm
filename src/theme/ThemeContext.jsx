@@ -1,9 +1,19 @@
-import React, { useMemo, useState } from 'react';
+import React, { useMemo } from 'react'
 import { createGlobalStyle, ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { darkTheme, lightTheme } from '../../styles/theme';
-import { useDarkMode } from '../hooks/useDarkMode';
+import { darkTheme, lightTheme } from '../../styles/theme'
+import { useDarkMode } from '../hooks/useDarkMode'
 
 const GlobalStyle = createGlobalStyle`
+  :root {
+    --header-height: 80px;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+      --header-height: 72px;
+    }
+  }
+
   html {
     color-scheme: ${props => props.theme.colorScheme};
   }
@@ -47,31 +57,32 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const ThemeContext = React.createContext({
-    darkMode: false,
-    setDarkMode: () => { }
-});
+  darkMode: false,
+  setDarkMode: () => { }
+})
 
 export const ThemeProvider = (props) => {
   const [darkMode, setDarkMode] = useDarkMode()
 
-    const memoizedValue = useMemo(() => {
-      return { darkMode, setDarkMode };
-    }, [darkMode, setDarkMode]);
-    
-    return (
-      <ThemeContext.Provider value={memoizedValue}>
-        <StyledComponentsThemeProvider theme={darkMode ? darkTheme : lightTheme}>
-          {props.children}
-          <GlobalStyle />
-        </StyledComponentsThemeProvider>
-      </ThemeContext.Provider>
-    )
-};
+  const memoizedValue = useMemo(() => {
+    return { darkMode, setDarkMode }
+  }, [darkMode, setDarkMode])
+
+  return (
+    <ThemeContext.Provider value={memoizedValue}>
+      <StyledComponentsThemeProvider theme={darkMode ? darkTheme : lightTheme}>
+        {props.children}
+        <GlobalStyle />
+      </StyledComponentsThemeProvider>
+    </ThemeContext.Provider>
+  )
+}
 
 export const useThemeContext = () => {
-    const context = React.useContext(ThemeContext);
-    if (context === undefined) {
-        throw new Error('useTheme must be used within a ThemeProvider');
-    }
-    return context;
-};
+  const context = React.useContext(ThemeContext)
+  if (context === undefined) {
+    throw new Error('useTheme must be used within a ThemeProvider')
+  }
+
+  return context
+}

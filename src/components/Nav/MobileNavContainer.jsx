@@ -1,9 +1,8 @@
-import { useEffect } from "react"
-import styled from "styled-components"
-import { colors } from "../../../styles/colors"
-import { constants } from "../../../styles/constants"
-import { data } from "./data"
-import { NavMenuItem } from "./NavMenuItem"
+import { useEffect } from 'react'
+import styled from 'styled-components'
+import { colors } from '../../../styles/colors'
+import { data } from './data'
+import { NavMenuItem } from './NavMenuItem'
 
 export const MobileNavContainer = ({ isMenuOpen }) => {
   useEffect(() => {
@@ -15,7 +14,7 @@ export const MobileNavContainer = ({ isMenuOpen }) => {
   useEffect(() => {
     if (isMenuOpen) {
       // Scroll to top
-      window.scrollTo(0,0);
+      window.scrollTo(0, 0)
       // Hide overflow
       document.body.style.overflow = 'hidden'
     } else {
@@ -42,7 +41,7 @@ export const MobileNavContainer = ({ isMenuOpen }) => {
 
 const Container = styled.div`
   position: fixed;
-  top: ${constants.headerHeight}px;
+  top: var(--header-height);
   left: 0px;
   bottom: 0px;
   z-index: 1;
