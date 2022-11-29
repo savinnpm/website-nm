@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { TooltipProvider } from '@radix-ui/react-tooltip';
 import { appWithTranslation } from "next-i18next";
 
@@ -11,18 +12,9 @@ import styled from 'styled-components';
 import { colors } from '../styles/colors';
 import { constants } from '../styles/constants';
 import { MobileNavContainer } from '../src/components/Nav/MobileNavContainer';
-import { useEffect, useState } from 'react';
 
 function MyApp({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = 'visible'
-    }
-  }, [isMenuOpen])
 
   return (
     <TooltipProvider>

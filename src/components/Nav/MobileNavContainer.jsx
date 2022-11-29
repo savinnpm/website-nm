@@ -1,12 +1,28 @@
+import { useEffect } from "react"
 import styled from "styled-components"
 import { colors } from "../../../styles/colors"
 import { constants } from "../../../styles/constants"
-import { typography } from "../../../styles/typography"
-import { Icon } from "../Icon"
 import { data } from "./data"
 import { NavMenuItem } from "./NavMenuItem"
 
 export const MobileNavContainer = ({ isMenuOpen }) => {
+  useEffect(() => {
+    return () => {
+      document.body.style.overflow = 'visible'
+    }
+  }, [])
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      // Scroll to top
+      window.scrollTo(0,0);
+      // Hide overflow
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'visible'
+    }
+  }, [isMenuOpen])
+
   if (!isMenuOpen) {
     return null
   }
@@ -16,7 +32,7 @@ export const MobileNavContainer = ({ isMenuOpen }) => {
       <Nav>
         {data.map((item, idx) => {
           return (
-            <NavMenuItem key={idx} item={item}/>
+            <NavMenuItem key={idx} item={item} />
           )
         })}
       </Nav>
