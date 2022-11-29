@@ -1,6 +1,7 @@
 import SvgTwitter from "./variants/Socials/White/Twitter";
 import {
   Copy01,
+  Edit03,
   Link04,
   LinkExternal01,
   Menu01,
@@ -30,19 +31,21 @@ import {
   Twitter,
   YouTube,
 } from "./variants/Socials/White";
-import { CodeSquare01 } from "./variants/Development";
+import { CodeSquare01, Database01, FileCode01, FolderCode } from "./variants/Development";
 import { Bell02 } from "./variants/AlertsAndFeedback";
 import { ChartBreakoutSquare } from "./variants/Charts";
 import { Cube01, Cube02, Star02 } from "./variants/Shapes";
-import { Globe01 } from "./variants/Education";
+import { BookClosed, Glasses02, Globe01 } from "./variants/Education";
 import { Play } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
-import { MarkerPin01 } from "./variants/MapsAndTravel";
+import { Flag06, MarkerPin01 } from "./variants/MapsAndTravel";
 import { FaceSmile, User01 } from "./variants/Users";
 
 // custom icons
 import MoonStarFilled from "./variants/moon-star-filled";
 import SunFilled from "./variants/sun-filled";
+import { Folder } from "./variants/Files";
+import { Bank } from "./variants/FinanceAndEcommerce";
 
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
@@ -207,6 +210,42 @@ export const Icon = ({ size, variant }) => {
 
   if (variant == "copy-01") {
     IconComponent = Copy01;
+  }
+
+  if (variant == "folder") {
+    IconComponent = Folder;
+  }
+
+  if (variant == "edit-03") {
+    IconComponent = Edit03;
+  }
+
+  if (variant == "database-01") {
+    IconComponent = Database01;
+  }
+
+  if (variant == "file-code-01") {
+    IconComponent = FileCode01;
+  }
+
+  if (variant == "book-closed") {
+    IconComponent = BookClosed;
+  }
+
+  if (variant == "flag-06") {
+    IconComponent = Flag06;
+  }
+
+  if (variant == "bank") {
+    IconComponent = Bank;
+  }
+
+  if (variant == "glasses-02") {
+    IconComponent = Glasses02;
+  }
+
+  if (variant == "flag-06") {
+    IconComponent = Flag06;
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
