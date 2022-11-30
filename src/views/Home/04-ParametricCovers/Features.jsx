@@ -1,4 +1,5 @@
 import { Tab } from '@headlessui/react'
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
@@ -26,7 +27,10 @@ export const Features = () => {
             return (
               <Tab.Panel key={feature.id}>
                 <ImageContainer>
-                  <img src={feature.image} alt={feature.title} />
+                  <Image
+                    src={feature.image} alt={feature.title}
+                    fill
+                  />
                 </ImageContainer>
               </Tab.Panel>
             )
@@ -72,6 +76,7 @@ const StyledTabPanels = styled(Tab.Panels)`
 `
 
 const ImageContainer = styled.div`
+  position: relative;
   height: 420px;
   max-width: 100%;
   background-color: ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
@@ -85,8 +90,9 @@ const ImageContainer = styled.div`
   }
 
   img {
-    height: 90%;
+    object-fit: contain;
     max-height: 350px;
-    display: block;
+    padding: 5%;
   }
+
 `
