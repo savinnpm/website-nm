@@ -77,6 +77,3 @@ const VideoSections = styled.div`
   flex: 1;
   min-width: 560px;
 `
-
-const Section = styled.div`
-`
