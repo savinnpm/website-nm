@@ -4,7 +4,7 @@ import { typography } from '../../../styles/typography'
 import { Icon } from '../Icon'
 import { localeNames } from './config'
 
-const options = ['en', 'de']
+const options = ['en', 'de', process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
 
 export const LocaleSelector = () => {
   const router = useRouter()
@@ -18,7 +18,7 @@ export const LocaleSelector = () => {
       <Icon size={20} variant='globe-01' />
       <select name='locale' id='locale' onChange={e => handleChange(e)} value={router.locale}>
         {options.map(locale => {
-          return <option key={locale} value={locale}>{localeNames[locale]}</option>
+          return <option key={locale} value={locale}>{localeNames[locale] || locale}</option>
         })}
       </select>
     </Container>
