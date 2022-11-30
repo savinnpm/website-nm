@@ -4,7 +4,7 @@ import { mockData } from './_mock_'
 
 export const getLatestBlogPosts = async () => {
   try {
-    //   const dataStr = await request.get(`${API_URL_PREFIX}articles?limit=3`)
+    //   const dataStr = await request.get(`${API_URL_PREFIX}articles?limit=10`)
     //   const data = JSON.parse(dataStr)
     const data = mockData.articleList
 
@@ -35,7 +35,7 @@ export const getLatestBlogPosts = async () => {
 
 export const getBlogPosts = async () => {
   try {
-    //   const dataStr = await request.get(`${API_URL_PREFIX}articles?limit=3`)
+    //   const dataStr = await request.get(`${API_URL_PREFIX}articles?limit=1000`)
     //   const data = JSON.parse(dataStr)
     const data = mockData.articleList
 
