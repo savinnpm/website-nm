@@ -28,7 +28,7 @@ const Container = styled.div`
   top: var(--header-height);
   left: 0px;
   max-height: 80vh;
-  z-index: 2;
+  z-index: 1;
   width: 100%;
   overflow-x: hidden;
   background-color: ${props => props.theme.primaryBackgroundColor};

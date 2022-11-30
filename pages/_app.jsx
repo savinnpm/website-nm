@@ -34,16 +34,12 @@ function MyApp ({ Component, pageProps }) {
 export default appWithTranslation(MyApp)
 
 const HeaderContainer = styled.div`
-  /* position: fixed;
+  position: sticky;
   top: 0;
-  left: 0; */
   width: 100%;
   border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
-  z-index: 2;
+  z-index: 1;
 `
 
 const MainContainer = styled.div`
-  /* padding-top: var(--header-height); */
-  position: relative;
-  z-index: 1;
 `
