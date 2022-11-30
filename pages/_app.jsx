@@ -10,7 +10,7 @@ import { Footer } from '../src/components/Footer'
 import { Header } from '../src/components/Header'
 import styled from 'styled-components'
 import { colors } from '../styles/colors'
-import { MobileNavContainer } from '../src/components/Nav/MobileNavContainer'
+import { MobileNavContainer } from '../src/components/Nav'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -38,7 +38,7 @@ const HeaderContainer = styled.div`
   top: 0;
   left: 0; */
   width: 100%;
-  box-shadow: 0 0 0 1px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
+  border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
   z-index: 2;
 `
 

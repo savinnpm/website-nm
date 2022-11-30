@@ -2,11 +2,11 @@ import { useEffect } from 'react'
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { LocaleSelector } from '../LocaleSelector'
-import { ThemeToggle } from '../ThemeToggle'
+import { ThemeSelector } from '../ThemeSelector'
 import { data } from './data'
 import { NavMenuItem } from './NavMenuItem'
 
-export const MobileNavContainer = ({ isMenuOpen }) => {
+export const MobileNav = ({ isMenuOpen }) => {
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'visible'
@@ -24,16 +24,12 @@ export const MobileNavContainer = ({ isMenuOpen }) => {
     }
   }, [isMenuOpen])
 
-  if (!isMenuOpen) {
-    return null
-  }
-
   return (
     <Container>
       <Nav>
         <ActionsContainer>
           <LocaleSelector />
-          <ThemeToggle />
+          <ThemeSelector />
         </ActionsContainer>
         {data.map((item, idx) => {
           return (
@@ -55,13 +51,14 @@ const Container = styled.div`
   overflow-x: hidden;
   background-color: ${props => props.theme.primaryBackgroundColor};
   display: block;
-  box-shadow: inset 0 0 0 1px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
+  border-top: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
 `
 
 const ActionsContainer = styled.div`
   display: flex;
   justify-content: space-between;
-  padding: 12px 16px;
+  padding: 0 16px 24px 16px;
+  border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
 `
 
 const Nav = styled.nav`

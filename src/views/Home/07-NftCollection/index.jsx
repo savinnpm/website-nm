@@ -29,6 +29,11 @@ export const NftCollection = () => {
 const Container = styled.div`
   padding-top: 120px;
   padding-bottom: 144px;
+
+  @media (max-width: 768px) {
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 `
 
 const InnerContainer = styled.div`

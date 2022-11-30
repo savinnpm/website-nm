@@ -1,32 +1,32 @@
-import styled from "styled-components";
-import { colors, primaryColorKey } from "../../styles/colors";
-import { shadows } from "../../styles/shadows";
-import { utils } from "../../styles/utils";
-import { useThemeContext } from "../theme/ThemeContext";
-import { Icon } from "./Icon";
-import { Tooltip } from "./Tooltip";
+import styled from 'styled-components'
+import { colors, primaryColorKey } from '../../styles/colors'
+import { shadows } from '../../styles/shadows'
+import { utils } from '../../styles/utils'
+import { useThemeContext } from '../theme/ThemeContext'
+import { Icon } from './Icon'
+import { Tooltip } from './Tooltip'
 
-export const ThemeToggle = () => {
-  const { darkMode, setDarkMode } = useThemeContext();
+export const ThemeSelector = () => {
+  const { darkMode, setDarkMode } = useThemeContext()
 
   const handleChange = (e) => {
-    setDarkMode(e.target.checked);
-  };
+    setDarkMode(e.target.checked)
+  }
 
-  const checked = !!darkMode;
+  const checked = !!darkMode
 
   return (
-    <Tooltip content="Toggle theme" side="bottom" align="end">
+    <Tooltip content='Toggle theme' side='bottom' align='end'>
       <Label>
         <span>Dark Mode</span>
-        <Input checked={checked} type="checkbox" onChange={handleChange} />
+        <Input checked={checked} type='checkbox' onChange={handleChange} />
         <Switch>
-          <Icon size={12} variant={checked ? "sun-filled" : "moon-star-filled"} />
+          <Icon size={12} variant={checked ? 'sun-filled' : 'moon-star-filled'} />
         </Switch>
       </Label>
     </Tooltip>
-  );
-};
+  )
+}
 
 const Label = styled.label`
   display: flex;
@@ -37,18 +37,18 @@ const Label = styled.label`
   & > span {
     ${utils.srOnly};
   }
-`;
+`
 
 const Input = styled.input`
   opacity: 0;
   position: absolute;
-`;
+`
 
 const Switch = styled.div`
   position: relative;
   width: 43px;
   height: 20px;
-  background: ${colors.gray["700"]};
+  background: ${colors.gray['700']};
   border-radius: 32px;
   padding: 2px;
   transition: 300ms all;
@@ -72,7 +72,7 @@ const Switch = styled.div`
   }
 
   ${Input}:checked + & {
-    background: ${colors[primaryColorKey]["600"]};
+    background: ${colors[primaryColorKey]['600']};
     justify-content: flex-start;
 
     &:before {
@@ -89,4 +89,4 @@ const Switch = styled.div`
       color: ${colors.white};
     }
   }
-`;
+`

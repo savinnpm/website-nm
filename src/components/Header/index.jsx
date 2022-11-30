@@ -2,12 +2,12 @@ import styled, { useTheme } from 'styled-components'
 import { utils } from '../../../styles/utils'
 
 import { LocaleSelector } from '../LocaleSelector'
-import { ThemeToggle } from '../ThemeToggle'
+import { ThemeSelector } from '../ThemeSelector'
 import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import Link from 'next/link'
 import { NavMenuButton } from '../Nav/NavMenuButton'
-import { typography } from '../../../styles/typography'
+import { DesktopNavMenuItem } from '../Nav/DesktopNavMenuItem'
 
 export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const theme = useTheme()
@@ -15,15 +15,18 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   return (
     <StyledHeader>
       <InnerContainer>
-        <div>
+        <LeftContainer>
           <LogoContainer href='/'>
             {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
           </LogoContainer>
-        </div>
+          <NavLinksContainer>
+            <DesktopNavMenuItem />
+          </NavLinksContainer>
+        </LeftContainer>
 
         <Actions>
           <LocaleSelector />
-          <ThemeToggle />
+          <ThemeSelector />
         </Actions>
 
         <NavMenuButton onClick={() => setIsMenuOpen(prev => !prev)} isOpen={isMenuOpen} />
@@ -54,6 +57,20 @@ const LogoContainer = styled(Link)`
   display: flex;
 `
 
+const LeftContainer = styled.div`
+  display: flex;
+  gap: 40px;
+`
+
+const NavLinksContainer = styled.div`
+  display: flex;
+  gap: 32px;
+
+  @media (max-width: 768px) {
+  display: none; 
+  }
+`
+
 const Actions = styled.div`
   display: flex;
   align-items: center;
@@ -62,9 +79,4 @@ const Actions = styled.div`
   @media (max-width: 768px) {
    display: none; 
   }
-
-  color: ${props => props.theme.secondaryColor};
-  
-  ${typography.styles.textMd};
-  ${typography.weights.semibold};
 `

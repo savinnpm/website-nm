@@ -35,11 +35,11 @@ import { CodeSquare01, Database01, FileCode01, FolderCode } from "./variants/Dev
 import { Bell02 } from "./variants/AlertsAndFeedback";
 import { ChartBreakoutSquare } from "./variants/Charts";
 import { Cube01, Cube02, Star02 } from "./variants/Shapes";
-import { BookClosed, Glasses02, Globe01 } from "./variants/Education";
+import { BookClosed, Glasses02 } from "./variants/Education";
 import { Play } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
-import { Flag06, MarkerPin01 } from "./variants/MapsAndTravel";
-import { FaceSmile, User01 } from "./variants/Users";
+import { Flag06, MarkerPin01, Globe01 } from "./variants/MapsAndTravel";
+import { FaceSmile, Users01 } from "./variants/Users";
 
 // custom icons
 import MoonStarFilled from "./variants/moon-star-filled";
@@ -173,7 +173,7 @@ export const Icon = ({ size, variant }) => {
   }
 
   if (variant == "users-01") {
-    IconComponent = User01;
+    IconComponent = Users01;
   }
 
   if (variant == "chevron-down") {
