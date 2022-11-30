@@ -26,13 +26,13 @@ const initialSlide = 0
 
 export const Carousel = ({ posts = [] }) => {
   const [currentIndex, setCurrentIndex] = useState(initialSlide)
-  const [isLast, setIsLast] = useState(initialSlide == posts.length - 1)
+  const [isLast, setIsLast] = useState(initialSlide === posts.length - 1)
   const sliderRef = useRef(null)
 
   const handleBeforeChange = (oldIndex, newIndex) => {
     // Hack to find if we are on last slide
     // This has few bugs, it's better dropping idea to disable the buttons and remove both states `currentIndex` and `isLast`
-    if (oldIndex == newIndex) {
+    if (oldIndex === newIndex) {
       setIsLast(true)
     } else {
       setIsLast(false)
@@ -81,7 +81,7 @@ export const Carousel = ({ posts = [] }) => {
       </Slider>
 
       <Arrows>
-        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex == 0} />
+        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
         <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
       </Arrows>
 

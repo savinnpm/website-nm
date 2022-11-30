@@ -19,8 +19,8 @@ export const Partners = () => {
 const Container = styled.div`
   padding-top: 96px;
   padding-bottom: 96px;
-  background-color: ${(props) =>
-    props.theme.isLightMode ? => 
+  background-color: ${(props) => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
+
   @media (max-width: 768px) {
     padding-top: 64px;
     padding-bottom: 64px;

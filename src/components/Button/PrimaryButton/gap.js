@@ -1,7 +1,7 @@
 import { css } from 'styled-components'
 
 const getGapLg = (size) => {
-  if (size == '2xl') {
+  if (size === '2xl') {
     return '12px'
   }
 
@@ -9,7 +9,7 @@ const getGapLg = (size) => {
 }
 
 const getGapMd = (size) => {
-  if (size == '2xl') {
+  if (size === '2xl') {
     return '8px'
   }
 

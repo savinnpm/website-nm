@@ -5,7 +5,7 @@ export const Content = ({ item }) => {
   return (
     <Container>
       {item.children.map((child, idx) => {
-        if (child.type == 'section') {
+        if (child.type === 'section') {
           return <Section key={idx} section={child} />
         }
 

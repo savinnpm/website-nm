@@ -1,19 +1,19 @@
 import { css } from 'styled-components'
 
 const getSizeLg = (size) => {
-  if (size == 'xl') {
+  if (size === 'xl') {
     return 56
   }
 
-  if (size == 'lg') {
+  if (size === 'lg') {
     return 48
   }
 
-  if (size == 'md') {
+  if (size === 'md') {
     return 40
   }
 
-  if (size == 'sm') {
+  if (size === 'sm') {
     return 32
   }
 
@@ -21,15 +21,15 @@ const getSizeLg = (size) => {
 }
 
 const getSizeMd = (size) => {
-  if (size == 'xl') {
+  if (size === 'xl') {
     return 48
   }
 
-  if (size == 'lg') {
+  if (size === 'lg') {
     return 40
   }
 
-  if (size == 'md') {
+  if (size === 'md') {
     return 32
   }
 

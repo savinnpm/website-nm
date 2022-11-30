@@ -51,7 +51,8 @@ const TextContainer = styled.div`
 
 const Subheading = styled.p`
   color: ${(props) =>
-    props.theme.isL=>       ? colors[primaryColorKey]['700']
+     props.theme.isLightMode
+      ? colors[primaryColorKey]['700']
       : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};

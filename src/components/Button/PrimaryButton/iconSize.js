@@ -1,8 +1,8 @@
 import { css } from 'styled-components'
 
 const getIconSizeLg = (icon, size) => {
-  if (icon == 'default') {
-    if (size == '2xl') {
+  if (icon === 'default') {
+    if (size === '2xl') {
       return 24
     }
 
@@ -13,8 +13,8 @@ const getIconSizeLg = (icon, size) => {
 }
 
 const getIconSizeMd = (icon, size) => {
-  if (icon == 'default') {
-    if (size == '2xl') {
+  if (icon === 'default') {
+    if (size === '2xl') {
       return 20
     }
 

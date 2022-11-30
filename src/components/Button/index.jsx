@@ -14,7 +14,7 @@ export const Button = ({
   link = false,
   ...rest
 }) => {
-  if (hierarchy == 'primary') {
+  if (hierarchy === 'primary') {
     return (
       <PrimaryButton
         size={size}

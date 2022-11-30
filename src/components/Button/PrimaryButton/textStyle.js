@@ -2,23 +2,23 @@ import { typography } from '../../../../styles/typography'
 import { css } from 'styled-components'
 
 const getTextStyleLg = (size) => {
-  if (size == '2xl') {
+  if (size === '2xl') {
     return typography.styles.textLg
   }
 
-  if (size == 'xl') {
+  if (size === 'xl') {
     return typography.styles.textMd
   }
 
-  if (size == 'lg') {
+  if (size === 'lg') {
     return typography.styles.textMd
   }
 
-  if (size == 'md') {
+  if (size === 'md') {
     return typography.styles.textSm
   }
 
-  if (size == 'sm') {
+  if (size === 'sm') {
     return typography.styles.textSm
   }
 
@@ -26,19 +26,19 @@ const getTextStyleLg = (size) => {
 }
 
 const getTextStyleMd = (size) => {
-  if (size == '2xl' || size == 'xl') {
+  if (size === '2xl' || size === 'xl') {
     return typography.styles.textMd
   }
 
-  if (size == 'lg') {
+  if (size === 'lg') {
     return typography.styles.textMd
   }
 
-  if (size == 'md') {
+  if (size === 'md') {
     return typography.styles.textSm
   }
 
-  if (size == 'sm') {
+  if (size === 'sm') {
     return typography.styles.textSm
   }
 

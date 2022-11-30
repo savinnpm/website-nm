@@ -24,8 +24,8 @@ const InnerContainer = styled.div`
   padding: 32px 0;
   border-width: 1px 0px;
   border-style: solid;
-  border-color: ${(props) =>
-    props.theme.isLightMod=> `
+  border-color: ${(props) => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
+`
 
 const Heading = styled.p`
   color: ${(props) => props.theme.color};
@@ -35,8 +35,8 @@ const Heading = styled.p`
 
 const Content = styled.p`
   margin-top: 8px;
-  color: ${(props) =>
-    props.theme.isL=> 
+  color: ${(props) => props.theme.isLightMode ? colors.gray['600'] : colors.gray['300']};
+
   ${typography.styles.textMd}
   ${typography.weights.regular}
 `

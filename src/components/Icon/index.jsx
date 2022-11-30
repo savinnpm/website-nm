@@ -51,200 +51,200 @@ export const Icon = ({ size, variant }) => {
   let IconComponent = null;
 
   // custom icon
-  if (variant == "moon-star-filled") {
+  if (variant === "moon-star-filled") {
     IconComponent = MoonStarFilled;
   }
 
   // custom icon
-  if (variant == "sun-filled") {
+  if (variant === "sun-filled") {
     IconComponent = SunFilled;
   }
 
-  if (variant == "placeholder") {
+  if (variant === "placeholder") {
     IconComponent = Placeholder;
   }
 
-  if (variant == "arrow-narrow-right") {
+  if (variant === "arrow-narrow-right") {
     IconComponent = ArrowNarrowRight;
   }
 
-  if (variant == "arrow-right") {
+  if (variant === "arrow-right") {
     IconComponent = ArrowRight;
   }
 
-  if (variant == "arrow-left") {
+  if (variant === "arrow-left") {
     IconComponent = ArrowLeft;
   }
 
-  if (variant == "moon-star") {
+  if (variant === "moon-star") {
     IconComponent = MoonStar;
   }
 
-  if (variant == "sun") {
+  if (variant === "sun") {
     IconComponent = Sun;
   }
 
-  if (variant == "link-external-01") {
+  if (variant === "link-external-01") {
     IconComponent = LinkExternal01;
   }
 
-  if (variant == "x-close") {
+  if (variant === "x-close") {
     IconComponent = XClose;
   }
 
-  if (variant == "menu-01") {
+  if (variant === "menu-01") {
     IconComponent = Menu01;
   }
 
-  if (variant == "discord") {
+  if (variant === "discord") {
     IconComponent = Discord;
   }
 
-  if (variant == "twitter") {
+  if (variant === "twitter") {
     IconComponent = Twitter;
   }
 
-  if (variant == "telegram") {
+  if (variant === "telegram") {
     IconComponent = Telegram;
   }
 
-  if (variant == "github") {
+  if (variant === "github") {
     IconComponent = GitHub;
   }
 
-  if (variant == "linkedin") {
+  if (variant === "linkedin") {
     IconComponent = LinkedIn;
   }
 
-  if (variant == "medium") {
+  if (variant === "medium") {
     IconComponent = Medium;
   }
 
-  if (variant == "youtube") {
+  if (variant === "youtube") {
     IconComponent = YouTube;
   }
 
-  if (variant == "reddit") {
+  if (variant === "reddit") {
     IconComponent = Reddit;
   }
 
-  if (variant == "code-square-one") {
+  if (variant === "code-square-one") {
     IconComponent = CodeSquare01;
   }
 
-  if (variant == "bell-02") {
+  if (variant === "bell-02") {
     IconComponent = Bell02;
   }
 
-  if (variant == "chart-breakout-square") {
+  if (variant === "chart-breakout-square") {
     IconComponent = ChartBreakoutSquare;
   }
 
-  if (variant == "cube-02") {
+  if (variant === "cube-02") {
     IconComponent = Cube02;
   }
 
-  if (variant == "cube-01") {
+  if (variant === "cube-01") {
     IconComponent = Cube01;
   }
 
-  if (variant == "globe-01") {
+  if (variant === "globe-01") {
     IconComponent = Globe01;
   }
 
-  if (variant == "play") {
+  if (variant === "play") {
     IconComponent = Play;
   }
 
-  if (variant == "link-04") {
+  if (variant === "link-04") {
     IconComponent = Link04;
   }
 
-  if (variant == "facebook") {
+  if (variant === "facebook") {
     IconComponent = Facebook;
   }
 
-  if (variant == "clock") {
+  if (variant === "clock") {
     IconComponent = Clock;
   }
 
-  if (variant == "marker-pin-01") {
+  if (variant === "marker-pin-01") {
     IconComponent = MarkerPin01;
   }
 
-  if (variant == "users-01") {
+  if (variant === "users-01") {
     IconComponent = Users01;
   }
 
-  if (variant == "chevron-down") {
+  if (variant === "chevron-down") {
     IconComponent = ChevronDown;
   }
 
-  if (variant == "chevron-up") {
+  if (variant === "chevron-up") {
     IconComponent = ChevronUp;
   }
 
-  if (variant == "target-05") {
+  if (variant === "target-05") {
     IconComponent = Target05;
   }
 
-  if (variant == "target-04") {
+  if (variant === "target-04") {
     IconComponent = Target04;
   }
 
-  if (variant == "stars-02") {
+  if (variant === "stars-02") {
     IconComponent = Star02;
   }
 
-  if (variant == "face-smile") {
+  if (variant === "face-smile") {
     IconComponent = FaceSmile;
   }
 
-  if (variant == "chevron-right") {
+  if (variant === "chevron-right") {
     IconComponent = ChevronRight;
   }
 
-  if (variant == "arrow-square-up-right") {
+  if (variant === "arrow-square-up-right") {
     IconComponent = ArrowSquareUpRight;
   }
 
-  if (variant == "copy-01") {
+  if (variant === "copy-01") {
     IconComponent = Copy01;
   }
 
-  if (variant == "folder") {
+  if (variant === "folder") {
     IconComponent = Folder;
   }
 
-  if (variant == "edit-03") {
+  if (variant === "edit-03") {
     IconComponent = Edit03;
   }
 
-  if (variant == "database-01") {
+  if (variant === "database-01") {
     IconComponent = Database01;
   }
 
-  if (variant == "file-code-01") {
+  if (variant === "file-code-01") {
     IconComponent = FileCode01;
   }
 
-  if (variant == "book-closed") {
+  if (variant === "book-closed") {
     IconComponent = BookClosed;
   }
 
-  if (variant == "flag-06") {
+  if (variant === "flag-06") {
     IconComponent = Flag06;
   }
 
-  if (variant == "bank") {
+  if (variant === "bank") {
     IconComponent = Bank;
   }
 
-  if (variant == "glasses-02") {
+  if (variant === "glasses-02") {
     IconComponent = Glasses02;
   }
 
-  if (variant == "flag-06") {
+  if (variant === "flag-06") {
     IconComponent = Flag06;
   }
 

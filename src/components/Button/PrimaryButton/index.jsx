@@ -28,7 +28,7 @@ export const PrimaryButton = ({
     <StyledButton
       icon={icon}
       size={size}
-      disabled={disabled || state == 'disabled'}
+      disabled={disabled || state === 'disabled'}
       data-state={state}
       destructive={destructive}
       as={link ? 'a' : undefined}
