@@ -9,7 +9,7 @@ export const Card = ({ post }) => {
   return (
     <Container href={post.slug} target='_blank' rel='noreferrer'>
       <ImageContainer>
-        <Image src={`/${post.image}`} alt={post.title} fill />
+        <Image src={`/${post.image}`} alt={post.title} fill loading='lazy' />
       </ImageContainer>
 
       <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
