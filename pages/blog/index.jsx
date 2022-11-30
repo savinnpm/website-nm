@@ -2,8 +2,8 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { Home } from '../src/views/Home'
-import { services } from '../services'
+import { services } from '../../services'
+import { Blog } from '../../src/views/Blog'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'home'])
@@ -18,7 +18,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function HomePage (props) {
+export default function BlogPage (props) {
   return (
     <>
       <Head>
@@ -28,7 +28,7 @@ export default function HomePage (props) {
       </Head>
 
       <main>
-        <Home blogPosts={props.blogPosts} />
+        <Blog blogPosts={props.blogPosts} />
       </main>
     </>
   )

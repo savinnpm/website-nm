@@ -21,25 +21,19 @@ export const Video = ({ video }) => {
 }
 
 const Container = styled.button`
+  flex: 1;
+
   display: flex;
+  flex-direction: column;
   align-items: flex-start;
   text-align: left;
-  padding: 12px;
   gap: 24px;
-  border-radius: 8px;
-
-  :hover {
-    background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['800']};
-  }
 `
 
 const Thumbnail = styled.div`
-  width: 176px;
-  height: 104px;
-  flex-shrink: 0;
-  border-radius: 6px;
   overflow: hidden;
   position: relative;
+  height: 240px;
 
   img {
     width: 100%;
@@ -76,7 +70,7 @@ const Content = styled.div`
 const Title = styled.h3`
   color: ${props => props.theme.color};
 
-  ${typography.styles.textMd};
+  ${typography.styles.displayXs};
   ${typography.weights.semibold};
 `
 

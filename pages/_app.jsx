@@ -11,6 +11,7 @@ import { Header } from '../src/components/Header'
 import styled from 'styled-components'
 import { colors } from '../styles/colors'
 import { MobileNavContainer } from '../src/components/Nav'
+import { VideosProvider } from '../src/context/VideosContext'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -18,14 +19,16 @@ function MyApp ({ Component, pageProps }) {
   return (
     <TooltipProvider>
       <ThemeProvider>
-        <HeaderContainer>
-          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-        </HeaderContainer>
-        <MainContainer>
-          <MobileNavContainer isMenuOpen={isMenuOpen} />
-          <Component {...pageProps} />
-        </MainContainer>
-        <Footer />
+        <VideosProvider videos={pageProps.videos}>
+          <HeaderContainer>
+            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          </HeaderContainer>
+          <MainContainer>
+            <MobileNavContainer isMenuOpen={isMenuOpen} />
+            <Component {...pageProps} />
+          </MainContainer>
+          <Footer />
+        </VideosProvider>
       </ThemeProvider>
     </TooltipProvider>
   )

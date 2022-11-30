@@ -68,9 +68,7 @@ const TextContainer = styled.div`
 `
 
 const Subheading = styled.p`
-  color: ${(props) => props.theme.isLightMode
-      ? colors[primaryColorKey]['700']
-      : colors[primaryColorKey]['500']};
+  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};

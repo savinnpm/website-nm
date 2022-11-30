@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -7,6 +8,15 @@ import { Icon } from '../../Icon'
 export const DesktopNavMenuItemLink = ({ item }) => {
   const { t } = useTranslation('common')
 
+  if (item.isExternal) {
+    return (
+      <Container as='a' href={item.href} target='_blank' rel='noopener noreferrer'>
+        {item.icon && <Icon size={24} variant={item.icon} />}
+        {t(item.title)}
+      </Container>
+    )
+  }
+
   return (
     <Container href={item.href}>
       {item.icon && <Icon size={24} variant={item.icon} />}
@@ -15,7 +25,7 @@ export const DesktopNavMenuItemLink = ({ item }) => {
   )
 }
 
-const Container = styled.a`
+const Container = styled(Link)`
   display: flex;
   align-items: center;
   margin-top: -12px;

@@ -2,21 +2,23 @@ import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { useVideosContext } from '../../../context/VideosContext'
 import { Icon } from '../../Icon'
 import { DesktopNavMenuItemLink } from './Link'
 import { Video } from './Video'
 
 export const Section = ({ section }) => {
   const { t } = useTranslation('common')
+  const videos = useVideosContext()
 
   if (!section.links) {
     return (
       <div>
         <Title>{t(section.title)}</Title>
 
-        {section.videos && (
+        {videos && (
           <Content>
-            {section.videos.map((video, idx) => {
+            {videos.map((video, idx) => {
               return <Video key={idx} video={video} />
             })}
           </Content>

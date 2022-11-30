@@ -1,15 +1,16 @@
 export const data = [
   {
     title: 'HOME',
-    href: '#'
+    href: '/'
   },
   {
     title: 'BLOG',
-    href: '#'
+    href: '/blog'
   },
   {
     title: 'CAREERS',
-    href: '#'
+    href: '/careers',
+    isExternal: true
   },
   {
     title: 'RESOURCES',
