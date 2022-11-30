@@ -8,8 +8,8 @@ export const DesktopNavMenuItemLink = ({ item }) => {
     <Container href={item.href}>
       {item.icon && <Icon size={24} variant={item.icon} />}
       <div>
-        <h3>{item.title}</h3>
-        <p>{item.description}</p>
+        <Title>{item.title}</Title>
+        <Description>{item.description}</Description>
       </div>
     </Container>
   )
@@ -20,10 +20,7 @@ const Container = styled.a`
   align-items: flex-start;
   padding: 12px 16px;
   gap: 16px;
-  color: ${props => props.theme.color};
-
-  ${typography.styles.textMd};
-  ${typography.weights.semibold};
+  border-radius: 8px;
 
   :hover {
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
@@ -32,4 +29,19 @@ const Container = styled.a`
   svg {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
   }
+`
+
+const Title = styled.h3`
+  color: ${props => props.theme.color};
+
+  ${typography.styles.textMd};
+  ${typography.weights.semibold};
+`
+
+const Description = styled.p`
+  margin-top: 4px;
+  color: ${props => props.theme.secondaryColor};
+
+  ${typography.styles.textSm};
+  ${typography.weights.regular};
 `

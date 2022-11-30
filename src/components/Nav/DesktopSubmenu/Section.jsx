@@ -9,7 +9,7 @@ export const Section = ({ section }) => {
       <div>
         <Title>{section.title}</Title>
         <Content>
-          hello
+          Youtube videos
         </Content>
       </div>
     )
