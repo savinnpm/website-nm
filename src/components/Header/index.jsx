@@ -7,7 +7,7 @@ import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import Link from 'next/link'
 import { NavMenuButton } from '../Nav/NavMenuButton'
-import { DesktopNavMenuItem } from '../Nav/DesktopNavMenuItem'
+import { DesktopNavMenu } from '../Nav/DesktopNavMenu'
 
 export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
   const theme = useTheme()
@@ -19,9 +19,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
           <LogoContainer href='/'>
             {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
           </LogoContainer>
-          <NavLinksContainer>
-            <DesktopNavMenuItem />
-          </NavLinksContainer>
+          <DesktopNavMenu />
         </LeftContainer>
 
         <Actions>
@@ -60,15 +58,6 @@ const LogoContainer = styled(Link)`
 const LeftContainer = styled.div`
   display: flex;
   gap: 40px;
-`
-
-const NavLinksContainer = styled.div`
-  display: flex;
-  gap: 32px;
-
-  @media (max-width: 768px) {
-  display: none; 
-  }
 `
 
 const Actions = styled.div`
