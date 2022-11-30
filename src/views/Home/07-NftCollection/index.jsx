@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -31,7 +32,7 @@ export const NftCollection = () => {
         </TextAndCta>
 
         <ImageContainer>
-          <img src='/assets/images/nft/promo.png' alt='nft collection' />
+          <Image src='/assets/images/nft/promo.png' alt='nft collection' fill />
         </ImageContainer>
       </InnerContainer>
     </Container>
@@ -107,6 +108,7 @@ const SupportingText = styled.p`
 `
 
 const ImageContainer = styled.div`
+  position: relative;
   margin-top: 64px;
   height: 480px;
   border-radius: 16px;
@@ -117,9 +119,6 @@ const ImageContainer = styled.div`
   }
 
   img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
   }
 `

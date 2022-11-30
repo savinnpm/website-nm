@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -7,7 +8,11 @@ export const Video = ({ video }) => {
   return (
     <Container href={video.href}>
       <Thumbnail>
-        <img src={video.thumbnail} alt={video.title} />
+        <Image
+          src={video.thumbnail}
+          alt={video.title}
+          fill
+        />
         <Overlay>
           <PlayIcon />
         </Overlay>

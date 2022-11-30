@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -8,7 +9,7 @@ export const Card = ({ post }) => {
   return (
     <Container href={post.slug} target='_blank' rel='noreferrer'>
       <ImageContainer>
-        <img src={`/${post.image}`} alt={post.title} />
+        <Image src={`/${post.image}`} alt={post.title} fill />
       </ImageContainer>
 
       <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
@@ -31,13 +32,11 @@ const Container = styled.a`
 `
 
 const ImageContainer = styled.div`
+  position: relative;
   height: 240px;
 
   img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
   }
 `
 

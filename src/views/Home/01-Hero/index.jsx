@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
@@ -33,7 +34,7 @@ export const Hero = () => {
       </TextAndCta>
 
       <ImageContainer>
-        <img src='/assets/images/hero/cover.png' alt='Neptune' />
+        <Image src='/assets/images/hero/cover.png' alt='Neptune' fill />
       </ImageContainer>
     </Container>
   )
@@ -108,11 +109,9 @@ const ImageContainer = styled.div`
   @media (max-width: 768px) {
     height: 240px;
   }
+  position: relative;
 
   img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
-    display: block;
   }
 `
