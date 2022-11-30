@@ -1,42 +1,42 @@
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
-import { colors, primaryColorKey } from "../../../../styles/colors";
-import { typography } from "../../../../styles/typography";
-import { utils } from "../../../../styles/utils";
-import { Button } from "../../../components/Button";
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+import { colors, primaryColorKey } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { Button } from '../../../components/Button'
 
 export const NftCollection = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
 
   return (
     <Container>
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Subheading>{t("COMING_SOON")}</Subheading>
-            <Heading>{t("NFT_SERIES")}</Heading>
-            <SupportingText>{t("NFT_SERIES_DESC")}</SupportingText>
+            <Subheading>{t('COMING_SOON')}</Subheading>
+            <Heading>{t('NFT_SERIES')}</Heading>
+            <SupportingText>{t('NFT_SERIES_DESC')}</SupportingText>
           </TextContainer>
 
           <Button
-            href="#"
+            href='#'
             link
-            hierarchy="primary"
-            size="xl"
+            hierarchy='primary'
+            size='xl'
             iconTrailing
-            iconVariant={"discord"}
+            iconVariant='discord'
           >
-            {t("JOIN_DISCORD")}
+            {t('JOIN_DISCORD')}
           </Button>
         </TextAndCta>
 
         <ImageContainer>
-          <img src={`/assets/images/nft/promo.png`} alt="nft collection" />
+          <img src='/assets/images/nft/promo.png' alt='nft collection' />
         </ImageContainer>
       </InnerContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   padding-top: 120px;
@@ -50,27 +50,26 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
-`;
+`
 
 const TextAndCta = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 48px;
-`;
+`
 
 const TextContainer = styled.div`
   text-align: center;
   max-width: 1000px;
   margin-left: auto;
   margin-right: auto;
-`;
+`
 
 const Subheading = styled.p`
-  color: ${(props) =>
-    props.theme.isLightMode
-      ? colors[primaryColorKey]["700"]
-      : colors[primaryColorKey]["500"]};
+  color: ${(props) => props.theme.isLightMode
+      ? colors[primaryColorKey]['700']
+      : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
@@ -78,7 +77,7 @@ const Subheading = styled.p`
   @media (max-width: 768px) {
     ${typography.styles.textSm};
   }
-`;
+`
 
 const Heading = styled.h2`
   margin-top: 12px;
@@ -91,7 +90,7 @@ const Heading = styled.h2`
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
   }
-`;
+`
 
 const SupportingText = styled.p`
   margin-top: 20px;
@@ -105,7 +104,7 @@ const SupportingText = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
-`;
+`
 
 const ImageContainer = styled.div`
   margin-top: 64px;
@@ -123,4 +122,4 @@ const ImageContainer = styled.div`
     object-fit: cover;
     display: block;
   }
-`;
+`

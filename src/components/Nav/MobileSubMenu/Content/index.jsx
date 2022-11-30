@@ -1,14 +1,14 @@
-import styled from "styled-components"
-import { Section } from "./Section"
+import styled from 'styled-components'
+import { Section } from './Section'
 
-export const Content = ({item}) => {
+export const Content = ({ item }) => {
   return (
     <Container>
-      {item.children.map((child,idx) => {
-        if (child.type=='section') {
-          return <Section key={idx} section={child}/>
+      {item.children.map((child, idx) => {
+        if (child.type == 'section') {
+          return <Section key={idx} section={child} />
         }
-  
+
         return null
       })}
     </Container>

@@ -1,24 +1,24 @@
-import { useEffect } from "react";
-import { useLocalStorage } from "./useLocalStorage";
-import { usePrefersDarkMode } from "./usePrefersDarkMode";
+import { useEffect } from 'react'
+import { useLocalStorage } from './useLocalStorage'
+import { usePrefersDarkMode } from './usePrefersDarkMode'
 
 export const useDarkMode = () => {
-  const [enabledState, setEnabledState] = useLocalStorage("dark-mode-enabled", undefined);
+  const [enabledState, setEnabledState] = useLocalStorage('dark-mode-enabled', undefined)
 
-  const prefersDarkMode = usePrefersDarkMode();
+  const prefersDarkMode = usePrefersDarkMode()
 
   const enabled =
-    typeof enabledState !== "undefined" ? enabledState : prefersDarkMode;
+    typeof enabledState !== 'undefined' ? enabledState : prefersDarkMode
 
   useEffect(() => {
-    const className = "dark-mode";
-    const element = window.document.body;
+    const className = 'dark-mode'
+    const element = window.document.body
     if (enabled) {
-      element.classList.add(className);
+      element.classList.add(className)
     } else {
-      element.classList.remove(className);
+      element.classList.remove(className)
     }
-  }, [enabled]);
+  }, [enabled])
 
-  return [enabled, setEnabledState];
-};
+  return [enabled, setEnabledState]
+}

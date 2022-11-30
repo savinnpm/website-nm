@@ -1,20 +1,20 @@
 export const features = [
   {
-    icon: "code-square-one",
-    title: "WRITE_LESS_CODE",
-    content: "WRITE_LESS_CODE_DESC",
+    icon: 'code-square-one',
+    title: 'WRITE_LESS_CODE',
+    content: 'WRITE_LESS_CODE_DESC'
   },
   {
-    icon: "bell-02",
-    title: "USE_ANYWHERE",
-    content: "USE_ANYWHERE_DESC",
+    icon: 'bell-02',
+    title: 'USE_ANYWHERE',
+    content: 'USE_ANYWHERE_DESC'
   },
   {
-    icon: "chart-breakout-square",
-    title: "ATTRACT_LIQUIDITY",
-    content: "ATTRACT_LIQUIDITY_DESC",
-  },
-];
+    icon: 'chart-breakout-square',
+    title: 'ATTRACT_LIQUIDITY',
+    content: 'ATTRACT_LIQUIDITY_DESC'
+  }
+]
 
 export const codeSnippet = `import { ChainId, liquidity } from '@neptunemutual/sdk'
 
@@ -38,4 +38,4 @@ const add = async () => {
   }
 }
 *******************************************************************/
-`;
+`

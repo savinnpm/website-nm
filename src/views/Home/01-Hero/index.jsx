@@ -1,41 +1,41 @@
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
-import { colors } from "../../../../styles/colors";
-import { typography } from "../../../../styles/typography";
-import { utils } from "../../../../styles/utils";
-import { Button } from "../../../components/Button";
-import { Announcement } from "./Announcement";
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { Button } from '../../../components/Button'
+import { Announcement } from './Announcement'
 
 export const Hero = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
 
   return (
     <Container>
       <TextAndCta>
         <Announcement />
 
-        <Heading>{t("HERO_TITLE")}</Heading>
+        <Heading>{t('HERO_TITLE')}</Heading>
 
-        <Subtitle>{t("HERO_DESCRIPTION")}</Subtitle>
+        <Subtitle>{t('HERO_DESCRIPTION')}</Subtitle>
 
         <ButtonContainer>
           <Button
-            href="#"
+            href='#'
             link
-            hierarchy="primary"
-            size="2xl"
+            hierarchy='primary'
+            size='2xl'
             iconTrailing
-            iconVariant={"arrow-narrow-right"}
+            iconVariant='arrow-narrow-right'
           >
-            {t("LAUNCH APP")}
+            {t('LAUNCH APP')}
           </Button>
         </ButtonContainer>
       </TextAndCta>
 
-        <ImageContainer>
-          <img src="/assets/images/hero/cover.png" alt="Neptune" />
-        </ImageContainer>
-      </Container>
+      <ImageContainer>
+        <img src='/assets/images/hero/cover.png' alt='Neptune' />
+      </ImageContainer>
+    </Container>
   )
 }
 
@@ -55,11 +55,11 @@ const Container = styled.div`
     flex-direction: column;
     align-items: stretch;
   }
-`;
+`
 
 const TextAndCta = styled.div`
   flex: 1;
-`;
+`
 
 const Heading = styled.h1`
   margin-top: 16px;
@@ -70,7 +70,7 @@ const Heading = styled.h1`
     ${typography.styles.displayMd};
     ${typography.weights.semibold};
   }
-`;
+`
 
 const Subtitle = styled.p`
   margin-top: 24px;
@@ -83,7 +83,7 @@ const Subtitle = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
-`;
+`
 
 const ButtonContainer = styled.div`
   margin-top: 48px;
@@ -93,14 +93,14 @@ const ButtonContainer = styled.div`
     margin-top: 32px;
     display: block;
   }
-`;
+`
 
 const ImageContainer = styled.div`
   flex: 1;
   height: 560px;
   max-width: 100%;
   border: 1px solid
-    ${(props) => (props.theme.isLightMode ? colors.white : colors.gray["600"])};
+    ${(props) => (props.theme.isLightMode ? colors.white : colors.gray['600'])};
   filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.25));
   border-radius: 16px;
   overflow: hidden;
@@ -115,4 +115,4 @@ const ImageContainer = styled.div`
     object-fit: cover;
     display: block;
   }
-`;
+`

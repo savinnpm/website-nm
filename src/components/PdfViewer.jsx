@@ -1,10 +1,10 @@
-import styled from "styled-components"
-import { colors } from "../../styles/colors"
+import styled from 'styled-components'
+import { colors } from '../../styles/colors'
 
-export const PdfViewer = ({url}) => {
+export const PdfViewer = ({ url }) => {
   return (
     <Container>
-      <StyledPdfEmbed src={`${url}#view=FitH&toolbar=0&toolbar=0&navpanes=0&scrollbar=0`} width="100%"/>
+      <StyledPdfEmbed src={`${url}#view=FitH&toolbar=0&toolbar=0&navpanes=0&scrollbar=0`} width='100%' />
     </Container>
   )
 }

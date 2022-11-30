@@ -1,14 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 import {
   Prism as SyntaxHighlighter,
-  createElement,
-} from "react-syntax-highlighter";
+  createElement
+} from 'react-syntax-highlighter'
 import {
   dracula as atomDark,
-  a11yLight,
-} from "react-syntax-highlighter/dist/cjs/styles/prism";
-import { colors } from "../../../../styles/colors";
+  a11yLight
+} from 'react-syntax-highlighter/dist/cjs/styles/prism'
+import { colors } from '../../../../styles/colors'
 
 import '@fontsource/roboto-mono/latin.css'
 
@@ -16,37 +16,37 @@ export const CodeSnippet = ({ text, theme }) => {
   return (
     <Container>
       <SyntaxHighlighter
-        style={theme === "light" ? a11yLight : atomDark}
-        language="javascript"
-        showLineNumbers={true}
+        style={theme === 'light' ? a11yLight : atomDark}
+        language='javascript'
+        showLineNumbers
         customStyle={{
-          background: "transparent",
-          padding: "0px",
+          background: 'transparent',
+          padding: '0px',
           paddingRight: 24,
-          margin: 0,
+          margin: 0
         }}
         lineNumberStyle={{
           padding: 0,
-          textAlign: "center",
+          textAlign: 'center'
         }}
         renderer={({ rows, stylesheet, useInlineStyles }) => {
           return rows.map((node, i) => (
-            <div className="code-line" key={i}>
+            <div className='code-line' key={i}>
               {createElement({
                 node,
                 stylesheet,
                 useInlineStyles,
-                key: `code-segement${i}`,
+                key: `code-segement${i}`
               })}
             </div>
-          ));
+          ))
         }}
       >
         {text}
       </SyntaxHighlighter>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   border-radius: 12px;
@@ -89,4 +89,4 @@ const Container = styled.div`
     font-family: 'Roboto Mono', monospace !important;
     font-weight: 500 !important;
   }
-`;
+`

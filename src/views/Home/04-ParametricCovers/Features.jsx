@@ -1,13 +1,13 @@
 import { Tab } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
-import styled from "styled-components"
+import styled from 'styled-components'
 
-import { colors, primaryColorKey } from "../../../../styles/colors"
-import { features } from "./data"
-import { FeatureTabContent } from "./FeatureTabContent"
+import { colors, primaryColorKey } from '../../../../styles/colors'
+import { features } from './data'
+import { FeatureTabContent } from './FeatureTabContent'
 
 export const Features = () => {
-  const { t } = useTranslation("home")
+  const { t } = useTranslation('home')
 
   return (
     <Container>
@@ -54,7 +54,7 @@ const StyledTabsList = styled(Tab.List)`
   justify-content: center;
 `
 
-const StyledTab= styled(Tab)`
+const StyledTab = styled(Tab)`
   padding-top: 16px;
   padding-bottom: 16px;
   padding-left: 24px;

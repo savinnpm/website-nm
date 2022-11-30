@@ -1,27 +1,27 @@
-import { Hero } from "./01-Hero"
-import { SecuringApps } from "./02-SecuringApps";
-import { WhatsNew } from "./03-WhatsNew";
-import { ParametricCovers } from "./04-ParametricCovers";
-import { LetsBuidl } from "./05-LetsBuidl";
-import { Partners } from "./06-Partners";
-import { NftCollection } from "./07-NftCollection";
+import { Hero } from './01-Hero'
+import { SecuringApps } from './02-SecuringApps'
+import { WhatsNew } from './03-WhatsNew'
+import { ParametricCovers } from './04-ParametricCovers'
+import { LetsBuidl } from './05-LetsBuidl'
+import { Partners } from './06-Partners'
+import { NftCollection } from './07-NftCollection'
 
-export const Home = ({blogPosts}) => {
+export const Home = ({ blogPosts }) => {
   return (
     <>
       <Hero />
 
-      <SecuringApps/>
+      <SecuringApps />
 
-      <WhatsNew blogPosts={blogPosts}/>
+      <WhatsNew blogPosts={blogPosts} />
 
-      <ParametricCovers/>
+      <ParametricCovers />
 
-      <LetsBuidl/>
+      <LetsBuidl />
 
-      <Partners/>
+      <Partners />
 
-      <NftCollection/>      
+      <NftCollection />
     </>
   )
 }

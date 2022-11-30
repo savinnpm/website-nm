@@ -1,38 +1,37 @@
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
-import { colors } from "../../../../styles/colors";
-import { typography } from "../../../../styles/typography";
-import { utils } from "../../../../styles/utils";
-import { Button } from "../../../components/Button";
-import { Carousel } from "./Carousel";
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { Button } from '../../../components/Button'
+import { Carousel } from './Carousel'
 
 export const WhatsNew = ({ blogPosts }) => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
   return (
     <Container>
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Heading>{t("WHATS_NEW")}</Heading>
-            <SupportingText>{t("WHATS_NEW_SUBTEXT")}</SupportingText>
+            <Heading>{t('WHATS_NEW')}</Heading>
+            <SupportingText>{t('WHATS_NEW_SUBTEXT')}</SupportingText>
           </TextContainer>
 
           <Button
-            href="https://blog.neptunemutual.com/"
-            target="_blank"
+            href='https://blog.neptunemutual.com/'
+            target='_blank'
             link
-            hierarchy="primary"
-            size="xl"
+            hierarchy='primary'
+            size='xl'
           >
-            {t("VIEW_ALL")}
+            {t('VIEW_ALL')}
           </Button>
         </TextAndCta>
 
-        <Carousel posts={blogPosts}></Carousel>
+        <Carousel posts={blogPosts} />
       </InnerContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   padding-top: 96px;
@@ -42,11 +41,11 @@ const Container = styled.div`
     padding-top: 64px;
     padding-bottom: 64px;
   }
-`;
+`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
-`;
+`
 
 const TextAndCta = styled.div`
   display: flex;
@@ -58,11 +57,11 @@ const TextAndCta = styled.div`
     flex-direction: column;
     align-items: stretch;
   }
-`;
+`
 
 const TextContainer = styled.div`
   max-width: 768px;
-`;
+`
 
 const Heading = styled.h2`
   color: ${(props) => props.theme.color};
@@ -74,7 +73,7 @@ const Heading = styled.h2`
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
   }
-`;
+`
 
 const SupportingText = styled.p`
   margin-top: 20px;
@@ -88,4 +87,4 @@ const SupportingText = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
-`;
+`

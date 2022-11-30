@@ -1,16 +1,16 @@
-import React from "react"
-import styled from "styled-components"
-import { colors} from "../../../../styles/colors"
-import { typography } from "../../../../styles/typography"
-import { FeaturedIcon } from "../../../components/FeaturedIcon"
+import React from 'react'
+import styled from 'styled-components'
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { FeaturedIcon } from '../../../components/FeaturedIcon'
 
-export const FeatureTabContent = ({icon, title, text}) => {
+export const FeatureTabContent = ({ icon, title, text }) => {
   return (
-    <React.Fragment>
-      <FeaturedIcon variant={icon} size="sm"/>
+    <>
+      <FeaturedIcon variant={icon} size='sm' />
       <Heading>{title}</Heading>
       <Content>{text}</Content>
-    </React.Fragment>
+    </>
   )
 }
 

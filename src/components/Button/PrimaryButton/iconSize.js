@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components'
 
 const getIconSizeLg = (icon, size) => {
   if (icon == 'default') {
@@ -10,7 +10,7 @@ const getIconSizeLg = (icon, size) => {
   }
 
   return 10
-};
+}
 
 const getIconSizeMd = (icon, size) => {
   if (icon == 'default') {
@@ -22,7 +22,7 @@ const getIconSizeMd = (icon, size) => {
   }
 
   return 10
-};
+}
 
 export const iconSize = css`
   svg {

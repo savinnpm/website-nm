@@ -1,14 +1,12 @@
-import { MobileSubMenu } from "../MobileSubMenu"
-import { NavMenuItemLink } from "./Link"
+import { MobileSubMenu } from '../MobileSubMenu'
+import { NavMenuItemLink } from './Link'
 
-export const NavMenuItem = ({item}) => {
+export const NavMenuItem = ({ item }) => {
   if (item.href) {
-    return <NavMenuItemLink item={item}/>
+    return <NavMenuItemLink item={item} />
   }
-  
+
   return (
-    <MobileSubMenu item={item}/>
+    <MobileSubMenu item={item} />
   )
 }
-
-

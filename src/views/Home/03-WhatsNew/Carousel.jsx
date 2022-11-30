@@ -6,18 +6,18 @@ import { colors } from '../../../../styles/colors'
 import { Icon } from '../../../components/Icon'
 import { Card } from './Card'
 
-function NextArrow(props) {
+function NextArrow (props) {
   return (
     <ArrowContainer {...props}>
-      <Icon size={24} variant="arrow-right" />
+      <Icon size={24} variant='arrow-right' />
     </ArrowContainer>
   )
 }
 
-function PrevArrow(props) {
+function PrevArrow (props) {
   return (
     <ArrowContainer {...props}>
-      <Icon size={24} variant="arrow-left" />
+      <Icon size={24} variant='arrow-left' />
     </ArrowContainer>
   )
 }
@@ -50,13 +50,13 @@ export const Carousel = ({ posts = [] }) => {
       {
         breakpoint: 1365,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 2
         }
       },
       {
         breakpoint: 767,
         settings: {
-          slidesToShow: 1,
+          slidesToShow: 1
         }
       }
     ],
@@ -81,8 +81,8 @@ export const Carousel = ({ posts = [] }) => {
       </Slider>
 
       <Arrows>
-        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex == 0}></PrevArrow>
-        <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast}></NextArrow>
+        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex == 0} />
+        <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
       </Arrows>
 
     </Container>

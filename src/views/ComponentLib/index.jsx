@@ -1,72 +1,72 @@
-import styled from "styled-components"
-import { Button } from "../../components/Button"
+import styled from 'styled-components'
+import { Button } from '../../components/Button'
 
 export const ComponentLib = () => {
   return (
     <>
       <ButtonsGrid>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='sm' iconLeading iconTrailing iconVariant={'arrow-right'}>Test</Button>
+          <Button hierarchy='primary' size='sm' iconLeading iconTrailing iconVariant='arrow-right'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='md' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='md' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='lg' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='lg' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='xl' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='xl' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='2xl' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
-        </ButtonsGridItem>
-
-        <ButtonsGridItem>
-          <Button hierarchy='primary' size='sm' state='hover' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
-        </ButtonsGridItem>
-        <ButtonsGridItem>
-          <Button hierarchy='primary' size='md' state='hover' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
-        </ButtonsGridItem>
-        <ButtonsGridItem>
-          <Button hierarchy='primary' size='lg' state='hover' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
-        </ButtonsGridItem>
-        <ButtonsGridItem>
-          <Button hierarchy='primary' size='xl' state='hover' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
-        </ButtonsGridItem>
-        <ButtonsGridItem>
-          <Button hierarchy='primary' size='2xl' state='hover' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='2xl' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
 
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='sm' state='focussed' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='sm' state='hover' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='md' state='focussed' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='md' state='hover' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='lg' state='focussed' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='lg' state='hover' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='xl' state='focussed' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='xl' state='hover' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='2xl' state='focussed' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='2xl' state='hover' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
 
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='sm' state='disabled' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='sm' state='focussed' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='md' state='disabled' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='md' state='focussed' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='lg' state='disabled' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='lg' state='focussed' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='xl' state='disabled' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='xl' state='focussed' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>
-          <Button hierarchy='primary' size='2xl' state='disabled' iconLeading iconTrailing iconVariant={'placeholder'}>Test</Button>
+          <Button hierarchy='primary' size='2xl' state='focussed' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+
+        <ButtonsGridItem>
+          <Button hierarchy='primary' size='sm' state='disabled' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='primary' size='md' state='disabled' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='primary' size='lg' state='disabled' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='primary' size='xl' state='disabled' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='primary' size='2xl' state='disabled' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
         </ButtonsGridItem>
       </ButtonsGrid>
 

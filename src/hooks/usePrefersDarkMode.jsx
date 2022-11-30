@@ -1,5 +1,5 @@
-import { useMediaQuery } from "./useMediaQuery";
+import { useMediaQuery } from './useMediaQuery'
 
 export const usePrefersDarkMode = () => {
-  return useMediaQuery("(prefers-color-scheme: dark)");
-};
+  return useMediaQuery('(prefers-color-scheme: dark)')
+}

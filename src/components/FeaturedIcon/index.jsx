@@ -1,7 +1,7 @@
-import styled from "styled-components"
-import { colors, primaryColorKey } from "../../../styles/colors"
-import { Icon } from "../Icon"
-import { size } from "./size"
+import styled from 'styled-components'
+import { colors, primaryColorKey } from '../../../styles/colors'
+import { Icon } from '../Icon'
+import { size } from './size'
 
 export const FeaturedIcon = ({ variant, size }) => {
   return (
@@ -10,7 +10,6 @@ export const FeaturedIcon = ({ variant, size }) => {
     </IconContainer>
   )
 }
-
 
 const IconContainer = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import { PrimaryButton } from "./PrimaryButton";
+import { PrimaryButton } from './PrimaryButton'
 
 export const Button = ({
   size,
@@ -14,7 +14,7 @@ export const Button = ({
   link = false,
   ...rest
 }) => {
-  if (hierarchy == "primary") {
+  if (hierarchy == 'primary') {
     return (
       <PrimaryButton
         size={size}
@@ -30,8 +30,8 @@ export const Button = ({
       >
         {children}
       </PrimaryButton>
-    );
+    )
   }
 
-  return null;
-};
+  return null
+}

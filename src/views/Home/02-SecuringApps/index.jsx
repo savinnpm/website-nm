@@ -1,18 +1,18 @@
-import { useTranslation } from "react-i18next";
-import styled from "styled-components";
-import { colors } from "../../../../styles/colors";
-import { typography } from "../../../../styles/typography";
-import { utils } from "../../../../styles/utils";
-import { data } from "./data";
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { data } from './data'
 
 export const SecuringApps = () => {
-  const { t } = useTranslation("home");
+  const { t } = useTranslation('home')
 
   return (
     <Container>
       <InnerContainer>
         <ContentContainer>
-          <Heading>{t("SECURING_APPS_TITLE")}</Heading>
+          <Heading>{t('SECURING_APPS_TITLE')}</Heading>
           <CoversContainer>
             {data.map((app) => {
               return (
@@ -20,14 +20,14 @@ export const SecuringApps = () => {
                   <AppImg src={app.src} alt={app.name} />
                   <AppName>{app.name}</AppName>
                 </AppContainer>
-              );
+              )
             })}
           </CoversContainer>
         </ContentContainer>
       </InnerContainer>
     </Container>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   padding-top: 96px;
@@ -37,7 +37,7 @@ const Container = styled.div`
     padding-top: 64px;
     padding-bottom: 64px;
   }
-`;
+`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
@@ -46,11 +46,10 @@ const InnerContainer = styled.div`
     padding-left: 0;
     padding-right: 0;
   }
-`;
+`
 
 const ContentContainer = styled.div`
-  background-color: ${(props) =>
-    props.theme.isLightMode ? colors.gray["50"] : colors.gray["700"]};
+  background-color: ${(props) => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
   padding: 64px;
   border-radius: 16px;
 
@@ -58,7 +57,7 @@ const ContentContainer = styled.div`
     padding: 48px 24px;
     border-radius: 0;
   }
-`;
+`
 
 const Heading = styled.p`
   color: ${(props) => props.theme.secondaryColor};
@@ -71,7 +70,7 @@ const Heading = styled.p`
     ${typography.styles.textMd};
     ${typography.weights.medium};
   }
-`;
+`
 
 const CoversContainer = styled.div`
   margin-top: 32px;
@@ -85,22 +84,22 @@ const CoversContainer = styled.div`
   @media (max-width: 768px) {
     gap: 16px;
   }
-`;
+`
 
 const AppContainer = styled.div`
   display: flex;
   align-items: center;
   padding: 12px 16px;
   gap: 8px;
-`;
+`
 
 const AppImg = styled.img`
   height: 32px;
-`;
+`
 
 const AppName = styled.p`
   color: ${(props) => props.theme.color};
 
   ${typography.styles.textXl};
   ${typography.weights.bold};
-`;
+`
