@@ -8,7 +8,7 @@ import { Icon } from '../../Icon'
 import { Content } from './Content'
 
 export const MobileSubMenu = ({ item }) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation('common')
 
   return (
     <Disclosure>

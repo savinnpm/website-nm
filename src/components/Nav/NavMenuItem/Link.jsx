@@ -5,7 +5,7 @@ import { typography } from '../../../../styles/typography'
 import { Icon } from '../../Icon'
 
 export const NavMenuItemLink = ({ item }) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation('common')
 
   return (
     <Container href={item.href}>

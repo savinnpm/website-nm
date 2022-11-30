@@ -10,7 +10,7 @@ export const PdfViewer = ({ url }) => {
 }
 
 const Container = styled.div`
-  background-color: ${props => colors.gray['600']};
+  background-color: ${colors.gray['600']};
   padding-top: 96px;
   padding-bottom: 96px;
 

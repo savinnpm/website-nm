@@ -5,7 +5,7 @@ import { typography } from '../../../../../styles/typography'
 import { NavMenuItemLink } from '../../NavMenuItem/Link'
 
 export const Section = ({ section }) => {
-  const { t } = useTranslation("common")
+  const { t } = useTranslation('common')
 
   if (!section.links) {
     return null

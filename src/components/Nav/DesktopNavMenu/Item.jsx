@@ -8,7 +8,7 @@ import { DesktopSubmenu } from '../DesktopSubmenu'
 import { DesktopNavMenuItemLink } from './Link'
 
 export const DesktopNavMenuItem = ({ item }) => {
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common')
 
   if (item.href) {
     return <DesktopNavMenuItemLink item={item} />
