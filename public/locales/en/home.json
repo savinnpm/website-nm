@@ -17,5 +17,15 @@
   "POWERED_BY_YOU": "Powered by You, Trusted by Industry Leaders",
   "NFT_SERIES": "NFT Series Collection",
   "NFT_SERIES_DESC": "We are developing an amazing collection of NFTs for our community. You can expect both tradeable and soulbound versions, some of which may have an economic benefit and utility within the marketplace. Be sure to join our Discord community to keep up to date with our NFT news.",
-  "JOIN_DISCORD": "Join Our Discord"
+  "JOIN_DISCORD": "Join Our Discord",
+  "DEDICATED_COVERS": "Dedicated Covers",
+  "DEDICATED_COVERS_DESC": "Created by projects, for their communities. These are tailor made cover policies designed to protect a specific community from security risk.",
+  "DIVERSIFIED_COVERS": "Diversified Covers",
+  "DIVERSIFIED_COVERS_DESC": "Created to enable liquidity providers to diversify the risk of their capital across a portfolio of projects.  This enables the Neptune Mutual marketplace to offer cover policies to a wider variety of projects in DeFi, CeFi and Metaverse.",
+  "WRITE_LESS_CODE": "Write Less Code",
+  "WRITE_LESS_CODE_DESC": "Write less code and plug in your own Web3 provider. Get complete access to all DeFi cover features.",
+  "USE_ANYWHERE": "Use Anywhere",
+  "USE_ANYWHERE_DESC": "Built on Typescript, the Cover SDK works on both frontend and backend environments, on any framework.",
+  "ATTRACT_LIQUIDITY": "Attract Liquidity",
+  "ATTRACT_LIQUIDITY_DESC": "With our support, you can get more visibility to bootstrap liquidity into your own DeFi cover pool."
 }
