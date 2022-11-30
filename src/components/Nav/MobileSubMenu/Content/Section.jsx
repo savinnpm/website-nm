@@ -1,16 +1,19 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
 import { NavMenuItemLink } from '../../NavMenuItem/Link'
 
 export const Section = ({ section }) => {
+  const { t } = useTranslation("common")
+
   if (!section.links) {
     return null
   }
 
   return (
     <div>
-      <Title>{section.title}</Title>
+      <Title>{t(section.title)}</Title>
       <Content>
         {section.links.map((link, idx) => {
           return (

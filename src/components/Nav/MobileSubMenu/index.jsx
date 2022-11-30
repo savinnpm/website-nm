@@ -1,4 +1,5 @@
 import { Disclosure } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
@@ -7,12 +8,14 @@ import { Icon } from '../../Icon'
 import { Content } from './Content'
 
 export const MobileSubMenu = ({ item }) => {
+  const { t } = useTranslation("common")
+
   return (
     <Disclosure>
       {({ open }) => (
         <Container>
           <SubmenuTriggerContainer>
-            <Title>{item.title}</Title>
+            <Title>{t(item.title)}</Title>
             <Icon size={20} variant={open ? 'chevron-up' : 'chevron-down'} />
           </SubmenuTriggerContainer>
           <Disclosure.Panel>

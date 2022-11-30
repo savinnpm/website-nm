@@ -1,4 +1,5 @@
 import { Popover } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -7,6 +8,8 @@ import { DesktopSubmenu } from '../DesktopSubmenu'
 import { DesktopNavMenuItemLink } from './Link'
 
 export const DesktopNavMenuItem = ({ item }) => {
+  const { t } = useTranslation("common");
+
   if (item.href) {
     return <DesktopNavMenuItemLink item={item} />
   }
@@ -17,7 +20,7 @@ export const DesktopNavMenuItem = ({ item }) => {
         /* Use the `open` state to conditionally change the direction of the chevron icon. */
         <>
           <Button>
-            {item.title}
+            {t(item.title)}
             <Icon size={20} variant={open ? 'chevron-up' : 'chevron-down'} />
           </Button>
           <Popover.Panel>
