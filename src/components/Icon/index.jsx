@@ -19,7 +19,7 @@ import {
   ChevronRight,
   ChevronUp,
 } from "./variants/Arrows";
-import { MoonStar, Sun } from "./variants/Weather";
+import { MoonStar, Stars02, Sun } from "./variants/Weather";
 import {
   Discord,
   Facebook,
@@ -193,7 +193,7 @@ export const Icon = ({ size, variant }) => {
   }
 
   if (variant === "stars-02") {
-    IconComponent = Star02;
+    IconComponent = Stars02;
   }
 
   if (variant === "face-smile") {
