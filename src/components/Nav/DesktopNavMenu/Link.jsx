@@ -20,6 +20,7 @@ const Container = styled.a`
   padding: 12px 16px;
   gap: 16px;
   color: ${props => props.theme.color};
+  border-radius: 8px;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
