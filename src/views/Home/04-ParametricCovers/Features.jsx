@@ -1,4 +1,5 @@
 import { Tab } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 import styled from "styled-components"
 
 import { colors, primaryColorKey } from "../../../../styles/colors"
@@ -6,6 +7,8 @@ import { features } from "./data"
 import { FeatureTabContent } from "./FeatureTabContent"
 
 export const Features = () => {
+  const { t } = useTranslation("home")
+
   return (
     <Container>
       <Tab.Group vertical>
@@ -13,7 +16,7 @@ export const Features = () => {
           {features.map(feature => {
             return (
               <StyledTab key={feature.id}>
-                <FeatureTabContent icon={feature.icon} title={feature.title} text={feature.text} />
+                <FeatureTabContent icon={feature.icon} title={t(feature.title)} text={t(feature.text)} />
               </StyledTab>
             )
           })}

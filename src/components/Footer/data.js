@@ -1,26 +1,26 @@
 export const nav = [
   {
-    title: 'Resources',
+    title: 'RESOURCES',
     links: [
-      { href: '/', text: 'Home', isExternal: false },
-      { href: '/security', text: 'Security', isExternal: false },
-      { href: '/test', text: 'Test', isExternal: false },
+      { href: '/', text: 'HOME', isExternal: false },
+      { href: '/security', text: 'SECURITY', isExternal: false },
+      { href: '/test', text: 'TEST', isExternal: false },
     ]
   },
   {
-    title: 'Company',
+    title: 'COMPANY',
     links: [
-      { href: 'https://angel.co/company/neptune-mutual', text: 'Careers', isExternal: true },
-      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'Contact', isExternal: true },
+      { href: 'https://angel.co/company/neptune-mutual', text: 'CAREERS', isExternal: true },
+      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true },
     ]
   },
   {
-    title: 'Disclosure',
+    title: 'DISCLOSURE',
     links: [
-      { href: 'https://docs.neptunemutual.com/usage/risk-factors', text: 'Risk Factors', isExternal: true },
-      { href: 'https://docs.neptunemutual.com/usage/terms-of-use', text: 'Terms of Service', isExternal: true },
-      { href: 'https://docs.neptunemutual.com/usage/privacy-policy', text: 'Privacy Policy', isExternal: true },
-      { href: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions', text: 'Standard Terms & Conditions', isExternal: true },
+      { href: 'https://docs.neptunemutual.com/usage/risk-factors', text: 'RISK_FACTORS', isExternal: true },
+      { href: 'https://docs.neptunemutual.com/usage/terms-of-use', text: 'TERMS_OF_SERVICE', isExternal: true },
+      { href: 'https://docs.neptunemutual.com/usage/privacy-policy', text: 'PRIVACY_POLICY', isExternal: true },
+      { href: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions', text: 'STANDARD_TERMS_&_CONDITIONS', isExternal: true },
     ]
   }
 ]

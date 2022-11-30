@@ -1,17 +1,20 @@
+import { useTranslation } from "react-i18next"
 import styled from "styled-components"
 import { typography } from "../../../../styles/typography"
 import { FeaturedIcon } from "../../../components/FeaturedIcon"
 import { features } from "./data"
 
 export const Features = () => {
+  const { t } = useTranslation("home");
+
   return (
     <Container>
       {features.map(feature => {
         return (
           <Feature key={feature.title}>
             <FeaturedIcon variant={feature.icon} size='lg'/>
-            <Title>{feature.title}</Title>
-            <Content>{feature.content}</Content>
+            <Title>{t(feature.title)}</Title>
+            <Content>{t(feature.content)}</Content>
           </Feature>
         )
       })}

@@ -1,27 +1,28 @@
-import styled from "styled-components"
-import { colors, primaryColorKey } from "../../../../styles/colors"
-import { typography } from "../../../../styles/typography"
-import { utils } from "../../../../styles/utils"
-import { Button } from "../../../components/Button"
-import { Features } from "./Features"
+import { useTranslation } from "react-i18next";
+import styled from "styled-components";
+import { colors, primaryColorKey } from "../../../../styles/colors";
+import { typography } from "../../../../styles/typography";
+import { utils } from "../../../../styles/utils";
+import { Button } from "../../../components/Button";
+import { Features } from "./Features";
 
 export const ParametricCovers = () => {
+  const { t } = useTranslation("home");
+
   return (
     <Container>
       <InnerContainer>
         <TextContainer>
-          <Subheading>Coming Soon</Subheading>
-          <Heading>Decentralized Parametric Covers</Heading>
-          <SupportingText>Neptune Mutual Protocol offers a couple of different flavors of decentralized parametric covers.</SupportingText>
+          <Subheading>{t("COMING_SOON")}</Subheading>
+          <Heading>{t("PARA_COVERS_TITLE")}</Heading>
+          <SupportingText>{t("PARA_COVERS_SUPPORT_TEXT")}</SupportingText>
         </TextContainer>
 
-        <Features>
-
-        </Features>
+        <Features></Features>
       </InnerContainer>
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.div`
   padding-top: 96px;
@@ -31,7 +32,7 @@ const Container = styled.div`
     padding-top: 64px;
     padding-bottom: 64px;
   }
-`
+`;
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
@@ -43,14 +44,17 @@ const InnerContainer = styled.div`
   @media (max-width: 768px) {
     gap: 48px;
   }
-`
+`;
 
 const TextContainer = styled.div`
   max-width: 768px;
-`
+`;
 
 const Subheading = styled.p`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${(props) =>
+    props.theme.isLightMode
+      ? colors[primaryColorKey]["700"]
+      : colors[primaryColorKey]["500"]};
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
@@ -58,12 +62,12 @@ const Subheading = styled.p`
   @media (max-width: 768px) {
     ${typography.styles.textSm};
   }
-`
+`;
 
 const Heading = styled.h2`
   margin-top: 12px;
-  color: ${props => props.theme.color};
-  
+  color: ${(props) => props.theme.color};
+
   ${typography.styles.displayMd};
   ${typography.weights.semibold};
 
@@ -71,11 +75,11 @@ const Heading = styled.h2`
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
   }
-`
+`;
 
 const SupportingText = styled.p`
   margin-top: 20px;
-  color: ${props => props.theme.secondaryColor};
+  color: ${(props) => props.theme.secondaryColor};
 
   ${typography.styles.textXl};
   ${typography.weights.regular};
@@ -85,5 +89,4 @@ const SupportingText = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
-`
-
+`;

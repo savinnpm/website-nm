@@ -1,39 +1,39 @@
 export const data = [
   {
-    title: 'Home',
+    title: 'HOME',
     href: '#'
   },
   {
-    title: 'Blog',
+    title: 'BLOG',
     href: '#'
   },
   {
-    title: 'Careers',
+    title: 'CAREERS',
     href: '#'
   },
   {
-    title: 'Resources',
+    title: 'RESOURCES',
     children: [
       {
         type: 'section',
-        title: 'Resources',
+        title: 'RESOURCES',
         links: [
-          { title: 'Explore Marketplace', href: '#', description: 'Explore the marketplace, purchase policies, and pool liquidity', icon: 'bank' },
-          { title: 'Blog and Press Room', href: '#', description: 'Visit our blog and press room', icon: 'edit-03' },
-          { title: 'Ecosystem', href: '#', description: 'Learn how you can participate in our marketplace', icon: 'database-01' },
-          { title: 'Documentation', href: '#', description: 'Learn more about decentralized insurance and Neptune Mutual protocol', icon: 'file-code-01' },
-          { title: 'Contact', href: '#', description: 'Reach out to us via email or our community channels', icon: 'book-closed' }
+          { title: 'EXPLORE_MARKETPLACE', href: '#', description: 'EXPLORE_MARKETPLACE_DESC', icon: 'bank' },
+          { title: 'BLOG_AND_PRESS_ROOM', href: '#', description: 'BLOG_AND_PRESS_ROOM_DESC', icon: 'edit-03' },
+          { title: 'ECOSYSTEM', href: '#', description: 'ECOSYSTEM_DESC', icon: 'database-01' },
+          { title: 'DOCUMENTATION', href: '#', description: 'DOCUMENTATION_DESC', icon: 'file-code-01' },
+          { title: 'CONTACT', href: '#', description: 'CONTACT_DESC', icon: 'book-closed' }
         ]
       },
       {
         type: 'section',
-        title: 'Company',
+        title: 'COMPANY',
         links: [
-          { title: 'About Us', href: '#', description: 'Learn about our story and our mission statement', icon: 'flag-06' },
-          { title: 'Grants and Bounties', href: '#', description: 'Learn about our referral, ambassador, and distributor programs', icon: 'stars-02' },
-          { title: 'Careers', href: '#', description: 'We&apos;re always looking for talented people. Join our team!', icon: 'users-01' },
-          { title: 'Security', href: '#', description: 'View our platform audit reports. Learn about our bug bounty program.', icon: 'glasses-02' },
-          { title: 'Legal', href: '#', description: 'View our disclaimer, terms of service, and privacy policy', icon: 'folder' }
+          { title: 'ABOUT_US', href: '#', description: 'ABOUT_US_DESC', icon: 'flag-06' },
+          { title: 'GRANTS_AND_BOUNTIES', href: '#', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
+          { title: 'CAREERS', href: '#', description: 'CAREERS_DESC', icon: 'users-01' },
+          { title: 'SECURITY', href: '#', description: 'SECURITY_DESC', icon: 'glasses-02' },
+          { title: 'LEGAL', href: '#', description: 'LEGAL_DESC', icon: 'folder' }
         ]
       },
       {
