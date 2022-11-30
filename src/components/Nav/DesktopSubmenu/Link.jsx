@@ -21,7 +21,7 @@ export const DesktopNavMenuItemLink = ({ item }) => {
 const Container = styled.a`
   display: flex;
   align-items: flex-start;
-  padding: 12px 16px;
+  padding: 12px;
   gap: 16px;
   border-radius: 8px;
 

@@ -27,7 +27,7 @@ const Container = styled.div`
   position: fixed;
   top: var(--header-height);
   left: 0px;
-  max-height: 60vh;
+  max-height: 80vh;
   z-index: 2;
   width: 100%;
   overflow-x: hidden;
@@ -43,6 +43,7 @@ const Content = styled.div`
   margin-left: auto;
   margin-right: auto;
   display: flex;
+  flex-wrap: wrap;
 `
 
 const LeftSpace = styled.div`
@@ -60,5 +61,6 @@ const Section = styled.div`
   padding-left: ${props => props.type === 'section' ? undefined : '20px'};
 
   flex: 1;
+  flex-basis: ${props => props.type === 'section' ? undefined : '560px'};
   background-color: ${props => props.type === 'section' ? undefined : 'var(--right-bg)'};
 `
