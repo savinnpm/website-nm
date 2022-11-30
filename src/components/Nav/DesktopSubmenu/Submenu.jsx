@@ -61,6 +61,6 @@ const Section = styled.div`
   padding-left: ${props => props.type === 'section' ? undefined : '20px'};
 
   flex: 1;
-  flex-basis: ${props => props.type === 'section' ? undefined : '560px'};
+  min-width: ${props => props.type === 'section' ? undefined : '560px'};
   background-color: ${props => props.type === 'section' ? undefined : 'var(--right-bg)'};
 `
