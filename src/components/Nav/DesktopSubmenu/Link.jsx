@@ -22,6 +22,7 @@ const Container = styled.a`
   display: flex;
   align-items: flex-start;
   padding: 12px;
+  padding-right: 0;
   gap: 16px;
   border-radius: 8px;
 

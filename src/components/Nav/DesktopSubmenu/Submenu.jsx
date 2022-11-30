@@ -8,13 +8,20 @@ export const Submenu = ({ item }) => {
     <Container>
       <LeftSpace />
       <Content>
-        {item.children.map((child, idx) => {
-          return (
-            <Section key={idx} type={child.type}>
-              <DesktopSection section={child} />
-            </Section>
-          )
-        })}
+        <NonVideoSections>
+          {item.children.filter(x => x.type === 'section').map((child, idx) => {
+            return (
+              <DesktopSection key={idx} section={child} />
+            )
+          })}
+        </NonVideoSections>
+        <VideoSections>
+          {item.children.filter(x => x.type !== 'section').map((child, idx) => {
+            return (
+              <DesktopSection key={idx} section={child} />
+            )
+          })}
+        </VideoSections>
       </Content>
       <RightSpace />
     </Container>
@@ -56,11 +63,20 @@ const RightSpace = styled.div`
   background-color: var(--right-bg);
 `
 
-const Section = styled.div`
+const NonVideoSections = styled.div`
   padding: 32px;
-  padding-left: ${props => props.type === 'section' ? undefined : '20px'};
+  display: flex;
+  gap: 24px;
+  flex: 2;
+`
 
+const VideoSections = styled.div`
+  padding: 32px;
+  padding-left: 20px;
+  background-color: var(--right-bg);
   flex: 1;
-  min-width: ${props => props.type === 'section' ? undefined : '560px'};
-  background-color: ${props => props.type === 'section' ? undefined : 'var(--right-bg)'};
+  min-width: 560px;
+`
+
+const Section = styled.div`
 `
