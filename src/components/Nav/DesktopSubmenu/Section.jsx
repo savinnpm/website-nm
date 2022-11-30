@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
-import { NavMenuItemLink } from '../NavMenuItem/Link'
+import { DesktopNavMenuItemLink } from './Link'
 
 export const Section = ({ section }) => {
   if (!section.links) {
@@ -21,7 +21,7 @@ export const Section = ({ section }) => {
       <Content>
         {section.links.map((link, idx) => {
           return (
-            <NavMenuItemLink key={idx} item={link} />
+            <DesktopNavMenuItemLink key={idx} item={link} />
           )
         })}
       </Content>
