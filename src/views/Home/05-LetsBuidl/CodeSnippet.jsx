@@ -6,8 +6,9 @@ import {
 } from 'react-syntax-highlighter'
 import {
   dracula as atomDark,
-  a11yLight
+  coldarkCold
 } from 'react-syntax-highlighter/dist/cjs/styles/prism'
+
 import { colors } from '../../../../styles/colors'
 
 import '@fontsource/roboto-mono/latin.css'
@@ -16,7 +17,7 @@ export const CodeSnippet = ({ text, theme }) => {
   return (
     <Container>
       <SyntaxHighlighter
-        style={theme === 'light' ? a11yLight : atomDark}
+        style={theme === 'light' ? coldarkCold : atomDark}
         language='javascript'
         showLineNumbers
         customStyle={{
