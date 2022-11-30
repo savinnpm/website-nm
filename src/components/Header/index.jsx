@@ -17,6 +17,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
       <InnerContainer>
         <LeftContainer>
           <LogoContainer href='/'>
+            <span>Neptune Mutual</span>
             {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
           </LogoContainer>
           <DesktopNavMenu />
@@ -53,6 +54,10 @@ const InnerContainer = styled.div`
 
 const LogoContainer = styled(Link)`
   display: flex;
+
+  > span {
+    ${utils.srOnly};
+  }
 `
 
 const LeftContainer = styled.div`

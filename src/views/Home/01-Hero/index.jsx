@@ -34,7 +34,7 @@ export const Hero = () => {
       </TextAndCta>
 
       <ImageContainer>
-        <Image src='/assets/images/hero/cover.png' alt='Neptune' fill />
+        <Image src='/assets/images/hero/cover.png' alt='Neptune' fill loading='eager' />
       </ImageContainer>
     </Container>
   )

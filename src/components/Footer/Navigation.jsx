@@ -6,6 +6,7 @@ import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import { nav } from './data'
 import { useTranslation } from 'react-i18next'
+import { utils } from '../../../styles/utils'
 
 export const Navigation = () => {
   const theme = useTheme()
@@ -14,6 +15,7 @@ export const Navigation = () => {
   return (
     <Container>
       <LogoContainer href='/'>
+        <span>Neptune Mutual</span>
         {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
       </LogoContainer>
 
@@ -53,6 +55,10 @@ const Container = styled.div`
 
 const LogoContainer = styled(Link)`
   display: block;
+
+  > span {
+    ${utils.srOnly};
+  }
 `
 
 const Nav = styled.nav`

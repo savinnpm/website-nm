@@ -3,12 +3,14 @@ import Slider from 'react-slick'
 import styled from 'styled-components'
 import { blurs } from '../../../../styles/blurs'
 import { colors } from '../../../../styles/colors'
+import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 import { Card } from './Card'
 
 function NextArrow (props) {
   return (
     <ArrowContainer {...props}>
+      <span>Next</span>
       <Icon size={24} variant='arrow-right' />
     </ArrowContainer>
   )
@@ -17,6 +19,7 @@ function NextArrow (props) {
 function PrevArrow (props) {
   return (
     <ArrowContainer {...props}>
+      <span>Previous</span>
       <Icon size={24} variant='arrow-left' />
     </ArrowContainer>
   )
@@ -141,5 +144,9 @@ const ArrowContainer = styled.button`
   :disabled {
     border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
     color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
+  }
+
+  > span {
+    ${utils.srOnly};
   }
 `

@@ -17,7 +17,7 @@ export const SecuringApps = () => {
             {data.map((app) => {
               return (
                 <AppContainer key={app.name}>
-                  <AppImg src={app.src} alt={app.name} />
+                  <AppImg src={app.src} alt={app.name} height='32' />
                   <AppName>{app.name}</AppName>
                 </AppContainer>
               )
@@ -94,7 +94,7 @@ const AppContainer = styled.div`
 `
 
 const AppImg = styled.img`
-  height: 32px;
+  /* height: 32px; */
 `
 
 const AppName = styled.p`
