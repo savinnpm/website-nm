@@ -26,7 +26,7 @@ export const Section = ({ section }) => {
 
         {section.more && (
           <More href={section.more.title} rel='noreferrer' target='_blank'>
-            {section.more.title} <Icon size={20} variant='arrow-right' />
+            {t(section.more.title)} <Icon size={20} variant='arrow-right' />
           </More>
         )}
       </div>

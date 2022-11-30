@@ -39,14 +39,14 @@ export const data = [
       },
       {
         type: 'videos-section',
-        title: 'From our Youtube Channel',
+        title: 'FROM_YOUTUBE',
         videos: [
           { title: 'How to Purchase Cover Policy?', href: '#', description: 'Learn how you can purchase policy and reduce your risk exposure', thumbnail: 'https://i.ytimg.com/vi/GeqjuV1u4UI/hqdefault.jpg' },
           { title: 'How to Provide Liquidity?', href: '#', description: 'Learn how you can benefit from pooling the cover capital together with other users.', thumbnail: 'https://i.ytimg.com/vi/GeqjuV1u4UI/hqdefault.jpg' },
           { title: 'Reporting an Incident', href: '#', description: 'how to report an incident when you believe a hack meets the parameters of the cover policy of the project in question.', thumbnail: 'https://i.ytimg.com/vi/GeqjuV1u4UI/hqdefault.jpg' }
         ],
         more: {
-          title: 'All Video Tutorials',
+          title: 'ALL_VIDEO_TUTS',
           href: 'https://youtube.com/neptune-mutual'
         }
       }
