@@ -46,6 +46,7 @@ export const Carousel = ({ posts = [] }) => {
     slidesToShow: 3,
     rows: 1,
     centerMode: false,
+    lazyLoad: true,
     responsive: [
       {
         breakpoint: 1365,

@@ -5,7 +5,7 @@ const ensureDirectory = async (directory) => {
   try {
     await fs.access(directory)
   } catch {
-    await fs.mkdir(directory, {recursive: true})
+    await fs.mkdir(directory, { recursive: true })
   }
 }
 
