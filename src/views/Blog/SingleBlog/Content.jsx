@@ -6,7 +6,7 @@ export const Content = ({ content }) => {
   return (
     <Container>
       <InnerContainer>
-        here
+        <div dangerouslySetInnerHTML={{ __html: content }} />
       </InnerContainer>
     </Container>
   )
