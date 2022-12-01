@@ -44,6 +44,7 @@ import { FaceSmile, Users01 } from "./variants/Users";
 // custom icons
 import MoonStarFilled from "./variants/moon-star-filled";
 import SunFilled from "./variants/sun-filled";
+import Dot from "./variants/dot"
 import { Folder } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
 
@@ -246,6 +247,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "flag-06") {
     IconComponent = Flag06;
+  }
+
+  if (variant === "dot") {
+    IconComponent = Dot;
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
