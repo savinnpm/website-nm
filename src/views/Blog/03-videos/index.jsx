@@ -32,7 +32,7 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-  border-top: 1px solid ${props => props.isLightMode ? colors.gray['300'] : colors.gray['700']};
+  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['700']};
 
   padding-top: 56px;
   padding-bottom: 56px;

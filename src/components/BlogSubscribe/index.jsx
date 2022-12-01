@@ -46,4 +46,8 @@ const Container = styled.form`
 const InputContainer = styled.div`
   flex:1;
   max-width: 360px;
+
+  @media (max-width: 768px) {
+    max-width: none;
+  }
 `

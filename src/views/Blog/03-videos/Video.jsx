@@ -28,7 +28,7 @@ const Container = styled.button`
 
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: stretch;
   text-align: left;
   gap: 24px;
 `
