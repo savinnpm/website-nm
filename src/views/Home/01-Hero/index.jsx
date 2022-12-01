@@ -28,7 +28,7 @@ export const Hero = () => {
             iconTrailing
             iconVariant='arrow-narrow-right'
           >
-            {t('LAUNCH APP')}
+            {t('LAUNCH_APP')}
           </Button>
         </ButtonContainer>
       </TextAndCta>

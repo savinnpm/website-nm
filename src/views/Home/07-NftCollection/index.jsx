@@ -32,7 +32,7 @@ export const NftCollection = () => {
         </TextAndCta>
 
         <ImageContainer>
-          <Image src='/assets/images/nft/promo.png' alt='nft collection' fill />
+          <Image src='/assets/images/nft/promo.png' alt='nft collection' fill loading='lazy' />
         </ImageContainer>
       </InnerContainer>
     </Container>

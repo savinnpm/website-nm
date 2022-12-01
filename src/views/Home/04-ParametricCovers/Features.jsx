@@ -30,6 +30,7 @@ export const Features = () => {
                   <Image
                     src={feature.image} alt={feature.title}
                     fill
+                    loading='lazy'
                   />
                 </ImageContainer>
               </Tab.Panel>
