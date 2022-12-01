@@ -7,7 +7,6 @@ const PAGINATION_INDEX = 3
 
 export const PageNumbers = ({ pages, setPage, page }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
-  console.log(isMobile)
 
   const startsFrom = page === 0 ? 0 : page - 1
 
