@@ -75,7 +75,7 @@ const StyledButton = styled.button`
 
       outline: none;
       box-shadow: ${shadows.xs},
-        0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['100']};
+        0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['800']};
     }
   }
 `

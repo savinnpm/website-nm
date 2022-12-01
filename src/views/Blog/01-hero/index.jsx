@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { BlogSubscribe } from '../../../components/BlogSubscribe'
 
 export const Hero = () => {
   return (
@@ -11,6 +12,10 @@ export const Hero = () => {
           <Subheading>Learn about the most recent developments in the decentralized insurance space.</Subheading>
           <Subtitle>The blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.</Subtitle>
         </Text>
+
+        <FormContainer>
+          <BlogSubscribe />
+        </FormContainer>
 
       </InnerContainer>
     </Container>
@@ -75,4 +80,8 @@ const Subtitle = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
+`
+
+const FormContainer = styled.div`
+  margin-top: 40px;
 `

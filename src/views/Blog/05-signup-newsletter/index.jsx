@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
+import { BlogSubscribe } from '../../../components/BlogSubscribe'
 
 export const SignupNewsletter = () => {
   return (
@@ -11,6 +12,10 @@ export const SignupNewsletter = () => {
           <Heading>Sign up for our newsletter</Heading>
           <Subtitle>The blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.</Subtitle>
         </ContentContainer>
+
+        <FormContainer>
+          <BlogSubscribe />
+        </FormContainer>
 
       </InnerContainer>
     </Container>
@@ -73,4 +78,8 @@ const Subtitle = styled.p`
     ${typography.styles.textLg};
     ${typography.weights.regular};
   }
+`
+
+const FormContainer = styled.div`
+  margin-top: 40px;
 `

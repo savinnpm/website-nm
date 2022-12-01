@@ -23,9 +23,11 @@ export const VideoModal = ({ videoId, setId }) => {
           title='Embedded youtube'
         />
 
+        <br />
+
         <Button
           hierarchy='primary'
-          size='2xl'
+          size='sm'
           iconLeading
           iconVariant='x-close'
           onClick={() => setId(null)}
@@ -52,7 +54,6 @@ const Panel = styled(Dialog.Panel)`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 32px;
 `
 
 const Title = styled(Dialog.Title)`
