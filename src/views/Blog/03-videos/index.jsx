@@ -7,7 +7,7 @@ import { useVideosContext } from '../../../context/VideosContext'
 import { Video } from './Video'
 
 export const RecentVideos = () => {
-  const videos = useVideosContext()
+  const { videos } = useVideosContext()
 
   return (
     <Container>

@@ -9,7 +9,7 @@ import { Video } from './Video'
 
 export const Section = ({ section }) => {
   const { t } = useTranslation('common')
-  const videos = useVideosContext()
+  const { videos } = useVideosContext()
 
   if (!section.links) {
     return (

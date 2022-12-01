@@ -1,4 +1,4 @@
-import * as styles from "./styles";
-import * as weights from "./weights";
+import * as styles from './styles'
+import * as weights from './weights'
 
-export const typography = { styles, weights };
+export const typography = { styles, weights }

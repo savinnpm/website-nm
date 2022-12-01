@@ -1,4 +1,4 @@
-export const primaryColorKey = "indigo";
+export const primaryColorKey = 'indigo'
 
 export const colors = {
   white: '#ffffff',

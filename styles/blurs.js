@@ -1,9 +1,6 @@
 export const blurs = {
-  "sm": 'blur(4px)',
-  "md": 'blur(8px)',
-  "lg": 'blur(12px)',
-  "xl": 'blur(20px)',
-};
-
-
-
+  sm: 'blur(4px)',
+  md: 'blur(8px)',
+  lg: 'blur(12px)',
+  xl: 'blur(20px)'
+}

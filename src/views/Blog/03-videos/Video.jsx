@@ -2,10 +2,13 @@ import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import PlayIcon from '../../../components/Icon/custom/PlayIcon'
+import { useVideosContext } from '../../../context/VideosContext'
 
 export const Video = ({ video }) => {
+  const { setId } = useVideosContext()
+
   return (
-    <Container onClick={() => { console.log(video.videoId) }}>
+    <Container onClick={() => { setId(video.videoId) }}>
       <Thumbnail>
         <img src={`/${video.image}`} alt={video.title} />
         <Overlay>
