@@ -6,6 +6,38 @@ export const ComponentLib = () => {
     <>
       <ButtonsGrid>
         <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='sm' iconLeading iconTrailing iconVariant='arrow-right'>Link</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='md' iconLeading iconTrailing iconVariant='placeholder'>gray</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='lg' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='xl' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='2xl' iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='sm' disabled iconLeading iconTrailing iconVariant='arrow-right'>Link</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='md' disabled iconLeading iconTrailing iconVariant='placeholder'>gray</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='lg' disabled iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='xl' disabled iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+        <ButtonsGridItem>
+          <Button hierarchy='link-gray' size='2xl' disabled iconLeading iconTrailing iconVariant='placeholder'>Test</Button>
+        </ButtonsGridItem>
+
+        <ButtonsGridItem>
           <Button hierarchy='primary' size='sm' iconLeading iconTrailing iconVariant='arrow-right'>Test</Button>
         </ButtonsGridItem>
         <ButtonsGridItem>

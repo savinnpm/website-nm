@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../../../styles/colors'
+import { colors, primaryColorKey } from '../../../../styles/colors'
 
 const PAGINATION_INDEX = 3
 
@@ -30,7 +30,7 @@ export const PageNumbers = ({ pages, setPage, page }) => {
 
 const PageNumbersContainer = styled.div`
   display: flex;
-  gap:1px;
+  gap:2px;
 `
 const PageNumber = styled.button`
   display: flex;
@@ -47,6 +47,10 @@ const PageNumber = styled.button`
 
   &.active{
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
+  }
+  &:focus{
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']};
+    box-shadow: 0px 0px 0px 4px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors[primaryColorKey]['900']};
   }
 `
 

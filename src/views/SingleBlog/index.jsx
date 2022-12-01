@@ -5,8 +5,6 @@ import { Content } from './Content'
 export const BlogPost = (props) => {
   const [timeToRead, setTimeToRead] = useState('0 min')
 
-  console.log(props.post)
-
   useEffect(() => {
     if (process.browser) {
       const wpm = 225

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { utils } from '../../../../styles/utils'
-import { Icon } from '../../../components/Icon'
+import { colors } from '../../../../styles/colors'
+import { LinkGrayButton } from '../../../components/Button/LinkGrayButton'
 import { PageNumbers } from './PageNumbers'
 
 export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, totalPages }) => {
@@ -12,32 +12,15 @@ export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, 
 
   return (
     <Container>
-      <InnerContainer>
-        <PaginationContainer>
-          <ButtonContainer>
-            {page !== 0 && (
-              <ButtonStyle onClick={handlePrev}>
-                <>
-                  <Icon size={20} variant='arrow-left' />
-                  <span>Previous</span>
-                </>
-              </ButtonStyle>
-            )}
-          </ButtonContainer>
-          <PageNumbers page={page} pages={pages} setPage={setPage} />
-          <ButtonContainer>
-            {!isLast && (
-              <ButtonStyle onClick={handleNext}>
-                <>
-                  <span>Next</span>
-                  <Icon size={20} variant='arrow-right' />
+      <PaginationContainer>
 
-                </>
-              </ButtonStyle>
-            )}
-          </ButtonContainer>
-        </PaginationContainer>
-      </InnerContainer>
+        <LinkGrayButton onClick={handlePrev} iconLeading iconVariant='arrow-left' disabled={page === 0}>Previous</LinkGrayButton>
+
+        <PageNumbers page={page} pages={pages} setPage={setPage} />
+
+        <LinkGrayButton onClick={handleNext} iconTrailing iconVariant='arrow-right' disabled={isLast}>Next</LinkGrayButton>
+
+      </PaginationContainer>
     </Container>
   )
 }
@@ -52,23 +35,10 @@ const Container = styled.div`
   }
 `
 
-const InnerContainer = styled.div`
-  ${utils.fullWidthContainer};
-`
 const PaginationContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-`
-
-const ButtonContainer = styled.div`
-  min-width: 65px;
-`
-
-const ButtonStyle = styled.button`
-  display: flex;
-  gap: 8px;
-  justify-content:space-between;
-  align-items: center;
-  cursor: pointer;
+  padding-top: 20px;
+  border-top: 1px solid ${colors.gray[200]};
 `
