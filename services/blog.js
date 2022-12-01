@@ -26,6 +26,7 @@ export const getLatestBlogPosts = async () => {
       return {
         id: doc.id,
         title: doc.title,
+        featured: doc.featured,
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.cover.filename}`, 'blog-images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
@@ -50,6 +51,7 @@ export const getBlogPosts = async () => {
       return {
         id: doc.id,
         title: doc.title,
+        featured: doc.featured,
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.cover.filename}`, 'blog-images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
@@ -75,6 +77,7 @@ export const getSinglePost = async (slug) => {
     return {
       id: match.id,
       title: match.title,
+      featured: match.featured,
       image: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.cover.filename}`, 'blog-images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
