@@ -20,6 +20,7 @@ function MyApp ({ Component, pageProps }) {
       <VideosProvider videos={pageProps.videos}>
         <HeaderContainer>
           <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
+          <Border />
         </HeaderContainer>
         <MainContainer>
           <MobileNavContainer isMenuOpen={isMenuOpen} />
@@ -37,8 +38,12 @@ const HeaderContainer = styled.div`
   position: sticky;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
   z-index: 1;
+`
+
+const Border = styled.div`
+  mix-blend-mode: multiply;
+  border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
 `
 
 const MainContainer = styled.div`

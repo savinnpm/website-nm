@@ -47,10 +47,6 @@ const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 32px;
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 `
 
 const ExternalLink = styled.a`
@@ -68,6 +64,10 @@ const Heading = styled.h2`
   ${typography.styles.displayXs};
   ${typography.weights.semibold};
 
+  @media (max-width: 768px) {
+    ${typography.styles.textXl};
+    ${typography.weights.semibold};
+  }
 `
 
 const VideosContainer = styled.div`

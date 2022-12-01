@@ -1,13 +1,13 @@
 import { Dialog } from '@headlessui/react'
 import styled from 'styled-components'
 import { blurs } from '../../styles/blurs'
+import { colors } from '../../styles/colors'
 import { utils } from '../../styles/utils'
-import { Button } from './Button'
 
 export const VideoModal = ({ videoId, setId }) => {
   return (
-    <Dialog open={!!videoId} onClose={() => setId(null)}>
-      <Panel>
+    <StyledDialog open={!!videoId} onClose={() => setId(null)}>
+      <Dialog.Panel>
         <Title>Youtube Video</Title>
         <Description>
           Playing the video that you've selected below in an iframe
@@ -23,31 +23,19 @@ export const VideoModal = ({ videoId, setId }) => {
           title='Embedded youtube'
         />
 
-        <br />
-
-        <Button
-          hierarchy='primary'
-          size='sm'
-          iconLeading
-          iconVariant='x-close'
-          onClick={() => setId(null)}
-        >
-          Close
-        </Button>
-
-      </Panel>
-    </Dialog>
+      </Dialog.Panel>
+    </StyledDialog>
   )
 }
 
-const Panel = styled(Dialog.Panel)`
+const StyledDialog = styled(Dialog)`
   z-index: 2;
   position: fixed;
   top: 0px;
   left: 0px;
   bottom: 0px;
   width: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: ${colors.gray['900'].startsWith('#') ? colors.gray['900'] + 'b2' : 'rgba(0, 0, 0, 0.7)'};
   backdrop-filter: ${blurs.xl};
 
   display: flex;

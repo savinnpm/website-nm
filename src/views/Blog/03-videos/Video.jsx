@@ -76,6 +76,11 @@ const Title = styled.h3`
 
   ${typography.styles.displayXs};
   ${typography.weights.semibold};
+
+  @media (max-width: 768px) {
+    ${typography.styles.textXl};
+    ${typography.weights.semibold};
+  }
 `
 
 const Time = styled.p`

@@ -36,6 +36,11 @@ const Container = styled.form`
   justify-content: center;
   align-items: flex-start;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 `
 
 const InputContainer = styled.div`

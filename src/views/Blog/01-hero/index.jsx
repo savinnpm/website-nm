@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
 import { BlogSubscribe } from '../../../components/BlogSubscribe'
 
 export const Hero = () => {
@@ -39,12 +40,13 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-  max-width: 768px;
-  margin-left: auto;
-  margin-right: auto;
+  ${utils.fullWidthContainer};
 `
 
 const Text = styled.div`
+  max-width: 768px;
+  margin-left: auto;
+  margin-right: auto;
   text-align: center;
 `
 

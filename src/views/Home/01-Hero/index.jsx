@@ -100,11 +100,8 @@ const ImageContainer = styled.div`
   flex: 1;
   height: 560px;
   max-width: 100%;
-  border: 1px solid
-    ${(props) => (props.theme.isLightMode ? colors.white : colors.gray['600'])};
+  border: 1px solid ${(props) => (props.theme.isLightMode ? colors.gray['600'] : colors.gray['600'])};
   filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.25));
-  border-radius: 16px;
-  overflow: hidden;
 
   @media (max-width: 768px) {
     height: 240px;
