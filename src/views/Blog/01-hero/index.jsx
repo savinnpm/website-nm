@@ -27,7 +27,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   gap: 40px;
-  padding-top: 64px;
+  padding-top: 96px;
   padding-bottom: 96px;
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
 

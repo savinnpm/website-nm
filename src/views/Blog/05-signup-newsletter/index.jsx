@@ -8,15 +8,17 @@ export const SignupNewsletter = () => {
   return (
     <Container>
       <InnerContainer>
-        <ContentContainer>
-          <Heading>Sign up for our newsletter</Heading>
-          <Subtitle>Be the first to know about releases and industry news and insights.</Subtitle>
-        </ContentContainer>
+        <Box>
+          <ContentContainer>
+            <Heading>Sign up for our newsletter</Heading>
+            <Subtitle>Be the first to know about releases and industry news and insights.</Subtitle>
+          </ContentContainer>
 
-        <FormContainer>
-          <BlogSubscribe />
-        </FormContainer>
+          <FormContainer>
+            <BlogSubscribe />
+          </FormContainer>
 
+        </Box>
       </InnerContainer>
     </Container>
   )
@@ -35,6 +37,9 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
+`
+
+const Box = styled.div`
   border-radius: 16px;
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
 
