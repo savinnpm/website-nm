@@ -45,10 +45,14 @@ const Box = styled.div`
 
   padding-top: 64px;
   padding-bottom: 64px;
+  padding-left: 64px;
+  padding-right: 64px;
 
   @media (max-width: 768px) {
     padding-top: 40px;
     padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
   }
 `
 

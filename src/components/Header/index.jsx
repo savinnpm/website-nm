@@ -8,12 +8,13 @@ import NpmLogoInverse from '../logos/npm-full-inverse'
 import Link from 'next/link'
 import { NavMenuButton } from '../Nav/NavMenuButton'
 import { DesktopNavMenu } from '../Nav/DesktopNavMenu'
+import { colors, primaryColorKey } from '../../../styles/colors'
 
-export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
+export const Header = ({ isMenuOpen, setIsMenuOpen, colored }) => {
   const theme = useTheme()
 
   return (
-    <StyledHeader>
+    <StyledHeader colored={colored}>
       <InnerContainer>
         <LeftContainer>
           <LogoContainer href='/'>
@@ -36,6 +37,9 @@ export const Header = ({ isMenuOpen, setIsMenuOpen }) => {
 
 const StyledHeader = styled.header`  
   background-color: ${props => props.theme.primaryBackgroundColor};
+  background-color: ${props => props.colored
+  ? (props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900'])
+  : undefined};
 `
 
 const InnerContainer = styled.div`

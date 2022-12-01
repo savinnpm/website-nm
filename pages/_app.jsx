@@ -19,7 +19,7 @@ function MyApp ({ Component, pageProps }) {
     <ThemeProvider>
       <VideosProvider videos={pageProps.videos}>
         <HeaderContainer>
-          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
         </HeaderContainer>
         <MainContainer>
           <MobileNavContainer isMenuOpen={isMenuOpen} />
