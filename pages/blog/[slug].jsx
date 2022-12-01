@@ -3,8 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { Content } from '../../src/views/Blog/SingleBlog/Content'
-import { BlogHero } from '../../src/views/Blog/SingleBlog/BlogHero'
+import { BlogPost } from '../../src/views/Blog/SingleBlog'
 
 export async function getStaticPaths () {
   const slugs = await services.getPostsSlugs()
@@ -46,8 +45,7 @@ export default function BlogPostPage (props) {
       </Head>
 
       <main>
-        <BlogHero title={props.post.title} createdAt={props.post.createdAt} timeToRead='10 min' />
-        <Content content={props.post.content.html} />
+        <BlogPost post={props.post} />
       </main>
     </>
   )

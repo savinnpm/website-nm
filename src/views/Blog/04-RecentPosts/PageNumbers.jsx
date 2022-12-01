@@ -4,11 +4,12 @@ import { colors } from '../../../../styles/colors'
 const PAGINATION_INDEX = 3
 
 export const PageNumbers = ({ pages, setPage, page }) => {
+  const startsFrom = page === 0 ? 0 : page - 1
   if (pages.length > 6) {
     return (
       <PageNumbersContainer>
-        {pages.slice(0, PAGINATION_INDEX).map((pageNum, index) => (
-          <PageNumber onClick={() => setPage(index)} className={`${page === index && 'active'}`} key={index}>{pageNum + 1}</PageNumber>
+        {pages.slice(startsFrom, startsFrom + PAGINATION_INDEX).map((pageNum, index) => (
+          <PageNumber onClick={() => setPage(index + startsFrom)} className={`${page === index + startsFrom && 'active'}`} key={index}>{pageNum + 1}</PageNumber>
         ))}
         <TripleDots>...</TripleDots>
         {pages.slice(pages.length - PAGINATION_INDEX, pages.length).map((pageNum, index) => (
@@ -41,11 +42,11 @@ const PageNumber = styled.button`
   border-radius: 8px;
 
   &:hover{
-    background-color: ${colors.gray[50]}
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
   }
 
   &.active{
-    background-color: ${colors.gray[50]}
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
   }
 `
 

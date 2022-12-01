@@ -1,22 +1,26 @@
-import { mockData } from '../../../../services/_mock_'
+import { useEffect, useState } from 'react'
 import { BlogHero } from './BlogHero'
 import { Content } from './Content'
 
-export const BlogPost = ({ postId }) => {
-  const getCurrentPost = () => {
-    const postToShow = mockData.articleList.docs.filter((post) => post.id === postId)
+export const BlogPost = (props) => {
+  const [timeToRead, setTimeToRead] = useState('0 min')
 
-    return postToShow[0]
-  }
+  useEffect(() => {
+    if (process.browser) {
+      const wpm = 225
+      const text = document.getElementsByClassName('article')[0].innerText
 
-  const post = getCurrentPost()
+      const words = text.trim().split(/\s+/).length
+      const time = Math.ceil(words / wpm)
 
-  const timeToRead = '10 min'
+      setTimeToRead(`${time} min`)
+    }
+  }, [])
 
   return (
     <>
-      <BlogHero title={post.title} createdAt={post.createdAt} timeToRead={timeToRead} />
-      <Content content={post.content} />
+      <BlogHero title={props.post.title} createdAt={props.post.date} timeToRead={timeToRead} />
+      <Content content={props.post.content.html} />
     </>
   )
 }

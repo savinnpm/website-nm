@@ -3,24 +3,14 @@ import { colors } from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
 import { utils } from '../../../../../styles/utils'
 import { Icon } from '../../../../components/Icon'
-
-const dateToShow = (timeStamp) => {
-  const created = new Date(timeStamp)
-  const monthName = created.toString().split(' ')[1]
-  const date = created.getDate()
-  const year = created.getFullYear()
-
-  return `${date} ${monthName} ${year}`
-}
+import { getFormattedDate } from '../../../../utils'
 
 export const BlogHero = ({ title, createdAt, timeToRead }) => {
-  const blogCreated = dateToShow(createdAt)
-
   return (
     <Container>
       <Header>
         <BlogInfoContainer>
-          <BlogInfo>{blogCreated}</BlogInfo>
+          <Time itemprop='published' datetime={createdAt}>{getFormattedDate(new Date(createdAt).toString())}</Time>
           <Icon size={8} variant='dot' />
           <BlogInfo>{timeToRead} read</BlogInfo>
         </BlogInfoContainer>
@@ -108,4 +98,11 @@ const ImageContainer = styled.div`
     object-fit: cover;
     display: block;
   }
+`
+
+const Time = styled.time`
+  display: inline-block;
+  ${typography.styles.textMd};
+  ${typography.weights.semibold};
+  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
 `

@@ -14,25 +14,28 @@ export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, 
     <Container>
       <InnerContainer>
         <PaginationContainer>
-          <Button className={`${page === 0 && 'empty'}`} onClick={handlePrev}>
+          <ButtonContainer>
             {page !== 0 && (
-              <>
-                <Icon size={20} variant='arrow-left' />
-                <span>Previous</span>
-
-              </>
+              <ButtonStyle onClick={handlePrev}>
+                <>
+                  <Icon size={20} variant='arrow-left' />
+                  <span>Previous</span>
+                </>
+              </ButtonStyle>
             )}
-          </Button>
+          </ButtonContainer>
           <PageNumbers page={page} pages={pages} setPage={setPage} />
-          <Button className={`${isLast && 'empty'}`} onClick={handleNext}>
+          <ButtonContainer>
             {!isLast && (
-              <>
-                <span>Next</span>
-                <Icon size={20} variant='arrow-right' />
+              <ButtonStyle onClick={handleNext}>
+                <>
+                  <span>Next</span>
+                  <Icon size={20} variant='arrow-right' />
 
-              </>
+                </>
+              </ButtonStyle>
             )}
-          </Button>
+          </ButtonContainer>
         </PaginationContainer>
       </InnerContainer>
     </Container>
@@ -58,14 +61,14 @@ const PaginationContainer = styled.div`
   align-items: center;
 `
 
-const Button = styled.button`
+const ButtonContainer = styled.div`
+  min-width: 65px;
+`
+
+const ButtonStyle = styled.button`
   display: flex;
   gap: 8px;
   justify-content:space-between;
   align-items: center;
   cursor: pointer;
-
-  &.empty{
-    width: 87px;
-  }
 `
