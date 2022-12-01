@@ -1,23 +1,41 @@
 import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { services } from '../../services'
-import Link from 'next/link'
 
-export async function getStaticProps ({ locale }) {
+import { services } from '../../services'
+import { PdfViewer } from '../../src/components/PdfViewer'
+
+export async function getStaticPaths () {
+  const slugs = await services.getAuditSlugs()
+
+  const paths = slugs.map(slug => {
+    return {
+      params: {
+        slug
+      }
+    }
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'security'])
 
   return {
     props: {
       ...(s),
-      audits: await services.getAudits(),
+      audit: await services.getSingleAudit(params.slug),
       videos: await services.getVideos()
       // Will be passed to the page component as props
     }
   }
 }
 
-export default function SecurityPage (props) {
+export default function AuditPage (props) {
   return (
     <>
       <Head>
@@ -27,14 +45,8 @@ export default function SecurityPage (props) {
       </Head>
 
       <main>
-
-        {props.audits.map(audit => {
-          return <Link key={audit.id} href={`/security/${audit.slug}`}>{audit.title}</Link>
-        })}
-
+        <PdfViewer url={`/${props.audit.report}`} />
       </main>
-
-      <footer />
     </>
   )
 }
