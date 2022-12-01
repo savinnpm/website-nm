@@ -5,6 +5,8 @@ import { Content } from './Content'
 export const BlogPost = (props) => {
   const [timeToRead, setTimeToRead] = useState('0 min')
 
+  console.log(props.post)
+
   useEffect(() => {
     if (process.browser) {
       const wpm = 225
@@ -19,7 +21,7 @@ export const BlogPost = (props) => {
 
   return (
     <>
-      <BlogHero title={props.post.title} createdAt={props.post.date} timeToRead={timeToRead} />
+      <BlogHero title={props.post.title} featuredImage={props.post.image} createdAt={props.post.date} timeToRead={timeToRead} />
       <Content content={props.post.content.html} />
     </>
   )

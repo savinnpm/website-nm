@@ -1,11 +1,11 @@
 import styled from 'styled-components'
-import { colors } from '../../../../../styles/colors'
-import { typography } from '../../../../../styles/typography'
-import { utils } from '../../../../../styles/utils'
-import { Icon } from '../../../../components/Icon'
-import { getFormattedDate } from '../../../../utils'
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { Icon } from '../../../components/Icon'
+import { getFormattedDate } from '../../../utils'
 
-export const BlogHero = ({ title, createdAt, timeToRead }) => {
+export const BlogHero = ({ title, createdAt, timeToRead, featuredImage }) => {
   return (
     <Container>
       <Header>
@@ -19,8 +19,7 @@ export const BlogHero = ({ title, createdAt, timeToRead }) => {
         </Heading>
       </Header>
       <ImageContainer>
-        {/* @ToDo: change image according to post */}
-        <img src='/assets/images/hero/cover.png' alt='Neptune' />
+        <img src={`/${featuredImage}`} alt='Neptune' />
       </ImageContainer>
     </Container>
   )

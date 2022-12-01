@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { utils } from '../../../../styles/utils'
-import { typography } from '../../../../styles/typography'
+import { utils } from '../../../styles/utils'
+import { typography } from '../../../styles/typography'
 
 export const Content = ({ content }) => {
   return (
