@@ -13,8 +13,8 @@ export const Video = ({ video }) => {
         </Overlay>
       </Thumbnail>
       <Content>
+        <Time title={video.duration.text}>{video.duration.formatted}</Time>
         <Title>{video.title}</Title>
-        <SupportingText>{video.description.text.substr(0, 56)}</SupportingText>
       </Content>
     </Container>
   )
@@ -68,16 +68,16 @@ const Content = styled.div`
 `
 
 const Title = styled.h3`
+  margin-top: 8px;
   color: ${props => props.theme.color};
 
   ${typography.styles.displayXs};
   ${typography.weights.semibold};
 `
 
-const SupportingText = styled.p`
-  margin-top: 4px;
-  color: ${props => props.theme.secondaryColor};
+const Time = styled.p`
+  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['400']};
 
   ${typography.styles.textSm};
-  ${typography.weights.regular};
+  ${typography.weights.semibold};
 `

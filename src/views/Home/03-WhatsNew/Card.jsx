@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -7,7 +8,7 @@ import { getFormattedDate } from '../../../utils'
 
 export const Card = ({ post }) => {
   return (
-    <Container href={post.slug} target='_blank' rel='noreferrer'>
+    <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
         <Image src={`/${post.image}`} alt={post.title} fill />
       </ImageContainer>
@@ -27,7 +28,7 @@ export const Card = ({ post }) => {
   )
 }
 
-const Container = styled.a`
+const Container = styled(Link)`
   display: block;
 `
 

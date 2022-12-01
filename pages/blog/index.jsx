@@ -6,7 +6,7 @@ import { services } from '../../services'
 import { Blog } from '../../src/views/Blog'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'home'])
+  const s = await serverSideTranslations(locale, ['common', 'blog'])
 
   return {
     props: {

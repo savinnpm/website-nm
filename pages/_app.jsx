@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { TooltipProvider } from '@radix-ui/react-tooltip'
 import { appWithTranslation } from 'next-i18next'
 
 import '@fontsource/inter/latin.css'
@@ -17,20 +16,18 @@ function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
-    <TooltipProvider>
-      <ThemeProvider>
-        <VideosProvider videos={pageProps.videos}>
-          <HeaderContainer>
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
-          </HeaderContainer>
-          <MainContainer>
-            <MobileNavContainer isMenuOpen={isMenuOpen} />
-            <Component {...pageProps} />
-          </MainContainer>
-          <Footer />
-        </VideosProvider>
-      </ThemeProvider>
-    </TooltipProvider>
+    <ThemeProvider>
+      <VideosProvider videos={pageProps.videos}>
+        <HeaderContainer>
+          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} />
+        </HeaderContainer>
+        <MainContainer>
+          <MobileNavContainer isMenuOpen={isMenuOpen} />
+          <Component {...pageProps} />
+        </MainContainer>
+        <Footer />
+      </VideosProvider>
+    </ThemeProvider>
   )
 }
 

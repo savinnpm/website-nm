@@ -2,45 +2,19 @@ import * as React from "react"
 
 const SvgComponent = (props) => (
   <svg
-    width={48}
-    height={48}
-    viewBox="0 0 48 48"
+    width={72}
+    height={72}
+    viewBox="0 0 72 72"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
     {...props}
   >
-    <g filter="url(#a)">
-      <path
-        fillRule="evenodd"
-        clipRule="evenodd"
-        d="M24 48c13.255 0 24-10.745 24-24S37.255 0 24 0 0 10.745 0 24s10.745 24 24 24Zm-3.75-15.197 13.5-7.545c1-.56 1-1.957 0-2.516l-13.5-7.545c-1-.56-2.25.14-2.25 1.257v15.092c0 1.117 1.25 1.816 2.25 1.257Z"
-        fill="currentColor"
-      />
-    </g>
-    <defs>
-      <filter
-        id="a"
-        x={-16}
-        y={-16}
-        width={80}
-        height={80}
-        filterUnits="userSpaceOnUse"
-        colorInterpolationFilters="sRGB"
-      >
-        <feFlood floodOpacity={0} result="BackgroundImageFix" />
-        <feGaussianBlur in="BackgroundImageFix" stdDeviation={8} />
-        <feComposite
-          in2="SourceAlpha"
-          operator="in"
-          result="effect1_backgroundBlur_1398_368453"
-        />
-        <feBlend
-          in="SourceGraphic"
-          in2="effect1_backgroundBlur_1398_368453"
-          result="shape"
-        />
-      </filter>
-    </defs>
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M36 72c19.882 0 36-16.118 36-36S55.882 0 36 0 0 16.118 0 36s16.118 36 36 36Zm-5.625-22.795 20.25-11.319a2.144 2.144 0 0 0 0-3.772l-20.25-11.319c-1.5-.838-3.375.21-3.375 1.886v22.637c0 1.677 1.875 2.725 3.375 1.887Z"
+      fill="currentColor"
+    />
   </svg>
 )
 

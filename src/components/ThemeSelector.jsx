@@ -4,7 +4,6 @@ import { shadows } from '../../styles/shadows'
 import { utils } from '../../styles/utils'
 import { useThemeContext } from '../theme/ThemeContext'
 import { Icon } from './Icon'
-import { Tooltip } from './Tooltip'
 
 export const ThemeSelector = () => {
   const { darkMode, setDarkMode } = useThemeContext()
@@ -16,15 +15,13 @@ export const ThemeSelector = () => {
   const checked = !!darkMode
 
   return (
-    <Tooltip content='Toggle theme' side='bottom' align='end'>
-      <Label>
-        <span>Dark Mode</span>
-        <Input checked={checked} type='checkbox' onChange={handleChange} />
-        <Switch>
-          <Icon size={12} variant={checked ? 'sun-filled' : 'moon-star-filled'} />
-        </Switch>
-      </Label>
-    </Tooltip>
+    <Label>
+      <span>Dark Mode</span>
+      <Input checked={checked} type='checkbox' onChange={handleChange} />
+      <Switch>
+        <Icon size={12} variant={checked ? 'sun-filled' : 'moon-star-filled'} />
+      </Switch>
+    </Label>
   )
 }
 
