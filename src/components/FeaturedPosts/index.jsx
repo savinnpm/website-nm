@@ -19,7 +19,7 @@ export const FeaturedPosts = ({ posts }) => {
 
 const Container = styled.div`
   ${utils.fullWidthContainer};
-  margin: 64px auto 96px;
+  margin: 56px auto 96px;
 `
 
 const Heading = styled.h2`

@@ -7,7 +7,7 @@ import { getFormattedDate } from '../../utils'
 
 export const FeaturedPostCard = ({ post }) => {
   return (
-    <Container href={`/blog/${post.slug}`} target='_blank' rel='noreferrer'>
+    <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
         <Image src={`/${post.image}`} alt={post.title} fill loading='lazy' />
       </ImageContainer>
@@ -147,7 +147,7 @@ const Intro = styled.p`
 const TagsContainer = styled.div`
   display: flex;
   margin-top: auto;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
   
   @media screen and (max-width: 1024px) {
     margin-top: auto;
