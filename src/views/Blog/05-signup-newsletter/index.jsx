@@ -10,7 +10,7 @@ export const SignupNewsletter = () => {
       <InnerContainer>
         <ContentContainer>
           <Heading>Sign up for our newsletter</Heading>
-          <Subtitle>The blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.</Subtitle>
+          <Subtitle>Be the first to know about releases and industry news and insights.</Subtitle>
         </ContentContainer>
 
         <FormContainer>
@@ -23,9 +23,6 @@ export const SignupNewsletter = () => {
 }
 
 const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 40px;
   padding-top: 0;
   padding-bottom: 96px;
