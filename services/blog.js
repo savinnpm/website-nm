@@ -96,7 +96,7 @@ export const getPostsSlugs = async () => {
   try {
     const docs = await getDocs()
 
-    const result = docs.map((doc) => doc.slug)
+    const result = docs.map((doc) => doc.slug).filter(x => !!x)
 
     return result
   } catch (error) {
