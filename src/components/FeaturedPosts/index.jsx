@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
-import { BlogCard } from './BlogCard'
+import { FeaturedPostCard } from './FeaturedPostCard'
 
 export const FeaturedPosts = ({ posts }) => {
   if (!posts?.length) return <></>
@@ -11,7 +11,7 @@ export const FeaturedPosts = ({ posts }) => {
       <Heading>Featured Posts</Heading>
 
       <GridContainer>
-        {posts.slice(0, 3).map((post, i) => <BlogCard key={i} post={post} />)}
+        {posts.slice(0, 3).map((post, i) => <FeaturedPostCard key={i} post={post} />)}
       </GridContainer>
     </Container>
   )

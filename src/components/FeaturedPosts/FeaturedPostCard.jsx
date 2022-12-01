@@ -5,11 +5,11 @@ import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
 import { getFormattedDate } from '../../utils'
 
-export const BlogCard = ({ post }) => {
+export const FeaturedPostCard = ({ post }) => {
   return (
-    <Container href={post.slug} target='_blank' rel='noreferrer'>
+    <Container href={`/blog/${post.slug}`} target='_blank' rel='noreferrer'>
       <ImageContainer>
-        <Image src={`/${post.image}`} alt={post.title} width={500} height={500} loading='lazy' />
+        <Image src={`/${post.image}`} alt={post.title} fill loading='lazy' />
       </ImageContainer>
 
       <Contents>
@@ -48,7 +48,6 @@ const Container = styled.a`
       
       --max-lines: 2;
     }
-
   }
   
   // if not first child, then change font style for <Title> component
@@ -63,33 +62,59 @@ const Container = styled.a`
       ${typography.styles.textLg};
     }
   }
+  
+  // if screen size is below 860px
+  @media screen and (max-width: 860px) {
+    flex-direction: column;
+    gap: 21px;
+
+    --max-lines: 2;
+  }
 
   // change <TagsContainer> style for first child
   &:nth-of-type(1) > div:nth-of-type(2) > div:last-of-type {
     margin-bottom: 0px;
+    margin-top: 24px;
   }
 
 `
 
 const Contents = styled.div`
-  height: 100%;
+  height: 200px;
   display: flex;
   flex-direction: column;
+  
+  @media screen and (max-width: 860px) {
+    height: auto;
+  }
 `
 
 const ImageContainer = styled.div`
   position: relative;
-  height: 240px;
+  height: 195px;
+  flex-basis: 160%;
+  
+  ${Container}:nth-of-type(1) > & {
+    @media screen and (min-width: 1024px) {
+      /* flex-basis: 280%; */
+      height: 200px;
+    }
+  }
 
+  @media screen and (max-width: 1024px) {
+    flex-basis: 50%;
+  }
+  
+  @media screen and (max-width: 860px) {
+    min-height: 240px;
+  }
+  
   img {
     object-fit: cover;
-    height: 100%;
     width: 100%;
+    height: 100%;
   }
 
-  @media screen and (max-width: 768px) {
-    height: 200px;
-  }
   
 `
 
@@ -125,6 +150,12 @@ const TagsContainer = styled.div`
   margin-bottom: 10px;
   
   @media screen and (max-width: 1024px) {
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
+  
+  @media screen and (max-width: 860px) {
+    margin-top: 24px;
     margin-bottom: 0px;
   }
 `
