@@ -104,7 +104,11 @@ const ImageContainer = styled.div`
   filter: drop-shadow(0px 4px 24px rgba(0, 0, 0, 0.25));
 
   @media (max-width: 768px) {
-    height: 240px;
+    flex: 1 0 320px;
+    height: 320px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
   }
   position: relative;
 
