@@ -36,6 +36,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen, colored }) => {
 }
 
 const StyledHeader = styled.header`  
+  background-color: ${props => props.theme.primaryBackgroundColor};
   background-color: ${props => props.colored
   ? (props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900'])
   : undefined};
