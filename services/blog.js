@@ -85,7 +85,7 @@ export const getSinglePost = async (slug) => {
       tags: match.tags.map((tag) => tag.name).slice(0, 1),
       content: {
         // raw: serialize(match.content),
-        html: serialize(match.content)
+        html: serialize(match.content) || match.html || ''
       }
     }
   } catch (error) {
