@@ -56,7 +56,8 @@ export const mockData = {
         ],
         _status: 'published',
         createdAt: '2022-11-28T10:51:33.448Z',
-        updatedAt: '2022-11-28T10:51:33.448Z'
+        updatedAt: '2022-11-30T15:10:07.586Z',
+        length: 93
       },
       {
         id: '6384928cfb05d8e7c9a4f893',
@@ -100,7 +101,8 @@ export const mockData = {
         ],
         _status: 'published',
         createdAt: '2022-11-28T10:50:52.330Z',
-        updatedAt: '2022-11-28T10:50:52.330Z'
+        updatedAt: '2022-11-30T15:11:00.550Z',
+        length: 100
       },
       {
         id: '63849223fb05d8e7c9a4f7ba',
@@ -131,7 +133,8 @@ export const mockData = {
         ],
         _status: 'published',
         createdAt: '2022-11-28T10:49:07.120Z',
-        updatedAt: '2022-11-28T10:49:07.120Z'
+        updatedAt: '2022-11-30T15:11:31.280Z',
+        length: 36
       }
     ],
     totalDocs: 12,
@@ -690,7 +693,8 @@ export const mockData = {
             url: 'https://example.com/media/lets-cover-the-main-defi-security-risks.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'lets-cover-the-main-defi-security-risks'
       },
       {
         id: '638250ee836b619da1910b05',
@@ -814,7 +818,8 @@ export const mockData = {
             url: 'https://example.com/media/numbers-protocol-multichain-bridge-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'taking-a-closer-look-at-the-numbers-protocol-hack'
       },
       {
         id: '638250f4836b619da1910b09',
@@ -918,7 +923,8 @@ export const mockData = {
             url: 'https://example.com/media/binance-cover-press-release.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'binance-decentralized-cover-pool-launch-announcement'
       },
       {
         id: '638250f9836b619da1910b0d',
@@ -1082,7 +1088,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-nov21.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-nov-21'
       },
       {
         id: '638250fe836b619da1910b11',
@@ -1216,7 +1223,8 @@ export const mockData = {
             url: 'https://example.com/media/understanding-prime-dapps-on-neptune-mutual.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'deep-dive-into-prime-dapps-cover-projects'
       },
       {
         id: '63825104836b619da1910b15',
@@ -1340,7 +1348,8 @@ export const mockData = {
             url: 'https://example.com/media/sheep-farm-smart-contract-hack.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-sheep-farm-smart-contract-hack'
       },
       {
         id: '63825109836b619da1910b1d',
@@ -1444,7 +1453,8 @@ export const mockData = {
             url: 'https://example.com/media/ftx-hack.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'taking-a-closer-look-at-the-ftx-hack'
       },
       {
         id: '6382510e836b619da1910b21',
@@ -1618,7 +1628,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-nov14.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-nov-14'
       },
       {
         id: '63825113836b619da1910b25',
@@ -1752,7 +1763,8 @@ export const mockData = {
             url: 'https://example.com/media/brahtopg-smart-contract-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-brahtopg-smart-contract-vulnerability'
       },
       {
         id: '63825119836b619da1910b29',
@@ -1926,7 +1938,8 @@ export const mockData = {
             url: 'https://example.com/media/parametric-cover-neptune-mutual.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'ethereum-defi-cover-protocol-launch-announcement'
       },
       {
         id: '6382511e836b619da1910b2d',
@@ -2190,7 +2203,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-nov7.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-nov-07'
       },
       {
         id: '63825123836b619da1910b31',
@@ -2314,7 +2328,8 @@ export const mockData = {
             url: 'https://example.com/media/skyward-finance-smart-contract-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-skyward-finance-smart-contract-vulnerability'
       },
       {
         id: '63825128836b619da1910b35',
@@ -2488,7 +2503,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-mainnet-launch.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-parametric-marketplace-going-live-on-ethereum'
       },
       {
         id: '6382512d836b619da1910b39',
@@ -2632,7 +2648,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-october-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review--october-2022'
       },
       {
         id: '63825132836b619da1910b3d',
@@ -2756,7 +2773,8 @@ export const mockData = {
             url: 'https://example.com/media/team-finance-contract-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-team-finance-contract-vulnerability'
       },
       {
         id: '63825138836b619da1910b41',
@@ -2980,7 +2998,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-oct31.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-oct-31'
       },
       {
         id: '6382513d836b619da1910b45',
@@ -3094,7 +3113,8 @@ export const mockData = {
             url: 'https://example.com/media/melody-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-melody-vulnerability'
       },
       {
         id: '63825142836b619da1910b49',
@@ -3228,7 +3248,8 @@ export const mockData = {
             url: 'https://example.com/media/how-to-protect-your-crypto-assets.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-to-protect-your-crypto-assets'
       },
       {
         id: '63825147836b619da1910b4d',
@@ -3352,7 +3373,8 @@ export const mockData = {
             url: 'https://example.com/media/ulme-token-flash-loan-attack.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-ulme-token-flash-loan-attack'
       },
       {
         id: '6382514c836b619da1910b51',
@@ -3586,7 +3608,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-oct24.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-oct-24'
       },
       {
         id: '63825152836b619da1910b55',
@@ -3760,7 +3783,8 @@ export const mockData = {
             url: 'https://example.com/media/web3-how-is-it-different.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'web-30-how-is-it-different-and-why-does-it-matter'
       },
       {
         id: '63825157836b619da1910b59',
@@ -3894,7 +3918,8 @@ export const mockData = {
             url: 'https://example.com/media/bitkeep-smart-contract-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-bitkeeps-smart-contract-vulnerability'
       },
       {
         id: '6382515d836b619da1910b5d',
@@ -4038,7 +4063,8 @@ export const mockData = {
             url: 'https://example.com/media/moola-market-price-manipulation.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-moola-markets-price-manipulation-attack'
       },
       {
         id: '63825162836b619da1910b61',
@@ -4192,7 +4218,8 @@ export const mockData = {
             url: 'https://example.com/media/plantworld-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'plantworlds-flash-loan-attack-analysis-report'
       },
       {
         id: '63825167836b619da1910b65',
@@ -4396,7 +4423,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-oct17.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-oct-17'
       },
       {
         id: '6382516c836b619da1910b69',
@@ -4540,7 +4568,8 @@ export const mockData = {
             url: 'https://example.com/media/ftx-gas-limit-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-ftxs-gas-limit-vulnerability'
       },
       {
         id: '63825171836b619da1910b6d',
@@ -4724,7 +4753,8 @@ export const mockData = {
             url: 'https://example.com/media/beginners-guide-to-testnets.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'the-beginners-guide-to-testnets'
       },
       {
         id: '63825177836b619da1910b71',
@@ -4868,7 +4898,8 @@ export const mockData = {
             url: 'https://example.com/media/decoding-rabby-smart-contract-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-rabbys-smart-contract-vulnerability'
       },
       {
         id: '6382517c836b619da1910b75',
@@ -5032,7 +5063,8 @@ export const mockData = {
             url: 'https://example.com/media/stax-finance-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-stax-finances-vulnerability'
       },
       {
         id: '63825181836b619da1910b79',
@@ -5176,7 +5208,8 @@ export const mockData = {
             url: 'https://example.com/media/mango-price-manipulation-vulnerability.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-mangos-vulnerability'
       },
       {
         id: '63825186836b619da1910b7d',
@@ -5340,7 +5373,8 @@ export const mockData = {
             url: 'https://example.com/media/sovryn-price-manipulation.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-sovryns-price-manipulation-vulnerability'
       },
       {
         id: '6382518b836b619da1910b81',
@@ -5534,7 +5568,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-oct10-2.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-oct-10'
       },
       {
         id: '63825190836b619da1910b85',
@@ -5668,7 +5703,8 @@ export const mockData = {
             url: 'https://example.com/media/fuji-avalanche-testnet-launch-neptune-mutual.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutuals-gamified-testnet-now-live-on-avalanche'
       },
       {
         id: '63825196836b619da1910b89',
@@ -5812,7 +5848,8 @@ export const mockData = {
             url: 'https://example.com/media/bsc-token-hub.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-bsc-token-hubs-contract-vulnerability'
       },
       {
         id: '6382519b836b619da1910b8d',
@@ -5956,7 +5993,8 @@ export const mockData = {
             url: 'https://example.com/media/transit-finance-smart-contract.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-transit-finances-contract-vulnerability'
       },
       {
         id: '638251a0836b619da1910b91',
@@ -6110,7 +6148,8 @@ export const mockData = {
             url: 'https://example.com/media/fuji-testnet.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-launch-gamified-testnet-on-avalanche-fuji'
       },
       {
         id: '638251a5836b619da1910b95',
@@ -6264,7 +6303,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-september-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review-september-2022'
       },
       {
         id: '638251aa836b619da1910b99',
@@ -6528,7 +6568,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-oct3.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-oct-03'
       },
       {
         id: '638251af836b619da1910b9d',
@@ -6632,7 +6673,8 @@ export const mockData = {
             url: 'https://example.com/media/the-neptune-mutual-ecosystem.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'the-neptune-mutual-ecosystem'
       },
       {
         id: '638251b4836b619da1910ba1',
@@ -6786,7 +6828,8 @@ export const mockData = {
             url: 'https://example.com/media/dydx-supply-chain-attack.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-dydxs-supply-chain-vulnerability'
       },
       {
         id: '638251ba836b619da1910ba5',
@@ -6980,7 +7023,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-sep26.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-sep-26'
       },
       {
         id: '638251bf836b619da1910ba9',
@@ -7134,7 +7178,8 @@ export const mockData = {
             url: 'https://example.com/media/unpacking-the-basics-of-the-metaverse.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'unpacking-the-basics-of-the-metaverse'
       },
       {
         id: '638251c4836b619da1910bad',
@@ -7268,7 +7313,8 @@ export const mockData = {
             url: 'https://example.com/media/decoding-wintermute-hot-wallet-compromise.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-wintermutes-hot-wallet-compromise'
       },
       {
         id: '638251ca836b619da1910bb1',
@@ -7382,7 +7428,8 @@ export const mockData = {
             url: 'https://example.com/media/decoding-omni-bridge-exploit.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-omni-bridges-call-data-replay-exploit'
       },
       {
         id: '638251cf836b619da1910bb5',
@@ -7506,7 +7553,8 @@ export const mockData = {
             url: 'https://example.com/media/decoding-gmx-price-manipulation.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'decoding-gmxs-price-manipulation-exploit'
       },
       {
         id: '638251d4836b619da1910bb9',
@@ -7670,7 +7718,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-sep19.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-sep-19'
       },
       {
         id: '638251d9836b619da1910bbd',
@@ -7834,7 +7883,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-sep12.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-sep-12'
       },
       {
         id: '638251de836b619da1910bc1',
@@ -7938,7 +7988,8 @@ export const mockData = {
             url: 'https://example.com/media/discretionary-vs-parametric.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-are-discretionary-and-parametric-covers-different'
       },
       {
         id: '638251e4836b619da1910bc5',
@@ -8092,7 +8143,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-sep5.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-sep-05'
       },
       {
         id: '638251e9836b619da1910bc9',
@@ -8186,7 +8238,8 @@ export const mockData = {
             url: 'https://example.com/media/how-to-safeguard-against-malicious-websites.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-to-safeguard-against-malicious-websites'
       },
       {
         id: '638251ee836b619da1910bcd',
@@ -8280,7 +8333,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-august-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review-august-2022'
       },
       {
         id: '638251f4836b619da1910bd1',
@@ -8404,7 +8458,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-aug29.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-aug-29'
       },
       {
         id: '638251f9836b619da1910bd5',
@@ -8538,7 +8593,8 @@ export const mockData = {
             url: 'https://example.com/media/the-need-for-cooperation-between-onchain-insurance.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'why-onchain-cover-protocols-should-cooperate-not-compete'
       },
       {
         id: '638251fe836b619da1910bd9',
@@ -8712,7 +8768,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-aug22.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-aug-22'
       },
       {
         id: '63825203836b619da1910bdd',
@@ -8866,7 +8923,8 @@ export const mockData = {
             url: 'https://example.com/media/most-common-hacks-and-exploits.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'what-you-need-to-know-about-smart-contract-security'
       },
       {
         id: '63825208836b619da1910be1',
@@ -9050,7 +9108,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-aug15.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-aug-15'
       },
       {
         id: '6382520e836b619da1910be5',
@@ -9174,7 +9233,8 @@ export const mockData = {
             url: 'https://example.com/media/first-audit-report.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'first-audit-report'
       },
       {
         id: '63825213836b619da1910be9',
@@ -9418,7 +9478,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-aug8.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-aug-8'
       },
       {
         id: '63825218836b619da1910bed',
@@ -9522,7 +9583,8 @@ export const mockData = {
             url: 'https://example.com/media/what-is-defi-insurance.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'what-is-defi-insurance--neptune-mutual'
       },
       {
         id: '6382521d836b619da1910bf1',
@@ -9666,7 +9728,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-july-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review-july-2022'
       },
       {
         id: '63825223836b619da1910bf5',
@@ -9870,7 +9933,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-aug1.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-aug-1'
       },
       {
         id: '638257a5617303dbe54bedeb',
@@ -10044,7 +10108,8 @@ export const mockData = {
             url: 'https://example.com/media/best-binance-smart-chain-projects-2021.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'best-binance-smart-chain-projects-2021'
       },
       {
         id: '638257a4617303dbe54bede7',
@@ -10148,7 +10213,8 @@ export const mockData = {
             url: 'https://example.com/media/june-2021-development-updates.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'june-2021-development-updates'
       },
       {
         id: '63825794617303dbe54bedbf',
@@ -10272,7 +10338,8 @@ export const mockData = {
             url: 'https://example.com/media/social-media-competition-winner-announcement.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'social-media-competition-3-winner-announcement'
       },
       {
         id: '6382524d836b619da1910c15',
@@ -10446,7 +10513,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jul4.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jul-4'
       },
       {
         id: '63825229836b619da1910bf9',
@@ -10560,7 +10628,8 @@ export const mockData = {
             url: 'https://example.com/media/understanding-underwriting-capital.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'understanding-underwriting-capital-not-all-pools-are-alike'
       },
       {
         id: '63825248836b619da1910c11',
@@ -10664,7 +10733,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-june-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review--june-2022'
       },
       {
         id: '63825753617303dbe54bed13',
@@ -10838,7 +10908,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-protocol-raises-5.3m.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-protocol-raises-53m-in-a-private-funding-round'
       },
       {
         id: '6382579f617303dbe54beddb',
@@ -10972,7 +11043,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-raises-strategic-round-led-by-animoca-brands.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-raises-strategic-round-led-by-animoca-brands'
       },
       {
         id: '6382522e836b619da1910bfd',
@@ -11196,7 +11268,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jul25.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jul-25'
       },
       {
         id: '63825233836b619da1910c01',
@@ -11320,7 +11393,8 @@ export const mockData = {
             url: 'https://example.com/media/diversified-cover-pools.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'enhance-liquidity-via-diversified-cover-pools'
       },
       {
         id: '638257a2617303dbe54bede3',
@@ -11454,7 +11528,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-raises-seed-round-led-by-fenbushi-capital.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-raises-seed-round-led-by-fenbushi-capital'
       },
       {
         id: '63825763617303dbe54bed3b',
@@ -11558,7 +11633,8 @@ export const mockData = {
             url: 'https://example.com/media/rising-star.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'announcing-npm-rising-stars'
       },
       {
         id: '63825238836b619da1910c05',
@@ -11662,7 +11738,8 @@ export const mockData = {
             url: 'https://example.com/media/rising-star-third-month.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'npm-rising-star-third-month-winner-announcement'
       },
       {
         id: '63825243836b619da1910c0d',
@@ -11836,7 +11913,8 @@ export const mockData = {
             url: 'https://example.com/media/earning-by-reporting-incident.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-you-can-earn-rewards-by-reporting-incidents'
       },
       {
         id: '6382523d836b619da1910c09',
@@ -12060,7 +12138,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jul18.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jul-18'
       },
       {
         id: '63825270836b619da1910c19',
@@ -12234,7 +12313,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jun27.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jun-27'
       },
       {
         id: '6382527b836b619da1910c21',
@@ -12368,7 +12448,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jun20.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jun-20'
       },
       {
         id: '6382528a836b619da1910c2d',
@@ -12512,7 +12593,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jun13.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jun-13'
       },
       {
         id: '63825294836b619da1910c35',
@@ -12646,7 +12728,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jun6.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jun-6'
       },
       {
         id: '63825280836b619da1910c25',
@@ -12740,7 +12823,8 @@ export const mockData = {
             url: 'https://example.com/media/rising-star-second-month.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'npm-rising-star-second-month-winner-announcement'
       },
       {
         id: '63825275836b619da1910c1d',
@@ -12834,7 +12918,8 @@ export const mockData = {
             url: 'https://example.com/media/confessions-of-a-scammer.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'confessions-of-a-scammer-how-to-avoid-crypto-scams'
       },
       {
         id: '63825285836b619da1910c29',
@@ -12928,7 +13013,8 @@ export const mockData = {
             url: 'https://example.com/media/bootstrapping-cover-pool-liquidity.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'bootstrapping-decentralized-cover-pool-liquidity'
       },
       {
         id: '63825299836b619da1910c39',
@@ -13022,7 +13108,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-may-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review--may-2022'
       },
       {
         id: '6382528f836b619da1910c31',
@@ -13126,7 +13213,8 @@ export const mockData = {
             url: 'https://example.com/media/crypto-crash.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'crypto-crash-heightens-awareness-of-risks--hacks'
       },
       {
         id: '6382529e836b619da1910c3d',
@@ -13250,7 +13338,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-may30.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-may-30'
       },
       {
         id: '638252a4836b619da1910c41',
@@ -13324,7 +13413,8 @@ export const mockData = {
             url: 'https://example.com/media/recap-of-neptune-mutual-avstar-ama.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-x-avstar-ama-recap'
       },
       {
         id: '638252a9836b619da1910c45',
@@ -13428,7 +13518,8 @@ export const mockData = {
             url: 'https://example.com/media/capital-requirement.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'capital-requirement-how-to-measure-it-and-why-it-matters-a-lot'
       },
       {
         id: '638252ae836b619da1910c49',
@@ -13602,7 +13693,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-may23.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-may-23'
       },
       {
         id: '638252b3836b619da1910c4d',
@@ -13686,7 +13778,8 @@ export const mockData = {
             url: 'https://example.com/media/salmon-in-a-bear-market.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'dont-be-a-salmon-in-a-bear-market'
       },
       {
         id: '638252b9836b619da1910c51',
@@ -13770,7 +13863,8 @@ export const mockData = {
             url: 'https://example.com/media/terra-luna-crisis-explained.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'terra-luna--crisis-explained'
       },
       {
         id: '638256c3617303dbe54bed07',
@@ -13854,7 +13948,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-ama.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-first-community-ama-recap'
       },
       {
         id: '63825750617303dbe54bed0b',
@@ -13958,7 +14053,8 @@ export const mockData = {
             url: 'https://example.com/media/first-month-rising-star-announcement.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'npm-rising-star-first-month-winner-announcement'
       },
       {
         id: '63825751617303dbe54bed0f',
@@ -14122,7 +14218,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-may16.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-may-16'
       },
       {
         id: '63825923e3bfb4a22bef1e70',
@@ -14226,7 +14323,8 @@ export const mockData = {
             url: 'https://example.com/media/Neptune-Mutual-Testnet-Winners.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: ''
       },
       {
         id: '63825755617303dbe54bed17',
@@ -14340,7 +14438,8 @@ export const mockData = {
             url: 'https://example.com/media/announcing-neptune-mutual-testnet-winner.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'announcing-the-testnet-winners'
       },
       {
         id: '63825757617303dbe54bed1b',
@@ -14424,7 +14523,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-x-ico-pantera-ama-recap.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-x-ico-pantera-ama-recap--'
       },
       {
         id: '63825758617303dbe54bed1f',
@@ -14558,7 +14658,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-may9.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-may-9'
       },
       {
         id: '6382575a617303dbe54bed23',
@@ -14652,7 +14753,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-april-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review-april-2022'
       },
       {
         id: '6382575b617303dbe54bed27',
@@ -14786,7 +14888,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-may2.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-may-2'
       },
       {
         id: '6382575d617303dbe54bed2b',
@@ -14900,7 +15003,8 @@ export const mockData = {
             url: 'https://example.com/media/privacy-coins.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'privacy-coins-arent-made-to-protect-digital-assets'
       },
       {
         id: '6382575e617303dbe54bed2f',
@@ -15034,7 +15138,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-apr25.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-apr-25'
       },
       {
         id: '63825760617303dbe54bed33',
@@ -15148,7 +15253,8 @@ export const mockData = {
             url: 'https://example.com/media/web3-protecting-community.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'is-your-web-3-project-protecting-its-community'
       },
       {
         id: '63825761617303dbe54bed37',
@@ -15242,7 +15348,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-testnet-review.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-testnet-review--coded-better-than-ever'
       },
       {
         id: '63825764617303dbe54bed3f',
@@ -15376,7 +15483,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-apr18.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-apr-18'
       },
       {
         id: '63825766617303dbe54bed43',
@@ -15460,7 +15568,8 @@ export const mockData = {
             url: 'https://example.com/media/protocol-parametric-protection.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'protocol-parametric-protection-covering-the-basics'
       },
       {
         id: '63825767617303dbe54bed47',
@@ -15574,7 +15683,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-apr11.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-apr-11'
       },
       {
         id: '63825769617303dbe54bed4b',
@@ -15648,7 +15758,8 @@ export const mockData = {
             url: 'https://example.com/media/cyber-criminal-whales.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'cyber-criminal-whales-the-rise-of-crypto-syndicates'
       },
       {
         id: '6382576a617303dbe54bed4f',
@@ -15732,7 +15843,8 @@ export const mockData = {
             url: 'https://example.com/media/how-bonds-work-on-neptune-mutual.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-bonds-work-on-neptune-mutual'
       },
       {
         id: '6382576c617303dbe54bed53',
@@ -15866,7 +15978,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-apr4.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-apr-4'
       },
       {
         id: '6382576d617303dbe54bed57',
@@ -15970,7 +16083,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-march-2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review--march-2022'
       },
       {
         id: '6382576f617303dbe54bed5b',
@@ -16084,7 +16198,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-bond-pool-feature-unlocked.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-bond-pool-feature-unlocked'
       },
       {
         id: '63825770617303dbe54bed5f',
@@ -16248,7 +16363,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-mar28.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-mar-28'
       },
       {
         id: '63825772617303dbe54bed63',
@@ -16372,7 +16488,8 @@ export const mockData = {
             url: 'https://example.com/media/npm-testnet-features-unlocked-staking-and-pod-staking.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'npm-testnet-features-unlocked-staking-and-pod-staking'
       },
       {
         id: '63825773617303dbe54bed67',
@@ -16516,7 +16633,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-mar21.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-mar-21'
       },
       {
         id: '63825775617303dbe54bed6b',
@@ -16620,7 +16738,8 @@ export const mockData = {
             url: 'https://example.com/media/cover-creators.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-cover-protocols-help-build-confident-investor-communities'
       },
       {
         id: '63825776617303dbe54bed6f',
@@ -16744,7 +16863,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-launching-on-the-polygon-testnet.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-launching-on-the-polygon-testnet'
       },
       {
         id: '63825778617303dbe54bed73',
@@ -16908,7 +17028,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-mar14.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-mar-14'
       },
       {
         id: '63825779617303dbe54bed77',
@@ -17042,7 +17163,8 @@ export const mockData = {
             url: 'https://example.com/media/partnership-announcement-between-xt-and-neptune-mutual.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'partnership-announcement-between-xtcom-and-neptune-mutual'
       },
       {
         id: '6382577b617303dbe54bed7b',
@@ -17156,7 +17278,8 @@ export const mockData = {
             url: 'https://example.com/media/neptune-mutual-testnet-is-live.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'neptune-mutual-testnet-is-live'
       },
       {
         id: '6382577c617303dbe54bed7f',
@@ -17280,7 +17403,8 @@ export const mockData = {
             url: 'https://example.com/media/unlock-the-gold-vault-neptune-mutual-testnet-launch.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'unlock-the-gold-vault--neptune-mutual-testnet-launch'
       },
       {
         id: '6382577f617303dbe54bed87',
@@ -17374,7 +17498,8 @@ export const mockData = {
             url: 'https://example.com/media/monthly-review-feb2022.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'monthly-review--february-2022'
       },
       {
         id: '6382577e617303dbe54bed83',
@@ -17508,7 +17633,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-mar7.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-mar-7'
       },
       {
         id: '63825781617303dbe54bed8b',
@@ -17642,7 +17768,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-feb28.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-feb-28'
       },
       {
         id: '63825782617303dbe54bed8f',
@@ -17776,7 +17903,8 @@ export const mockData = {
             url: 'https://example.com/media/defi-moving-forward-digital-asset-security.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'defi-moving-forward-digital-asset-security'
       },
       {
         id: '63825784617303dbe54bed93',
@@ -17890,7 +18018,8 @@ export const mockData = {
             url: 'https://example.com/media/parametric-cover-covering-the-basic.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'parametric-cover-covering-the-basics'
       },
       {
         id: '63825785617303dbe54bed97',
@@ -18024,7 +18153,8 @@ export const mockData = {
             url: 'https://example.com/media/defi-crime-data-review-and-tips-on-digital-asset-security.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'defi-crime-data-review-and-tips-on-digital-asset-security'
       },
       {
         id: '63825787617303dbe54bed9b',
@@ -18178,7 +18308,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-feb21.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-feb-21'
       },
       {
         id: '63825788617303dbe54bed9f',
@@ -18272,7 +18403,8 @@ export const mockData = {
             url: 'https://example.com/media/are-stablecoins-decentralised.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'are-stablecoins-decentralised'
       },
       {
         id: '6382578a617303dbe54beda3',
@@ -18426,7 +18558,8 @@ export const mockData = {
             url: 'https://example.com/media/financial-protection-of-digital-assets.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'financial-protection-of-digital-assets-covering-the-basics'
       },
       {
         id: '6382578b617303dbe54beda7',
@@ -18510,7 +18643,8 @@ export const mockData = {
             url: 'https://example.com/media/creating-value-out-of-collaterals.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-do-stablecoins-remain-stable'
       },
       {
         id: '6382578d617303dbe54bedab',
@@ -18684,7 +18818,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-feb14.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-feb-14'
       },
       {
         id: '6382578e617303dbe54bedaf',
@@ -18828,7 +18963,8 @@ export const mockData = {
             url: 'https://example.com/media/how-defi-fits-in.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-defi-fits-in-with-everything-crypto'
       },
       {
         id: '63825790617303dbe54bedb3',
@@ -18942,7 +19078,8 @@ export const mockData = {
             url: 'https://example.com/media/defining-defi.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'defi-ning-defi-a-beginners-intro-to-decentralised-finance'
       },
       {
         id: '63825791617303dbe54bedb7',
@@ -19066,7 +19203,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-feb7.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-feb-7'
       },
       {
         id: '63825793617303dbe54bedbb',
@@ -19150,7 +19288,8 @@ export const mockData = {
             url: 'https://example.com/media/future-with-stablecoins.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'a-future-with-stablecoins'
       },
       {
         id: '63825796617303dbe54bedc3',
@@ -19244,7 +19383,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-review-feb1.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-feb-1'
       },
       {
         id: '63825797617303dbe54bedc7',
@@ -19328,7 +19468,8 @@ export const mockData = {
             url: 'https://example.com/media/defi-vs-cefi.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'defi-vs-cefi-whats-the-difference'
       },
       {
         id: '6382579a617303dbe54bedcf',
@@ -19442,7 +19583,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-review-Jan25.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jan-25'
       },
       {
         id: '6382579c617303dbe54bedd3',
@@ -19566,7 +19708,8 @@ export const mockData = {
             url: 'https://example.com/media/weekly-report-jan18.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'weekly-report-jan-18'
       },
       {
         id: '6382579d617303dbe54bedd7',
@@ -19650,7 +19793,8 @@ export const mockData = {
             url: 'https://example.com/media/nought-to-neptune.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'nought-to-neptune-in-5-months'
       },
       {
         id: '63825799617303dbe54bedcb',
@@ -19724,7 +19868,8 @@ export const mockData = {
             url: 'https://example.com/media/how-will-defi-change-the-financial-game.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'how-will-defi-change-the-financial-game-in-the-long-run'
       },
       {
         id: '638257a1617303dbe54beddf',
@@ -19818,7 +19963,8 @@ export const mockData = {
             url: 'https://example.com/media/identity-theft-in-the-metaverse.png'
           }
         },
-        _status: 'published'
+        _status: 'published',
+        slug: 'identity-theft-in-metaverse-what-if-your-avatar-is-hacked'
       }
     ],
     totalDocs: 143,
