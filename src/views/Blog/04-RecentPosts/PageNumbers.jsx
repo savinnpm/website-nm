@@ -1,10 +1,25 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
 
 const PAGINATION_INDEX = 3
 
 export const PageNumbers = ({ pages, setPage, page }) => {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+  console.log(isMobile)
+
   const startsFrom = page === 0 ? 0 : page - 1
+
+  if (isMobile) {
+    return (
+      <MobilePageNumberContainer>
+        Page <span>{page + 1}</span> of <span>{pages.length}</span>
+
+      </MobilePageNumberContainer>
+    )
+  }
+
   if (pages.length > 6) {
     return (
       <PageNumbersContainer>
@@ -60,4 +75,14 @@ const TripleDots = styled.span`
   width: 40px;
   height: 40px;
   justify-content: center;
+`
+const MobilePageNumberContainer = styled.div`
+  display: flex;
+  ${typography.styles.textSm}
+  ${typography.weights.regular}
+
+  & span{
+    margin: 0 5px;
+    ${typography.weights.medium}
+  }
 `
