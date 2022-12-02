@@ -9,8 +9,7 @@ export const data = [
   },
   {
     title: 'CAREERS',
-    href: '/careers',
-    isExternal: true
+    href: '/careers'
   },
   {
     title: 'RESOURCES',

@@ -31,7 +31,7 @@ export const getLatestBlogPosts = async () => {
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => tag.name).slice(0, 1)
+        tags: doc.tags.map((tag) => tag.name)
       }
     }))
 
@@ -56,7 +56,7 @@ export const getBlogPosts = async () => {
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => tag.name).slice(0, 1)
+        tags: doc.tags.map((tag) => tag.name)
       }
     }))
 
@@ -82,7 +82,7 @@ export const getSinglePost = async (slug) => {
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
-      tags: match.tags.map((tag) => tag.name).slice(0, 1),
+      tags: match.tags.map((tag) => tag.name).s,
       content: {
         // raw: serialize(match.content),
         html: serialize(match.content) || match.html || ''

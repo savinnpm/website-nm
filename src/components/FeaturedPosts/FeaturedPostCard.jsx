@@ -21,7 +21,7 @@ export const FeaturedPostCard = ({ post }) => {
         <Intro>{post.intro}&hellip;</Intro>
 
         <TagsContainer>
-          {post.tags.map((tag) => (
+          {post.tags.slice(0, 1).map((tag) => (
             <Tag key={tag}>{tag}</Tag>
           ))}
         </TagsContainer>

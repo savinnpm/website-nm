@@ -1,23 +1,41 @@
 import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { services } from '../../services'
-import Link from 'next/link'
 
-export async function getStaticProps ({ locale }) {
+import { services } from '../../services'
+
+export async function getStaticPaths () {
+  const slugs = await services.getVacancySlugs()
+
+  const paths = slugs.map(slug => {
+    return {
+      params: {
+        slug
+      }
+    }
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'security'])
 
   return {
     props: {
       ...(s),
-      audits: await services.getAudits(),
-      videos: await services.getVideos()
+      vacancy: await services.getSingleVacancy(params.slug),
+      videos: await services.getVideos(),
+      headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
 }
 
-export default function SecurityPage (props) {
+export default function VacancyPage (props) {
   return (
     <>
       <Head>
@@ -27,18 +45,8 @@ export default function SecurityPage (props) {
       </Head>
 
       <main>
-
-        {props.audits.map(audit => {
-          return (
-            <div key={audit.id}>
-              <Link href={`/security/${audit.slug}`}>{audit.title}</Link>
-            </div>
-          )
-        })}
-
+        <pre>{JSON.stringify(props.vacancy, null, 2)}</pre>
       </main>
-
-      <footer />
     </>
   )
 }

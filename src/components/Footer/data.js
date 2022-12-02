@@ -4,7 +4,7 @@ export const nav = [
     links: [
       { href: '/', text: 'HOME', isExternal: false },
       { href: '/security', text: 'SECURITY', isExternal: false },
-      { href: '/test', text: 'TEST', isExternal: false }
+      { href: '/component-test', text: 'TEST', isExternal: false }
     ]
   },
   {

@@ -5,19 +5,20 @@ import { services } from '../../services'
 import Link from 'next/link'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'security'])
+  const s = await serverSideTranslations(locale, ['common', 'careers'])
 
   return {
     props: {
       ...(s),
-      audits: await services.getAudits(),
-      videos: await services.getVideos()
+      vacancies: await services.getVacancies(),
+      videos: await services.getVideos(),
+      headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
 }
 
-export default function SecurityPage (props) {
+export default function CareersPage (props) {
   return (
     <>
       <Head>
@@ -28,10 +29,10 @@ export default function SecurityPage (props) {
 
       <main>
 
-        {props.audits.map(audit => {
+        {props.vacancies.map(vacancy => {
           return (
-            <div key={audit.id}>
-              <Link href={`/security/${audit.slug}`}>{audit.title}</Link>
+            <div key={vacancy.id}>
+              <Link href={`/careers/${vacancy.slug}`}>{vacancy.title}</Link>
             </div>
           )
         })}

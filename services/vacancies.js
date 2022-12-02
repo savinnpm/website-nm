@@ -1,4 +1,3 @@
-import { storeLocally } from './io/download'
 import { mockData } from './_mock_'
 
 let docs = null
@@ -8,16 +7,16 @@ const getDocs = async () => {
   //   return docs
   // }
 
-  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000`)
+  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}vacancies?limit=1000`)
   // const data = JSON.parse(dataStr)
   // docs = data.docs
 
-  console.log('fetching all audits')
-  docs = mockData.auditList.docs
+  console.log('fetching all vacancies')
+  docs = mockData.vacancies.docs
   return docs
 }
 
-export const getAudits = async () => {
+export const getVacancies = async () => {
   try {
     const docs = await getDocs()
 
@@ -25,11 +24,13 @@ export const getAudits = async () => {
       return {
         id: doc.id,
         title: doc.title,
-        report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
         slug: doc.id,
         intro: doc.intro,
-        startDate: doc.startDate,
-        endDate: doc.endDate
+        type: doc.type,
+        badges: JSON.parse(doc.badges || '[]'),
+        location: doc.location,
+        department: doc.department,
+        form: doc.form
       }
     }))
 
@@ -41,7 +42,7 @@ export const getAudits = async () => {
   return []
 }
 
-export const getSingleAudit = async (slug) => {
+export const getSingleVacancy = async (slug) => {
   try {
     const docs = await getDocs()
 
@@ -50,11 +51,13 @@ export const getSingleAudit = async (slug) => {
     return {
       id: match.id,
       title: match.title,
-      report: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.report.filename}`, 'audits'),
       slug: match.id,
       intro: match.intro,
-      startDate: match.startDate,
-      endDate: match.endDate
+      type: match.type,
+      badges: JSON.parse(match.badges || '[]'),
+      location: match.location,
+      department: match.department,
+      form: match.form
     }
   } catch (error) {
     console.error(error)
@@ -63,7 +66,7 @@ export const getSingleAudit = async (slug) => {
   return []
 }
 
-export const getAuditSlugs = async () => {
+export const getVacancySlugs = async () => {
   try {
     const docs = await getDocs()
 
