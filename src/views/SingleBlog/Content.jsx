@@ -13,9 +13,6 @@ export const Content = ({ content, wrapperClass }) => {
 }
 
 const Container = styled.div`
-  padding-top: 96px;
-  padding-bottom: 96px;
-
   @media (max-width: 768px) {
     padding-top: 64px;
     padding-bottom: 64px;

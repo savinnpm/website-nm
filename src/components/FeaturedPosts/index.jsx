@@ -5,13 +5,14 @@ import { FeaturedPostCard } from './FeaturedPostCard'
 
 export const FeaturedPosts = ({ posts }) => {
   if (!posts?.length) return <></>
+  const filteredPosts = posts.filter(post => post.featured).slice(0, 3)
 
   return (
     <Container>
       <Heading>Featured Posts</Heading>
 
       <GridContainer>
-        {posts.slice(0, 3).map((post, i) => <FeaturedPostCard key={i} post={post} />)}
+        {filteredPosts.map((post, i) => <FeaturedPostCard key={i} post={post} />)}
       </GridContainer>
     </Container>
   )

@@ -9,7 +9,7 @@ import {
   coldarkCold
 } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
-import { colors } from '../../../../styles/colors'
+import { colors, primaryColorKey } from '../../../../styles/colors'
 
 import '@fontsource/roboto-mono/latin.css'
 
@@ -51,7 +51,7 @@ export const CodeSnippet = ({ text, theme }) => {
 
 const Container = styled.div`
   border-radius: 12px;
-  background: ${(props) => (props.theme.isLightMode ? colors.indigo['50'] : colors.gray['900'])};
+  background: ${(props) => (props.theme.isLightMode ? colors[primaryColorKey]['50'] : colors.gray['900'])};
   overflow: hidden;
 
   height: min-content;
@@ -74,8 +74,8 @@ const Container = styled.div`
     padding-left: 1.5rem !important;
     padding-right: 1.5rem !important;
     width: 4rem;
-    background-color: ${(props) => props.theme.isLightMode ? colors.indigo['100'] : colors.gray['700']};
-    color: ${(props) => props.theme.isLightMode ? colors.indigo['500'] : colors.gray['300']} !important;
+    background-color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['100'] : colors.gray['700']};
+    color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['500'] : colors.gray['300']} !important;
   }
 
   & code > .code-line:first-child .linenumber {

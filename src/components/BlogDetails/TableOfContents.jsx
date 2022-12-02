@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
+import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
 export const TableOfContents = ({ wrapperClass, title }) => {
@@ -13,25 +13,23 @@ export const TableOfContents = ({ wrapperClass, title }) => {
     const headerElements = document.querySelectorAll(selector)
 
     const h = []
-    let lastH2Index = 0; let lastH3Index = -1
-    headerElements.forEach((el, i) => {
+    headerElements.forEach((el) => {
       const elName = el.tagName
       const elText = el.textContent.replace(/^(\s)+|(\s)+$/g, '')
       // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
+      const elId = el.getAttribute('id')
 
       if (elName === 'H2') {
-        h.push({ text: elText, children: [] })
-        lastH2Index = i
-        lastH3Index = -1
+        h.push({ text: elText, id: elId, children: [] })
       }
 
       if (elName === 'H3') {
-        h[lastH2Index].children.push({ text: elText, children: [] })
-        lastH3Index += 1
-      }
+        let lastH2Index = h.length - 1
 
-      if (elName === 'H4') {
-        h[lastH2Index].children[lastH3Index].children.push({ text: elText })
+        if (!h[lastH2Index]) h.push({ text: '', children: [] })
+
+        lastH2Index = h.length - 1
+        h[lastH2Index].children.push({ text: elText, id: elId, children: [] })
       }
     })
 
@@ -51,12 +49,14 @@ export const TableOfContents = ({ wrapperClass, title }) => {
               {
                 headers.map((e, i) => (
                   <React.Fragment key={i}>
-                    <H2>{e.text}</H2>
+                    {
+                      e.text ? <a href={`#${e.id || ''}`}><H2>{e.text}</H2></a> : <></>
+                    }
                     {
                     e?.children?.length
                       ? e.children.map((e2, i2) => (
                         <React.Fragment key={i2}>
-                          <H3>{e2.text}</H3>
+                          <a href={`#${e2.id || ''}`}><H3>{e2.text}</H3></a>
                         </React.Fragment>
                       ))
                       : <></>
@@ -73,10 +73,19 @@ export const TableOfContents = ({ wrapperClass, title }) => {
   )
 }
 
-const Container = styled.p`
+const Container = styled.div`
   max-width: 284px;
+  padding-bottom: 20px;
 
-  @media (max-width: 1024px) {
+  @media (min-width: 768px) {
+    position: sticky;
+    top: 100px;
+
+    max-height: calc(100vh - 100px);
+    overflow-y: auto
+  }
+
+  @media (max-width: 768px) {
     display: none;
   }
 `
@@ -91,8 +100,8 @@ const Label = styled.p`
 const Title = styled.h1`
   ${typography.styles.textMd};
   ${typography.weights.semibold};
-  color: ${props => props.theme.isLightMode ? colors.primary[700] : colors.gray[25]};
-  background-color: ${props => props.theme.isLightMode ? colors.indigo[100] : colors.gray[600]};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors['gray-blue'][25]};
+  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]};
   padding: 4px 8px;
   border-radius: 4px;
   margin-top: 20px;

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
 import { BlogHero } from './BlogHero'
@@ -46,19 +47,19 @@ const MainWrapper = styled.div`
   grid-template-columns: 4fr 9fr;
   
   @media (max-width: 1024px) {
+    ${utils.fullWidthContainer};
+  }
+  
+  @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
-
-    margin: auto;
-    padding-left: 0;
-    padding-right: 0;
+    
     ${utils.fullWidthContainer};
   }
 `
 
 const Sidebar = styled.div`
-  display: flex;
-  justify-content: center;
+  border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
 `
 
 const ContentWrapper = styled.div`
