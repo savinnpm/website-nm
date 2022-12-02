@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import { Icon } from '../../Icon'
 import { gap } from './gap'
 import { iconSize } from './iconSize'
@@ -21,6 +22,8 @@ export const LinkGrayButton = ({
   link,
   ...rest
 }) => {
+  const isMobile = useMediaQuery('(max-width: 768px)')
+
   return (
     <StyledButton
       icon={icon}
@@ -31,7 +34,7 @@ export const LinkGrayButton = ({
       {...rest}
     >
       {iconLeading && <Icon variant={iconVariant} />}
-      {children}
+      {!isMobile && children}
       {iconTrailing && <Icon variant={iconVariant} />}
     </StyledButton>
   )
