@@ -2,11 +2,11 @@ import styled from 'styled-components'
 import { utils } from '../../../styles/utils'
 import { typography } from '../../../styles/typography'
 
-export const Content = ({ content }) => {
+export const Content = ({ content, wrapperClass }) => {
   return (
     <Container>
       <InnerContainer>
-        <div className='article' dangerouslySetInnerHTML={{ __html: content }} />
+        <div className={wrapperClass} dangerouslySetInnerHTML={{ __html: content }} />
       </InnerContainer>
     </Container>
   )
@@ -22,7 +22,7 @@ const Container = styled.div`
   }
 `
 const InnerContainer = styled.div`
-  ${utils.fullWidthContainer};
+  /* ${utils.fullWidthContainer}; */
 
   & div {
     p{
