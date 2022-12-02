@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
+import { BrandCarousel } from './Brand-Carousel'
 
 export const Partners = () => {
   const { t } = useTranslation('home')
@@ -11,6 +12,11 @@ export const Partners = () => {
     <Container>
       <InnerContainer>
         <Heading>{t('POWERED_BY_YOU')}</Heading>
+        <FeaturedPartners>
+          <img src='/assets/images/partners/fenbushi-capital.png' alt='logo of fenbushi capital' />
+          <img src='/assets/images/partners/animoca-brands.png' alt='logo of animoca brands' />
+        </FeaturedPartners>
+        <BrandCarousel />
       </InnerContainer>
     </Container>
   )
@@ -41,5 +47,22 @@ const Heading = styled.h2`
   @media (max-width: 768px) {
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
+  }
+`
+
+const FeaturedPartners = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap:64px;
+  margin-top: 64px;
+  justify-content: center;
+  align-items: center;
+
+  & img:first-child {
+    max-width: 402px;
+  }
+
+  & img:last-child {
+    max-width: 145px;
   }
 `
