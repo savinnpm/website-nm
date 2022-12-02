@@ -1,20 +1,49 @@
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BrandCarousel } from './Brand-Carousel'
 
+const fenbushiImgLight = 'assets/images/partners/fenbushi-capital.png'
+const animocaLight = 'assets/images/partners/animoca-brands.png'
+const fenbushiImgDark = 'assets/images/partners/darkmode/fenbushi-capital.png'
+const animocaDark = 'assets/images/partners/darkmode/animoca-brands.png'
+
+const partnersDark = [
+  {
+    name: 'Fenbushi Capital',
+    imgSrc: fenbushiImgDark
+  },
+  {
+    name: 'Animoca Brands',
+    imgSrc: animocaDark
+  }
+]
+const partnersLight = [
+  {
+    name: 'Fenbushi Capital',
+    imgSrc: fenbushiImgLight
+  },
+  {
+    name: 'Animoca Brands',
+    imgSrc: animocaLight
+  }
+]
+
 export const Partners = () => {
   const { t } = useTranslation('home')
+
+  const { isLightMode } = useTheme()
 
   return (
     <Container>
       <InnerContainer>
         <Heading>{t('POWERED_BY_YOU')}</Heading>
         <FeaturedPartners>
-          <img src='/assets/images/partners/fenbushi-capital.png' alt='logo of fenbushi capital' />
-          <img src='/assets/images/partners/animoca-brands.png' alt='logo of animoca brands' />
+          {(isLightMode ? partnersLight : partnersDark).map((partner, ind) => (
+            <img key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} />
+          ))}
         </FeaturedPartners>
         <BrandCarousel />
       </InnerContainer>
