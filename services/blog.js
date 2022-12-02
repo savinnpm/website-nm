@@ -82,7 +82,7 @@ export const getSinglePost = async (slug) => {
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
-      tags: match.tags.map((tag) => tag.name).s,
+      tags: match.tags.map((tag) => tag.name),
       content: {
         // raw: serialize(match.content),
         html: serialize(match.content) || match.html || ''
