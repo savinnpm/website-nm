@@ -19998,7 +19998,7 @@ export const mockData = {
           filesize: 759846,
           createdAt: '2022-11-26T17:07:54.738Z',
           updatedAt: '2022-11-26T17:07:54.738Z',
-          url: 'https://content.neptunemutual.com/media/neptune-mutual-blocksec-audit.pdf'
+          url: 'https://example.com/media/neptune-mutual-blocksec-audit.pdf'
         },
         description: [
           {
@@ -20036,7 +20036,7 @@ export const mockData = {
           filesize: 383699,
           createdAt: '2022-11-26T17:07:56.275Z',
           updatedAt: '2022-11-26T17:07:56.275Z',
-          url: 'https://content.neptunemutual.com/media/neptune-mutual-open-zeppelin-audit.pdf'
+          url: 'https://example.com/media/neptune-mutual-open-zeppelin-audit.pdf'
         },
         description: [
           {

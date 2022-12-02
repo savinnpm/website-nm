@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 import { Section } from './Section'
+import { VideosSection } from './VideosSection'
 
 export const Content = ({ item }) => {
   return (
@@ -9,7 +10,7 @@ export const Content = ({ item }) => {
           return <Section key={idx} section={child} />
         }
 
-        return null
+        return <VideosSection key={idx} section={child} />
       })}
     </Container>
   )

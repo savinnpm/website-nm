@@ -34,6 +34,10 @@ const Container = styled.button`
   :hover {
     background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['800']};
   }
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const Thumbnail = styled.div`
@@ -43,6 +47,11 @@ const Thumbnail = styled.div`
   border-radius: 6px;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 768px) {
+    width: 240px;
+    height: 136px;
+  }
 
   img {
     width: 100%;
@@ -65,6 +74,14 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
 
+  svg {
+
+    @media (max-width: 768px) {
+      width: 56px;
+      height: 56px;
+    }
+  }
+
   button:hover & {
     fill-opacity: 0.5;
   }
@@ -80,7 +97,7 @@ const Title = styled.h3`
   color: ${props => props.theme.color};
 
   ${typography.styles.textMd};
-  ${typography.weights.semibold};
+  ${typography.weights.medium};
 `
 
 const SupportingText = styled.p`
