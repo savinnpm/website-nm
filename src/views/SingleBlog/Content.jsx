@@ -50,5 +50,9 @@ const InnerContainer = styled.div`
       ${typography.styles.displayXs}
       ${typography.weights.semibold}
     }
+
+    ul, ol {
+      padding-left: 15px;
+    }
   }
 `

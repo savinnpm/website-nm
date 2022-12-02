@@ -39,16 +39,13 @@ export const BlogPost = (props) => {
 }
 
 const MainWrapper = styled.div`
-  margin: auto 80px;
+  ${utils.fullWidthContainer};
   padding-left: 86px;
   padding-right: 86px;
+
   display: grid;
   gap: 64px;
   grid-template-columns: 4fr 9fr;
-  
-  @media (max-width: 1024px) {
-    ${utils.fullWidthContainer};
-  }
   
   @media (max-width: 768px) {
     display: flex;
