@@ -43,13 +43,27 @@ const getText = (arr) => {
   return texts.join('')
 }
 
+let docs = null
+
+const getDocs = async () => {
+  if (docs) {
+    return docs
+  }
+
+  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}videos?limit=1000`)
+  // const data = JSON.parse(dataStr)
+  // docs = data.docs
+
+  console.log('fetching all videos')
+  docs = mockData.videoList.docs
+  return docs
+}
+
 export const getVideos = async () => {
   try {
-    //   const dataStr = await request.get(`${process.env.API_URL_PREFIX}videos?limit=3`)
-    //   const data = JSON.parse(dataStr)
-    const data = mockData.videoList
+    const docs = await getDocs()
 
-    const result = await Promise.allSettled(data.docs.map(async (doc) => {
+    const result = await Promise.allSettled(docs.map(async (doc) => {
       return {
         id: doc.id,
         title: doc.title,
@@ -65,7 +79,12 @@ export const getVideos = async () => {
       }
     }))
 
-    return result.map(x => x.value)
+    const allVideos = result.map(x => x.value)
+    const latestVideos = allVideos.sort((a, b) => {
+      return (new Date(a.date) > new Date(b.date) ? 1 : new Date(a.date) < new Date(b.date) ? -1 : 0)
+    }).slice(0, 3)
+
+    return latestVideos
   } catch (error) {
     console.error(error)
   }
