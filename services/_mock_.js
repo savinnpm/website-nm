@@ -452,7 +452,7 @@ export const mockData = {
     docs: [
       {
         id: '638250e9836b619da1910b01',
-        updatedAt: '2022-11-26T19:11:43.778Z',
+        updatedAt: '2022-12-02T11:48:53.789Z',
         createdAt: '2022-11-25T07:21:16.000Z',
         title: 'Let’s Cover the Main DeFi Security Risks',
         intro: 'Decentralized finance—often called DeFi—refers to the shift from traditional, centralized&hellip;',
@@ -596,7 +596,7 @@ export const mockData = {
             ]
           },
           {
-            type: 'h3',
+            type: 'h2',
             children: [
               {
                 text: '5. Front-Running'
@@ -694,7 +694,14 @@ export const mockData = {
             type: 'h2',
             children: [
               {
-                text: 'About Us'
+                text: 'Embeds'
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: ''
               }
             ]
           },
@@ -702,7 +709,29 @@ export const mockData = {
             type: 'p',
             children: [
               {
-                text: 'Neptune Mutual project safeguards the Ethereum community from cyber threats. The protocol uses parametric cover as opposed to discretionary insurance. It has an easy and reliable on-chain claim process. This means that when incidents are confirmed by our community, resolution is fast.'
+                text: 'Twitter:',
+                bold: true
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://twitter.com/neptunemutual/status/1598234458251210753',
+                children: [
+                  {
+                    text: 'https://twitter.com/neptunemutual/status/1598234458251210753'
+                  }
+                ]
+              },
+              {
+                text: ''
               }
             ]
           },
@@ -718,7 +747,109 @@ export const mockData = {
             type: 'p',
             children: [
               {
-                text: 'Join us in our mission to cover, protect, and secure on-chain digital assets.'
+                text: 'Youtube:',
+                bold: true
+              },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://www.youtube.com/watch?v=NpXbckymq5E',
+                children: [
+                  {
+                    text: ''
+                  }
+                ]
+              },
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://www.youtube.com/watch?v=NpXbckymq5E',
+                children: [
+                  {
+                    text: 'https://www.youtube.com/watch?v=NpXbckymq5E'
+                  }
+                ]
+              },
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://twitter.com/neptunemutual/status/1598234458251210753',
+                children: [
+                  {
+                    text: ''
+                  }
+                ]
+              },
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Github:',
+                bold: true
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://github.com/neptune-mutual-blue/app.neptunemutual.com/blob/b64ebac26401cdea3106f68bd8d46f4269bd15d2/http/headers.production.js#L22-L102',
+                children: [
+                  {
+                    text: 'https://github.com/neptune-mutual-blue/app.neptunemutual.com/blob/b64ebac26401cdea3106f68bd8d46f4269bd15d2/http/headers.production.js#L22-L102'
+                  }
+                ]
+              },
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Multiple Lines:',
+                bold: true
               }
             ]
           },
@@ -734,154 +865,60 @@ export const mockData = {
             type: 'p',
             children: [
               {
-                text: 'Official Website: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://neptunemutual.com',
-                children: [
-                  {
-                    text: 'https://neptunemutual.com',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nApp: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://app.neptunemutual.com/',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://app.neptunemutual.com/',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nBlog: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://neptunemutual.com/blog',
-                children: [
-                  {
-                    text: 'https://neptunemutual.com/blog',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nTwitter: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://twitter.com/neptunemutual',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://twitter.com/neptunemutual',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nReddit: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://www.reddit.com/r/NeptuneMutual',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://www.reddit.com/r/NeptuneMutual',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nTelegram: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://t.me/neptunemutual',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://t.me/neptunemutual',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nDiscord: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://discord.gg/2qMGTtJtnW',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://discord.gg/2qMGTtJtnW',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nYouTube: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://www.youtube.com/c/NeptuneMutual',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://www.youtube.com/c/NeptuneMutual',
-                    bold: true
-                  }
-                ]
-              },
-              {
-                text: '\nLinkedIn: ',
-                bold: true
-              },
-              {
-                type: 'link',
-                linkType: 'custom',
-                url: 'https://www.linkedin.com/company/neptune-mutual',
-                newTab: true,
-                children: [
-                  {
-                    text: 'https://www.linkedin.com/company/neptune-mutual',
-                    bold: true
-                  }
-                ]
-              },
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
               {
                 text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: ''
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'These multiple empty lines should be ignored.'
               }
             ]
           }
         ],
-        html: "<p>Decentralized finance—often called DeFi—refers to the shift from traditional, centralized financial systems to peer-to-peer finance enabled by decentralized technologies built on the Ethereum blockchain. From lending and borrowing platforms to stablecoins and tokenized BTC, the DeFi ecosystem has launched an expansive network of integrated protocols and financial instruments. Now with over $24 billion worth of value locked in Ethereum smart contracts, decentralized finance has emerged as the most active sector in the blockchain space, with a wide range of use cases for individuals, developers, and institutions.<br></p><p>Unfortunately, despite its growth in popularity, DeFi isn't perfect. In fact, many people have come to realize a flaw with DeFi: its security. Of course, many of these security issues are normal risks that are faced with blockchain security. However, knowing them is still important to help users know what they face when utilizing DeFi to make the most out of it.<br></p><p>That being said, let's talk about the various security risks of DeFi:<br></p><h3 id=\"1-smart-contract-vulnerabilities\">1. Smart Contract Vulnerabilities</h3><p>Smart contracts are immutable programmatic agreements that are enforced automatically when certain conditions are met. Because smart contracts are immutable, once they are deployed to the Ethereum blockchain, they cannot be changed or removed. This poses a significant security risk, as any vulnerabilities or errors in the contract code can lead to loss of funds.<br></p><h3 id=\"2-flash-loan-attacks\">2. Flash Loan Attacks</h3><p>Flash loans are short-term loans that are repaid in the same transaction. Because the loan is repaid in the same transaction that it is taken out, there is no need for a traditional credit check or for the loan to be processed through a centralized exchange. This makes flash loans very attractive to malicious actors, who can use them to exploit vulnerabilities in smart contracts or to engage in other forms of fraud.<br></p><h3 id=\"3-phishing-attacks\">3. Phishing Attacks</h3><p>Phishing attacks are a type of fraud in which attackers send emails or messages that appear to be from a legitimate source in an attempt to trick victims into sharing sensitive information or sending funds. With the growth of the DeFi ecosystem, phishing attacks targeting users of decentralized exchanges and other protocols have become more common.<br></p><h3 id=\"4-sybil-attacks\">4. Sybil Attacks</h3><p>A Sybil attack is a type of attack in which an attacker creates multiple false identities in order to gain a disproportionate amount of influence over a network. In the context of decentralized finance, a Sybil attacker could create multiple fake accounts on a lending platform in order to manipulate interest rates.<br></p><h3 id=\"5-front-running\">5. Front-Running</h3><p>Front-running is a type of market manipulation in which traders place orders ahead of others in order to benefit from the expected price movement. In the context of decentralized finance, front-running can occur when a user attempts to execute a trade on a decentralized exchange (DEX) before other users have a chance to do so. This can result in the user getting a better price for their trade, as they are able to take advantage of the price movement that is anticipated to occur when the other users' orders are executed.<br></p><h2 id=\"conclusion\">Conclusion</h2><p>Due to the complexity of DeFi, many of these security risks may stay as risks forever.  And, with more applications emerging from DeFi ecosystems, new opportunities are constantly emerging for attackers to exploit vulnerabilities. As such, if you are planning to use DeFi, it is vital to implement as many security strategies as possible to minimize your exposure to risk and limit any consequence should an attack be successful.<br></p><p>Neptune Mutual is a DeFi cover protocol marketplace where you can find cover policies that protect Ethereum projects and users from a variety of security threats. For more content about our cover marketplace and the like, check out the other articles in our <a href=\"https://blog.neptunemutual.com/\">blog</a>, the tutorials in our <a href=\"https://www.youtube.com/c/NeptuneMutual\">YouTube channel</a>, and of course our <a href=\"http://app.neptunemutual.com\">application</a> itself.</p><hr><h2 id=\"about-us\">About Us</h2><p>Neptune Mutual project safeguards the Ethereum community from cyber threats. The protocol uses parametric cover as opposed to discretionary insurance. It has an easy and reliable on-chain claim process. This means that when incidents are confirmed by our community, resolution is fast.</p><p>Join us in our mission to cover, protect, and secure on-chain digital assets.</p><p><strong>Official Website: <a href=\"https://neptunemutual.com/\" rel=\"follow\">https://neptunemutual.com</a></strong><br><strong>App: <a href=\"https://app.neptunemutual.com/\">https://app.neptunemutual.com/</a></strong><br><strong>Blog: <a href=\"https://blog.neptunemutual.com/\" rel=\"follow\">https://blog.neptunemutual.com/</a></strong><br><strong>Twitter: <a href=\"https://twitter.com/neptunemutual\" rel=\"nofollow noopener noreferrer\">https://twitter.com/neptunemutual</a></strong><br><strong>Reddit: <a href=\"https://www.reddit.com/r/NeptuneMutual/\" rel=\"nofollow noopener noreferrer\">https://www.reddit.com/r/NeptuneMutual</a></strong><br><strong>Telegram: <a href=\"https://t.me/neptunemutual\" rel=\"nofollow noopener noreferrer\">https://t.me/neptunemutual</a></strong><br><strong>Discord: <a href=\"https://discord.gg/2qMGTtJtnW\" rel=\"nofollow noopener noreferrer\">https://discord.gg/2qMGTtJtnW</a></strong><br><strong>YouTube: <a href=\"https://www.youtube.com/c/NeptuneMutual\" rel=\"nofollow noopener noreferrer\">https://www.youtube.com/c/NeptuneMutual</a></strong><br><strong>LinkedIn: <a href=\"https://www.linkedin.com/company/neptune-mutual\" rel=\"nofollow noopener noreferrer\">https://www.linkedin.com/company/neptune-mutual</a></strong></p>",
+        html: '',
         tags: [
           {
             id: '63824c3c3858ee8b34434c51',
