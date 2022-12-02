@@ -57,7 +57,10 @@ const Container = styled.a`
   }
   &:not(:nth-of-type(1)) > div:nth-of-type(2) > p,
   &:not(:nth-of-type(1)) > div:nth-of-type(2) > h3 {
-    width: 250px;
+    @media screen and (min-width: 1024px) {
+      width: 250px;
+    }
+
   }
   
   // if screen size is below 1024px
@@ -103,7 +106,9 @@ const ImageContainer = styled.div`
   }
   
   ${Container}:nth-of-type(1) > & {
-    @media screen and (min-width: 1024px) {
+    width: 100%;
+
+    @media screen and (min-width: 1280px) {
       /* flex-basis: 280%; */
       height: 240px;
       width: 592px;
