@@ -5,7 +5,7 @@ import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
 import { getFormattedDate } from '../../utils'
 
-export const FeaturedPostCard = ({ post }) => {
+export const FeaturedPostCard = ({ post, id }) => {
   return (
     <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
@@ -22,7 +22,7 @@ export const FeaturedPostCard = ({ post }) => {
 
         <TagsContainer>
           {post.tags.slice(0, 1).map((tag) => (
-            <Tag key={tag}>{tag}</Tag>
+            <Tag key={tag} id={id}>{tag}</Tag>
           ))}
         </TagsContainer>
       </Contents>
@@ -35,6 +35,8 @@ const Container = styled.a`
   display: flex;
   flex-direction: row;
   gap: 24px;
+  align-items: center;
+
   
   // if container is a first child
   &:nth-of-type(1) {
@@ -53,6 +55,14 @@ const Container = styled.a`
   // if not first child, then change font style for <Title> component
   &:not(:nth-of-type(1)) > div:nth-of-type(2) > h3 {
     ${typography.styles.textLg};
+
+  }
+  &:not(:nth-of-type(1)) > div:nth-of-type(2) > p,
+  &:not(:nth-of-type(1)) > div:nth-of-type(2) > h3 {
+    @media screen and (min-width: 1024px) {
+      width: 250px;
+    }
+
   }
   
   // if screen size is below 1024px
@@ -80,9 +90,9 @@ const Container = styled.a`
 `
 
 const Contents = styled.div`
-  height: 200px;
   display: flex;
   flex-direction: column;
+  height: 200px;
   
   @media screen and (max-width: 860px) {
     height: auto;
@@ -91,18 +101,27 @@ const Contents = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  height: 195px;
-  flex-basis: 160%;
+  width: 100%;
+  min-height: 240px;
+
+  @media screen and (min-width: 1024px) {
+    width: 320px;
+    height: 200px;;
+  }
   
   ${Container}:nth-of-type(1) > & {
-    @media screen and (min-width: 1024px) {
+    width: 100%;
+
+    @media screen and (min-width: 1280px) {
       /* flex-basis: 280%; */
-      height: 200px;
+      height: 240px;
+      width: 592px;
     }
   }
 
   @media screen and (max-width: 1024px) {
     flex-basis: 50%;
+    
   }
   
   @media screen and (max-width: 860px) {
@@ -129,13 +148,13 @@ const Title = styled.h3`
   margin-top: 8px;
   color: ${props => props.theme.color};
   ${typography.styles.displayXs};
-  ${typography.weights.medium};
-  `
+  ${typography.weights.semibold};
+`
 
 const Intro = styled.p`
   margin-top: 8px;
   color: ${props => props.theme.secondaryColor};
-  ${typography.styles.textMd};
+  ${typography.styles.textSm};
   ${typography.weights.regular};
 
   display: -webkit-box;
@@ -164,8 +183,15 @@ const Tag = styled.div`
   display: inline-flex;
   padding: 2px 10px;
   border-radius: 9999px;
-  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['50'] : colors.gray['700']};
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['400']};
+  font-weight: 500;
+  ${props => props.id === 0 && (props.theme.isLightMode ? `color:${colors[primaryColorKey]['700']};` : `color:${colors[primaryColorKey]['400']};`)} 
+  ${props => props.id === 0 && (props.theme.isLightMode ? `background-color:${colors.blue['50']};` : `background-color:${colors.gray['700']};`)} 
+
+  ${props => props.id === 1 && (props.theme.isLightMode ? `color:${colors.gray['700']};` : `color:${colors.gray['300']};`)} 
+  ${props => props.id === 1 && (props.theme.isLightMode ? `background-color:${colors.gray['100']};` : `background-color:${colors.gray['700']};`)} 
+
+  ${props => props.id === 2 && (props.theme.isLightMode ? `color:${colors.violet['700']};` : `color:${colors.violet['400']};`)} 
+  ${props => props.id === 2 && (props.theme.isLightMode ? `background-color:${colors.violet['50']};` : `background-color:${colors.gray['700']};`)} 
 
   min-width: 0;
 
