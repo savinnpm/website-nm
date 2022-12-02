@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import Slider from 'react-slick'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 const coinbaseImg = 'assets/images/partners/coinbase.png'
 const huobiImg = 'assets/images/partners/huobi.png'
@@ -8,7 +8,36 @@ const okexImg = 'assets/images/partners/okex.png'
 const okxImg = 'assets/images/partners/okx.png'
 const gravityImg = 'assets/images/partners/gravity.png'
 
-const carouselItems = [
+const coinbaseImgDark = 'assets/images/partners/darkmode/coinbase.png'
+const huobiImgDark = 'assets/images/partners/darkmode/huobi.png'
+const okexImgDark = 'assets/images/partners/darkmode/okex.png'
+const okxImgDark = 'assets/images/partners/darkmode/okx.png'
+const gravityImgDark = 'assets/images/partners/darkmode/gravity.png'
+
+const carouselItemsDark = [
+  {
+    name: 'Coinbase Ventures',
+    imgSrc: coinbaseImgDark
+  },
+  {
+    name: 'Huobi Ventures',
+    imgSrc: huobiImgDark
+  },
+  {
+    name: 'OKEX',
+    imgSrc: okexImgDark
+  },
+  {
+    name: 'OKX',
+    imgSrc: okxImgDark
+  },
+  {
+    name: 'GravityX',
+    imgSrc: gravityImgDark
+  }
+]
+
+const carouselItemsLight = [
   {
     name: 'Coinbase Ventures',
     imgSrc: coinbaseImg
@@ -32,6 +61,8 @@ const carouselItems = [
 ]
 
 export const BrandCarousel = () => {
+  const { isLightMode } = useTheme()
+
   const sliderRef = useRef(null)
 
   const settings = {
@@ -62,6 +93,8 @@ export const BrandCarousel = () => {
     pauseOnHover: false
   }
 
+  const slidesToMap = isLightMode ? carouselItemsLight : carouselItemsDark
+
   return (
     <LogosContainer>
       <Slider
@@ -69,7 +102,7 @@ export const BrandCarousel = () => {
         {...settings}
       >
 
-        {carouselItems.map((brand, idx) => {
+        {slidesToMap.map((brand, idx) => {
           return (
             <div key={idx}>
               <img src={brand.imgSrc} alt={brand.name + ' Logo'} />
