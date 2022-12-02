@@ -70,6 +70,7 @@ const Share = styled.div`
   border-top: 1px solid ${colors.gray[200]};
   padding-top: 16px;
   margin-bottom: 96px;
+  margin-top: 16px;
 
   @media (min-width: 770px) {
     text-align: left;
