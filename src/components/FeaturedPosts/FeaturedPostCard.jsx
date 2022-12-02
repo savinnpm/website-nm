@@ -38,10 +38,8 @@ const Container = styled.a`
   
   // if container is a first child
   &:nth-of-type(1) {
-    // if first child & screen size is above 768px
-    @media screen and (min-width: 768px) {
-      display: block;
-
+    // if first child & screen size is above 1024px
+    @media screen and (min-width: 1024px) {
       grid-row-start: 1;
       grid-row-end: 3;
       
@@ -57,8 +55,16 @@ const Container = styled.a`
     ${typography.styles.textLg};
   }
   
+  // if screen size is below 1024px
+  @media screen and (max-width: 1024px) {
+    // change font style of <Title> component of 2nd/3rd children
+    & > div:nth-of-type(2) > h3 {
+      ${typography.styles.textLg};
+    }
+  }
+  
   // if screen size is below 860px
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     flex-direction: column;
     gap: 21px;
 
@@ -78,14 +84,8 @@ const Contents = styled.div`
   display: flex;
   flex-direction: column;
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     height: auto;
-  }
-
-  ${Container}:nth-of-type(1) > & {
-    @media screen and (min-width: 768px) {
-      margin-top: 32px;
-    }
   }
 `
 
@@ -100,20 +100,19 @@ const ImageContainer = styled.div`
       height: 200px;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    flex-basis: 50%;
+  }
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 860px) {
     min-height: 240px;
-    aspect-ratio: 1.715;
   }
   
   img {
     object-fit: cover;
     width: 100%;
     height: 100%;
-    
-    @media screen and (max-width: 768px) {
-      aspect-ratio: 1.715;
-    }
   }
 
   
@@ -149,6 +148,11 @@ const TagsContainer = styled.div`
   display: flex;
   margin-top: auto;
   margin-bottom: 8px;
+  
+  @media screen and (max-width: 1024px) {
+    margin-top: auto;
+    margin-bottom: 0px;
+  }
   
   @media screen and (max-width: 860px) {
     margin-top: 24px;

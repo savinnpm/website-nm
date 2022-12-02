@@ -5,14 +5,13 @@ import { FeaturedPostCard } from './FeaturedPostCard'
 
 export const FeaturedPosts = ({ posts }) => {
   if (!posts?.length) return <></>
-  const filteredPosts = posts.filter(post => post.featured).slice(0, 3)
 
   return (
     <Container>
       <Heading>Featured Posts</Heading>
 
       <GridContainer>
-        {filteredPosts.map((post, i) => <FeaturedPostCard key={i} post={post} />)}
+        {posts.slice(0, 3).map((post, i) => <FeaturedPostCard key={i} post={post} />)}
       </GridContainer>
     </Container>
   )
@@ -37,7 +36,7 @@ const GridContainer = styled.div`
   grid-template-rows: 1fr 1fr;
   gap: 32px;
   
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }
