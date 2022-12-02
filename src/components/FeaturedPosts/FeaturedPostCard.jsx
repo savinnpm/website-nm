@@ -35,6 +35,8 @@ const Container = styled.a`
   display: flex;
   flex-direction: row;
   gap: 24px;
+  align-items: center;
+
   
   // if container is a first child
   &:nth-of-type(1) {
@@ -99,6 +101,8 @@ const Contents = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
+  width: 100%;
+  min-height: 240px;
 
   @media screen and (min-width: 1024px) {
     width: 320px;
@@ -117,6 +121,7 @@ const ImageContainer = styled.div`
 
   @media screen and (max-width: 1024px) {
     flex-basis: 50%;
+    
   }
   
   @media screen and (max-width: 860px) {
