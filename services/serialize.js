@@ -99,7 +99,7 @@ export const serialize = (children) => children.map((node, _i) => {
       )
     case 'link':
       return (
-        `<a href={escapeHTML(node.url)}>${serializedChildren}</a>`
+        `<a href="${escapeHTML(node.url)}">${serializedChildren}</a>`
       )
 
     default:
