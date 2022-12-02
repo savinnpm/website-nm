@@ -7,7 +7,7 @@ const get = (url) => {
     const options = {
       method: 'GET',
       hostname: urlObj.hostname,
-      path: urlObj.pathname,
+      path: urlObj.pathname + urlObj.search,
       headers: {
         Authorization: `Bearer ${process.env.API_AUTH_TOKEN}`
       },
