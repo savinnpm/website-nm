@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
+import { Shareit } from '../../components/Shareit'
 import { BlogHero } from './BlogHero'
 import { Content } from './Content'
 
@@ -32,6 +33,7 @@ export const BlogPost = (props) => {
 
         <ContentWrapper>
           <Content content={props.post.content.html} wrapperClass={wrapperClass} />
+          <Shareit title={props.post.title} intro={props.post.intro} />
         </ContentWrapper>
       </MainWrapper>
     </>
