@@ -1,4 +1,5 @@
 import { storeLocally } from './io/download'
+import { request } from './request'
 import { serialize } from './serialize'
 import { mockData } from './_mock_'
 
@@ -9,11 +10,15 @@ const getDocs = async () => {
     return docs
   }
 
-  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}articles?limit=10`)
-  // const data = JSON.parse(dataStr)
-  // docs = data.docs
+  console.log('fetching all articles')
 
-  console.log('fetching all blog articles')
+  if (process.env.PROD === 'true') {
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}articles?limit=1000`)
+    const data = JSON.parse(dataStr)
+    docs = data.docs
+    return docs
+  }
+
   docs = mockData.articleList.docs
   return docs
 }

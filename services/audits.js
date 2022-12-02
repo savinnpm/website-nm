@@ -1,18 +1,23 @@
 import { storeLocally } from './io/download'
+import { request } from './request'
 import { mockData } from './_mock_'
 
 let docs = null
 
 const getDocs = async () => {
-  // if (docs) {
-  //   return docs
-  // }
-
-  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000`)
-  // const data = JSON.parse(dataStr)
-  // docs = data.docs
+  if (docs) {
+    return docs
+  }
 
   console.log('fetching all audits')
+
+  if (process.env.PROD === 'true') {
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000`)
+    const data = JSON.parse(dataStr)
+    docs = data.docs
+    return docs
+  }
+
   docs = mockData.auditList.docs
   return docs
 }

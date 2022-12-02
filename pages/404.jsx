@@ -1,7 +1,6 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import Head from 'next/head'
 import { services } from '../services'
-import { ComponentLib } from '../src/views/ComponentLib'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common'])
@@ -15,7 +14,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function ComponentsTest () {
+export default function NotFoundPage () {
   return (
     <>
       <Head>
@@ -25,7 +24,7 @@ export default function ComponentsTest () {
       </Head>
 
       <main>
-        <ComponentLib />
+        Page Not Found
       </main>
     </>
   )

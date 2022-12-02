@@ -1,4 +1,5 @@
 import { storeLocally } from './io/download'
+import { request } from './request'
 import { mockData } from './_mock_'
 
 const getVideoDurationText = (timestamp) => {
@@ -50,11 +51,15 @@ const getDocs = async () => {
     return docs
   }
 
-  // const dataStr = await request.get(`${process.env.API_URL_PREFIX}videos?limit=1000`)
-  // const data = JSON.parse(dataStr)
-  // docs = data.docs
-
   console.log('fetching all videos')
+
+  if (process.env.PROD === 'true') {
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}videos?limit=1000`)
+    const data = JSON.parse(dataStr)
+    docs = data.docs
+    return docs
+  }
+
   docs = mockData.videoList.docs
   return docs
 }
