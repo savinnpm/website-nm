@@ -68,7 +68,7 @@ const Shareit = (props) => {
 const Share = styled.div`
   text-align: center;
   border-top: 1px solid ${colors.gray[200]};
-  padding-top: 16px;
+  padding-top: 24px;
   margin-bottom: 96px;
   margin-top: 16px;
 
