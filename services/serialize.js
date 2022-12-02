@@ -1,5 +1,6 @@
 // https://payloadcms.com/docs/fields/rich-text#generating-html
 import escapeHTML from 'escape-html'
+import crypto from 'crypto'
 import { Text } from 'slate'
 
 export const serialize = (children) => children.map((node, _i) => {
@@ -54,17 +55,17 @@ export const serialize = (children) => children.map((node, _i) => {
   switch (node.type) {
     case 'h1':
       return (
-        `<h1>${serializedChildren}</h1>`
+        `<h1 id="${crypto.randomUUID()}">${serializedChildren}</h1>`
       )
 
     case 'h2':
       return (
-        `<h2>${serializedChildren}</h2>`
+        `<h2 id="${crypto.randomUUID()}">${serializedChildren}</h2>`
       )
 
     case 'h3':
       return (
-        `<h3>${serializedChildren}</h3>`
+        `<h3 id="${crypto.randomUUID()}">${serializedChildren}</h3>`
       )
 
     case 'h4':
