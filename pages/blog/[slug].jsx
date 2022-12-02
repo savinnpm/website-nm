@@ -3,6 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
+import { BlogPost } from '../../src/views/SingleBlog'
 
 export async function getStaticPaths () {
   const slugs = await services.getPostsSlugs()
@@ -44,9 +45,7 @@ export default function BlogPostPage (props) {
       </Head>
 
       <main>
-        <h1>{props.post.title}</h1>
-
-        <div dangerouslySetInnerHTML={{ __html: props.post.content.html }} />
+        <BlogPost post={props.post} />
       </main>
     </>
   )
