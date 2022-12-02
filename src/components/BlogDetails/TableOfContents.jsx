@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React, { useEffect, useState } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
@@ -21,7 +21,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
       const elName = el.tagName
       const elText = el.textContent.replace(/^(\s)+|(\s)+$/g, '')
       // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
-      const elId = el.getAttribute('id') + '-permalink'
+      const elId = el.getAttribute('id') ? el.getAttribute('id') + '-permalink' : ''
 
       const newEl = document.createElement('i')
       newEl.setAttribute('id', elId)
@@ -55,9 +55,9 @@ export const TableOfContents = ({ wrapperClass, title }) => {
     <Container>
       <Label>Table of Contents</Label>
 
-      <Link href={router.asPath.split('#')[0] + '#'}>
-        <Title highlight={currentHeader === ''}>{title}</Title>
-      </Link>
+      <TitleLink isactive={currentHeader === '' ? 'true' : 'false'} href={router.asPath.split('#')[0] + '#'}>
+        <p>{title}</p>
+      </TitleLink>
 
       {
         headers?.length
@@ -70,7 +70,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
                       e.text
                         ? (
                           <HeaderLink
-                            isactive={currentHeader === e.id}
+                            isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
                             href={`#${e.id || ''}`}
                           >
                             <span>{e.text}</span>
@@ -83,7 +83,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
                       ? e.children.map((e2, i2) => (
                         <React.Fragment key={i2}>
                           <HeaderLink2
-                            isactive={currentHeader === e2.id}
+                            isactive={(e2.id && currentHeader === e2.id) ? 'true' : 'false'}
                             href={`#${e2.id || ''}`}
                           ><span>{e2.text}</span>
                           </HeaderLink2>
@@ -104,7 +104,8 @@ export const TableOfContents = ({ wrapperClass, title }) => {
 }
 
 const Container = styled.div`
-  max-width: 284px;
+  max-width: 300px;
+  min-width: 250px;
   padding-bottom: 20px;
 
   @media (min-width: 1400px) {
@@ -132,12 +133,26 @@ const Label = styled.p`
   padding-left: 8px;
 `
 
-const Title = styled.p`
+const LinkStyle = css`
+  color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
+  background-color: transparent;
+
+  &[isactive='true'] {
+    color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]};
+    background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]}
+  }
+
+  &[isactive='false']:hover {
+    background-color: ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]}
+  }
+`
+
+const TitleLink = styled(Link)`
+  display: block;
   ${typography.styles.textMd};
   ${typography.weights.semibold};
-
-  color: ${props => props.highlight ? (props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]) : (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
-  background-color: ${props => props.highlight ? (props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]) : 'transparent'};
+  
+  ${LinkStyle}
 
   padding: 4px 8px;
   border-radius: 4px;
@@ -157,16 +172,14 @@ const Content = styled.div`
 `
 
 const HeaderLink = styled(Link)`
-  color: ${props => props.isactive ? (props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]) : (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
-  background-color: ${props => props.isactive ? (props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]) : 'transparent'};
+  ${LinkStyle}
   border-radius: 4px;
   margin-left: 16px;
   padding-left: 5px;
-`
+  `
 
 const HeaderLink2 = styled(Link)`
-  color: ${props => props.isactive ? (props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]) : (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
-  background-color: ${props => props.isactive ? (props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]) : 'transparent'};
+  ${LinkStyle}
   border-radius: 4px;
   margin-left: 24px;
   padding-left: 5px;

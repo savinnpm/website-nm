@@ -64,8 +64,7 @@ const MainWrapper = styled.div`
   grid-template-columns: 4fr 9fr;
 
   @media (max-width: 768px) {
-    display: flex;
-    flex-direction: column-reverse;
+    grid-template-columns: 1fr;
     
     ${utils.fullWidthContainer};
   }
@@ -76,7 +75,7 @@ const Sidebar = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  /* grid-template-columns: 4fr; */
+  overflow: hidden;
 
   i[style] {
     display: none!important;
