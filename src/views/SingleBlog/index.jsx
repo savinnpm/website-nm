@@ -3,8 +3,10 @@ import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
+import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
 import { Shareit } from '../../components/Shareit'
-import { BlogHero } from './BlogHero'
+import { BlogHero } from './01-hero'
+import { RelatedPosts } from './03-related-posts'
 import { Content } from './Content'
 
 export const BlogPost = (props) => {
@@ -26,6 +28,7 @@ export const BlogPost = (props) => {
   return (
     <>
       <BlogHero title={props.post.title} featuredImage={props.post.image} createdAt={props.post.date} timeToRead={timeToRead} />
+
       <MainWrapper>
         <Sidebar>
           <TableOfContents title={props.post.title} wrapperClass={wrapperClass} />
@@ -36,6 +39,10 @@ export const BlogPost = (props) => {
           <Shareit title={props.post.title} intro={props.post.intro} />
         </ContentWrapper>
       </MainWrapper>
+
+      <RelatedPosts blogPosts={props.blogPosts} />
+
+      <NewsletterSignupForm />
     </>
   )
 }

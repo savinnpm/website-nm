@@ -22,7 +22,7 @@ export const Hero = () => {
         <ButtonContainer>
           <Button
             href='#'
-            link
+            as='a'
             hierarchy='primary'
             size='2xl'
             iconTrailing

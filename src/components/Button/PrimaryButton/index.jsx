@@ -21,7 +21,6 @@ export const PrimaryButton = ({
   state,
   disabled,
   children,
-  link,
   ...rest
 }) => {
   return (
@@ -31,7 +30,6 @@ export const PrimaryButton = ({
       disabled={disabled || state === 'disabled'}
       data-state={state}
       destructive={destructive}
-      as={link ? 'a' : undefined}
       {...rest}
     >
       {iconLeading && <Icon variant={iconVariant} />}

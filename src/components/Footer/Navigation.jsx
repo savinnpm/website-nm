@@ -63,6 +63,9 @@ const LogoContainer = styled(Link)`
 
 const Nav = styled.nav`
   --gap: 32px;
+  flex: 1;
+  max-width: 768px;
+
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -71,7 +74,6 @@ const Nav = styled.nav`
 
 const ListContainer = styled.section`
   flex: 1;
-  min-width: 200px;
 
   @media (max-width: 768px) {
     width: calc(50% - var(--gap) / 2);

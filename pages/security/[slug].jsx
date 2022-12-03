@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { PdfViewer } from '../../src/components/PdfViewer'
+import { Audit } from '../../src/views/Audit'
 
 export async function getStaticPaths () {
   const slugs = await services.getAuditSlugs()
@@ -29,7 +29,8 @@ export async function getStaticProps ({ locale, params }) {
     props: {
       ...(s),
       audit: await services.getSingleAudit(params.slug),
-      videos: await services.getVideos()
+      videos: await services.getVideos(),
+      headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
@@ -45,7 +46,7 @@ export default function AuditPage (props) {
       </Head>
 
       <main>
-        <PdfViewer url={`/${props.audit.report}`} />
+        <Audit audit={props.audit} />
       </main>
     </>
   )

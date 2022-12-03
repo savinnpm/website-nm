@@ -28,7 +28,7 @@ export const LetsBuidl = () => {
           <ButtonContainer>
             <Button
               href='#'
-              link
+              as='a'
               hierarchy='primary'
               size='2xl'
               iconTrailing

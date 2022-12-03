@@ -15,7 +15,7 @@ export const BlogSubscribe = () => {
   return (
     <Container onSubmit={handleSubmit}>
       <InputContainer>
-        <Input placeholder='Enter your email' type='email' name='email'>
+        <Input placeholder='Enter your email' type='email' name='email' autoComplete='off'>
           <InputHint>We care about your data in our <Link href='#'>privacy policy</Link>.</InputHint>
         </Input>
       </InputContainer>

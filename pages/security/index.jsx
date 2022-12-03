@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { services } from '../../services'
-import Link from 'next/link'
+import { Security } from '../../src/views/Security'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'security'])
@@ -11,7 +11,8 @@ export async function getStaticProps ({ locale }) {
     props: {
       ...(s),
       audits: await services.getAudits(),
-      videos: await services.getVideos()
+      videos: await services.getVideos(),
+      headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
@@ -28,13 +29,7 @@ export default function SecurityPage (props) {
 
       <main>
 
-        {props.audits.map(audit => {
-          return (
-            <div key={audit.id}>
-              <Link href={`/security/${audit.slug}`}>{audit.title}</Link>
-            </div>
-          )
-        })}
+        <Security audits={props.audits} />
 
       </main>
 

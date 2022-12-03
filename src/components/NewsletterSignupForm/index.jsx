@@ -1,12 +1,12 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { utils } from '../../../../styles/utils'
-import { BlogSubscribe } from '../../../components/BlogSubscribe'
+import { colors, primaryColorKey } from '../../../styles/colors'
+import { typography } from '../../../styles/typography'
+import { utils } from '../../../styles/utils'
+import { BlogSubscribe } from '../BlogSubscribe'
 
-export const SignupNewsletter = () => {
+export const NewsletterSignupForm = ({ paddingTop }) => {
   return (
-    <Container>
+    <Container paddingTop={paddingTop}>
       <InnerContainer>
         <Box>
           <ContentContainer>
@@ -27,9 +27,11 @@ export const SignupNewsletter = () => {
 const Container = styled.div`
   gap: 40px;
   padding-top: 0;
+  padding-top: ${props => props.paddingTop ? '96px' : undefined};
   padding-bottom: 96px;
-
+  
   @media (max-width: 768px) {
+    padding-top: ${props => props.paddingTop ? '64px' : undefined};
     padding-bottom: 64px;
     gap: 32px;
   }

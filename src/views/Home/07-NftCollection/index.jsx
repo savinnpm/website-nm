@@ -21,7 +21,7 @@ export const NftCollection = () => {
 
           <Button
             href='#'
-            link
+            as='a'
             hierarchy='primary'
             size='xl'
             iconTrailing

@@ -19,7 +19,6 @@ export const LinkGrayButton = ({
   state,
   disabled,
   children,
-  link,
   ...rest
 }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -30,7 +29,6 @@ export const LinkGrayButton = ({
       size={size}
       disabled={disabled || state === 'disabled'}
       data-state={state}
-      as={link ? 'a' : undefined}
       {...rest}
     >
       {iconLeading && <Icon variant={iconVariant} />}

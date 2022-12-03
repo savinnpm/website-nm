@@ -4,18 +4,17 @@ import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
-import { Carousel } from './Carousel'
+import { Card } from '../../Home/03-WhatsNew/Card'
 
-export const WhatsNew = ({ blogPosts }) => {
-  const { t } = useTranslation('home')
-  const { t: commonT } = useTranslation('common')
+export const RelatedPosts = ({ blogPosts }) => {
+  const { t } = useTranslation('common')
+
   return (
     <Container>
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Heading>{t('WHATS_NEW')}</Heading>
-            <SupportingText>{t('WHATS_NEW_SUBTEXT')}</SupportingText>
+            <Heading>Related Posts</Heading>
           </TextContainer>
 
           <Button
@@ -24,11 +23,18 @@ export const WhatsNew = ({ blogPosts }) => {
             hierarchy='primary'
             size='xl'
           >
-            {commonT('VIEW_ALL')}
+            {t('VIEW_ALL')}
           </Button>
         </TextAndCta>
 
-        <Carousel posts={blogPosts} />
+        <BlogsContainer>
+          {blogPosts.slice(0, 3).map((post) => (
+            <SingleCard key={post.id}>
+              <Card post={post} />
+            </SingleCard>
+          ))}
+        </BlogsContainer>
+
       </InnerContainer>
     </Container>
   )
@@ -67,7 +73,7 @@ const TextContainer = styled.div`
 const Heading = styled.h2`
   color: ${(props) => props.theme.color};
 
-  ${typography.styles.displayMd};
+  ${typography.styles.displayXs};
   ${typography.weights.semibold};
 
   @media (max-width: 768px) {
@@ -76,16 +82,12 @@ const Heading = styled.h2`
   }
 `
 
-const SupportingText = styled.p`
-  margin-top: 20px;
-  color: ${(props) => props.theme.secondaryColor};
-
-  ${typography.styles.textXl};
-  ${typography.weights.regular};
-
-  @media (max-width: 768px) {
-    margin-top: 16px;
-    ${typography.styles.textLg};
-    ${typography.weights.regular};
-  }
+const BlogsContainer = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  margin-top: 32px;
+`
+const SingleCard = styled.div`
+  max-width: 384px;
 `

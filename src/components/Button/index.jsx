@@ -12,7 +12,6 @@ export const Button = ({
   iconTrailing,
   iconVariant,
   children,
-  link = false,
   ...rest
 }) => {
   if (hierarchy === 'primary') {
@@ -26,7 +25,6 @@ export const Button = ({
         iconLeading={iconLeading}
         iconTrailing={iconTrailing}
         iconVariant={iconVariant}
-        link={link}
         {...rest}
       >
         {children}
@@ -45,7 +43,6 @@ export const Button = ({
         iconLeading={iconLeading}
         iconTrailing={iconTrailing}
         iconVariant={iconVariant}
-        link={link}
         {...rest}
       >
         {children}
