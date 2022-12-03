@@ -1,9 +1,9 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { useVideosContext } from '../../../context/VideosContext'
-import { Icon } from '../../Icon'
+import { colors, primaryColorKey } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { useVideosContext } from '../../../../context/VideosContext'
+import { Icon } from '../../../Icon'
 import { DesktopNavMenuItemLink } from './Link'
 import { Video } from './Video'
 
@@ -25,7 +25,7 @@ export const Section = ({ section }) => {
         )}
 
         {section.more && (
-          <More href={section.more.title} rel='noreferrer' target='_blank'>
+          <More href={section.more.href} rel='noreferrer' target='_blank'>
             {t(section.more.title)} <Icon size={20} variant='arrow-right' />
           </More>
         )}

@@ -2,9 +2,9 @@ import { Disclosure } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import { colors } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { Icon } from '../../Icon'
+import { colors } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { Icon } from '../../../Icon'
 import { Content } from './Content'
 
 export const MobileSubMenu = ({ item }) => {

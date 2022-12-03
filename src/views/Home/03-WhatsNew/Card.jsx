@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { getFormattedDate } from '../../../utils'
+import { getFormattedDate } from '../../../helpers'
 
 export const Card = ({ post }) => {
   return (

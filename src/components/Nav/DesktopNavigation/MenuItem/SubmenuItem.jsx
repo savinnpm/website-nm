@@ -1,18 +1,13 @@
-import { Popover } from '@headlessui/react'
 import { useTranslation } from 'react-i18next'
+import { Popover } from '@headlessui/react'
 import styled from 'styled-components'
-import { colors } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { Icon } from '../../Icon'
-import { DesktopSubmenu } from '../DesktopSubmenu'
-import { DesktopNavMenuItemLink } from './Link'
+import { colors } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { Icon } from '../../../Icon'
+import { DesktopSubmenu } from '../../DesktopNavigation/Submenu'
 
-export const DesktopNavMenuItem = ({ item }) => {
+export const SubmenuItem = ({ item }) => {
   const { t } = useTranslation('common')
-
-  if (item.href) {
-    return <DesktopNavMenuItemLink item={item} />
-  }
 
   return (
     <Container>

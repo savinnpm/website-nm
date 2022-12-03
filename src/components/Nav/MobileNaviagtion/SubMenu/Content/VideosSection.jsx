@@ -1,16 +1,15 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../../styles/colors'
-import { typography } from '../../../../../styles/typography'
-import { useVideosContext } from '../../../../context/VideosContext'
-import { Icon } from '../../../Icon'
-import { Video } from '../../DesktopSubmenu/Video'
+import { colors, primaryColorKey } from '../../../../../../styles/colors'
+import { typography } from '../../../../../../styles/typography'
+import { useVideosContext } from '../../../../../context/VideosContext'
+import { Icon } from '../../../../Icon'
+import { Video } from '../../../DesktopNavigation/Submenu/Video'
 
 export const VideosSection = ({ section }) => {
   const { t } = useTranslation('common')
   const { videos } = useVideosContext()
 
-  console.log(section)
   return (
     <Container>
       <Title>{t(section.title)}</Title>
@@ -24,7 +23,7 @@ export const VideosSection = ({ section }) => {
       )}
 
       {section.more && (
-        <More href={section.more.title} rel='noreferrer' target='_blank'>
+        <More href={section.more.href} rel='noreferrer' target='_blank'>
           {t(section.more.title)} <Icon size={20} variant='arrow-right' />
         </More>
       )}

@@ -1,5 +1,5 @@
-import { useMediaQuery } from '../../hooks/useMediaQuery'
-import { MobileNav } from './MobileNav'
+import { useMediaQuery } from '../../../hooks/useMediaQuery'
+import { MobileNaviagtion } from './MobileNaviagtion'
 
 export const MobileNavContainer = ({ isMenuOpen }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
@@ -10,7 +10,7 @@ export const MobileNavContainer = ({ isMenuOpen }) => {
 
   return (
     <>
-      {isMobile && <MobileNav isMenuOpen={isMenuOpen} />}
+      {isMobile && <MobileNaviagtion isMenuOpen={isMenuOpen} />}
     </>
   )
 }

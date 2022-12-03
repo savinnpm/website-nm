@@ -26,12 +26,11 @@ export const NewsletterSignupForm = ({ paddingTop }) => {
 
 const Container = styled.div`
   gap: 40px;
-  padding-top: 0;
-  padding-top: ${props => props.paddingTop ? '96px' : undefined};
+  padding-top: ${props => props.paddingTop ? '96px' : 0};
   padding-bottom: 96px;
   
   @media (max-width: 768px) {
-    padding-top: ${props => props.paddingTop ? '64px' : undefined};
+    padding-top: ${props => props.paddingTop ? '64px' : 0};
     padding-bottom: 64px;
     gap: 32px;
   }

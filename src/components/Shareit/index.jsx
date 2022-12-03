@@ -7,7 +7,7 @@ import { useRouter } from 'next/router'
 
 import { Icon } from '../Icon'
 
-import { copyToClipBoard } from '../../utils'
+import { copyToClipBoard } from '../../helpers'
 
 import { colors } from '../../../styles/colors'
 import { shadows } from '../../../styles/shadows'

@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from '../../../../styles/colors'
-import { shadows } from '../../../../styles/shadows'
+import { colors } from '../../../../../styles/colors'
+import { shadows } from '../../../../../styles/shadows'
 import { Section as DesktopSection } from './Section'
 
 export const Submenu = ({ item }) => {

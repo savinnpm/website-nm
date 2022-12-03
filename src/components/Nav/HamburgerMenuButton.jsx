@@ -3,7 +3,7 @@ import { colors, primaryColorKey } from '../../../styles/colors'
 import { shadows } from '../../../styles/shadows'
 import { Icon } from '../Icon'
 
-export const NavMenuButton = ({ onClick, isOpen }) => {
+export const HamburgerMenuButton = ({ onClick, isOpen }) => {
   return (
     <Container onClick={onClick} isOpen={isOpen}>
       <Icon size={24} variant={isOpen ? 'x-close' : 'menu-01'} />

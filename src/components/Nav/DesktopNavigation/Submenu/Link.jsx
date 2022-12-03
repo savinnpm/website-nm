@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { Icon } from '../../Icon'
+import { colors, primaryColorKey } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { Icon } from '../../../Icon'
 
 export const DesktopNavMenuItemLink = ({ item }) => {
   const { t } = useTranslation('common')

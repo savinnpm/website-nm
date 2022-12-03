@@ -1,3 +1,4 @@
+import { helpers } from './helpers'
 import { storeLocally } from './io/download'
 import { request } from './request'
 import { mockData } from './_mock_'
@@ -18,30 +19,6 @@ const getVideoDurationText = (timestamp) => {
     formatted,
     text: (hours > 0 ? hours.toString() + ' hours, ' : '') + minutes.toString() + ' minutes, ' + seconds.toString() + ' seconds'
   }
-}
-
-const getVideoDescHTML = (_desc) => {
-  // const html = []
-
-  // desc.children.forEach((el) => {
-  //   el
-  // });
-  return ''
-}
-
-const getText = (arr) => {
-  const texts = []
-
-  arr.forEach(el => {
-    if (el.text) {
-      texts.push(el.text)
-      return
-    }
-
-    return texts.push(getText(el.children))
-  })
-
-  return texts.join('')
 }
 
 let docs = null
@@ -75,8 +52,8 @@ export const getVideos = async () => {
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'video-thumbnails'),
         videoId: doc.videoId,
         description: {
-          html: getVideoDescHTML(doc.description),
-          text: getText(doc.description)
+          html: helpers.getVideoDescHTML(doc.description),
+          text: helpers.getText(doc.description)
         },
         length: doc.length,
         duration: getVideoDurationText(doc.length),

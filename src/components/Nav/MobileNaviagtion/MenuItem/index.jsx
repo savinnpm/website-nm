@@ -1,4 +1,4 @@
-import { MobileSubMenu } from '../MobileSubMenu'
+import { MobileSubMenu } from '../SubMenu'
 import { NavMenuItemLink } from './Link'
 
 export const NavMenuItem = ({ item }) => {

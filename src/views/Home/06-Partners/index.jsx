@@ -87,11 +87,7 @@ const FeaturedPartners = styled.div`
   justify-content: center;
   align-items: center;
 
-  & img:first-child {
-    max-width: 402px;
-  }
-
-  & img:last-child {
-    max-width: 145px;
+  & img:first-child, & img:last-child {
+    height: 100px;
   }
 `

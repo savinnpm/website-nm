@@ -7,7 +7,7 @@ import {
 } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
-import { getFormattedDate } from '../../utils'
+import { getFormattedDate } from '../../helpers'
 
 export const FeaturedPostCard = ({ post, id }) => {
   return (

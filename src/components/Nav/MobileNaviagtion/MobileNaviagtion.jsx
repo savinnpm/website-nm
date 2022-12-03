@@ -1,12 +1,12 @@
 import { useEffect } from 'react'
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
-import { LocaleSelector } from '../LocaleSelector'
-import { ThemeSelector } from '../ThemeSelector'
-import { data } from './data'
-import { NavMenuItem } from './NavMenuItem'
+import { colors } from '../../../../styles/colors'
+import { LocaleSelector } from '../../LocaleSelector'
+import { ThemeSelector } from '../../ThemeSelector'
+import { data } from '../data'
+import { NavMenuItem } from './MenuItem'
 
-export const MobileNav = ({ isMenuOpen }) => {
+export const MobileNaviagtion = ({ isMenuOpen }) => {
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'visible'

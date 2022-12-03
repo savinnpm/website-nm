@@ -3,7 +3,7 @@ import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
-import { getFormattedDate } from '../../../utils'
+import { getFormattedDate } from '../../../helpers'
 
 export const BlogHero = ({ title, createdAt, timeToRead, featuredImage }) => {
   return (

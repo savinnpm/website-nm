@@ -6,9 +6,9 @@ import { ThemeSelector } from '../ThemeSelector'
 import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import Link from 'next/link'
-import { NavMenuButton } from '../Nav/NavMenuButton'
-import { DesktopNavMenu } from '../Nav/DesktopNavMenu'
+import { HamburgerMenuButton } from '../Nav/HamburgerMenuButton'
 import { colors, primaryColorKey } from '../../../styles/colors'
+import { DesktopNavigation } from '../Nav/DesktopNavigation'
 
 export const Header = ({ isMenuOpen, setIsMenuOpen, colored }) => {
   const theme = useTheme()
@@ -21,7 +21,7 @@ export const Header = ({ isMenuOpen, setIsMenuOpen, colored }) => {
             <span>Neptune Mutual</span>
             {theme.isLightMode ? <NpmLogo /> : <NpmLogoInverse />}
           </LogoContainer>
-          <DesktopNavMenu />
+          <DesktopNavigation />
         </LeftContainer>
 
         <Actions>
@@ -29,17 +29,16 @@ export const Header = ({ isMenuOpen, setIsMenuOpen, colored }) => {
           <ThemeSelector />
         </Actions>
 
-        <NavMenuButton onClick={() => setIsMenuOpen(prev => !prev)} isOpen={isMenuOpen} />
+        <HamburgerMenuButton onClick={() => setIsMenuOpen(prev => !prev)} isOpen={isMenuOpen} />
       </InnerContainer>
     </StyledHeader>
   )
 }
 
-const StyledHeader = styled.header`  
-  background-color: ${props => props.theme.primaryBackgroundColor};
+const StyledHeader = styled.header`
   background-color: ${props => props.colored
   ? (props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900'])
-  : undefined};
+  : props.theme.primaryBackgroundColor};
 `
 
 const InnerContainer = styled.div`

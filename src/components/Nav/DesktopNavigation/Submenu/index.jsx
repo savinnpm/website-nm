@@ -1,4 +1,4 @@
-import { useMediaQuery } from '../../../hooks/useMediaQuery'
+import { useMediaQuery } from '../../../../hooks/useMediaQuery'
 import { Submenu } from './Submenu'
 
 export const DesktopSubmenu = ({ item }) => {

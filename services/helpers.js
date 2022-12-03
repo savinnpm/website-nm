@@ -1,0 +1,30 @@
+import { serialize } from './serialize'
+
+const getSlug = (title) => {
+  return title.toLowerCase().replace(/ /g, '-').replace(/[-]+/g, '-').replace(/[^\w-]+/g, '')
+}
+
+const getVideoDescHTML = (arr) => {
+  return serialize(arr)
+}
+
+const getText = (arr) => {
+  const texts = []
+
+  arr.forEach(el => {
+    if (el.text) {
+      texts.push(el.text)
+      return
+    }
+
+    return texts.push(getText(el.children))
+  })
+
+  return texts.join('')
+}
+
+export const helpers = {
+  getSlug,
+  getVideoDescHTML,
+  getText
+}

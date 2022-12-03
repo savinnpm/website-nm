@@ -70,12 +70,13 @@ const Nav = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
-  `
+`
 
 const ListContainer = styled.section`
   flex: 1;
-
+  
   @media (max-width: 768px) {
+    flex: 0 1 auto;
     width: calc(50% - var(--gap) / 2);
   }
 `

@@ -1,11 +1,11 @@
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { Icon } from '../../Icon'
+import { colors, primaryColorKey } from '../../../../../styles/colors'
+import { typography } from '../../../../../styles/typography'
+import { Icon } from '../../../Icon'
 
-export const DesktopNavMenuItemLink = ({ item }) => {
+export const LinkItem = ({ item }) => {
   const { t } = useTranslation('common')
 
   if (item.isExternal) {

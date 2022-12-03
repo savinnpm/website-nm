@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../../styles/colors'
-import { typography } from '../../../../../styles/typography'
-import { NavMenuItemLink } from '../../NavMenuItem/Link'
+import { colors, primaryColorKey } from '../../../../../../styles/colors'
+import { typography } from '../../../../../../styles/typography'
+import { NavMenuItemLink } from '../../MenuItem/Link'
 
 export const Section = ({ section }) => {
   const { t } = useTranslation('common')
