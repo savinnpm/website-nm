@@ -9,7 +9,7 @@ import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
 import { getFormattedDate } from '../../helpers'
 
-export const FeaturedPostCard = ({ post, id }) => {
+export const FeaturedPostCard = ({ post }) => {
   return (
     <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
@@ -25,7 +25,7 @@ export const FeaturedPostCard = ({ post, id }) => {
 
         <TagsContainer>
           {post.tags.slice(0, 1).map((tag) => (
-            <Tag key={tag} id={id}>{tag}</Tag>
+            <Tag key={tag.name} tag={tag}>{tag.name}</Tag>
           ))}
         </TagsContainer>
       </Contents>
@@ -190,14 +190,8 @@ const Tag = styled.div`
   padding: 2px 10px;
   border-radius: 9999px;
   font-weight: 500;
-  ${props => props.id === 0 && (props.theme.isLightMode ? `color:${colors[primaryColorKey]['700']};` : `color:${colors[primaryColorKey]['400']};`)} 
-  ${props => props.id === 0 && (props.theme.isLightMode ? `background-color:${colors.blue['50']};` : `background-color:${colors.gray['700']};`)} 
-
-  ${props => props.id === 1 && (props.theme.isLightMode ? `color:${colors.gray['700']};` : `color:${colors.gray['300']};`)} 
-  ${props => props.id === 1 && (props.theme.isLightMode ? `background-color:${colors.gray['100']};` : `background-color:${colors.gray['700']};`)} 
-
-  ${props => props.id === 2 && (props.theme.isLightMode ? `color:${colors.violet['700']};` : `color:${colors.violet['400']};`)} 
-  ${props => props.id === 2 && (props.theme.isLightMode ? `background-color:${colors.violet['50']};` : `background-color:${colors.gray['700']};`)} 
+  background-color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['50'] : colors.gray['700']};
+  color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['700'] : colors[props.tag.color || primaryColorKey]['400']};
 
   min-width: 0;
 

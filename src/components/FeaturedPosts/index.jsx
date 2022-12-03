@@ -12,7 +12,7 @@ export const FeaturedPosts = ({ posts }) => {
       <Heading>Featured Posts</Heading>
 
       <GridContainer>
-        {featured.map((post, i) => <FeaturedPostCard key={i} id={i} post={post} />)}
+        {featured.map((post, i) => <FeaturedPostCard key={i} post={post} />)}
       </GridContainer>
     </Container>
   )

@@ -21,7 +21,7 @@ export const Card = ({ post }) => {
 
       <TagsContainer>
         {post.tags.slice(0, 1).map((tag) => (
-          <Tag key={tag}>{tag}</Tag>
+          <Tag key={tag.name} tag={tag}>{tag.name}</Tag>
         ))}
       </TagsContainer>
     </Container>
@@ -73,8 +73,8 @@ const Tag = styled.div`
   display: inline-flex;
   padding: 2px 10px;
   border-radius: 9999px;
-  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['50'] : colors.gray['700']};
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['400']};
+  background-color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['50'] : colors.gray['700']};
+  color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['700'] : colors[props.tag.color || primaryColorKey]['400']};
 
   min-width: 0;
 
