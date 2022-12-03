@@ -1,6 +1,10 @@
 import Image from 'next/image'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
 import { getFormattedDate } from '../../utils'
@@ -9,11 +13,10 @@ export const FeaturedPostCard = ({ post, id }) => {
   return (
     <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
-        <Image src={`/${post.image}`} alt={post.title} fill loading='lazy' />
+        <Image src={`/${post.image}`} height={200} width={320} alt={post.title} loading='lazy' />
       </ImageContainer>
 
       <Contents>
-
         <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
 
         <Title>{post.title}</Title>
@@ -35,8 +38,11 @@ const Container = styled.a`
   display: flex;
   flex-direction: row;
   gap: 24px;
-  align-items: center;
+  align-items: flex-start;
 
+  @media screen and (min-width: 1024px) {
+    height: 200px;
+  }
   
   // if container is a first child
   &:nth-of-type(1) {
@@ -49,6 +55,10 @@ const Container = styled.a`
       gap: 32px;
       
       --max-lines: 2;
+    }
+
+    img {
+      height: 240px;
     }
   }
   
@@ -92,7 +102,6 @@ const Container = styled.a`
 const Contents = styled.div`
   display: flex;
   flex-direction: column;
-  height: 200px;
   
   @media screen and (max-width: 860px) {
     height: auto;
@@ -106,7 +115,6 @@ const ImageContainer = styled.div`
 
   @media screen and (min-width: 1024px) {
     width: 320px;
-    height: 200px;;
   }
   
   ${Container}:nth-of-type(1) > & {
@@ -131,7 +139,6 @@ const ImageContainer = styled.div`
   img {
     object-fit: cover;
     width: 100%;
-    height: 100%;
   }
 
   
@@ -165,8 +172,7 @@ const Intro = styled.p`
 
 const TagsContainer = styled.div`
   display: flex;
-  margin-top: auto;
-  margin-bottom: 8px;
+  margin-top: 24px;
   
   @media screen and (max-width: 1024px) {
     margin-top: auto;
