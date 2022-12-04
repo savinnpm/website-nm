@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled, { useTheme } from 'styled-components'
 import { colors } from '../../../../styles/colors'
@@ -5,10 +6,10 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BrandCarousel } from './Brand-Carousel'
 
-const fenbushiImgLight = 'assets/images/partners/fenbushi-capital.png'
-const animocaLight = 'assets/images/partners/animoca-brands.png'
-const fenbushiImgDark = 'assets/images/partners/darkmode/fenbushi-capital.png'
-const animocaDark = 'assets/images/partners/darkmode/animoca-brands.png'
+const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.png'
+const animocaLight = '/assets/images/partners/animoca-brands.png'
+const fenbushiImgDark = '/assets/images/partners/darkmode/fenbushi-capital.png'
+const animocaDark = '/assets/images/partners/darkmode/animoca-brands.png'
 
 const partnersDark = [
   {
@@ -42,7 +43,7 @@ export const Partners = () => {
         <Heading>{t('POWERED_BY_YOU')}</Heading>
         <FeaturedPartners>
           {(isLightMode ? partnersLight : partnersDark).map((partner, ind) => (
-            <img key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} />
+            <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} />
           ))}
         </FeaturedPartners>
         <BrandCarousel />
@@ -89,5 +90,6 @@ const FeaturedPartners = styled.div`
 
   & img:first-child, & img:last-child {
     height: 100px;
+    object-fit: contain;
   }
 `

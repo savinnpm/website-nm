@@ -6,6 +6,7 @@ import { Home } from '../src/views/Home'
 import { services } from '../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
+import { getFQDN } from '../src/helpers'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'home'])
@@ -34,7 +35,7 @@ export default function HomePage (props) {
         <meta property='og:type' content='website' />
         <meta property='og:title' content={t('META_OG_TITLE')} />
         <meta property='og:description' content={t('META_OG_DESCRIPTION')} />
-        <meta property='og:image' content={t('META_OG_IMAGE')} />
+        <meta property='og:image' content={getFQDN(t('META_OG_IMAGE'))} />
         <meta property='og:locale' content={router.locale} />
         <meta property='og:url' content={router.asPath} />
         <meta property='twitter:site' content='@neptunemutual' />
@@ -42,7 +43,7 @@ export default function HomePage (props) {
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:description' content={t('META_TWITTER_DESCRIPTION')} />
         <meta property='twitter:title' content={t('META_TWITTER_TITLE')} />
-        <meta property='twitter:image' content={t('META_TWITTER_IMAGE')} />
+        <meta property='twitter:image' content={getFQDN(t('META_TWITTER_IMAGE'))} />
         <meta property='twitter:image:alt' content={t('META_TWITTER_IMAGE_ALT')} />
       </Head>
 

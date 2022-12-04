@@ -6,7 +6,7 @@ import { ThemeSelector } from '../../ThemeSelector'
 import { data } from '../data'
 import { NavMenuItem } from './MenuItem'
 
-export const MobileNaviagtion = ({ isMenuOpen }) => {
+export const MobileNavigation = ({ isMenuOpen }) => {
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'visible'

@@ -1,11 +1,13 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { shadows } from '../../../styles/shadows'
+import { utils } from '../../../styles/utils'
 import { Icon } from '../Icon'
 
 export const HamburgerMenuButton = ({ onClick, isOpen }) => {
   return (
     <Container onClick={onClick} isOpen={isOpen}>
+      <span>Toggle menu</span>
       <Icon size={24} variant={isOpen ? 'x-close' : 'menu-01'} />
     </Container>
   )
@@ -19,6 +21,10 @@ const Container = styled.button`
   ? (props.isOpen ? colors.gray['500'] : colors.gray['700'])
   : colors.gray['100']
   };
+
+  span {
+    ${utils.srOnly};
+  }
 
   @media (max-width: 768px) {
     display: inline-flex;

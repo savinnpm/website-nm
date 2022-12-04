@@ -36,4 +36,10 @@ const copyToClipBoard = (text) => {
   navigator?.clipboard?.writeText(text)
 }
 
-export { getFormattedDate, copyToClipBoard }
+// fully qualified domain name
+const getFQDN = (path) => {
+  const prefix = 'https://neptunemutual.com'
+  return prefix + path
+}
+
+export { getFormattedDate, copyToClipBoard, getFQDN }

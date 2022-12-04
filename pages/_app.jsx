@@ -9,7 +9,7 @@ import { Footer } from '../src/components/Footer'
 import { Header } from '../src/components/Header'
 import styled from 'styled-components'
 import { colors } from '../styles/colors'
-import { MobileNavContainer } from '../src/components/Nav/MobileNaviagtion'
+import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { VideosProvider } from '../src/context/VideosContext'
 
 function MyApp ({ Component, pageProps }) {

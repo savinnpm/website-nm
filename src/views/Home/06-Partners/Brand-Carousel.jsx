@@ -1,18 +1,19 @@
+import Image from 'next/image'
 import { useRef } from 'react'
 import Slider from 'react-slick'
 import styled, { useTheme } from 'styled-components'
 
-const coinbaseImg = 'assets/images/partners/coinbase.png'
-const huobiImg = 'assets/images/partners/huobi.png'
-const okexImg = 'assets/images/partners/okex.png'
-const okxImg = 'assets/images/partners/okx.png'
-const gravityImg = 'assets/images/partners/gravity.png'
+const coinbaseImg = '/assets/images/partners/coinbase.png'
+const huobiImg = '/assets/images/partners/huobi.png'
+const okexImg = '/assets/images/partners/okex.png'
+const okxImg = '/assets/images/partners/okx.png'
+const gravityImg = '/assets/images/partners/gravity.png'
 
-const coinbaseImgDark = 'assets/images/partners/darkmode/coinbase.png'
-const huobiImgDark = 'assets/images/partners/darkmode/huobi.png'
-const okexImgDark = 'assets/images/partners/darkmode/okex.png'
-const okxImgDark = 'assets/images/partners/darkmode/okx.png'
-const gravityImgDark = 'assets/images/partners/darkmode/gravity.png'
+const coinbaseImgDark = '/assets/images/partners/darkmode/coinbase.png'
+const huobiImgDark = '/assets/images/partners/darkmode/huobi.png'
+const okexImgDark = '/assets/images/partners/darkmode/okex.png'
+const okxImgDark = '/assets/images/partners/darkmode/okx.png'
+const gravityImgDark = '/assets/images/partners/darkmode/gravity.png'
 
 const carouselItemsDark = [
   {
@@ -105,7 +106,7 @@ export const BrandCarousel = () => {
         {slidesToMap.map((brand, idx) => {
           return (
             <div key={idx}>
-              <img src={brand.imgSrc} alt={brand.name + ' Logo'} />
+              <Image src={brand.imgSrc} alt={brand.name + ' Logo'} width={230} height={64} />
             </div>
           )
         })}
@@ -120,10 +121,6 @@ const LogosContainer = styled.div`
   gap:14px;
   flex-wrap: wrap;
   width: 100%;
-
-  img{
-    width: 232px;
-  }
 
   .slick-slider{
     width:100%;

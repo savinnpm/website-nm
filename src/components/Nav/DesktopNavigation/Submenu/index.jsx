@@ -1,12 +1,20 @@
+import dynamic from 'next/dynamic'
+import { Suspense } from 'react'
 import { useMediaQuery } from '../../../../hooks/useMediaQuery'
-import { Submenu } from './Submenu'
+
+const Submenu = dynamic(
+  () => import('./Submenu').then((mod) => mod.Submenu)
+)
 
 export const DesktopSubmenu = ({ item }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <>
-      {!isMobile && <Submenu item={item} />}
+      {!isMobile && (
+        <Suspense fallback='Loading...'>
+          <Submenu item={item} />
+        </Suspense>)}
     </>
   )
 }
