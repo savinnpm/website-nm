@@ -29,7 +29,7 @@ export const getVacancies = async () => {
       return {
         id: doc.id,
         title: doc.title,
-        slug: doc.id,
+        slug: doc.slug,
         intro: doc.intro,
         type: doc.type,
         badges: JSON.parse(doc.badges || '[]'),
@@ -51,12 +51,12 @@ export const getSingleVacancy = async (slug) => {
   try {
     const docs = await getDocs()
 
-    const match = docs.find(doc => doc.id === slug)
+    const match = docs.find(doc => doc.slug === slug)
 
     return {
       id: match.id,
       title: match.title,
-      slug: match.id,
+      slug: match.slug,
       intro: match.intro,
       type: match.type,
       badges: JSON.parse(match.badges || '[]'),
@@ -75,7 +75,7 @@ export const getVacancySlugs = async () => {
   try {
     const docs = await getDocs()
 
-    const result = docs.map((doc) => doc.id).filter(x => !!x)
+    const result = docs.map((doc) => doc.slug).filter(x => !!x)
 
     return result
   } catch (error) {

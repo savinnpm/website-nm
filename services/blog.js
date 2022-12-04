@@ -1,3 +1,4 @@
+import { colors, primaryColorKey } from '../styles/colors'
 import { storeLocally } from './io/download'
 import { request } from './request'
 import { serialize } from './serialize'
@@ -23,6 +24,10 @@ const getDocs = async () => {
   return docs
 }
 
+const getValidColorKey = (colorKey) => {
+  return Object.keys(colors).filter(x => x !== 'white' && x !== 'black').includes(colorKey) ? colorKey : primaryColorKey
+}
+
 export const getLatestBlogPosts = async () => {
   try {
     const docs = await getDocs()
@@ -36,7 +41,7 @@ export const getLatestBlogPosts = async () => {
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: tag.color }))
+        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
       }
     }))
 
@@ -61,7 +66,7 @@ export const getBlogPosts = async () => {
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: tag.color }))
+        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
       }
     }))
 
@@ -87,7 +92,7 @@ export const getSinglePost = async (slug) => {
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
-      tags: match.tags.map((tag) => ({ name: tag.name, color: tag.color })),
+      tags: match.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) })),
       meta: {
         title: match.meta.title,
         description: match.meta.description

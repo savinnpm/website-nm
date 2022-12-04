@@ -330,7 +330,7 @@ export const colors = {
     800: '#9e165f',
     900: '#851651'
   },
-  rosé: {
+  rose: {
     25: '#fff5f6',
     50: '#fff1f3',
     100: '#ffe4e8',

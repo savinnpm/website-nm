@@ -31,7 +31,7 @@ export const getAudits = async () => {
         id: doc.id,
         title: doc.title,
         report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
-        slug: doc.id,
+        slug: doc.slug,
         intro: doc.intro,
         startDate: doc.startDate,
         endDate: doc.endDate
@@ -50,13 +50,13 @@ export const getSingleAudit = async (slug) => {
   try {
     const docs = await getDocs()
 
-    const match = docs.find(doc => doc.id === slug)
+    const match = docs.find(doc => doc.slug === slug)
 
     return {
       id: match.id,
       title: match.title,
       report: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.report.filename}`, 'audits'),
-      slug: match.id,
+      slug: match.slug,
       intro: match.intro,
       startDate: match.startDate,
       endDate: match.endDate
@@ -72,7 +72,7 @@ export const getAuditSlugs = async () => {
   try {
     const docs = await getDocs()
 
-    const result = docs.map((doc) => doc.id).filter(x => !!x)
+    const result = docs.map((doc) => doc.slug).filter(x => !!x)
 
     return result
   } catch (error) {
