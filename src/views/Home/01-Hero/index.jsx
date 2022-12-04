@@ -34,7 +34,10 @@ export const Hero = () => {
       </TextAndCta>
 
       <ImageContainer>
-        <Image src='/assets/images/hero/cover.png' alt='Neptune' fill loading='eager' />
+        <Image
+          src='/assets/images/hero/cover.png' alt='A portrait of the god Neptune holding a trident.' fill loading='eager' priority
+          sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+        />
       </ImageContainer>
     </Container>
   )

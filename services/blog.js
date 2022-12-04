@@ -88,6 +88,10 @@ export const getSinglePost = async (slug) => {
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
       tags: match.tags.map((tag) => ({ name: tag.name, color: tag.color })),
+      meta: {
+        title: match.meta.title,
+        description: match.meta.description
+      },
       content: {
         // raw: serialize(match.content),
         html: serialize(match.content) || match.html || ''

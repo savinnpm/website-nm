@@ -17,7 +17,7 @@ export const SecuringApps = () => {
             {data.map((app) => {
               return (
                 <AppContainer key={app.name}>
-                  <AppImg src={app.src} alt={app.name} height='32' width='32' loading='lazy' />
+                  <AppImg src={app.src} alt={app.name} height='32' width='32' />
                   <AppName>{app.name}</AppName>
                 </AppContainer>
               )

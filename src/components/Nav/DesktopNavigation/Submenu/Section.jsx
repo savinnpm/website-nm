@@ -5,7 +5,7 @@ import { typography } from '../../../../../styles/typography'
 import { useVideosContext } from '../../../../context/VideosContext'
 import { Icon } from '../../../Icon'
 import { DesktopNavMenuItemLink } from './Link'
-import { Video } from './Video'
+import { Video } from '../../common/Video'
 
 export const Section = ({ section }) => {
   const { t } = useTranslation('common')

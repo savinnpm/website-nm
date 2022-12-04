@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { colors } from '../../../../../styles/colors'
-import { typography } from '../../../../../styles/typography'
-import PlayIcon from '../../../Icon/custom/PlayIcon'
-import { useVideosContext } from '../../../../context/VideosContext'
+import { colors } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import PlayIcon from '../../Icon/custom/PlayIcon'
+import { useVideosContext } from '../../../context/VideosContext'
 
 export const Video = ({ video }) => {
   const { setId } = useVideosContext()

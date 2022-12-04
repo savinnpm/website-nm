@@ -13,7 +13,7 @@ export const FeaturedPostCard = ({ post }) => {
   return (
     <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
-        <Image src={`/${post.image}`} height={200} width={320} alt={post.title} loading='lazy' />
+        <Image src={`/${post.image}`} height={200} width={320} alt={post.title} />
       </ImageContainer>
 
       <Contents>
@@ -164,10 +164,7 @@ const Intro = styled.p`
   ${typography.styles.textSm};
   ${typography.weights.regular};
 
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: var(--max-lines);
+  ${utils.maxLines};
 `
 
 const TagsContainer = styled.div`

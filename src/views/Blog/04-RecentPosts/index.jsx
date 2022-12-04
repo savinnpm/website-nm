@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { Card } from '../../Home/03-WhatsNew/Card'
+import { ArticleCard } from '../../../components/ArticleCard'
 import { Pagination } from './Pagination'
 
 export const BLOGS_PER_PAGE = 6
@@ -54,7 +54,7 @@ export const RecentPosts = ({ blogPosts }) => {
         <BlogsContainer>
           {blogPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE).map((post) => (
             <SingleCard key={post.id}>
-              <Card post={post} />
+              <ArticleCard post={post} />
             </SingleCard>
           ))}
         </BlogsContainer>

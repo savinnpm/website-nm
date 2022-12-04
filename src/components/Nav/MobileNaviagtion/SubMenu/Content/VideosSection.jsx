@@ -4,7 +4,7 @@ import { colors, primaryColorKey } from '../../../../../../styles/colors'
 import { typography } from '../../../../../../styles/typography'
 import { useVideosContext } from '../../../../../context/VideosContext'
 import { Icon } from '../../../../Icon'
-import { Video } from '../../../DesktopNavigation/Submenu/Video'
+import { Video } from '../../../common/Video'
 
 export const VideosSection = ({ section }) => {
   const { t } = useTranslation('common')

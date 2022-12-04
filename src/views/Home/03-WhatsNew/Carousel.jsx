@@ -5,7 +5,7 @@ import { blurs } from '../../../../styles/blurs'
 import { colors } from '../../../../styles/colors'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
-import { Card } from './Card'
+import { ArticleCard } from '../../../components/ArticleCard'
 
 function NextArrow (props) {
   return (
@@ -79,7 +79,7 @@ export const Carousel = ({ posts = [] }) => {
         {...settings}
       >
         {posts.map(post => {
-          return <Card key={post.id} post={post} />
+          return <ArticleCard key={post.id} post={post} />
         })}
 
       </Slider>

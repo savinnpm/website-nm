@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
-import { Card } from '../../Home/03-WhatsNew/Card'
+import { ArticleCard } from '../../../components/ArticleCard'
 
 export const RelatedPosts = ({ blogPosts }) => {
   const { t } = useTranslation('common')
@@ -30,7 +30,7 @@ export const RelatedPosts = ({ blogPosts }) => {
         <BlogsContainer>
           {blogPosts.slice(0, 3).map((post) => (
             <SingleCard key={post.id}>
-              <Card post={post} />
+              <ArticleCard post={post} />
             </SingleCard>
           ))}
         </BlogsContainer>

@@ -31,8 +31,16 @@ const ellipsis = css`
   text-overflow: ellipsis;
 `
 
+const maxLines = css`
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: var(--max-lines);
+`
+
 export const utils = {
   srOnly,
   ellipsis,
+  maxLines,
   fullWidthContainer
 }
