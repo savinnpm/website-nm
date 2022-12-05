@@ -10,7 +10,7 @@ export const nav = [
   {
     title: 'COMPANY',
     links: [
-      { href: 'https://angel.co/company/neptune-mutual', text: 'CAREERS', isExternal: true },
+      { href: '/careers', text: 'CAREERS', isExternal: false },
       { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true }
     ]
   },
