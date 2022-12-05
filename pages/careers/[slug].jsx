@@ -45,7 +45,7 @@ export async function getStaticProps ({ locale, params }) {
       vacancy,
       crumbs: [
         { name: 'Home', link: '/' },
-        { name: 'Careers', link: '/careers/react-developer' },
+        { name: 'Careers', link: '/careers' },
         { name: vacancy?.title || '', link: '#' }
       ],
       videos: await services.getVideos(),
