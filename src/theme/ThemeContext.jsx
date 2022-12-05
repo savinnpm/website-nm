@@ -6,6 +6,7 @@ import { useDarkMode } from '../hooks/useDarkMode'
 const GlobalStyle = createGlobalStyle`
   :root {
     --header-height: 80px;
+    scroll-padding-top: 6rem;
   }
 
   @media (max-width: 768px) {

@@ -57,7 +57,7 @@ const Shareit = (props) => {
         <Icon size='18' variant='facebook' />
       </Btn>
 
-      <Btn onClick={share} data-url='url' data-href={`https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props.intro}&source=Neptune Mutual`}>
+      <Btn onClick={share} data-url='url' data-href={`https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props?.intro}&source=Neptune Mutual`}>
         <Icon size='18' variant='linkedin' />
       </Btn>
 
@@ -67,9 +67,8 @@ const Shareit = (props) => {
 
 const Share = styled.div`
   text-align: center;
-  border-top: 1px solid ${colors.gray[200]};
+  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
   padding-top: 24px;
-  margin-bottom: 96px;
   margin-top: 16px;
 
   @media (min-width: 770px) {
