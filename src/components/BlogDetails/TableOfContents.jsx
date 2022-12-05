@@ -159,7 +159,7 @@ const TitleLink = styled(Link)`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 4px;
   margin-top: 8px;
 
   ${typography.styles.textMd};
@@ -179,5 +179,5 @@ const HeaderLink2 = styled(Link)`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 24px;
-  padding-left: 5px;
+  padding: 4px 8px;
 `
