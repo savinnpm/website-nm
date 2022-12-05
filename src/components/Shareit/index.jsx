@@ -69,7 +69,6 @@ const Share = styled.div`
   text-align: center;
   border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
   padding-top: 24px;
-  margin-bottom: 96px;
   margin-top: 16px;
 
   @media (min-width: 770px) {

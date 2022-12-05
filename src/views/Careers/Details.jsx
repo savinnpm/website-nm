@@ -47,10 +47,10 @@ const Details = (props) => {
             </Type>
           </Types>
 
-          <Content content={props.vacancy.description.html} wrapperClass={wrapperClass} />
+          <Content content={`<h2 id='about-this-vacancy'><label>About this Vacancy</label><span /></h2>${props.vacancy.description.html}`} wrapperClass={wrapperClass} />
           <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
 
-          <Link target='_blank' href={props.vacancy.form} rel='noreferrer'>
+          <Link className='btn-application' target='_blank' href={props.vacancy.form} rel='noreferrer'>
             <Button hierarchy='primary' size='lg' iconTrailing iconVariant='arrow-square-up-right'>
               {t('SUBMIT_JOB_APPLICATION')}
             </Button>
@@ -110,6 +110,36 @@ const ContentWrapper = styled.div`
   
   h2 {
     margin-bottom: 12px;
+  }
+  
+  .btn-application {
+    display: flex;
+    margin: 56px auto 0;
+    justify-content: center;
+
+    @media (min-width: 770px) {
+      justify-content: start;  
+
+    }
+  }
+
+  #about-this-vacancy  {
+    position: relative;
+    text-align: center;
+
+    label {
+      background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};;
+      padding: 0 24px;
+    }
+
+    span {
+      border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      z-index: -1;
+    }
   }
 `
 
