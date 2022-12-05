@@ -7,10 +7,6 @@ import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 import { Button } from '../../../components/Button'
 
-const icons = {
-
-}
-
 export const Reviews = (props) => {
   const { t } = useTranslation('security')
 
