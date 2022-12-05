@@ -96,11 +96,26 @@ const ContentWrapper = styled.div`
     width: 100%;
     object-fit: contain;
   }
+
+  p,
+  li {
+    color: ${colors.gray[600]};
+    ${typography.weights.regular}
+    ${typography.styles.textLg}
+  }
+
+  li {
+    line-height: 28px;
+  }
+  
+  h2 {
+    margin-bottom: 12px;
+  }
 `
 
 const Types = styled.div`
   display: flex;
-  margin-bottom: 66px;
+  margin-bottom: 56px;
 `
 
 const Type = styled.div`
