@@ -1,8 +1,22 @@
-import Head from 'next/head'
+import styled from 'styled-components'
 
+import Head from 'next/head'
+import Link from 'next/link'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { useTranslation } from 'react-i18next'
 
 import { services } from '../../services'
+
+import { typography } from '../../styles/typography'
+import { colors } from '../../styles/colors'
+import { utils } from '../../styles/utils'
+
+import { Button } from '../../src/components/Button'
+import { Breadcrumbs } from '../../src/components/Breadcrums'
+import { TableOfContents } from '../../src/components/BlogDetails/TableOfContents'
+import { Shareit } from '../../src/components/Shareit'
+
+import { Content } from '../../src/views/SingleBlog/Content'
 
 export async function getStaticPaths () {
   const slugs = await services.getVacancySlugs()
@@ -23,11 +37,17 @@ export async function getStaticPaths () {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'security'])
+  const vacancy = await services.getSingleVacancy(params.slug)
 
   return {
     props: {
       ...(s),
-      vacancy: await services.getSingleVacancy(params.slug),
+      vacancy,
+      crumbs: [
+        { name: 'Home', link: '/' },
+        { name: 'Careers', link: '/careers/react-developer' },
+        { name: vacancy?.title || '', link: '#' }
+      ],
       videos: await services.getVideos(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
@@ -36,6 +56,8 @@ export async function getStaticProps ({ locale, params }) {
 }
 
 export default function VacancyPage (props) {
+  const { t } = useTranslation('common')
+  const wrapperClass = 'article'
   return (
     <>
       <Head>
@@ -45,8 +67,80 @@ export default function VacancyPage (props) {
       </Head>
 
       <main>
-        <pre>{JSON.stringify(props.vacancy, null, 2)}</pre>
+        <Header>
+          <Title>{props.vacancy.title}</Title>
+        </Header>
+
+        <MainWrapper>
+          <Sidebar>
+            <TableOfContents title={props.vacancy.title} wrapperClass={wrapperClass} />
+          </Sidebar>
+
+          <ContentWrapper>
+            <Breadcrumbs crumbs={props.crumbs} />
+
+            <Content content={props.vacancy.description.html} wrapperClass={wrapperClass} />
+            <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
+
+            <Link target='_blank' href={props.vacancy.form} rel='noreferrer'>
+              <Button hierarchy='primary' size='lg' iconTrailing iconVariant='arrow-square-up-right'>
+                {t('SUBMIT_JOB_APPLICATION')}
+              </Button>
+            </Link>
+
+          </ContentWrapper>
+
+        </MainWrapper>
+
       </main>
     </>
   )
 }
+
+const MainWrapper = styled.div`
+  ${utils.fullWidthContainer};
+  padding-top: 60px;
+  padding-bottom: 96px;
+  padding-left: 86px;
+  padding-right: 86px;
+  word-break: break-word;
+
+
+  display: grid;
+  gap: 64px;
+  grid-template-columns: 4fr 9fr;
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column-reverse;
+    
+    ${utils.fullWidthContainer};
+  }
+`
+
+const Sidebar = styled.div`
+  border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+`
+
+const ContentWrapper = styled.div`
+  /* grid-template-columns: 4fr; */
+
+  i[style] {
+    display: none!important;
+  }
+
+   
+  img {
+    height: auto;
+  }
+`
+
+const Header = styled.div`
+  text-align: center;
+  background-color: #f4f8ff;
+  padding: 96px 0;
+`
+const Title = styled.h1`
+  ${typography.styles.displayLg}
+  ${typography.weights.semibold}
+`

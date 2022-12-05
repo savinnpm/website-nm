@@ -57,7 +57,7 @@ const Shareit = (props) => {
         <Icon size='18' variant='facebook' />
       </Btn>
 
-      <Btn onClick={share} data-url='url' data-href={`https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props.intro}&source=Neptune Mutual`}>
+      <Btn onClick={share} data-url='url' data-href={`https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props?.intro}&source=Neptune Mutual`}>
         <Icon size='18' variant='linkedin' />
       </Btn>
 
