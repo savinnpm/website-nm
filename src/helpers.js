@@ -38,7 +38,7 @@ const copyToClipBoard = (text) => {
 
 // fully qualified domain name
 const getFQDN = (path) => {
-  const prefix = 'https://neptunemutual.com'
+  const prefix = process.env.NEXT_PUBLIC_DOMAIN_NAME
   return prefix + path
 }
 

@@ -8,7 +8,7 @@ import { getFormattedDate } from '../helpers'
 
 export const ArticleCard = ({ post }) => {
   return (
-    <Container href={`/blog/${post.slug}`}>
+    <Container href={`/blog/${post.slug}`} locale='en'>
       <ImageContainer>
         <Image src={`/${post.image}`} alt={post.title} fill sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw' />
       </ImageContainer>
