@@ -35,6 +35,5 @@
   "FROM_YOUTUBE": "{{FROM_YOUTUBE}}",
   "ALL_VIDEO_TUTS": "{{ALL_VIDEO_TUTS}}",
   "COPY_LINK": "{{COPY_LINK}}",
-  "COPIED": "{{COPIED}}",
-  "SUBMIT_JOB_APPLICATION": "Submit My Job Application"
+  "COPIED": "{{COPIED}}"
 }

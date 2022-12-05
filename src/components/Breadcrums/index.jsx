@@ -20,6 +20,7 @@ function Breadcrumbs (props) {
 const Trail = styled.div`
   display: flex;
   align-items: center;
+  margin-bottom: 36px;
 
   svg {
     color: ${colors.gray[300]};
