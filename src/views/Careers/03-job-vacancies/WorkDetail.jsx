@@ -17,12 +17,12 @@ const Container = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  color: ${(props) => props.theme.isLightMode ? colors.gray['600'] : colors.gray['600']};
+  color: ${(props) => props.theme.secondaryColor};
 
   ${typography.styles.textMd};
   ${typography.weights.medium};
   
   svg  {
-    color: ${(props) => props.theme.isLightMode ? colors.gray['400'] : colors.gray['400']};
+    color: ${(props) => props.theme.isLightMode ? colors.gray['400'] : colors.gray['500']};
   }
 `

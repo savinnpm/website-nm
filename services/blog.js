@@ -47,7 +47,7 @@ export const getLatestBlogPosts = async () => {
 
     const allPosts = result.map(x => x.value)
     const latestPosts = allPosts.sort((a, b) => {
-      return (new Date(a.date) > new Date(b.date) ? 1 : new Date(a.date) < new Date(b.date) ? -1 : 0)
+      return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
     }).slice(0, 10)
 
     return latestPosts

@@ -43,7 +43,7 @@ const Container = styled.section`
   gap: 24px;
 
   background: ${(props) => props.theme.isLightMode ? colors.white : colors.gray['700']};
-  border: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
+  border: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
   border-radius: 16px;
 `
 
@@ -60,14 +60,14 @@ const TextContainer = styled.div`
 `
 
 const Dept = styled.p`
-color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
-${typography.styles.textMd};
-${typography.weights.semibold};
+  ${typography.styles.textMd};
+  ${typography.weights.semibold};
 
-@media (max-width: 768px) {
-  ${typography.styles.textSm};
-}
+  @media (max-width: 768px) {
+    ${typography.styles.textSm};
+  }
 `
 
 const Title = styled.h3`

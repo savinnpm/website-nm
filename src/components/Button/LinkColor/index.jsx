@@ -38,7 +38,7 @@ export const LinkColor = ({
 }
 
 const StyledButton = styled.button`
-  --color: ${(props) => getBgColor(props.destructive)['600']};
+  --color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['500']};
 
   display: flex;
   justify-content: center;

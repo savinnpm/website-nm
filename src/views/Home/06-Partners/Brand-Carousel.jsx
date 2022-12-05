@@ -133,4 +133,8 @@ const LogosContainer = styled.div`
   .slick-list {
     margin: 0 -16px;
   }
+
+  .slick-slide img{
+    object-fit: contain;
+  }
 `

@@ -65,7 +65,7 @@ export const getVideos = async () => {
 
     const allVideos = result.map(x => x.value)
     const latestVideos = allVideos.sort((a, b) => {
-      return (new Date(a.date) > new Date(b.date) ? 1 : new Date(a.date) < new Date(b.date) ? -1 : 0)
+      return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
     }).slice(0, 3)
 
     return latestVideos

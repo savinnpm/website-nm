@@ -18,7 +18,7 @@ const Badge = styled.div`
   padding: 2px 10px 2px 8px;
   gap: 6px;
   border-radius: 9999px;
-  background-color: ${props => props.theme.isLightMode ? colors[props.badge.color || primaryColorKey]['50'] : colors.gray['700']};
+  background-color: ${props => props.theme.isLightMode ? colors[props.badge.color || primaryColorKey]['50'] : colors.gray['600']};
   color: ${props => props.theme.isLightMode ? colors[props.badge.color || primaryColorKey]['700'] : colors[props.badge.color || primaryColorKey]['400']};
 
   min-width: 0;

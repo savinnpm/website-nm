@@ -24,7 +24,7 @@ export const JobVacancies = ({ vacancies }) => {
 }
 
 const Container = styled.div`
-  padding-top: 56px;
+  padding-top: 96px;
   padding-bottom: 96px;
 
   @media (max-width: 768px) {
