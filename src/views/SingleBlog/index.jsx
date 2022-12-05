@@ -1,5 +1,10 @@
-import { useEffect, useState } from 'react'
+import {
+  useEffect,
+  useState
+} from 'react'
+
 import styled from 'styled-components'
+
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
@@ -51,11 +56,13 @@ const MainWrapper = styled.div`
   ${utils.fullWidthContainer};
   padding-left: 86px;
   padding-right: 86px;
+  word-break: break-word;
+
 
   display: grid;
   gap: 64px;
   grid-template-columns: 4fr 9fr;
-  
+
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column-reverse;
@@ -70,4 +77,13 @@ const Sidebar = styled.div`
 
 const ContentWrapper = styled.div`
   /* grid-template-columns: 4fr; */
+
+  i[style] {
+    display: none!important;
+  }
+
+   
+  img {
+    height: auto;
+  }
 `
