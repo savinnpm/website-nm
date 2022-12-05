@@ -31,6 +31,7 @@ const Details = (props) => {
 
         <ContentWrapper>
           <Breadcrumbs crumbs={[...props.crumbs, { name: props.vacancy.title, link: '#' }]} />
+
           <Types>
             <Type>
               <Label>{t('DEPARTMENT')}</Label>
@@ -45,6 +46,7 @@ const Details = (props) => {
               <TypeContent>{props.vacancy.location}</TypeContent>
             </Type>
           </Types>
+
           <Content content={props.vacancy.description.html} wrapperClass={wrapperClass} />
           <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
 
