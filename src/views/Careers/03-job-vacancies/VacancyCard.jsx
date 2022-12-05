@@ -2,14 +2,38 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { Button } from '../../../components/Button'
+import { Badges } from './Badges'
+import { WorkDetail } from './WorkDetail'
 
 export const VacancyCard = ({ vacancy }) => {
   return (
     <Container>
-      <Category>{vacancy.department}</Category>
-      <Title>{vacancy.title}</Title>
+
+      <TitleAndCta>
+        <TextContainer>
+          <Dept>{vacancy.department}</Dept>
+          <Title>{vacancy.title} <Badges badges={vacancy.badges} /></Title>
+        </TextContainer>
+
+        <Button
+          href={`/careers/${vacancy.slug}`}
+          as={Link}
+          hierarchy='link-color'
+          size='sm'
+          iconTrailing
+          iconVariant='arrow-right'
+        >
+          View Job
+        </Button>
+      </TitleAndCta>
+
       <Intro>{vacancy.intro}</Intro>
-      <Link href={`/careers/${vacancy.slug}`}>View Job</Link>
+
+      <WorkDetails>
+        <WorkDetail variant='marker-pin-02'>{vacancy.location}</WorkDetail>
+        <WorkDetail variant='clock'>{vacancy.type}</WorkDetail>
+      </WorkDetails>
     </Container>
   )
 }
@@ -23,7 +47,19 @@ const Container = styled.section`
   border-radius: 16px;
 `
 
-const Category = styled.p`
+const TitleAndCta = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+
+  flex-wrap: wrap;
+`
+
+const TextContainer = styled.div`
+`
+
+const Dept = styled.p`
 color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
 ${typography.styles.textMd};
@@ -37,6 +73,12 @@ ${typography.weights.semibold};
 const Title = styled.h3`
   margin-top: 4px;
   color: ${(props) => props.theme.color};
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+
+  flex-wrap: wrap;
 
   ${typography.styles.textLg};
   ${typography.weights.medium};
@@ -48,4 +90,11 @@ const Intro = styled.p`
 
   ${typography.styles.textMd};
   ${typography.weights.regular};
+`
+
+const WorkDetails = styled.div`
+margin-top: 16px;
+  display: flex;
+  align-items: center;
+  gap: 24px;
 `

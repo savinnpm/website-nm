@@ -38,7 +38,7 @@ import { Cube01, Cube02, Star02 } from "./variants/Shapes";
 import { BookClosed, Glasses02 } from "./variants/Education";
 import { Play } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
-import { Flag06, MarkerPin01, Globe01 } from "./variants/MapsAndTravel";
+import { Flag06, MarkerPin01, Globe01, MarkerPin02 } from "./variants/MapsAndTravel";
 import { FaceSmile, Users01 } from "./variants/Users";
 
 // custom icons
@@ -247,6 +247,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "flag-06") {
     IconComponent = Flag06;
+  }
+
+  if (variant === "marker-pin-02") {
+    IconComponent = MarkerPin02;
   }
 
   if (variant === "dot") {

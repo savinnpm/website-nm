@@ -67,6 +67,10 @@ export const getSingleVacancy = async (slug) => {
       description: {
         text: helpers.getText(match.description),
         html: helpers.serialize(match.description)
+      },
+      meta: {
+        title: match.meta.title,
+        description: match.meta.description
       }
     }
   } catch (error) {

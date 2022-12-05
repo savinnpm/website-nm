@@ -1,3 +1,4 @@
+import { LinkColor } from './LinkColor'
 import { LinkGrayButton } from './LinkGrayButton'
 import { PrimaryButton } from './PrimaryButton'
 
@@ -29,6 +30,23 @@ export const Button = ({
       >
         {children}
       </PrimaryButton>
+    )
+  }
+  if (hierarchy === 'link-color') {
+    return (
+      <LinkColor
+        size={size}
+        icon={icon}
+        destructive={destructive}
+        state={state}
+        disabled={disabled}
+        iconLeading={iconLeading}
+        iconTrailing={iconTrailing}
+        iconVariant={iconVariant}
+        {...rest}
+      >
+        {children}
+      </LinkColor>
     )
   }
 
