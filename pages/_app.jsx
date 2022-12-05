@@ -12,15 +12,20 @@ import { colors } from '../styles/colors'
 import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { VideosProvider } from '../src/context/VideosContext'
 import { PageLoader } from '../src/components/PageLoader'
-import { useRouter } from 'next/router'
+import { Router } from 'next/router'
 
 function MyApp ({ Component, pageProps }) {
-  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   useEffect(() => {
-    setIsMenuOpen(false)
-  }, [router.asPath])
+    // Close menu after navigating to a new page
+    const onClose = () => setIsMenuOpen(false)
+    Router.events.on('routeChangeComplete', onClose)
+
+    return () => {
+      Router.events.off('routeChangeComplete', onClose)
+    }
+  }, [])
 
   return (
     <ThemeProvider>
