@@ -2,7 +2,7 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { services } from '../../services'
-import Link from 'next/link'
+import { Careers } from '../../src/views/Careers'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'careers'])
@@ -29,13 +29,7 @@ export default function CareersPage (props) {
 
       <main>
 
-        {props.vacancies.map(vacancy => {
-          return (
-            <div key={vacancy.id}>
-              <Link href={`/careers/${vacancy.slug}`}>{vacancy.title}</Link>
-            </div>
-          )
-        })}
+        <Careers vacancies={props.vacancies} />
 
       </main>
 
