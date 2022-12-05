@@ -48,6 +48,8 @@ import SunFilled from "./variants/sun-filled";
 import Dot from "./variants/dot"
 import { Folder } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
+import { Blocksec, Cyraacs, OpenZepplin } from "./variants/Partners";
+import { ShieldTick } from "./variants/Security";
 
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
@@ -260,6 +262,22 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "dot") {
     IconComponent = Dot;
+  }
+
+  if(variant === "open-zeppelin") {
+    IconComponent = OpenZepplin
+  }
+
+  if(variant === "blocksec") {
+    IconComponent = Blocksec
+  }
+
+  if(variant === "cyraacs") {
+    IconComponent = Cyraacs
+  }
+
+  if(variant === 'shield-tick') {
+    IconComponent = ShieldTick
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;

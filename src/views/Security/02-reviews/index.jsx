@@ -7,23 +7,36 @@ import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 import { Button } from '../../../components/Button'
 
+const icons = {
+
+}
+
 export const Reviews = (props) => {
   const { t } = useTranslation('security')
 
   return (
     <Review>
       <About>
+        <AboutIconContainer>
+          <Icon size={24} variant='shield-tick' />
+        </AboutIconContainer>
+
         <AboutTitle>Security Reviews</AboutTitle>
         <AboutContent>Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing</AboutContent>
       </About>
+
       <Slider>
         <Grid>
           {props.audits.map(audit => {
             console.log(audit)
             return (
               <Card key={audit.id}>
-
-                <Icon variant='Security Reviews-Logos' />
+                <IconNTag>
+                  <IconContainer>
+                    <Icon size={24} variant='open-zeppelin' />
+                  </IconContainer>
+                  <Tag>Smart Contract</Tag>
+                </IconNTag>
                 <CardTitle>{audit.title}</CardTitle>
                 <CardContent>{audit.intro}</CardContent>
 
@@ -51,15 +64,29 @@ const Review = styled.div`
 const About = styled.div`
   margin-right: 64px;
 `
+
 const AboutTitle = styled.h2`
   ${typography.styles.displayMd}
   ${typography.weights.semibold}
-  color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.gray[900]};
+  color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
   margin-bottom: 20px;
 `
 
+const AboutIconContainer = styled.span`
+  background-color: ${props => props.theme.isLightMode ? colors.indigo[100] : colors.gray[600]};
+  border: 10px solid ${props => props.theme.isLightMode ? colors.indigo[50] : colors.gray[700]};
+  border-radius: 28px;
+  display: flex;
+  width: 56px;
+  height: 56px;
+  justify-content: center;
+  align-items: center;
+  color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.white};;
+  
+`
+
 const AboutContent = styled.p`
-  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[900]};
+  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
   width: 352px;
 `
 
@@ -76,13 +103,40 @@ const Card = styled.div`
 `
 
 const CardTitle = styled.h3`
-  color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.gray[900]};
-
+  color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
+  ${typography.styles.textXl}
+  ${typography.weights.semibold}
+`
+const CardContent = styled.p`
+  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
+  padding: 8px 0 20px 0;
+  ${typography.weights.regular}
 `
 
-const CardContent = styled.p`
-  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[900]};
-  padding: 8px 0 20px 0;
+const IconNTag = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 56px;
+`
+
+const IconContainer = styled.span`
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding: 12px;
+  background-color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.gray[600]}
+`
+
+const Tag = styled.span`
+  background-color: ${props => props.theme.isLightMode ? colors.pink[50] : colors.gray[600]};
+  height: fit-content;
+  padding: 2px 10px;
+  border-radius: 16px;
+  color: ${props => props.theme.isLightMode ? colors.pink[700] : colors.pink[400]};
+  ${typography.weights.medium}
+  ${typography.styles.textSm}
 `
 
 const Grid = styled.div`
