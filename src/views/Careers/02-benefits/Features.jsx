@@ -1,20 +1,17 @@
-import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { FeaturedIcon } from '../../../components/FeaturedIcon'
 import { features } from './data'
 
 export const Features = () => {
-  const { t } = useTranslation('careers')
-
   return (
     <Container>
       {features.map(feature => {
         return (
           <Feature key={feature.title}>
             <FeaturedIcon variant={feature.icon} size='lg' />
-            <Title>{t(feature.title)}</Title>
-            <Content>{t(feature.content)}</Content>
+            <Title>{feature.title}</Title>
+            <Content>{feature.content}</Content>
           </Feature>
         )
       })}
@@ -23,22 +20,21 @@ export const Features = () => {
 }
 
 const Container = styled.div`
-  margin-top: 96px;
+  margin-top: 64px;
   display: flex;
   gap: 32px;
   
   @media (max-width: 768px) {
     flex-direction: column;
-    margin-top: 64px;
+    margin-top: 48px;
     gap: 40px;
   }
 `
 
 const Feature = styled.div`
+  flex: 1;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  text-align: center;
 `
 
 const Title = styled.h3`

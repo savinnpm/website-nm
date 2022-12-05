@@ -1,23 +1,22 @@
-import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { Features } from './Features'
+import { VacanciesList } from './VacanciesList'
 
-export const Benefits = () => {
-  const { t } = useTranslation('careers')
-
+export const JobVacancies = ({ vacancies }) => {
   return (
     <Container>
       <InnerContainer>
-        <TextContainer>
-          <Subheading>{t('BENEFITS_SUBHEADING')}</Subheading>
-          <Heading>{t('BENEFITS_HEADING')}</Heading>
-          <SupportingText>{t('BENEFITS_SUPPORTING_TEXT')}</SupportingText>
-        </TextContainer>
+        <Content>
+          <Subheading>Careers</Subheading>
+          <Heading>Job Vacancies</Heading>
+          <SupportingText>Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.</SupportingText>
+        </Content>
 
-        <Features />
+        <Content>
+          <VacanciesList vacancies={vacancies} />
+        </Content>
 
       </InnerContainer>
     </Container>
@@ -36,10 +35,13 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
+
+  display: flex;
+  gap: 64px;
 `
 
-const TextContainer = styled.div`
-  max-width: 768px;
+const Content = styled.div`
+  flex: 1;
 `
 
 const Subheading = styled.p`

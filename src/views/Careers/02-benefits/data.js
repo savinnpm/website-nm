@@ -1,22 +1,22 @@
 export const features = [
   {
     icon: 'target-05',
-    title: 'WRITE_LESS_CODE',
-    content: 'WRITE_LESS_CODE_DESC'
+    title: 'Focused Team',
+    content: 'We are a tightly knit and focused team making steady progress toward our core mission and obective.'
   },
   {
     icon: 'target-04',
-    title: 'USE_ANYWHERE',
-    content: 'USE_ANYWHERE_DESC'
+    title: 'Flat Structure',
+    content: 'You are allowed to take initiative and do what is right without having to get approval beforehand.'
   },
   {
     icon: 'stars-02',
-    title: 'ATTRACT_LIQUIDITY',
-    content: 'ATTRACT_LIQUIDITY_DESC'
+    title: 'Token Option Plan',
+    content: 'People that remain with us for longer and demonstrate that they are in it for the long haul are handsomely rewarded.'
   },
   {
     icon: 'face-smile',
-    title: 'ATTRACT_LIQUIDITY',
-    content: 'ATTRACT_LIQUIDITY_DESC'
+    title: 'Equal Oppurtunity',
+    content: 'We do not treat individuals differently based on who they are or what they believe in any way, shape, or form.'
   }
 ]

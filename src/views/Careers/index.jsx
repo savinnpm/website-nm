@@ -1,6 +1,6 @@
-import Link from 'next/link'
 import { Hero } from './01-hero'
 import { Benefits } from './02-benefits'
+import { JobVacancies } from './03-job-vacancies'
 
 export const Careers = (props) => {
   return (
@@ -9,13 +9,7 @@ export const Careers = (props) => {
 
       <Benefits />
 
-      {props.vacancies.map(vacancy => {
-        return (
-          <div key={vacancy.id}>
-            <Link href={`/careers/${vacancy.slug}`}>{vacancy.title}</Link>
-          </div>
-        )
-      })}
+      <JobVacancies vacancies={props.vacancies} />
     </>
   )
 }
