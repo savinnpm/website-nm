@@ -21,13 +21,8 @@ export const TableOfContents = ({ wrapperClass, title }) => {
       const elName = el.tagName
       const elText = el.textContent.replace(/^(\s)+|(\s)+$/g, '')
       // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
-      const elId = el.getAttribute('id') ? el.getAttribute('id') + '-permalink' : ''
 
-      const newEl = document.createElement('i')
-      newEl.setAttribute('id', elId)
-      newEl.style.display = 'block'
-      newEl.style.height = elName === 'H2' ? '40px' : '50px'
-      el.parentElement.insertBefore(newEl, el)
+      const elId = el.getAttribute('id') || ''
 
       if (elName === 'H2') {
         h.push({ text: elText, id: elId, children: [] })
@@ -105,7 +100,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
 
 const Container = styled.div`
   max-width: 300px;
-  min-width: 250px;
+  min-width: 285px;
   padding-bottom: 20px;
 
   @media (min-width: 1400px) {

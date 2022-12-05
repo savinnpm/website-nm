@@ -52,7 +52,14 @@ const InnerContainer = styled.div`
     }
 
     ul, ol {
-      padding-left: 15px;
+      padding-left: 20px;
+      ${typography.styles.textLg}
+      ${typography.weights.regular}
+    }
+
+    & > *:first-child {
+      margin-top: 0;
+      padding-top: 0;
     }
   }
 `

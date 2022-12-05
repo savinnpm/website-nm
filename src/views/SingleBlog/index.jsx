@@ -76,13 +76,10 @@ const Sidebar = styled.div`
 
 const ContentWrapper = styled.div`
   overflow: hidden;
-
-  i[style] {
-    display: none!important;
-  }
-
    
   img {
     height: auto;
+    width: 100%;
+    object-fit: contain;
   }
 `
