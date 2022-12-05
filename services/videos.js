@@ -41,25 +41,27 @@ const getDocs = async () => {
   return docs
 }
 
+const transformDoc = async (doc) => {
+  return {
+    id: doc.id,
+    title: doc.title,
+    image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'video-thumbnails'),
+    videoId: doc.videoId,
+    description: {
+      html: helpers.serialize(doc.description),
+      text: helpers.getText(doc.description)
+    },
+    length: doc.length,
+    duration: getVideoDurationText(doc.length),
+    date: doc.updatedAt || doc.createdAt
+  }
+}
+
 export const getVideos = async () => {
   try {
     const docs = await getDocs()
 
-    const result = await Promise.allSettled(docs.map(async (doc) => {
-      return {
-        id: doc.id,
-        title: doc.title,
-        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'video-thumbnails'),
-        videoId: doc.videoId,
-        description: {
-          html: helpers.getVideoDescHTML(doc.description),
-          text: helpers.getText(doc.description)
-        },
-        length: doc.length,
-        duration: getVideoDurationText(doc.length),
-        date: doc.updatedAt || doc.createdAt
-      }
-    }))
+    const result = await Promise.allSettled(docs.map(async (doc) => transformDoc(doc)))
 
     const allVideos = result.map(x => x.value)
     const latestVideos = allVideos.sort((a, b) => {

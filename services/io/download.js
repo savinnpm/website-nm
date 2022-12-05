@@ -8,13 +8,13 @@ const download = function (url, dest, cb) {
   const request = https.get(url, function (response) {
     response.pipe(file)
     file.on('finish', function () {
-      file.close(cb) // close() is async, call cb after close completes.
+      file.close(() => cb(null)) // close() is async, call cb after close completes.
     })
   })
 
   request.on('error', function (err) { // Handle errors
     fs.unlink(dest) // Delete the file async. (But we don't check the result)
-    if (cb) cb(err.message)
+    if (cb) cb(err)
   })
 }
 
@@ -33,8 +33,12 @@ export const storeLocally = async (url, folder) => {
     return publicPath
   }
 
-  download(url, storedAt, (msg) => {
-    console.log('message: ', msg)
+  download(url, storedAt, (err) => {
+    if (err) {
+      console.log('error downloading: ', filename)
+      return
+    }
+
     console.log('downloaded: ', publicPath)
   })
 

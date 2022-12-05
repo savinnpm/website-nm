@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../../styles/colors'
@@ -8,7 +9,7 @@ export const DesktopNavMenuItemLink = ({ item }) => {
   const { t } = useTranslation('common')
 
   return (
-    <Container href={item.href}>
+    <Container href={item.href} as={item.isExternal ? 'a' : Link} target={item.isExternal ? '_blank' : null}>
       {item.icon && <Icon size={24} variant={item.icon} />}
       <div>
         <Title>{t(item.title)}</Title>

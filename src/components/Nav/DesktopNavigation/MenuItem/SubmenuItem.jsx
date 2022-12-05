@@ -19,7 +19,7 @@ export const SubmenuItem = ({ item }) => {
             <Icon size={20} variant={open ? 'chevron-up' : 'chevron-down'} />
           </Button>
           <Popover.Panel>
-            <DesktopSubmenu item={item} />
+            {({ close }) => <DesktopSubmenu item={item} close={close} />}
           </Popover.Panel>
         </>
       )}

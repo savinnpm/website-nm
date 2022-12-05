@@ -1,7 +1,7 @@
 import { colors, primaryColorKey } from '../styles/colors'
+import { helpers } from './helpers'
 import { storeLocally } from './io/download'
 import { request } from './request'
-import { serialize } from './serialize'
 import { mockData } from './_mock_'
 
 let docs = null
@@ -32,7 +32,7 @@ export const getLatestBlogPosts = async () => {
   try {
     const docs = await getDocs()
 
-    const result = await Promise.allSettled(docs.slice(0, 10).map(async (doc) => {
+    const result = await Promise.allSettled(docs.map(async (doc) => {
       return {
         id: doc.id,
         title: doc.title,
@@ -45,7 +45,12 @@ export const getLatestBlogPosts = async () => {
       }
     }))
 
-    return result.map(x => x.value)
+    const allPosts = result.map(x => x.value)
+    const latestPosts = allPosts.sort((a, b) => {
+      return (new Date(a.date) > new Date(b.date) ? 1 : new Date(a.date) < new Date(b.date) ? -1 : 0)
+    }).slice(0, 10)
+
+    return latestPosts
   } catch (error) {
     console.error(error)
   }
@@ -98,8 +103,7 @@ export const getSinglePost = async (slug) => {
         description: match.meta.description
       },
       content: {
-        // raw: serialize(match.content),
-        html: serialize(match.content) || match.html || ''
+        html: helpers.serialize(match.content) || match.html || ''
       }
     }
   } catch (error) {

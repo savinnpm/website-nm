@@ -1,3 +1,4 @@
+import { helpers } from './helpers'
 import { storeLocally } from './io/download'
 import { request } from './request'
 import { mockData } from './_mock_'
@@ -22,21 +23,36 @@ const getDocs = async () => {
   return docs
 }
 
+const transformDoc = async (doc) => {
+  return {
+    id: doc.id,
+    title: doc.title,
+    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
+    slug: doc.slug,
+    intro: doc.intro,
+    description: {
+      text: helpers.getText(doc.description)
+    },
+    startDate: doc.startDate,
+    endDate: doc.endDate,
+    partner: {
+      name: doc.partner.name,
+      slug: doc.partner.slug,
+      logo: {
+        alt: doc.partner.logo.alt,
+        description: doc.partner.logo.description,
+        identifier: doc.partner.logo.identifier,
+        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'security-partners')
+      }
+    }
+  }
+}
+
 export const getAudits = async () => {
   try {
     const docs = await getDocs()
 
-    const result = await Promise.allSettled(docs.map(async (doc) => {
-      return {
-        id: doc.id,
-        title: doc.title,
-        report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
-        slug: doc.slug,
-        intro: doc.intro,
-        startDate: doc.startDate,
-        endDate: doc.endDate
-      }
-    }))
+    const result = await Promise.allSettled(docs.map(async (doc) => await transformDoc(doc)))
 
     return result.map(x => x.value)
   } catch (error) {
@@ -52,15 +68,7 @@ export const getSingleAudit = async (slug) => {
 
     const match = docs.find(doc => doc.slug === slug)
 
-    return {
-      id: match.id,
-      title: match.title,
-      report: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.report.filename}`, 'audits'),
-      slug: match.slug,
-      intro: match.intro,
-      startDate: match.startDate,
-      endDate: match.endDate
-    }
+    return transformDoc(match)
   } catch (error) {
     console.error(error)
   }

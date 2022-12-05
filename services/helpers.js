@@ -4,10 +4,6 @@ const getSlug = (title) => {
   return title.toLowerCase().replace(/ /g, '-').replace(/[-]+/g, '-').replace(/[^\w-]+/g, '')
 }
 
-const getVideoDescHTML = (arr) => {
-  return serialize(arr)
-}
-
 const getText = (arr) => {
   const texts = []
 
@@ -25,6 +21,6 @@ const getText = (arr) => {
 
 export const helpers = {
   getSlug,
-  getVideoDescHTML,
+  serialize,
   getText
 }

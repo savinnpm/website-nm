@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { appWithTranslation } from 'next-i18next'
 
 import '@fontsource/inter/latin.css'
@@ -11,14 +11,22 @@ import styled from 'styled-components'
 import { colors } from '../styles/colors'
 import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { VideosProvider } from '../src/context/VideosContext'
+import { PageLoader } from '../src/components/PageLoader'
+import { useRouter } from 'next/router'
 
 function MyApp ({ Component, pageProps }) {
+  const router = useRouter()
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setIsMenuOpen(false)
+  }, [router.asPath])
 
   return (
     <ThemeProvider>
       <VideosProvider videos={pageProps.videos}>
         <HeaderContainer>
+          <PageLoader />
           <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
           <Border />
         </HeaderContainer>
@@ -35,7 +43,7 @@ function MyApp ({ Component, pageProps }) {
 export default appWithTranslation(MyApp)
 
 const HeaderContainer = styled.div`
-  position: sticky;
+  position: fixed;
   top: 0;
   width: 100%;
   z-index: 1;
@@ -47,4 +55,5 @@ const Border = styled.div`
 `
 
 const MainContainer = styled.div`
+  padding-top: var(--header-height);
 `

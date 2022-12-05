@@ -29,8 +29,8 @@ export const Features = () => {
                 <ImageContainer>
                   <Image
                     src={feature.image} alt={feature.title}
-                    fill
-                    loading='lazy'
+                    height={350}
+                    width={350}
                   />
                 </ImageContainer>
               </Tab.Panel>
@@ -91,9 +91,9 @@ const ImageContainer = styled.div`
   }
 
   img {
-    object-fit: contain;
+    height: 90%;
     max-height: 350px;
-    padding: 5%;
+    display: block;
   }
 
 `
