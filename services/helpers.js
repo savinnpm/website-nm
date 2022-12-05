@@ -32,8 +32,8 @@ const parseLegacyHtml = async (html) => {
   $('img').each(function () {
     const oldSrc = $(this).attr('src')
 
-    if (oldSrc.indexOf('blog.neptunemutual.com') == -1) {
-      console.log('Skipped: '+oldSrc);
+    if (oldSrc.indexOf('blog.neptunemutual.com') === -1) {
+      console.log('Skipped: ' + oldSrc)
       return
     }
 
@@ -50,6 +50,8 @@ const parseLegacyHtml = async (html) => {
 
     promises.push(storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, 'blog-post-images'))
   })
+
+  await Promise.allSettled(promises)
 
   return $.html()
 }
