@@ -1,6 +1,14 @@
 import React, { useMemo } from 'react'
-import { createGlobalStyle, ThemeProvider as StyledComponentsThemeProvider } from 'styled-components'
-import { darkTheme, lightTheme } from '../../styles/theme'
+
+import {
+  createGlobalStyle,
+  ThemeProvider as StyledComponentsThemeProvider
+} from 'styled-components'
+
+import {
+  darkTheme,
+  lightTheme
+} from '../../styles/theme'
 import { useDarkMode } from '../hooks/useDarkMode'
 
 const GlobalStyle = createGlobalStyle`
@@ -17,6 +25,7 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     color-scheme: ${props => props.theme.colorScheme};
+    scroll-behavior: smooth;
   }
   
   html,
