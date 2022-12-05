@@ -1,3 +1,5 @@
+import { load as cheerioLoad } from 'cheerio'
+import { storeLocally } from './io/download'
 import { serialize } from './serialize'
 
 const getSlug = (title) => {
@@ -23,8 +25,32 @@ const getText = (arr) => {
   return texts.join(' ')
 }
 
+const parseLegacyHtml = async (html) => {
+  const $ = cheerioLoad(html, null, false)
+
+  const promises = []
+  $('img').each(async function () {
+    const oldSrc = $(this).attr('src')
+    const filename = (new URL(oldSrc)).pathname.split('/').pop()
+
+    // Guessing filepath in advance
+    const storedAt = `/local-files/blog-post-images/${filename}`
+
+    const newSrc = storedAt
+    $(this).attr('src', newSrc)
+    $(this).removeAttr('srcset')
+    $(this).removeAttr('width')
+    $(this).removeAttr('height')
+
+    promises.push(storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, 'blog-post-images'))
+  })
+
+  return $.html()
+}
+
 export const helpers = {
   getSlug,
   serialize,
+  parseLegacyHtml,
   getText
 }

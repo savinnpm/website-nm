@@ -103,7 +103,7 @@ export const getSinglePost = async (slug) => {
         description: match.meta.description
       },
       content: {
-        html: helpers.serialize(match.content) || match.html || ''
+        html: helpers.serialize(match.content) || await helpers.parseLegacyHtml(match.html) || ''
       }
     }
   } catch (error) {

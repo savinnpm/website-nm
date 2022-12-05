@@ -4,6 +4,10 @@ import { Text } from 'slate'
 import { helpers } from './helpers'
 
 export const serialize = (children) => children.map((node, _i) => {
+  if (!node) {
+    return ''
+  }
+
   if (Text.isText(node)) {
     if (!escapeHTML(node.text).trim()) {
       return ''
@@ -34,10 +38,6 @@ export const serialize = (children) => children.map((node, _i) => {
     return (
       `${text}`
     )
-  }
-
-  if (!node) {
-    return ''
   }
 
   const serializedChildren = serialize(node.children)
