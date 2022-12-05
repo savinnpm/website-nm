@@ -23292,7 +23292,7 @@ export const mockData = {
         badges:
           '[\n  {\n    "size": "md",\n    "text": "Marketing",\n    "color": "rose"\n  }\n]',
         location: 'Remote',
-        department: 'Software Development',
+        department: 'Marketing',
         description: [
           {
             children: [

@@ -1,5 +1,6 @@
 import SvgTwitter from "./variants/Socials/White/Twitter";
 import {
+  Check,
   Copy01,
   Edit03,
   Link04,
@@ -251,6 +252,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "marker-pin-02") {
     IconComponent = MarkerPin02;
+  }
+
+  if (variant === "check") {
+    IconComponent = Check;
   }
 
   if (variant === "dot") {

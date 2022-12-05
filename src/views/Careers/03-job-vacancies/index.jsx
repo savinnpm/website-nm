@@ -1,3 +1,4 @@
+import { useMemo } from 'react'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -5,6 +6,11 @@ import { utils } from '../../../../styles/utils'
 import { VacanciesList } from './VacanciesList'
 
 export const JobVacancies = ({ vacancies }) => {
+  const departments = useMemo(() => {
+    const depts = vacancies.map(v => v.department)
+    return ['', ...new Set(depts)]
+  }, [vacancies])
+
   return (
     <Container>
       <InnerContainer>
@@ -15,7 +21,7 @@ export const JobVacancies = ({ vacancies }) => {
         </Content>
 
         <Content>
-          <VacanciesList vacancies={vacancies} />
+          <VacanciesList vacancies={vacancies} departments={departments} />
         </Content>
 
       </InnerContainer>

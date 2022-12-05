@@ -32,14 +32,14 @@ const Container = styled(Link)`
   margin-bottom: -12px;
   padding: 12px 16px;
   gap: 16px;
-  color: ${props => props.theme.color};
+  color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['400']};
   border-radius: 8px;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
 
   :hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
+    color: ${props => props.theme.color};
   }
 
   svg {
