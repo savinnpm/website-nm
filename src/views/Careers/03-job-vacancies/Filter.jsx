@@ -53,10 +53,15 @@ const Container = styled.div`
   justify-content: flex-end;
   align-items: center;
   gap: 16px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+    align-items: stretch;
+  }
 `
 
 const FilterLabel = styled(Listbox.Label)`
-  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['500']};
+  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.white};
 
   ${typography.styles.textMd};
   ${typography.weights.medium};
@@ -70,9 +75,15 @@ const ListboxButton = styled(Listbox.Button)`
   padding: 10px 14px;
   gap: 8px;
 
-  border: 1px solid ${colors.gray['300']};
+  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['700']};
+  background-color:  ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
   box-shadow: ${shadows.xs};
   border-radius: 8px;
+
+  @media (max-width: 768px) {
+    flex: 1;
+    width: 100%;
+  }
 
   :not(:disabled) {
     :focus,
@@ -116,8 +127,8 @@ const ListboxOptions = styled(Listbox.Options)`
   margin-top: 4px;
   padding: 6px;
 
-  background-color: ${props => props.theme.primaryBackgroundColor};
-  border: 1px solid ${colors.gray['200']};
+  background-color:  ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
+  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
   box-shadow: ${shadows.lg};
   border-radius: 8px;
 
@@ -140,6 +151,6 @@ const OptionContent = styled.div`
   }
   
   &[data-active="true"], :hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['50']};
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
   }
 `
