@@ -29,8 +29,14 @@ const parseLegacyHtml = async (html) => {
   const $ = cheerioLoad(html, null, false)
 
   const promises = []
-  $('img').each(async function () {
+  $('img').each(function () {
     const oldSrc = $(this).attr('src')
+
+    if (oldSrc.indexOf('blog.neptunemutual.com') == -1) {
+      console.log('Skipped: '+oldSrc);
+      return
+    }
+
     const filename = (new URL(oldSrc)).pathname.split('/').pop()
 
     // Guessing filepath in advance
