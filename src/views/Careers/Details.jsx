@@ -7,7 +7,7 @@ import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 
 import { Button } from '../../../src/components/Button'
-import { Breadcrumbs } from '../../../src/components/Breadcrums'
+import { Breadcrumbs } from '../../components/Breadcrumbs'
 import { TableOfContents } from '../../../src/components/BlogDetails/TableOfContents'
 import { Shareit } from '../../../src/components/Shareit'
 
@@ -99,7 +99,7 @@ const ContentWrapper = styled.div`
 
   p,
   li {
-    color: ${colors.gray[600]};
+    color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
     ${typography.weights.regular}
     ${typography.styles.textLg}
   }
@@ -144,7 +144,7 @@ const TypeContent = styled.span`
 
 const Header = styled.div`
   text-align: center;
-  background-color: #f4f8ff;
+  background-color: ${props => props.theme.isLightMode ? colors.indigo[25] : colors.gray[900]};
   padding: 96px 0;
 `
 const Title = styled.h1`
