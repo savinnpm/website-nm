@@ -1,19 +1,47 @@
+import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { ArticleCard } from '../../../components/ArticleCard'
+import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from './Pagination'
 
 export const BLOGS_PER_PAGE = 6
 
+const filters = [
+  {
+    text: 'All',
+    value: 'all'
+  },
+  {
+    text: 'Weekly Report',
+    value: 'weekly-report'
+  },
+  {
+    text: 'Monthly Review',
+    value: 'monthly-review'
+  },
+  {
+    text: 'Exploit Analysis',
+    value: 'exploit-analysis'
+  },
+  {
+    text: 'Press Room',
+    value: 'press-room'
+  }
+]
+
 export const RecentPosts = ({ blogPosts }) => {
   const [page, setPage] = useState(0)
   const [isLast, setIsLast] = useState(false)
+  const [activeTab, setActiveTab] = useState(filters[0].value)
+  const [filteredPosts, setFilteredPosts] = useState(blogPosts)
+  const router = useRouter()
 
   const getPageNumbers = () => {
-    const actualDividend = parseInt(blogPosts.length / BLOGS_PER_PAGE)
-    if (blogPosts.length % BLOGS_PER_PAGE === 0) {
+    const actualDividend = parseInt(filteredPosts.length / BLOGS_PER_PAGE)
+    if (filteredPosts.length % BLOGS_PER_PAGE === 0) {
       return actualDividend
     }
 
@@ -23,27 +51,88 @@ export const RecentPosts = ({ blogPosts }) => {
   const totalPages = getPageNumbers()
 
   useEffect(() => {
-    if (BLOGS_PER_PAGE * (page + 1) >= blogPosts.length - 1) {
+    if (BLOGS_PER_PAGE * (page + 1) >= filteredPosts.length - 1) {
       return setIsLast(true)
     }
-    if (BLOGS_PER_PAGE * (page + 1) <= blogPosts.length - 1) {
+    if (BLOGS_PER_PAGE * (page + 1) <= filteredPosts.length - 1) {
       return setIsLast(false)
     }
-  }, [blogPosts.length, page])
+  }, [filteredPosts.length, page])
+
+  const pushQuery = query => {
+    router.push({
+      query: {
+        ...router.query,
+        ...query
+      }
+    }, undefined, {
+      scroll: false
+    })
+  }
 
   const handlePrev = () => {
     if (page > 0) {
+      pushQuery({ page: page - 1 })
       setPage((prev) => prev - 1)
     }
   }
 
   const handleNext = () => {
+    pushQuery({ page: page + 1 })
     setPage((prev) => prev + 1)
   }
+
+  const handleSetPage = (_page) => {
+    pushQuery({ page: _page })
+    setPage(_page)
+  }
+
+  useEffect(() => {
+
+  }, [])
+
+  useEffect(() => {
+    const { tab, page: p } = router.query
+
+    // setting current filter/active tab based on url query
+    if (!tab) setActiveTab(filters[0].value)
+    else {
+      const flt = filters.find(f => f.value === tab)
+      if (flt) setActiveTab(flt.value)
+    }
+
+    // setting current page based on url query
+    if (!p) setPage(0)
+    else {
+      const _page = Math.min(Math.max(0, parseInt(p)), totalPages - 1)
+      setPage(_page)
+    }
+
+    // filtering blogposts based on current filter
+    if (!tab || tab === filters[0].value) setFilteredPosts(blogPosts)
+    else {
+      const filter = filters.find(f => f.value === tab)
+      if (!filter) return
+
+      const blogs = blogPosts.filter(b => {
+        const tag = b.tags?.find(t => t.name === filter.text)
+        if (tag) return true
+        return false
+      })
+      setFilteredPosts(blogs)
+    }
+  }, [router.query, blogPosts, totalPages])
+
+  const posts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
 
   return (
     <Container>
       <InnerContainer>
+        <FilterTabs
+          filters={filters}
+          activeFilter={activeTab}
+        />
+
         <TextAndCta>
           <TextContainer>
             <Heading>Recent Posts</Heading>
@@ -52,25 +141,26 @@ export const RecentPosts = ({ blogPosts }) => {
         </TextAndCta>
 
         <BlogsContainer>
-          {blogPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE).map((post) => (
+          {/* {blogPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE).map((post) => ( */}
+          {posts.map((post) => (
             <SingleCard key={post.id}>
               <ArticleCard post={post} />
             </SingleCard>
           ))}
         </BlogsContainer>
 
-        <Pagination page={page} setPage={setPage} isLast={isLast} handleNext={handleNext} handlePrev={handlePrev} totalPages={totalPages} />
+        <Pagination page={page} setPage={handleSetPage} isLast={isLast} handleNext={handleNext} handlePrev={handlePrev} totalPages={totalPages} />
       </InnerContainer>
     </Container>
   )
 }
 
 const Container = styled.div`
-  padding-top: 96px;
+  /* padding-top: 96px; */
   padding-bottom: 96px;
 
   @media (max-width: 768px) {
-    padding-top: 64px;
+    /* padding-top: 64px; */
     padding-bottom: 64px;
   }
 `
