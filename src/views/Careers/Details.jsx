@@ -139,7 +139,7 @@ const Label = styled.label`
 const TypeContent = styled.span`
   color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.gray[25]};
   ${typography.styles.textLg}
-  ${typography.weights.semibold}
+  ${typography.weights.medium}
 `
 
 const Header = styled.div`

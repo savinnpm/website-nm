@@ -43,8 +43,8 @@ const Crumb = styled.a`
 
   &:nth-last-of-type(1) {
     margin-right:0;
-    background-color: ${colors.gray[200]};
-    color: ${colors.gray[700]};
+    background-color: ${props => (props.theme.isLightMode ? colors.gray[200] : colors.gray[600])};
+    color: ${props => (props.theme.isLightMode ? colors.gray[700] : colors.gray[25])};
     border-radius: 6px;
     ${typography.weights.semibold}
   }
