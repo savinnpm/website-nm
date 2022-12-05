@@ -1,3 +1,4 @@
+import { helpers } from './helpers'
 import { request } from './request'
 import { mockData } from './_mock_'
 
@@ -62,7 +63,11 @@ export const getSingleVacancy = async (slug) => {
       badges: JSON.parse(match.badges || '[]'),
       location: match.location,
       department: match.department,
-      form: match.form
+      form: match.form,
+      description: {
+        text: helpers.getText(match.description),
+        html: helpers.serialize(match.description)
+      }
     }
   } catch (error) {
     console.error(error)

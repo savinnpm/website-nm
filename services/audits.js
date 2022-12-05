@@ -31,7 +31,8 @@ const transformDoc = async (doc) => {
     slug: doc.slug,
     intro: doc.intro,
     description: {
-      text: helpers.getText(doc.description)
+      text: helpers.getText(doc.description),
+      html: helpers.serialize(doc.description)
     },
     startDate: doc.startDate,
     endDate: doc.endDate,

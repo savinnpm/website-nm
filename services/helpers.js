@@ -5,6 +5,10 @@ const getSlug = (title) => {
 }
 
 const getText = (arr) => {
+  if (!arr) {
+    return ''
+  }
+
   const texts = []
 
   arr.forEach(el => {
@@ -16,7 +20,7 @@ const getText = (arr) => {
     return texts.push(getText(el.children))
   })
 
-  return texts.join('')
+  return texts.join(' ')
 }
 
 export const helpers = {
