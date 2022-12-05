@@ -34,7 +34,7 @@ const Crumb = styled.a`
   ${typography.styles.textSm}
   ${typography.weights.medium}
   color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[300])};
-  margin:0 22px;
+  margin:0 10px;
   padding: 4px 8px;
 
   &:nth-of-type(1) {

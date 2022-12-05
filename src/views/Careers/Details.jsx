@@ -47,7 +47,7 @@ const Details = (props) => {
             </Type>
           </Types>
 
-          <Content content={`<h2 id='about-this-vacancy'><label>About this Vacancy</label><span /></h2>${props.vacancy.description.html}`} wrapperClass={wrapperClass} />
+          <Content content={`<div id='about-this-vacancy'><label>About this Vacancy</label><span /></div>${props.vacancy.description.html}`} wrapperClass={wrapperClass} />
           <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
 
           <Link className='btn-application' target='_blank' href={props.vacancy.form} rel='noreferrer'>
@@ -109,6 +109,7 @@ const ContentWrapper = styled.div`
   }
   
   h2 {
+    ${typography.styles.displayXs}
     margin-bottom: 12px;
   }
   
@@ -129,6 +130,8 @@ const ContentWrapper = styled.div`
     label {
       background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};;
       padding: 0 24px;
+      ${typography.weights.semibold}
+      ${typography.styles.textXl}
     }
 
     span {
