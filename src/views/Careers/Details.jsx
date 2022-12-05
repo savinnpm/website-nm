@@ -114,12 +114,11 @@ const ContentWrapper = styled.div`
   
   .btn-application {
     display: flex;
-    margin: 56px auto 0;
+    margin-top: 56px;
     justify-content: center;
 
     @media (min-width: 770px) {
-      justify-content: start;  
-
+      justify-content: start;
     }
   }
 

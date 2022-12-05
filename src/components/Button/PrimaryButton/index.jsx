@@ -49,6 +49,7 @@ const StyledButton = styled.button`
   ${iconSize};
   ${textStyle};
   ${padding};
+  cursor: pointer;
 
   color: ${colors.white};
   background-color: var(--backgroundColor);
@@ -58,6 +59,7 @@ const StyledButton = styled.button`
 
   &:disabled {
     --backgroundColor: ${(props) => getBgColor(props.destructive)['200']};
+    cursor: not-allowed;
   }
 
   &:not(&:disabled) {
