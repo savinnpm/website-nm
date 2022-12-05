@@ -76,7 +76,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
 `
 
-const Tag = styled.div`
+export const Tag = styled.div`
   display: inline-flex;
   padding: 2px 10px;
   border-radius: 9999px;

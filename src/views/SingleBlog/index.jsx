@@ -13,6 +13,7 @@ import { Shareit } from '../../components/Shareit'
 import { BlogHero } from './01-hero'
 import { RelatedPosts } from './03-related-posts'
 import { Content } from './Content'
+import { Tags } from './Tags'
 
 export const BlogPost = (props) => {
   const [timeToRead, setTimeToRead] = useState('0 min')
@@ -41,6 +42,9 @@ export const BlogPost = (props) => {
 
         <ContentWrapper>
           <Content content={props.post.content.html} wrapperClass={wrapperClass} />
+
+          <Tags tags={props.post.tags} />
+
           <Shareit title={props.post.title} intro={props.post.intro} />
         </ContentWrapper>
       </MainWrapper>
