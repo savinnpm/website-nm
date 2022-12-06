@@ -59,6 +59,11 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
 
+  svg {
+    width: 72px;
+    height: 72px;
+  }
+
   button:hover & {
     fill-opacity: 0.5;
   }

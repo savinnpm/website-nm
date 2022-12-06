@@ -75,6 +75,8 @@ const Overlay = styled.div`
   align-items: center;
 
   svg {
+    width: 48px;
+    height: 48px;
 
     @media (max-width: 768px) {
       width: 56px;
