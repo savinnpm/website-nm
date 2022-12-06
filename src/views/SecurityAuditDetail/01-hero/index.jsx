@@ -19,7 +19,7 @@ const Hero = (props) => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt={props.audit.partner.logo.alt} src={`/${props.audit.partner.logo.image}`} width='282' height='282' />
+          <Image alt={props.audit.partner.logo.alt} src={`${props.audit.partner.logo.image}`} width='282' height='282' />
         </ImageContainer>
       </InnerContainer>
       <BreadcrumbsContainer>

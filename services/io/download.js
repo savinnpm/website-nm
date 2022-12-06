@@ -30,7 +30,7 @@ export const storeLocally = async (url, folder) => {
   const publicPath = path.relative(path.resolve('public'), storedAt)
 
   if (await exists(storedAt)) {
-    return publicPath
+    return '/' + publicPath
   }
 
   download(url, storedAt, (err) => {
@@ -42,5 +42,5 @@ export const storeLocally = async (url, folder) => {
     console.log('downloaded: ', publicPath)
   })
 
-  return publicPath
+  return '/' + publicPath
 }

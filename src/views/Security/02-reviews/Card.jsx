@@ -14,7 +14,7 @@ const Card = (props) => {
     <Container>
       <IconNTag>
         <IconContainer>
-          <Image alt={props.audit.partner.logo.alt} width='48' height='48' src={`/${props.audit.partner.logo.image}`} />
+          <Image alt={props.audit.partner.logo.alt} width='48' height='48' src={`${props.audit.partner.logo.image}`} />
         </IconContainer>
         <Tag color={props.audit.badges[0].color}>{props.audit.badges[0].text}</Tag>
       </IconNTag>

@@ -12,7 +12,7 @@ export const Audit = (props) => {
     <>
       <Hero audit={props.audit} crumbs={crumbs} />
 
-      <PdfViewer url={`/${props.audit.report}`} />
+      <PdfViewer url={`${props.audit.report}`} />
 
       <NewsletterSignupForm paddingTop />
     </>

@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { BlogPost } from '../../src/views/SingleBlog'
+import { BlogPost } from '../../src/views/BlogPostDetail'
 import { getFQDN } from '../../src/helpers'
 import { useRouter } from 'next/router'
 

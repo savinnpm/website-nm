@@ -5,6 +5,7 @@ import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
+import { getBlurDataURL } from '../../../helpers/images'
 import { Announcement } from './Announcement'
 
 export const Hero = () => {
@@ -36,7 +37,9 @@ export const Hero = () => {
       <ImageContainer>
         <Image
           src='/assets/images/hero/cover.webp' alt='A portrait of the god Neptune holding a trident.' fill loading='eager' priority
-          sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw'
+          sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
+          placeholder='blur'
+          blurDataURL={getBlurDataURL(1280, 1280)}
         />
       </ImageContainer>
     </Container>

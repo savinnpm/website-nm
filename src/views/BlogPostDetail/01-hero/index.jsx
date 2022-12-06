@@ -19,7 +19,7 @@ export const BlogHero = ({ title, createdAt, timeToRead, featuredImage }) => {
         </Heading>
       </Header>
       <ImageContainer>
-        <img src={`/${featuredImage}`} alt='Neptune' />
+        <img src={`${featuredImage}`} alt='Neptune' />
       </ImageContainer>
     </Container>
   )

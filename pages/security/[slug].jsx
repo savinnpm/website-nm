@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { Audit } from '../../src/views/Audit'
+import { Audit } from '../../src/views/SecurityAuditDetail'
 import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
 

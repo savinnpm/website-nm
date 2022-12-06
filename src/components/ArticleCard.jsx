@@ -5,12 +5,20 @@ import { colors, primaryColorKey } from '../../styles/colors'
 import { typography } from '../../styles/typography'
 import { utils } from '../../styles/utils'
 import { getFormattedDate } from '../helpers'
+import { getBlurDataURL } from '../helpers/images'
 
 export const ArticleCard = ({ post }) => {
   return (
     <Container href={`/blog/${post.slug}`} locale='en'>
       <ImageContainer>
-        <Image src={`/${post.image}`} alt={post.title} fill sizes='(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 33vw' />
+        <Image
+          src={`${post.image}`}
+          alt={post.title}
+          fill
+          sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
+          placeholder='blur'
+          blurDataURL={getBlurDataURL(800, 450)}
+        />
       </ImageContainer>
 
       <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>

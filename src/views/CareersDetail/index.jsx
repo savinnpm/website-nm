@@ -11,7 +11,7 @@ import { Breadcrumbs } from '../../components/Breadcrumbs'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
 import { Shareit } from '../../components/Shareit'
 
-import { Content } from '../SingleBlog/Content'
+import { Content } from '../BlogPostDetail/Content'
 
 const CareersDetail = (props) => {
   const { t } = useTranslation('careers-detail')

@@ -5,6 +5,7 @@ import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
+import { getBlurDataURL } from '../../../helpers/images'
 
 export const NftCollection = () => {
   const { t } = useTranslation('home')
@@ -32,7 +33,14 @@ export const NftCollection = () => {
         </TextAndCta>
 
         <ImageContainer>
-          <Image src='/assets/images/nft/promo.webp' alt='nft collection' fill sizes='(max-width: 768px) 100vw, 80vw' />
+          <Image
+            src='/assets/images/nft/promo.webp'
+            alt='nft collection'
+            fill
+            sizes='(max-width: 768px) 100vw, 1280px'
+            placeholder='blur'
+            blurDataURL={getBlurDataURL(1280, 720)}
+          />
         </ImageContainer>
       </InnerContainer>
     </Container>

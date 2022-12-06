@@ -13,7 +13,7 @@ export const FeaturedPostCard = ({ post }) => {
   return (
     <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
-        <Image src={`/${post.image}`} height={200} width={320} alt={post.title} />
+        <Image src={`${post.image}`} height={200} width={320} alt={post.title} />
       </ImageContainer>
 
       <Contents>

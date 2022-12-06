@@ -10,7 +10,7 @@ export const Video = ({ video }) => {
   return (
     <Container onClick={() => { setId(video.videoId) }}>
       <Thumbnail>
-        <img src={`/${video.image}`} alt={video.title} />
+        <img src={`${video.image}`} alt={video.title} />
         <Overlay>
           <PlayIcon />
         </Overlay>
