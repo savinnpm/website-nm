@@ -3,17 +3,17 @@ import { useRef } from 'react'
 import Slider from 'react-slick'
 import styled, { useTheme } from 'styled-components'
 
-const coinbaseImg = '/assets/images/partners/coinbase.png'
-const huobiImg = '/assets/images/partners/huobi.png'
-const okexImg = '/assets/images/partners/okex.png'
-const okxImg = '/assets/images/partners/okx.png'
-const gravityImg = '/assets/images/partners/gravity.png'
+const coinbaseImg = '/assets/images/partners/coinbase.webp'
+const huobiImg = '/assets/images/partners/huobi.webp'
+const okexImg = '/assets/images/partners/okex.webp'
+const okxImg = '/assets/images/partners/okx.webp'
+const gravityImg = '/assets/images/partners/gravity.webp'
 
-const coinbaseImgDark = '/assets/images/partners/darkmode/coinbase.png'
-const huobiImgDark = '/assets/images/partners/darkmode/huobi.png'
-const okexImgDark = '/assets/images/partners/darkmode/okex.png'
-const okxImgDark = '/assets/images/partners/darkmode/okx.png'
-const gravityImgDark = '/assets/images/partners/darkmode/gravity.png'
+const coinbaseImgDark = '/assets/images/partners/darkmode/coinbase.webp'
+const huobiImgDark = '/assets/images/partners/darkmode/huobi.webp'
+const okexImgDark = '/assets/images/partners/darkmode/okex.webp'
+const okxImgDark = '/assets/images/partners/darkmode/okx.webp'
+const gravityImgDark = '/assets/images/partners/darkmode/gravity.webp'
 
 const carouselItemsDark = [
   {

@@ -6,10 +6,10 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BrandCarousel } from './Brand-Carousel'
 
-const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.png'
-const animocaLight = '/assets/images/partners/animoca-brands.png'
-const fenbushiImgDark = '/assets/images/partners/darkmode/fenbushi-capital.png'
-const animocaDark = '/assets/images/partners/darkmode/animoca-brands.png'
+const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.webp'
+const animocaLight = '/assets/images/partners/animoca-brands.webp'
+const fenbushiImgDark = '/assets/images/partners/darkmode/fenbushi-capital.webp'
+const animocaDark = '/assets/images/partners/darkmode/animoca-brands.webp'
 
 const partnersDark = [
   {
