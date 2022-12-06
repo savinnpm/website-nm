@@ -1,4 +1,5 @@
 import { helpers } from './helpers'
+import { storeLocally } from './io/download'
 import { request } from './request'
 import { mockData } from './_mock_'
 
@@ -34,7 +35,15 @@ const transformDoc = async (doc) => {
       text: helpers.getText(doc.content),
       html: helpers.serialize(doc.content)
     },
-    badges: JSON.parse(doc.badges || '[]')
+    badges: JSON.parse(doc.badges || '[]'),
+    meta: {
+      title: doc.meta?.title || '',
+      description: doc.meta?.description || '',
+      image: {
+        src: doc.meta?.image?.filename ? await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.meta.image.filename}`, 'programs-og-images') : '/assets/images/meta/og/home.webp',
+        alt: doc.meta?.image?.alt || ''
+      }
+    }
   }
 }
 

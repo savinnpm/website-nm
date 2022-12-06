@@ -100,7 +100,11 @@ export const getSinglePost = async (slug) => {
       tags: match.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) })),
       meta: {
         title: match.meta.title,
-        description: match.meta.description
+        description: match.meta.description,
+        image: {
+          src: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.meta.image.filename}`, 'blog-og-images'),
+          alt: match.meta.image.alt
+        }
       },
       content: {
         html: helpers.serialize(match.content) || await helpers.parseLegacyHtml(match.html) || ''

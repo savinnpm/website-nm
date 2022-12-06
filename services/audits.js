@@ -46,6 +46,14 @@ const transformDoc = async (doc) => {
         identifier: doc.partner.logo.identifier,
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'security-partners')
       }
+    },
+    meta: {
+      title: doc.meta.title,
+      description: doc.meta.description,
+      image: {
+        src: doc.meta.image?.filename ? await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.meta.image.filename}`, 'audits-og-images') : '/assets/images/meta/og/home.webp',
+        alt: doc.meta.image?.alt || ''
+      }
     }
   }
 }
