@@ -3,6 +3,11 @@ import { data } from '../data'
 
 import Slider from 'react-slick'
 import styled from 'styled-components'
+import { typography } from '../../../../../styles/typography'
+import { utils } from '../../../../../styles/utils'
+import { colors } from '../../../../../styles/colors'
+import { blurs } from '../../../../../styles/blurs'
+import { Icon } from '../../../../components/Icon'
 
 export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
   const sliderRef = useRef(null)
@@ -12,6 +17,7 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
+    // adaptiveHeight: true,
     initialSlide: activeIndex,
     afterChange: (idx) => onContentSlideUpdate(idx),
     arrows: false
@@ -20,6 +26,9 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
   useEffect(() => {
     sliderRef.current.slickGoTo(activeIndex)
   }, [activeIndex])
+
+  const onNext = () => sliderRef?.current?.slickNext()
+  const onPrev = () => sliderRef?.current?.slickPrev()
 
   return (
     <div>
@@ -40,35 +49,54 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
           )
         })}
       </Slider>
+
+      <ArrowsContainer>
+
+        <ArrowButton
+          disabled={activeIndex <= 0}
+          onClick={onPrev}
+          title='Previous'
+        >
+          <Icon variant='arrow-left' size={24} />
+        </ArrowButton>
+
+        <ArrowButton
+          disabled={data.length - activeIndex <= sliderRef?.current?.props?.slidesToShow}
+          onClick={onNext}
+          title='Next'
+        >
+          <Icon variant='arrow-right' size={24} />
+        </ArrowButton>
+      </ArrowsContainer>
     </div>
   )
 }
 
 const SlideContent = styled.div`
-  padding: 64px;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 200%;
+  padding-left: 32px;
+  padding-right: 32px;
+  margin-top: 64px;
+  ${typography.styles.textMd};
+  ${typography.weights.regular};
 
   @media (max-width: 1365px) {
-    padding: 48px 0 0;
+    margin-top: 48px;
   }
 
   @media (max-width: 767px) {
-    padding: 36px 0 0;
+    margin-top: 36px;
   }
 
   h3 {
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 22px;
+    ${typography.styles.displayXs};
+    ${typography.weights.semibold};
   }
 
   p {
-    margin-top: 18px;
+    margin-top: 20px;
 
     &:first-child {
-      margin-top: 18px;
+      margin-top: 20px;
     }
   }
 
@@ -76,5 +104,43 @@ const SlideContent = styled.div`
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
+  }
+`
+
+const ArrowsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+`
+
+const ArrowButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid red;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+
+  background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
+  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['50']};
+  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
+  backdrop-filter: ${blurs.sm};
+  border-radius: 50%;
+
+  :not(:disabled):hover {
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
+    color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
+  }
+
+  :disabled {
+    border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
+    color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
+    cursor: not-allowed;
+  }
+
+  > span {
+    ${utils.srOnly};
   }
 `
