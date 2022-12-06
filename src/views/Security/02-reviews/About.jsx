@@ -1,17 +1,21 @@
 import styled from 'styled-components'
+import { useTranslation } from 'react-i18next'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { Icon } from '../../../components/Icon'
 
-const About = (props) => {
+const About = () => {
+  const { t } = useTranslation('security-reviews')
+
   return (
     <Container>
       <AboutIconContainer>
         <Icon size={24} variant='shield-tick' />
       </AboutIconContainer>
 
-      <AboutTitle>Security Reviews</AboutTitle>
-      <AboutContent>Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing</AboutContent>
+      <AboutTitle>{t('SECURITY_REVIEW')}</AboutTitle>
+      <AboutContent>{t('SECURITY_REVIEW_TEXT')}</AboutContent>
     </Container>
   )
 }
@@ -21,7 +25,7 @@ const Container = styled.div`
   width: 384px;
 `
 
-const AboutTitle = styled.h2`
+const AboutTitle = styled.p`
   ${typography.styles.displayMd}
   ${typography.weights.semibold}
   color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
@@ -38,7 +42,7 @@ const AboutIconContainer = styled.span`
   justify-content: center;
   align-items: center;
   color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.white};;
-  
+  margin-bottom: 24px;
 `
 
 const AboutContent = styled.p`

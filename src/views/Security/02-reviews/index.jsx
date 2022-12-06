@@ -10,7 +10,7 @@ export const Reviews = (props) => {
   return (
     <Review>
       <About />
-      <Carousel audits={[...props.audits, ...props.audits, ...props.audits]} />
+      <Carousel audits={props.audits} />
     </Review>
   )
 }
@@ -18,4 +18,5 @@ export const Reviews = (props) => {
 const Review = styled.div`
   display: flex;
   ${utils.fullWidthContainer}
+  margin-bottom: 96px;
 `

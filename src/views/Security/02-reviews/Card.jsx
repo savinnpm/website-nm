@@ -8,7 +8,7 @@ import { typography } from '../../../../styles/typography'
 import { Button } from '../../../components/Button'
 
 const Card = (props) => {
-  const { t } = useTranslation('security')
+  const { t } = useTranslation('security-reviews')
 
   return (
     <Container>
@@ -16,7 +16,7 @@ const Card = (props) => {
         <IconContainer>
           <Image alt={props.audit.partner.logo.alt} width='48' height='48' src={`/${props.audit.partner.logo.image}`} />
         </IconContainer>
-        <Tag>Smart Contract</Tag>
+        <Tag color={props.audit.badges[0].color}>{props.audit.badges[0].text}</Tag>
       </IconNTag>
       <CardTitle>{props.audit.title}</CardTitle>
       <CardContent>{props.audit.intro}</CardContent>
@@ -26,7 +26,7 @@ const Card = (props) => {
         size='sm'
         iconTrailing
         iconVariant='arrow-right' as={Link} href={`/security/${props.audit.slug}`}
-      > {t`SHOW_RESULT`}
+      > {t('SHOW_RESULT')}
       </Button>
     </Container>
   )
@@ -37,20 +37,30 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
-  background-color: ${props => props.theme.isLightMode ? colors.gray[50] : colors.gray[900]}; 
+  background-color: ${props => props.theme.isLightMode ? colors.gray[50] : colors.gray[700]}; 
   max-width: 384px;
-  max-height: 306px;
-`
+  height: 306px;
 
-const CardTitle = styled.h3`
+  a {
+    margin-top: 20px;
+  }
+`
+const CardTitle = styled.p`
   color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
+  margin-bottom: 8px;
   ${typography.styles.textXl}
   ${typography.weights.semibold}
 `
 const CardContent = styled.p`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
-  padding: 8px 0 20px 0;
+  padding: 0;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;  
+  overflow: hidden;
   ${typography.weights.regular}
+  ${typography.styles.textMd}
 `
 
 const IconNTag = styled.div`
@@ -74,7 +84,7 @@ const Tag = styled.span`
   height: fit-content;
   padding: 2px 10px;
   border-radius: 16px;
-  color: ${props => props.theme.isLightMode ? colors.pink[700] : colors.pink[400]};
+  color: ${props => props.theme.isLightMode ? colors[props.color][700] : colors.pink[400]};
   ${typography.weights.medium}
   ${typography.styles.textSm}
 `

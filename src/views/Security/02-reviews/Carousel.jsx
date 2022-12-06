@@ -70,20 +70,6 @@ const Carousel = (props) => {
     rows: 1,
     centerMode: false,
     lazyLoad: true,
-    responsive: [
-      {
-        breakpoint: 1365,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ],
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
@@ -94,11 +80,11 @@ const Carousel = (props) => {
 
   return (
     <Container>
+
       <SlickSlider
         ref={sliderRef}
         {...settings}
       >
-
         {list.map((audits, i) => {
           return (
             <div key={`slider-${i}}`}>
@@ -114,13 +100,14 @@ const Carousel = (props) => {
             </div>
           )
         })}
-
       </SlickSlider>
 
-      <Arrows>
-        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
-        <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
-      </Arrows>
+      {list.length > 1 && (
+        <Arrows>
+          <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
+          <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
+        </Arrows>
+      )}
 
     </Container>
   )
@@ -128,7 +115,7 @@ const Carousel = (props) => {
 
 const Container = styled.div`
   position: relative;
-  width: 768px;
+  width: 800px;
   margin-top: 64px;
 
   .slick-track {
@@ -153,7 +140,6 @@ const Grid = styled.div`
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
 `
 
 const ArrowContainer = styled.button`
@@ -189,6 +175,7 @@ const Arrows = styled.div`
   margin-top: 32px;
   display: flex;
   gap: 32px;
+  justify-content: end;
 `
 
 export { Carousel }
