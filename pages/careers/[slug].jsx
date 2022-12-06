@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { Details } from '../../src/views/Careers/Details'
+import { CareersDetail } from '../../src/views/CareersDetail'
 
 export async function getStaticPaths () {
   const slugs = await services.getVacancySlugs()
@@ -23,7 +23,7 @@ export async function getStaticPaths () {
 }
 
 export async function getStaticProps ({ locale, params }) {
-  const s = await serverSideTranslations(locale, ['common', 'security', 'careers'])
+  const s = await serverSideTranslations(locale, ['common', 'careers-detail'])
 
   return {
     props: {
@@ -51,7 +51,7 @@ export default function VacancyPage (props) {
       </Head>
 
       <main>
-        <Details crumbs={crumbs} vacancy={props.vacancy} />
+        <CareersDetail crumbs={crumbs} vacancy={props.vacancy} />
       </main>
     </>
   )

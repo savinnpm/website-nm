@@ -6,15 +6,15 @@ import { typography } from '../../../styles/typography'
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 
-import { Button } from '../../../src/components/Button'
+import { Button } from '../../components/Button'
 import { Breadcrumbs } from '../../components/Breadcrumbs'
-import { TableOfContents } from '../../../src/components/BlogDetails/TableOfContents'
-import { Shareit } from '../../../src/components/Shareit'
+import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
+import { Shareit } from '../../components/Shareit'
 
-import { Content } from '../../../src/views/SingleBlog/Content'
+import { Content } from '../SingleBlog/Content'
 
-const Details = (props) => {
-  const { t } = useTranslation('careers')
+const CareersDetail = (props) => {
+  const { t } = useTranslation('careers-detail')
 
   const wrapperClass = 'article'
 
@@ -184,4 +184,4 @@ const Title = styled.h1`
   ${typography.weights.semibold}
 `
 
-export { Details }
+export { CareersDetail }
