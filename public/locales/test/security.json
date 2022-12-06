@@ -8,6 +8,8 @@
   "META_TWITTER_DESCRIPTION": "{{META_TWITTER_DESCRIPTION}}",
   "META_TWITTER_IMAGE": "{{META_TWITTER_IMAGE}}",
   "META_TWITTER_IMAGE:ALT": "{{META_TWITTER_IMAGE:ALT}}",
-
-  "h1": "GoogleTranslate: Sicherheit und Cyberhygiene"
+  "h1": "GoogleTranslate: Sicherheit und Cyberhygiene",
+  "SECURITY_REVIEW": "{{SECURITY_REVIEW}}",
+  "SECURITY_REVIEW_TEXT": "{{SECURITY_REVIEW_TEXT}}",
+  "SHOW_RESULT": "{{SHOW_RESULT}}"
 }

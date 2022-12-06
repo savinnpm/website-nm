@@ -8,6 +8,8 @@
   "META_TWITTER_DESCRIPTION": "Neptune Mutual protects the Ethereum community from hacks and exploits through its unique parametric DeFi insurance marketplace designed to cover, protect and secure onchain digital assets; power by Ethereum, driven by stablecoins.",
   "META_TWITTER_IMAGE": "/assets/images/meta/og/home.png",
   "META_TWITTER_IMAGE:ALT": "@todo",
-
-  "h1": "GoogleTranslate: Sicherheit und Cyberhygiene"
+  "h1": "GoogleTranslate: Sicherheit und Cyberhygiene",
+  "SECURITY_REVIEW": "@todo",
+  "SECURITY_REVIEW_TEXT": "@todo",
+  "SHOW_RESULT": "@todo"
 }

@@ -1,15 +1,23 @@
-import Link from 'next/link'
+
+import styled from 'styled-components'
+
+import { utils } from '../../../../styles/utils'
+
+import { About } from './About'
+import { Carousel } from './Carousel'
 
 export const Reviews = (props) => {
   return (
-    <div>
-      {props.audits.map(audit => {
-        return (
-          <div key={audit.id}>
-            <Link href={`/security/${audit.slug}`}>{audit.title}</Link>
-          </div>
-        )
-      })}
-    </div>
+    <Review>
+      <About />
+      <Carousel audits={props.audits} />
+    </Review>
   )
 }
+
+const Review = styled.div`
+  display: flex;
+  ${utils.fullWidthContainer}
+  margin-bottom: 96px;
+  margin-top: 64px;
+`

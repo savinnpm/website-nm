@@ -1,13 +1,14 @@
-import { useRef, useState } from 'react'
-import Slider from 'react-slick'
+import { useRef, useState, useEffect } from 'react'
 import styled from 'styled-components'
-import { blurs } from '../../../../styles/blurs'
+import SlickSlider from 'react-slick'
+
 import { colors } from '../../../../styles/colors'
+import { blurs } from '../../../../styles/blurs'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
-import { ArticleCard } from '../../../components/ArticleCard'
+import { Card } from './Card'
 
-function NextArrow (props) {
+const NextArrow = (props) => {
   return (
     <ArrowContainer {...props}>
       <span>Next</span>
@@ -16,7 +17,7 @@ function NextArrow (props) {
   )
 }
 
-function PrevArrow (props) {
+const PrevArrow = (props) => {
   return (
     <ArrowContainer {...props}>
       <span>Previous</span>
@@ -25,12 +26,31 @@ function PrevArrow (props) {
   )
 }
 
+const chunk = (array, size) => {
+  if (!array) return []
+  const firstChunk = array.slice(0, size) // create the first chunk of the given array
+  if (!firstChunk.length) {
+    return array // this is the base case to terminal the recursive
+  }
+  return [firstChunk].concat(chunk(array.slice(size, array.length), size))
+}
+
 const initialSlide = 0
 
-export const Carousel = ({ posts = [] }) => {
-  const [currentIndex, setCurrentIndex] = useState(initialSlide)
-  const [isLast, setIsLast] = useState(initialSlide === posts.length - 1)
+const Carousel = (props) => {
   const sliderRef = useRef(null)
+  const [currentIndex, setCurrentIndex] = useState(initialSlide)
+  const [isLast, setIsLast] = useState(0)
+  const [list, setList] = useState([])
+
+  useEffect(() => {
+    if (props.audits.length) {
+      const audits = chunk(props.audits, 4)
+      setList(audits)
+
+      setIsLast(initialSlide === audits.length - 1)
+    }
+  }, [props.audits])
 
   const handleBeforeChange = (oldIndex, newIndex) => {
     // Hack to find if we are on last slide
@@ -46,24 +66,10 @@ export const Carousel = ({ posts = [] }) => {
     dots: false,
     arrows: false,
     infinite: false,
-    slidesToShow: 3,
+    slidesToShow: 1,
     rows: 1,
     centerMode: false,
     lazyLoad: true,
-    responsive: [
-      {
-        breakpoint: 1365,
-        settings: {
-          slidesToShow: 2
-        }
-      },
-      {
-        breakpoint: 767,
-        settings: {
-          slidesToShow: 1
-        }
-      }
-    ],
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
@@ -74,19 +80,34 @@ export const Carousel = ({ posts = [] }) => {
 
   return (
     <Container>
-      <Slider
+
+      <SlickSlider
         ref={sliderRef}
         {...settings}
       >
-        {posts.map(post => {
-          return <ArticleCard key={post.id} post={post} />
+        {list.map((audits, i) => {
+          return (
+            <div key={`slider-${i}}`}>
+              <Grid>
+                {
+                audits.map(audit => {
+                  return (
+                    <Card key={audit.id} audit={audit} />
+                  )
+                })
+              }
+              </Grid>
+            </div>
+          )
         })}
-      </Slider>
+      </SlickSlider>
 
-      <Arrows>
-        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
-        <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
-      </Arrows>
+      {list.length > 1 && (
+        <Arrows>
+          <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
+          <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
+        </Arrows>
+      )}
 
     </Container>
   )
@@ -94,8 +115,7 @@ export const Carousel = ({ posts = [] }) => {
 
 const Container = styled.div`
   position: relative;
-  width: 100%;
-  margin-top: 64px;
+  width: 800px;
 
   .slick-track {
     display: flex !important;
@@ -115,10 +135,10 @@ const Container = styled.div`
   }
 `
 
-const Arrows = styled.div`
-  margin-top: 32px;
-  display: flex;
+const Grid = styled.div`
+  display: grid;
   gap: 32px;
+  grid-template-columns: 1fr 1fr;
 `
 
 const ArrowContainer = styled.button`
@@ -149,3 +169,12 @@ const ArrowContainer = styled.button`
     ${utils.srOnly};
   }
 `
+
+const Arrows = styled.div`
+  margin-top: 32px;
+  display: flex;
+  gap: 32px;
+  justify-content: end;
+`
+
+export { Carousel }
