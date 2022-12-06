@@ -9,8 +9,8 @@ export const Hero = () => {
     <Container>
       <InnerContainer>
         <Text>
-          <Heading>Neptune Mutual Blog</Heading>
           <Subheading>Learn about the most recent developments in the decentralized insurance space.</Subheading>
+          <Heading>Neptune Mutual Blog</Heading>
           <Subtitle>The blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.</Subtitle>
         </Text>
 
@@ -51,6 +51,7 @@ const Text = styled.div`
 `
 
 const Heading = styled.h1`
+  margin-top: 12px;
   ${typography.styles.displayLg};
   ${typography.weights.semibold};
 
@@ -60,7 +61,6 @@ const Heading = styled.h1`
   }
 `
 const Subheading = styled.p`
-margin-top: 12px;
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
