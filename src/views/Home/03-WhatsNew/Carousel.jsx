@@ -128,6 +128,7 @@ const ArrowContainer = styled.button`
   border: 1px solid red;
   width: 56px;
   height: 56px;
+  cursor: pointer;
 
   background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['50']};
@@ -143,6 +144,7 @@ const ArrowContainer = styled.button`
   :disabled {
     border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
     color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
+    cursor: not-allowed;
   }
 
   > span {

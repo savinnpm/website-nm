@@ -19,5 +19,10 @@ const Review = styled.div`
   display: flex;
   ${utils.fullWidthContainer}
   margin-bottom: 96px;
-  margin-top: 64px;
+  margin-top: 96px;
+
+  @media (max-width: 768px) {
+    
+    flex-direction: column;
+  }
 `

@@ -11,5 +11,9 @@
   "h1": "Security and Cyber Hygiene",
   "SECURITY_REVIEW": "Security Reviews",
   "SECURITY_REVIEW_TEXT": "Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing",
-  "SHOW_RESULT": "Show Result"
+  "SHOW_RESULT": "Show Result",
+  
+  "HEADER_TAG": "Audits, Bug Bounty, and More",
+  "HEADER_TITLE": "Security and Cyber Hygiene",
+  "HEADER_TEXT": "Here at Neptune Mutual, we value security and protection highly. We have spent a lot of time and resource doing code reviews of our smart contracts, frontend, and backend. We have security firms that we deal with on a regular basis to do security review and penetration testing on our hosting systems and applications. In addition, we have a stringent cyber hygiene policy that everyone must follow."
 }

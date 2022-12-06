@@ -11,5 +11,8 @@
   "h1": "GoogleTranslate: Sicherheit und Cyberhygiene",
   "SECURITY_REVIEW": "@todo",
   "SECURITY_REVIEW_TEXT": "@todo",
-  "SHOW_RESULT": "@todo"
+  "SHOW_RESULT": "@todo",
+  "HEADER_TAG": "@todo",
+  "HEADER_TITLE": "@todo",
+  "HEADER_TEXT": "@todo"
 }
