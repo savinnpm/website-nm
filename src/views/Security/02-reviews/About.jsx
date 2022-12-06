@@ -47,6 +47,8 @@ const AboutIconContainer = styled.span`
 
 const AboutContent = styled.p`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
+  ${typography.styles.textLg}
+  ${typography.weights.regular}
   width: 352px;
 `
 
