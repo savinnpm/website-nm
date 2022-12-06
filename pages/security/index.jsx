@@ -8,7 +8,7 @@ import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'security', 'security-reviews'])
+  const s = await serverSideTranslations(locale, ['common', 'security'])
 
   return {
     props: {
