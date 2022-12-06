@@ -6,7 +6,7 @@ import { typography } from '../../../../styles/typography'
 import { Icon } from '../../../components/Icon'
 
 const About = () => {
-  const { t } = useTranslation('security-reviews')
+  const { t } = useTranslation('security')
 
   return (
     <Container>

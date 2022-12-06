@@ -8,7 +8,7 @@ import { typography } from '../../../../styles/typography'
 import { Button } from '../../../components/Button'
 
 const Card = (props) => {
-  const { t } = useTranslation('security-reviews')
+  const { t } = useTranslation('security')
 
   return (
     <Container>
