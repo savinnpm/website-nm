@@ -1,4 +1,14 @@
 {
+  "META_TITLE": "Careers",
+  "META_DESCRIPTION": "Neptune Mutual protects the Ethereum community from hacks and exploits through its unique parametric DeFi insurance marketplace designed to cover, protect and secure onchain digital assets; power by Ethereum, driven by stablecoins.",
+  "META_OG_TITLE": "Neptune Mutual Decentralized Insurance",
+  "META_OG_DESCRIPTION": "Neptune Mutual protects the Ethereum community from hacks and exploits through its unique parametric DeFi insurance marketplace designed to cover, protect and secure onchain digital assets; power by Ethereum, driven by stablecoins.",
+  "META_OG_IMAGE": "/assets/images/meta/og/home.png",
+  "META_TWITTER_TITLE": "Neptune Mutual Decentralized Insurance",
+  "META_TWITTER_DESCRIPTION": "Neptune Mutual protects the Ethereum community from hacks and exploits through its unique parametric DeFi insurance marketplace designed to cover, protect and secure onchain digital assets; power by Ethereum, driven by stablecoins.",
+  "META_TWITTER_IMAGE": "/assets/images/meta/og/home.png",
+  "META_TWITTER_IMAGE:ALT": "@todo",
+
   "BENEFITS_SUBHEADING": "Benefits",
   "BENEFITS_HEADING": "Why should you apply for a position at Neptune Mutual?",
   "BENEFITS_SUPPORTING_TEXT": "Inspiring unity and cooperation, our common principles serve as the bedrock of our company culture."
