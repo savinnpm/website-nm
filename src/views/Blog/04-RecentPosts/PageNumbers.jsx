@@ -8,7 +8,14 @@ const PAGINATION_INDEX = 3
 export const PageNumbers = ({ pages, setPage, page }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
 
-  const startsFrom = page === 0 ? 0 : page - 1
+  const startsFrom = (page === 0 || (page >= pages.length - PAGINATION_INDEX))
+    ? 0
+    : page === pages.length - PAGINATION_INDEX - 1
+      ? (page - 2)
+      : (page - 1)
+
+  const startSlice = pages.slice(startsFrom, startsFrom + PAGINATION_INDEX)
+  const endSlice = pages.slice(pages.length - PAGINATION_INDEX, pages.length)
 
   if (isMobile) {
     return (
@@ -22,13 +29,25 @@ export const PageNumbers = ({ pages, setPage, page }) => {
   if (pages.length > 6) {
     return (
       <PageNumbersContainer>
-        {pages.slice(startsFrom, startsFrom + PAGINATION_INDEX).map((pageNum, index) => (
-          <PageNumber onClick={() => setPage(index + startsFrom)} className={`${page === index + startsFrom && 'active'}`} key={index}>{pageNum + 1}</PageNumber>
-        ))}
-        <TripleDots>...</TripleDots>
-        {pages.slice(pages.length - PAGINATION_INDEX, pages.length).map((pageNum, index) => (
-          <PageNumber onClick={() => { setPage(pages.length - PAGINATION_INDEX + index) }} className={`${page === pages.length - PAGINATION_INDEX + index && 'active'}`} key={index}>{pageNum + 1}</PageNumber>
-        ))}
+        {
+          startSlice.map((pageNum, index) => (
+            <PageNumber onClick={() => setPage(index + startsFrom)} className={`${page === index + startsFrom && 'active'}`} key={index}>
+              {pageNum + 1}
+            </PageNumber>
+          ))
+        }
+
+        {
+          endSlice.at(0) - startSlice.at(-1) > 1 && <TripleDots>...</TripleDots>
+        }
+
+        {
+          endSlice.map((pageNum, index) => (
+            <PageNumber onClick={() => { setPage(pages.length - PAGINATION_INDEX + index) }} className={`${page === pages.length - PAGINATION_INDEX + index && 'active'}`} key={index}>
+              {pageNum + 1}
+            </PageNumber>
+          ))
+        }
       </PageNumbersContainer>
     )
   }
@@ -62,7 +81,8 @@ const PageNumber = styled.button`
   &.active{
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
   }
-  &:focus{
+
+  &:focus-visible{
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']};
     box-shadow: 0px 0px 0px 4px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors[primaryColorKey]['900']};
   }

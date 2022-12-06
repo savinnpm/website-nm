@@ -26,7 +26,7 @@ export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, 
 }
 
 const Container = styled.div`
-  padding-top: 96px;
+  padding-top: 64px;
   padding-bottom: 96px;
 
   @media (max-width: 768px) {
@@ -40,5 +40,5 @@ const PaginationContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   padding-top: 20px;
-  border-top: 1px solid ${colors.gray[200]};
+  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
 `

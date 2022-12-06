@@ -27,7 +27,7 @@ export const Footer = () => {
 const StyledFooter = styled.footer`
   padding-top: 64px;
   padding-bottom: 48px;
-  background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['800']};
+  background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['900']};
 
   @media (max-width: 768px) {
     padding-top: 48px;

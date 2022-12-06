@@ -35,5 +35,9 @@
   "FROM_YOUTUBE": "From our Youtube Channel",
   "ALL_VIDEO_TUTS": "All Video Tutorials",
   "COPY_LINK": "Copy Link",
-  "COPIED": "Copied"
+  "COPIED": "Copied",
+  "MARKETPLACE": "Marketplace",
+  "WEB3_TOOLS": "Web3 Tools",
+  "PROGRAMS": "Programs",
+  "POLICIES": "Policies"
 }

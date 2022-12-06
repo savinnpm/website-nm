@@ -3,7 +3,6 @@ import React, {
   useState
 } from 'react'
 
-import Link from 'next/link'
 import { useRouter } from 'next/router'
 import styled, { css } from 'styled-components'
 
@@ -54,11 +53,27 @@ export const TableOfContents = ({ wrapperClass, title }) => {
     setCurrentHeader(hash)
   }, [router.asPath])
 
+  useEffect(() => {
+    const handleHashChange = ({ newURL }) => {
+      const hash = newURL.split('#')[1] || ''
+      setCurrentHeader(hash)
+    }
+
+    if (window) window.addEventListener('hashchange', handleHashChange)
+
+    return () => {
+      if (window) window.removeEventListener('hashchange', handleHashChange)
+    }
+  }, [])
+
   return (
     <Container>
       <Label>Table of Contents</Label>
 
-      <TitleLink isactive={currentHeader === '' ? 'true' : 'false'} href={router.asPath.split('#')[0] + '#'}>
+      <TitleLink
+        data-isactive={currentHeader === '' ? 'true' : 'false'}
+        href={router.asPath.split('#')[0] + '#'}
+      >
         <p>{title}</p>
       </TitleLink>
 
@@ -73,7 +88,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
                       e.text
                         ? (
                           <HeaderLink
-                            isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
+                            data-isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
                             href={`#${e.id || ''}`}
                           >
                             <span>{e.text}</span>
@@ -86,7 +101,7 @@ export const TableOfContents = ({ wrapperClass, title }) => {
                       ? e.children.map((e2, i2) => (
                         <React.Fragment key={i2}>
                           <HeaderLink2
-                            isactive={(e2.id && currentHeader === e2.id) ? 'true' : 'false'}
+                            data-isactive={(e2.id && currentHeader === e2.id) ? 'true' : 'false'}
                             href={`#${e2.id || ''}`}
                           ><span>{e2.text}</span>
                           </HeaderLink2>
@@ -134,17 +149,17 @@ const LinkStyle = css`
   color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
   background-color: transparent;
 
-  &[isactive='true'] {
+  &[data-isactive='true'] {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]};
     background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]}
   }
 
-  &[isactive='false']:hover {
+  &[data-isactive='false']:hover {
     background-color: ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]}
   }
 `
 
-const TitleLink = styled(Link)`
+const TitleLink = styled.a`
   display: block;
   ${typography.styles.textMd};
   ${typography.weights.semibold};
@@ -168,14 +183,14 @@ const Content = styled.div`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
-const HeaderLink = styled(Link)`
+const HeaderLink = styled.a`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 16px;
   padding: 4px 8px;
   `
 
-const HeaderLink2 = styled(Link)`
+const HeaderLink2 = styled.a`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 24px;
