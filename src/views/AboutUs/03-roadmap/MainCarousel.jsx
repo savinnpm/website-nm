@@ -4,7 +4,7 @@ import Slider from 'react-slick'
 
 import { ContentSlider } from './ContentSlider'
 import styled from 'styled-components'
-import { ArrowIcon } from './ArrowIcon'
+import { Icon } from '../../../components/Icon'
 
 const currentIndex = data.findIndex((x) => x.current)
 
@@ -80,13 +80,6 @@ export const MainCarousel = () => {
     <Container>
 
       <CarouselContainer>
-        <ArrowButton
-          disabled={sliderIndex <= 0}
-          onClick={onPrev}
-          aria-label='Scroll to View Previous Items'
-        >
-          <ArrowIcon left />
-        </ArrowButton>
 
         <TimelineInnerContainer>
           <StyledLine />
@@ -119,14 +112,23 @@ export const MainCarousel = () => {
           </Slider>
         </TimelineInnerContainer>
 
-        <ArrowButton
-          disabled={data.length - sliderIndex <= sliderRef?.current?.props?.slidesToShow}
-          onClick={onNext}
-          aria-label='Scroll to View Next Items'
-        >
-          <ArrowIcon />
-        </ArrowButton>
       </CarouselContainer>
+
+      <ArrowButton
+        disabled={sliderIndex <= 0}
+        onClick={onPrev}
+        aria-label='Scroll to View Previous Items'
+      >
+        <Icon variant='arrow-left' size={24} />
+      </ArrowButton>
+
+      <ArrowButton
+        disabled={data.length - sliderIndex <= sliderRef?.current?.props?.slidesToShow}
+        onClick={onNext}
+        aria-label='Scroll to View Next Items'
+      >
+        <Icon variant='arrow-right' size={24} />
+      </ArrowButton>
 
       <ContentSlider
         activeIndex={selected}

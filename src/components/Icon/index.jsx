@@ -2,6 +2,7 @@ import SvgTwitter from "./variants/Socials/White/Twitter";
 import {
   Check,
   Copy01,
+  Download01,
   Edit03,
   Link04,
   LinkExternal01,
@@ -257,6 +258,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "check") {
     IconComponent = Check;
+  }
+
+  if (variant === "download-01") {
+    IconComponent = Download01;
   }
 
   if (variant === "dot") {

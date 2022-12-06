@@ -1,10 +1,10 @@
 import styled from 'styled-components'
-import { DownloadIcon } from './DownloadIcon'
+import { Icon } from '../../../../components/Icon'
 
 export const DownloadButton = ({ text, link }) => {
   return (
     <Container href={link}>
-      <DownloadIcon /> {text}
+      <Icon variant='download-01' size={24} /> {text}
     </Container>
   )
 }

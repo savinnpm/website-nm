@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import { CopyIcon } from './CopyIcon'
+import { Icon } from '../../../../components/Icon'
 
 export const Command = ({ text }) => {
   const [copied, setCopied] = useState(false)
@@ -22,7 +22,7 @@ export const Command = ({ text }) => {
 
   return (
     <CodeContainer>
-      {text} <StyledButton onClick={copyText} copied={copied}><CopyIcon /></StyledButton>
+      {text} <StyledButton onClick={copyText} copied={copied}><Icon variant='copy-01' size={12} /></StyledButton>
     </CodeContainer>
   )
 }
