@@ -36,6 +36,7 @@ const transformDoc = async (doc) => {
     },
     startDate: doc.startDate,
     endDate: doc.endDate,
+    badges: JSON.parse(doc.badges || '[]'),
     partner: {
       name: doc.partner.name,
       slug: doc.partner.slug,
