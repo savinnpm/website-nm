@@ -26,12 +26,17 @@ const GlobalStyle = createGlobalStyle`
   html {
     color-scheme: ${props => props.theme.colorScheme};
     scroll-behavior: smooth;
+    text-rendering: optimizeSpeed;
+    // content-visibility: auto;
   }
   
   html,
   body {
     height: 100%;
     font-family: Inter, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-kerning: normal;
+    font-variant-ligatures: common-ligatures;
+    font-variant-numeric: tabular-nums;
   }
   
   body {
