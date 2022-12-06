@@ -47,10 +47,6 @@ export default function AuditPage (props) {
 
       <main>
         <Audit audit={props.audit} />
-
-        <img src={`/${props.audit.partner.logo.image}`} alt={props.audit.partner.logo.alt} />
-
-        <pre>{JSON.stringify(props.audit, null, 2)}</pre>
       </main>
     </>
   )
