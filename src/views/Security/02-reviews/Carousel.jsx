@@ -116,7 +116,6 @@ const Carousel = (props) => {
 const Container = styled.div`
   position: relative;
   width: 800px;
-  margin-top: 64px;
 
   .slick-track {
     display: flex !important;

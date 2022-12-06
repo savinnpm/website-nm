@@ -19,4 +19,5 @@ const Review = styled.div`
   display: flex;
   ${utils.fullWidthContainer}
   margin-bottom: 96px;
+  margin-top: 64px;
 `
