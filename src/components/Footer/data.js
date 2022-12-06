@@ -11,7 +11,8 @@ export const nav = [
     title: 'COMPANY',
     links: [
       { href: '/careers', text: 'CAREERS', isExternal: false },
-      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true }
+      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true },
+      { href: '/programs', text: 'Grants and Bounties', isExternal: false }
     ]
   },
   {

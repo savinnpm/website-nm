@@ -23678,5 +23678,1625 @@ export const mockData = {
     hasNextPage: false,
     prevPage: null,
     nextPage: null
+  },
+  pages: {
+    docs: [
+      {
+        id: '638b7010b63faec2395ad325',
+        updatedAt: '2022-11-28T07:15:35.863Z',
+        createdAt: '2022-11-28T07:15:35.863Z',
+        category: 'legal',
+        title: 'Standard Terms and Conditions',
+        slug: 'standard-terms-and-conditions',
+        content: [
+          {
+            children: [
+              {
+                text: 'The standard terms and conditions document is a work a progress document. Please visit the following link to view all version of this document:'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              { text: '' },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions',
+                newTab: true,
+                children: [
+                  {
+                    text: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions'
+                  }
+                ]
+              },
+              { text: '' }
+            ]
+          },
+          {
+            children: [
+              { text: '' },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions',
+                newTab: true,
+                children: [{ text: '' }]
+              },
+              { text: '' }
+            ]
+          }
+        ],
+        meta: {
+          title: 'Standard Terms and Conditions of Neptune Mutual Protocol',
+          description:
+            'If you plan on using the Neptune Mutual protocol, be sure to thoroughly read the standard terms and conditions document first.'
+        },
+        _status: 'published'
+      },
+      {
+        id: '638b7011b63faec2395ad327',
+        updatedAt: '2022-11-28T07:10:47.619Z',
+        createdAt: '2022-11-28T07:10:47.619Z',
+        category: 'legal',
+        title: 'Risk Factors',
+        slug: 'risk-factors',
+        content: [
+          {
+            children: [
+              {
+                text: 'Protect your assets from possible market and technology risks'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'It is critical that you comprehend all risk aspects before establishing any firm expectations. Understanding the risks associated with Neptune Mutual and other DeFi platforms can help you make better choices.\n'
+              }
+            ]
+          },
+          { children: [{ text: 'Consensus and Reporting Risks' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: 'You may submit a report without understanding or misinterpreting the cover requirements. This becomes troublesome because if the resolution is not in your favour, '
+              },
+              { text: 'you will lose all of your tokens', bold: true },
+              { text: '. Please use ' },
+              { text: 'extreme caution ', bold: true },
+              { text: 'here as you will not receive your NPM tokens back.' }
+            ]
+          },
+          { children: [{ text: 'Cover Parameters' }], type: 'h2' },
+          {
+            children: [
+              { text: 'A cover parameter has the following components:' }
+            ]
+          },
+          {
+            type: 'ul',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Cover Rules --> Specified by the cover creator for a given cover. To qualify as a valid report, an incident must adhere to all cover rules.'
+                  }
+                ],
+                type: 'li'
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'Cover Exclusions --> Specified by the cover creator for a given cover. An incident report cannot contain any exclusions in order to be considered valid.'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  { text: '' },
+                  {
+                    type: 'link',
+                    linkType: 'custom',
+                    url: 'https://docs.neptunemutual.com/usage/standard-terms-and-conditions',
+                    newTab: true,
+                    children: [{ text: 'Standard Terms & Conditions' }]
+                  },
+                  {
+                    text: ' --> Set by Neptune Mutual that is common for all covers. An incident report must comply with all terms and conditions. Additional exclusions may be included in standard terms and conditions.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: 'Only during the withdrawal period can cover creators modify the rules and exclusions. Before making a modification, we need that cover creators submit a proposal using our snapshot governance portal. Proposals that pass the voting process are then permitted to make a request for modification during the subsequent withdrawal cycle.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'If the community votes and adopts the modifications, Neptune Mutual may modify the standard terms and conditions at any time.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          { children: [{ text: 'Coverage Lag Risks' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: 'Neptune Mutual\'s coverage typically begins at UTC EOD the next day or after a number of day(s) based on configuration. If you purchased a policy on Monday, coverage will begin at midnight UTC on Tuesday. This is often referred to as the "coverage lag".'
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: '\n"Coverage lag is a specified time period that can be set globally or on a per-cover basis to delay the start of coverage. The coverage of a policy begins at the EOD timestamp of the policy purchase date plus the coverage lag."'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: "Coverage lag is customizable, and hence its value can vary. If the coverage lag is two days, your policy's coverage will commence at the UTC EOD timestamp two days after purchase. \n",
+                bold: true
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [{ text: 'Observed Date vs Incident Date Risk' }],
+            type: 'h2'
+          },
+          {
+            type: 'ul',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Observed Date --> The timestamp at which the actual event was observed on-chain.'
+                  }
+                ],
+                type: 'li'
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'Incident Date --> The block timestamp associated with the incident report.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            children: [
+              { text: 'The UTC timestamp when a ' },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://docs.neptunemutual.com/covers/cover-reporting',
+                newTab: true,
+                children: [{ text: 'report is submitted' }]
+              },
+              {
+                text: ' to the Neptune Mutual protocol is taken into consideration, regardless of when an incident was observed in the actual world. Please note that if an event occurs hours before the end of the (UTC) month but is reported after the end of the month, you will not get claims payout since your cxTokens expire exactly on the end of the (UTC) month.'
+              }
+            ]
+          },
+          {
+            children: [
+              { text: '\n' },
+              {
+                text: 'Even when the real incident was observed before the month end, the incident reporting block timestamp is considered as the incident date.',
+                bold: true
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          { children: [{ text: '' }] },
+          {
+            children: [{ text: 'Diversified Pool Black Swan Event' }],
+            type: 'h2'
+          },
+          {
+            children: [
+              {
+                text: 'Diversified cover pools differ significantly from dedicated cover pools. With dedicated cover pools, there is always more than 100% liquidity available to pay out claims. Diversified cover pools, however, utilize the leverage factor and hence pay out claims according to the first-come, first-served basis.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'In other words, if all products under a diversified cover pool trigger an event at the same time, payouts are provided on a first-come, first-served basis until the entire fund is exhausted. Thereafter, there are no more payouts given. Assuming there is no security flaw in the Neptune Mutual protocol and the DeFi lending protocol integrations, the dedicated cover pools truly maintain guaranteed stablecoin liquidity. Utilizing the leverage factor, diversified pools optimize capital efficiency to underwrite more risk. Although we only list proven and mature products under diversified cover pools, you should still be extra vigilant when reviewing a diversified pool as there is a possibility that you may not receive payout.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          { children: [{ text: 'Market Risks' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: "Given that you have no influence over how the cryptocurrency market acts, it's better not to invest any money that you can't afford to lose. It is never a smart idea to put your life savings into a cryptocurrency. This is made much worse by the fact that many successful traders have lost everything in the hopes of making a profit."
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'Due to the fact that the NPM tokens have no monetary value, they should not be regarded a cryptocurrency or an alternative method of payment. Despite the fact that NPM tokens have a variety of use cases, you should bear in mind that they are intended to be used only inside our protocol. Bear in mind the dangers and volatility associated with trading NPM tokens. When you supply NPM tokens to a decentralized exchange liquidity pool, risks such as impermanent loss may arise. When you provide the Bond Pool with NPM/DAI liquidity pair tokens, you expose yourself to the danger of the NPM price falling and resulting in a loss.'
+              }
+            ]
+          },
+          { children: [{ text: 'Technology Risks' }], type: 'h2' },
+          { children: [{ text: 'Smart Contract Exploit' }], type: 'h3' },
+          {
+            children: [
+              {
+                text: "Malicious actors are burning the midnight oil to profit from smart contract vulnerabilities and possible exploits such as flash loan attacks. As we've seen in the past, smart contract vulnerabilities have been exploited on several protocols, even after thorough audits by well-known and trustworthy auditing firms."
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: "The Neptune Mutual team has retained the services of a few security firms to execute the first smart contract audit. However, what the majority of community members do not realize is that obtaining an audit is not a one-time activity. Numerous platforms have gotten an audit report once and then updated their smart contracts without conducting another audit. In contrast, the Neptune Mutual platform will work on a long-term basis with security research firms.Having said that, getting an audit completed does not always guarantee the safety of the user assets. Be responsible and don't invest, lock, or stake an amount you can't afford to lose anywhere."
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          { children: [{ text: 'Wallet Exploit' }], type: 'h3' },
+          {
+            children: [
+              {
+                text: 'Due to the irreversible nature of cryptocurrency transfers, phishing attempts have exploded in popularity over the previous decade. The trick these malicious actors use is to spoof a famous website, wallet, or exchange by replicating a feature or page.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: "These URLs are delivered to uneducated individuals through email or messaging app, tricking them into inputting their credentials, mnemonic, seed phrase, or private keys. The fraudulent actors then totally drain the wallet's funds."
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              { text: '' },
+              {
+                type: 'link',
+                linkType: 'custom',
+                url: 'https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams',
+                newTab: true,
+                children: [
+                  { text: 'How to Recognize and Avoid Phishing Scams?\n' }
+                ]
+              },
+              { text: '' }
+            ]
+          },
+          {
+            children: [
+              { text: 'Document Last Updated On: {{docUpdateDate}}\n' }
+            ]
+          }
+        ],
+        meta: {
+          title: 'Risks Factors Involving the Neptune Mutual Protocol',
+          description:
+            'Before using the Neptune Mutual protocol, please thoroughly review a number of financial and technological risks.'
+        },
+        _status: 'published'
+      },
+      {
+        id: '638b7012b63faec2395ad32b',
+        updatedAt: '2022-11-27T12:57:30.253Z',
+        createdAt: '2022-11-27T12:57:30.253Z',
+        category: 'legal',
+        title: 'Terms of Use',
+        slug: 'terms-of-use',
+        content: [
+          {
+            children: [
+              { text: 'NEPTUNE MUTUAL TERM OF USE AGREEMENT', bold: true }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'This Term of Use Agreement, together with the privacy policy ( “Privacy Policy”) and/or any additional agreement (collectively the “Agreement”) that Neptune Tech Limited and/or its affiliates (collectively as “we”, “our”, “us”, “Neptune” or the “Company”) publicly posts under this website or make available to any visitors on this website, are entered into between Neptune and you as a visitor of this website or as a user access to any Neptune application (“User”, “you” or “your”), in relation to your use of, and access to this website, including all web applications, services and/or any associated websites or applications linked thereto with Neptune (any materials, services, applications available therein are collectively referred to as the “Site” or the “Website”).'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'PLEASE READ THE AGREEMENT CAREFULLY BEFORE USING OR ACCESSING THE WEBSITE AND REVIEW THEM PERIODICALLY AND REGULARLY FOR CHANGES. BY VISITING OR ACCESSING THE WEBSITE, REGISTERING FOR OR USING OR ANY PART THEREOF, YOU AGREE TO BE BOUND BY THE AGREEMENT AND AGREE THAT SUCH AGREEMENT CONSTITUTE A LEGALLY BINDING AGREEMENT BETWEEN YOU AND US. IF YOU DO NOT AGREE TO BE FULLY BOUND BY ALL OR ANY OF THE AGREEMENT, YOU SHOULD EXIT THE SITE IMMEDIATELY AND NOT TO MAKE ANY USE OF THE WEBSITE OR OUR SITES. PLEASE NOTE THAT WE RESERVE THE RIGHT, AT OUR SOLE DISCRETION, TO REVISE THE AGREEMENT, AT ANY TIME WITHOUT NOTICE. IF YOU DO NOT AGREED WITH ANY REVISED TERM UNDER THE AGREEMENT, YOU MUST EXIT THE WEBSITE IMMEDIATELY AND STOP USING THE SITE.\n',
+                bold: true
+              }
+            ]
+          },
+          {
+            children: [{ text: '1. THE WEBSITE, ACCESS AND USE OF THE SITE.' }],
+            type: 'h2'
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: '1.1 The Website provides information of the Company, the Company’s applications, software and blockchain protocol developed by the Company and allow User to access with such information and to use of the Company’s application and blockchain protocol.\n\n1.2 The Website is offered on a self-service basis and may charge fees for interacting with Ethereum Blockchain, i.e. “gas fees”, for the use or access on the Site.\n\n1.3 For accessing particular information or application on the Site, you may be required to register on the Website as a User, complete the sign-up process, create an account (the “Account”) through our site and go through the identity verification process. You may also be required to provide your personal information so as to create the Account.\n\n1.4 When you visit or use the Website, you represent and warrant that:\n\n(i) you have reached the legal age and capacity to form a binding contract and have the full capacity to accept this Agreement and enter into transactions as a result of using the website;\n\n(ii) in the event of registering with us, you have provided us with accurate, true and complete information about yourself (including, but not limited to, your name and email address);\n\n(iii) you are not a resident, national, or agent of Antigua and Barbuda, Algeria, Bolivia, Belarus, Crimea Region, Iran, Iraq, Libya, Myanmar, North Korea, Syria, Somalia or any jurisdictions as may be designated by the Company or any country to which the United States, the United Kingdom or the European Union impose sanctions from time to time (“Restricted Jurisdictions”);\n\n(iv) you are not a member of any sanctions list or equivalent maintained by the United States, the United Kingdom or the European Union government;\n\n(v) if you are entering into this Agreement as an entity or you represent one or more businesses or franchises, that you are acting as their authorized representative, and that both you and the entity you represent will be bound by the Agreement;\n\n(vi) your usage of the Website is and will be in full compliance with all laws and regulations, applicable to your use of the website is not prohibited by any applicable laws or regulations, and is not for illegal or immoral purpose;\n\n(vii) you do not, and will not, use VPN software or any other privacy or anonymization tools or techniques to circumvent, or attempt to circumvent, any restrictions that apply to the Site;\n\n(viii) your registration or your use of the website will be consistent with the foregoing license, covenants and restrictions, and you are not infringing nor violating the rights of any other party;\n\n(ix) you certify that any digital assets used by you to connect to any applications or blockchain protocol on the Site are either owned by you or that you are validly authorized to carry out the transaction, and that all transactions initiated from your own digital asset wallet and not on behalf of any other person or entity;\n\n(x) in connection with using the Site or any applications or blockchain protocol on the Site, you will only transfer legally obtained digital assets that belong to you;\n\n(xi) you will maintain the security and confidentiality of your private keys associated with digital asset wallet(s), passwords, API keys, and/or other credentials;\n\n(xii) you agree to abide by any relevant laws or regulations in your jurisdiction, including but not limited to reporting any trading activities or profits for taxation purposes, if any.\n\n1.5 As a condition to visiting the Website and/or using or accessing any applications or blockchain protocol on the Website, you acknowledge and agree the following:\n\n(i) we reserve the right to suspend or terminate the Account, according to our sole discretion and without providing any prior notice, your registration or access to the Website, in the event that\n\n(a) when we reasonably suspect that you have breached any of the Agreement,\n\n(b) when we reasonably suspect fraudulent or illegal activities, or\n\n(c) when the Agreement has been terminated;\n\n(ii) from time to time the Site and the applications or protocol linked to the Site may be inaccessible or inoperable for any reason, including but not limited to\n\n(a) technical malfunctions;\n\n(b) periodic maintenance procedures or repairs that Neptune or its vendors or contractors may undertake;\n\n(c) causes or events beyond the Company’s control or reasonably foresee;\n\n(d) disruption and temporary or permanent unavailability of underlying blockchain infrastructure; or\n\n(e) unavailability of third-party service providers or external partners for any reason;\n\n(iii) the Website and the applications or protocol linked therein may evolve, which means Neptune may apply changes, replacement or discontinue (whether temporarily or permanently) the Website and/or any applications or protocol at any time at our sole discretion;\n\n(iv) Neptune does not act as an agent for you or any other Users of the Site;\n\n(v) we owe no responsibilities or liabilities to you or any other party, and to the extent any such responsibilities or liabilities may exist, you hereby irrevocably waive, disclaim and withdraw all these responsibilities and liabilities;\n\n(vi) we have no control over, or liable to, the delivery, safety, legality or any other aspect of any digital assets that you may transfer to or from a third party, whether under the Neptune’s application or protocol, and if you experience any problem with any transactions of digital assets, you bear all foreseeable or non-foreseeable risks;\n\n(vii) All information provided in connection with your visit or your access and use of the Site is for informational purposes only and should not be construed as investment, financial, legal, tax, or any professional advice. You should not take, or refrain from taking, any action based on any information contained on the Site, or any information that we make available at any time. You should take independent professional advice if you are in doubt of whether visit, use or access to the Site.\n\n1.6 You are solely and wholly responsible for the security of your digital asset wallet and the Account and we urge you to keep your wallet private address, your account password secure and to always log-off when leaving the website.\n\n1.7 You acknowledge and agree that you are solely and wholly responsible for obtaining and maintaining any hardware, facilities, connections, licenses, permits, database, equipment, external software or any other resources as may be required and/or necessary for the use of the website (such as, computer, mobile device, internet connection and telecommunications) and any relevant payment system. You agree that we will not bear any liability for any cost, expense, loss or other damage you may suffer directly or indirectly with respect to such hardware, facilities, connections, licenses, permits, database, equipment or external software or any other resources as may be required, in connection with use of the website.\n\n1.8 You agree to defend and indemnify the Company and any of their officers, directors, employees and agents from and against any claims, causes of action, demands, recoveries, losses, damages, fines, penalties or other costs or expenses of any kind or nature including but not limited to reasonable legal and accounting fees, brought by third parties as a result of (1) your breach of this agreement or the documents referenced herein; (2) your violation of any law or the rights of a third party; or (3) your use and access of the Account and/or this Website.\n'
+              }
+            ]
+          },
+          { children: [{ text: '2. PROHIBITED ACTIVITY' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: '\nBy visiting, using or accessing the Site, you confirm that you will not use the Site for the following\n\n\n(i) violate any laws in any competent jurisdictions, including but not limited to any anti-money laundering and anti-terrorist financing laws and sanctions programs;\n\n(ii) engage in any transactions or dealing that infringe or violate any copyright, trademark, patent, privacy or any other proprietary right under any laws of a competent jurisdictions;\n\n(iii) use the Site in any manner that could interfere with, disrupt, affect or inhibit other visitors or users from fully enjoying the Site, or that may damage, disable, overburden, or impair the functioning of the Site in any manner;\n\n(iv) circumvent any content-filtering techniques, security measures or access controls that Neptune employs on the Site, such as through the use of VPN;\n\n(v) use any software or any automated means not provided or consent by us, to access the Site or to extract data, or introduce any malware, virus, trojan horse, worm, logic bomb, drop deal device, backdoor, shutdown mechanism or other harmful material to the Site;\n\n(vi) providing false, inaccurate, or misleading information while using the Site;\n\n(vii) use or access the Site to transmit or exchange any digital assets that are related to any criminal or illegal activities;\n\n(viii) use the Site from a jurisdiction that the use of the Site is prohibited;\n\n(ix) harass, abuse, or harm of any other person, entity, or any staffs of Neptune or service providers;\n\n(x) impersonate another user or otherwise misrepresent yourself.\n'
+              }
+            ]
+          },
+          { type: 'h2', children: [{ text: '3. OWNERSHIP' }] },
+          {
+            children: [
+              {
+                text: '\n3.1 The Website, including any enhancements, derivatives and improvements thereof, are the sole property of Neptune. Without limitation of the foregoing, all the text, images, sounds, music, marks, logos, compilations (meaning the collection, arrangement and assembly of information) and other content on the Website (collectively, the “Content”), and all software, blockchain protocol, API keys, source code, and/or any technical material embodied in the website or otherwise used by Neptune to deliver the website’s function (“Software”), are the property of Neptune and are protected by copyright and other intellectual property laws. Nothing in the Agreement shall grant the User any of such property and/or ownership.\n\n3.2 Any rights with respect to the Software or the Content which are not expressly granted here by Neptune are reserved by Neptune. 3.3 You agree not to copy, imitate, or use the Content without prior consent of Neptune or the applicable licensors.\n'
+              }
+            ]
+          },
+          {
+            children: [
+              { text: '4. INTELLECTUAL PROPERTY LICENSE, RESTRICTION' }
+            ],
+            type: 'h2'
+          },
+          {
+            children: [
+              {
+                text: '\n4.1 We grant you a personal, revocable, non-assignable, non-perpetual and non-exclusive right to access and use the website as a licensee, provided that you fully comply with the Agreement.\n\n4.2 You shall not remove any copyright, trademark or other proprietary notices that have been placed on the website.\n\n4.3 You shall not exploit the website in any unauthorized way whatsoever, including but not limited to trespass or materially burden network capacity and you shall not use the website for any illegal or immoral purpose, or in violation of any applicable laws and regulations, such as laws governing intellectual property and other proprietary rights, data protection and privacy, anti-money laundering and currency control. You acknowledge that you are fully responsible for satisfying any legal and regulatory requirements applicable in countries and territories in which you operate.\n\n4.4 We reserve the right to apply limits on the use of the website, for example, by limiting the available features, or number of supported Users and / or transactions. We further reserve the right to publish such limitations, make them different from User to User, or change such limitations at will, in each case in our sole discretion.\n\n4.5 You hereby grant us a royalty-free, fully paid-up, sublicensable, transferable, perpetual, irrevocable, non-exclusive, worldwide license to use, copy, modify, create, display, perform, publish and distribute, in any form, medium, or manner, any content that is available to other users as a result of your use of the Site (“User Content”), including but not limited to for promoting Neptune, its affiliates, or the Site.\n\n4.6 You warrant that you own the User Content and have the right to grant and license to Neptune and that such license does not and will not violate, misappropriate or infringe any third party’s rights.\n'
+              }
+            ]
+          },
+          {
+            children: [
+              { text: '5. USER VERIFICATION, COMPLIANCE AND RESTRICTION.' }
+            ],
+            type: 'h2'
+          },
+          {
+            children: [
+              {
+                text: '\n5.1 You hereby authorize us, directly or through our third-party service providers, to take any measures that we consider necessary to verify your identity, conduct analysis on your digital wallet address(es), and to take any action we deem necessary based on the results.\n\n5.2 Persons or located in the countries specified as Restricted Jurisdictions are not permitted to use the Website. This restriction also applies to residents and citizens of other nations while located in a Restricted Jurisdictions. The fact that the Website is accessible in a Restricted Jurisdictions, or that the Website allows the use of the official language of a Restricted Jurisdictions, shall not be construed as a license to use the Website in such Restricted Jurisdictions. Any attempt to circumvent this restriction, for example, by using a virtual private network, proxy or similar service that masks or manipulates the identification of your real location, or by otherwise providing false or misleading information regarding your citizenship, location or place of residence, or by using the website through a third party or on behalf of a third party located in a Restricted Jurisdictions is a breach of this Agreement. If it becomes apparent, or we have reasonable grounds to suspect, that you are located in any of the Restricted Jurisdictions, this may result in closing your Account, without an obligation to provide you with advance notice, all in accordance with applicable laws and agreements.\n'
+              }
+            ]
+          },
+          { children: [{ text: '6. FEES' }], type: 'h2' },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'In accessing any applications or blockchain protocol on the Site or linked to the Site, you may require to pay all necessary fees for any transaction on the Ethereum blockchain network, including “gas fees”, as well as any other fees. The fees may vary from time to time due to various of considerations, including but not limited to network congestion.\n'
+              }
+            ]
+          },
+          { children: [{ text: '7. DATA COLLECTION' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: '\n7.1 You agree that we may periodically collect, store and use data (including, but not limited to technical information) in connection with your registration or use of the Site and other Website ( “Usage Data”). We may also collect information about Users who access through the website (“User Data”). In addition, our systems may automatically collect other data about your operations, depending on the specific technology used by you for the implementation of the website.\n\n7.2 The Usage Data and User Data is our property. We may use such data: to provide our service to you and to others; to improve the website; to personalize and enhance the use of the website; to determine those areas which are useful or popular and those that are less; to keep record of correspondence with you; to address any issues that you are having with the website; to evaluate your use, preferences and trends for internal statistical and analytical purposes and in respect of operations and product development. We may also use the Usage Data and User Data to offer cross-promotions of Neptune.\n\n7.3 We may, at our sole discretion, provide you with information ( “Confidential Information”). Any such information shall remain the property of Neptune. The User shall hold the Confidential Information in strict confidence. Without Neptune prior written consent, such Confidential Information shall not be disclosed by the User in whole or in part to any person other than those agents and employees of the User who need to know about the Confidential Information for the sole purposes of using our website. The User further agrees that Neptune’s Confidential Information, whether in written or electronic form, shall not be copied or reproduced at any time without Neptune’s prior written consent. In addition, in case the User receives and uses the Confidential Information, the User shall abide by our privacy policy as if you were Neptune in such privacy policy.\n\n7.4 Neptune may share your personal and other information (“Information”) with our affiliate companies or third party to verify and validate information, and to address users matters. By using the Website and/or registering the Account, you hereby agree to your Information will be passed to our affiliate companies or third party solely for the purpose to facilitate your usage of the Website or the Account. While Neptune does not sell your information, we may need to share or pass your information with third parties acting on our behalf or as may be required by law, regulations or court order. We will use reasonable efforts to ensure that your Information is used in a reasonable manner and you hereby agree and permit Neptune to share your Information with regulators, law enforcement authorities and government agencies if Neptune is so requested.\n\n7.5 Neptune will store your Information in accordance with the General Data Protection Regulation under European Union regulations (EU) 2016/679. All of our policies related to your Information shall be contained in the Private Policy.\n'
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: '8. PROHIBITED USE, PROHIBITED BUSINESSES AND CONDITIONAL USE.'
+              }
+            ],
+            type: 'h2'
+          },
+          {
+            children: [
+              {
+                text: '\n8.1 You may not use your Account to engage in the following categories of activity ("Prohibited Uses"). The specific types of use listed below are representative, but not exhaustive. By opening an Account, you confirm that you will not use your Account to do any of the following:\n'
+              }
+            ]
+          },
+          {
+            type: 'ul',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'Unlawful Activity: Activity which would violate, or assist in violation of, any law, statute, or regulation, sanctions programs administered in any countries, including but not limited to the persons or countries listed by the United States, the United Kingdom or the European Union impose sanctions, or which would involve proceeds of any unlawful activity; publish, distribute or disseminate any unlawful material or information;'
+                  }
+                ],
+                type: 'li'
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: "Abusive Activity: Actions which impose an unreasonable or disproportionately large load on our infrastructure, or detrimentally interfere with, intercept, or expropriate any system, data, or information; transmit or upload any material to the Site that contains viruses, Trojan horses, worms, or any other harmful or deleterious programs; attempt to gain unauthorized access to the Site, other Accounts, computer systems or networks connected to the Site, through password mining or any other means; use Account information of another party to access or use the Site, except in the case of specific merchants and/or applications which are specifically authorized by a user to access such user's Account and information; or transfer your Account access or rights to your Account to a third party, unless by operation of law or with the express permission of Neptune;"
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: "Abuse Other Users: Interfere with another individual's or entity's access to or use of any the Services defame, abuse, extort, harass, stalk, threaten or otherwise violate or infringe the legal rights (such as, but not limited to, rights of privacy, publicity and intellectual property) of others; incite, threaten, facilitate, promote, or encourage violent acts against others; harvest or otherwise collect information from the Site about others, including without limitation email address, without proper consent;"
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'Fraud: Activity which operates to defraud Neptune, or any other person; provide any false, inaccurate, or misleading information to Neptune;'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'Gambling: Lotteries; bidding fee auctions; sports forecasting or odds making; fantasy sports leagues with cash prizes; internet gaming; contests; sweepstakes; games of chance; and'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'Intellectual Property Infringement: Engage in transactions involving items that infringe or violate any copyright, trademark, right of publicity or privacy or any other proprietary right under the law, including but not limited to sales, distribution, or access to counterfeit music, movies, software, or other licensed materials without the appropriate authorization from the rights holder; use of Neptune intellectual property, name, or logo, including use of Neptune trade or service marks, without express consent from Neptune or in a manner that otherwise harms Neptune or the Neptune brand; any action that implies an untrue endorsement by or affiliation with Neptune.\n'
+                  }
+                ]
+              }
+            ]
+          },
+          { children: [{ text: '9. WARRANTIES AND DISCLAIMER' }], type: 'h2' },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'YOU ACKNOWLEDGE, THAT TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, THE WEBSITE AND OTHER MATERIALS PROVIDED TO YOU BY NEPTUNE, ARE PROVIDED ON AN “AS IS” BASIS. OTHER THAN EXPRESSLY PROVIDED UNDER THE AGREEMENT, NEPTUNE GIVES NO OTHER WARRANTIES, EXPRESS, IMPLIED, STATUTORY OR IN ANY COMMUNICATION WITH USER. THE USE OF THE WEBSITE AND RELIANCE ON THE CONTENT AVAILABLE IS DONE SOLELY AT YOUR OWN RISK. NEPTUNE DISCLAIMS ANY AND ALL WARRANTIES RELATING TO THE SITE, THEIR CONTENT AND OTHER MATERIALS, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO THE IMPLIED WARRANTIES OF NON-INFRINGEMENT OF THIRD PARTY RIGHTS, SATISFACTORY QUALITY, AVAILABILITY, SECURITY, TITLE, ABILITY TO OPERATE AND FITNESS FOR A PARTICULAR PURPOSE. ANY RELIANCE ON THE WEBSITE IS AT THE USER’S OWN RISK. NEPTUNE DOES NOT WARRANT THAT THE WEBSITE WILL MEET YOUR REQUIREMENTS, AND DOES NOT GUARANTEE THAT THE USE OR OTHER EXPLOITATION OF THE SITE WILL LEAD TO CERTAIN RESULTS. NO ADVICE OR INFORMATION, WHETHER ORAL OR WRITTEN, OBTAINED BY YOU FROM NEPTUNE OR THROUGH THE WEBSITE WILL CONSTITUTE ANY WARRANTY AND/OR REPRESENTATION. WE DO NOT WARRANT NOR REPRESENT THAT ANY CONTENT OR THE WEBSITE PROVIDED WILL BE ACCURATE OR ERROR-FREE, THAT ACCESS THERETO WILL BE UNINTERRUPTED, THAT ALL DEFECTS WILL BE CORRECTED, OR THAT THE SERVERS, AND THE CONTENT AVAILABLE THERE THROUGH IS OR WILL BE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS. NEPTUNE MAY PAUSE OR INTERRUPT THE WEBSITE AT ANY TIME, AND USERS SHOULD EXPECT PERIODIC DOWNTIME FOR UPDATES TO THE WEBSITE. WE WILL NOT BE LIABLE TO YOU OR ANY THIRD PARTY FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL OR EXEMPLARY DAMAGES (INCLUDING DAMAGES FOR LOSS OF PROFITS, GOODWILL, USE, OR DATA), EVEN IF A PARTY HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES. FURTHER, WE WILL NOT BE RESPONSIBLE FOR ANY COMPENSATION, REIMBURSEMENT, OR DAMAGES ARISING IN CONNECTION WITH YOUR INABILITY TO USE THE WEBSITE, INCLUDING AS A RESULT OF ANY (I) TERMINATION OR SUSPENSION OF THE AGREEMENT OR YOUR USE OF OR ACCESS TO THE WEBSITE, (II) OUR DISCONTINUATION OF ANY OR ALL OF THE WEBSITE, OR, (III) WITHOUT LIMITING ANY OBLIGATIONS UNDER ANY SEPARATELY AGREED SERVICE-LEVEL AGREEMENTS, ANY UNANTICIPATED OR UNSCHEDULED DOWNTIME OF ALL OR A PORTION OF THE WEBSITE FOR ANY REASON, INCLUDING AS A RESULT OF POWER OUTAGES, SYSTEM FAILURES OR OTHER INTERRUPTIONS; (B) THE COST OF PROCUREMENT OF SUBSTITUTE GOODS OR WEBSITE; (C) ANY INVESTMENTS, EXPENDITURES, OR COMMITMENTS BY YOU IN CONNECTION WITH THIS AGREEMENT OR YOUR USE OF OR ACCESS TO THE WEBSITE; OR (D) ANY UNAUTHORIZED ACCESS TO, ALTERATION OF, OR THE DELETION, DESTRUCTION, DAMAGE, LOSS OR FAILURE TO STORE ANY OF YOUR CONTENT OR OTHER DATA.',
+                bold: true
+              },
+              { text: '\n' }
+            ]
+          },
+          {
+            children: [
+              { text: '10. LIABILITIES, INDEMNITIES &amp; DISCLAIMER' }
+            ],
+            type: 'h2'
+          },
+          {
+            children: [
+              {
+                text: '\n10.1 You shall, upon our demand, defend, indemnify, and hold harmless us, and each of our respective employees, officers, directors, and representatives from and against any claims, damages, losses, liabilities, costs, expenses (including but not limited to debt collection expenses) and legal fees (including reasonable attorneys’ fees) arising out of or relating to any third party claim. If we are obligated to respond to a third-party subpoena or other compulsory legal order or process described above, you shall also reimburse us for legal costs, as well as our employees’ and contractors’ time and materials spent responding to the third-party subpoena or other compulsory legal order or process at our then-current hourly rates.\n\n10.2 You shall indemnify us on demand for any damages and additional expense (including but not limited to legal costs and debt collection expenses) Neptune may suffer or incur, directly or indirectly, as a result of unlawful actions conducted by you.\n\n10.3 The information, software, products, and services published on this website may include inaccuracies or typographical errors. In particular, Neptune does not guarantee the accuracy of and disclaim liability for inaccuracies relating to any information or descriptions displayed on this website.\n\n10.4 Neptune makes no representations about the suitability of the information, software, and services contained on this website for any purpose, and displaying or promotion of any digital assets on this website does not constitute any endorsement or recommendation of investment. Nothing on the Website constitute any investment advice or any inducement of investment.\n\n10.5 In no event shall Neptune be liable for any direct, indirect, punitive, incidental, special, or consequential damages arising out of, or in any way connected with, the use of this website with the delay or inability to use this website, or for any services obtained through this website, or otherwise arising out of the use of this website, whether based on contract, tort, strict liability, or otherwise, even Neptune, its affiliates, and/or their respective suppliers have been advised of the possibility of damages.\n\n10.6 You agree to defend and indemnify Neptune and any of their officers, directors, employees and agents from and against any claims, causes of action, demands, recoveries, losses, damages, fines, penalties or other costs or expenses of any kind or nature including but not limited to reasonable legal and accounting fees, \n'
+              }
+            ]
+          },
+          {
+            type: 'ul',
+            children: [
+              {
+                children: [
+                  {
+                    text: 'you or on your behalf in excess of the liability described above;'
+                  }
+                ],
+                type: 'li'
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'by third parties as a result of (1) your breach of this agreement or the documents referenced herein; (2) your violation of any law or the rights of a third party; or (3) your use of this website.\n'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'h2',
+            children: [{ text: '11. TERM, TERMINATION AND SURVIVAL' }]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: '11.1 The Agreement shall, in addition to any other terms and conditions, be as agreed between Neptune and the User, and in absence of any other indications the Agreement shall commence upon your visit to the Website, and shall remain valid until further written notice is given by Neptune.\n\n11.2 Without prejudice to other provisions (especially clause 11.1 above) in the Agreement, Neptune may terminate the Website, the Agreement and all rights granted hereunder immediately and without notice.\n'
+              }
+            ]
+          },
+          { children: [{ text: '12. THIRD PARTY WEBSITES' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: '\n12.1 Neptune may link to other third-party websites for convenience only and are not part of the Site. Neptune does not endorse, confirm or support the contents of third-party websites. Neptune is not responsible for the content of a third-party website and cannot attest to the accuracy and completeness of such content. You acknowledge that your use of any third-party website is at your own risk.\n'
+              }
+            ]
+          },
+          {
+            children: [
+              {
+                text: '13. CYBERATTACKS AND MODIFICATIONS ON BLOCKCHAIN NETWORK'
+              }
+            ],
+            type: 'h2'
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: '13.1 Notwithstanding Neptune shall use its best endeavours to provide network and cybersecurity to all users, Neptune may not have any ability to prevent or mitigate cyberattacks and modifications on the blockchain networks (“Modification”), and Neptune does not guarantee any insurance will be cover any cyberattack. Neptune reserves the right to take commercially reasonable actions in such event.\n'
+              }
+            ]
+          },
+          { type: 'h2', children: [{ text: '14. RISK' }] },
+          {
+            children: [
+              {
+                text: '\n14.1 By accessing the Site and/or its applications or protocol, you represent and warrant that you understand and are aware the inherent risks associated with cryptographic system, blockchain-based networks, digital assets and smart contract.\n\n14.2 Neptune do not have access to your private key(s) of your digital assets wallet. Losing control of your private key(s) will permanently and irreversibly deny your access to Digital Assets and neither Neptune nor any third party may be able to retrieve or protect your digital assets.\n\n14.3 Your digital assets could be impacted by regulatory inquiries or regulatory actions, which could impede or limit the ability of Neptune to continue to make available the Site, its applications or the protocol, which may also limit your ability to access or use the Site\n\n14.4 You hereby assume and agree that Neptune will have no responsibility and liability for any risks related to digital assets, your use or access of the Site, and or any actions or transaction, regardless of whether it is linked or associated with the Site.\n'
+              }
+            ]
+          },
+          { children: [{ text: '15. MISCELLANEOUS' }], type: 'h2' },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: '15.1 Neptune and the User are and intend to remain independent parties. Nothing in the Agreement shall be deemed or construed to create the relationship of principal and agent or of partnership or joint venture between Neptune and the User.\n\n15.2 The Agreement represents the entire agreement between Neptune and User and supersedes any and all other agreements between the parties, whether written or oral, regarding the subject matter hereof (but not include any add-on services as may be requested by the User). Unless otherwise specified in writing by Neptune, The Agreement shall govern and supersede any other agreement entered into between Neptune and you. Neptune may assign its rights or obligations pursuant to the Agreement while the User agrees not to assign any rights under the Agreement without Neptune’s explicit written consent. Any translation of the Agreement is provided for your convenience only and in case of any conflict, the English version shall prevail.\n\n15.3 No waiver of any term of the Agreement shall be deemed a further or continuing waiver of such term or any other term, and any failure to assert any right or provision under the Agreement shall not constitute a waiver of such term.\n\n15.4 The section titles in the Agreement are solely used for the convenience and have no legal or contractual significance.\n\n15.5 Your electronic assent or use of the services shall constitute execution of the Agreement. You agree that the electronic text of the Agreement constitutes a “writing” and your assent to the terms and conditions hereof constitutes a “signing” for all purposes.\n\n15.6 If any part of the Agreement shall be invalid or unenforceable, such invalidity or unenforceability shall not affect the validity or enforceability of any other part or provision of the Agreement which shall remain in full force and effect. If any provision or part-provision of the Agreement is or becomes invalid, illegal or unenforceable, it shall be deemed modified to the minimum extent necessary to make it valid, legal and enforceable. If such modification is not possible, the relevant provision or part-provision shall be deemed deleted. Any modification to or deletion of a provision or part-provision under this paragraph shall not affect the validity and enforceability of the rest of the Agreement.\n\n15.7 Neptune reserves the right, at its sole discretion, to change, add or remove portions of these Agreement, at any time. Such notification will be made via the Website and it is your responsibility to review the amended Agreement. Your continued use of the Website following the posting of changes will mean that you accept and agree to the changes and you agree that all subsequent transactions by you will be subject to these Agreement.\n\n15.8 The Agreement shall be governed by the laws of the British Virgin Islands as to all matters including validity, construction, effect, performance and remedies without giving effect to the principles of choice of law thereof.</span></'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          { children: [{ text: '' }] },
+          { children: [{ text: '' }] }
+        ],
+        meta: {
+          title: 'Terms of Use: Neptune Mutual',
+          description:
+            'Review the Terms of Use Document provided by Neptune Mutual.'
+        },
+        _status: 'published'
+      }
+    ],
+    totalDocs: 3,
+    limit: 1000,
+    totalPages: 1,
+    page: 1,
+    pagingCounter: 1,
+    hasPrevPage: false,
+    hasNextPage: false,
+    prevPage: null,
+    nextPage: null
+  },
+  programs: {
+    docs: [
+      {
+        id: '638e0fc89c0fd284fa78347f',
+        title: 'Ecosystem and Integration Grant',
+        slug: 'ecosystem-and-integration-grant',
+        category: 'Partnerships and Business Development',
+        icon: 'share-07',
+        badges:
+          '[\n  {\n    "size": "md",\n    "icon": "Dot",\n    "text": "Contact Us",\n    "color": "blue",\n    "outline": false\n  }\n]',
+        intro:
+          'The protocols that integrate with Neptune Mutual protocol and drive our adoption will be eligible for ecosystem and integration grants.',
+        _status: 'published',
+        createdAt: '2022-12-05T15:35:36.175Z',
+        updatedAt: '2022-12-05T15:36:33.733Z',
+        content: [
+          { type: 'h2', children: [{ text: 'Above Over Divided Man' }] },
+          { type: 'h3', children: [{ text: 'Seasons' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "Evening be. Over over sixth his second, called life seed seas years. Don't. Signs moved, fruit own dry fish wherein open can't Fruitful under. Green gathering male. Abundantly saying don't. "
+              },
+              { text: 'Fly', bold: true },
+              {
+                text: ' very living. Own blessed years Fifth green is itself set lesser from moving he sea be fill creepeth he Was his sea cattle seed above set it rule also in without place bearing our '
+              },
+              { text: 'evening', italic: true },
+              {
+                text: ' created for own also were had moving whales lesser to made creature place fill his which hath sixth spirit to replenish '
+              },
+              { text: 'night', italic: true },
+              { text: ' ' },
+              { text: 'first', italic: true },
+              { text: ' unto given male ' },
+              { text: 'gathering', italic: true },
+              {
+                text: " for you'll appear light life fill. Evening, said likeness form greater greater moving Doesn't was. Waters firmament "
+              },
+              { text: 'place', italic: true },
+              {
+                text: " appear rule day you. One. Their own unto called sea won't herb make unto his. Bearing divided. Beast female beast. Beast stars."
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              { text: 'Itself ' },
+              { text: 'air', bold: true },
+              {
+                text: " place doesn't blessed wherein fly of under beast said day grass greater. Dominion lesser. "
+              },
+              { text: 'Him', italic: true },
+              {
+                text: " a blessed. They're. Night make make herb so, gathered "
+              },
+              { text: 'divided', italic: true },
+              { text: ' fill, meat, days gathered meat Us hath together ' },
+              { text: 'have', bold: true },
+              { text: ' so itself moveth. Had. ' },
+              { text: 'Night', italic: true },
+              {
+                text: " image grass forth, called yielding have. Morning she'd under also god fruit without replenish fill rule seasons seas gathered whose rule dominion. Under female "
+              },
+              { text: "can't", italic: true },
+              {
+                text: " that which. Creepeth light. I creeping above together also after, made light wherein have beginning dry evening. Divide. Heaven day likeness unto. Light make midst gathered tree thing image seas unto. Replenish. Divide can't great air deep "
+              },
+              { text: 'said', italic: true },
+              {
+                text: " herb all god brought light from firmament sixth divide fruitful unto cattle and beginning make life bearing rule beast. Blessed. Sea. From multiply face good without you're gathered over without second. Void. Divide heaven open. Made may us may tree and give bring open, face in, fifth "
+              },
+              { text: "won't", italic: true },
+              {
+                text: " sixth be isn't, form. Place. Seed lesser which set upon years. Saying him waters saying them be "
+              },
+              { text: 'made', italic: true },
+              { text: ' ' },
+              { text: 'morning', bold: true },
+              { text: ' fly ' },
+              { text: 'image', italic: true },
+              {
+                text: ' earth make, beginning creeping subdue fish life. Were.'
+              }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'To Creature' }] },
+          {
+            type: 'p',
+            children: [
+              { text: "Seasons, can't called saying sea for saw after whose " },
+              { text: 'void', bold: true },
+              {
+                text: ' yielding whales man tree fruitful fourth sixth. Form called beast seas fly he days '
+              },
+              { text: 'be', italic: true },
+              {
+                text: " after male whose very very place Blessed place fifth sixth man and. Face called is replenish saying isn't form given form it upon a man winged two Moved together meat "
+              },
+              { text: 'all', italic: true },
+              { text: ' earth ' },
+              { text: 'which', italic: true },
+              { text: ' second likeness air form ' },
+              { text: 'seas', bold: true },
+              {
+                text: " unto you'll life. Man. Whales fill moving lesser good their. He whose fourth, i "
+              },
+              { text: 'Appear', italic: true },
+              { text: ' ' },
+              { text: 'beginning', bold: true },
+              {
+                text: " of wherein. Won't gathering moving seed dominion saw multiply "
+              },
+              { text: 'him', italic: true },
+              {
+                text: ' stars seas very hath moving hath. Moved very light creepeth '
+              },
+              { text: 'evening', bold: true },
+              {
+                text: ' earth, tree yielding unto brought, also called first '
+              },
+              { text: 'good', bold: true },
+              { text: 'grass stars dry fish also dry may. Fifth spirit ' },
+              { text: 'Living', italic: true },
+              {
+                text: " to sixth Of it moveth don't divided very image god don't set fifth second appear, whales."
+              }
+            ]
+          },
+          {
+            type: 'h2',
+            children: [
+              { text: 'Yielding Brought In Beginning Moveth Moved Of Without' }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              { text: 'Creeping tree cattle ' },
+              { text: 'itself', bold: true },
+              { text: ' form. Fowl above divide him great him made dominion ' },
+              { text: 'he', bold: true },
+              { text: ' seas Hath, light bearing bring firmament, deep ' },
+              { text: 'abundantly', italic: true },
+              { text: ' of lights god saw were deep ' },
+              { text: 'let', italic: true },
+              { text: " she'd meat moved " },
+              { text: 'is', italic: true },
+              {
+                text: ' seas of. In And all lesser. Make fourth fifth which god sea cattle divide behold subdue Green. Spirit spirit shall, '
+              },
+              { text: 'which', italic: true },
+              { text: ' face under. ' },
+              { text: "Can't", bold: true },
+              { text: ' ' },
+              { text: 'fruitful', italic: true },
+              { text: " above made one can't " },
+              { text: "you'll", italic: true },
+              {
+                text: ' grass brought evening female after is open winged him gathering creeping creepeth greater abundantly, '
+              },
+              { text: 'firmament', italic: true },
+              {
+                text: ' lesser, multiply open night image fifth heaven great saying day, multiply '
+              },
+              { text: 'great', italic: true },
+              { text: ' multiply blessed. Tree subdue every. Third.' }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'And Saying Deep Was' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "Lesser living darkness had fowl subdue so, give hath called days. I likeness. Heaven stars and. For can't which thing had dry "
+              },
+              { text: 'third', bold: true },
+              {
+                text: " creature doesn't so every Void. God have you're signs bearing he, face bearing their were have sea life light very moveth stars said under of morning. Second Can't second there whales likeness, female behold there night female fly. Thing night darkness without isn't saw. Saying creature "
+              },
+              { text: 'Divided', bold: true },
+              {
+                text: ' earth great shall you a divided land of blessed moveth whales above light green void i gathering greater us spirit whales face give dominion. Greater midst given under he subdue, said together it subdue land whose meat '
+              },
+              { text: 'you', bold: true },
+              { text: ' be.' }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              { text: 'Living created ' },
+              { text: 'upon', italic: true },
+              { text: ' ' },
+              { text: 'brought', italic: true },
+              {
+                text: " signs moved form. All. Morning deep lights subdue, it without forth let face he fourth given it saying one seas. Also abundantly over two to Void which subdue make image. Stars gathered day fifth. Give. Lesser sea bearing fish over let form make seed for dominion face you're every fruitful and "
+              },
+              { text: 'whose', bold: true },
+              {
+                text: ' place god lesser every thing seas whales without likeness bearing multiply '
+              },
+              { text: 'of', italic: true },
+              {
+                text: " brought isn't spirit them fruit sea bearing night replenish night forth, called cattle life. Whales forth signs. Signs Waters was every, was to give. Bring morning "
+              },
+              { text: 'is', italic: true },
+              { text: 'bearing in divided ' },
+              { text: 'fowl', italic: true },
+              { text: ' be make bearing life behold winged herb ' },
+              { text: 'two', italic: true },
+              { text: ' which ' },
+              { text: 'heaven', bold: true },
+              {
+                text: 'had his male creepeth set called, shall. Brought night. Dry. And saw all green. Rule Meat appear grass over seed itself to midst evening one given our fly image gathering was multiply in good sixth, third That bring the '
+              },
+              { text: 'to', bold: true },
+              { text: ' tree. Lesser land behold give wherein fill unto ' },
+              { text: 'i', bold: true },
+              { text: " light every you'll third place spirit." }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'May Creepeth Day Great' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Creeping under tree day behold night female bearing for be '
+              },
+              { text: 'land', bold: true },
+              {
+                text: " one whose he years yielding good. Living blessed, and together creature. Likeness fifth very whales was make beast living moved greater tree seed, to fruitful gathered stars for. Created sea. Moved. Moveth, evening had moved given can't, is dominion so thing second our you. Man every fifth brought unto. Dominion without. Creature waters. Said may us spirit life green there he. Bring day open tree female seasons unto so abundantly. Every tree. He there. Abundantly gathered make. Saying signs land darkness you creepeth wherein. Appear us abundantly first. Fruitful blessed. Cattle isn't you'll, all bring a, cattle. Fourth for thing you're third moving grass."
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Beginning. Set. Evening fifth the which set earth stars brought stars together creepeth and made in void thing air stars day bearing stars second fish winged. '
+              },
+              { text: 'Divide', bold: true },
+              {
+                text: ' lights him bearing seed life light him lesser forth make together him yielding '
+              },
+              { text: 'creeping', bold: true },
+              {
+                text: ' open. Likeness fish midst them waters whales so tree night open spirit blessed moved open our, fowl darkness god '
+              },
+              { text: 'Him', bold: true },
+              {
+                text: " above fourth divide saw spirit face abundantly. Seas all Called cattle fruitful above divide male, make wherein appear to of, stars set third meat she'd second fruit. Grass stars their you'll after for give were. His under multiply you're is us from whales life, greater shall won't. Itself greater stars. I second made brought i us to from they're their abundantly Night, bring moving land."
+              }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Moved May' }] },
+          {
+            type: 'p',
+            children: [
+              { text: 'Spirit given unto Good ' },
+              { text: 'his', italic: true },
+              { text: " their. Bearing give don't, " },
+              { text: 'created', italic: true },
+              {
+                text: " dominion grass Fruitful. Had lights. Moveth. I let is you're fruit Day together midst "
+              },
+              { text: "won't", italic: true },
+              {
+                text: ' midst give. For multiply them. Sea, good may of give. Creepeth beginning. Made fly '
+              },
+              { text: 'that', italic: true },
+              {
+                text: " all face face gathering fill. First given together. Tree seas. Above was gathered us also, life grass unto thing bearing brought fill doesn't, abundantly. Forth every gathering one own subdue second can't. Dominion. Said made made won't from. Good from make creature our appear. Years night days. Which abundantly deep his, "
+              },
+              { text: 'lesser', italic: true },
+              {
+                text: 'heaven seas image shall. Darkness land stars moveth deep fly. Form. Every saw spirit good '
+              },
+              { text: 'place', italic: true },
+              { text: ' yielding fruitful which first ' },
+              { text: 'heaven', italic: true },
+              {
+                text: " gathering face is thing whales after tree have rule from appear called years seed there spirit land earth in land under can't let which winged above us gathering over saying whose. Fruitful male bearing bearing "
+              },
+              { text: 'every', bold: true },
+              {
+                text: " they're all you to. Under make grass midst you're fly them have Bring "
+              },
+              { text: 'Set', italic: true },
+              {
+                text: " void lesser, whales very won't winged midst likeness. Appear female A gathering. Kind above. It. Fill, "
+              },
+              { text: 'for', bold: true },
+              {
+                text: " don't day. Also. After form be, life dominion air second was. Sixth give you. Place "
+              },
+              { text: 'replenish', italic: true },
+              { text: ' were green evening. Rule blessed ' },
+              { text: 'which', bold: true },
+              { text: ' waters sea our seasons very good you after that.' }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Cattle' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Form lights. Subdue behold gathered place which spirit fowl were '
+              },
+              { text: 'Yielding', italic: true },
+              { text: ' dry creepeth living ' },
+              { text: 'he', bold: true },
+              {
+                text: " you'll morning don't blessed creepeth own, were waters "
+              },
+              { text: 'own', italic: true },
+              { text: ' first ' },
+              { text: 'living', italic: true },
+              { text: ' earth ' },
+              { text: 'given', bold: true },
+              {
+                text: " night bring years fly from Is, for moveth first our beginning made were kind moving land. Deep, likeness you're i appear wherein very dominion. Bring morning man own it, creepeth, it. So divided sea. Be one whose Fill won't doesn't, midst creature said air "
+              },
+              { text: 'every', bold: true },
+              { text: " you have. Can't she'd set brought " },
+              { text: 'life', bold: true },
+              { text: 'bearing. Moving, hath whales creeping ' },
+              { text: 'give', italic: true },
+              {
+                text: ' second created abundantly, may make also signs said every moved. Waters from given Be second. Said dominion there '
+              },
+              { text: 'years', italic: true },
+              { text: ' saying female itself one land his seas given ' },
+              { text: 'bearing', bold: true },
+              { text: ' seed. Earth ' },
+              { text: 'said', italic: true },
+              {
+                text: " sixth itself rule. Winged you're day seed creature likeness. Creepeth "
+              },
+              { text: 'days', italic: true },
+              { text: ' light male.' }
+            ]
+          }
+        ]
+      },
+      {
+        id: '638e099d508b708dbee21ca8',
+        title: 'Referral Program and Discount Coupons',
+        slug: 'referral-program-and-discount-coupons',
+        category: 'Sales and Promotion',
+        badges:
+          '[\n  {\n    "size": "md",\n    "icon": "Dot",\n    "text": "Live",\n    "color": "success",\n    "outline": false\n  }\n]',
+        intro:
+          'Be on the lookout for the most recent promotions we are offering, such as referral bonuses, discounts, and cash back. For more information, click here.',
+        content: [
+          { children: [{ text: 'Tortor' }], type: 'h2' },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Turpis praesent augue eu molestie mattis aliquet dictumst. Fusce euismod conubia praesent morbi auctor vel pulvinar cubilia vehicula fames ullamcorper primis aliquet vitae et integer rhoncus primis leo, tellus fames urna felis potenti magnis ipsum netus ligula enim aenean. Sit. Ultricies urna maecenas tortor quis taciti tempor tortor fusce Pulvinar metus euismod odio. Felis dictumst eget, habitant. Quam vitae nascetur Dapibus conubia mollis, netus nascetur. Dis morbi facilisis. Mi eros. Pellentesque est ad ac praesent praesent, dui suscipit nostra sem aliquam eu pharetra eget, dapibus '
+              },
+              { text: 'porttitor', italic: true },
+              { text: ' sociosqu enim varius aptent ' },
+              { text: 'magnis', bold: true },
+              {
+                text: ' habitasse mollis scelerisque proin eget maecenas neque sociis proin lectus. Hac justo '
+              },
+              { text: 'quis', italic: true },
+              { text: 'gravida feugiat luctus. Felis ' },
+              { text: 'dignissim', bold: true },
+              {
+                text: ' facilisis nisl blandit, vitae per eleifend dapibus. Pulvinar semper mi molestie. Lacus praesent interdum vehicula ad auctor felis. Sem facilisis A condimentum nam ridiculus maecenas lobortis, mollis. Justo nisl nam amet donec nisi. A tristique.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              { text: 'Non. ' },
+              { text: 'Auctor', bold: true },
+              {
+                text: ' augue vehicula. Nam fermentum porttitor odio venenatis egestas tempor ultrices elit montes cum accumsan. Ante consectetuer ac. Est. Tincidunt malesuada. Libero. Donec tempor quis molestie. Volutpat mauris '
+              },
+              { text: 'rutrum', italic: true },
+              {
+                text: ' primis nulla. Praesent fusce iaculis. Viverra porttitor auctor mattis tincidunt a phasellus netus lectus. Elementum tempor. '
+              },
+              { text: 'Cursus', bold: true },
+              { text: ' semper sapien aliquam. Netus maecenas cum cursus. ' },
+              { text: 'Ac', bold: true },
+              {
+                text: ' imperdiet praesent vel tortor ullamcorper imperdiet diam ac iaculis dolor lectus aliquet nascetur sociosqu ridiculus auctor integer velit arcu dignissim morbi arcu etiam Malesuada. Lacinia curae; ad conubia accumsan faucibus per lorem '
+              },
+              { text: 'faucibus', bold: true },
+              {
+                text: ' elementum eget at quisque augue tristique litora tincidunt et. In ultrices pellentesque mattis, ac turpis '
+              },
+              { text: 'duis', italic: true },
+              { text: ' placerat mi facilisi eros lacus auctor ' },
+              { text: 'gravida', bold: true },
+              { text: ' ' },
+              { text: 'inceptos', bold: true },
+              {
+                text: ' tincidunt. Feugiat integer eros sit aliquam enim et eros. Imperdiet '
+              },
+              { text: 'consectetuer', bold: true },
+              { text: ' arcu tempus cursus condimentum. Purus ac felis ' },
+              { text: 'dictum', bold: true },
+              { text: ' viverra cum rutrum.' }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Aliquet Lectus magna vel felis purus inceptos platea suscipit sodales aliquet. Augue, consectetuer nostra tristique natoque penatibus blandit. Ullamcorper porta habitant molestie suspendisse. Litora odio facilisi sociosqu ridiculus parturient dapibus, a, facilisis. Leo molestie, aptent suscipit netus habitasse. Hendrerit sollicitudin vehicula felis, nunc tempor laoreet augue mauris penatibus mattis feugiat et, viverra hymenaeos. Risus leo montes. Diam curae; curae; lorem viverra vitae nisl tempor feugiat eleifend eleifend. Lectus netus integer pharetra pede aliquam lobortis pretium inceptos massa, eleifend natoque vitae montes. Curae; nam, fusce erat netus sed commodo inceptos nonummy, facilisi aliquet interdum felis mi vestibulum at. Nisl consequat semper velit vestibulum fringilla euismod lorem aliquam mattis suspendisse eu cursus adipiscing facilisis ultricies vivamus neque curae;. Aenean et, nullam nec posuere.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Nascetur curabitur tellus elementum fames nascetur id duis phasellus metus. Volutpat ad Metus faucibus at congue nunc iaculis suspendisse ipsum laoreet posuere molestie volutpat amet fringilla netus urna adipiscing. Tellus malesuada leo Egestas accumsan, aenean interdum suscipit dui laoreet morbi eleifend diam ligula aliquam, curae; libero dis congue porttitor suspendisse euismod risus proin libero fames eros montes, semper purus ipsum faucibus habitasse phasellus hymenaeos '
+              },
+              { text: 'feugiat', italic: true },
+              { text: ' sit ' },
+              { text: 'odio', bold: true },
+              {
+                text: ' vestibulum quam. Enim duis. Elementum porta venenatis, cursus tortor '
+              },
+              { text: 'aliquam', bold: true },
+              { text: ' ligula convallis nam ut hendrerit viverra platea ' },
+              { text: 'pede', italic: true },
+              {
+                text: ' congue semper leo blandit ut augue vitae consectetuer. Semper auctor ac rutrum mi ut malesuada cursus. Venenatis. Habitasse lacus nibh, erat venenatis ipsum, in odio ornare convallis est tellus. Etiam auctor. Phasellus condimentum, curabitur in elementum, fames libero nostra natoque urna cras mauris pede molestie justo commodo. Ligula fringilla rhoncus inceptos duis curae;. Sapien platea vestibulum vivamus, posuere interdum.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Etiam tortor egestas sollicitudin habitant bibendum, netus risus. Rutrum. Dictum lobortis aptent. Sed. Feugiat amet senectus senectus velit curae;. Posuere suspendisse aliquet lobortis rhoncus quisque odio nisl torquent. Odio iaculis. Per molestie nam imperdiet ultrices elementum malesuada habitasse, imperdiet ornare ipsum. Auctor mi velit sem duis pharetra erat consectetuer. Sodales tempor sit ante suscipit eros sodales habitasse porta '
+              },
+              { text: 'et', bold: true },
+              { text: ' vestibulum tincidunt justo montes malesuada libero, ' },
+              { text: 'iaculis', bold: true },
+              {
+                text: ' tristique facilisis. Cursus inceptos eu eu etiam malesuada viverra at quisque feugiat quam, fringilla cum accumsan pulvinar lacus faucibus lectus commodo convallis nullam phasellus pretium lacinia, congue elementum gravida. Neque hendrerit nam.'
+              }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Purus Inceptos Suscipit Nibh' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Platea justo tellus litora viverra libero eleifend. Quam litora. Nulla porttitor hymenaeos dis. Enim tincidunt commodo interdum. Sagittis Elementum libero non '
+              },
+              { text: 'quis', italic: true },
+              {
+                text: ' tellus tempor eros rutrum ad suscipit curabitur cum accumsan per, varius justo rhoncus '
+              },
+              { text: 'class', italic: true },
+              {
+                text: ' nonummy quis et quis cum mi velit arcu ac pretium nam dolor, euismod '
+              },
+              { text: 'lacinia', italic: true },
+              {
+                text: ' enim eros enim fames luctus ullamcorper auctor dictum gravida pede eros a fermentum turpis dictumst ut '
+              },
+              { text: 'dictum', bold: true },
+              {
+                text: ' luctus dignissim. Placerat nisi. Porta scelerisque. Accumsan pulvinar lacinia metus habitant sem tempor nam sodales.'
+              }
+            ]
+          },
+          {
+            type: 'h3',
+            children: [
+              { text: 'Aenean Sapien Elementum Bibendum Dui Potenti' }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Inceptos suscipit ut venenatis maecenas aptent volutpat quam tempor scelerisque pretium ultricies arcu mauris. Adipiscing pede. Nec ut sem libero primis nulla magnis class, platea ante. Ante nunc maecenas consequat blandit sollicitudin fringilla sit nibh litora, gravida Porta consequat, inceptos turpis venenatis cras, risus. Ad. Litora habitant penatibus '
+              },
+              { text: 'vitae', bold: true },
+              {
+                text: ' feugiat aliquet curabitur amet ornare libero penatibus tincidunt est proin erat. Lacus sagittis. Sagittis lectus scelerisque interdum sociosqu. Ornare sociosqu pellentesque volutpat pharetra convallis lacus risus mattis nisi. Ipsum mauris mus nulla laoreet habitant pede molestie dignissim Nunc vulputate penatibus massa ac. Senectus. Potenti litora pretium litora commodo in iaculis primis potenti '
+              },
+              { text: 'et', italic: true },
+              { text: ' nonummy, ' },
+              { text: 'vulputate', italic: true },
+              {
+                text: ' turpis habitasse enim tincidunt mi vulputate aliquet quis tincidunt ridiculus nascetur orci montes. Ligula blandit bibendum rutrum dapibus eleifend interdum suscipit. Facilisi. Suscipit class platea sagittis pharetra orci varius rhoncus leo. Sagittis tellus.'
+              }
+            ]
+          },
+          {
+            type: 'h2',
+            children: [
+              {
+                text: 'Enim Sagittis Rhoncus Faucibus Ullamcorper Auctor Interdum Quam'
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Vulputate vitae amet quisque placerat habitasse curabitur gravida sapien parturient ultricies congue curae; egestas habitasse rhoncus inceptos integer interdum id sodales integer. Risus dapibus taciti. Non sem habitant pharetra dignissim egestas nunc neque mi donec fringilla erat vehicula penatibus dis erat platea, nulla sagittis netus sagittis, netus urna platea phasellus, natoque vivamus venenatis ac ad '
+              },
+              { text: 'vestibulum', italic: true },
+              { text: ' lacinia suspendisse posuere vel, massa in ut. ' },
+              { text: 'Senectus', italic: true },
+              {
+                text: ' volutpat semper, facilisi faucibus. Egestas nullam nisl aliquet platea imperdiet massa cras commodo metus, blandit dictumst. Nec vel hymenaeos a egestas luctus aliquam. Feugiat gravida vestibulum, sagittis cubilia convallis litora consectetuer nullam. Egestas dis euismod per luctus hymenaeos potenti pretium. Egestas conubia facilisi massa vehicula vulputate. Sollicitudin eget egestas pede morbi duis, imperdiet eleifend consequat nostra blandit ligula nisl class erat cubilia dolor, malesuada. Condimentum torquent luctus natoque tempor aenean nec quam suscipit vel parturient pellentesque '
+              },
+              { text: 'suscipit', italic: true },
+              {
+                text: ' penatibus justo tempor aliquet. Tempus netus. Lacus rutrum convallis tincidunt sed habitasse torquent ultricies morbi lacus, habitasse massa augue mattis Et luctus arcu nulla praesent. Augue gravida torquent, sapien interdum ante molestie. Egestas orci.'
+              }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Sem Fusce Tortor Nec' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Inceptos neque maecenas leo facilisis massa ultrices. Nostra elementum eleifend mollis fermentum euismod. Vel per. Pharetra vivamus eros turpis nec ad, lorem amet '
+              },
+              { text: 'curae;', italic: true },
+              {
+                text: ' sodales euismod hendrerit varius maecenas sociosqu. Leo convallis curabitur '
+              },
+              { text: 'vehicula', italic: true },
+              {
+                text: ' vitae porta nunc ullamcorper. Justo augue hac scelerisque luctus enim. Quisque dis. Amet tempus. Mi viverra pulvinar venenatis elementum cubilia '
+              },
+              { text: 'nibh', bold: true },
+              {
+                text: ' porttitor penatibus sollicitudin porta sollicitudin, at. Pede urna sit eget ligula congue Etiam eget metus. Proin. Mattis sagittis odio fames venenatis, cum dolor suscipit natoque risus magna malesuada. Risus vulputate dignissim '
+              },
+              { text: 'lacinia', bold: true },
+              { text: 'tincidunt maecenas. Facilisi habitant. ' },
+              { text: 'Velit', bold: true },
+              { text: ' ' },
+              { text: 'pulvinar', bold: true },
+              { text: ' egestas, ullamcorper.' }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Molestie Dapibus' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Parturient. Massa placerat sed vehicula. Dictumst taciti sit facilisi torquent nullam lacus sollicitudin felis aenean per. Scelerisque rhoncus euismod dis eu. Per quam dui elementum dolor turpis orci bibendum condimentum a montes nam commodo est '
+              },
+              { text: 'ac', italic: true },
+              { text: ' ultrices. Laoreet id. In ' },
+              { text: 'lectus', bold: true },
+              {
+                text: ' blandit tempor vulputate, fusce libero, sapien interdum vestibulum habitant tortor dis duis congue elementum taciti. Augue vestibulum adipiscing convallis. Vitae litora, neque velit orci integer maecenas duis proin enim.'
+              }
+            ]
+          }
+        ],
+        _status: 'published',
+        createdAt: '2022-12-05T15:09:17.288Z',
+        updatedAt: '2022-12-05T15:37:02.025Z',
+        icon: 'tag-03'
+      },
+      {
+        id: '638e091f508b708dbee21c79',
+        title: 'Ambassador Program',
+        slug: 'ambassador-program',
+        category: 'Marketing and Growth',
+        badges:
+          '[\n  {\n    "size": "md",\n    "icon": "Dot",\n    "text": "Live",\n    "color": "success",\n    "outline": false\n  }\n]',
+        intro:
+          'We are always on the lookout for creative individuals who can translate our copies, plan meetups, guestpost on our blog, and create copies and videos to spread awareness of our protocol.',
+        content: [
+          {
+            children: [
+              {
+                text: 'The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth.',
+                italic: true
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages.'
+              }
+            ]
+          },
+          { children: [{ text: 'New Common Language' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: 'The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.'
+              }
+            ]
+          },
+          { children: [{ text: 'Grammar' }], type: 'h3' },
+          {
+            children: [
+              {
+                text: 'If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages.'
+              }
+            ]
+          },
+          { children: [{ text: 'Language' }], type: 'h4' },
+          {
+            children: [
+              {
+                text: 'It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family.'
+              }
+            ]
+          },
+          { children: [{ text: 'Existence' }], type: 'h3' },
+          {
+            children: [
+              {
+                text: 'Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words.'
+              }
+            ]
+          },
+          { children: [{ text: 'Expensive Translators' }], type: 'h4' },
+          {
+            children: [
+              {
+                text: 'CoEveryone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.'
+              }
+            ]
+          },
+          { children: [{ text: 'English Person' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: 'If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental.'
+              }
+            ]
+          },
+          { children: [{ text: 'Cambridge Friend' }], type: 'h2' },
+          {
+            children: [
+              {
+                text: 'To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words.'
+              }
+            ]
+          },
+          { children: [{ text: '' }] },
+          {
+            children: [
+              {
+                text: 'If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will seem like simplified English, as a skeptical Cambridge friend of mine told me what Occidental is. The European languages are members of the same family. Their separate existence is a myth. For science, music, sport, etc, Europe uses the same vocabulary. The languages only differ in their grammar, their pronunciation and their most common words. Everyone realizes why a new common language would be desirable: one could refuse to pay expensive translators. To achieve this, it would be necessary to have uniform grammar, pronunciation and more common words. If several languages coalesce, the grammar of the resulting language is more simple and regular than that of the individual languages. The new common language will be more simple and regular than the existing European languages. It will be as simple as Occidental; in fact, it will be Occidental. To an English person, it will'
+              }
+            ]
+          }
+        ],
+        _status: 'published',
+        createdAt: '2022-12-05T15:07:11.418Z',
+        updatedAt: '2022-12-05T15:36:55.031Z',
+        icon: 'message-chat-circle'
+      },
+      {
+        id: '638e07787f7a59071819eeae',
+        title: 'Bug Bounty Program',
+        slug: 'bug-bounty-program',
+        category: 'Technology and Cybersecurity',
+        badges:
+          '[\n  {\n    "size": "md",\n    "icon": "Dot",\n    "text": "Live",\n    "color": "success",\n    "outline": false\n  }\n]',
+        intro:
+          'Independent security researchers and white hat hackers who take part in our bug bounty program get generous rewards. Earn incentives in stablecoins up to $50,000.',
+        content: [
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart. I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine. I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.',
+                italic: true
+              }
+            ]
+          },
+          { type: 'h2', children: [{ text: 'Lovely Valley' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!'
+              }
+            ]
+          },
+          {
+            type: 'ul',
+            children: [
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'O my friend -- but it is too much for my strength -- I sink under the weight of the splendour of these visions!'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'A wonderful serenity has taken possession of my entire soul, like these sweet mornings of spring which I enjoy with my whole heart.'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'I am alone, and feel the charm of existence in this spot, which was created for the bliss of souls like mine.'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'I am so happy, my dear friend, so absorbed in the exquisite sense of mere tranquil existence, that I neglect my talents.'
+                  }
+                ]
+              },
+              {
+                type: 'li',
+                children: [
+                  {
+                    text: 'I should be incapable of drawing a single stroke at the present moment; and yet I feel that I never was a greater artist than now.'
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'When, while the lovely valley teems with vapour around me, and the meridian sun strikes the upper surface of the impenetrable foliage of my trees, and but a few stray gleams steal into the inner sanctuary, I throw myself down among the tall grass by the trickling stream; and, as I lie close to the earth, a thousand unknown plants are noticed by me: when I hear the buzz of the little world among the stalks, and grow familiar with the countless indescribable forms of the insects and flies, then I feel the presence of the Almighty, who formed us in his own image, and the breath of that universal love which bears and sustains us, as it floats around us in an eternity of bliss; and then, my friend, when darkness overspreads my eyes, and heaven and earth seem to dwell in my soul and absorb its power, like the form of a beloved mistress, then I often think with longing, Oh, would I could describe these conceptions, could impress upon paper all that is living so full and warm within me, that it might be the mirror of my soul, as my soul is the mirror of the infinite God!'
+              }
+            ]
+          },
+          { type: 'h2', children: [{ text: 'Gregor Samsa' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'One morning, when Gregor Samsa woke from troubled dreams, he found himself transformed in his bed into a horrible vermin.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'He lay on his armour-like back, and if he lifted his head a little he could see his brown belly, slightly domed and divided by arches into stiff sections.'
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'The bedding was hardly able to cover it and seemed ready to slide off any moment. His many legs, pitifully thin compared with the size of the rest of him, waved about helplessly as he looked.'
+              }
+            ]
+          },
+          { type: 'h3', children: [{ text: 'Was it a dream?' }] },
+          {
+            type: 'p',
+            children: [
+              { text: '"What\'s happened to me? "', italic: true },
+              {
+                text: " he thought. It wasn't a dream. His room, a proper human room although a little too small, lay peacefully between its four familiar walls."
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'A collection of textile samples lay spread out on the table - Samsa was a travelling salesman - and above it there hung a picture that he had recently cut out of an illustrated magazine and housed in a nice, gilded frame.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'It showed a lady fitted out with a fur hat and fur boa who sat upright, raising a heavy fur muff that covered the whole of her lower arm towards the viewer.'
+              }
+            ]
+          },
+          { type: 'h4', children: [{ text: 'Weather' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'Gregor then turned to look out the window at the dull weather. Drops of rain could be heard hitting the pane, which made him feel quite sad.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: '"How about if I sleep a little bit longer and forget all this nonsense"',
+                italic: true
+              },
+              {
+                text: ", he thought, but that was something he was unable to do because he was used to sleeping on his right, and in his present state couldn't get into that position."
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'However hard he threw himself onto his right, he always rolled back to where he was.'
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "He must have tried it a hundred times, shut his eyes so that he wouldn't have to look at the floundering legs, and only stopped when he began to feel a mild, dull pain there that he had never felt before."
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: '"Oh, God", he thought, "what a strenuous career it is that I\'ve chosen! Travelling day in and day out.'
+              }
+            ]
+          },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "Doing business like this takes much more effort than doing your own business at home, and on top of that there's the curse of travelling, worries about making train connections, bad and irregular food, contact with different people all the time so that you can never get to know anyone or become friendly with them."
+              }
+            ]
+          },
+          { type: 'h2', children: [{ text: 'Get Enough Sleep' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "\" He felt a slight itch up on his belly; pushed himself slowly up on his back towards the headboard so that he could lift his head better; found where the itch was, and saw that it was covered with lots of little white spots which he didn't know what to make of; and when he tried to feel the place with one of his legs he drew it quickly back because as soon as he touched it he was overcome by a cold shudder."
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: 'He slid back into his former position. "Getting up early all the time", he thought, "it makes you stupid. You\'ve got to get enough sleep. Other travelling salesmen live a life of luxury.'
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "For instance, whenever I go back to the guest house during the morning to copy out the contract, these gentlemen are always still sitting there eating their breakfasts. I ought to just try that with my boss; I'd get kicked out on the spot."
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "But who knows, maybe that would be the best thing for me. If I didn't have my parents to think about I'd have given in my notice a long time ago, I'd have gone up to the boss and told him just what I think, tell him everything I would, let him know just what I feel. He'd fall right off his desk!"
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] },
+          {
+            type: 'p',
+            children: [
+              {
+                text: "And it's a funny sort of business to be sitting up there at your desk, talking down at your subordinates from up there, especially when you have to go right up close because the boss is hard of hearing. Well, there's still some hope; once I've got the money together to pay off my parents' debt to him - another five or six years I suppose - that's definitely what I'll do. That's when I'll make the big change. First of"
+              }
+            ]
+          },
+          { type: 'p', children: [{ text: '' }] }
+        ],
+        _status: 'published',
+        createdAt: '2022-12-05T15:00:08.832Z',
+        updatedAt: '2022-12-05T15:36:47.083Z',
+        icon: 'code-circle-03'
+      }
+    ],
+    totalDocs: 4,
+    limit: 1000,
+    totalPages: 1,
+    page: 1,
+    pagingCounter: 1,
+    hasPrevPage: false,
+    hasNextPage: false,
+    prevPage: null,
+    nextPage: null
   }
 }
