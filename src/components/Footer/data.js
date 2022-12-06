@@ -2,21 +2,25 @@ export const nav = [
   {
     title: 'RESOURCES',
     links: [
-      { href: '/', text: 'HOME', isExternal: false },
-      { href: '/security', text: 'SECURITY', isExternal: false },
-      { href: '/component-test', text: 'TEST', isExternal: false }
+      { href: '/marketplace', text: 'MARKETPLACE', isExternal: false },
+      { href: '/blog', text: 'BLOG', isExternal: false },
+      { href: '/ecosystem', text: 'ECOSYSTEM', isExternal: false },
+      { href: 'https://docs.neptunemutual.com', text: 'DOCUMENTATION', isExternal: false },
+      { href: '/web3-tools', text: 'WEB3_TOOLS', isExternal: false }
     ]
   },
   {
     title: 'COMPANY',
     links: [
+      { href: '/about-us', text: 'ABOUT_US', isExternal: false },
+      { href: '/programs', text: 'PROGRAMS', isExternal: false },
       { href: '/careers', text: 'CAREERS', isExternal: false },
-      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true },
-      { href: '/programs', text: 'Grants and Bounties', isExternal: false }
+      { href: '/security', text: 'SECURITY', isExternal: false },
+      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true }
     ]
   },
   {
-    title: 'DISCLOSURE',
+    title: 'POLICIES',
     links: [
       { href: 'https://docs.neptunemutual.com/usage/risk-factors', text: 'RISK_FACTORS', isExternal: true },
       { href: 'https://docs.neptunemutual.com/usage/terms-of-use', text: 'TERMS_OF_SERVICE', isExternal: true },
