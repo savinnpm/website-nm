@@ -11,5 +11,8 @@
   "h1": "GoogleTranslate: Sicherheit und Cyberhygiene",
   "SECURITY_REVIEW": "{{SECURITY_REVIEW}}",
   "SECURITY_REVIEW_TEXT": "{{SECURITY_REVIEW_TEXT}}",
-  "SHOW_RESULT": "{{SHOW_RESULT}}"
+  "SHOW_RESULT": "{{SHOW_RESULT}}",
+  "HEADER_TAG": "{{HEADER_TAG}}",
+  "HEADER_TITLE": "{{HEADER_TITLE}}",
+  "HEADER_TEXT": "{{HEADER_TEXT}}"
 }
