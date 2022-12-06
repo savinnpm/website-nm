@@ -51,7 +51,7 @@ export default function BlogPostPage (props) {
         <meta property='og:type' content='website' />
         <meta property='og:title' content={props.post.meta.title} />
         <meta property='og:description' content={props.post.meta.description} />
-        <meta property='og:image' content={getFQDN(props.post.meta.image)} />
+        <meta property='og:image' content={getFQDN(props.post.meta.image.src)} />
         <meta property='og:locale' content={router.locale} />
         <meta property='og:url' content={router.asPath} />
         <meta property='twitter:site' content='@neptunemutual' />
@@ -59,8 +59,8 @@ export default function BlogPostPage (props) {
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:description' content={props.post.meta.description} />
         <meta property='twitter:title' content={props.post.meta.title} />
-        <meta property='twitter:image' content={getFQDN(props.post.meta.image)} />
-        <meta property='twitter:image:alt' content={props.post.meta.imageAlt} />
+        <meta property='twitter:image' content={getFQDN(props.post.meta.image.src)} />
+        <meta property='twitter:image:alt' content={props.post.meta.image.alt} />
       </Head>
 
       <main>

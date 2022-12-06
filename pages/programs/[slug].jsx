@@ -50,7 +50,7 @@ export default function SingleProgramPage (props) {
         <meta property='og:type' content='website' />
         <meta property='og:title' content={props.program.meta.title} />
         <meta property='og:description' content={props.program.meta.description} />
-        <meta property='og:image' content={getFQDN(props.program.meta.image)} />
+        <meta property='og:image' content={getFQDN(props.program.meta.image.src)} />
         <meta property='og:locale' content={router.locale} />
         <meta property='og:url' content={router.asPath} />
         <meta property='twitter:site' content='@neptunemutual' />
@@ -58,8 +58,8 @@ export default function SingleProgramPage (props) {
         <meta property='twitter:card' content='summary_large_image' />
         <meta property='twitter:description' content={props.program.meta.description} />
         <meta property='twitter:title' content={props.program.meta.title} />
-        <meta property='twitter:image' content={getFQDN(props.program.meta.image)} />
-        <meta property='twitter:image:alt' content={props.program.meta.imageAlt} />
+        <meta property='twitter:image' content={getFQDN(props.program.meta.image.src)} />
+        <meta property='twitter:image:alt' content={props.program.meta.image.alt} />
       </Head>
 
       <main>
