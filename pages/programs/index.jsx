@@ -2,6 +2,7 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { services } from '../../services'
+import Link from 'next/link'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'security'])
@@ -27,6 +28,19 @@ export default function ProgramsPage (props) {
       </Head>
 
       <main>
+
+        {/* Temporary inline styles and code */}
+        <ul style={{ marginBottom: 24, borderBottom: '1px solid black' }}>
+          {props.programs.map(program => {
+            return (
+              <li key={program.slug}>
+                <Link key={program.slug} href={`/programs/${program.slug}`}>
+                  {program.title}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
 
         <pre>
           {JSON.stringify(props.programs, null, 2)}

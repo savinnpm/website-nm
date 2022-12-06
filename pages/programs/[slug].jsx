@@ -45,6 +45,7 @@ export default function SingleProgramPage (props) {
       </Head>
 
       <main>
+        {/* Temporary code */}
         <pre>{JSON.stringify(props.program, null, 2)}</pre>
       </main>
     </>
