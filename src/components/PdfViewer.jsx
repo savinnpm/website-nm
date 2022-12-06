@@ -4,7 +4,9 @@ import { colors } from '../../styles/colors'
 export const PdfViewer = ({ url }) => {
   return (
     <Container>
-      <StyledPdfEmbed src={`${url}#view=FitH&toolbar=0&toolbar=0&navpanes=0&scrollbar=0`} width='100%' />
+      <StyledPdfEmbed data={`${url}#view=FitH&toolbar=0&toolbar=0&navpanes=0&scrollbar=0`} type='application/pdf' width='100%'>
+        <p>Your web browser doesn't have a PDF plugin. Instead you can <a href={url}>click here to download the PDF file.</a></p>
+      </StyledPdfEmbed>
     </Container>
   )
 }
@@ -20,7 +22,7 @@ const Container = styled.div`
   }
 `
 
-const StyledPdfEmbed = styled.embed`
+const StyledPdfEmbed = styled.object`
   display: block;
   max-width: 768px;
   margin-left: auto;
