@@ -30,6 +30,10 @@ const Container = styled.div`
   margin: 32px auto;
   display: flex;
   gap: 8px;
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const FilterItem = styled(Link)`

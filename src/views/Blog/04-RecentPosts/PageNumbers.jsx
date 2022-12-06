@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../../../styles/colors'
+import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { useMediaQuery } from '../../../hooks/useMediaQuery'
 
@@ -80,6 +80,11 @@ const PageNumber = styled.button`
 
   &.active{
     background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
+  }
+
+  &:focus-visible{
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']};
+    box-shadow: 0px 0px 0px 4px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors[primaryColorKey]['900']};
   }
 `
 
