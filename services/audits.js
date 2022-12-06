@@ -13,7 +13,7 @@ const getDocs = async () => {
   console.log('fetching all audits')
 
   if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000`)
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000&depth=6`)
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
