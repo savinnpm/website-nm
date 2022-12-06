@@ -21,7 +21,7 @@ const Hero = () => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt='' src='/assets/images/hero/shield-2.webp' width='306' height='306' />
+          <Image alt='' src='/assets/images/hero/shield.webp' width='306' height='306' />
         </ImageContainer>
 
       </InnerContainer>
