@@ -1,8 +1,16 @@
+import React, {
+  useEffect,
+  useState
+} from 'react'
+
 import Link from 'next/link'
 import { useRouter } from 'next/router'
-import React, { useEffect, useState } from 'react'
 import styled, { css } from 'styled-components'
-import { colors, primaryColorKey } from '../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
 export const TableOfContents = ({ wrapperClass, title }) => {
@@ -99,27 +107,21 @@ export const TableOfContents = ({ wrapperClass, title }) => {
 }
 
 const Container = styled.div`
-  max-width: 300px;
-  min-width: 285px;
   padding-bottom: 20px;
+  margin-right: 24px;
 
   @media (min-width: 1400px) {
     margin-left: auto;
-    margin-right: 50px;
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 934px) {
     position: sticky;
     top: 100px;
 
     max-height: calc(100vh - 100px);
     overflow-y: auto
   }
-
-  @media (max-width: 768px) {
-    display: none;
-  }
-`
+  `
 
 const Label = styled.p`
   ${typography.styles.textMd};
@@ -157,7 +159,7 @@ const TitleLink = styled(Link)`
 const Content = styled.div`
   display: flex;
   flex-direction: column;
-  row-gap: 12px;
+  row-gap: 4px;
   margin-top: 8px;
 
   ${typography.styles.textMd};
@@ -170,12 +172,12 @@ const HeaderLink = styled(Link)`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 16px;
-  padding-left: 5px;
+  padding: 4px 8px;
   `
 
 const HeaderLink2 = styled(Link)`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 24px;
-  padding-left: 5px;
+  padding: 4px 8px;
 `
