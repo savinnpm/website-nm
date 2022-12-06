@@ -22962,7 +22962,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:53.159Z',
             updatedAt: '2022-12-03T15:45:53.159Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
           },
           _status: 'published'
         },
@@ -22980,7 +22980,7 @@ export const mockData = {
           filesize: 234448,
           createdAt: '2022-12-03T15:46:05.509Z',
           updatedAt: '2022-12-03T15:46:05.509Z',
-          url: 'https://example.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
         },
         description: [
           {
@@ -23022,7 +23022,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:53.159Z',
             updatedAt: '2022-12-03T15:45:53.159Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
           },
           _status: 'published'
         },
@@ -23040,7 +23040,7 @@ export const mockData = {
           filesize: 234448,
           createdAt: '2022-12-03T15:46:05.509Z',
           updatedAt: '2022-12-03T15:46:05.509Z',
-          url: 'https://example.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
         },
         description: [
           {
@@ -23082,7 +23082,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:50.745Z',
             updatedAt: '2022-12-03T15:45:50.745Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-blocksec.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-blocksec.webp'
           },
           _status: 'published'
         },
@@ -23115,7 +23115,7 @@ export const mockData = {
           filesize: 234448,
           createdAt: '2022-12-03T15:46:05.509Z',
           updatedAt: '2022-12-03T15:46:05.509Z',
-          url: 'https://example.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
         },
         startDate: 'Apr 2026'
       },
@@ -23142,7 +23142,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:50.745Z',
             updatedAt: '2022-12-03T15:45:50.745Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-blocksec.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-blocksec.webp'
           },
           _status: 'published'
         },
@@ -23160,7 +23160,7 @@ export const mockData = {
           filesize: 234448,
           createdAt: '2022-12-03T15:46:05.509Z',
           updatedAt: '2022-12-03T15:46:05.509Z',
-          url: 'https://example.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf'
         },
         description: [
           {
@@ -23202,7 +23202,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:50.745Z',
             updatedAt: '2022-12-03T15:45:50.745Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-blocksec.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-blocksec.webp'
           },
           _status: 'published'
         },
@@ -23220,7 +23220,7 @@ export const mockData = {
           filesize: 759846,
           createdAt: '2022-12-03T15:45:55.953Z',
           updatedAt: '2022-12-03T15:45:55.953Z',
-          url: 'https://example.com/media/neptune-mutual-blocksec-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-blocksec-audit.pdf'
         },
         description: [
           {
@@ -23262,7 +23262,7 @@ export const mockData = {
             height: 282,
             createdAt: '2022-12-03T15:45:53.159Z',
             updatedAt: '2022-12-03T15:45:53.159Z',
-            url: 'https://example.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
+            url: 'https://content.neptunedefi.com/media/neptune-mutual-audit-partner-open-zeppelin.webp'
           },
           _status: 'published'
         },
@@ -23280,7 +23280,7 @@ export const mockData = {
           filesize: 383699,
           createdAt: '2022-12-03T15:46:11.020Z',
           updatedAt: '2022-12-03T15:46:11.020Z',
-          url: 'https://example.com/media/neptune-mutual-open-zeppelin-audit.pdf'
+          url: 'https://content.neptunedefi.com/media/neptune-mutual-open-zeppelin-audit.pdf'
         },
         description: [
           {
