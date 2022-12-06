@@ -1,12 +1,30 @@
+import Image from 'next/image'
 import styled from 'styled-components'
+
+import { useTranslation } from 'react-i18next'
+
 import { colors, primaryColorKey } from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
-export const Hero = () => {
+const Hero = () => {
+  const { t } = useTranslation('careers')
+
   return (
     <Container>
       <InnerContainer>
-        <h1>Interested in Pursuing a Career with Neptune Mutual?</h1>
+        <Content>
+          <Tag>{t('HEADER_TAG')}</Tag>
+          <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+          <HeaderContent>
+            {t('HEADER_TEXT_1')}<br /><br />
+            {t('HEADER_TEXT_2')}<br /><br />
+            {t('HEADER_TEXT_3')}
+          </HeaderContent>
+        </Content>
+        <ImageContainer>
+          <Image alt='' src='/assets/images/hero/careers.webp' width='544' height='606' />
+        </ImageContainer>
 
       </InnerContainer>
     </Container>
@@ -14,21 +32,61 @@ export const Hero = () => {
 }
 
 const Container = styled.div`
+  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
+`
+
+const InnerContainer = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 40px;
+  ${utils.fullWidthContainer};
+  justify-content: space-between;
   padding-top: 96px;
   padding-bottom: 96px;
-  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
 
   @media (max-width: 768px) {
     padding-top: 64px;
     padding-bottom: 64px;
-    gap: 32px;
+    flex-direction: column;
+    align-items: stretch;
   }
 `
 
-const InnerContainer = styled.div`
-  ${utils.fullWidthContainer};
+const Content = styled.div`
+  width: 544px;
+  margin-right: 96px;
+
+  @media (max-width: 768px) {
+    width: auto;
+    margin-right: 0;
+  }
 `
+
+const Tag = styled.span`
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  ${typography.weights.semibold}
+  ${typography.styles.textMd}
+  margin-bottom: 12px;
+  display: block;
+`
+const HeaderTitle = styled.h1`
+  color: ${props => props.theme.isLightMode ? colors.gray['900'] : colors.white};
+  margin-bottom: 20px;
+  ${typography.styles.displayLg}
+  ${typography.weights.semibold}
+
+
+  @media (max-width: 768px) {
+    ${typography.styles.displayMd};
+  }
+`
+
+const HeaderContent = styled.p`
+  color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['25']};
+  ${typography.styles.textXl}
+  ${typography.weights.regular}
+`
+
+const ImageContainer = styled.div`
+  text-align: center;
+`
+
+export { Hero }

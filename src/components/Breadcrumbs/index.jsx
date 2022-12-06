@@ -6,7 +6,7 @@ import { Icon } from '../Icon'
 
 const Breadcrumbs = (props) => {
   return (
-    <Trail>
+    <Trail className={props?.className}>
       {props.crumbs.map((link, i) => {
         return (
           <Fragment key={`link-${i}`}>
