@@ -27,7 +27,7 @@ export const FilterTabs = ({ filters, activeFilter }) => {
 }
 
 const Container = styled.div`
-  margin: 36px auto;
+  margin: 32px auto;
   display: flex;
   gap: 8px;
 `

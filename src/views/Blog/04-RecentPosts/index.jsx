@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { ArticleCard } from '../../../components/ArticleCard'
@@ -72,18 +73,18 @@ export const RecentPosts = ({ blogPosts }) => {
 
   const handlePrev = () => {
     if (page > 0) {
-      pushQuery({ page: page - 1 })
+      pushQuery({ page: page })
       setPage((prev) => prev - 1)
     }
   }
 
   const handleNext = () => {
-    pushQuery({ page: page + 1 })
+    pushQuery({ page: page + 2 })
     setPage((prev) => prev + 1)
   }
 
   const handleSetPage = (_page) => {
-    pushQuery({ page: _page })
+    pushQuery({ page: _page + 1 })
     setPage(_page)
   }
 
@@ -104,7 +105,7 @@ export const RecentPosts = ({ blogPosts }) => {
     // setting current page based on url query
     if (!p) setPage(0)
     else {
-      const _page = Math.min(Math.max(0, parseInt(p)), totalPages - 1)
+      const _page = Math.min(Math.max(0, parseInt(p - 1)), totalPages - 1)
       setPage(_page)
     }
 
@@ -132,23 +133,18 @@ export const RecentPosts = ({ blogPosts }) => {
           filters={filters}
           activeFilter={activeTab}
         />
-
         <TextAndCta>
           <TextContainer>
             <Heading>Recent Posts</Heading>
-
           </TextContainer>
         </TextAndCta>
-
         <BlogsContainer>
-          {/* {blogPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE).map((post) => ( */}
           {posts.map((post) => (
             <SingleCard key={post.id}>
               <ArticleCard post={post} />
             </SingleCard>
           ))}
         </BlogsContainer>
-
         <Pagination page={page} setPage={handleSetPage} isLast={isLast} handleNext={handleNext} handlePrev={handlePrev} totalPages={totalPages} />
       </InnerContainer>
     </Container>
@@ -156,17 +152,16 @@ export const RecentPosts = ({ blogPosts }) => {
 }
 
 const Container = styled.div`
-  /* padding-top: 96px; */
+  ${utils.fullWidthContainer};
   padding-bottom: 96px;
-
+  
   @media (max-width: 768px) {
-    /* padding-top: 64px; */
     padding-bottom: 64px;
   }
-`
+  `
 
 const InnerContainer = styled.div`
-  ${utils.fullWidthContainer};
+  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[300] : colors.gray[700]};
 `
 
 const TextAndCta = styled.div`
