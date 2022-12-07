@@ -11,6 +11,10 @@ import {
   Target04,
   Target05,
   XClose,
+  CheckCircle,
+  SearchSm,
+  SearchMd,
+  SearchLg
 } from "./variants/General";
 import {
   ArrowLeft,
@@ -270,6 +274,22 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'shield-tick') {
     IconComponent = ShieldTick
+  }
+
+  if(variant === 'check-circle') {
+    IconComponent = CheckCircle
+  }
+
+  if(variant === 'search-sm') {
+    IconComponent = SearchSm;
+  }
+
+  if(variant === 'search-md') {
+    IconComponent = SearchMd;
+  }
+
+  if(variant === 'search-lg') {
+    IconComponent = SearchLg;
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
