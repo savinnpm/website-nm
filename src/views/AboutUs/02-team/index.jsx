@@ -1,7 +1,13 @@
+import styled from 'styled-components'
+
 export const Team = () => {
   return (
-    <div>
+    <Container>
       Meet Our Team
-    </div>
+    </Container>
   )
 }
+
+const Container = styled.div`
+  margin-top: 416px;
+`
