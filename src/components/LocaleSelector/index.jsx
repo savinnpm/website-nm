@@ -8,7 +8,7 @@ import { Icon } from '../Icon'
 import { InputWithIcon } from '../Input/InputWithIcon'
 import { localeNames } from './config'
 
-const options = ['en', 'de', process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
+const options = ['en', 'zh', 'fr', 'de', 'id', 'it', 'ja', 'ko', process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
 
 export const LocaleSelector = () => {
   const router = useRouter()
@@ -42,9 +42,9 @@ export const LocaleSelector = () => {
 
   return (
     <>
-      <Container>
+      <Container onClick={show}>
         <Icon size={20} variant='globe-01' />
-        <SelectedLanguage onClick={show}>{localeNames[router.locale] || router.locale}</SelectedLanguage>
+        <SelectedLanguage>{localeNames[router.locale] || router.locale}</SelectedLanguage>
         {showLanguages && (
           <LanguageContainer>
             <Search>
@@ -83,6 +83,7 @@ const Container = styled.div`
   align-items: center;
   gap: 8px;
   position: relative;
+  cursor: pointer;
 
   color: ${props => props.theme.secondaryColor};
   
