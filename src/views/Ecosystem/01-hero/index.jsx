@@ -10,7 +10,7 @@ export const Hero = () => {
   return (
     <Container>
       <InnerContainer>
-        <TextAndCta>
+        <TextAndFeatures>
           <TextContainer>
             <Heading>Neptune Mutual Ecosystem</Heading>
             <SupportingText>Neptune Mutual is designed to protect your project from any potential hacking or security issues. Make sure your community is aware of the advantages of a parametric insurance model. Unlike other insurance products, policyholders do not need to request another user to confirm their proof of loss.</SupportingText>
@@ -27,7 +27,7 @@ export const Hero = () => {
               <CheckIcon /> <span>Cover creators</span>
             </Feature>
           </Features>
-        </TextAndCta>
+        </TextAndFeatures>
 
         <ImageContainer>
           <Image
@@ -59,13 +59,14 @@ const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
 `
 
-const TextAndCta = styled.div`
+const TextAndFeatures = styled.div`
   display: flex;
   gap: 32px;
   align-items: flex-end;
 
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: stretch;
   }
 `
 
@@ -107,7 +108,11 @@ const ImageContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
-    height: 360px;
+    height: 272px;
+    border-radius: 0px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
   }
 
   img {
@@ -121,6 +126,10 @@ const Features = styled.div`
   align-items: flex-start;
   padding: 0px 0px 24px 16px;
   gap: 20px;
+
+  @media (max-width: 768px) {
+    padding: 0px 0px 0px 8px;
+  }
 `
 
 const Feature = styled.div`

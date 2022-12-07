@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 
-import { colors } from '../../../../styles/colors'
+import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { Button } from '../../../components/Button'
 
@@ -76,15 +76,15 @@ const IconContainer = styled.span`
   border-radius: 10px;
   box-sizing: border-box;
   padding: 12px;
-  background-color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.gray[600]}
+  background-color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.gray[600]};
 `
 
 const Tag = styled.span`
-  background-color: ${props => props.theme.isLightMode ? colors.pink[50] : colors.gray[600]};
   height: fit-content;
   padding: 2px 10px;
   border-radius: 16px;
-  color: ${props => props.theme.isLightMode ? colors[props.color][700] : colors.pink[400]};
+  background-color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['50'] : colors.gray['600']};
+  color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['700'] : colors[props.color || primaryColorKey]['400']};
   ${typography.weights.medium}
   ${typography.styles.textSm}
 `

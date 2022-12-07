@@ -122,6 +122,10 @@ const ImageContainer = styled.div`
 
   @media (max-width: 768px) {
     height: 360px;
+    border-radius: 0px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
   }
 
   img {
