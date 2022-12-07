@@ -66,7 +66,7 @@ const Tag = styled.span`
   display: block;
 `
 const HeaderTitle = styled.h1`
-  color: ${props => props.theme.isLightMode ? colors.gray['900'] : colors.white};
+  color: ${props => props.theme.color};
   margin-bottom: 24px;
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
@@ -78,7 +78,7 @@ const HeaderTitle = styled.h1`
 `
 
 const HeaderContent = styled.p`
-  color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['25']};
+  color: ${props => props.theme.secondaryColor};
   ${typography.styles.textXl}
   ${typography.weights.regular}
 `

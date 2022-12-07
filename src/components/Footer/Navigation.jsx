@@ -76,7 +76,7 @@ const ListContainer = styled.section`
   flex: 1;
   
   @media (max-width: 768px) {
-    flex: 0 1 auto;
+    flex: 1 1 auto;
     width: calc(50% - var(--gap) / 2);
   }
 `

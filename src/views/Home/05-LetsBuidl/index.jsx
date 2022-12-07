@@ -27,7 +27,8 @@ export const LetsBuidl = () => {
           <Features />
           <ButtonContainer>
             <Button
-              href='#'
+              href='https://www.npmjs.com/package/@neptunemutual/sdk'
+              target='_blank'
               as='a'
               hierarchy='primary'
               size='2xl'

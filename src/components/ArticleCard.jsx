@@ -9,7 +9,7 @@ import { getBlurDataURL } from '../helpers/images'
 
 export const ArticleCard = ({ post }) => {
   return (
-    <Container href={`/blog/${post.slug}`} locale='en'>
+    <Container href={`/blog/${post.slug}`}>
       <ImageContainer>
         <Image
           src={`${post.image}`}

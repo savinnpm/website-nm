@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled from 'styled-components'
 
 import {
@@ -33,7 +34,7 @@ export const FeaturedPostCard = ({ post }) => {
   )
 }
 
-const Container = styled.a`
+const Container = styled(Link)`
   --max-lines: 1;
   display: flex;
   flex-direction: row;

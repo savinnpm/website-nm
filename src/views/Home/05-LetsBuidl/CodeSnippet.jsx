@@ -53,9 +53,13 @@ const Container = styled.div`
   border-radius: 12px;
   background: ${(props) => (props.theme.isLightMode ? colors[primaryColorKey]['50'] : colors.gray['900'])};
   overflow: hidden;
-
-  height: min-content;
-  min-width: 0;
+  
+  @media (max-width: 768px) {
+    border-radius: 0px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
 
   & code {
     font-family: 'Roboto Mono', monospace !important;

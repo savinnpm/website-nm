@@ -120,6 +120,7 @@ const ImageContainer = styled.div`
   position: relative;
 
   img {
+    object-position: top center;
     object-fit: cover;
   }
 `

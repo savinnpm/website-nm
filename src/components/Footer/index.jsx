@@ -53,8 +53,8 @@ const CopyrightContainer = styled.div`
   align-items: center;
 
   @media (max-width: 768px) {
-    flex-direction: column-reverse;
-    align-items: flex-start;
+    flex-direction: column;
+    align-items: center;
     gap: 24px;
   }
 `
