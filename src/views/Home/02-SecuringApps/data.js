@@ -4,5 +4,6 @@ export const data = [
   { name: 'Gnosis Safe', src: '/assets/images/securing-apps/gnosissafe.webp' },
   { name: 'Sushi Swap', src: '/assets/images/securing-apps/sushiswap.webp' },
   { name: '1 inch', src: '/assets/images/securing-apps/1inch.webp' },
-  { name: 'Maker DAO', src: '/assets/images/securing-apps/makerdao.webp' }
+  { name: 'Maker DAO', src: '/assets/images/securing-apps/makerdao.webp' },
+  { name: 'Binance', src: '/assets/images/securing-apps/binance.webp' }
 ]
