@@ -12,7 +12,7 @@ const Hero = (props) => {
     <Container>
       <InnerContainer>
         <Content>
-          <Tag>{`${props.audit.startDate} - ${props.audit.endDate}`}</Tag>
+          <Subheader>{`${props.audit.startDate} - ${props.audit.endDate}`}</Subheader>
           <HeaderTitle>{props.audit.title}</HeaderTitle>
           <HeaderContent>
             {props.audit.intro}
@@ -66,7 +66,7 @@ const Content = styled.div`
   }
 `
 
-const Tag = styled.span`
+const Subheader = styled.span`
   color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}

@@ -95,7 +95,6 @@ export const Carousel = ({ posts = [] }) => {
 const Container = styled.div`
   position: relative;
   width: 100%;
-  margin-top: 64px;
 
   .slick-track {
     display: flex !important;

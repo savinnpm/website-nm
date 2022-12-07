@@ -9,6 +9,7 @@ import { Carousel } from './Carousel'
 export const WhatsNew = ({ blogPosts }) => {
   const { t } = useTranslation('home')
   const { t: commonT } = useTranslation('common')
+
   return (
     <Container>
       <InnerContainer>
@@ -18,17 +19,21 @@ export const WhatsNew = ({ blogPosts }) => {
             <SupportingText>{t('WHATS_NEW_SUBTEXT')}</SupportingText>
           </TextContainer>
 
-          <Button
-            href='/blog'
-            as={Link}
-            hierarchy='primary'
-            size='xl'
-          >
-            {commonT('VIEW_ALL')}
-          </Button>
-        </TextAndCta>
+          <ButtonContainer>
+            <Button
+              href='/blog'
+              as={Link}
+              hierarchy='primary'
+              size='xl'
+            >
+              {commonT('VIEW_ALL')}
+            </Button>
+          </ButtonContainer>
 
-        <Carousel posts={blogPosts} />
+          <CarouselContainer>
+            <Carousel posts={blogPosts} />
+          </CarouselContainer>
+        </TextAndCta>
       </InnerContainer>
     </Container>
   )
@@ -39,7 +44,7 @@ const Container = styled.div`
   padding-bottom: 96px;
 
   @media (max-width: 768px) {
-    padding-top: 64px;
+    padding-top: 0px;
     padding-bottom: 64px;
   }
 `
@@ -52,11 +57,13 @@ const TextAndCta = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 32px;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: stretch;
+    gap: 48px;
   }
 `
 
@@ -87,5 +94,19 @@ const SupportingText = styled.p`
     margin-top: 16px;
     ${typography.styles.textLg};
     ${typography.weights.regular};
+  }
+`
+
+const ButtonContainer = styled.div`
+  @media (max-width: 768px) {
+    order: 2;
+  }
+`
+
+const CarouselContainer = styled.div`
+  width: 100%;
+
+  @media (max-width: 768px) {
+    order: 1;
   }
 `

@@ -95,6 +95,7 @@ const ImageContainer = styled.div`
   }
 
   img {
+    width: auto;
     height: 90%;
     max-height: 350px;
     display: block;

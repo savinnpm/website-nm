@@ -17,23 +17,25 @@ export const RelatedPosts = ({ blogPosts }) => {
             <Heading>Related Posts</Heading>
           </TextContainer>
 
-          <Button
-            href='/blog'
-            as={Link}
-            hierarchy='primary'
-            size='xl'
-          >
-            {t('VIEW_ALL')}
-          </Button>
-        </TextAndCta>
+          <ButtonContainer>
+            <Button
+              href='/blog'
+              as={Link}
+              hierarchy='primary'
+              size='xl'
+            >
+              {t('VIEW_ALL')}
+            </Button>
+          </ButtonContainer>
 
-        <BlogsContainer>
-          {blogPosts.slice(0, 3).map((post) => (
-            <SingleCard key={post.id}>
-              <ArticleCard post={post} />
-            </SingleCard>
-          ))}
-        </BlogsContainer>
+          <BlogsContainer>
+            {blogPosts.slice(0, 3).map((post) => (
+              <SingleCard key={post.id}>
+                <ArticleCard post={post} />
+              </SingleCard>
+            ))}
+          </BlogsContainer>
+        </TextAndCta>
 
       </InnerContainer>
     </Container>
@@ -58,11 +60,14 @@ const TextAndCta = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  flex-wrap: wrap;
   gap: 32px;
 
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
+    gap: 48px;
   }
 `
 
@@ -84,10 +89,20 @@ const Heading = styled.h2`
 
 const BlogsContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
   gap: 32px;
-  margin-top: 32px;
+  width: 100%;
+  
+  @media (max-width: 768px) {
+    gap: 48px;
+    flex-direction: column;
+    order: 1;
+  }
 `
-const SingleCard = styled.div`
-  max-width: 384px;
+
+const SingleCard = styled.div``
+
+const ButtonContainer = styled.div`
+  @media (max-width: 768px) {
+    order: 2;
+  }
 `

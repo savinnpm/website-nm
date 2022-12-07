@@ -38,6 +38,7 @@ export const ArticleCard = ({ post }) => {
 
 const Container = styled(Link)`
   display: block;
+  text-align: left;
 `
 
 const ImageContainer = styled.div`

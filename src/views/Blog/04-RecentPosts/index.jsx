@@ -202,6 +202,5 @@ const BlogsContainer = styled.div`
   gap: 32px;
   margin-top: 32px;
 `
-const SingleCard = styled.div`
-  max-width: 384px;
-`
+
+const SingleCard = styled.div``

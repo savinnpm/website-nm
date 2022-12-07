@@ -14,7 +14,7 @@ const Hero = () => {
     <Container>
       <InnerContainer>
         <Content>
-          <Tag>{t('HEADER_TAG')}</Tag>
+          <Subheader>{t('HEADER_TAG')}</Subheader>
           <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
           <HeaderContent>
             {t('HEADER_TEXT')}
@@ -58,7 +58,7 @@ const Content = styled.div`
   }
 `
 
-const Tag = styled.span`
+const Subheader = styled.span`
   color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
