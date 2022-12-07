@@ -26,14 +26,16 @@ const getDocs = async () => {
 const transformDoc = async (doc) => {
   return {
     id: doc.id,
+    heading: doc.heading,
     title: doc.title,
-    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
     slug: doc.slug,
     intro: doc.intro,
     description: {
       text: helpers.getText(doc.description),
       html: helpers.serialize(doc.description)
     },
+    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
+    reportAlt: doc.report.alt,
     startDate: doc.startDate,
     endDate: doc.endDate,
     badges: JSON.parse(doc.badges || '[]'),
@@ -45,6 +47,12 @@ const transformDoc = async (doc) => {
         description: doc.partner.logo.description,
         identifier: doc.partner.logo.identifier,
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'security-partners')
+      },
+      icon: {
+        alt: doc.partner.icon.alt,
+        description: doc.partner.icon.description,
+        identifier: doc.partner.icon.identifier,
+        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.icon.filename}`, 'security-partners')
       }
     },
     meta: {
