@@ -32,7 +32,7 @@ export const LocaleSelector = () => {
       undefined,
       { locale: e.target.getAttribute('data-value') }
     )
-
+    setSearchChange('')
     setShowLanguages(false)
   }
 
@@ -42,9 +42,11 @@ export const LocaleSelector = () => {
 
   return (
     <>
-      <Container onClick={show}>
-        <Icon size={20} variant='globe-01' />
-        <SelectedLanguage>{localeNames[router.locale] || router.locale}</SelectedLanguage>
+      <Container>
+        <InnerContainer onClick={show}>
+          <Icon size={20} variant='globe-01' />
+          <SelectedLanguage>{localeNames[router.locale] || router.locale}</SelectedLanguage>
+        </InnerContainer>
         {showLanguages && (
           <LanguageContainer>
             <Search>
@@ -53,6 +55,7 @@ export const LocaleSelector = () => {
                 type='text'
                 autoComplete='off'
                 onChange={e => { setSearchChange(e.target.value) }}
+                containerClassName='input-with-icon-container'
                 iconProps={{
                   variant: 'search-md',
                   size: 15
@@ -78,15 +81,22 @@ export const LocaleSelector = () => {
 }
 
 const Container = styled.div`
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
+`
+
+const InnerContainer = styled.div`
+  width: 260px;
+  display: flex;
+  justify-content: end;
+  align-items: center;
   gap: 8px;
-  position: relative;
   cursor: pointer;
 
   color: ${props => props.theme.secondaryColor};
-  
+
   ${typography.styles.textMd};
   ${typography.weights.semibold};
 `
@@ -109,7 +119,7 @@ const LanguageContainer = styled.div`
   width: 260px;
   top: 35px;
   right: 0;
-  border: 1px solid ${(props) => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};;
+  border: 1px solid ${(props) => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
   box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
   border-radius: 8px;
   background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[800]};
@@ -123,11 +133,16 @@ const LanguageContainer = styled.div`
 const Search = styled.div`
   padding: 12px 16px;
   border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+
+  .input-with-icon-container {
+    background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[700]};
+    color: ${(props) => props.theme.isLightMode ? colors.gray[500] : colors.gray[300]};
+  }
 `
 
 const Options = styled.ul`
   list-style-type: none;
-  max-height: 374px;
+  max-height: 310px;
   overflow: hidden;
   overflow-y: auto;
   padding: 10px;

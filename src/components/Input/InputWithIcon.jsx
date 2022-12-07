@@ -4,9 +4,9 @@ import { shadows } from '../../../styles/shadows'
 import { typography } from '../../../styles/typography'
 import { Icon } from '../Icon'
 
-const InputWithIcon = ({ placeholder, iconProps = {}, ...props }) => {
+const InputWithIcon = ({ placeholder, iconProps = {}, containerClassName = '', ...props }) => {
   return (
-    <Container>
+    <Container className={containerClassName}>
       {Object.keys(iconProps).length > 0 && <Icon {...iconProps} size='20' />}
       <StyledInput placeholder={placeholder} {...props} />
     </Container>
@@ -51,7 +51,7 @@ const StyledInput = styled.input`
   outline: none;
   flex-grow: 2;
   width: 80%;
-  
+
   ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['300']};
     opacity: 1; /* Firefox */
