@@ -6,8 +6,12 @@ import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
+import { useVideosContext } from '../../../context/VideosContext'
+const YoutubeId = 'GeqjuV1u4UI'
+
 const Hero = () => {
   const { t } = useTranslation('about')
+  const { setId } = useVideosContext()
 
   return (
     <Container>
@@ -18,8 +22,8 @@ const Hero = () => {
           <HeaderContent>
             {t('HEADER_TEXT')}
           </HeaderContent>
-          <VideoContainer>
-            <Video width='870' height='498' src='https://www.youtube.com/embed/GeqjuV1u4UI' title='Neptune Mutual: Reduce Your Exposure to Crypto Market Risks' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen />
+          <VideoContainer onClick={() => { setId(YoutubeId) }}>
+            <img alt='' src='/assets/images/hero/player.webp' />
           </VideoContainer>
         </Content>
       </InnerContainer>
@@ -78,33 +82,36 @@ const HeaderContent = styled.p`
 `
 
 const VideoContainer = styled.div`
-  text-align: center;
+  width: 887px;
+  height: 499px;
+  
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  
   top: 292px;
   left: 0;
   right: 0;
 
-  width: 887px;
-  height: 499px;
-
   border-radius: 10px;
-  display: block;
   overflow: hidden;
   box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
   backdrop-filter: blur(8px);
-`
 
-const Video = styled.iframe`
-
-  width: 887px;
-  height: 499px;
-
-  @media (max-width: 887px) {
-    width: 80%;
+  img {
+    width: 887px;
+    height: 499px;
   }
 
+  @media (max-width: 887px) {
+    top: 320px;
+    width: auto;
+    height: auto;
+    
+    img {
+      width: auto;
+      height: auto;
+    }
+  }
 `
 
 export { Hero }

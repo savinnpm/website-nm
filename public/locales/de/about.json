@@ -7,5 +7,8 @@
   "META_TWITTER_TITLE": "@todo",
   "META_TWITTER_DESCRIPTION": "@todo",
   "META_TWITTER_IMAGE": "/assets/images/meta/og/home.webp",
-  "META_TWITTER_IMAGE_ALT": "@todo"
+  "META_TWITTER_IMAGE_ALT": "@todo",
+  "HEADER_TAG": "@todo",
+  "HEADER_TITLE": "@todo",
+  "HEADER_TEXT": "@todo"
 }
