@@ -5,6 +5,7 @@ import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
 import { ContactUs } from '../../src/views/ContactUs'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { services } from '../../services'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'contact'])
@@ -12,6 +13,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
+      videos: await services.getVideos(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }

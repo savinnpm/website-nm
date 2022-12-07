@@ -14,6 +14,7 @@ export async function getStaticProps ({ locale }) {
     props: {
       ...(s),
       programs: await services.getPrograms(),
+      videos: await services.getVideos(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }
