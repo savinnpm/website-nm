@@ -6,6 +6,7 @@ import { useTranslation } from 'react-i18next'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
+import { getBlurDataURL } from '../../../helpers/images'
 
 const Hero = () => {
   const { t } = useTranslation('careers')
@@ -14,7 +15,7 @@ const Hero = () => {
     <Container>
       <InnerContainer>
         <Content>
-          <Tag>{t('HEADER_TAG')}</Tag>
+          <Subheading>{t('HEADER_TAG')}</Subheading>
           <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
           <HeaderContent>
             {t('HEADER_TEXT_1')}<br /><br />
@@ -23,7 +24,13 @@ const Hero = () => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt='' src='/assets/images/hero/careers.webp' width='544' height='606' />
+          <Image
+            alt='' src='/assets/images/hero/careers.webp'
+            fill loading='eager' priority
+            sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
+            placeholder='blur'
+            blurDataURL={getBlurDataURL(1280, 1280)}
+          />
         </ImageContainer>
 
       </InnerContainer>
@@ -37,12 +44,15 @@ const Container = styled.div`
 
 const InnerContainer = styled.div`
   display: flex;
-  ${utils.fullWidthContainer};
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 128px;
   padding-top: 96px;
   padding-bottom: 96px;
-
+  
+  ${utils.fullWidthContainer};
+  
   @media (max-width: 768px) {
+    gap: 64px;
     padding-top: 64px;
     padding-bottom: 64px;
     flex-direction: column;
@@ -51,25 +61,18 @@ const InnerContainer = styled.div`
 `
 
 const Content = styled.div`
-  width: 544px;
-  margin-right: 96px;
-
-  @media (max-width: 768px) {
-    width: auto;
-    margin-right: 0;
-  }
+  flex: 1;
 `
 
-const Tag = styled.span`
+const Subheading = styled.span`
   color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
-  margin-bottom: 12px;
   display: block;
 `
 const HeaderTitle = styled.h1`
-  color: ${props => props.theme.isLightMode ? colors.gray['900'] : colors.white};
-  margin-bottom: 20px;
+  margin-top: 12px;
+  color: ${props => props.theme.color};
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
 
@@ -80,13 +83,36 @@ const HeaderTitle = styled.h1`
 `
 
 const HeaderContent = styled.p`
-  color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['25']};
-  ${typography.styles.textXl}
-  ${typography.weights.regular}
+  margin-top: 20px;
+  color: ${(props) => props.theme.secondaryColor};
+  ${typography.styles.textXl};
+  ${typography.weights.regular};
+
+  @media (max-width: 768px) {
+    margin-top: 16px;
+    ${typography.styles.textLg};
+    ${typography.weights.regular};
+  }
 `
 
 const ImageContainer = styled.div`
-  text-align: center;
+  flex: 1;
+  max-width: 100%;
+  position: relative;
+  display: inline-block;
+
+  @media (max-width: 768px) {
+    flex: 1 0 320px;
+    height: 320px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
+
+  img {
+    object-position: top center;
+    object-fit: cover;
+  }
 `
 
 export { Hero }

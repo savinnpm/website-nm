@@ -65,6 +65,10 @@ const FilterLabel = styled(Listbox.Label)`
 
   ${typography.styles.textMd};
   ${typography.weights.medium};
+
+  @media (max-width: 768px) {
+    ${utils.srOnly};
+  }
 `
 
 const ListboxButton = styled(Listbox.Button)`
