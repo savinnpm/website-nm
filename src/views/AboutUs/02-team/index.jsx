@@ -29,11 +29,18 @@ export const Team = () => {
 }
 
 const Container = styled.div`
-  padding-top: 96px;
-  padding-bottom: 96px;
+  margin-top: 360px;
 
+  padding-top: 56px;
+  padding-bottom: 96px;
+  
   ${utils.fullWidthContainer}
   background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};
+  
+  @media screen and (max-width: 768px) {
+    margin-top: 460px;
+    padding-top: 64px;
+  }
 `
 
 const ContentContainer = styled.div`
