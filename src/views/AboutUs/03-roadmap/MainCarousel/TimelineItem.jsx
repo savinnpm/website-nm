@@ -45,10 +45,10 @@ const Dot = styled.div`
 
   background: ${props => {
     const isLightMode = props.theme.isLightMode
-    let color = isLightMode ? colors[primaryColorKey]['50'] : colors[primaryColorKey]['50']
+    let color = isLightMode ? colors[primaryColorKey]['50'] : colors.gray['50']
 
     if (props.isFuture) {
-      color = props.theme.primaryBackgroundColor
+      color = isLightMode ? props.theme.primaryBackgroundColor : colors.gray['500']
     }
 
     if (props.isCurrent) {
@@ -60,14 +60,14 @@ const Dot = styled.div`
   
   border: 1px solid ${props => {
     const isLightMode = props.theme.isLightMode
-    let color = isLightMode ? colors.gray['600'] : colors.gray['600']
+    let color = isLightMode ? colors.gray['600'] : colors.gray['500']
 
     if (props.isFuture) {
-      color = isLightMode ? colors.gray['300'] : colors.gray['300']
+      color = isLightMode ? colors.gray['300'] : colors.gray['600']
     }
 
     if (props.isCurrent) {
-      color = isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['600']
+      color = isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']
     }
 
     return color
@@ -137,18 +137,18 @@ const DotName = styled.p`
   ${typography.weights.bold};
   color: ${props => {
     const isLightMode = props.theme.isLightMode
-    let color = isLightMode ? colors.gray['500'] : colors.gray['500']
+    let color = isLightMode ? colors.gray['500'] : colors.gray['400']
 
     if (props.isFuture) {
-      color = isLightMode ? colors.gray['400'] : colors.gray['400']
+      color = isLightMode ? colors.gray['400'] : colors.gray['600']
     }
 
     if (props.isActive) {
-      color = isLightMode ? colors.gray['900'] : colors.gray['900']
+      color = isLightMode ? colors.gray['900'] : colors.white
     }
 
     if (props.isCurrent) {
-      color = isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['700']
+      color = isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']
     }
 
   return color

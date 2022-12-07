@@ -160,7 +160,7 @@ const ConnectingLine = styled.div`
   top: 50%;
   transform: translateY(-50%);
   display: block;
-  height: 1px;
+  height: 2px;
   width: 100%;
-  background: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['400']};
+  background: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['500']};
 `
