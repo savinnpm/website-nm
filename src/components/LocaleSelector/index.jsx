@@ -88,7 +88,6 @@ const Container = styled.div`
 `
 
 const InnerContainer = styled.div`
-  width: 260px;
   display: flex;
   justify-content: end;
   align-items: center;
