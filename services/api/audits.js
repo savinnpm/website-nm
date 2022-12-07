@@ -51,7 +51,6 @@ const transformDoc = async (doc) => {
       icon: {
         alt: doc.partner.icon.alt,
         description: doc.partner.icon.description,
-        identifier: doc.partner.icon.identifier,
         image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.icon.filename}`, 'security-partners')
       }
     },
