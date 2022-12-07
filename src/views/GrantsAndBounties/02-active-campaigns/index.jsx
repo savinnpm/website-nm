@@ -7,6 +7,7 @@ import { Share07 } from '../../../components/Icon/variants/General'
 import { MessageChatCircle } from '../../../components/Icon/variants/Communication'
 import { CodeCircle03 } from '../../../components/Icon/variants/Development'
 import SvgDot from '../../../components/Icon/variants/dot'
+import { utils } from '../../../../styles/utils'
 
 const getIcon = (program) => {
   let Icon
@@ -98,7 +99,9 @@ export const ActiveCampaigns = ({ programs }) => {
 }
 
 const Container = styled.div`
-  padding: 96px 80px 0 96px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  ${utils.fullWidthContainer}
 `
 
 const HeaderContainer = styled.div`
@@ -119,13 +122,12 @@ const SubHeading = styled.p`
   ${typography.styles.textXl}
   ${typography.weights.regular}
 
-  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]}
+  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
 const ProgramContainer = styled.div`
   margin-top: 64px;
-  padding-left: 256px;
-  padding-right: 256px;
+  width: 768px;
   margin-left: auto;
   margin-right: auto;
 
@@ -135,8 +137,11 @@ const ProgramContainer = styled.div`
 `
 
 const Program = styled.div`
-  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
   padding-top: 24px;
+  
+  &:not(:first-of-type) {
+    border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+  }
 `
 
 const FlexContainer = styled.div`
@@ -173,7 +178,7 @@ const ProgramCategory = styled.div`
   ${typography.styles.textMd}
   ${typography.weights.medium}
   
-  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]}
+  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
 const BadgeContainer = styled.div`
@@ -194,12 +199,12 @@ const BadgeContainer = styled.div`
     & svg {
       color: ${colors.pink[500]};
     }
-
+    
     & span {
-      color: ${colors.pink[400]};
+      color: ${props => props.theme.isLightMode ? colors.pink[700] : colors.pink[400]};
     }
   }
-
+  
   &[data-color="blue"] {
     &[data-islightmode="true"] {
       background-color: ${colors.blue[50]};
@@ -210,7 +215,7 @@ const BadgeContainer = styled.div`
     }
 
     & span {
-      color: ${colors.blue[400]};
+      color: ${props => props.theme.isLightMode ? colors.blue[700] : colors.blue[400]};
     }
   }
 `

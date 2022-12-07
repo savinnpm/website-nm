@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
 
 export const Hero = () => {
   return (
@@ -22,14 +23,14 @@ export const Hero = () => {
 }
 
 const Container = styled.div`
-  padding: 96px 80px;
-
+  padding-top: 96px;
+  padding-bottom: 96px;
+  
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][25] : colors.gray[900]};
-`
+  `
 
 const InnerContainer = styled.div`
-  padding-left: 32px;
-  padding-right: 70px;
+  ${utils.fullWidthContainer}
 
   display: flex;
   gap: 40px;
