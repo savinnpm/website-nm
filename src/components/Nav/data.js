@@ -22,15 +22,15 @@ export const data = [
           { title: 'BLOG_AND_PRESS_ROOM', href: '/blog', description: 'BLOG_AND_PRESS_ROOM_DESC', icon: 'edit-03' },
           { title: 'ECOSYSTEM', href: '#', description: 'ECOSYSTEM_DESC', icon: 'database-01' },
           { title: 'DOCUMENTATION', href: 'https://docs.neptunemutual.com', description: 'DOCUMENTATION_DESC', icon: 'file-code-01', isExternal: true },
-          { title: 'CONTACT', href: '#', description: 'CONTACT_DESC', icon: 'book-closed' }
+          { title: 'CONTACT', href: '/contact', description: 'CONTACT_DESC', icon: 'book-closed' }
         ]
       },
       {
         type: 'section',
         title: 'COMPANY',
         links: [
-          { title: 'ABOUT_US', href: '#', description: 'ABOUT_US_DESC', icon: 'flag-06' },
-          { title: 'GRANTS_AND_BOUNTIES', href: '#', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
+          { title: 'ABOUT_US', href: '/about', description: 'ABOUT_US_DESC', icon: 'flag-06' },
+          { title: 'GRANTS_AND_BOUNTIES', href: '/grants', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
           { title: 'CAREERS', href: '/careers', description: 'CAREERS_DESC', icon: 'users-01' },
           { title: 'SECURITY', href: '/security', description: 'SECURITY_DESC', icon: 'glasses-02' },
           { title: 'LEGAL', href: '#', description: 'LEGAL_DESC', icon: 'folder' }

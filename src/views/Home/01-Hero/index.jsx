@@ -22,8 +22,9 @@ export const Hero = () => {
 
         <ButtonContainer>
           <Button
-            href='#'
+            href='https://app.neptunemutual.com/'
             as='a'
+            target='_blank'
             hierarchy='primary'
             size='2xl'
             iconTrailing

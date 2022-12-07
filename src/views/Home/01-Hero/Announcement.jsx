@@ -7,6 +7,7 @@ import { Icon } from '../../../components/Icon'
 
 export const Announcement = () => {
   const { t } = useTranslation('home')
+
   return (
     // eslint-disable-next-line react/jsx-no-target-blank
     <StyledLink href='http://example.com/' target='_blank'>

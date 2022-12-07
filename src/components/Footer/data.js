@@ -12,7 +12,7 @@ export const nav = [
   {
     title: 'COMPANY',
     links: [
-      { href: '/about-us', text: 'ABOUT_US', isExternal: false },
+      { href: '/about', text: 'ABOUT_US', isExternal: false },
       { href: '/programs', text: 'PROGRAMS', isExternal: false },
       { href: '/careers', text: 'CAREERS', isExternal: false },
       { href: '/security', text: 'SECURITY', isExternal: false },
