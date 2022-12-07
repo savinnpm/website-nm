@@ -1,8 +1,8 @@
-import { colors, primaryColorKey } from '../styles/colors'
-import { helpers } from './helpers'
-import { storeLocally } from './io/download'
-import { request } from './request'
-import { mockData } from './_mock_'
+import { colors, primaryColorKey } from '../../styles/colors'
+import { helpers } from '../helpers'
+import { storeLocally } from '../io/download'
+import { request } from '../http/request'
+import { mockData } from '../_mock_'
 
 let docs = null
 
@@ -20,7 +20,7 @@ const getDocs = async () => {
     return docs
   }
 
-  docs = mockData.articleList.docs
+  docs = mockData.articles.docs
   return docs
 }
 
@@ -102,8 +102,8 @@ export const getSinglePost = async (slug) => {
         title: match.meta.title,
         description: match.meta.description,
         image: {
-          src: await storeLocally(`${process.env.FILE_URL_PREFIX}${match.meta.image.filename}`, 'blog-og-images'),
-          alt: match.meta.image.alt
+          src: await helpers.storeOgImage(match?.meta?.image?.filename, 'blog-og-images'),
+          alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       },
       content: {

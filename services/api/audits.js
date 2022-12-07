@@ -1,7 +1,7 @@
-import { helpers } from './helpers'
-import { storeLocally } from './io/download'
-import { request } from './request'
-import { mockData } from './_mock_'
+import { helpers } from '../helpers'
+import { storeLocally } from '../io/download'
+import { request } from '../http/request'
+import { mockData } from '../_mock_'
 
 let docs = null
 
@@ -19,7 +19,7 @@ const getDocs = async () => {
     return docs
   }
 
-  docs = mockData.auditList.docs
+  docs = mockData.audits.docs
   return docs
 }
 
@@ -51,8 +51,8 @@ const transformDoc = async (doc) => {
       title: doc.meta.title,
       description: doc.meta.description,
       image: {
-        src: doc.meta.image?.filename ? await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.meta.image.filename}`, 'audits-og-images') : '/assets/images/meta/og/home.webp',
-        alt: doc.meta.image?.alt || ''
+        src: await helpers.storeOgImage(doc?.meta?.image?.filename, 'audits-og-images'),
+        alt: helpers.getOgImageAlt(doc?.meta?.image?.alt)
       }
     }
   }

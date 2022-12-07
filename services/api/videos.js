@@ -1,7 +1,7 @@
-import { helpers } from './helpers'
-import { storeLocally } from './io/download'
-import { request } from './request'
-import { mockData } from './_mock_'
+import { helpers } from '../helpers'
+import { storeLocally } from '../io/download'
+import { request } from '../http/request'
+import { mockData } from '../_mock_'
 
 const getVideoDurationText = (timestamp) => {
   // 2
@@ -37,7 +37,7 @@ const getDocs = async () => {
     return docs
   }
 
-  docs = mockData.videoList.docs
+  docs = mockData.videos.docs
   return docs
 }
 

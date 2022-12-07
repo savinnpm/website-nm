@@ -1,5 +1,6 @@
 import { load as cheerioLoad } from 'cheerio'
-import { storeLocally } from './io/download'
+import { storeLocally } from '../io/download'
+import { storeOgImage, getOgImageAlt } from './meta'
 import { serialize } from './serialize'
 
 const getSlug = (title) => {
@@ -60,5 +61,7 @@ export const helpers = {
   getSlug,
   serialize,
   parseLegacyHtml,
-  getText
+  getText,
+  getOgImageAlt,
+  storeOgImage
 }

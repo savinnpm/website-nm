@@ -1,7 +1,6 @@
-import { helpers } from './helpers'
-import { storeLocally } from './io/download'
-import { request } from './request'
-import { mockData } from './_mock_'
+import { helpers } from '../helpers'
+import { request } from '../http/request'
+import { mockData } from '../_mock_'
 
 let docs = null
 
@@ -73,8 +72,8 @@ export const getSingleVacancy = async (slug) => {
         title: match.meta.title,
         description: match.meta.description,
         image: {
-          src: match.meta.image?.filename ? await storeLocally(`${process.env.FILE_URL_PREFIX}${match.meta.image.filename}`, 'vacancies-og-images') : '/assets/images/meta/og/home.webp',
-          alt: match.meta.image?.alt || ''
+          src: await helpers.storeOgImage(match?.meta?.image?.filename, 'vacancies-og-images'),
+          alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       }
     }

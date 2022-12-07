@@ -1,7 +1,7 @@
 // https://payloadcms.com/docs/fields/rich-text#generating-html
 import escapeHTML from 'escape-html'
 import { Text } from 'slate'
-import { helpers } from './helpers'
+import { helpers } from '.'
 
 export const serialize = (children) => children.map((node, _i) => {
   if (!node) {
