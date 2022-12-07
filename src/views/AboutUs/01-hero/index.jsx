@@ -87,7 +87,7 @@ const HeaderContent = styled.p`
 
 const Overlay = styled.div`
   position: absolute;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.1);
   top: 0;
   left: 0;
   width: 100%;
@@ -104,11 +104,12 @@ const Overlay = styled.div`
   }
 
   &:hover {
+    background: rgba(0, 0, 0, 0.3);
     fill-opacity: 0.5;
   }
 `
 
-const VideoContainer = styled.div`
+const VideoContainer = styled.button`
   width: 887px;
   height: 499px;
   

@@ -5,7 +5,6 @@ import Slider from 'react-slick'
 import { ContentSlider } from '../ContentSlider'
 import styled from 'styled-components'
 import { TimelineItem } from './TimelineItem'
-import { colors } from '../../../../../styles/colors'
 
 const currentIndex = data.findIndex((x) => x.current)
 
@@ -78,9 +77,8 @@ export const MainCarousel = () => {
     <Container>
       <CarouselContainer>
         <TimelineInnerContainer>
-          <ConnectingLine />
           <Slider {...settings} ref={sliderRef}>
-            {data.map((point, idx) => {
+            {data.map((point, idx, points) => {
               const isCurrent = point.current === true
               const isActive = selected === idx
 
@@ -100,6 +98,8 @@ export const MainCarousel = () => {
                     isFuture={isFuture}
                     isCurrent={isCurrent}
                     point={point}
+                    index={idx}
+                    totalCount={points.length}
                   />
                 </div>
               )
@@ -153,14 +153,4 @@ const TimelineInnerContainer = styled.div`
   margin-bottom: 3rem;
   position: relative;
   width: 100%;
-`
-
-const ConnectingLine = styled.div`
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  display: block;
-  height: 2px;
-  width: 100%;
-  background: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['500']};
 `
