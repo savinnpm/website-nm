@@ -7,15 +7,20 @@ import { Audit } from '../../src/views/SecurityAuditDetail'
 import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
 
-export async function getStaticPaths () {
+export async function getStaticPaths ({ locales }) {
   const slugs = await services.getAuditSlugs()
 
-  const paths = slugs.map(slug => {
-    return {
-      params: {
-        slug
-      }
-    }
+  const paths = []
+
+  locales.forEach(locale => {
+    slugs.forEach(slug => {
+      paths.push({
+        locale,
+        params: {
+          slug
+        }
+      })
+    })
   })
 
   return {

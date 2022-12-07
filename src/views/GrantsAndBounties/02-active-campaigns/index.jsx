@@ -52,7 +52,6 @@ const getBadgeIcon = (badge) => {
 }
 
 export const ActiveCampaigns = ({ programs }) => {
-  console.log({ p: programs[0] })
   const { isLightMode } = useTheme()
 
   if (!programs?.length) return <></>

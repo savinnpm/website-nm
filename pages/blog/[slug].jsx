@@ -7,15 +7,20 @@ import { BlogPost } from '../../src/views/BlogPostDetail'
 import { getFQDN } from '../../src/helpers'
 import { useRouter } from 'next/router'
 
-export async function getStaticPaths () {
+export async function getStaticPaths ({ locales }) {
   const slugs = await services.getPostsSlugs()
 
-  const paths = slugs.map(slug => {
-    return {
-      params: {
-        slug
-      }
-    }
+  const paths = []
+
+  locales.forEach(locale => {
+    slugs.forEach(slug => {
+      paths.push({
+        locale,
+        params: {
+          slug
+        }
+      })
+    })
   })
 
   return {

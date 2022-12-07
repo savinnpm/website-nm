@@ -10,7 +10,11 @@ export const LocaleSelector = () => {
   const router = useRouter()
 
   const handleChange = (e) => {
-    router.push(router.pathname, undefined, { locale: e.target.value })
+    router.push(
+      { pathname: router.pathname, query: router.query },
+      undefined,
+      { locale: e.target.value }
+    )
   }
 
   return (
