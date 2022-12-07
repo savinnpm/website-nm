@@ -52,6 +52,7 @@ const getBadgeIcon = (badge) => {
 }
 
 export const ActiveCampaigns = ({ programs }) => {
+  console.log({ p: programs[0] })
   const { isLightMode } = useTheme()
 
   if (!programs?.length) return <></>
@@ -73,7 +74,7 @@ export const ActiveCampaigns = ({ programs }) => {
             const BadgeIcon = getBadgeIcon(badge)
 
             return (
-              <Program key={i}>
+              <Program key={i} href={`/grants/${p.slug}`}>
                 <FlexContainer>
                   <ProgramTitle>{p.title}</ProgramTitle>
                   <BadgeContainer data-color={badge.color} data-islightmode={isLightMode}>
@@ -136,7 +137,8 @@ const ProgramContainer = styled.div`
   }
 `
 
-const Program = styled.div`
+const Program = styled.a`
+  display: block;
   padding-top: 24px;
   
   &:not(:first-of-type) {
