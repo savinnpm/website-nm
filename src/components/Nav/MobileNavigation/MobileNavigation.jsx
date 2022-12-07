@@ -15,8 +15,6 @@ export const MobileNavigation = ({ isMenuOpen }) => {
 
   useEffect(() => {
     if (isMenuOpen) {
-      // Scroll to top
-      window.scrollTo(0, 0)
       // Hide overflow
       document.body.style.overflow = 'hidden'
     } else {

@@ -102,7 +102,7 @@ export const getSinglePost = async (slug) => {
         title: match.meta.title,
         description: match.meta.description,
         image: {
-          src: await helpers.storeOgImage(match?.meta?.image?.filename, 'blog-og-images'),
+          src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename, 'blog-og-images'),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       },
