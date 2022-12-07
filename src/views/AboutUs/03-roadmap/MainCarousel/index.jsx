@@ -1,10 +1,11 @@
-import { data } from './data'
+import { data } from '../data'
 import { useEffect, useRef, useState } from 'react'
 import Slider from 'react-slick'
 
-import { ContentSlider } from './ContentSlider'
+import { ContentSlider } from '../ContentSlider'
 import styled from 'styled-components'
-import { typography } from '../../../../styles/typography'
+import { TimelineItem } from './TimelineItem'
+import { colors } from '../../../../../styles/colors'
 
 const currentIndex = data.findIndex((x) => x.current)
 
@@ -59,17 +60,15 @@ export const MainCarousel = () => {
   }
 
   const handleContentSlideUpdate = (_idx) => {
-    console.log('updated', _idx)
-
-    const toIdx = _idx > 0 ? _idx - 1 : _idx
-
     if (getVW() < 768) {
+      const toIdx = _idx > 0 ? _idx - 1 : _idx
       sliderRef.current.slickGoTo(toIdx)
       setSelected(_idx)
       return
     }
 
-    // sliderRef.current.slickGoTo(_idx)
+    const toIdx = _idx > 2 ? _idx - 3 : _idx
+    sliderRef.current.slickGoTo(toIdx)
     setSelected(_idx)
   }
 
@@ -77,11 +76,9 @@ export const MainCarousel = () => {
 
   return (
     <Container>
-
       <CarouselContainer>
-
         <TimelineInnerContainer>
-          <StyledLine />
+          <ConnectingLine />
           <Slider {...settings} ref={sliderRef}>
             {data.map((point, idx) => {
               const isCurrent = point.current === true
@@ -101,10 +98,9 @@ export const MainCarousel = () => {
                     onClick={onSelect}
                     isActive={isActive}
                     isFuture={isFuture}
-                  >
-                    <Dot isActive={isActive} />
-                    <DotName isActive={isActive}>{point.name}</DotName>
-                  </TimelineItem>
+                    isCurrent={isCurrent}
+                    point={point}
+                  />
                 </div>
               )
             })}
@@ -134,68 +130,37 @@ const CarouselContainer = styled.div`
   justify-content: center;
   margin: 0 0;
   
+  .slick-list {
+    overflow: visible;
+  }
+  
+  .slick-slide > div, .slick-slide > div > div {
+    display: flex !important;
+    height: 100% !important;
+  }
+/* 
   @media (max-width: 375px) {
     margin: 0 -1rem;
   }
 
   @media (max-width: 1365px) {
-    margin: 0 -1.5rem; /* depends on section_horizontal_container */
-  }
+    margin: 0 -1.5rem;
+  } */
 `
 
 const TimelineInnerContainer = styled.div`
-  margin: 0 0px;
+  padding: 1rem 0;
+  margin-bottom: 3rem;
   position: relative;
-  width: calc(100% - 100px - 0px); /* Arrows - 2*50, Margin - 2*0 */
-  
-  @media (max-width: 1365px) {
-    width: calc(100% - 0px - 0px); /* Arrows - 2*50, Margin - 2*0 */
-  }
+  width: 100%;
 `
 
-const StyledLine = styled.div`
+const ConnectingLine = styled.div`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   display: block;
   height: 1px;
   width: 100%;
-  background: rgba(255, 255, 255, 0.5);
-
-  @media (max-width: 1365px) {
-    background: linear-gradient(
-      90deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(255, 255, 255, 0.5) 15%,
-      rgba(255, 255, 255, 0.5) 85%,
-      rgba(255, 255, 255, 0) 100%
-    );
-  }
-`
-
-const TimelineItem = styled.button`
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  color: ${props => props.isFuture ? '#f00' : '#855ED7'};
-
-`
-
-const Dot = styled.div`
-  display: block;
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: ${props => props.isActive ? 'blue' : 'green'};
-
-  ${TimelineItem}:hover &{
-    border: 1px solid red;
-  }
-`
-
-const DotName = styled.p`
-  ${typography.styles.textSm};
-  ${typography.weights.bold};
+  background: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['400']};
 `
