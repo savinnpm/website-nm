@@ -29,7 +29,7 @@ const Label = styled.label`
 const StyledInput = styled.input`
   display: flex;
   width: 100%;
-  background-color: ${props => props.theme.primaryBackgroundColor};
+  background-color: ${props => props.theme.isLightMode ? props.theme.primaryBackgroundColor : colors.gray[600]};
   border: 1px solid ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['500']};
   box-shadow: ${shadows.xs};
   border-radius: 8px;  

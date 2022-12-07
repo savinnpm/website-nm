@@ -42,7 +42,7 @@ const InnerContainer = styled.div`
 
 const Box = styled.div`
   border-radius: 16px;
-  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
+  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['700']};
 
   padding-top: 64px;
   padding-bottom: 64px;
