@@ -14,6 +14,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
+      ecosystems: await services.getEcosystems(),
       videos: await services.getVideos(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
@@ -21,7 +22,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function EcosystemPage () {
+export default function EcosystemPage (props) {
   const { t } = useTranslation('ecosystem')
   const router = useRouter()
 
@@ -48,7 +49,7 @@ export default function EcosystemPage () {
       </Head>
 
       <main>
-        <Ecosystem />
+        <Ecosystem ecosystems={props.ecosystems} />
       </main>
     </>
   )

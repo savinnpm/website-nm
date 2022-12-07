@@ -47,11 +47,11 @@ export const Hero = () => {
 
 const Container = styled.div`
   padding-top: 96px;
-  padding-bottom: 96px;
+  padding-bottom: 32px;
 
   @media (max-width: 768px) {
     padding-top: 64px;
-    padding-bottom: 64px;
+    padding-bottom: 24px;
   }
 `
 

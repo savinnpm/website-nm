@@ -8,6 +8,8 @@ import { utils } from '../../../../styles/utils'
 import PlayIcon from '../../../components/Icon/custom/PlayIcon'
 
 import { useVideosContext } from '../../../context/VideosContext'
+import { shadows } from '../../../../styles/shadows'
+import { blurs } from '../../../../styles/blurs'
 const YoutubeId = 'GeqjuV1u4UI'
 
 const Hero = () => {
@@ -122,8 +124,8 @@ const VideoContainer = styled.button`
 
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0px 20px 24px -4px rgba(16, 24, 40, 0.08), 0px 8px 8px -4px rgba(16, 24, 40, 0.03);
-  backdrop-filter: blur(8px);
+  box-shadow: ${shadows.xl};
+  backdrop-filter: ${blurs.md};
 
   img {
     width: 887px;
