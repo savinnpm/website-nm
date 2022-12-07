@@ -1,12 +1,11 @@
-import Head from 'next/head'
-
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-
-import { Home } from '../src/views/Home'
-import { services } from '../services'
-import { useTranslation } from 'react-i18next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
+
+import { services } from '../services'
 import { getFQDN } from '../src/helpers'
+import { Home } from '../src/views/Home'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'home'])
