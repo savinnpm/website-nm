@@ -5,6 +5,7 @@ import { useTranslation } from 'react-i18next'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
+import PlayIcon from '../../../components/Icon/custom/PlayIcon'
 
 import { useVideosContext } from '../../../context/VideosContext'
 const YoutubeId = 'GeqjuV1u4UI'
@@ -23,7 +24,10 @@ const Hero = () => {
             {t('HEADER_TEXT')}
           </HeaderContent>
           <VideoContainer onClick={() => { setId(YoutubeId) }}>
-            <img alt='' src='/assets/images/hero/player.webp' />
+            <img alt='' src='/assets/images/hero/reduce-exposure.webp' />
+            <Overlay>
+              <PlayIcon />
+            </Overlay>
           </VideoContainer>
         </Content>
       </InnerContainer>
@@ -79,6 +83,29 @@ const HeaderContent = styled.p`
   color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['25']};
   ${typography.styles.textXl}
   ${typography.weights.regular}
+`
+
+const Overlay = styled.div`
+  position: absolute;
+  background: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: ${colors.white};
+  fill-opacity: 0.3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 72px;
+    height: 72px;
+  }
+
+  &:hover {
+    fill-opacity: 0.5;
+  }
 `
 
 const VideoContainer = styled.div`
