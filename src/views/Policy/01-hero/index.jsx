@@ -5,36 +5,7 @@ import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
-const tabs = [
-  {
-    name: 'Terms',
-    href: '#',
-    active: true
-  },
-  {
-    name: 'Privacy',
-    href: '#'
-  },
-  {
-    name: 'Acceptable Use',
-    href: '#'
-  },
-  {
-    name: 'Marketplace',
-    href: '#'
-  },
-  {
-    name: 'DPA',
-    href: '#'
-  },
-  {
-    name: 'Sub-processors',
-    href: '#'
-  }
-
-]
-
-const Hero = () => {
+const Hero = ({ pages }) => {
   return (
     <Container>
       <InnerContainer>
@@ -47,9 +18,9 @@ const Hero = () => {
 
         <HorizontalTabs>
           {
-            tabs.map(({ name, href, active }, i) => (
-              <Tab key={i} href={href} isactive={active ? 'true' : 'false'}>
-                {name}
+            pages.map((page, i) => (
+              <Tab key={i} href={`/policy/${page.slug}`} isactive={i === 0 ? 'true' : 'false'}>
+                {page.title}
               </Tab>
             ))
           }

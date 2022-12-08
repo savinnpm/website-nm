@@ -15,13 +15,14 @@ export async function getStaticProps ({ locale }) {
     props: {
       ...(s),
       videos: await services.getVideos(),
+      pages: await services.getPages(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
 }
 
-export default function HomePage () {
+export default function HomePage (props) {
   const { t } = useTranslation('policy')
   const router = useRouter()
 
@@ -48,7 +49,10 @@ export default function HomePage () {
       </Head>
 
       <main>
-        <Policy />
+        <Policy pages={props.pages} />
+        <pre>
+          {JSON.stringify(props.pages[0], null, 2)}
+        </pre>
       </main>
     </>
   )

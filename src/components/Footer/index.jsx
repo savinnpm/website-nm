@@ -6,12 +6,12 @@ import { Navigation } from './Navigation'
 import { SocialLinks } from './SocialLinks'
 import { typography } from '../../../styles/typography'
 
-export const Footer = () => {
+export const Footer = ({ pages }) => {
   return (
     <StyledFooter>
       <InnerContainer>
 
-        <Navigation />
+        <Navigation pages={pages || []} />
 
         <RiskWarning />
 

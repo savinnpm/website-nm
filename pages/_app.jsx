@@ -39,7 +39,7 @@ function MyApp ({ Component, pageProps }) {
           <MobileNavContainer isMenuOpen={isMenuOpen} />
           <Component {...pageProps} />
         </MainContainer>
-        <Footer />
+        <Footer pages={pageProps.pages} />
       </VideosProvider>
     </ThemeProvider>
   )

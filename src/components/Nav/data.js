@@ -33,7 +33,7 @@ export const data = [
           { title: 'GRANTS_AND_BOUNTIES', href: '/grants', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
           { title: 'CAREERS', href: '/careers', description: 'CAREERS_DESC', icon: 'users-01' },
           { title: 'SECURITY', href: '/security', description: 'SECURITY_DESC', icon: 'glasses-02' },
-          { title: 'LEGAL', href: '#', description: 'LEGAL_DESC', icon: 'folder' }
+          { title: 'LEGAL', href: '/policy', description: 'LEGAL_DESC', icon: 'folder' }
         ]
       },
       {

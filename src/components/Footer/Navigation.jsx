@@ -8,7 +8,7 @@ import { nav } from './data'
 import { useTranslation } from 'react-i18next'
 import { utils } from '../../../styles/utils'
 
-export const Navigation = () => {
+export const Navigation = ({ pages }) => {
   const theme = useTheme()
   const { t } = useTranslation('common')
 
@@ -21,6 +21,12 @@ export const Navigation = () => {
 
       <Nav>
         {nav.map((list, idx) => {
+          if (list.links === 'pages') {
+            list.links = pages.map(page => {
+              return { href: `/policy/${page.slug}`, text: page.title, isExternal: false }
+            })
+          }
+
           return (
             <ListContainer key={idx}>
               <H3>{t(list.title)}</H3>

@@ -1,9 +1,9 @@
 import { Hero } from './01-hero'
 
-export const Policy = () => {
+export const Policy = ({ pages }) => {
   return (
     <>
-      <Hero />
+      <Hero pages={pages} />
     </>
   )
 }
