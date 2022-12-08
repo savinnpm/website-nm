@@ -49,7 +49,7 @@ export const LocaleSelector = () => {
           <LanguageContainer>
             <Search>
               <InputWithIcon
-                placeholder='Seach Language'
+                placeholder='Search Language'
                 type='text'
                 autoComplete='off'
                 onChange={filter}
