@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 const InputWithIcon = ({ placeholder, iconProps = {}, containerClassName = '', ...props }) => {
   return (
     <Container className={containerClassName}>
-      {Object.keys(iconProps).length > 0 && <Icon {...iconProps} size='20' />}
+      {Object.keys(iconProps).length > 0 && <Icon {...iconProps} />}
       <StyledInput placeholder={placeholder} {...props} />
     </Container>
   )
@@ -21,6 +21,7 @@ const Container = styled.div`
   border-radius: 8px;  
   gap: 8px;
   padding: 10px;
+  align-items: center;
 
   ${typography.weights.medium}
   ${typography.styles.textSm}

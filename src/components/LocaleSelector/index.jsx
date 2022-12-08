@@ -3,7 +3,6 @@ import { useState } from 'react'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
-import { useDebouncedEffect } from '../../hooks/useDebounce'
 import { Icon } from '../Icon'
 import { InputWithIcon } from '../Input/InputWithIcon'
 import { localeNames } from './config'
@@ -13,18 +12,17 @@ const options = ['en', 'zh', 'fr', 'de', 'id', 'it', 'ja', 'ko', process.env.NOD
 export const LocaleSelector = () => {
   const router = useRouter()
   const [showLanguages, setShowLanguages] = useState(false)
-  const [searchChange, setSearchChange] = useState('')
-  const [langList, setLangList] = useState([])
+  const [langList, setLangList] = useState(options)
 
-  useDebouncedEffect(() => {
+  const filter = (e) => {
     const activeLanguage = options.filter((key) => {
-      if (searchChange) {
-        return (localeNames[key] || key).toLowerCase().indexOf(searchChange.toLowerCase().trim()) >= 0
+      if (e.target.value) {
+        return (localeNames[key] || key).toLowerCase().indexOf(e.target.value.toLowerCase().trim()) >= 0
       }
       return true
     })
     setLangList(activeLanguage)
-  }, 300, [searchChange])
+  }
 
   const optionClickHandle = (e) => {
     router.push(
@@ -32,7 +30,7 @@ export const LocaleSelector = () => {
       undefined,
       { locale: e.target.getAttribute('data-value') }
     )
-    setSearchChange('')
+    setLangList(options)
     setShowLanguages(false)
   }
 
@@ -51,14 +49,14 @@ export const LocaleSelector = () => {
           <LanguageContainer>
             <Search>
               <InputWithIcon
-                placeholder='Seach'
+                placeholder='Seach Language'
                 type='text'
                 autoComplete='off'
-                onChange={e => { setSearchChange(e.target.value) }}
+                onChange={filter}
                 containerClassName='input-with-icon-container'
                 iconProps={{
                   variant: 'search-md',
-                  size: 15
+                  size: 16
                 }}
               />
             </Search>
