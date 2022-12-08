@@ -48,8 +48,8 @@ const transformDoc = async (doc) => {
     image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'video-thumbnails'),
     videoId: doc.videoId,
     description: {
-      html: helpers.serialize(doc.description),
-      text: helpers.getText(doc.description)
+      // html: helpers.serialize(doc.description),
+      text: helpers.getText(doc.description).substring(0, 56)
     },
     length: doc.length,
     duration: getVideoDurationText(doc.length),

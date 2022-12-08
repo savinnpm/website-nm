@@ -22,7 +22,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function HomePage (props) {
+export default function PolicyPage (props) {
   const { t } = useTranslation('policy')
   const router = useRouter()
 

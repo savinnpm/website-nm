@@ -17,7 +17,7 @@ export const Video = ({ video }) => {
       </Thumbnail>
       <Content>
         <Title>{video.title}</Title>
-        <SupportingText>{video.description.text.substr(0, 56)}</SupportingText>
+        <SupportingText>{video.description.text}</SupportingText>
       </Content>
     </Container>
   )

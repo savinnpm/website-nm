@@ -44,7 +44,7 @@ export async function getStaticProps ({ locale, params }) {
   }
 }
 
-export default function SinglePagePage (props) {
+export default function SinglePolicyPage (props) {
   const router = useRouter()
 
   return (

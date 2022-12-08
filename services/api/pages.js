@@ -49,7 +49,13 @@ export const getPages = async () => {
 
     const result = await Promise.allSettled(docs.map(async (doc) => await transformDoc(doc)))
 
-    return result.map(x => x.value)
+    return result.map(x => x.value).map(x => {
+      return {
+        slug: x.slug,
+        title: x.title,
+        id: x.id
+      }
+    })
   } catch (error) {
     console.error(error)
   }
