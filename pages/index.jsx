@@ -14,7 +14,8 @@ export async function getStaticProps ({ locale }) {
     props: {
       ...(s),
       blogPosts: await services.getLatestBlogPosts(),
-      videos: await services.getVideos()
+      videos: await services.getVideos(),
+      pages: await services.getPages()
       // Will be passed to the page component as props
     }
   }
