@@ -9,7 +9,7 @@ import { getFQDN } from '../../src/helpers'
 import { Policy } from '../../src/views/Policy'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'about'])
+  const s = await serverSideTranslations(locale, ['common', 'policy'])
 
   return {
     props: {
@@ -22,7 +22,7 @@ export async function getStaticProps ({ locale }) {
 }
 
 export default function HomePage () {
-  const { t } = useTranslation('about')
+  const { t } = useTranslation('policy')
   const router = useRouter()
 
   return (
