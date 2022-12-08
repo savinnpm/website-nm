@@ -27,11 +27,9 @@ export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, 
 
 const Container = styled.div`
   padding-top: 64px;
-  padding-bottom: 96px;
 
   @media (max-width: 768px) {
     padding-top: 64px;
-    padding-bottom: 64px;
   }
 `
 

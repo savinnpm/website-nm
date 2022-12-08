@@ -157,6 +157,7 @@ const Container = styled.div`
   
   @media (max-width: 768px) {
     padding-bottom: 64px;
+    margin-bottom: 64px;
   }
   `
 
@@ -201,6 +202,12 @@ const BlogsContainer = styled.div`
   flex-wrap: wrap;
   gap: 32px;
   margin-top: 32px;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
-const SingleCard = styled.div``
+const SingleCard = styled.div`
+  flex: 1 1 30%;
+`
