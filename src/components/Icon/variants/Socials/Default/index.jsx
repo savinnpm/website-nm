@@ -18,3 +18,4 @@ export { default as TikTok } from "./TikTok";
 export { default as Tumblr } from "./Tumblr";
 export { default as Twitter } from "./Twitter";
 export { default as YouTube } from "./YouTube";
+export { default as Medium } from "./Medium";
