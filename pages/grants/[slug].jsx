@@ -5,6 +5,7 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { services } from '../../services'
 import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
+import { ProgramDetail } from '../../src/views/ProgramDetail'
 
 export async function getStaticPaths ({ locales }) {
   const slugs = await services.getProgramSlugs()
@@ -29,7 +30,7 @@ export async function getStaticPaths ({ locales }) {
 }
 
 export async function getStaticProps ({ locale, params }) {
-  const s = await serverSideTranslations(locale, ['common', 'security'])
+  const s = await serverSideTranslations(locale, ['common', 'grants'])
 
   return {
     props: {
@@ -68,8 +69,7 @@ export default function SingleProgramPage (props) {
       </Head>
 
       <main>
-        {/* Temporary code */}
-        <pre>{JSON.stringify(props.program, null, 2)}</pre>
+        <ProgramDetail programData={props.program} />
       </main>
     </>
   )
