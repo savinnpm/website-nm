@@ -80,6 +80,7 @@ const Container = styled.div`
   position: relative;
   padding-top: 32px;
   padding-bottom: 16px;
+  width: 100%;
 
   .slick-slider {
     padding-bottom: 48px;

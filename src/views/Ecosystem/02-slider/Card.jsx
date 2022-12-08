@@ -2,11 +2,13 @@ import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { shadows } from '../../../../styles/shadows'
 import { typography } from '../../../../styles/typography'
+import { Badge } from '../../../components/Badge'
+import { data } from './data'
 
 export const Card = ({ ecosystem }) => {
   return (
     <Container>
-      <Type>{ecosystem.type}</Type>
+      <Badge icon={data.icons[ecosystem.type]} color={data.colors[ecosystem.type]}>{data.labels[ecosystem.type]}</Badge>
       <Content>{ecosystem.content}</Content>
     </Container>
   )
@@ -19,9 +21,6 @@ const Container = styled.div`
   background: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
   border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
   box-shadow: ${shadows.xl};
-`
-
-const Type = styled.div`
 `
 
 const Content = styled.p`

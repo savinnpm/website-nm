@@ -46,6 +46,7 @@ export const Hero = () => {
 }
 
 const Container = styled.div`
+  position: relative;
   padding-top: 96px;
   padding-bottom: 32px;
 

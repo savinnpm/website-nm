@@ -51,7 +51,7 @@ import { FaceSmile, Users01 } from "./variants/Users";
 import MoonStarFilled from "./variants/moon-star-filled";
 import SunFilled from "./variants/sun-filled";
 import Dot from "./variants/dot"
-import { Folder } from "./variants/Files";
+import { Folder, FolderPlus } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
 import { ShieldTick } from "./variants/Security";
 
@@ -266,6 +266,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "download-01") {
     IconComponent = Download01;
+  }
+
+  if(variant === 'folder-plus') {
+    IconComponent = FolderPlus
   }
 
   if (variant === "dot") {

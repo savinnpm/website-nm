@@ -53,7 +53,7 @@ export default function BlogPostPage (props) {
         <meta name='description' content={props.post.meta.description} />
         <link rel='icon' href='/favicon.ico' />
 
-        <meta property='og:type' content='website' />
+        <meta property='og:type' content='article' />
         <meta property='og:title' content={props.post.meta.title} />
         <meta property='og:description' content={props.post.meta.description} />
         <meta property='og:image' content={getFQDN(props.post.meta.image.src)} />

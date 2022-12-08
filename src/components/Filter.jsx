@@ -1,22 +1,22 @@
 import { Listbox } from '@headlessui/react'
 import React from 'react'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { shadows } from '../../../../styles/shadows'
-import { typography } from '../../../../styles/typography'
-import { utils } from '../../../../styles/utils'
-import { Icon } from '../../../components/Icon'
+import { colors, primaryColorKey } from '../../styles/colors'
+import { shadows } from '../../styles/shadows'
+import { typography } from '../../styles/typography'
+import { utils } from '../../styles/utils'
+import { Icon } from './Icon'
 
-export const Filter = ({ options, selectedOption, setSelectedOption }) => {
+export const Filter = ({ options, selectedOption, setSelectedOption, label, iconVariant, defaultOption, getOptionText = (x) => x }) => {
   return (
     <Container>
       <Listbox value={selectedOption} onChange={setSelectedOption}>
-        <FilterLabel>Filter by Department</FilterLabel>
+        <FilterLabel>{label}</FilterLabel>
         <ButtonContainer>
           <ListboxButton>
             <Left>
-              <Icon variant='users-01' size={20} />
-              <span>{selectedOption || 'Any Department'}</span>
+              {iconVariant && <Icon variant={iconVariant} size={20} />}
+              <span>{getOptionText(selectedOption) || defaultOption}</span>
             </Left>
             <Right>
               <Icon variant='chevron-down' size={20} />
@@ -28,8 +28,8 @@ export const Filter = ({ options, selectedOption, setSelectedOption }) => {
                 {({ active, selected }) => (
                   <OptionContent data-active={active.toString()}>
                     <Left>
-                      <Icon variant='users-01' size={20} />
-                      <span>{option || 'Any Department'}</span>
+                      {iconVariant && <Icon variant={iconVariant} size={20} />}
+                      <span>{getOptionText(option) || defaultOption}</span>
                     </Left>
                     {selected && (
                       <Right>

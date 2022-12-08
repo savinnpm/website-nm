@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import styled from 'styled-components'
-import { Filter } from './Filter'
+import { Filter } from '../../../components/Filter'
 import { VacancyCard } from './VacancyCard'
 
 export const VacanciesList = ({ vacancies, departments }) => {
@@ -10,7 +10,14 @@ export const VacanciesList = ({ vacancies, departments }) => {
 
   return (
     <Container>
-      <Filter options={departments} selectedOption={selectedOption} setSelectedOption={setSelectedOption} />
+      <Filter
+        options={departments}
+        selectedOption={selectedOption}
+        setSelectedOption={setSelectedOption}
+        label='Filter by Department'
+        iconVariant='users-01'
+        defaultOption='Any Department'
+      />
       {filtered.map(vacancy => {
         return (
           <VacancyCard key={vacancy.id} vacancy={vacancy} />
