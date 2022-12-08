@@ -1,77 +1,97 @@
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { Medium, YouTube, Github, Reddit, Twitter, Discord, Telegram, Linkedin } from '../../../components/Icon/variants/Socials/Default'
+import { Icon } from '../../../components/Icon'
 
 const links = [
   {
     name: 'Twitter',
     href: '#',
-    Icon: Twitter
+    Icon: <Icon variant='twitter-default' />,
+    IconWhite: <Icon variant='twitter' />
   },
   {
     name: 'Reddit',
     href: '#',
-    Icon: Reddit
+    Icon: <Icon variant='reddit-default' />,
+    IconWhite: <Icon variant='reddit' />
   },
   {
     name: 'Telegram',
     href: '#',
-    Icon: Telegram
+    Icon: <Icon variant='telegram-default' />,
+    IconWhite: <Icon variant='telegram' />
   },
   {
     name: 'Github',
     href: '#',
-    Icon: Github
+    Icon: <Icon variant='github-default' />,
+    IconWhite: <Icon variant='github' />
   },
   {
     name: 'LinkedIn',
     href: '#',
-    Icon: Linkedin
+    Icon: <Icon variant='linkedin-default' />,
+    IconWhite: <Icon variant='linkedin' />
   },
   {
     name: 'Medium',
     href: '#',
-    Icon: Medium
+    Icon: <Icon variant='medium-default' />,
+    IconWhite: <Icon variant='medium' />
   },
   {
     name: 'Youtube',
     href: '#',
-    Icon: YouTube
+    Icon: <Icon variant='youtube-default' />,
+    IconWhite: <Icon variant='youtube' />
   },
   {
     name: 'Discord',
     href: '#',
-    Icon: Discord
+    Icon: <Icon variant='discord-default' />,
+    IconWhite: <Icon variant='discord' />
   }
 ]
 
 export const CommunityChannels = () => {
-  return (
-    <Container>
-      <IntroContainer>
-        <Title>Community Channels</Title>
-        <SubHeading>
-          Don't be a stranger! Join and interact with us and our growing social media communities. Stay up to date on our latest developments and progress.
-        </SubHeading>
-      </IntroContainer>
+  const theme = useTheme()
 
-      <LinksContainer>
-        {
-          links.map(({ name, Icon, href }, i) => (
-            <LinkWrapper key={i}>
-              <SocialLink href={href} target='_blank' rel='noreferrer nofollow'>
-                <Icon />
-                <p>{name}</p>
-              </SocialLink>
-            </LinkWrapper>
-          ))
-        }
-      </LinksContainer>
-    </Container>
+  return (
+    <Wrapper>
+      <Container>
+        <IntroContainer>
+          <Title>Community Channels</Title>
+          <SubHeading>
+            Don't be a stranger! Join and interact with us and our growing social media communities. Stay up to date on our latest developments and progress.
+          </SubHeading>
+        </IntroContainer>
+        <LinksContainer>
+          {
+            links.map(({ name, Icon, IconWhite, href }, i) => (
+              <LinkWrapper key={i}>
+                <SocialLink href={href} target='_blank' rel='noreferrer nofollow'>
+                  {theme.isLightMode ? Icon : IconWhite}
+                  <p>{name}</p>
+                </SocialLink>
+              </LinkWrapper>
+            ))
+          }
+        </LinksContainer>
+      </Container>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};
+
+  @media screen and (min-width: 768px) {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+`
 
 const Container = styled.div`
   ${utils.fullWidthContainer};
@@ -79,12 +99,16 @@ const Container = styled.div`
 
   padding-top: 64px;
   padding-bottom: 64px;
-  border-radius: 16px;
-  background-color: ${colors.gray[50]};
+
+  background-color: ${props => props.theme.isLightMode ? colors.gray[50] : colors.gray[700]};
+  
+  @media screen and (min-width: 768px) {
+    border-radius: 16px;
+  }
 `
 
 const IntroContainer = styled.div`
-  max-width: 807px;
+  max-width: 805px;
   margin: auto;
 
   text-align: center;
@@ -99,25 +123,29 @@ const SubHeading = styled.div`
   margin-top: 24px;
   ${typography.styles.textXl}
   ${typography.weights.regular}
-  color: ${colors.gray[600]};
+  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
 const LinksContainer = styled.div`
   margin: auto;
   margin-top: 40px;
   display: grid;
-  width: max-content;
+  width: 684px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(2, 1fr);
   row-gap: 24px;
   column-gap: 4px;
   
+  @media screen and (max-width: 934px) {
+    grid-template-columns: repeat(3, 1fr);
+    width: max-content;
+  }
+  
   @media screen and (max-width: 768px) {
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
     row-gap: 16px;
   }
-  `
+`
 
 const LinkWrapper = styled.div`
   padding: 8px 26px;

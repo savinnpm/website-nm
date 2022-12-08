@@ -33,6 +33,17 @@ import {
   Twitter,
   YouTube,
 } from "./variants/Socials/White";
+import { 
+  Medium as MediumDefault, 
+  YouTube as YouTubeDefault, 
+  Github as GithubDefault, 
+  Reddit as RedditDefault, 
+  Twitter as TwitterDefault, 
+  Discord as DiscordDefault, 
+  Telegram as TelegramDefault, 
+  Linkedin as LinkedinDefault,
+  Facebook as FacebookDefault
+} from './variants/Socials/Default'
 import { CodeSquare01, Database01, FileCode01, FolderCode } from "./variants/Development";
 import { Bell02 } from "./variants/AlertsAndFeedback";
 import { ChartBreakoutSquare } from "./variants/Charts";
@@ -130,6 +141,42 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "reddit") {
     IconComponent = Reddit;
+  }
+  
+  if (variant === "discord-default") {
+    IconComponent = DiscordDefault;
+  }
+
+  if (variant === "twitter-default") {
+    IconComponent = TwitterDefault;
+  }
+
+  if (variant === "telegram-default") {
+    IconComponent = TelegramDefault;
+  }
+
+  if (variant === "github-default") {
+    IconComponent = GithubDefault;
+  }
+
+  if (variant === "linkedin-default") {
+    IconComponent = LinkedinDefault;
+  }
+
+  if (variant === "medium-default") {
+    IconComponent = MediumDefault;
+  }
+
+  if (variant === "youtube-default") {
+    IconComponent = YouTubeDefault;
+  }
+
+  if (variant === "reddit-default") {
+    IconComponent = RedditDefault;
+  }
+
+  if (variant === "facebook-default") {
+    IconComponent = FacebookDefault;
   }
 
   if (variant === "code-square-one") {

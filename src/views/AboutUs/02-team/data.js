@@ -20,7 +20,6 @@ const SujitaImage = '/assets/images/team/Sujita.webp'
 export const data = [
   {
     imgSrc: BinodImage,
-    nameInvariant: 'Binod Nirvan',
     name: 'Binod Nirvan',
     title: 'CEO & Founder',
     links: {
@@ -31,7 +30,6 @@ export const data = [
   },
   {
     imgSrc: GillianImage,
-    nameInvariant: 'Gillian Wu',
     name: 'Gillian Wu',
     title: 'Co-Founder',
     links: {
@@ -40,7 +38,6 @@ export const data = [
   },
   {
     imgSrc: GilbertImage,
-    nameInvariant: 'Gilbert NG',
     name: 'Gilbert NG',
     title: 'Chief Legal Officer',
     links: {
@@ -50,21 +47,18 @@ export const data = [
   },
   {
     imgSrc: FlashburstImage,
-    nameInvariant: 'Flashburst',
     name: 'Flashburst',
     title: 'Blockchain Engineer',
     links: {}
   },
   {
     imgSrc: HansImage,
-    nameInvariant: 'Hans Koning',
     name: 'Hans Koning',
     title: 'Blockchain Advisor',
     links: {}
   },
   {
     imgSrc: MarkImage,
-    nameInvariant: 'Mark Garcia',
     name: 'Mark Garcia',
     title: 'Design Lead',
     links: {
@@ -73,7 +67,6 @@ export const data = [
   },
   {
     imgSrc: PaulImage,
-    nameInvariant: 'Paul Steven Cue',
     name: 'Paul Steven Cue',
     title: 'Senior Graphic Designer',
     links: {
@@ -83,7 +76,6 @@ export const data = [
   },
   {
     imgSrc: SavinImage,
-    nameInvariant: 'Savin Bhandari',
     name: 'Savin Bhandari',
     title: 'Frontend Engineer',
     links: {
@@ -95,7 +87,6 @@ export const data = [
   {
     imgSrc: RupakImage,
     name: 'Rupak Acharya',
-    nameInvariant: 'Rupak Acharya',
     title: 'Frontend Engineer',
     links: {
       linkedIn: 'https://www.linkedin.com/in/acharyarupak391',
@@ -105,27 +96,23 @@ export const data = [
   {
     imgSrc: AliImage,
     name: 'Ali',
-    nameInvariant: 'Ali',
-    title: '...',
+    title: 'Senior Graphic Designer',
     links: {}
   },
   {
     imgSrc: EzekielImage,
     name: 'Ezekiel Arifalo',
-    nameInvariant: 'Ezekiel Arifalo',
     title: 'Content Strategist',
     links: {}
   },
   {
     imgSrc: BrandoImage,
-    nameInvariant: 'Brando',
     name: 'Brando',
     title: 'Growth',
     links: {}
   },
   {
     imgSrc: PukarImage,
-    nameInvariant: 'Pukar Acharya',
     name: 'Pukar Acharya',
     title: 'Research Analyst',
     links: {
@@ -135,7 +122,6 @@ export const data = [
   },
   {
     imgSrc: BinitaImage,
-    nameInvariant: 'Binita Thapa',
     name: 'Binita Thapa',
     title: 'Finance Analyst',
     links: {
@@ -145,7 +131,6 @@ export const data = [
   },
   {
     imgSrc: SujitaImage,
-    nameInvariant: 'Sujita Gurung',
     name: 'Sujita Gurung',
     title: 'Administrative Officer',
     links: {
@@ -154,7 +139,6 @@ export const data = [
   },
   {
     imgSrc: JonalynImage,
-    nameInvariant: 'Jonalyn Delos Santos',
     name: 'Jonalyn Delos Santos',
     title: 'Technical Recruiter',
     links: {
@@ -165,14 +149,12 @@ export const data = [
   },
   {
     imgSrc: RudolfImage,
-    nameInvariant: 'Rudolf',
     name: 'Rudolf',
     title: 'Blockchain Engineer',
     links: {}
   },
   {
     imgSrc: EdwardImage,
-    nameInvariant: 'Edward Ryall',
     name: 'Edward Ryall',
     title: 'Co-Founder',
     links: {
