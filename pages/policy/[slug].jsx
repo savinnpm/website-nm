@@ -37,7 +37,7 @@ export async function getStaticProps ({ locale, params }) {
       ...(s),
       page: await services.getSinglePage(params.slug),
       videos: await services.getVideos(),
-      pages: await services.getPages(),
+      pages: await services.getPagesData(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }
@@ -70,7 +70,11 @@ export default function SinglePolicyPage (props) {
       </Head>
 
       <main>
-        <Policy pages={props.pages} slug={props.page.slug} />
+        <Policy
+          page={props.page}
+          slugs={props.pages}
+          activeSlug={props.page.slug}
+        />
       </main>
     </>
   )

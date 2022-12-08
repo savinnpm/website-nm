@@ -1,16 +1,14 @@
 import { Hero } from './01-hero'
 import { DetailComponent } from '../../components/DetailComponent'
 
-export const Policy = ({ pages, slug }) => {
-  const page = pages.find(page => page.slug === slug)
-
+export const Policy = ({ page, activeSlug, slugs }) => {
   return (
     <>
-      <Hero pages={pages} slug={slug} />
+      <Hero slugs={slugs} activeSlug={activeSlug} />
 
       <DetailComponent
         html={page.content.html}
-        wrapperClass={`${page.slug}-detail`}
+        wrapperClass={`${activeSlug}-detail`}
         title={page.title}
         sharelinks={false}
       />

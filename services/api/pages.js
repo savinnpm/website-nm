@@ -90,3 +90,31 @@ export const getPageSlugs = async () => {
 
   return []
 }
+
+export const getPagesData = async () => {
+  try {
+    const docs = await getDocs()
+
+    const result = docs.map((doc) => ({ slug: doc.slug, title: doc.title })).filter(x => !!x)
+
+    return result
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
+export const getFirstPage = async () => {
+  try {
+    const docs = await getDocs()
+
+    const match = docs[0]
+
+    return transformDoc(match)
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
