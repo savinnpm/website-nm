@@ -27,7 +27,7 @@ export const VideoModal = ({ videoId, setId }) => {
 }
 
 const StyledDialog = styled(Dialog)`
-  z-index: 2;
+  z-index: 20;
   position: fixed;
   top: 0px;
   left: 0px;

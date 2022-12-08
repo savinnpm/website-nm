@@ -16,7 +16,7 @@ export const nav = [
       { href: '/grants', text: 'PROGRAMS', isExternal: false },
       { href: '/careers', text: 'CAREERS', isExternal: false },
       { href: '/security', text: 'SECURITY', isExternal: false },
-      { href: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM', text: 'CONTACT', isExternal: true }
+      { href: '/contact', text: 'CONTACT', isExternal: true }
     ]
   },
   {

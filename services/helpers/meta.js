@@ -2,7 +2,7 @@ import { storeLocally } from '../io/download'
 
 export const storeOgImage = async (filename, folder = 'og-images') => {
   if (!filename) {
-    return '/assets/images/meta/og/home.webp'
+    return '/assets/images/meta/og/home.png'
   }
 
   const relativePath = await storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, folder)

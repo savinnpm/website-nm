@@ -38,7 +38,7 @@ const InnerContainer = styled.div`
 const FilterContainer = styled.div`
   position: relative;
   z-index: 1;
-  `
+`
 
 const CarouselContainer = styled.div`
   overflow-x: hidden;
