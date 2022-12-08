@@ -8,7 +8,7 @@ import { TableOfContents } from '../BlogDetails/TableOfContents'
 import { Breadcrumbs } from '../Breadcrumbs'
 import { Shareit } from '../Shareit'
 
-export const DetailComponent = ({ title, intro, html, wrapperClass, breadcrumbs }) => {
+export const DetailComponent = ({ title, intro, html, wrapperClass, breadcrumbs, sharelinks = true }) => {
   return (
     <MainWrapper>
       <Sidebar>
@@ -16,14 +16,14 @@ export const DetailComponent = ({ title, intro, html, wrapperClass, breadcrumbs 
       </Sidebar>
 
       <ContentWrapper>
-        <Breadcrumbs className='breadcrumb-wrapper' crumbs={breadcrumbs} />
+        {breadcrumbs && <Breadcrumbs className='breadcrumb-wrapper' crumbs={breadcrumbs} />}
 
         <Content
           content={html}
           wrapperClass={wrapperClass}
         />
 
-        <Shareit title={title} intro={(intro || '').substr(0, 100)} />
+        {sharelinks && <Shareit title={title} intro={(intro || '').substr(0, 100)} />}
       </ContentWrapper>
     </MainWrapper>
   )
@@ -37,14 +37,15 @@ const MainWrapper = styled.div`
 
   padding-top: 56px;
   padding-bottom: 96px;
-
-
+  
+  
   display: grid;
   gap: 64px;
   grid-template-columns: 4fr 9fr;
 
   @media (max-width: 1023px) {
     grid-template-columns: 1fr;
+    padding-bottom: 56px;
     
     ${utils.fullWidthContainer};
   }

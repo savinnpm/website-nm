@@ -49,10 +49,7 @@ export default function PolicyPage (props) {
       </Head>
 
       <main>
-        <Policy pages={props.pages} />
-        <pre>
-          {JSON.stringify(props.pages[0], null, 2)}
-        </pre>
+        <Policy pages={props.pages} slug={props.pages[0].slug} />
       </main>
     </>
   )

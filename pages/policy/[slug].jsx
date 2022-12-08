@@ -70,10 +70,7 @@ export default function SinglePolicyPage (props) {
       </Head>
 
       <main>
-        <Policy pages={props.pages} />
-        <pre>
-          {JSON.stringify(props.page, null, 2)}
-        </pre>
+        <Policy pages={props.pages} slug={props.page.slug} />
       </main>
     </>
   )
