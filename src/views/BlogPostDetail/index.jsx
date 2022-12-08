@@ -68,7 +68,7 @@ const MainWrapper = styled.div`
   grid-template-columns: 4fr 9fr;
 
 
-  @media (max-width: 934px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     
     ${utils.fullWidthContainer};
@@ -79,7 +79,7 @@ const Sidebar = styled.div`
   border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
   width: 324px;
 
-  @media (max-width: 933px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `

@@ -123,13 +123,13 @@ export const TableOfContents = ({ wrapperClass, title }) => {
 
 const Container = styled.div`
   padding-bottom: 20px;
-  margin-right: 24px;
+  padding-right: 24px;
 
   @media (min-width: 1400px) {
     margin-left: auto;
   }
 
-  @media (min-width: 934px) {
+  @media (min-width: 1024px) {
     position: sticky;
     top: 100px;
 
