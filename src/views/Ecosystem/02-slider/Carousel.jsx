@@ -100,6 +100,17 @@ const Container = styled.div`
   .slick-slide {
     margin: 0 16px;
   }
+
+  @media (max-width: 768px) {
+    .slick-list {
+      /* gap between slides */
+      margin: 0 -8px;
+    }
+
+    .slick-slide {
+      margin: 0 8px;
+    }
+  }
 `
 
 const Arrows = styled.div`
