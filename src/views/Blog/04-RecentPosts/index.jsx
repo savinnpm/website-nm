@@ -5,6 +5,7 @@ import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { ArticleCard } from '../../../components/ArticleCard'
+import { Filter } from '../../../components/Filter'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from './Pagination'
 
@@ -71,6 +72,14 @@ export const RecentPosts = ({ blogPosts }) => {
     })
   }
 
+  const setQuery = query => {
+    router.push({
+      query: query
+    }, undefined, {
+      scroll: false
+    })
+  }
+
   const handlePrev = () => {
     if (page > 0) {
       pushQuery({ page: page })
@@ -120,6 +129,10 @@ export const RecentPosts = ({ blogPosts }) => {
     }
   }, [router.query, blogPosts, totalPages])
 
+  const handleFilterChange = option => {
+    setQuery({ tab: option })
+  }
+
   const posts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
 
   return (
@@ -129,6 +142,16 @@ export const RecentPosts = ({ blogPosts }) => {
           filters={filters}
           activeFilter={activeTab}
         />
+
+        <FilterMobileContainer>
+          <Filter
+            options={filters.map(f => f.value)}
+            selectedOption={activeTab}
+            getOptionText={x => filters.find(f => f.value === x).text}
+            setSelectedOption={handleFilterChange}
+          />
+        </FilterMobileContainer>
+
         <TextAndCta>
           <TextContainer>
             <Heading>Recent Posts</Heading>
@@ -206,4 +229,12 @@ const BlogsContainer = styled.div`
 
 const SingleCard = styled.div`
   flex: 1 1 30%;
+  z-index: -1;
+`
+
+const FilterMobileContainer = styled.div`
+  margin-bottom: 32px;
+  @media screen and (min-width: 768px) {
+    display: none;
+  }
 `
