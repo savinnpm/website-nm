@@ -3,7 +3,7 @@ import { getVideos } from './api/videos'
 import { getEcosystems } from './api/ecosystems'
 import { getAudits, getAuditSlugs, getSingleAudit } from './api/audits'
 import { getPrograms, getProgramSlugs, getSingleProgram } from './api/programs'
-import { getPages, getPageSlugs, getSinglePage, getFirstPage, getPagesData } from './api/pages'
+import { getPages, getPageSlugs, getSinglePage } from './api/pages'
 import { getVacancies, getVacancySlugs, getSingleVacancy } from './api/vacancies'
 
 export const services = {
@@ -22,8 +22,6 @@ export const services = {
   getPages,
   getPageSlugs,
   getSinglePage,
-  getFirstPage,
-  getPagesData,
   getVacancies,
   getVacancySlugs,
   getSingleVacancy
