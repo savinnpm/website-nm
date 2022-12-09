@@ -65,16 +65,10 @@ const BlogInfoContainer = styled.div`
   gap: 8px; 
 `
 
-const BlogInfo = styled.p`
+const BlogInfo = styled.span`
   ${typography.styles.textMd};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
-
-  @media (max-width: 768px) {
-    margin-bottom: 12px;
-    ${typography.styles.textMd};
-    ${typography.weights.semibold};
-  }
 `
 
 const ImageContainer = styled.div`

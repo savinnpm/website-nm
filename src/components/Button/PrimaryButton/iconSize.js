@@ -9,7 +9,11 @@ const getIconSizeLg = (icon, size) => {
     return 20
   }
 
-  return 10
+  if (icon === 'dot-leading') {
+    return 10
+  }
+
+  return 20
 }
 
 const getIconSizeMd = (icon, size) => {
@@ -21,7 +25,11 @@ const getIconSizeMd = (icon, size) => {
     return 20
   }
 
-  return 10
+  if (icon === 'dot-leading') {
+    return 10
+  }
+
+  return 20
 }
 
 export const iconSize = css`

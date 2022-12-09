@@ -5,12 +5,10 @@ import styled from 'styled-components'
 
 import { useRouter } from 'next/router'
 
-import { Icon } from '../Icon'
-
-import { copyToClipBoard } from '../../helpers'
+import { copyToClipBoard, getDns } from '../../helpers'
 
 import { colors } from '../../../styles/colors'
-import { shadows } from '../../../styles/shadows'
+import { Button } from '../Button'
 
 const Shareit = (props) => {
   const { asPath } = useRouter()
@@ -28,80 +26,74 @@ const Shareit = (props) => {
 
   const copy = (e) => {
     e.preventDefault()
-    const text = `${window.location.origin}${asPath}`
+
+    const origin = typeof window === 'undefined' ? getDns() : window.location.origin
+    const text = `${origin}${asPath}`
     copyToClipBoard(text)
     setCopied(true)
   }
 
-  const share = (e) => {
-    e.preventDefault()
-
-    const url = new URL(e.target.getAttribute('data-href'))
-    url.searchParams.append(e.target.getAttribute('data-url'), `${window.location.origin}${asPath}`)
-    const newWindow = window.open(url.href)
-    newWindow.opener = null
+  const getUrl = (param, base) => {
+    const origin = typeof window === 'undefined' ? getDns() : window.location.origin
+    const url = new URL(base)
+    url.searchParams.append(param, `${origin}${asPath}`)
+    return url.href
   }
 
   return (
-    <Share>
+    <Container>
 
-      <Btn onClick={copy}>
-        <Icon size='18' variant='copy-01' />  <BtnLabel>{copied ? t('COPIED') : t('COPY_LINK')}</BtnLabel>
-      </Btn>
+      <Button hierarchy='secondary' size='md' iconLeading iconVariant='copy-01' onClick={copy} iconOnlyMobile>
+        {copied ? t('COPIED') : t('COPY_LINK')}
+      </Button>
 
-      <Btn onClick={share} data-url='url' data-href={`https://twitter.com/intent/tweet?text=${props.intro}`}>
-        <Icon size='18' variant='twitter' />
-      </Btn>
+      <Button
+        as='a'
+        target='_blank'
+        hierarchy='secondary'
+        size='md'
+        iconLeading
+        iconVariant='twitter'
+        icon='only'
+        href={getUrl('url', `https://twitter.com/intent/tweet?text=${props.intro}`)}
+      />
 
-      <Btn onClick={share} data-url='u' data-href='https://www.facebook.com/sharer/sharer.php'>
-        <Icon size='18' variant='facebook' />
-      </Btn>
+      <Button
+        as='a'
+        target='_blank'
+        hierarchy='secondary'
+        size='md'
+        iconLeading
+        iconVariant='facebook'
+        icon='only'
+        href={getUrl('u', 'https://www.facebook.com/sharer/sharer.php')}
+      />
 
-      <Btn onClick={share} data-url='url' data-href={`https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props?.intro}&source=Neptune Mutual`}>
-        <Icon size='18' variant='linkedin' />
-      </Btn>
+      <Button
+        as='a'
+        target='_blank'
+        hierarchy='secondary'
+        size='md'
+        iconLeading
+        iconVariant='linkedin'
+        icon='only'
+        href={getUrl('url', `https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props?.intro}&source=Neptune Mutual`)}
+      />
 
-    </Share>
+    </Container>
   )
 }
 
-const Share = styled.div`
-  text-align: center;
-  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
-  padding-top: 24px;
+const Container = styled.div`
   margin-top: 16px;
+  padding-top: 24px;
+  border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['700']};
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
 
   @media (min-width: 770px) {
     text-align: left;
-  }
-`
-
-const Btn = styled.button`
-  cursor: pointer;
-  display: inline-flex;
-  color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
-  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
-  border-radius: 8px;
-  padding: 10px;
-  margin-right: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  
-  &:focus {
-    outline: none;
-    box-shadow: ${shadows.sm}
-  }
-
-  svg {
-    z-index: -1;
-  }
-`
-const BtnLabel = styled.label`
-  margin-left:10px;
-  display: none;
-
-  @media (min-width: 770px) {
-    display: block;
   }
 `
 

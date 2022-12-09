@@ -36,10 +36,12 @@ const copyToClipBoard = (text) => {
   navigator?.clipboard?.writeText(text)
 }
 
+const getDns = () => process.env.NEXT_PUBLIC_DOMAIN_NAME || 'https://neptunemutual.com'
+
 // fully qualified domain name
 const getFQDN = (path) => {
   const dns = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'https://neptunemutual.com'
   return new URL(path, dns).href
 }
 
-export { copyToClipBoard, getFormattedDate, getFQDN }
+export { copyToClipBoard, getFormattedDate, getFQDN, getDns }

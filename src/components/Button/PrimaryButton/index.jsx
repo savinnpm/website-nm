@@ -17,6 +17,7 @@ export const PrimaryButton = ({
   iconLeading,
   iconTrailing,
   iconVariant,
+  iconOnlyMobile,
   destructive,
   state,
   disabled,
@@ -30,10 +31,11 @@ export const PrimaryButton = ({
       disabled={disabled || state === 'disabled'}
       data-state={state}
       destructive={destructive}
+      $iconOnlyMobile={iconOnlyMobile}
       {...rest}
     >
       {iconLeading && <Icon variant={iconVariant} />}
-      {children}
+      {icon !== 'only' && <Content $iconOnlyMobile={iconOnlyMobile}>{children}</Content>}
       {iconTrailing && <Icon variant={iconVariant} />}
     </StyledButton>
   )
@@ -77,5 +79,11 @@ const StyledButton = styled.button`
       box-shadow: ${shadows.xs},
         0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['800']};
     }
+  }
+`
+
+const Content = styled.span`
+  @media (max-width: 768px) {
+    display: ${props => props.$iconOnlyMobile ? 'none' : 'inline'};
   }
 `

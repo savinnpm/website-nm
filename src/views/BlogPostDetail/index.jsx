@@ -84,9 +84,7 @@ const Sidebar = styled.div`
   }
 `
 
-const ContentWrapper = styled.div`
-  overflow: hidden;
-   
+const ContentWrapper = styled.div`   
   img {
     height: auto;
     width: 100%;

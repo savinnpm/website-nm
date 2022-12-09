@@ -1,6 +1,7 @@
 import { LinkColor } from './LinkColor'
 import { LinkGrayButton } from './LinkGrayButton'
 import { PrimaryButton } from './PrimaryButton'
+import { SecondaryGrayButton } from './SecondaryGrayButton'
 
 export const Button = ({
   size,
@@ -30,6 +31,23 @@ export const Button = ({
       >
         {children}
       </PrimaryButton>
+    )
+  }
+  if (hierarchy === 'secondary') {
+    return (
+      <SecondaryGrayButton
+        size={size}
+        icon={icon}
+        destructive={destructive}
+        state={state}
+        disabled={disabled}
+        iconLeading={iconLeading}
+        iconTrailing={iconTrailing}
+        iconVariant={iconVariant}
+        {...rest}
+      >
+        {children}
+      </SecondaryGrayButton>
     )
   }
   if (hierarchy === 'link-color') {
