@@ -36,7 +36,7 @@ const storeInRoot = async (url) => {
   })
 }
 
-function main () {
+const updateXmlFiles = () => {
   if (!process.env.SITEMAP_API_URL_PREFIX || !process.env.SITEMAP_API_URL_PREFIX.trim()) {
     return
   }
@@ -46,6 +46,21 @@ function main () {
   `${process.env.SITEMAP_API_URL_PREFIX}rss.xml`]
 
   fileUrls.forEach(url => storeInRoot(url))
+}
+
+const udpateFileCache = () => {
+  if (!process.env.RESET_FILE_CACHE || !process.env.RESET_FILE_CACHE.trim()) {
+    return
+  }
+
+  const localCacheFolder = path.resolve('public', 'local-files')
+  console.log('Clearing cache...')
+  fs.rmSync(localCacheFolder, { recursive: true, force: true })
+}
+
+const main = () => {
+  updateXmlFiles()
+  udpateFileCache()
 }
 
 main()
