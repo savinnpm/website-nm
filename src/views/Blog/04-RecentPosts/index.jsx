@@ -115,11 +115,7 @@ export const RecentPosts = ({ blogPosts }) => {
       const filter = filters.find(f => f.value === tab)
       if (!filter) return
 
-      const blogs = blogPosts.filter(b => {
-        const tag = b.tags?.find(t => t.name === filter.text)
-        if (tag) return true
-        return false
-      })
+      const blogs = blogPosts.filter(b => Boolean(b.tags?.find(t => t.name === filter.text)))
       setFilteredPosts(blogs)
     }
   }, [router.query, blogPosts, totalPages])

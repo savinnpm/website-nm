@@ -34,6 +34,13 @@ const Container = styled.div`
 `
 const BreadcrumbsContainer = styled.div`
   ${utils.fullWidthContainer};
+  
+  @media screen and (max-width: 768px) {
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: auto;
+    margin-right: 20px;
+  }
 
   .bread {
     margin-bottom: 0;
