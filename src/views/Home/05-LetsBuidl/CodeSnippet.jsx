@@ -36,7 +36,7 @@ const Code = styled.code`
   font-weight: 500;
 
   .line{
-    /* position: relative ; */
+    position: relative;
     
     &::before {
       content: attr(data-line);
@@ -45,12 +45,12 @@ const Code = styled.code`
       margin-right: 1rem;
       box-sizing: content-box;
       display: inline-block;
-      width: 2ch;
+      width: 2rem;
       background-color: ${props => (props.theme.isLightMode ? colors[primaryColorKey]['100'] : colors.gray['700'])};
       color: ${props => (props.theme.isLightMode ? colors[primaryColorKey]['500'] : colors.gray['300'])};
-      /* position: absolute; */
-      /* left: 0px; */
-      /* top: 0; */
+      position: sticky;
+      left: 0px;
+      top: 0;
     }
   }
 
