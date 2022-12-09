@@ -125,6 +125,11 @@ const ArrowsContainer = styled.div`
   align-items: center;
   justify-content: center;
   gap: 32px;
+
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
 `
 
 const ArrowButton = styled.button`
