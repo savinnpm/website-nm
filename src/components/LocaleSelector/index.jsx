@@ -140,6 +140,11 @@ const Search = styled.div`
   padding: 12px 16px;
   border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
 
+  @media (max-width: 768px) {
+    padding-top: 15px;
+    padding-bottom: 21px;
+  }
+
   .input-with-icon-container {
     background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[700]};
     color: ${(props) => props.theme.isLightMode ? colors.gray[500] : colors.gray[300]};
@@ -201,7 +206,7 @@ const Options = styled.ul`
 
   @media (max-width: 768px) {
     max-height: 100vh;
-    height: calc(100vh - (113px + 51px));
+    height: calc(100vh - (125px + 73px));
   }
 `
 const Selected = styled.div`
@@ -213,4 +218,10 @@ const Selected = styled.div`
   ${typography.styles.textSm}
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey][700] : colors[primaryColorKey][500]};
   padding: 15px 16px;
+
+  @media (max-width: 768px) {
+    ${typography.styles.textMd}
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
 `
