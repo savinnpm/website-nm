@@ -4,6 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "prebuild:local": "node -r dotenv/config ./scripts/prebuild dotenv_config_path=.env.local",
+    "prebuild": "node ./scripts/prebuild",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -33,5 +35,8 @@
     "slick-carousel": "^1.8.1",
     "slugify": "^1.6.5",
     "styled-components": "^5.3.6"
+  },
+  "devDependencies": {
+    "dotenv": "12.0.0"
   }
 }

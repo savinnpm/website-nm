@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>http://neptunemutual.com/</id>
+    <title>Feed Title</title>
+    <updated>2022-12-09T07:25:38.553Z</updated>
+    <generator>Neptune CMS</generator>
+    <author>
+        <name>Neptune Mutual</name>
+        <email>noreply@neptunemutual.com</email>
+        <uri>https://neptunemutual.com</uri>
+    </author>
+    <link rel="alternate" href="http://neptunemutual.com/"/>
+    <link rel="self" href="https://neptunemutual.com/atom"/>
+    <subtitle>This is my personal feed!</subtitle>
+    <logo>http://neptunemutual.com/image.png</logo>
+    <icon>http://neptunemutual.com/favicon.ico</icon>
+    <rights>All rights reserved 2022, Neptune Mutual</rights>
+    <entry>
+        <title type="html"><![CDATA[test]]></title>
+        <id>post.url</id>
+        <link href="post.url"/>
+        <updated>2022-12-07T19:16:40.900Z</updated>
+        <summary type="html"><![CDATA[post.description]]></summary>
+        <content type="html"><![CDATA[post.content]]></content>
+        <author>
+            <name>Neptune Mutual</name>
+            <email>noreply@neptunemutual.com</email>
+            <uri>https://neptunemutual.com</uri>
+        </author>
+    </entry>
+</feed>
