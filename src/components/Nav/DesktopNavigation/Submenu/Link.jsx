@@ -39,6 +39,7 @@ const Container = styled.a`
 
 const Title = styled.h3`
   color: ${props => props.theme.color};
+  display:flex;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
