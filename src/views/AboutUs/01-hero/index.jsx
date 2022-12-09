@@ -14,11 +14,10 @@ const YoutubeId = 'GeqjuV1u4UI'
 
 const Hero = () => {
   const { t } = useTranslation('about')
-  const { setId, setIFrameWidth } = useVideosContext()
+  const { setId } = useVideosContext()
 
   const showVideo = () => {
     setId(YoutubeId)
-    setIFrameWidth(1000)
   }
 
   return (

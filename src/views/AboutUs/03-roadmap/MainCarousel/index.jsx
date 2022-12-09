@@ -125,7 +125,7 @@ const Container = styled.div`
   margin-right: auto;
 
   @media (max-width: 768px) {
-    margin-top: 78px;
+    margin-top: 62px;
   }
 `
 const CarouselContainer = styled.div`
