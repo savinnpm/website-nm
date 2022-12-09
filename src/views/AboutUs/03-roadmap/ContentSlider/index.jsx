@@ -84,12 +84,21 @@ const SlideContent = styled.div`
   }
 
   @media (max-width: 767px) {
-    margin-top: 36px;
+    margin-top: 48px;
+  }
+
+  @media screen and (max-width: 768px) {
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   h3 {
     ${typography.styles.displayXs};
     ${typography.weights.semibold};
+
+    @media screen and (max-width: 768px) {
+      ${typography.styles.textXl};
+    }
   }
 
   p {
@@ -97,6 +106,10 @@ const SlideContent = styled.div`
 
     &:first-child {
       margin-top: 20px;
+    }
+
+    @media screen and (max-width: 768px) {
+      margin-top: 11px;
     }
   }
 

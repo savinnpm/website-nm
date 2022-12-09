@@ -38,8 +38,9 @@ const Container = styled.div`
   background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};
   
   @media screen and (max-width: 768px) {
-    margin-top: 460px;
-    padding-top: 64px;
+    margin-top: 64px;
+    margin-bottom: 64px;
+    padding-bottom: 0;
   }
 `
 
@@ -70,6 +71,10 @@ const Title = styled.p`
   margin-top: 12px;
   ${typography.styles.displayMd}
   ${typography.weights.semibold}
+
+  @media (max-width: 768px) {
+    ${typography.styles.displaySm}
+  }
 `
 
 const SubHeading = styled.p`
@@ -78,6 +83,10 @@ const SubHeading = styled.p`
   ${typography.styles.textXl}
   ${typography.weights.regular}
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
+
+  @media (max-width: 768px) {
+    ${typography.styles.textLg}
+  }
 `
 
 const CarouselContainer = styled.div`

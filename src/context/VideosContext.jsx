@@ -6,12 +6,13 @@ const VideosContext = React.createContext(null)
 export const VideosProvider = (props) => {
   // Id of selected video
   const [id, setId] = useState(null)
+  const [iFrameWidth, setIFrameWidth] = useState(800)
 
   return (
-    <VideosContext.Provider value={{ videos: props.videos, setId }}>
+    <VideosContext.Provider value={{ videos: props.videos, setId, setIFrameWidth }}>
       {props.children}
 
-      <VideoModal videoId={id} setId={setId} />
+      <VideoModal videoId={id} iFrameWidth={iFrameWidth} setId={setId} />
     </VideosContext.Provider>
   )
 }
