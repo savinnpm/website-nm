@@ -123,6 +123,10 @@ const Container = styled.div`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+
+  @media (max-width: 768px) {
+    margin-top: 62px;
+  }
 `
 const CarouselContainer = styled.div`
   display: flex;

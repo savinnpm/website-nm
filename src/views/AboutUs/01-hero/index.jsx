@@ -16,6 +16,10 @@ const Hero = () => {
   const { t } = useTranslation('about')
   const { setId } = useVideosContext()
 
+  const showVideo = () => {
+    setId(YoutubeId)
+  }
+
   return (
     <Container>
       <InnerContainer>
@@ -25,24 +29,24 @@ const Hero = () => {
           <HeaderContent>
             {t('HEADER_TEXT')}
           </HeaderContent>
-          <VideoContainer onClick={() => { setId(YoutubeId) }}>
-            <img alt='' src='/assets/images/hero/reduce-exposure.webp' />
-            <Overlay>
-              <PlayIcon />
-            </Overlay>
-          </VideoContainer>
         </Content>
       </InnerContainer>
+      <VideoContainer onClick={showVideo}>
+        <img alt='' src='/assets/images/hero/reduce-exposure.webp' />
+        <Overlay>
+          <PlayIcon />
+        </Overlay>
+      </VideoContainer>
     </Container>
   )
 }
 
 const Container = styled.div`
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
+  position: relative;
 `
 
 const InnerContainer = styled.div`
-  position: relative;
   display: flex;
   justify-content: center;
   padding-top: 56px;
@@ -51,14 +55,16 @@ const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
 
   @media (max-width: 768px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
-    align-items: stretch;
+    padding-bottom: 0;
   }
 `
 
 const Content = styled.div`
   text-align: center;
+
+  @media (max-width: 768px) {
+    text-align: left;
+  }
 `
 
 const Subheader = styled.span`
@@ -75,7 +81,7 @@ const HeaderTitle = styled.h1`
   ${typography.weights.semibold}
 
 
-  @media (max-width: 768px) {
+  @media (max-width: 887px) {
     ${typography.styles.displayMd};
   }
 `
@@ -85,6 +91,11 @@ const HeaderContent = styled.p`
   color: ${props => props.theme.secondaryColor};
   ${typography.styles.textXl}
   ${typography.weights.regular}
+
+  @media (max-width: 768px) {
+    ${typography.styles.textLg}
+    margin-bottom: 64px;
+  }
 `
 
 const Overlay = styled.div`
@@ -133,15 +144,21 @@ const VideoContainer = styled.button`
   }
 
   @media (max-width: 887px) {
-    top: 320px;
     width: auto;
     height: auto;
+    display: flex;
     
     img {
       width: auto;
       height: auto;
     }
   }
+
+  @media (max-width: 768px) {
+    position: initial;
+    border-radius: 0;
+  }
+  
 `
 
 export { Hero }

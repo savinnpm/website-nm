@@ -51,7 +51,7 @@ const Description = styled(Dialog.Description)`
 
 const Panel = styled(Dialog.Panel)`
   iframe {
-    width: 800px;
+    width: 1000px;
     min-height: 240px;
     max-height: 80%;
     max-width: 90%;
