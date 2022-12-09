@@ -5,7 +5,7 @@ import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
-const Hero = ({ pages }) => {
+const Hero = ({ slugs, activeSlug }) => {
   return (
     <Container>
       <InnerContainer>
@@ -18,9 +18,12 @@ const Hero = ({ pages }) => {
 
         <HorizontalTabs>
           {
-            pages.map((page, i) => (
-              <Tab key={i} href={`/policy/${page.slug}`} isactive={i === 0 ? 'true' : 'false'}>
-                {page.title}
+            slugs.map(({ slug, title }, i) => (
+              <Tab
+                key={i} href={`/policy/${slug}`}
+                isactive={(activeSlug === slug) ? 'true' : 'false'}
+              >
+                {title}
               </Tab>
             ))
           }

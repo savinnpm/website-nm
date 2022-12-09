@@ -10,12 +10,15 @@ import { Policy } from '../../src/views/Policy'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'policy'])
+  const pages = await services.getPages()
+  const page = await services.getSinglePage(pages[0].slug)
 
   return {
     props: {
       ...(s),
       videos: await services.getVideos(),
-      pages: await services.getPages(),
+      pages: pages,
+      page: page,
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }
@@ -49,10 +52,11 @@ export default function PolicyPage (props) {
       </Head>
 
       <main>
-        <Policy pages={props.pages} />
-        <pre>
-          {JSON.stringify(props.pages[0], null, 2)}
-        </pre>
+        <Policy
+          page={props.page}
+          slugs={props.pages}
+          activeSlug={props.page.slug}
+        />
       </main>
     </>
   )
