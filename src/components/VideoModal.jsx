@@ -62,7 +62,8 @@ const Panel = styled(Dialog.Panel)`
     width: 1000px;
     min-height: 240px;
     max-height: 80%;
-    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
     aspect-ratio: 16 / 9;
   }
 `
