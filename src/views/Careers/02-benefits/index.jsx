@@ -12,8 +12,10 @@ export const Benefits = () => {
     <Container>
       <InnerContainer>
         <TextContainer>
-          <Subheading>{t('BENEFITS_SUBHEADING')}</Subheading>
-          <Heading>{t('BENEFITS_HEADING')}</Heading>
+          <H2>
+            <Subheading>{t('BENEFITS_SUBHEADING')}</Subheading>
+            <Heading>{t('BENEFITS_HEADING')}</Heading>
+          </H2>
           <SupportingText>{t('BENEFITS_SUPPORTING_TEXT')}</SupportingText>
         </TextContainer>
 
@@ -52,8 +54,8 @@ const Subheading = styled.p`
     ${typography.styles.textSm};
   }
 `
-
-const Heading = styled.h2`
+const H2 = styled.h2``
+const Heading = styled.div`
   margin-top: 12px;
   color: ${(props) => props.theme.color};
 

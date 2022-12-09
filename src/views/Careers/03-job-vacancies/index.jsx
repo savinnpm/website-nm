@@ -15,8 +15,10 @@ export const JobVacancies = ({ vacancies }) => {
     <Container>
       <InnerContainer>
         <Content>
-          <Subheading>Careers</Subheading>
-          <Heading>Job Vacancies</Heading>
+          <H2>
+            <Subheading>Careers</Subheading>
+            <Heading>Job Vacancies</Heading>
+          </H2>
           <SupportingText>Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.</SupportingText>
         </Content>
 
@@ -64,8 +66,9 @@ const Subheading = styled.p`
     ${typography.styles.textSm};
   }
 `
+const H2 = styled.h2``
 
-const Heading = styled.h2`
+const Heading = styled.div`
   margin-top: 12px;
   color: ${(props) => props.theme.color};
 
