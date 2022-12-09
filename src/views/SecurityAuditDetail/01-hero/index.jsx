@@ -12,8 +12,10 @@ const Hero = (props) => {
     <Container>
       <InnerContainer>
         <Content>
-          <Subheader>{`${props.audit.startDate} - ${props.audit.endDate}`}</Subheader>
-          <HeaderTitle>{props.audit.title}</HeaderTitle>
+          <H1>
+            <Subheader>{`${props.audit.startDate} - ${props.audit.endDate}`}</Subheader>
+            <HeaderTitle>{props.audit.title}</HeaderTitle>
+          </H1>
           <HeaderContent>
             {props.audit.intro}
           </HeaderContent>
@@ -73,7 +75,7 @@ const Subheader = styled.span`
   margin-bottom: 12px;
   display: block;
 `
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled.div`
   color: ${props => props.theme.color};
   margin-bottom: 24px;
   ${typography.styles.displayLg}
@@ -94,5 +96,7 @@ const HeaderContent = styled.p`
 const ImageContainer = styled.div`
   text-align: center;
 `
+
+const H1 = styled.h1``
 
 export { Hero }
