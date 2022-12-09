@@ -36,8 +36,8 @@ function MyApp ({ Component, pageProps }) {
           <Border />
         </HeaderContainer>
         <MainContainer>
-          <MobileNavContainer isMenuOpen={isMenuOpen} />
           <Component {...pageProps} />
+          <MobileNavContainer isMenuOpen={isMenuOpen} />
         </MainContainer>
         <Footer pages={pageProps.pages} />
       </VideosProvider>

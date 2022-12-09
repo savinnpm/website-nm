@@ -28,7 +28,6 @@ export const EcosystemSlider = ({ ecosystems }) => {
 }
 
 const Container = styled.div`
-  position: relative;
   ${utils.fullWidthContainer};
 `
 
@@ -41,6 +40,9 @@ const FilterContainer = styled.div`
 `
 
 const CarouselContainer = styled.div`
-  overflow-x: hidden;
-  position: relative;
+  @media (max-width: 768px) {
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
+  }
 `

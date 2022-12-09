@@ -32,6 +32,7 @@ export const Carousel = ({ ecosystems }) => {
     dots: false,
     arrows: false,
     centerMode: true,
+    centerPadding: '50px',
     infinite: true,
     slidesToShow: 3,
     rows: 1,
@@ -46,6 +47,7 @@ export const Carousel = ({ ecosystems }) => {
       {
         breakpoint: 767,
         settings: {
+          centerPadding: '25px',
           slidesToShow: 1
         }
       }
@@ -77,6 +79,7 @@ export const Carousel = ({ ecosystems }) => {
 }
 
 const Container = styled.div`
+  overflow-x: hidden;
   position: relative;
   padding-top: 32px;
   padding-bottom: 16px;
