@@ -86,5 +86,23 @@ export const Button = ({
     )
   }
 
+  if (hierarchy === 'secondary-gray') {
+    return (
+      <SecondaryGrayButton
+        size={size}
+        icon={icon}
+        destructive={destructive}
+        state={state}
+        disabled={disabled}
+        iconLeading={iconLeading}
+        iconTrailing={iconTrailing}
+        iconVariant={iconVariant}
+        {...rest}
+      >
+        {children}
+      </SecondaryGrayButton>
+    )
+  }
+
   return null
 }
