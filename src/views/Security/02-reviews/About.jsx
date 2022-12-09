@@ -2,17 +2,15 @@ import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
 
 import { colors } from '../../../../styles/colors'
+import { FeaturedIcon } from '../../../components/FeaturedIcon'
 import { typography } from '../../../../styles/typography'
-import { Icon } from '../../../components/Icon'
 
 const About = () => {
   const { t } = useTranslation('security')
 
   return (
     <Container>
-      <AboutIconContainer>
-        <Icon size={24} variant='shield-tick' />
-      </AboutIconContainer>
+      <FeaturedIcon size='xl' variant='shield-tick' />
 
       <AboutTitle>{t('SECURITY_REVIEW')}</AboutTitle>
       <AboutContent>{t('SECURITY_REVIEW_TEXT')}</AboutContent>
@@ -20,36 +18,28 @@ const About = () => {
   )
 }
 
-const Container = styled.div`
-  margin-right: 64px;
-  width: 384px;
-`
+const Container = styled.div``
 
 const AboutTitle = styled.p`
+  margin-top: 24px;
   ${typography.styles.displayMd}
   ${typography.weights.semibold}
   color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
-  margin-bottom: 20px;
-`
 
-const AboutIconContainer = styled.span`
-  background-color: ${props => props.theme.isLightMode ? colors.indigo[100] : colors.gray[600]};
-  border: 10px solid ${props => props.theme.isLightMode ? colors.indigo[50] : colors.gray[700]};
-  border-radius: 28px;
-  display: flex;
-  width: 56px;
-  height: 56px;
-  justify-content: center;
-  align-items: center;
-  color: ${props => props.theme.isLightMode ? colors.indigo[600] : colors.white};;
-  margin-bottom: 24px;
+  @media (max-width: 768px) {
+    margin-top: 12px;
+  }
 `
 
 const AboutContent = styled.p`
+  margin-top: 20px;
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
   ${typography.styles.textLg}
   ${typography.weights.regular}
-  width: 352px;
+
+@media (max-width: 768px) {
+    margin-top: 16px;
+  }
 `
 
 export { About }

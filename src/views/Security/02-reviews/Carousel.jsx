@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from 'react'
+import { useRef } from 'react'
 import styled from 'styled-components'
 import SlickSlider from 'react-slick'
 
@@ -26,56 +26,30 @@ const PrevArrow = (props) => {
   )
 }
 
-const chunk = (array, size) => {
-  if (!array) return []
-  const firstChunk = array.slice(0, size) // create the first chunk of the given array
-  if (!firstChunk.length) {
-    return array // this is the base case to terminal the recursive
-  }
-  return [firstChunk].concat(chunk(array.slice(size, array.length), size))
-}
-
-const initialSlide = 0
-
 const Carousel = (props) => {
   const sliderRef = useRef(null)
-  const [currentIndex, setCurrentIndex] = useState(initialSlide)
-  const [isLast, setIsLast] = useState(0)
-  const [list, setList] = useState([])
-
-  useEffect(() => {
-    if (props.audits.length) {
-      const audits = chunk(props.audits, 4)
-      setList(audits)
-
-      setIsLast(initialSlide === audits.length - 1)
-    }
-  }, [props.audits])
-
-  const handleBeforeChange = (oldIndex, newIndex) => {
-    // Hack to find if we are on last slide
-    // This has few bugs, it's better dropping idea to disable the buttons and remove both states `currentIndex` and `isLast`
-    if (oldIndex === newIndex) {
-      setIsLast(true)
-    } else {
-      setIsLast(false)
-    }
-  }
 
   const settings = {
     dots: false,
     arrows: false,
     infinite: false,
-    slidesToShow: 1,
+    slidesToShow: 2,
     rows: 1,
     centerMode: false,
-    lazyLoad: true,
+    lazyLoad: false,
     slidesToScroll: 1,
     autoplay: false,
     autoplaySpeed: 2000,
     pauseOnHover: false,
-    beforeChange: handleBeforeChange,
-    afterChange: setCurrentIndex
+    responsive: [
+      {
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 1,
+          rows: 1
+        }
+      }
+    ]
   }
 
   return (
@@ -85,38 +59,23 @@ const Carousel = (props) => {
         ref={sliderRef}
         {...settings}
       >
-        {list.map((audits, i) => {
+        {props.audits.map((audit) => {
           return (
-            <div key={`slider-${i}}`}>
-              <Grid>
-                {
-                audits.map(audit => {
-                  return (
-                    <Card key={audit.id} audit={audit} />
-                  )
-                })
-              }
-              </Grid>
-            </div>
+            <Card key={audit.id} audit={audit} />
           )
         })}
       </SlickSlider>
 
-      {list.length > 1 && (
-        <Arrows>
-          <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} disabled={currentIndex === 0} />
-          <NextArrow onClick={() => { sliderRef.current.slickNext() }} disabled={isLast} />
-        </Arrows>
-      )}
+      <Arrows>
+        <PrevArrow onClick={() => { sliderRef.current.slickPrev() }} />
+        <NextArrow onClick={() => { sliderRef.current.slickNext() }} />
+      </Arrows>
 
     </Container>
   )
 }
 
 const Container = styled.div`
-  position: relative;
-  width: 800px;
-
   .slick-track {
     display: flex !important;
   }
@@ -126,7 +85,12 @@ const Container = styled.div`
   }
 
   .slick-slide {
+    height: inherit !important;
     margin: 0 16px;
+
+    > div {
+      height: 100%;
+    }
 
     &[aria-hidden="true"] {
       visibility: hidden;
@@ -135,17 +99,10 @@ const Container = styled.div`
   }
 `
 
-const Grid = styled.div`
-  display: grid;
-  gap: 32px;
-  grid-template-columns: 1fr 1fr;
-`
-
 const ArrowContainer = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   width: 56px;
   height: 56px;
   cursor: pointer;

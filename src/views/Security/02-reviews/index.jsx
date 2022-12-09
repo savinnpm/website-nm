@@ -9,8 +9,14 @@ import { Carousel } from './Carousel'
 export const Reviews = (props) => {
   return (
     <Review>
-      <About />
-      <Carousel audits={props.audits} />
+      <AboutContainer>
+        <About />
+      </AboutContainer>
+
+      <CarouselContainer>
+        <Carousel audits={props.audits} />
+      </CarouselContainer>
+
     </Review>
   )
 }
@@ -18,11 +24,30 @@ export const Reviews = (props) => {
 const Review = styled.div`
   display: flex;
   ${utils.fullWidthContainer}
-  margin-bottom: 96px;
-  margin-top: 96px;
+  padding-bottom: 96px;
+  padding-top: 96px;
+  gap: 32px;
+  
+  @media (max-width: 768px) {
+    padding-bottom: 64px;
+    padding-top: 64px;
+    flex-direction: column;
+    gap: 48px;
+  }
+`
+
+const AboutContainer = styled.div`
+  width: 33%;
 
   @media (max-width: 768px) {
-    
-    flex-direction: column;
+    width: 100%;
+  }
+`
+
+const CarouselContainer = styled.div`
+  width: 67%;
+
+  @media (max-width: 768px) {
+    width: 100%;
   }
 `

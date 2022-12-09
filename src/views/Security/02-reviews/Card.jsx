@@ -33,13 +33,12 @@ const Card = (props) => {
 }
 
 const Container = styled.div`
+  height: 100%;
   padding: 24px;
   display: flex;
   flex-direction: column;
   align-items: start;
   background-color: ${props => props.theme.isLightMode ? colors.gray[50] : colors.gray[700]}; 
-  max-width: 384px;
-  height: 306px;
 
   a {
     margin-top: 20px;
@@ -53,12 +52,6 @@ const CardTitle = styled.p`
 `
 const CardContent = styled.p`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.white};
-  padding: 0;
-  margin: 0;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;  
-  overflow: hidden;
   ${typography.weights.regular}
   ${typography.styles.textMd}
 `

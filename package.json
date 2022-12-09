@@ -33,10 +33,10 @@
     "react-syntax-highlighter": "^15.5.0",
     "slate": "^0.86.0",
     "slick-carousel": "^1.8.1",
-    "slugify": "^1.6.5",
-    "styled-components": "^5.3.6"
+    "slugify": "^1.6.5"
   },
   "devDependencies": {
-    "dotenv": "12.0.0"
+    "dotenv": "12.0.0",
+    "styled-components": "5.3.3"
   }
 }
