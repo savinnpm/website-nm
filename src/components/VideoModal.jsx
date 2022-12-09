@@ -13,7 +13,7 @@ export const VideoModal = ({ videoId, setId }) => {
           Playing the video that you've selected below in an iframe
         </Description>
 
-        <Iframe
+        <iframe
           src={`https://www.youtube.com/embed/${videoId}`}
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -50,18 +50,13 @@ const Description = styled(Dialog.Description)`
 `
 
 const Panel = styled(Dialog.Panel)`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-const Iframe = styled.iframe`
-  width: 1000px;
-  min-height: 240px;
-  margin-left: auto;
-  margin-right: auto;
-  aspect-ratio: 16 / 9;
-
-  @media (max-width: 1000px) {
-    max-width: 100%;
+  iframe {
+    width: 1000px;
+    min-height: 240px;
+    max-height: 80%;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    aspect-ratio: 16 / 9;
   }
 `
