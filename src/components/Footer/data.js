@@ -14,7 +14,7 @@ export const nav = [
     links: [
       { href: '/about', text: 'ABOUT_US', isExternal: false },
       { href: '/grants', text: 'PROGRAMS', isExternal: false },
-      { href: '/careers', text: 'CAREERS', isExternal: false },
+      { href: '/careers', text: 'CAREERS', isExternal: false, badge: 'We\'re Hiring!' },
       { href: '/security', text: 'SECURITY', isExternal: false },
       { href: '/contact', text: 'CONTACT', isExternal: true }
     ]

@@ -36,7 +36,7 @@ export const Navigation = ({ pages }) => {
                     <Li key={link.href}>
                       {link.isExternal
                         ? <a href={link.href} target='_blank' rel='noreferrer'>{t(link.text)}</a>
-                        : <Link href={link.href}>{t(link.text)}</Link>}
+                        : <StyledLink href={link.href}>{t(link.text)} {link?.badge && <Badge>{link.badge}</Badge>}</StyledLink>}
                     </Li>
                   )
                 })}
@@ -105,7 +105,20 @@ const Ul = styled.ul`
 
 const Li = styled.li`
   color: ${(props) => props.theme.secondaryColor};
+  display: flex;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
+`
+const Badge = styled.div`
+  ${typography.styles.textSm};
+  ${typography.weights.medium};
+  color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
+  background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
+  padding: 2px 10px;
+  border-radius: 16px;
+  margin-left: 8px;
+`
+const StyledLink = styled(Link)`
+  display:flex;
 `
