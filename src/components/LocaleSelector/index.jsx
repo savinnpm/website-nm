@@ -127,10 +127,12 @@ const LanguageContainer = styled.div`
   z-index: 3;
 
   @media (max-width: 768px) {
-    top: -72px;
+    top: -74px;
     left: 0;
     width: 100%;
     z-index: 3;
+    border-radius: 0;
+    border: none;
   }
 
 `
