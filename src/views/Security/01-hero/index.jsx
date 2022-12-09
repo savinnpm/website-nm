@@ -21,7 +21,7 @@ const Hero = () => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt='' src='/assets/images/hero/shield.webp' width='306' height='306' />
+          <Image alt='Sheild' src='/assets/images/hero/shield.png' width={300} height={300} />
         </ImageContainer>
 
       </InnerContainer>
@@ -36,55 +36,70 @@ const Container = styled.div`
 const InnerContainer = styled.div`
   display: flex;
   ${utils.fullWidthContainer};
-  justify-content: start;
+  justify-content: flex-start;
   padding-top: 100px;
   padding-bottom: 100px;
+  gap: 40px;
 
   @media (max-width: 768px) {
     padding-top: 64px;
-    padding-bottom: 64px;
+    padding-bottom: 0;
+    gap: 64px;
     flex-direction: column;
     align-items: stretch;
   }
 `
 
 const Content = styled.div`
-  width: 768px;
-  margin-right: 91px;
-
-  @media (max-width: 768px) {
-    width: auto;
-    margin-right: 0;
-  }
+  max-width: 768px;
 `
 
 const Subheader = styled.span`
   color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
-  margin-bottom: 12px;
   display: block;
 `
+
 const HeaderTitle = styled.h1`
+  margin-top: 12px;
   color: ${props => props.theme.color};
-  margin-bottom: 24px;
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
-
-
+  
   @media (max-width: 768px) {
     ${typography.styles.displayMd};
+    ${typography.weights.semibold}
   }
 `
 
 const HeaderContent = styled.p`
+  margin-top: 24px;
   color: ${props => props.theme.secondaryColor};
   ${typography.styles.textXl}
   ${typography.weights.regular}
+  
+  @media (max-width: 768px) {
+    margin-top: 16px;
+    ${typography.styles.textLg};
+    ${typography.weights.regular}
+  }
 `
 
 const ImageContainer = styled.div`
   text-align: center;
+  height: 314px;
+  flex: 1 0 auto;
+
+  @media (max-width: 768px) {
+    margin-left: -16px;
+    margin-right: -16px;
+    height: 320px;
+  }
+
+  img {
+    object-fit: contain;
+  }
 `
 
 export { Hero }

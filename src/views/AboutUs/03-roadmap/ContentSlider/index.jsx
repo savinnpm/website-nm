@@ -118,7 +118,6 @@ const ArrowButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid red;
   width: 56px;
   height: 56px;
   cursor: pointer;
