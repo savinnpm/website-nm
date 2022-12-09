@@ -1,14 +1,13 @@
 import { useTranslation } from 'react-i18next'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
 import { CodeSnippet } from './CodeSnippet'
-import { codeSnippet } from './data'
+import { codeSnippetHtml } from './data'
 import { Features } from './Features'
 
 export const LetsBuidl = () => {
-  const theme = useTheme()
   const { t } = useTranslation('home')
 
   return (
@@ -20,7 +19,7 @@ export const LetsBuidl = () => {
         </TextContainer>
 
         <CodeSnippetContainer>
-          <CodeSnippet text={codeSnippet} theme={theme.name} />
+          <CodeSnippet html={codeSnippetHtml} />
         </CodeSnippetContainer>
 
         <FeaturesAndCta>

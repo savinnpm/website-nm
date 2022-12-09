@@ -1,50 +1,14 @@
+import '@fontsource/roboto-mono/latin.css'
 import styled from 'styled-components'
-
-import {
-  Prism as SyntaxHighlighter,
-  createElement
-} from 'react-syntax-highlighter'
-import {
-  dracula as atomDark,
-  coldarkCold
-} from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 import { colors, primaryColorKey } from '../../../../styles/colors'
 
-import '@fontsource/roboto-mono/latin.css'
-
-export const CodeSnippet = ({ text, theme }) => {
+export const CodeSnippet = ({ html }) => {
   return (
     <Container>
-      <SyntaxHighlighter
-        style={theme === 'light' ? coldarkCold : atomDark}
-        language='javascript'
-        showLineNumbers
-        customStyle={{
-          background: 'transparent',
-          padding: '0px',
-          paddingRight: 24,
-          margin: 0
-        }}
-        lineNumberStyle={{
-          padding: 0,
-          textAlign: 'center'
-        }}
-        renderer={({ rows, stylesheet, useInlineStyles }) => {
-          return rows.map((node, i) => (
-            <div className='code-line' key={i}>
-              {createElement({
-                node,
-                stylesheet,
-                useInlineStyles,
-                key: `code-segement${i}`
-              })}
-            </div>
-          ))
-        }}
-      >
-        {text}
-      </SyntaxHighlighter>
+      <Pre>
+        <Code dangerouslySetInnerHTML={{ __html: html }} />
+      </Pre>
     </Container>
   )
 }
@@ -61,37 +25,48 @@ const Container = styled.div`
     margin-right: -16px;
   }
 
-  & code {
-    font-family: 'Roboto Mono', monospace !important;
-    font-weight: 500 !important;
+`
 
-    .token {
-      background-color: transparent !important;
+const Pre = styled.pre`
+  overflow: auto;
+`
+
+const Code = styled.code`
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+
+  .line{
+    /* position: relative ; */
+    
+    &::before {
+      content: attr(data-line);
+      padding-left: 1rem;
+      padding-right: 1rem;
+      margin-right: 1rem;
+      box-sizing: content-box;
+      display: inline-block;
+      width: 2ch;
+      background-color: ${props => (props.theme.isLightMode ? colors[primaryColorKey]['100'] : colors.gray['700'])};
+      color: ${props => (props.theme.isLightMode ? colors[primaryColorKey]['500'] : colors.gray['300'])};
+      /* position: absolute; */
+      /* left: 0px; */
+      /* top: 0; */
     }
   }
 
-  & code > .code-line .linenumber + span {
-    padding-left: 24px;
-  }
+  color: ${props => (props.theme.isLightMode ? colors.gray['700'] : colors.gray['50'])};
+  
+  .token{
+    &.function{
+      color: ${props => (props.theme.isLightMode ? colors.blue['700'] : colors.blue['300'])};
+    }
+    
+    &.keyword{
+      color: ${props => (props.theme.isLightMode ? colors.pink['700'] : colors.pink['500'])};
+    }
 
-  & code > .code-line .linenumber {
-    padding-left: 1.5rem !important;
-    padding-right: 1.5rem !important;
-    width: 4rem;
-    background-color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['100'] : colors.gray['700']};
-    color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['500'] : colors.gray['300']} !important;
-  }
-
-  & code > .code-line:first-child .linenumber {
-    padding-top: 24px !important;
-  }
-
-  & code > .code-line:last-child .linenumber {
-    padding-bottom: 24px !important;
-  }
-
-  & code {
-    font-family: 'Roboto Mono', monospace !important;
-    font-weight: 500 !important;
+    &.comment{
+      color: ${props => (props.theme.isLightMode ? colors.success['700'] : colors.success['500'])};
+    }
   }
 `
