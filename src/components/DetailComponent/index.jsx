@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+
 import { colors } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
@@ -42,7 +43,7 @@ const MainWrapper = styled.div`
   gap: 64px;
   grid-template-columns: 4fr 9fr;
 
-  @media (max-width: 934px) {
+  @media (max-width: 1023px) {
     grid-template-columns: 1fr;
     
     ${utils.fullWidthContainer};
@@ -52,12 +53,12 @@ const MainWrapper = styled.div`
 const Sidebar = styled.div`
   border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
 
-  @media (max-width: 933px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `
 
-const ContentWrapper = styled.div`
+const ContentWrapper = styled.div` 
   overflow: hidden;
    
   img {
