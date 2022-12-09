@@ -15,8 +15,10 @@ const Hero = () => {
     <Container>
       <InnerContainer>
         <Content>
-          <Subheading>{t('HEADER_TAG')}</Subheading>
-          <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+          <H1>
+            <Subheading>{t('HEADER_TAG')}</Subheading>
+            <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+          </H1>
           <HeaderContent>
             {t('HEADER_TEXT_1')}<br /><br />
             {t('HEADER_TEXT_2')}<br /><br />
@@ -37,6 +39,8 @@ const Hero = () => {
     </Container>
   )
 }
+
+const H1 = styled.h1``
 
 const Container = styled.div`
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
@@ -70,7 +74,7 @@ const Subheading = styled.span`
   ${typography.styles.textMd}
   display: block;
 `
-const HeaderTitle = styled.h1`
+const HeaderTitle = styled.div`
   margin-top: 12px;
   color: ${props => props.theme.color};
   ${typography.styles.displayLg}

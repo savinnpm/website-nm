@@ -8,14 +8,18 @@ export const Hero = () => {
     <Container>
       <InnerContainer>
         <Text>
-          <Subheading>Contact Us</Subheading>
-          <Heading>Get In Touch</Heading>
+          <H1>
+            <Subheading>Contact Us</Subheading>
+            <Heading>Get In Touch</Heading>
+          </H1>
           <Subtitle>We&apos;d love to hear from you. Please fill out this form.</Subtitle>
         </Text>
       </InnerContainer>
     </Container>
   )
 }
+
+const H1 = styled.h1``
 
 const Container = styled.div`
   display: flex;
@@ -44,7 +48,7 @@ const Text = styled.div`
   text-align: center;
 `
 
-const Heading = styled.h1`
+const Heading = styled.div`
   margin-top: 12px;
   ${typography.styles.displayLg};
   ${typography.weights.semibold};
