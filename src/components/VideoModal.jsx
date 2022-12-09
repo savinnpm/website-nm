@@ -50,11 +50,6 @@ const Description = styled(Dialog.Description)`
 `
 
 const Panel = styled(Dialog.Panel)`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
   iframe {
     width: 800px;
     min-height: 240px;
