@@ -1,9 +1,33 @@
 // https://payloadcms.com/docs/fields/rich-text#generating-html
+import { load as cheerioLoad } from 'cheerio'
 import escapeHTML from 'escape-html'
 import { Text } from 'slate'
 import { helpers } from '.'
 
-export const serialize = (children) => children.map((node, _i) => {
+const relationshipLinkPrefixes = {
+  articles: '/blog/',
+  pages: '/policy/',
+  audits: '/security/',
+  vacancies: '/careers/',
+  pressroom: '/pressroom/',
+  programs: '/grants/'
+}
+
+const parseRelation = (node) => {
+  if (node.relationTo === 'news') {
+    return `<a href="${node.value.link}" rel="nofollow noopener noreferrer">${node.value.title}</a>`
+  }
+
+  const prefix = relationshipLinkPrefixes[node.relationTo]
+
+  if (!prefix) {
+    return ''
+  }
+
+  return `<a href="${prefix}${node.value.slug}">${node.value.title}</a>`
+}
+
+const serializeSlateJs = (children) => children.map((node, _i) => {
   if (!node) {
     return ''
   }
@@ -33,6 +57,18 @@ export const serialize = (children) => children.map((node, _i) => {
       )
     }
 
+    if (node.underline) {
+      text = (
+        `<span class="underline">${text}</span>`
+      )
+    }
+
+    if (node.blockquote) {
+      text = (
+        `<blockquote>${text}</blockquote>`
+      )
+    }
+
     // Handle other leaf types here...
 
     return (
@@ -40,11 +76,7 @@ export const serialize = (children) => children.map((node, _i) => {
     )
   }
 
-  const serializedChildren = serialize(node.children)
-
-  if (!serializedChildren.trim()) {
-    return ''
-  }
+  const serializedChildren = serializeSlateJs(node.children)
 
   switch (node.type) {
     case 'h1':
@@ -97,9 +129,30 @@ export const serialize = (children) => children.map((node, _i) => {
         `<a href="${escapeHTML(node.url)}">${serializedChildren}</a>`
       )
 
+    case 'upload':
+      return (
+        `<img src="${node.value.url}" alt="${node.value.alt}">${serializedChildren}</a>`
+      )
+
+    case 'relationship':
+      return (
+        parseRelation(node)
+      )
+
     default:
       return (
         `<p>${serializedChildren}</p>`
       )
   }
 }).join('')
+
+export const serialize = (slateJsArr) => {
+  const html = serializeSlateJs(slateJsArr)
+
+  const $ = cheerioLoad(html, null, false)
+  if ($.text().trim()) {
+    return html
+  }
+
+  return ''
+}

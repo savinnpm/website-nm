@@ -99,7 +99,12 @@ const BlogsContainer = styled.div`
   }
 `
 
-const SingleCard = styled.div``
+const SingleCard = styled.div`
+  flex: 1;
+  @media (max-width: 768px) {
+    
+  }
+`
 
 const ButtonContainer = styled.div`
   @media (max-width: 768px) {

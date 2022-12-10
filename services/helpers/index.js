@@ -31,7 +31,11 @@ const parseLegacyHtml = async ($) => {
   $('img').each(function () {
     const oldSrc = $(this).attr('src')
 
-    if (oldSrc.indexOf('blog.neptunemutual.com') === -1) {
+    if (
+      !oldSrc.startsWith('https://blog.neptunemutual.com') &&
+      !oldSrc.startsWith('https://content.neptunedefi.com') &&
+      !oldSrc.startsWith('https://example.com')
+    ) {
       console.log('Skipped: ' + oldSrc)
       return
     }
