@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -21,7 +22,7 @@ export const Hero = () => {
               <CheckIcon /> <span>Liquidity providers</span>
             </Feature>
             <Feature>
-              <CheckIcon /> <span>Policy holders</span>
+              <CheckIcon /> <span>Policyholders</span>
             </Feature>
             <Feature>
               <CheckIcon /> <span>Cover creators</span>

@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
 
   html {
     color-scheme: ${props => props.theme.colorScheme};
-    scroll-behavior: smooth;
     text-rendering: optimizeSpeed;
     // content-visibility: auto;
   }
