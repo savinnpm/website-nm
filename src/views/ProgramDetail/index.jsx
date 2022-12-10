@@ -9,7 +9,7 @@ export const ProgramDetail = ({ programData }) => {
       <DetailComponent
         title={programData.title}
         intro={programData.intro}
-        wrapperClass='program-detail'
+        headers={programData.content.toc}
         html={programData.content.html}
         breadcrumbs={[
           { name: 'Home', link: '/' },

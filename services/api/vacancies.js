@@ -54,6 +54,9 @@ export const getSingleVacancy = async (slug) => {
 
     const match = docs.find(doc => doc.slug === slug)
 
+    const htmlContent = helpers.serialize(match.description) || match.html || ''
+    const parsedHtml = await helpers.parseHtml(htmlContent)
+
     return {
       id: match.id,
       title: match.title,
@@ -65,8 +68,9 @@ export const getSingleVacancy = async (slug) => {
       department: match.department,
       form: match.form,
       description: {
-        text: helpers.getText(match.description),
-        html: helpers.serialize(match.description)
+        html: parsedHtml.updated,
+        toc: parsedHtml.toc,
+        minsToRead: parsedHtml.minsToRead
       },
       meta: {
         title: match.meta.title,

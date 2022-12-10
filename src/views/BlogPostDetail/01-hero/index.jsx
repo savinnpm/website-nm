@@ -44,7 +44,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding-top: 64px;
-    padding-bottom: 0;
+    padding-bottom: 64px;
     flex-direction: column;
     align-items: stretch;
   }

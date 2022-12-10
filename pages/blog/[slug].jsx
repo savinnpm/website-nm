@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { BlogPost } from '../../src/views/BlogPostDetail'
+import { BlogPostDetail } from '../../src/views/BlogPostDetail'
 import { getFQDN } from '../../src/helpers'
 import { useRouter } from 'next/router'
 
@@ -70,7 +70,7 @@ export default function BlogPostPage (props) {
       </Head>
 
       <main>
-        <BlogPost post={props.post} blogPosts={props.blogPosts} />
+        <BlogPostDetail post={props.post} blogPosts={props.blogPosts} />
       </main>
     </>
   )

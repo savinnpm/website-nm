@@ -26,9 +26,7 @@ const getText = (arr) => {
   return texts.join(' ')
 }
 
-const parseLegacyHtml = async (html) => {
-  const $ = cheerioLoad(html, null, false)
-
+const parseLegacyHtml = async ($) => {
   const promises = []
   $('img').each(function () {
     const oldSrc = $(this).attr('src')
@@ -57,10 +55,67 @@ const parseLegacyHtml = async (html) => {
   return $.html()
 }
 
+const getTableOfContents = async ($) => {
+  const selector = 'h2, h3, h4'
+  const headerElements = $(selector)
+
+  const h = []
+
+  headerElements.each(function () {
+    const el = this
+    const elName = el.tagName
+
+    const elText = $(el).text().replace(/^(\s)+|(\s)+$/g, '')
+    // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
+
+    const elId = $(el).attr('id') || ''
+
+    if (elName === 'h2') {
+      h.push({ text: elText, id: elId, children: [] })
+    }
+
+    if (elName === 'h3') {
+      let lastH2Index = h.length - 1
+
+      if (!h[lastH2Index]) h.push({ text: '', children: [] })
+
+      lastH2Index = h.length - 1
+      h[lastH2Index].children.push({ text: elText, id: elId, children: [] })
+    }
+  })
+
+  return h
+}
+
+const getMinsToRead = ($) => {
+  try {
+    const wpm = 225
+
+    const text = $.text()
+    const words = text.trim().split(/\s+/).length
+
+    return Math.ceil(words / wpm)
+  } catch (error) {
+
+  }
+
+  return 0
+}
+
+const parseHtml = async (html) => {
+  const $ = cheerioLoad(html, null, false)
+
+  const toc = await getTableOfContents($)
+  const updated = await parseLegacyHtml($)
+  const minsToRead = getMinsToRead($)
+
+  return { toc, updated, minsToRead }
+}
+
 export const helpers = {
   getSlug,
   serialize,
-  parseLegacyHtml,
+  parseHtml,
   getText,
   getOgImageAlt,
   storeOgImage

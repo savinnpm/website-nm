@@ -1,7 +1,3 @@
-import {
-  useEffect,
-  useState
-} from 'react'
 
 import styled from 'styled-components'
 
@@ -12,36 +8,23 @@ import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
 import { Shareit } from '../../components/Shareit'
 import { BlogHero } from './01-hero'
 import { RelatedPosts } from './03-related-posts'
-import { Content } from './Content'
+import { HtmlContent } from '../../components/Content'
 import { Tags } from './Tags'
 
-export const BlogPost = (props) => {
-  const [timeToRead, setTimeToRead] = useState('0 min')
+export const BlogPostDetail = (props) => {
+  const timeToRead = `${props.post.content.minsToRead} min`
 
-  useEffect(() => {
-    if (process.browser) {
-      const wpm = 225
-      const text = document.getElementsByClassName('article')[0].innerText
-
-      const words = text.trim().split(/\s+/).length
-      const time = Math.ceil(words / wpm)
-
-      setTimeToRead(`${time} min`)
-    }
-  }, [])
-
-  const wrapperClass = 'article'
   return (
     <>
       <BlogHero title={props.post.title} featuredImage={props.post.image} createdAt={props.post.date} timeToRead={timeToRead} />
 
       <MainWrapper>
         <Sidebar>
-          <TableOfContents title={props.post.title} wrapperClass={wrapperClass} />
+          <TableOfContents title={props.post.title} headers={props.post.content.toc} />
         </Sidebar>
 
         <ContentWrapper>
-          <Content content={props.post.content.html} wrapperClass={wrapperClass} />
+          <HtmlContent content={props.post.content.html} />
 
           <Tags tags={props.post.tags} />
 

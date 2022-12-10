@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 
 import { typography } from '../../../styles/typography'
@@ -11,12 +10,10 @@ import { Breadcrumbs } from '../../components/Breadcrumbs'
 import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
 import { Shareit } from '../../components/Shareit'
 
-import { Content } from '../BlogPostDetail/Content'
+import { HtmlContent } from '../../components/Content'
 
 const CareersDetail = (props) => {
   const { t } = useTranslation('careers-detail')
-
-  const wrapperClass = 'article'
 
   return (
     <>
@@ -26,7 +23,7 @@ const CareersDetail = (props) => {
 
       <MainWrapper>
         <Sidebar>
-          <TableOfContents title={props.vacancy.title} wrapperClass={wrapperClass} />
+          <TableOfContents title={props.vacancy.title} headers={props.vacancy.description.toc} />
         </Sidebar>
 
         <ContentWrapper>
@@ -47,14 +44,18 @@ const CareersDetail = (props) => {
             </Type>
           </Types>
 
-          <Content content={`<div id='about-this-vacancy'><label>About this Vacancy</label><span /></div>${props.vacancy.description.html}`} wrapperClass={wrapperClass} />
+          <AboutThisVacancy>
+            <span />
+            <div>About this Vacancy</div>
+          </AboutThisVacancy>
+          <HtmlContent content={props.vacancy.description.html} />
           <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
 
-          <Link className='btn-application' target='_blank' href={props.vacancy.form} rel='noreferrer'>
-            <Button hierarchy='primary' size='lg' iconTrailing iconVariant='arrow-square-up-right'>
+          <ButtonContainer>
+            <Button hierarchy='primary' as='a' target='_blank' href={props.vacancy.form} rel='noreferrer' size='lg' iconTrailing iconVariant='arrow-square-up-right'>
               {t('SUBMIT_JOB_APPLICATION')}
             </Button>
-          </Link>
+          </ButtonContainer>
 
         </ContentWrapper>
 
@@ -89,59 +90,29 @@ const Sidebar = styled.div`
 `
 
 const ContentWrapper = styled.div`
-  overflow: hidden;
-   
-  img {
-    height: auto;
-    width: 100%;
-    object-fit: contain;
-  }
+`
+const AboutThisVacancy = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
 
-  p,
-  li {
-    color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
-    ${typography.weights.regular}
-    ${typography.styles.textLg}
-  }
-
-  li {
-    line-height: 28px;
-  }
-  
-  h2 {
-    ${typography.styles.displayXs}
-    margin-bottom: 12px;
-  }
-  
-  .btn-application {
-    display: flex;
-    margin-top: 56px;
-    justify-content: center;
-
-    @media (min-width: 770px) {
-      justify-content: start;
-    }
-  }
-
-  #about-this-vacancy  {
+  div {
     position: relative;
-    text-align: center;
+    background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};;
+    padding: 0 24px;
+    ${typography.weights.semibold}
+    ${typography.styles.textXl}
+  }
 
-    label {
-      background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray[800]};;
-      padding: 0 24px;
-      ${typography.weights.semibold}
-      ${typography.styles.textXl}
-    }
-
-    span {
-      border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
-      display: block;
-      width: 100%;
-      position: absolute;
-      top: 50%;
-      z-index: -1;
-    }
+  span {
+    border-top: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 50%;
   }
 `
 
@@ -182,6 +153,16 @@ const Header = styled.div`
 const Title = styled.h1`
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
+`
+
+const ButtonContainer = styled.div`
+  display: flex;
+  margin-top: 56px;
+  justify-content: center;
+
+  @media (min-width: 768px) {
+    justify-content: start;
+  }
 `
 
 export { CareersDetail }

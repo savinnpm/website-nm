@@ -12,41 +12,9 @@ import {
 } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
-export const TableOfContents = ({ wrapperClass, title }) => {
-  const [headers, setHeaders] = useState([])
+export const TableOfContents = ({ title, headers }) => {
   const [currentHeader, setCurrentHeader] = useState('')
   const router = useRouter()
-
-  useEffect(() => {
-    if (!wrapperClass) return
-
-    const selector = `.${wrapperClass} > h2, .${wrapperClass} > h3, .${wrapperClass} > h4`
-    const headerElements = document.querySelectorAll(selector)
-
-    const h = []
-    headerElements.forEach((el) => {
-      const elName = el.tagName
-      const elText = el.textContent.replace(/^(\s)+|(\s)+$/g, '')
-      // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
-
-      const elId = el.getAttribute('id') || ''
-
-      if (elName === 'H2') {
-        h.push({ text: elText, id: elId, children: [] })
-      }
-
-      if (elName === 'H3') {
-        let lastH2Index = h.length - 1
-
-        if (!h[lastH2Index]) h.push({ text: '', children: [] })
-
-        lastH2Index = h.length - 1
-        h[lastH2Index].children.push({ text: elText, id: elId, children: [] })
-      }
-    })
-
-    setHeaders(h)
-  }, [wrapperClass])
 
   useEffect(() => {
     const hash = router.asPath.split('#')[1] || ''

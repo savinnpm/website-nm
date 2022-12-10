@@ -7,8 +7,8 @@ export const Policy = ({ page, activeSlug, slugs }) => {
       <Hero slugs={slugs} activeSlug={activeSlug} />
 
       <DetailComponent
+        headers={page.content.toc}
         html={page.content.html}
-        wrapperClass={`${activeSlug}-detail`}
         title={page.title}
         sharelinks={false}
       />

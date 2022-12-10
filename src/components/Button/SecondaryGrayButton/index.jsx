@@ -42,9 +42,9 @@ export const SecondaryGrayButton = ({
 }
 
 const StyledButton = styled.button`
-  --textColor: ${(props) => getBgColor(props.destructive)['700']};
-  --borderColor: ${(props) => getBgColor(props.destructive)['300']};
-  --backgroundColor: ${colors.white};
+  --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['50']};
+  --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['600']};
+  --backgroundColor: 'transparent';
 
   display: flex;
   justify-content: center;
@@ -62,26 +62,26 @@ const StyledButton = styled.button`
   box-shadow: ${shadows.xs};
 
   &:disabled {
-    --textColor: ${(props) => getBgColor(props.destructive)['300']};
-    --borderColor: ${(props) => getBgColor(props.destructive)['200']};
+    --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['300']};
+    --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['200'] : getBgColor(props.destructive)['200']};
     cursor: not-allowed;
   }
 
   &:not(&:disabled) {
     &[data-state="hover"], :hover {
-      --backgroundColor: ${(props) => getBgColor(props.destructive)['50']};
-      --textColor: ${(props) => getBgColor(props.destructive)['800']};
+      --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['800'] : getBgColor(props.destructive)['100']};
+      --backgroundColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['50'] : getBgColor(props.destructive)['600']};
     }
 
     &[data-state="focussed"],
     :focus,
     :active,
     :focus-visible {
-      --borderColor: ${(props) => getBgColor(props.destructive)['200']};
+      --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['200'] : getBgColor(props.destructive)['600']};
 
       outline: none;
       box-shadow: ${shadows.xs},
-        0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['800']};
+        0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['700']};
     }
   }
 `

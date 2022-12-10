@@ -23,6 +23,9 @@ const getDocs = async () => {
 }
 
 const transformDoc = async (doc) => {
+  const htmlContent = helpers.serialize(doc.content)
+  const parsedHtml = await helpers.parseHtml(htmlContent)
+
   return {
     id: doc.id,
     title: doc.title,
@@ -31,8 +34,9 @@ const transformDoc = async (doc) => {
     category: doc.category,
     icon: doc.icon,
     content: {
-      text: helpers.getText(doc.content),
-      html: helpers.serialize(doc.content)
+      html: parsedHtml.updated,
+      toc: parsedHtml.toc,
+      minsToRead: parsedHtml.minsToRead
     },
     badges: JSON.parse(doc.badges || '[]'),
     meta: {

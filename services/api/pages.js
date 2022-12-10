@@ -23,14 +23,18 @@ const getDocs = async () => {
 }
 
 const transformDoc = async (doc) => {
+  const htmlContent = helpers.serialize(doc.content)
+  const parsedHtml = await helpers.parseHtml(htmlContent)
+
   return {
     id: doc.id,
     title: doc.title,
     slug: doc.slug,
     category: doc.category,
     content: {
-      text: helpers.getText(doc.content),
-      html: helpers.serialize(doc.content)
+      html: parsedHtml.updated,
+      toc: parsedHtml.toc,
+      minsToRead: parsedHtml.minsToRead
     },
     meta: {
       title: doc.meta?.title || '',

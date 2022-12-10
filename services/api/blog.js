@@ -89,6 +89,9 @@ export const getSinglePost = async (slug) => {
 
     const match = docs.find(doc => doc.slug === slug)
 
+    const htmlContent = helpers.serialize(match.content) || match.html || ''
+    const parsedHtml = await helpers.parseHtml(htmlContent)
+
     return {
       id: match.id,
       title: match.title,
@@ -107,7 +110,9 @@ export const getSinglePost = async (slug) => {
         }
       },
       content: {
-        html: helpers.serialize(match.content) || await helpers.parseLegacyHtml(match.html) || ''
+        html: parsedHtml.updated,
+        toc: parsedHtml.toc,
+        minsToRead: parsedHtml.minsToRead
       }
     }
   } catch (error) {
