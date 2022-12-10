@@ -1,9 +1,11 @@
+import Image from 'next/image'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 import { getFormattedDate } from '../../../helpers'
+import { getBlurDataURL } from '../../../helpers/images'
 
 export const BlogHero = ({ title, createdAt, timeToRead, featuredImage }) => {
   return (
@@ -19,7 +21,12 @@ export const BlogHero = ({ title, createdAt, timeToRead, featuredImage }) => {
         </Heading>
       </Header>
       <ImageContainer>
-        <img src={`${featuredImage}`} alt='Neptune' />
+        <Image
+          src={`${featuredImage}`} alt={title} fill loading='eager' priority
+          sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
+          placeholder='blur'
+          blurDataURL={getBlurDataURL(1280, 1280)}
+        />
       </ImageContainer>
     </Container>
   )
@@ -37,7 +44,7 @@ const Container = styled.div`
 
   @media (max-width: 768px) {
     padding-top: 64px;
-    padding-bottom: 64px;
+    padding-bottom: 0;
     flex-direction: column;
     align-items: stretch;
   }
@@ -78,12 +85,15 @@ const ImageContainer = styled.div`
   overflow: hidden;
 
   @media (max-width: 768px) {
+    flex: 1 0 240px;
     height: 240px;
+    max-width: none;
+    margin-left: -16px;
+    margin-right: -16px;
   }
 
+  position: relative;
   img {
-    width: 100%;
-    height: 100%;
     object-fit: cover;
     display: block;
   }

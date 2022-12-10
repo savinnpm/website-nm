@@ -117,8 +117,8 @@ const ImageContainer = styled.div`
     margin-left: -16px;
     margin-right: -16px;
   }
+  
   position: relative;
-
   img {
     object-position: top center;
     object-fit: cover;
