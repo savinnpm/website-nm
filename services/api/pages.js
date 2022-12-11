@@ -1,6 +1,6 @@
+import { mockData } from '../_mock_'
 import { helpers } from '../helpers'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 
 let docs = null
 
@@ -53,13 +53,15 @@ export const getPages = async () => {
 
     const result = await Promise.allSettled(docs.map(async (doc) => await transformDoc(doc)))
 
-    return result.map(x => x.value).map(x => {
-      return {
-        slug: x.slug,
-        title: x.title,
-        id: x.id
-      }
-    })
+    return result
+      .sort((a, b) => a.value.sort - b.value.sort)
+      .map(x => x.value).map(x => {
+        return {
+          slug: x.slug,
+          title: x.title,
+          id: x.id
+        }
+      })
   } catch (error) {
     console.error(error)
   }

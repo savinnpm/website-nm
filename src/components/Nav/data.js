@@ -30,10 +30,10 @@ export const data = [
         title: 'COMPANY',
         links: [
           { title: 'ABOUT_US', href: '/about', description: 'ABOUT_US_DESC', icon: 'flag-06' },
-          { title: 'GRANTS_AND_BOUNTIES', href: '/grants', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
+          { title: 'GRANTS_AND_BOUNTIES', href: '/grants-and-bounties', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
           { title: 'CAREERS', href: '/careers', description: 'CAREERS_DESC', icon: 'users-01', badge: 'We\'re Hiring!' },
           { title: 'SECURITY', href: '/security', description: 'SECURITY_DESC', icon: 'glasses-02' },
-          { title: 'POLICY', href: '/policy', description: 'POLICY_DESC', icon: 'folder' }
+          { title: 'POLICIES', href: '/policies', description: 'POLICY_DESC', icon: 'folder' }
         ]
       },
       {

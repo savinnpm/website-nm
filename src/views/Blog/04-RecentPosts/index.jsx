@@ -1,6 +1,11 @@
+import {
+  useEffect,
+  useState
+} from 'react'
+
 import { useRouter } from 'next/router'
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -16,16 +21,16 @@ const filters = [
     value: 'all'
   },
   {
+    text: 'Exploit Analysis',
+    value: 'exploit-analysis'
+  },
+  {
     text: 'Weekly Report',
     value: 'weekly-report'
   },
   {
     text: 'Monthly Review',
     value: 'monthly-review'
-  },
-  {
-    text: 'Exploit Analysis',
-    value: 'exploit-analysis'
   },
   {
     text: 'Press Room',
