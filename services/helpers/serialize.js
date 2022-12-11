@@ -125,6 +125,10 @@ const serializeSlateJs = (children) => children.map((node, _i) => {
         `<li>${serializedChildren}</li>`
       )
     case 'link':
+      if (!serializedChildren) {
+        // Skip links with no text
+        return ''
+      }
       return (
         `<a href="${escapeHTML(node.url)}">${serializedChildren}</a>`
       )

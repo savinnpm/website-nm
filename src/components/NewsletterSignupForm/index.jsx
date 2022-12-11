@@ -64,7 +64,7 @@ const ContentContainer = styled.div`
   text-align: center;
 `
 
-const Heading = styled.h1`
+const Heading = styled.h2`
   ${typography.styles.displayMd};
   ${typography.weights.semibold};
 

@@ -56,7 +56,9 @@ const Shareit = (props) => {
         iconVariant='twitter'
         icon='only'
         href={getUrl('url', `https://twitter.com/intent/tweet?text=${props.intro}`)}
-      />
+      >
+        Share on twitter
+      </Button>
 
       <Button
         as='a'
@@ -67,7 +69,9 @@ const Shareit = (props) => {
         iconVariant='facebook'
         icon='only'
         href={getUrl('u', 'https://www.facebook.com/sharer/sharer.php')}
-      />
+      >
+        Share on facebook
+      </Button>
 
       <Button
         as='a'
@@ -78,7 +82,9 @@ const Shareit = (props) => {
         iconVariant='linkedin'
         icon='only'
         href={getUrl('url', `https://www.linkedin.com/shareArticle?mini=true&title=${props.title}&summary=${props?.intro}&source=Neptune Mutual`)}
-      />
+      >
+        Share on linkedin
+      </Button>
 
     </Container>
   )
@@ -92,8 +98,9 @@ const Container = styled.div`
   flex-wrap: wrap;
   gap: 12px;
 
-  @media (min-width: 770px) {
-    text-align: left;
+  @media (max-width: 768px) {
+    justify-content: center;
+    border-top: none;
   }
 `
 

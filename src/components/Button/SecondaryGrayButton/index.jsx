@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { shadows } from '../../../../styles/shadows'
+import { utils } from '../../../../styles/utils'
 import { Icon } from '../../Icon'
 import { gap } from './gap'
 import { iconSize } from './iconSize'
@@ -35,7 +36,7 @@ export const SecondaryGrayButton = ({
       {...rest}
     >
       {iconLeading && <Icon variant={iconVariant} />}
-      {icon !== 'only' && <Content $iconOnlyMobile={iconOnlyMobile}>{children}</Content>}
+      <Content $iconOnlyMobile={iconOnlyMobile} $icon={icon}>{children}</Content>
       {iconTrailing && <Icon variant={iconVariant} />}
     </StyledButton>
   )
@@ -44,7 +45,7 @@ export const SecondaryGrayButton = ({
 const StyledButton = styled.button`
   --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['50']};
   --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['600']};
-  --backgroundColor: 'transparent';
+  --backgroundColor: ${(props) => props.theme.primaryBackgroundColor};
 
   display: flex;
   justify-content: center;
@@ -87,7 +88,9 @@ const StyledButton = styled.button`
 `
 
 const Content = styled.span`
+  ${props => (props.$icon === 'only') && utils.srOnly};
+
   @media (max-width: 768px) {
-    display: ${props => props.$iconOnlyMobile ? 'none' : 'inline'};
+    ${props => (props.$iconOnlyMobile) && utils.srOnly};
   }
 `

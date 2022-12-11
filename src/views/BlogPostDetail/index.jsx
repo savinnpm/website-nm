@@ -73,4 +73,8 @@ const ContentWrapper = styled.div`
     width: 100%;
     object-fit: contain;
   }
+
+  @media (max-width: 768px) {
+    padding-bottom: 64px;
+  }
 `
