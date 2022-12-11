@@ -13,7 +13,7 @@ import { ArticleCard } from '../../../components/ArticleCard'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from './Pagination'
 
-export const BLOGS_PER_PAGE = 6
+export const BLOGS_PER_PAGE = 12
 
 const filters = [
   {

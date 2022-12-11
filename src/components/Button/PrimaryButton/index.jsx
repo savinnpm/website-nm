@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { shadows } from '../../../../styles/shadows'
 import { Icon } from '../../Icon'
 import { gap } from './gap'
@@ -79,6 +83,12 @@ const StyledButton = styled.button`
       box-shadow: ${shadows.xs},
         0px 0px 0px 4px ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['100'] : getBgColor(props.destructive)['800']};
     }
+  }
+
+  transition: all 100ms ease-in;
+  
+  :hover {
+    transform: scale(1.0125);
   }
 `
 

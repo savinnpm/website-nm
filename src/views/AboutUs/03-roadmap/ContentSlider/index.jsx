@@ -1,13 +1,17 @@
-import { useEffect, useRef } from 'react'
-import { data } from '../data'
+import {
+  useEffect,
+  useRef
+} from 'react'
 
 import Slider from 'react-slick'
 import styled from 'styled-components'
+
+import { blurs } from '../../../../../styles/blurs'
+import { colors } from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
 import { utils } from '../../../../../styles/utils'
-import { colors } from '../../../../../styles/colors'
-import { blurs } from '../../../../../styles/blurs'
 import { Icon } from '../../../../components/Icon'
+import { data } from '../data'
 
 export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
   const sliderRef = useRef(null)
@@ -34,7 +38,7 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
     <div>
       <Slider ref={sliderRef} {...settings}>
         {data.map((item, i) => {
-          const { name, DescComponent } = item
+          const { name, Story } = item
 
           const isActive = activeIndex === i
 
@@ -44,7 +48,7 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
               tabIndex={isActive ? undefined : '-1'}
             >
               <h3>{name}</h3>
-              <DescComponent />
+              <Story />
             </SlideContent>
           )
         })}

@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { Button } from '../../../components/Button'
 import { Badges } from './Badges'
@@ -38,6 +42,7 @@ export const VacancyCard = ({ vacancy }) => {
   )
 }
 
+
 const Container = styled.section`
   padding: 24px 24px 28px;
   gap: 24px;
@@ -45,6 +50,12 @@ const Container = styled.section`
   background: ${(props) => props.theme.isLightMode ? colors.white : colors.gray['700']};
   border: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
   border-radius: 16px;
+  transition: all 50ms ease-in;
+
+
+  :hover {
+    transform: scale(1.025);
+  }
 `
 
 const TitleAndCta = styled.div`

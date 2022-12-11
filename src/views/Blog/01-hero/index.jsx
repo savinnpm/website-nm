@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BlogSubscribe } from '../../../components/BlogSubscribe'
@@ -10,10 +14,12 @@ export const Hero = () => {
       <InnerContainer>
         <Text>
           <H1>
-            <Subheader>Learn about the most recent developments in the decentralized insurance space.</Subheader>
-            <Heading>Neptune Mutual Decentralized Insurance Blog</Heading>
+            <Subheader>Recent developments in the decentralized insurance space</Subheader>
+            <Heading>Neptune Mutual Blog</Heading>
           </H1>
-          <Subtitle>The blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.</Subtitle>
+          <Subtitle>
+            The Neptune Mutual Blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.
+          </Subtitle>
         </Text>
 
         <FormContainer>

@@ -1,5 +1,4 @@
 import { Command } from './Command'
-import { DownloadButton } from './DownloadButton'
 import { UnorderedList } from './UnorderedList'
 
 const links = {
@@ -18,15 +17,14 @@ const links = {
 export const data = [
   {
     name: <>The Idea</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
             Blockchain-based covers have a low claims-to-payout ratio. Existing cover products are unscalable, discretionary, and discriminatory. Smart contract audits do not guarantee security. Attacks on exchanges, metaverses, DApps, and DeFi protocols are increasing and getting more sophisticated.
           </p>
-
           <p>
-            We saw a growing need for security and reliable covers that inspired us to create Neptune Mutual.
+            Observing a need in the market for a solid parametric DeFi insurance solution, we decided to launch Neptune Mutual.
           </p>
         </>
       )
@@ -34,64 +32,49 @@ export const data = [
   },
   {
     name: <>Product Design</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
-            Four key principles drive the design of Neptune Mutual\'s cover protocol:
+            We designed the protocol with these four key principles:
           </p>
 
-          <UnorderedList items={[
-            'Security',
-            'Minimizing risk',
-            'Scalability',
-            'User Experience (UX)'
-          ]}
-          />
-        </>
-      )
-    }
-  },
-  {
-    name: <>Token Design</>,
-    DescComponent: () => {
-      return (
-        <>
           <p>
-            Neptune Mutual's Lightpaper gives detailed information on our NPM token design and usage. Here are key points to take not of:
+            <UnorderedList items={[
+              'Security',
+              'Minimizing risk',
+              'Scalability',
+              'User Experience (UX)'
+            ]}
+            />            
           </p>
-
-          <UnorderedList items={[
-            'There is a fixed supply of 1 billion NPM tokens.',
-            'The minting of NPM tokens will have a timeframe of 6 years.',
-            'NPM tokes are mainly used for our incident resolution reporting mechanism including other functions of the protocol such as creating a cover.'
-          ]}
-          />
         </>
       )
     }
   },
   {
     name: <>Product MVP</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
-            All participants of the Neptune Mutual ecosystem will get a comprehensive documentation that helps with understanding the different aspects of the Neptune Mutual protocol.
+            The Neptune Mutual MVP was developed and deployed on a number of blockchain testnets, including but not limited to Ropsten, Kovan, BSC Testnet, Mumbai, and Fuji.
           </p>
-
-          <DownloadButton text='View the Lightpaper' link={links.LIGHTPAPER} />
         </>
       )
     }
   },
   {
     name: <>Cover SDK Beta</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
-            Check out the Cover SDK source code on the Neptune Mutual Github repository. <a target='_blank' rel='noreferrer' href={links.SDK}>Read the SDK documentation</a> to find out how to get access to cover feature on your own frontend app or backend API.Built on Typescript, developers can use the SDK in both frontend and backend environments using any popular framework. The SDK is also available as an NPM package.
+            Check out the Cover SDK source code on the Neptune Mutual Github
+            repository. <a target='_blank' rel='noreferrer' href={links.SDK}>Read the SDK documentation</a>
+            &nbsp;to find out how to get access to cover feature on your own frontend app or backend API.
+            Built on Typescript, developers can use the SDK in both frontend and backend environments using any popular framework.
+            The SDK is also available as an NPM package.
           </p>
 
           <Command text='npm install @neptunemutual/sdk' />
@@ -101,7 +84,7 @@ export const data = [
   },
   {
     name: <>Incorporation & Legal</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <p>
           In September 2021, we incorporated legal entities to support the fundraising, development, recruitment, expansion, and operational demand of the Neptune Mutual protocol.
@@ -111,15 +94,14 @@ export const data = [
   },
   {
     name: <>Fundraising & Team Building</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
             Neptune Mutual successfully closed its Seed Round backed by industry leaders including Fenbushi and Coinbase Ventures. Soon after, Animoca Brands led the subsequent investment round and has been joined by an impressive list of investors.
           </p>
-
           <p>
-            Neptune Mutual has grown quickly from 3 cofounders to a team of over 25, based in countries across the world.
+            Neptune Mutual has swiftly expanded from three co-founders to a workforce of over 25 people located in locations all over the globe.
           </p>
         </>
       )
@@ -127,75 +109,334 @@ export const data = [
   },
   {
     name: <>Protocol Testnet Launch</>,
-    DescComponent: () => {
-      return (
-        <p>
-          The Neptune Mutual protocol launches on a couple of test networks like Kovan and Binance Smart Chain Testnet. Community members participate in the protocol by becoming cover purchasers,  liquidity providers, and concensus witenesses. We develop <a target='_blank' rel='noreferrer' href={links.FAUCET}>Neptune Mutual faucet</a> to provide users with testnet DAI and NPM tokens.
-        </p>
-      )
-    }
-  },
-  {
-    name: <>Protocol Audit & Launch</>,
-    DescComponent: () => {
-      return (
-        <p>The Neptune Mutual Protocol V1 gets audited by a highly-sophisticated security research company or group. The protocol gets improved over time through bug-bounty programs and continous security reviews conducted by independent researchers.</p>
-      )
-    }
-  },
-  {
-    name: <>SDK Audit & Launch</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <>
           <p>
-            Neptune Mutual SDK undergoes a strict internal security audit before it becomes available for public use.
+            The Neptune Mutual protocol launches on a couple of test networks like Ropsten and Mumbai testnet. Community members participate in the protocol by becoming cover purchasers,  liquidity providers, and concensus witenesses. We develop <a target='_blank' rel='noreferrer' href={links.FAUCET}>Neptune Mutual faucet</a> to provide users with testnet DAI and NPM tokens.
           </p>
-
           <p>
-            Furthermore, the app, Github, hosting, CI/CD pipelines, DNS, HTTP security, and more is thoroughly audited as well. A proper cyber hygine is implemented across the team and organization.
+            <a target="_blank" href="https://faucet.neptunemutual.com/" title="Neptune Mutual Faucet">View Faucet</a>
+            &nbsp;/&nbsp;
+            <a target="_blank" href="https://test.neptunemutual.com/" title="Neptune Mutual Testnet">View Testnet</a>
           </p>
         </>
       )
     }
   },
   {
-    name: <>Aggregated Policies (v2)</>,
+    name: <>Blocksec Protocol Audit</>,
+    Story: () => {
+      return (
+        <>
+          <p>
+            When it comes to the validation and auditing of smart contracts, Blocksec is a well-known brand name. We entered into a contract with them to have them perform, over the period of almost two months, a full security review of the smart contracts that serve as the foundation of the Neptune Mutual protocol.          </p>
+          <p>
+            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>SDK Audit & Launch</>,
+    Story: () => {
+      return (
+        <>
+          <p>
+            Neptune Mutual SDK undergoes a strict internal security audit before it gets released as an NPM module.
+          </p>
+
+          <p>
+            Furthermore, the app, Github, hosting, CI/CD pipelines, DNS, HTTP security, and more is thoroughly audited as well. A proper cyber hygine is implemented across the team and organization.
+          </p>
+
+          <p>
+            <a target="_blank" href="https://www.npmjs.com/package/@neptunemutual/sdk" rel="nofollow noopener noreferrer" title="Neptune Mutual SDK on NPM Database">View on npmjs.com</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Cyraacs SDK Audit</>,
+    Story: () => {
+      return (
+        <>
+          <p>
+            The Cyraacs team was brought on board to perform security audit of the Neptune Mutual Typescript SDK.
+          </p>
+          <p>
+            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Diversified Pools (v2)</>,
+    current: false,
+    Story: () => {
+      return (
+        <>
+          <p>
+            We rolled up our sleeves and completed the diversified insurance pool feature that was initially scheduled to be released in 2023 as version 2.
+          </p>
+          <p>
+            With this upgrade, cover pools can now be integrated into numerous baskets for enhanced capital efficiency and increased returns for liquidity providers. Due to the leverage element, diversified pools, unlike dedicated pools, do not have 1:1 liquidity.
+          </p>
+          <p>
+            <a target="_blank" href="https://test.neptunemutual.com/" title="View Testnet">View Testnet</a>
+          </p>        
+        </>
+      )
+    }
+  },
+  {
+    name: <>Open Zeppelin Audit</>,
+    Story: () => {
+      return (
+        <>
+        <p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>
+        <p>
+          <a href="/security" title="View Audit Reports">View Audit Reports</a>
+        </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Cyraacs Pentest</>,
+    Story: () => {
+      return (
+        <>
+          <p>
+            Following the end of our Typescript SDK audit with Cyraacs, we contacted them to obtain greybox and blackbox penetration testing service on publicly-hosted instances of our frontend application and API backends.
+          </p>
+          <p>
+            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Marketplace Launch</>,
+    current: false,
+    Story: () => {
+      return (
+        <>
+          <p>
+            The Neptune Mutual protocol was launched on the Ethereum mainnet after the completion of an extensive internal security audit.          </p>
+          <p>
+            <a target="_blank" href="https://app.neptunemutual.com/" title="View Marketplace">View Marketplace</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Prime dApps Diversified Insurance Cover</>,
+    current: false,
+    Story: () => {
+      return (
+        <>
+          <p>
+            Neptune Mutual announces "Prime dApps," a diverse cover pool that includes industry-leading DeFi protocols such as Uniswap, Aave, Balancer, Curve, Gnosis Safe, MakerDAO, and Synthetix.
+          </p>
+          <p>
+            <a target="_blank" href="https://app.neptunemutual.com/covers/prime" title="View Prime dApps Diversified Insurance Cover Pool">View Prime dApps</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Discount Coupons</>,
+    current: false,
+    Story: () => {
+      return (
+        <>
+          <p>
+            Neptune Mutual announced a discount coupon feature on Twitter, via which policyholders are eligible to earn 100% of the USDC stablecoin protocol fee.
+          </p>
+
+          <p>
+            <a target="_blank" href="https://twitter.com/neptunemutual/status/1594910920228360192" rel="nofollow noopener noreferrer" title="View Announcement in Twitter">View Tweet</a>
+          </p>
+        </>
+      )
+    }
+  },
+  {
+    name: <>Binance Dedicated Cover</>,
     current: true,
-    DescComponent: () => {
+    Story: () => {
+      return (
+        <>
+          <p>
+            We listed Binance, one of the biggest and most popular exchange, on our marketplace. Binance exchange custody has been deployed as a dedicated standalone cover. A dedicated cover pool always has at least 1:1 or more liquidity available than policies underwritten.
+          </p>
+          <p>
+            <a target="_blank" href="https://app.neptunemutual.com/covers/binance/purchase" title="Purchase Binance Policy">Purchase Binance Policy</a>
+          </p>        
+        </>        
+      )
+    }
+  }, 
+  {
+    name: <>Cover Pool Announcement</>,
+    current: false,
+    Story: () => {
       return (
         <p>
-          This upgrade enables multiple policies to be aggregated under a single cover pool providing larger DeFi and Meta projects an ability to secure their portfolio of smaller DApps.
+          There are more diversified and dedicated cover pools on the horizon. As we go ahead, we will make an announcement on the listing and availability of these cover pools. Please stay tuned.
         </p>
       )
     }
   },
-  // {
-  //   name: <>Security Analytics Dashboard</>,
-  //   DescComponent: () => {
-  //     return (
-  //       <p>
-  //         Based on the-then demand, the Neptune Mutual team partners with blockchain security experts, groups, and companies to “conceptualize” a brand new security analytics service exclusively for our portfolio projects. The dashboard will be based on production smart contract security.
-  //       </p>
-  //     )
-  //   }
-  // },
   {
-    name: <>Security Scorecards & Widgets</>,
-    DescComponent: () => {
+    name: <>Cashback Announcement</>,
+    current: false,
+    Story: () => {
       return (
         <p>
-          As the next iteration and ehnacements to the dashboard solution, Neptune Mutual also scores the security posture of our portfolio DeFi projects and apps. The score rating can be used on any external website by simply copying and pasting a few lines of code.
+          A few of additional cashback programs will be announced to expand and grow our community and encourage people to engage with our protocol. More information will be provided once these programs are launched.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Bug Bounty Program</>,
+    current: false,
+    Story: () => {
+      return (
+        <>
+        <p>
+          We are presently putting the final touches to the guidelines for our bug bounty program, and as soon as they are finished, they will be published on the "Grants and Bounties" page of our website. Hang tight.
+        </p>
+        <p>
+          <a href="/grants-and-bounties" title="View Grants and Bounties Page">View Grants and Bounties</a>
+        </p>        
+        </>
+      )
+    }
+  },
+  {
+    name: <>Marketplace Launch</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          To process transactions with smaller amounts and lower gas fees, Neptune Mutual protocol and marketplace will be launched on additional blockchain network(s). Please stay tuned.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Token Generation Event</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          The NPM token will be launched on Ethereum as part of the token generation event. We will also upgrade the protocol to use NPM instead of PoT tokens (Proof of Authority Token).
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Decentralized Exchange Listing</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          The Neptune Mutual token will be made available on decentralized exchanges.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Ecosystem and Integration Grant</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          We will announce a grant programme in which protocols that integrate with the Neptune Mutual protocol and promote our adoption will be eligible for ecosystem and integration incentives.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Ambassador Program</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          Full information will be made accessible once the program is launched.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Referral Portal</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          A referral portal will be built to allow the community to generate vouchers and promo coupons in order to collect protocol fees as cashback. This site will also allow users to monitor and track their rewards.
+        </p>
+      )
+    }
+  },  {
+    name: <>POD Staking Pools</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          Neptune Mutual will introduce POD staking pools, allowing community members to get rewards via staking Proof of Deposit tokens.
+        </p>
+      )
+    }
+  }, 
+  {
+    name: <>Bond Pool</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          Neptune Mutual will launch Bond Pool with our partner(s) to bootstrap liquidity for cover pools.
+        </p>
+      )
+    }
+  }, 
+   {
+    name: <>Staking Pools</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          Neptune Mutual will deploy staking pools in which the community will be rewarded for staking NPM tokens.
+        </p>
+      )
+    }
+  },
+  {
+    name: <>Product Listing</>,
+    current: false,
+    Story: () => {
+      return (
+        <p>
+          More diversified and dedicated cover pools will be added to the Neptune Mutual marketplace.
         </p>
       )
     }
   },
   {
     name: <>To Be Announced</>,
-    DescComponent: () => {
+    Story: () => {
       return (
         <p>
-          As the industry evolves and matures further, Neptune Mutual creates even more products, apps, and services to remain relevant in the space and continously innovate.
+          As the industry evolves and matures further, Neptune Mutual creates even more products, apps, and services to remain relevant in the space and continuously innovate.
         </p>
       )
     }
