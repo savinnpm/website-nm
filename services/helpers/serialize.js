@@ -2,15 +2,16 @@
 import { load as cheerioLoad } from 'cheerio'
 import escapeHTML from 'escape-html'
 import { Text } from 'slate'
-import { helpers } from '.'
+
+import { helpers } from './'
 
 const relationshipLinkPrefixes = {
   articles: '/blog/',
-  pages: '/policy/',
+  pages: '/policies/',
   audits: '/security/',
   vacancies: '/careers/',
   pressroom: '/pressroom/',
-  programs: '/grants/'
+  programs: '/grants-and-bounties/'
 }
 
 const parseRelation = (node) => {

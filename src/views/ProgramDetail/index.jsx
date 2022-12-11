@@ -13,7 +13,7 @@ export const ProgramDetail = ({ programData }) => {
         html={programData.content.html}
         breadcrumbs={[
           { name: 'Home', link: '/' },
-          { name: 'Grants and Bounties', link: '/grants' },
+          { name: 'Grants and Bounties', link: '/grants-and-bounties' },
           { name: programData.title, link: '#' }
         ]}
       />

@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -43,8 +44,7 @@ const Container = styled.div`
   ${utils.fullWidthContainer};
 
   @media (max-width: 768px) {
-    padding-top: 64px;
-    padding-bottom: 64px;
+    padding: 16px 0;
     flex-direction: column;
     align-items: stretch;
   }

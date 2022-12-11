@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../styles/colors'
 import { typography } from '../../styles/typography'
 
 export const HtmlContent = ({ content }) => {
@@ -29,8 +33,7 @@ const Container = styled.div`
 
   p{
     display: block;
-    margin: 20px 0;
-    
+    margin: 0 0 28px 0;
   }
   
   a{
@@ -41,14 +44,20 @@ const Container = styled.div`
   }
 
   h2 {
-    margin-top: 40px;
+    margin: 20px 0;
     ${typography.styles.displaySm};
     ${typography.weights.semibold};
   }
 
   h3 {
-    margin-top: 32px;
+    margin: 16px 0;
     ${typography.styles.displayXs};
+    ${typography.weights.semibold};
+  }
+
+  h4 {
+    margin: 12px 0;
+    ${typography.styles.textXl};
     ${typography.weights.semibold};
   }
 

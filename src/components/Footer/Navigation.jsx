@@ -1,12 +1,13 @@
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 import styled, { useTheme } from 'styled-components'
+
 import { colors } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
+import { utils } from '../../../styles/utils'
 import NpmLogo from '../logos/npm-full'
 import NpmLogoInverse from '../logos/npm-full-inverse'
 import { nav } from './data'
-import { useTranslation } from 'react-i18next'
-import { utils } from '../../../styles/utils'
 
 export const Navigation = ({ pages }) => {
   const theme = useTheme()
@@ -23,7 +24,7 @@ export const Navigation = ({ pages }) => {
         {nav.map((list, idx) => {
           if (list.links === 'pages') {
             list.links = pages.map(page => {
-              return { href: `/policy/${page.slug}`, text: page.title, isExternal: false }
+              return { href: `/policies/${page.slug}`, text: page.title, isExternal: false }
             })
           }
 

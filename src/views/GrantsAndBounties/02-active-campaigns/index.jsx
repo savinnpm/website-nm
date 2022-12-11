@@ -1,13 +1,15 @@
 import styled, { useTheme } from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
-
-import { Tag03 } from '../../../components/Icon/variants/FinanceAndEcommerce'
-import { Share07 } from '../../../components/Icon/variants/General'
-import { MessageChatCircle } from '../../../components/Icon/variants/Communication'
+import { utils } from '../../../../styles/utils'
+import {
+  MessageChatCircle
+} from '../../../components/Icon/variants/Communication'
 import { CodeCircle03 } from '../../../components/Icon/variants/Development'
 import SvgDot from '../../../components/Icon/variants/dot'
-import { utils } from '../../../../styles/utils'
+import { Tag03 } from '../../../components/Icon/variants/FinanceAndEcommerce'
+import { Share07 } from '../../../components/Icon/variants/General'
 
 const getIcon = (program) => {
   let Icon
@@ -73,7 +75,7 @@ export const ActiveCampaigns = ({ programs }) => {
             const BadgeIcon = getBadgeIcon(badge)
 
             return (
-              <Program key={i} href={`/grants/${p.slug}`}>
+              <Program key={i} href={`/grants-and-bounties/${p.slug}`}>
                 <FlexContainer>
                   <ProgramTitle>{p.title}</ProgramTitle>
                   <BadgeContainer data-color={badge.color} data-islightmode={isLightMode}>

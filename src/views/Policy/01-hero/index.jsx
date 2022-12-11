@@ -1,7 +1,10 @@
 import Link from 'next/link'
 import styled from 'styled-components'
 
-import { colors, primaryColorKey } from '../../../../styles/colors'
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
@@ -10,17 +13,14 @@ const Hero = ({ slugs, activeSlug }) => {
     <Container>
       <InnerContainer>
         <h1>
-          <Title>Policy</Title>
-          <SubHeading>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed varius dictum volutpat. Ut augue mi, pharetra eget hendrerit id, venenatis a dolor. Nullam luctus massa eget arcu scelerisque sagittis.
-          </SubHeading>
+          <Title>Policies</Title>
         </h1>
 
         <HorizontalTabs>
           {
             slugs.map(({ slug, title }, i) => (
               <Tab
-                key={i} href={`/policy/${slug}`}
+                key={i} href={`/policies/${slug}`}
                 isactive={(activeSlug === slug) ? 'true' : 'false'}
               >
                 {title}
