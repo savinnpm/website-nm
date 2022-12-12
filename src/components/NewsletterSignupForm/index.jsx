@@ -74,7 +74,7 @@ const Heading = styled.h1`
   }
 `
 
-const Subtitle = styled.div`
+const Subtitle = styled.p`
   margin-top: 20px;
   color: ${(props) => props.theme.secondaryColor};
   ${typography.styles.textXl};

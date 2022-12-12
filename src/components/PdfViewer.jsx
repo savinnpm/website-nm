@@ -74,7 +74,7 @@ const Heading = styled.h2`
   }
 `
 
-const SupportingText = styled.div`
+const SupportingText = styled.p`
   margin-top: 20px;
 
   ${typography.styles.textXl};

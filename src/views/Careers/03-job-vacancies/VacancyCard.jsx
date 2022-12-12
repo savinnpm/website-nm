@@ -61,7 +61,7 @@ const TitleAndCta = styled.div`
 const TextContainer = styled.div`
 `
 
-const Dept = styled.p`
+const Dept = styled.div`
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
