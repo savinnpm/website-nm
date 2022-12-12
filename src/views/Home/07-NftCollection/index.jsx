@@ -15,8 +15,10 @@ export const NftCollection = () => {
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Subheading>{t('COMING_SOON')}</Subheading>
-            <Heading>{t('NFT_SERIES')}</Heading>
+            <H2>
+              <Subheading>{t('COMING_SOON')}</Subheading>
+              <Heading>{t('NFT_SERIES')}</Heading>
+            </H2>
             <SupportingText>{t('NFT_SERIES_DESC')}</SupportingText>
           </TextContainer>
 
@@ -75,7 +77,7 @@ const TextContainer = styled.div`
   margin-right: auto;
 `
 
-const Subheading = styled.p`
+const Subheading = styled.div`
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
@@ -85,8 +87,9 @@ const Subheading = styled.p`
     ${typography.styles.textSm};
   }
 `
+const H2 = styled.h2``
 
-const Heading = styled.h2`
+const Heading = styled.div`
   margin-top: 12px;
   color: ${(props) => props.theme.color};
 

@@ -10,8 +10,10 @@ export const Roadmap = () => {
       <InnerContainer>
 
         <TextContainer>
-          <Subheading>Roadmap</Subheading>
-          <Heading>Follow Our Story. Join Our Community.</Heading>
+          <H2>
+            <Subheading>Roadmap</Subheading>
+            <Heading>Follow Our Story. Join Our Community.</Heading>
+          </H2>
           <SupportingText>Our roadmap for growing the Neptune Mutual Ecosystem.</SupportingText>
         </TextContainer>
 
@@ -42,7 +44,7 @@ const TextContainer = styled.div`
   text-align: center;
 `
 
-const Subheading = styled.p`
+const Subheading = styled.div`
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};
@@ -53,7 +55,9 @@ const Subheading = styled.p`
   }
 `
 
-const Heading = styled.h2`
+const H2 = styled.h2``
+
+const Heading = styled.div`
   margin-top: 12px;
   color: ${(props) => props.theme.color};
 
