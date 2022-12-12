@@ -13,7 +13,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
-      blogPosts: await services.getBlogPosts(),
+      news: await services.getNews(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -22,7 +22,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function SecurityPage (props) {
+export default function PressRoomPage (props) {
   const { t } = useTranslation('security')
   const router = useRouter()
 
@@ -50,7 +50,7 @@ export default function SecurityPage (props) {
 
       <main>
 
-        <PressRoom posts={props.blogPosts} />
+        <PressRoom news={props.news} />
 
       </main>
 
