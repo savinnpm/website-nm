@@ -58,13 +58,10 @@ export const RecentPosts = ({ blogPosts }) => {
   const totalPages = getPageNumbers()
 
   useEffect(() => {
-    if (BLOGS_PER_PAGE * (page + 1) >= filteredPosts.length - 1) {
-      return setIsLast(true)
-    }
-    if (BLOGS_PER_PAGE * (page + 1) <= filteredPosts.length - 1) {
-      return setIsLast(false)
-    }
-  }, [filteredPosts.length, page])
+    if (page === totalPages - 1) return setIsLast(true)
+
+    return setIsLast(false)
+  }, [totalPages, page])
 
   const pushQuery = query => {
     router.push({
