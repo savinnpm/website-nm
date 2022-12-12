@@ -7,7 +7,7 @@ import { Icon } from '../Icon'
 import { InputWithIcon } from '../Input/InputWithIcon'
 import { localeNames } from './config'
 
-const options = ['en', 'zh', 'fr', 'de', 'id', 'it', 'ja', 'ko', process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
+const options = [...Object.keys(localeNames), process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
 
 export const LocaleSelector = () => {
   const router = useRouter()
@@ -48,6 +48,7 @@ export const LocaleSelector = () => {
         {showLanguages && (
           <LanguageContainer>
             <Search>
+              <BackBtn onClick={show}><Icon variant='arrow-left' size={16} /> Back</BackBtn>
               <InputWithIcon
                 placeholder='Search Language'
                 type='text'
@@ -83,6 +84,9 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  @media (max-width: 768px) { 
+    position: unset;
+  }
 `
 
 const InnerContainer = styled.div`
@@ -104,7 +108,7 @@ const CheatBackgroud = styled.div`
   height: 100vh;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 `
 
 const SelectedLanguage = styled.button`
@@ -120,10 +124,14 @@ const LanguageContainer = styled.div`
   box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
   border-radius: 8px;
   background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[800]};
-  z-index: 2;
+  z-index: 10;
 
   @media (max-width: 768px) {
-    position: relative;
+    top: -74px;
+    left: 0;
+    width: 100%;
+    border-radius: 0;
+    border: none;
   }
 
 `
@@ -131,9 +139,38 @@ const Search = styled.div`
   padding: 12px 16px;
   border-bottom: 1px solid ${(props) => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
 
+  @media (max-width: 768px) {
+    padding-top: 15px;
+    padding-bottom: 21px;
+  }
+
   .input-with-icon-container {
     background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[700]};
     color: ${(props) => props.theme.isLightMode ? colors.gray[500] : colors.gray[300]};
+
+    @media (max-width: 768px) {
+      ${typography.styles.textSm}
+    }
+  }
+`
+
+const BackBtn = styled.button`
+  display: none;
+  align-items: center;
+  color: ${(props) => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
+  background-color: ${(props) => props.theme.isLightMode ? colors.gray[100] : colors.gray[700]};
+  border-radius: 6px;
+  margin-bottom: 18px;
+  ${typography.weights.semibold};
+  cursor: pointer;
+  padding: 4px 8px;
+
+  svg {
+    margin-right: 12px;
+  }
+
+  @media (max-width: 768px) {
+    display: flex;
   }
 `
 
@@ -156,6 +193,19 @@ const Options = styled.ul`
       color: ${(props) => props.theme.isLightMode ? colors.gray[700] : colors.gray[200]};
       border-radius: 6px;
     }
+
+    @media (max-width: 768px) {
+      color: ${(props) => props.theme.isLightMode ? colors.gray[700] : colors.gray[25]};
+      padding-top: 16px;
+      ${typography.weights.semibold}
+      ${typography.styles.textMd}
+    }
+    
+  }
+
+  @media (max-width: 768px) {
+    max-height: 100vh;
+    height: calc(100vh - (125px + 73px));
   }
 `
 const Selected = styled.div`
@@ -168,4 +218,9 @@ const Selected = styled.div`
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey][700] : colors[primaryColorKey][500]};
   padding: 15px 16px;
 
+  @media (max-width: 768px) {
+    ${typography.styles.textMd}
+    padding-top: 20px;
+    padding-bottom: 28px;
+  }
 `

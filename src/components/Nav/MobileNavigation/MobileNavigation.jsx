@@ -46,10 +46,14 @@ const Container = styled.div`
   bottom: 0px;
   z-index: 1;
   width: 100%;
-  overflow-x: hidden;
+  // overflow-x: hidden; I need to remove this so that the locale selector can be shown
   background-color: ${props => props.theme.primaryBackgroundColor};
   display: block;
   border-top: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
+
+  @media (max-width: 768px) { 
+    z-index: 2;
+  }
 `
 
 const ActionsContainer = styled.div`

@@ -58,7 +58,7 @@ const InnerContainer = styled.div`
   @media (max-width: 768px) {
     gap: 64px;
     padding-top: 64px;
-    padding-bottom: 64px;
+    padding-bottom: 0;
     flex-direction: column;
     align-items: stretch;
   }
@@ -116,6 +116,10 @@ const ImageContainer = styled.div`
   img {
     object-position: top center;
     object-fit: cover;
+
+    @media (max-width: 768px) {
+      object-position: center;
+    }
   }
 `
 
