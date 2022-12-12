@@ -50,6 +50,10 @@ const Container = styled.div`
   background-color: ${props => props.theme.primaryBackgroundColor};
   display: block;
   border-top: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
+
+  @media (max-width: 768px) { 
+    z-index: 2;
+  }
 `
 
 const ActionsContainer = styled.div`

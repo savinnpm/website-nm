@@ -130,6 +130,7 @@ const ListboxOptions = styled(Listbox.Options)`
   right: 0;
   margin-top: 4px;
   padding: 6px;
+  z-index: 1;
 
   background-color:  ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
   border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};

@@ -108,7 +108,7 @@ const CheatBackgroud = styled.div`
   height: 100vh;
   top: 0;
   right: 0;
-  z-index: 1;
+  z-index: 2;
 `
 
 const SelectedLanguage = styled.button`
@@ -124,13 +124,12 @@ const LanguageContainer = styled.div`
   box-shadow: 0px 12px 16px -4px rgba(16, 24, 40, 0.08), 0px 4px 6px -2px rgba(16, 24, 40, 0.03);
   border-radius: 8px;
   background-color: ${(props) => props.theme.isLightMode ? colors.white : colors.gray[800]};
-  z-index: 3;
+  z-index: 10;
 
   @media (max-width: 768px) {
     top: -74px;
     left: 0;
     width: 100%;
-    z-index: 3;
     border-radius: 0;
     border: none;
   }
