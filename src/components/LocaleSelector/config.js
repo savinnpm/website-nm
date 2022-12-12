@@ -13,3 +13,7 @@ export const localeNames = {
   tr: 'Turkish - Türkçe',
   vi: 'Vietnamese - Tiếng Việt'
 }
+
+export const availableLocales = [
+  ...Object.keys(localeNames)
+]

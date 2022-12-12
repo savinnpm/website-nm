@@ -5,9 +5,9 @@ import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { Icon } from '../Icon'
 import { InputWithIcon } from '../Input/InputWithIcon'
-import { localeNames } from './config'
+import { availableLocales, localeNames } from './config'
 
-const options = [...Object.keys(localeNames), process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
+const options = availableLocales
 
 export const LocaleSelector = (props) => {
   const router = useRouter()
