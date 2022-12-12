@@ -1,4 +1,5 @@
 const articles = require('./articles.json')
+const pressroom = require('./pressroom.json')
 const audits = require('./audits.json')
 const pages = require('./pages.json')
 const programs = require('./programs.json')
@@ -8,6 +9,7 @@ const videos = require('./videos.json')
 
 export const mockData = {
   articles,
+  pressroom,
   audits,
   pages,
   programs,
