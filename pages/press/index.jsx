@@ -14,9 +14,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
-      blogPosts: await services.getBlogPosts(),
-      videos: await services.getVideos(),
-      pages: await services.getPages(),
+      pressPosts: await services.getPressroomPosts(),
       headerStyle: 'colored'
       // Will be passed to the page component as props
     }
@@ -50,7 +48,7 @@ export default function Index (props) {
       </Head>
 
       <main>
-        <PressRoom blogPosts={props.blogPosts} />
+        <PressRoom pressPosts={props.pressPosts} />
       </main>
     </>
   )
