@@ -69,4 +69,8 @@ const More = styled.a`
 
   ${typography.styles.textSm};
   ${typography.weights.semibold};
+
+  &:hover{
+    color: ${colors.rose[600]};
+  }
 `

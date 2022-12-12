@@ -42,7 +42,7 @@ export const TableOfContents = ({ title, headers }) => {
         data-isactive={currentHeader === '' ? 'true' : 'false'}
         href={router.asPath.split('#')[0] + '#'}
       >
-        <p>{title}</p>
+        <div>{title}</div>
       </TitleLink>
 
       {
@@ -127,7 +127,7 @@ const LinkStyle = css`
   }
 `
 
-const TitleLink = styled.a`
+const TitleLink = styled.h3`
   display: block;
   ${typography.styles.textMd};
   ${typography.weights.semibold};
@@ -151,14 +151,14 @@ const Content = styled.div`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
-const HeaderLink = styled.a`
+const HeaderLink = styled.h4`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 16px;
   padding: 4px 8px;
   `
 
-const HeaderLink2 = styled.a`
+const HeaderLink2 = styled.h5`
   ${LinkStyle}
   border-radius: 4px;
   margin-left: 24px;

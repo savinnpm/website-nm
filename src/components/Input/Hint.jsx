@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { colors } from '../../../styles/colors'
+import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
 export const InputHint = ({ children }) => {
@@ -18,5 +18,10 @@ const Container = styled.p`
 
   a {
     text-decoration: underline;
+    color: ${colors[primaryColorKey]['600']};
+
+    &:hover{
+      color: ${colors.rose[600]};
+    }
   }
 `
