@@ -58,7 +58,7 @@ const Heading = styled.div`
     ${typography.weights.semibold};
   }
 `
-const Subheading = styled.p`
+const Subheading = styled.div`
   color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
 
   ${typography.styles.textMd};

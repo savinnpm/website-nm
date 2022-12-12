@@ -51,7 +51,7 @@ const TextContainer = styled.div`
   max-width: 768px;
 `
 
-const Subheading = styled.p`
+const Subheading = styled.div`
   color: ${(props) =>
      props.theme.isLightMode
       ? colors[primaryColorKey]['700']
