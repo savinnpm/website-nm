@@ -16,7 +16,7 @@ export const Hero = () => {
         <FormContainer>
 
           <Button
-            hierarchy='secondary-gray'
+            hierarchy='secondary'
             size='xl'
           >
             <a target='_blank' href='/local-files/audits/001-blocksec.pdf'>Download Press Kit</a>
