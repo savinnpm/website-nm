@@ -91,16 +91,24 @@ export const TeamCarousel = () => {
     initialSlide: INITIAL_SLIDE,
     slidesToShow: 4,
     slidesToScroll: 1,
-
     responsive: [
       {
-        breakpoint: 768,
+        breakpoint: 769,
         settings: {
-          // swipeToSlide: false,
-          // swipe: false,
-          // touchMove: false,
-          slidesToShow: 3,
           centerMode: true,
+          centerPadding: '0',
+          slidesToScroll: 3,
+          slidesToShow: 3,
+          afterChange: handleAfterChange,
+          swipeToSlide: true
+        }
+      },
+      {
+        breakpoint: 425,
+        settings: {
+          slidesToShow: 1,
+          centerMode: true,
+          swipeToSlide: true,
           centerPadding: '0',
           afterChange: handleAfterChange
         }
@@ -293,7 +301,7 @@ const MobileDetailsWrapper = styled.div`
   margin-top: 16px;
   min-height: 100px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 769px) {
     display: none;
   }
 `
