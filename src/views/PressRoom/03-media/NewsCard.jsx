@@ -25,8 +25,6 @@ export const NewsCard = ({ newsItem }) => {
 
       <Title>{newsItem.title}</Title>
 
-      <Intro>{newsItem.intro}&hellip;</Intro>
-
       <TagsContainer>
         <Tag tag={{ color: newsItem.press.badge }}>
           {newsItem.press.name}

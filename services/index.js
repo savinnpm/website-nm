@@ -5,6 +5,7 @@ import {
   getSinglePost,
   getPostFilters,
   getFilteredPosts,
+  getFeaturedPosts,
   getFilteredPostPages
 } from './api/blog'
 import { getVideos } from './api/videos'
@@ -23,6 +24,7 @@ export const services = {
   getSinglePost,
   getPostFilters,
   getFilteredPosts,
+  getFeaturedPosts,
   getFilteredPostPages,
   getPressroomPosts,
   getPressroomPostsSlugs,

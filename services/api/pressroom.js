@@ -28,35 +28,6 @@ const getValidColorKey = (colorKey) => {
   return Object.keys(colors).filter(x => x !== 'white' && x !== 'black').includes(colorKey) ? colorKey : primaryColorKey
 }
 
-export const getLatestPressroomPosts = async () => {
-  try {
-    const docs = await getDocs()
-
-    const result = await Promise.allSettled(docs.map(async (doc) => {
-      return {
-        id: doc.id,
-        title: doc.title,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
-        slug: doc.slug,
-        intro: doc.intro.replace('&hellip;', ''),
-        date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
-      }
-    }))
-
-    const allPosts = result.map(x => x.value)
-    const latestPosts = allPosts.sort((a, b) => {
-      return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
-    }).slice(0, 10)
-
-    return latestPosts
-  } catch (error) {
-    console.error(error)
-  }
-
-  return []
-}
-
 export const getPressroomPosts = async () => {
   try {
     const docs = await getDocs()
@@ -73,7 +44,9 @@ export const getPressroomPosts = async () => {
       }
     }))
 
-    return result.map(x => x.value)
+    return result.map(x => x.value).sort((a, b) => {
+      return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
+    })
   } catch (error) {
     console.error(error)
   }

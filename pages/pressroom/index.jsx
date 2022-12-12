@@ -1,14 +1,15 @@
 import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
-import { services } from '../../services'
+
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
 import { getFQDN } from '../../src/helpers'
+import { services } from '../../services'
 import { PressRoom } from '../../src/views/PressRoom'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'security'])
+  const s = await serverSideTranslations(locale, ['common', 'press'])
 
   return {
     props: {
@@ -22,8 +23,8 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function PressRoomPage (props) {
-  const { t } = useTranslation('security')
+export default function PressPage (props) {
+  const { t } = useTranslation('press')
   const router = useRouter()
 
   return (
@@ -49,12 +50,8 @@ export default function PressRoomPage (props) {
       </Head>
 
       <main>
-
         <PressRoom news={props.news} />
-
       </main>
-
-      <footer />
     </>
   )
 }

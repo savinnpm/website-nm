@@ -5,10 +5,10 @@ import styled from 'styled-components'
 import {
   colors,
   primaryColorKey
-} from '../../../styles/colors'
-import { typography } from '../../../styles/typography'
-import { utils } from '../../../styles/utils'
-import { getFormattedDate } from '../../helpers'
+} from '../../../../styles/colors'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
+import { getFormattedDate } from '../../../helpers'
 
 export const FeaturedPostCard = ({ post }) => {
   return (
@@ -41,8 +41,10 @@ const Container = styled(Link)`
   gap: 24px;
   align-items: flex-start;
 
-  @media screen and (min-width: 1024px) {
-    height: 200px;
+  &:not(:nth-of-type(1)) {
+    @media screen and (min-width: 1024px) {
+      height: 200px;
+    }
   }
   
   // if container is a first child

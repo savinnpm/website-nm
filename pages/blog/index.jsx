@@ -11,10 +11,12 @@ import { getFQDN } from '../../src/helpers'
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
   const blogPosts = await services.getFilteredPosts()
+  const featuredPosts = await services.getFeaturedPosts()
 
   return {
     props: {
       ...(s),
+      featuredPosts: featuredPosts,
       blogPosts: blogPosts.posts,
       totalPages: blogPosts.total,
       filter: 'all',
@@ -56,6 +58,7 @@ export default function BlogPage (props) {
 
       <main>
         <Blog
+          featuredPosts={props.featuredPosts}
           blogPosts={props.blogPosts}
           filter={props.filter}
           totalPages={props.totalPages}

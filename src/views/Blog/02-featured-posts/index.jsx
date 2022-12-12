@@ -1,18 +1,15 @@
 import styled from 'styled-components'
-import { typography } from '../../../styles/typography'
-import { utils } from '../../../styles/utils'
+import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
 import { FeaturedPostCard } from './FeaturedPostCard'
 
 export const FeaturedPosts = ({ posts }) => {
-  if (!posts?.length) return <></>
-  const featured = posts.filter(post => post.featured).slice(0, 3)
-
   return (
     <Container>
       <Heading>Featured Posts</Heading>
 
       <GridContainer>
-        {featured.map((post, i) => <FeaturedPostCard key={i} post={post} />)}
+        {posts.map((post, i) => <FeaturedPostCard key={i} post={post} />)}
       </GridContainer>
     </Container>
   )

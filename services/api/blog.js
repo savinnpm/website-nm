@@ -169,6 +169,11 @@ const getTotalPageCount = (posts) => {
   return actualDividend + 1
 }
 
+export const getFeaturedPosts = async () => {
+  const allPosts = await getBlogPosts()
+  return allPosts.filter(x => x.featured).slice(0, 3)
+}
+
 export const getFilteredPosts = async (filter = 'all', page = 0) => {
   let filteredPosts = []; let totalLength
 
