@@ -4,6 +4,7 @@ export const nav = [
     links: [
       { href: '/marketplace', text: 'MARKETPLACE', isExternal: false },
       { href: '/blog', text: 'BLOG', isExternal: false },
+      { href: '/press', text: 'PRESS', isExternal: false },
       { href: '/ecosystem', text: 'ECOSYSTEM', isExternal: false },
       { href: 'https://docs.neptunemutual.com', text: 'DOCUMENTATION', isExternal: false }
       // { href: '/web3-tools', text: 'WEB3_TOOLS', isExternal: false }

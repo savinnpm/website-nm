@@ -40,7 +40,7 @@ const parseLegacyHtml = async ($) => {
 }
 
 const getTableOfContents = async ($) => {
-  const selector = 'h2, h3, h4'
+  const selector = 'h2, h3, h4, h5, h6'
   const headerElements = $(selector)
 
   const h = []
@@ -55,16 +55,23 @@ const getTableOfContents = async ($) => {
     const elId = $(el).attr('id') || ''
 
     if (elName === 'h2') {
-      h.push({ text: elText, id: elId, children: [] })
+      h.push({ text: elText, id: elId, type: 2 })
     }
 
     if (elName === 'h3') {
-      let lastH2Index = h.length - 1
+      h.push({ text: elText, id: elId, type: 3 })
+    }
 
-      if (!h[lastH2Index]) h.push({ text: '', children: [] })
+    if (elName === 'h4') {
+      h.push({ text: elText, id: elId, type: 4 })
+    }
 
-      lastH2Index = h.length - 1
-      h[lastH2Index].children.push({ text: elText, id: elId, children: [] })
+    if (elName === 'h5') {
+      h.push({ text: elText, id: elId, type: 5 })
+    }
+
+    if (elName === 'h6') {
+      h.push({ text: elText, id: elId, type: 6 })
     }
   })
 

@@ -65,6 +65,7 @@ const Subheader = styled.span`
   display: block;
 `
 const HeaderTitle = styled.div`
+  margin-top:12px;
   color: ${props => props.theme.color};
   ${typography.styles.displayLg}
   ${typography.weights.semibold}

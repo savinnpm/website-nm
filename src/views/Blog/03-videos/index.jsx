@@ -57,6 +57,10 @@ const ExternalLink = styled.a`
   gap: 8px;
   ${typography.styles.textMd};
   ${typography.weights.semibold};
+
+  :hover, :active{
+    color: ${colors.rose[600]}
+  }
 `
 
 const Heading = styled.h2`

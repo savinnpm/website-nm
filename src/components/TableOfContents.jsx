@@ -9,8 +9,8 @@ import styled, { css } from 'styled-components'
 import {
   colors,
   primaryColorKey
-} from '../../../styles/colors'
-import { typography } from '../../../styles/typography'
+} from '../../styles/colors'
+import { typography } from '../../styles/typography'
 
 export const TableOfContents = ({ title, headers }) => {
   const [currentHeader, setCurrentHeader] = useState('')
@@ -42,7 +42,7 @@ export const TableOfContents = ({ title, headers }) => {
         data-isactive={currentHeader === '' ? 'true' : 'false'}
         href={router.asPath.split('#')[0] + '#'}
       >
-        <p>{title}</p>
+        {title}
       </TitleLink>
 
       {
@@ -51,33 +51,15 @@ export const TableOfContents = ({ title, headers }) => {
             <Content>
               {
                 headers.map((e, i) => (
-                  <React.Fragment key={i}>
-                    {
-                      e.text
-                        ? (
-                          <HeaderLink
-                            data-isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
-                            href={`#${e.id || ''}`}
-                          >
-                            <span>{e.text}</span>
-                          </HeaderLink>
-                          )
-                        : <></>
-                    }
-                    {
-                    e?.children?.length
-                      ? e.children.map((e2, i2) => (
-                        <React.Fragment key={i2}>
-                          <HeaderLink2
-                            data-isactive={(e2.id && currentHeader === e2.id) ? 'true' : 'false'}
-                            href={`#${e2.id || ''}`}
-                          ><span>{e2.text}</span>
-                          </HeaderLink2>
-                        </React.Fragment>
-                      ))
-                      : <></>
-                  }
-                  </React.Fragment>
+                  <HeaderContainer key={i}>
+                    <HeaderLink
+                      data-isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
+                      href={`#${e.id || ''}`}
+                      headerType={e.type}
+                    >
+                      <span>{e.text}</span>
+                    </HeaderLink>
+                  </HeaderContainer>
                 ))
             }
             </Content>
@@ -139,11 +121,12 @@ const TitleLink = styled.a`
   margin-top: 20px;
 `
 
-const Content = styled.div`
+const Content = styled.ol`
   display: flex;
   flex-direction: column;
   row-gap: 4px;
   margin-top: 8px;
+  padding-left: 0;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
@@ -151,16 +134,19 @@ const Content = styled.div`
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
 `
 
-const HeaderLink = styled.a`
-  ${LinkStyle}
-  border-radius: 4px;
-  margin-left: 16px;
-  padding: 4px 8px;
-  `
+const HeaderContainer = styled.li`
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+`
 
-const HeaderLink2 = styled.a`
-  ${LinkStyle}
+const HeaderLink = styled.a`
+  ${LinkStyle};
+  display: flex;
   border-radius: 4px;
-  margin-left: 24px;
+  margin-left: ${props => {
+    return (props.headerType || 2) * 8
+  }}px;
   padding: 4px 8px;
 `

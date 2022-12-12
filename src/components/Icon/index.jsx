@@ -65,6 +65,7 @@ import Dot from "./variants/dot"
 import { Folder, FolderPlus } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
 import { ShieldTick } from "./variants/Security";
+import { AnnotationDots } from "./variants/Communication";
 
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
@@ -341,6 +342,10 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'search-lg') {
     IconComponent = SearchLg;
+  }
+
+  if(variant === 'annotation-dots'){
+    IconComponent = AnnotationDots;
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
