@@ -1,4 +1,12 @@
-import { getBlogPosts, getLatestBlogPosts, getPostsSlugs, getSinglePost } from './api/blog'
+import {
+  getBlogPosts,
+  getLatestBlogPosts,
+  getPostsSlugs,
+  getSinglePost,
+  getPostTabs,
+  getFilteredPosts,
+  getFilteredPostPages
+} from './api/blog'
 import { getVideos } from './api/videos'
 import { getNews } from './api/news'
 import { getEcosystems } from './api/ecosystems'
@@ -13,6 +21,9 @@ export const services = {
   getLatestBlogPosts,
   getPostsSlugs,
   getSinglePost,
+  getPostTabs,
+  getFilteredPosts,
+  getFilteredPostPages,
   getPressroomPosts,
   getPressroomPostsSlugs,
   getSinglePressroomPost,

@@ -2,23 +2,44 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { services } from '../../services'
-import { Blog } from '../../src/views/Blog'
+import { services } from '../../../../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../src/helpers'
+import { getFQDN } from '../../../../src/helpers'
+import { Blog } from '../../../../src/views/Blog'
 
-export async function getStaticProps ({ locale }) {
+export async function getStaticPaths ({ locales }) {
+  const slugs = await services.getPostTabs()
+
+  const paths = []
+
+  locales.forEach(locale => {
+    slugs.forEach(slug => {
+      paths.push({
+        locale,
+        params: {
+          slug: slug.value
+        }
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const blogPosts = await services.getFilteredPosts()
+  const filteredPosts = await services.getFilteredPosts(params.slug)
 
   return {
     props: {
       ...(s),
-      blogPosts: blogPosts.posts,
-      totalPages: blogPosts.total,
-      filter: 'all',
-      page: 0,
+      blogPosts: filteredPosts.posts,
+      totalPages: filteredPosts.total,
+      filter: params.slug,
       filters: await services.getPostTabs(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
@@ -28,7 +49,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function BlogPage (props) {
+export default function FilteredBlogPage (props) {
   const { t } = useTranslation('blog')
   const router = useRouter()
 
@@ -59,7 +80,7 @@ export default function BlogPage (props) {
           blogPosts={props.blogPosts}
           filter={props.filter}
           totalPages={props.totalPages}
-          page={props.page}
+          page={0}
           filters={props.filters}
         />
       </main>

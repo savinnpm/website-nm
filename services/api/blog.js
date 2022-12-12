@@ -4,6 +4,30 @@ import { storeLocally } from '../io/download'
 import { request } from '../http/request'
 import { mockData } from '../_mock_'
 
+export const BLOGS_PER_PAGE = 12
+export const filters = [
+  {
+    text: 'All',
+    value: 'all'
+  },
+  {
+    text: 'Exploit Analysis',
+    value: 'exploit-analysis'
+  },
+  {
+    text: 'Weekly Report',
+    value: 'weekly-report'
+  },
+  {
+    text: 'Monthly Review',
+    value: 'monthly-review'
+  },
+  {
+    text: 'Press Room',
+    value: 'press-room'
+  }
+]
+
 let docs = null
 
 const getDocs = async () => {
@@ -134,4 +158,67 @@ export const getPostsSlugs = async () => {
   }
 
   return []
+}
+
+export const getPostTabs = async () => {
+  return filters
+}
+
+const getPageNumbers = (posts) => {
+  const actualDividend = parseInt(posts.length / BLOGS_PER_PAGE)
+  if (posts.length % BLOGS_PER_PAGE === 0) {
+    return actualDividend
+  }
+
+  return actualDividend + 1
+}
+
+export const getFilteredPosts = async (filter = 'all', page = 0) => {
+  let filteredPosts = []; let totalLength
+
+  try {
+    const docs = await getBlogPosts()
+    filteredPosts = docs
+
+    const _filter = filters.find(f => f.value === filter)
+    if (filter !== 'all' && _filter) {
+      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
+    }
+
+    totalLength = getPageNumbers(filteredPosts)
+
+    if (page >= 0) {
+      filteredPosts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
+    } else {
+      filteredPosts = filteredPosts.slice(0, BLOGS_PER_PAGE)
+    }
+  } catch (error) {
+    console.error(error)
+  }
+
+  return {
+    posts: filteredPosts,
+    total: totalLength
+  }
+}
+
+export const getFilteredPostPages = async (filter = 'all') => {
+  let pages = []
+
+  try {
+    const docs = await getBlogPosts()
+    let filteredPosts = docs
+
+    const _filter = filters.find(f => f.value === filter)
+    if (filter !== 'all' && _filter) {
+      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
+    }
+
+    const totalLength = getPageNumbers(filteredPosts)
+    pages = new Array(totalLength).fill().map((_, i) => i.toString())
+  } catch (error) {
+    console.error(error)
+  }
+
+  return pages
 }

@@ -1,8 +1,3 @@
-import {
-  useEffect,
-  useState
-} from 'react'
-
 import { useRouter } from 'next/router'
 import styled from 'styled-components'
 
@@ -14,144 +9,55 @@ import { Filter } from '../../../components/Filter'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from './Pagination'
 
-export const BLOGS_PER_PAGE = 12
-
-const filters = [
-  {
-    text: 'All',
-    value: 'all'
-  },
-  {
-    text: 'Exploit Analysis',
-    value: 'exploit-analysis'
-  },
-  {
-    text: 'Weekly Report',
-    value: 'weekly-report'
-  },
-  {
-    text: 'Monthly Review',
-    value: 'monthly-review'
-  },
-  {
-    text: 'Press Room',
-    value: 'press-room'
-  }
-]
-
-export const RecentPosts = ({ blogPosts }) => {
-  const [page, setPage] = useState(0)
-  const [isLast, setIsLast] = useState(false)
-  const [activeTab, setActiveTab] = useState(filters[0].value)
-  const [filteredPosts, setFilteredPosts] = useState(blogPosts)
+export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) => {
   const router = useRouter()
 
-  const getPageNumbers = () => {
-    const actualDividend = parseInt(filteredPosts.length / BLOGS_PER_PAGE)
-    if (filteredPosts.length % BLOGS_PER_PAGE === 0) {
-      return actualDividend
-    }
-
-    return actualDividend + 1
-  }
-
-  const totalPages = getPageNumbers()
-
-  useEffect(() => {
-    if (BLOGS_PER_PAGE * (page + 1) >= filteredPosts.length - 1) {
-      return setIsLast(true)
-    }
-    if (BLOGS_PER_PAGE * (page + 1) <= filteredPosts.length - 1) {
-      return setIsLast(false)
-    }
-  }, [filteredPosts.length, page])
-
-  const pushQuery = query => {
+  const handleFilterChange = option => {
     router.push({
-      query: {
-        ...router.query,
-        ...query
-      }
-    }, undefined, {
-      scroll: false
+      as: `/blog/tab/${option}`
     })
-  }
-
-  const setQuery = query => {
-    router.push({
-      query: query
-    }, undefined, {
-      scroll: false
-    })
-  }
-
-  const handlePrev = () => {
-    if (page > 0) {
-      pushQuery({ page: page })
-      setPage((prev) => prev - 1)
-    }
-  }
-
-  const handleNext = () => {
-    pushQuery({ page: page + 2 })
-    setPage((prev) => prev + 1)
   }
 
   const handleSetPage = (_page) => {
-    pushQuery({ page: _page + 1 })
-    setPage(_page)
+    let queryString = '/blog'
+
+    if (router.query.slug) queryString += `/tab/${router.query.slug}`
+    queryString += `/page/${_page}`
+
+    router.push(queryString, undefined, { scroll: false })
   }
 
-  useEffect(() => {
+  const handleNext = () => {
+    let queryString = '/blog'
 
-  }, [])
+    if (router.query.slug) queryString += `/tab/${router.query.slug}`
+    queryString += `/page/${page + 1}`
 
-  useEffect(() => {
-    const { tab, page: p } = router.query
-
-    // setting current filter/active tab based on url query
-    if (!tab) setActiveTab(filters[0].value)
-    else {
-      const flt = filters.find(f => f.value === tab)
-      if (flt) setActiveTab(flt.value)
-    }
-
-    // setting current page based on url query
-    if (!p) setPage(0)
-    else {
-      const _page = Math.min(Math.max(0, parseInt(p - 1)), totalPages - 1)
-      setPage(_page)
-    }
-
-    // filtering blogposts based on current filter
-    if (!tab || tab === filters[0].value) setFilteredPosts(blogPosts)
-    else {
-      const filter = filters.find(f => f.value === tab)
-      if (!filter) return
-
-      const blogs = blogPosts.filter(b => Boolean(b.tags?.find(t => t.name === filter.text)))
-      setFilteredPosts(blogs)
-    }
-  }, [router.query, blogPosts, totalPages])
-
-  const handleFilterChange = option => {
-    setQuery({ tab: option })
+    router.push(queryString, undefined, { scroll: false })
   }
 
-  const posts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
+  const handlePrev = () => {
+    let queryString = '/blog'
+
+    if (router.query.slug) queryString += `/tab/${router.query.slug}`
+    queryString += `/page/${page - 1}`
+
+    router.push(queryString, undefined, { scroll: false })
+  }
 
   return (
     <Container>
       <InnerContainer>
         <FilterTabs
           filters={filters}
-          activeFilter={activeTab}
+          activeFilter={filter}
+          mapUrl={slug => `/blog/tab/${slug}`}
         />
 
         <FilterMobileContainer>
           <Filter
             options={filters.map(f => f.value)}
-            selectedOption={activeTab}
+            selectedOption={filter}
             getOptionText={x => filters.find(f => f.value === x).text}
             setSelectedOption={handleFilterChange}
           />
@@ -163,13 +69,20 @@ export const RecentPosts = ({ blogPosts }) => {
           </TextContainer>
         </TextAndCta>
         <BlogsContainer>
-          {posts.map((post) => (
+          {blogPosts.map((post) => (
             <SingleCard key={post.id}>
               <ArticleCard post={post} />
             </SingleCard>
           ))}
         </BlogsContainer>
-        <Pagination page={page} setPage={handleSetPage} isLast={isLast} handleNext={handleNext} handlePrev={handlePrev} totalPages={totalPages} />
+        <Pagination
+          page={page}
+          setPage={handleSetPage}
+          isLast={page === totalPages - 1}
+          handleNext={handleNext}
+          handlePrev={handlePrev}
+          totalPages={totalPages}
+        />
       </InnerContainer>
     </Container>
   )
