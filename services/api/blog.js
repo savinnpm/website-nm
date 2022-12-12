@@ -21,10 +21,6 @@ export const filters = [
   {
     text: 'Monthly Review',
     value: 'monthly-review'
-  },
-  {
-    text: 'Press Room',
-    value: 'press-room'
   }
 ]
 
@@ -160,11 +156,11 @@ export const getPostsSlugs = async () => {
   return []
 }
 
-export const getPostTabs = async () => {
+export const getPostFilters = async () => {
   return filters
 }
 
-const getPageNumbers = (posts) => {
+const getTotalPageCount = (posts) => {
   const actualDividend = parseInt(posts.length / BLOGS_PER_PAGE)
   if (posts.length % BLOGS_PER_PAGE === 0) {
     return actualDividend
@@ -185,7 +181,7 @@ export const getFilteredPosts = async (filter = 'all', page = 0) => {
       filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
     }
 
-    totalLength = getPageNumbers(filteredPosts)
+    totalLength = getTotalPageCount(filteredPosts)
 
     if (page >= 0) {
       filteredPosts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
@@ -214,7 +210,7 @@ export const getFilteredPostPages = async (filter = 'all') => {
       filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
     }
 
-    const totalLength = getPageNumbers(filteredPosts)
+    const totalLength = getTotalPageCount(filteredPosts)
     pages = new Array(totalLength).fill().map((_, i) => (i + 1).toString())
   } catch (error) {
     console.error(error)

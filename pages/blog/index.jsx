@@ -19,7 +19,7 @@ export async function getStaticProps ({ locale }) {
       totalPages: blogPosts.total,
       filter: 'all',
       page: 0,
-      filters: await services.getPostTabs(),
+      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'

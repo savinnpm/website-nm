@@ -3,7 +3,7 @@ import {
   getLatestBlogPosts,
   getPostsSlugs,
   getSinglePost,
-  getPostTabs,
+  getPostFilters,
   getFilteredPosts,
   getFilteredPostPages
 } from './api/blog'
@@ -21,7 +21,7 @@ export const services = {
   getLatestBlogPosts,
   getPostsSlugs,
   getSinglePost,
-  getPostTabs,
+  getPostFilters,
   getFilteredPosts,
   getFilteredPostPages,
   getPressroomPosts,

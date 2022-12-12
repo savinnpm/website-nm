@@ -41,7 +41,7 @@ export async function getStaticProps ({ locale, params }) {
       totalPages: filteredPosts.total,
       filter: 'all',
       page: parseInt(params.num - 1),
-      filters: await services.getPostTabs(),
+      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
