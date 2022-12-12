@@ -26,6 +26,7 @@ const Trail = styled.div`
 
   svg {
     color: ${colors.gray[300]};
+    flex-shrink: 0;
   }
 
 `

@@ -64,7 +64,7 @@ const Title = styled.h3`
   ${typography.styles.displayXs};
   ${typography.weights.medium};
 
-  --max-lines: 1;
+  --max-lines: 2;
   ${utils.maxLines};
 `
 
