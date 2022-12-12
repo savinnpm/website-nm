@@ -62,17 +62,7 @@ const Title = styled.h3`
   ${typography.styles.displayXs};
   ${typography.weights.medium};
 
-  --max-lines: 2;
-  ${utils.maxLines};
-`
-
-const Intro = styled.p`
-  margin-top: 8px;
-  color: ${props => props.theme.secondaryColor};
-  ${typography.styles.textMd};
-  ${typography.weights.regular};
-
-  --max-lines: 2;
+  --max-lines: 3;
   ${utils.maxLines};
 `
 
