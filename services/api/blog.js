@@ -215,7 +215,7 @@ export const getFilteredPostPages = async (filter = 'all') => {
     }
 
     const totalLength = getPageNumbers(filteredPosts)
-    pages = new Array(totalLength).fill().map((_, i) => i.toString())
+    pages = new Array(totalLength).fill().map((_, i) => (i + 1).toString())
   } catch (error) {
     console.error(error)
   }

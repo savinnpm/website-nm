@@ -32,7 +32,7 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const filteredPosts = await services.getFilteredPosts(undefined, parseInt(params.num))
+  const filteredPosts = await services.getFilteredPosts(undefined, parseInt(params.num - 1))
 
   return {
     props: {
@@ -40,7 +40,7 @@ export async function getStaticProps ({ locale, params }) {
       blogPosts: filteredPosts.posts,
       totalPages: filteredPosts.total,
       filter: 'all',
-      page: parseInt(params.num),
+      page: parseInt(params.num - 1),
       filters: await services.getPostTabs(),
       videos: await services.getVideos(),
       pages: await services.getPages(),

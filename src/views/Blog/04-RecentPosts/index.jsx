@@ -13,16 +13,14 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
   const router = useRouter()
 
   const handleFilterChange = option => {
-    router.push({
-      as: `/blog/tab/${option}`
-    })
+    router.push(`/blog/tag/${option}`, undefined, { scroll: false })
   }
 
   const handleSetPage = (_page) => {
     let queryString = '/blog'
 
-    if (router.query.slug) queryString += `/tab/${router.query.slug}`
-    queryString += `/page/${_page}`
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${_page + 1}` // + 1 for url
 
     router.push(queryString, undefined, { scroll: false })
   }
@@ -30,8 +28,8 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
   const handleNext = () => {
     let queryString = '/blog'
 
-    if (router.query.slug) queryString += `/tab/${router.query.slug}`
-    queryString += `/page/${page + 1}`
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${page + 2}` // + 1 for url
 
     router.push(queryString, undefined, { scroll: false })
   }
@@ -39,8 +37,8 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
   const handlePrev = () => {
     let queryString = '/blog'
 
-    if (router.query.slug) queryString += `/tab/${router.query.slug}`
-    queryString += `/page/${page - 1}`
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${page - 1 + 1}` // + 1 for url
 
     router.push(queryString, undefined, { scroll: false })
   }
@@ -51,7 +49,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
         <FilterTabs
           filters={filters}
           activeFilter={filter}
-          mapUrl={slug => `/blog/tab/${slug}`}
+          mapUrl={slug => `/blog/tag/${slug}`}
         />
 
         <FilterMobileContainer>

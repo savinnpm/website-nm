@@ -1,12 +1,9 @@
 import Link from 'next/link'
-import { useRouter } from 'next/router'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
 export const FilterTabs = ({ filters, activeFilter, mapUrl = (x) => x }) => {
-  const router = useRouter()
-  console.log({ router })
   return (
     <Container>
       {
@@ -14,11 +11,6 @@ export const FilterTabs = ({ filters, activeFilter, mapUrl = (x) => x }) => {
           <FilterItem
             key={i}
             data-isactive={activeFilter === f.value}
-            // href={{
-            //   query: {
-            //     tab: f.value
-            //   }
-            // }}
             href={mapUrl(f.value)}
             scroll={false}
           >
