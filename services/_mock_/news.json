@@ -1,64 +1,106 @@
 {
-  "docs": [
-      {
-          "id": "6393a5ada16bf366e6c4c959",
-          "updatedAt": "2022-12-09T12:17:40.052Z",
-          "createdAt": "2022-12-09T12:17:40.052Z",
-          "press": {
-              "id": "6393a597a16bf366e6c4c955",
-              "updatedAt": "2022-12-09T11:59:39.408Z",
-              "createdAt": "2022-12-09T11:59:39.408Z",
-              "name": "Crypto Slate",
-              "badge": "rose",
-              "_status": "published"
-          },
-          "title": "Neptune Mutual Protocol raises 5.3M$ in a private funding round after successful testnet launch",
-          "publishedAt": "2022-05-11T07:15:00.000Z",
-          "link": "https://cryptoslate.com/press-releases/neptune-mutual-protocol-raises-5-3m-in-a-private-funding-round-after-successful-testnet-launch/",
-          "_status": "published"
-      },
-      {
-          "id": "6393a5b0a16bf366e6c4c95c",
-          "updatedAt": "2022-12-09T12:16:25.811Z",
-          "createdAt": "2022-12-09T12:16:25.811Z",
-          "press": {
-              "id": "6393a596a16bf366e6c4c951",
-              "updatedAt": "2022-12-09T12:14:16.314Z",
-              "createdAt": "2022-12-09T12:14:16.314Z",
-              "name": "EINPresswire",
-              "badge": "indigo",
-              "_status": "published"
-          },
-          "title": "Parametric Cover for Uniswap, Aave, Maker, Balancer & more, as Neptune Mutual Marketplace Launches on Ethereum Mainnet.",
-          "publishedAt": "2022-11-02T07:45:00.000Z",
-          "link": "https://www.einnews.com/pr_news/598962968/parametric-cover-for-uniswap-aave-maker-balancer-more-as-neptune-mutual-marketplace-launches-on-ethereum-mainnet",
-          "_status": "published"
-      },
-      {
-          "id": "6393a5b3a16bf366e6c4c95f",
-          "updatedAt": "2022-12-09T12:15:35.942Z",
-          "createdAt": "2022-12-09T12:15:35.942Z",
-          "press": {
-              "id": "6393a596a16bf366e6c4c951",
-              "updatedAt": "2022-12-09T12:14:16.314Z",
-              "createdAt": "2022-12-09T12:14:16.314Z",
-              "name": "EINPresswire",
-              "badge": "indigo",
-              "_status": "published"
-          },
-          "title": "Binance Decentralized Cover Pool Launches in Neptune Mutual Cover Marketplace",
-          "publishedAt": "2022-11-30T06:15:00.000Z",
-          "link": "https://www.einnews.com/pr_news/603982971/binance-decentralized-cover-pool-launches-in-neptune-mutual-cover-marketplace",
-          "_status": "published"
-      }
-  ],
-  "totalDocs": 3,
-  "limit": 1000,
-  "totalPages": 1,
-  "page": 1,
-  "pagingCounter": 1,
-  "hasPrevPage": false,
-  "hasNextPage": false,
-  "prevPage": null,
-  "nextPage": null
+    "docs": [
+        {
+            "id": "6393a5ada16bf366e6c4c959",
+            "updatedAt": "2022-12-12T06:35:08.964Z",
+            "createdAt": "2022-12-09T12:17:40.052Z",
+            "press": {
+                "id": "6393a597a16bf366e6c4c955",
+                "updatedAt": "2022-12-09T11:59:39.408Z",
+                "createdAt": "2022-12-09T11:59:39.408Z",
+                "name": "Crypto Slate",
+                "badge": "rose",
+                "_status": "published"
+            },
+            "title": "Neptune Mutual Protocol raises 5.3M$ in a private funding round after successful testnet launch",
+            "publishedAt": "2022-05-11T07:15:00.000Z",
+            "link": "https://cryptoslate.com/press-releases/neptune-mutual-protocol-raises-5-3m-in-a-private-funding-round-after-successful-testnet-launch/",
+            "_status": "published",
+            "cover": {
+                "id": "639390f68d8faa8807d8ed43",
+                "alt": "Neptune Mutual Protocol Raises $5.3M",
+                "description": "Neptune Mutual Protocol Raises $5.3M",
+                "filename": "neptune-mutual-protocol-raises-5.3m.webp",
+                "mimeType": "image/webp",
+                "filesize": 28582,
+                "width": 1600,
+                "height": 900,
+                "createdAt": "2022-12-09T19:48:06.242Z",
+                "updatedAt": "2022-12-09T19:48:06.242Z",
+                "identifier": "featured.62df5f27001e5a551ba891c9",
+                "url": "https://example.com/media/neptune-mutual-protocol-raises-5.3m.webp"
+            }
+        },
+        {
+            "id": "6393a5b0a16bf366e6c4c95c",
+            "updatedAt": "2022-12-12T06:35:26.150Z",
+            "createdAt": "2022-12-09T12:16:25.811Z",
+            "press": {
+                "id": "6393a596a16bf366e6c4c951",
+                "updatedAt": "2022-12-09T12:14:16.314Z",
+                "createdAt": "2022-12-09T12:14:16.314Z",
+                "name": "EINPresswire",
+                "badge": "indigo",
+                "_status": "published"
+            },
+            "title": "Parametric Cover for Uniswap, Aave, Maker, Balancer & more, as Neptune Mutual Marketplace Launches on Ethereum Mainnet.",
+            "publishedAt": "2022-11-02T07:45:00.000Z",
+            "link": "https://www.einnews.com/pr_news/598962968/parametric-cover-for-uniswap-aave-maker-balancer-more-as-neptune-mutual-marketplace-launches-on-ethereum-mainnet",
+            "_status": "published",
+            "cover": {
+                "id": "639390c48d8faa8807d8ed32",
+                "alt": "Tutorial Video: Purchase Cover Policy",
+                "description": "Tutorial Video: Purchase Cover Policy",
+                "identifier": "tutorial-video-purchase-cover-policy",
+                "filename": "tutorial-video-purchase-cover-policy.webp",
+                "mimeType": "image/webp",
+                "filesize": 34632,
+                "width": 1280,
+                "height": 720,
+                "createdAt": "2022-12-09T19:47:16.339Z",
+                "updatedAt": "2022-12-09T19:47:16.339Z",
+                "url": "https://example.com/media/tutorial-video-purchase-cover-policy.webp"
+            }
+        },
+        {
+            "id": "6393a5b3a16bf366e6c4c95f",
+            "updatedAt": "2022-12-12T06:35:51.138Z",
+            "createdAt": "2022-12-09T12:15:35.942Z",
+            "press": {
+                "id": "6393a596a16bf366e6c4c951",
+                "updatedAt": "2022-12-09T12:14:16.314Z",
+                "createdAt": "2022-12-09T12:14:16.314Z",
+                "name": "EINPresswire",
+                "badge": "indigo",
+                "_status": "published"
+            },
+            "title": "Binance Decentralized Cover Pool Launches in Neptune Mutual Cover Marketplace",
+            "publishedAt": "2022-11-30T06:15:00.000Z",
+            "link": "https://www.einnews.com/pr_news/603982971/binance-decentralized-cover-pool-launches-in-neptune-mutual-cover-marketplace",
+            "_status": "published",
+            "cover": {
+                "id": "639390758d8faa8807d8ec61",
+                "alt": "Neptune Mutual Raises Seed Round Led By Fenbushi Capital",
+                "description": "Neptune Mutual Raises Seed Round Led By Fenbushi Capital",
+                "identifier": "featured.62da5f0e001e5a551ba89086",
+                "filename": "neptune-mutual-raises-seed-round-led-by-fenbushi-capital.webp",
+                "mimeType": "image/webp",
+                "filesize": 35170,
+                "width": 1600,
+                "height": 900,
+                "createdAt": "2022-12-09T19:45:57.142Z",
+                "updatedAt": "2022-12-09T19:45:57.142Z",
+                "url": "https://example.com/media/neptune-mutual-raises-seed-round-led-by-fenbushi-capital.webp"
+            }
+        }
+    ],
+    "totalDocs": 3,
+    "limit": 1000,
+    "totalPages": 1,
+    "page": 1,
+    "pagingCounter": 1,
+    "hasPrevPage": false,
+    "hasNextPage": false,
+    "prevPage": null,
+    "nextPage": null
 }

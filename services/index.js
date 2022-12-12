@@ -1,5 +1,6 @@
 import { getBlogPosts, getLatestBlogPosts, getPostsSlugs, getSinglePost } from './api/blog'
 import { getVideos } from './api/videos'
+import { getNews } from './api/news'
 import { getEcosystems } from './api/ecosystems'
 import { getAudits, getAuditSlugs, getSingleAudit } from './api/audits'
 import { getPrograms, getProgramSlugs, getSingleProgram } from './api/programs'
@@ -15,6 +16,7 @@ export const services = {
   getPressroomPosts,
   getPressroomPostsSlugs,
   getSinglePressroomPost,
+  getNews,
   getVideos,
   getEcosystems,
   getAudits,

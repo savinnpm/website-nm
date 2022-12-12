@@ -1,4 +1,5 @@
 import { request } from '../http/request'
+import { storeLocally } from '../io/download'
 import { mockData } from '../_mock_'
 
 let docs = null
@@ -26,6 +27,7 @@ const transformDoc = async (doc) => {
     id: doc.id,
     title: doc.title,
     link: doc.link,
+    image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
     press: {
       name: doc.press.name,
       badge: doc.press.badge
@@ -34,7 +36,7 @@ const transformDoc = async (doc) => {
   }
 }
 
-export const getVideos = async () => {
+export const getNews = async () => {
   try {
     const docs = await getDocs()
 
