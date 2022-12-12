@@ -7,7 +7,7 @@ import { utils } from '../../../styles/utils'
 
 import { Button } from '../../components/Button'
 import { Breadcrumbs } from '../../components/Breadcrumbs'
-import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
+import { TableOfContents } from '../../components/TableOfContents'
 import { Shareit } from '../../components/Shareit'
 
 import { HtmlContent } from '../../components/Content'

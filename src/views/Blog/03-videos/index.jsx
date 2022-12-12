@@ -58,7 +58,7 @@ const ExternalLink = styled.a`
   ${typography.styles.textMd};
   ${typography.weights.semibold};
 
-  &:hover{
+  :hover, :active{
     color: ${colors.rose[600]}
   }
 `

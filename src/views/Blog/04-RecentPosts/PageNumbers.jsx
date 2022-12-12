@@ -129,15 +129,15 @@ const PageNumber = styled.button`
   border-radius: 8px;
 
   &:hover{
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors[primaryColorKey]['700']}
   }
 
   &.active{
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']}
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors[primaryColorKey]['700']}
   }
 
   &:focus-visible{
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.primary['700']};
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors[primaryColorKey]['700']};
     box-shadow: 0px 0px 0px 4px ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors[primaryColorKey]['900']};
   }
 `

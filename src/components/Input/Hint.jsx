@@ -20,7 +20,7 @@ const Container = styled.p`
     text-decoration: underline;
     color: ${colors[primaryColorKey]['600']};
 
-    &:hover{
+    :hover, :active{
       color: ${colors.rose[600]};
     }
   }

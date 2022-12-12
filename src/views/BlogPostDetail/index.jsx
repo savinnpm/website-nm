@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
-import { TableOfContents } from '../../components/BlogDetails/TableOfContents'
+import { TableOfContents } from '../../components/TableOfContents'
 import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
 import { Shareit } from '../../components/Shareit'
 import { BlogHero } from './01-hero'

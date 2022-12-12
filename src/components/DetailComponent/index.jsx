@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
 import { HtmlContent } from '../Content'
-import { TableOfContents } from '../BlogDetails/TableOfContents'
+import { TableOfContents } from '../TableOfContents'
 import { Breadcrumbs } from '../Breadcrumbs'
 import { Shareit } from '../Shareit'
 

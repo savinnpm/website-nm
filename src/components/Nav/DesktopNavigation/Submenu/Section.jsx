@@ -70,7 +70,7 @@ const More = styled.a`
   ${typography.styles.textSm};
   ${typography.weights.semibold};
 
-  &:hover{
+  :hover, :active{
     color: ${colors.rose[600]};
   }
 `

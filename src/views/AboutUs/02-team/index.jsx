@@ -66,7 +66,7 @@ const LinkText = styled.a`
 
   color: ${colors[primaryColorKey][600]};
 
-  &:hover{
+  :hover, :active{
     color: ${colors.rose[600]}
   }
 `
