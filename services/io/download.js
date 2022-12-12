@@ -18,7 +18,7 @@ const download = function (url, dest, cb) {
   })
 }
 
-export const storeLocally = async (url, folder) => {
+export const storeLocally = async (url, folder = 'images') => {
   const parent = path.resolve('public', 'cdn', folder)
   const filename = (new URL(url)).pathname.split('/').pop()
 

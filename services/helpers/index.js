@@ -43,7 +43,7 @@ const parseLegacyHtml = async ($) => {
     const filename = (new URL(oldSrc)).pathname.split('/').pop()
 
     // Guessing filepath in advance
-    const storedAt = `/cdn/article-images/${filename}`
+    const storedAt = `/cdn/images/${filename}`
 
     const newSrc = storedAt
     $(this).attr('src', newSrc)
@@ -51,7 +51,7 @@ const parseLegacyHtml = async ($) => {
     $(this).removeAttr('width')
     $(this).removeAttr('height')
 
-    promises.push(storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, 'article-images'))
+    promises.push(storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, 'images'))
   })
 
   await Promise.allSettled(promises)
