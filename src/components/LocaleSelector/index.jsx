@@ -180,6 +180,7 @@ const Options = styled.ul`
   overflow: hidden;
   overflow-y: auto;
   padding: 10px;
+  margin-top: 0;
 
   li {
     ${typography.weights.medium}

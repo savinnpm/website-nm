@@ -61,11 +61,6 @@ const Container = styled.div`
     ${typography.weights.semibold};
   }
 
-  ul, ol {
-    margin-top: 20px;
-    padding-left: 20px;
-  }
-
   li {
     line-height: 28px;
   }

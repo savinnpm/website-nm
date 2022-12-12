@@ -15,7 +15,6 @@
     "@fontsource/roboto-mono": "^4.5.8",
     "@headlessui/react": "^1.7.4",
     "cheerio": "^1.0.0-rc.12",
-    "escape-html": "^1.0.3",
     "eslint": "8.28.0",
     "eslint-config-next": "13.0.5",
     "eslint-config-standard": "16.0.3",
@@ -31,9 +30,7 @@
     "react-i18next": "^12.0.0",
     "react-slick": "^0.29.0",
     "react-syntax-highlighter": "^15.5.0",
-    "slate": "^0.86.0",
-    "slick-carousel": "^1.8.1",
-    "slugify": "^1.6.5"
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "dotenv": "12.0.0",

@@ -1,7 +1,7 @@
-import { helpers } from '../helpers'
 import { storeLocally } from '../io/download'
 import { request } from '../http/request'
 import { mockData } from '../_mock_'
+import { helpers } from '../helpers'
 
 const getVideoDurationText = (timestamp) => {
   // 2
@@ -42,14 +42,16 @@ const getDocs = async () => {
 }
 
 const transformDoc = async (doc) => {
+  const htmlContent = doc.description || ''
+  const parsedHtml = await helpers.parseHtml(htmlContent)
+
   return {
     id: doc.id,
     title: doc.title,
     image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'images'),
     videoId: doc.videoId,
     description: {
-      // html: helpers.serialize(doc.description),
-      text: helpers.getText(doc.description).substring(0, 56)
+      text: parsedHtml.text.substring(0, 56)
     },
     length: doc.length,
     duration: getVideoDurationText(doc.length),

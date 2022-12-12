@@ -38,8 +38,7 @@ const CodeContainer = styled.pre`
   width: 100%;
   max-width: 420px;
 
-  background: #484848;
-  border: 1px solid #FFFFFF;
+  border: 1px solid currentColor;
   border-radius: 4px;
   padding: 10px 16px;
 `

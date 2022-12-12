@@ -97,6 +97,7 @@ const H3 = styled.h3`
 
 const Ul = styled.ul`
   margin-top: 16px;
+  padding-left: 0;
 
   list-style: none;
   display: flex;

@@ -234,7 +234,6 @@ const BlogsContainer = styled.div`
 
 const SingleCard = styled.div`
   flex: 1 1 30%;
-  z-index: -1;
 `
 
 const FilterMobileContainer = styled.div`

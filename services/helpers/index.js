@@ -1,29 +1,9 @@
 import { load as cheerioLoad } from 'cheerio'
 import { storeLocally } from '../io/download'
 import { storeOgImage, getOgImageAlt } from './meta'
-import { serialize } from './serialize'
 
 const getSlug = (title) => {
   return title.toLowerCase().replace(/ /g, '-').replace(/[-]+/g, '-').replace(/[^\w-]+/g, '')
-}
-
-const getText = (arr) => {
-  if (!arr) {
-    return ''
-  }
-
-  const texts = []
-
-  arr.forEach(el => {
-    if (el.text) {
-      texts.push(el.text)
-      return
-    }
-
-    return texts.push(getText(el.children))
-  })
-
-  return texts.join(' ')
 }
 
 const parseLegacyHtml = async ($) => {
@@ -112,15 +92,14 @@ const parseHtml = async (html) => {
   const toc = await getTableOfContents($)
   const updated = await parseLegacyHtml($)
   const minsToRead = getMinsToRead($)
+  const text = $.text().trim()
 
-  return { toc, updated, minsToRead }
+  return { toc, updated, minsToRead, text }
 }
 
 export const helpers = {
   getSlug,
-  serialize,
   parseHtml,
-  getText,
   getOgImageAlt,
   storeOgImage
 }

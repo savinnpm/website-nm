@@ -31,8 +31,7 @@ const transformDoc = async (doc) => {
     slug: doc.slug,
     intro: doc.intro,
     description: {
-      text: helpers.getText(doc.description),
-      html: helpers.serialize(doc.description)
+      html: doc.description
     },
     report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'pdfs'),
     reportAlt: doc.report.alt,

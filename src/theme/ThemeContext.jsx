@@ -43,6 +43,17 @@ const GlobalStyle = createGlobalStyle`
     color: ${props => props.theme.color};
   }
 
+  *, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    font: inherit;
+    border: none;
+    background-color: transparent;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
   a {
     color: inherit;
     text-decoration: none;
@@ -58,15 +69,9 @@ const GlobalStyle = createGlobalStyle`
     height: 24px;
   }
 
-  *, *::before, *::after {
-    padding: 0;
-    margin: 0;
-    font: inherit;
-    border: none;
-    background-color: transparent;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  ul, ol {
+    margin-top: 20px;
+    padding-left: 20px;
   }
 `
 
