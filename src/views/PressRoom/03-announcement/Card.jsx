@@ -14,13 +14,17 @@ const Card = (props) => {
         sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
         src={props.post.image}
       />
+
       <Time>{getFormattedDate(new Date(props.post.date).toString())}</Time>
 
       <CardTitle>{props.post.title}</CardTitle>
+
       <CardText>{props.post.intro}</CardText>
+
       <CardTags>
         <Tag color={props.post.tags[0].color}>{props.post.tags[0].name}</Tag>
       </CardTags>
+
     </Container>
   )
 }
