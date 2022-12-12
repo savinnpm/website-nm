@@ -91,11 +91,11 @@ export const TeamCarousel = () => {
     initialSlide: INITIAL_SLIDE,
     slidesToShow: 4,
     slidesToScroll: 1,
+    swipeToSlide: true,
     responsive: [
       {
         breakpoint: 769,
         settings: {
-          centerMode: true,
           centerPadding: '0',
           slidesToScroll: 3,
           slidesToShow: 3,

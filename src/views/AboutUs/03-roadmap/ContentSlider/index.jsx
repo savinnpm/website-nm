@@ -41,7 +41,7 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
               tabIndex={isActive ? undefined : '-1'}
             >
               <h3>{name}</h3>
-              <Story />
+              <Story key={`story-${i}`} />
             </SlideContent>
           )
         })}
