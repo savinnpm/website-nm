@@ -15,18 +15,18 @@ export const Hero = () => {
 
         <FormContainer>
 
-          <Button
+          <StyledButton
             hierarchy='secondary'
             size='xl'
           >
             <a target='_blank' href='https://docs.neptunemutual.com/usage/brand-assets' rel='nofollow noopener noreferrer'>Download Press Kit</a>
-          </Button>
-          <Button
+          </StyledButton>
+          <StyledButton
             hierarchy='primary'
             size='xl'
           >
             Media Inquiries
-          </Button>
+          </StyledButton>
         </FormContainer>
 
       </InnerContainer>
@@ -94,4 +94,14 @@ const FormContainer = styled.div`
   display:flex;
   justify-content:center;
   gap:12px;
+
+  @media (max-width: 768px) {
+    flex-wrap: wrap;
+  }
+`
+
+const StyledButton = styled(Button)`
+@media (max-width: 768px) {
+  width:100%
+}
 `

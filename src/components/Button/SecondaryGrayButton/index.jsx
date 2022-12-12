@@ -43,9 +43,9 @@ export const SecondaryGrayButton = ({
 }
 
 const StyledButton = styled.button`
-  --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['50']};
+  --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['700']};
   --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['600']};
-  --backgroundColor: ${(props) => props.theme.primaryBackgroundColor};
+  --backgroundColor: ${(props) => props.theme.isLightMode ? props.theme.primaryBackgroundColor : colors.white};
 
   display: flex;
   justify-content: center;
