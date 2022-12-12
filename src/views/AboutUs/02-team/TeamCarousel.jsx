@@ -96,6 +96,7 @@ export const TeamCarousel = () => {
       {
         breakpoint: 769,
         settings: {
+          centerMode: true,
           centerPadding: '0',
           slidesToScroll: 3,
           slidesToShow: 3,
