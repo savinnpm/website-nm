@@ -68,4 +68,6 @@ const Nav = styled.nav`
   flex-direction: column;
   padding: 24px 0px;
   gap: 8px;
+  overflow-y:auto;
+  height: 100vh;
 `
