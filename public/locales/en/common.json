@@ -1,6 +1,7 @@
 {
   "HOME": "Home",
   "BLOG": "Blog",
+  "PRESS": "Press",
   "CAREERS": "Careers",
   "RESOURCES": "Resources",
   "CONTACT": "Contact",
@@ -22,7 +23,9 @@
   "GRANTS_AND_BOUNTIES": "Grants And Bounties",
   "POLICY": "Policy",
   "EXPLORE_MARKETPLACE_DESC": "Explore the marketplace, purchase policies, and pool liquidity",
-  "BLOG_AND_PRESS_ROOM_DESC": "Visit our blog and press room",
+  "PRESS_ROOM": "Press Room",
+  "BLOG_DESC": "Visit our blog and press room",
+  "PRESS_ROOM_DESC": "The source for news about Neptune Mutual",
   "ECOSYSTEM_DESC": "Learn how you can participate in our marketplace",
   "DOCUMENTATION_DESC": "Learn more about decentralized insurance and Neptune Mutual protocol",
   "CONTACT_DESC": "Reach out to us via email or our community channels",
