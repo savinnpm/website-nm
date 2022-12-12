@@ -77,6 +77,10 @@ const Nav = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
+  
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const ListContainer = styled.section`

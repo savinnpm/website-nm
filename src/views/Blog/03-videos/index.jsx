@@ -47,6 +47,11 @@ const HeadingContainer = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 32px;
+
+  @media (max-width: 374px) {
+    flex-direction: column;
+    justify-content: center;
+  }
 `
 
 const ExternalLink = styled.a`
