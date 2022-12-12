@@ -2,23 +2,45 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import { services } from '../../services'
-import { Blog } from '../../src/views/Blog'
+import { services } from '../../../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../src/helpers'
+import { getFQDN } from '../../../src/helpers'
+import { Blog } from '../../../src/views/Blog'
 
-export async function getStaticProps ({ locale }) {
+export async function getStaticPaths ({ locales }) {
+  const pages = await services.getFilteredPostPages()
+
+  const paths = []
+
+  locales.forEach(locale => {
+    pages.forEach(page => {
+      paths.push({
+        locale,
+        params: {
+          num: page
+        }
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const blogPosts = await services.getFilteredPosts()
+  const filteredPosts = await services.getFilteredPosts(undefined, parseInt(params.num - 1))
 
   return {
     props: {
       ...(s),
-      blogPosts: blogPosts.posts,
-      totalPages: blogPosts.total,
+      blogPosts: filteredPosts.posts,
+      totalPages: filteredPosts.total,
       filter: 'all',
-      page: 0,
+      page: parseInt(params.num - 1),
       filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
@@ -28,7 +50,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function BlogPage (props) {
+export default function FilteredAndPaginatedBlogPage (props) {
   const { t } = useTranslation('blog')
   const router = useRouter()
 

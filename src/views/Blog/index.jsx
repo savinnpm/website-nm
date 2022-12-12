@@ -4,7 +4,7 @@ import { RecentVideos } from './03-videos'
 import { RecentPosts } from './04-RecentPosts'
 import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
 
-export const Blog = ({ blogPosts }) => {
+export const Blog = ({ blogPosts, totalPages, page, filter, filters }) => {
   return (
     <>
       <Hero />
@@ -13,7 +13,13 @@ export const Blog = ({ blogPosts }) => {
 
       <RecentVideos />
 
-      <RecentPosts blogPosts={blogPosts} />
+      <RecentPosts
+        blogPosts={blogPosts}
+        totalPages={totalPages}
+        page={page}
+        filter={filter}
+        filters={filters}
+      />
 
       <NewsletterSignupForm />
     </>
