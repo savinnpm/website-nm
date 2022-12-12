@@ -47,14 +47,6 @@ const Title = styled.p`
   ${typography.weights.semibold}
 `
 
-const SubHeading = styled.p`
-  margin-top: 24px;
-  ${typography.styles.textXl}
-  ${typography.weights.regular}
-
-  color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
-`
-
 const HorizontalTabs = styled.div`
   display: flex;
   gap: 8px;

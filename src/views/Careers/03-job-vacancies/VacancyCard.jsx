@@ -42,7 +42,6 @@ export const VacancyCard = ({ vacancy }) => {
   )
 }
 
-
 const Container = styled.section`
   padding: 24px 24px 28px;
   gap: 24px;

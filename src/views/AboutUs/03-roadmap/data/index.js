@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { Command } from './Command'
 import { UnorderedList } from './UnorderedList'
 
@@ -46,7 +47,7 @@ export const data = [
               'Scalability',
               'User Experience (UX)'
             ]}
-            />            
+            />
           </p>
         </>
       )
@@ -116,9 +117,9 @@ export const data = [
             The Neptune Mutual protocol launches on a couple of test networks like Ropsten and Mumbai testnet. Community members participate in the protocol by becoming cover purchasers,  liquidity providers, and concensus witenesses. We develop <a target='_blank' rel='noreferrer' href={links.FAUCET}>Neptune Mutual faucet</a> to provide users with testnet DAI and NPM tokens.
           </p>
           <p>
-            <a target="_blank" href="https://faucet.neptunemutual.com/" title="Neptune Mutual Faucet">View Faucet</a>
+            <a target='_blank' href='https://faucet.neptunemutual.com/' title='Neptune Mutual Faucet' rel='noreferrer'>View Faucet</a>
             &nbsp;/&nbsp;
-            <a target="_blank" href="https://test.neptunemutual.com/" title="Neptune Mutual Testnet">View Testnet</a>
+            <a target='_blank' href='https://test.neptunemutual.com/' title='Neptune Mutual Testnet' rel='noreferrer'>View Testnet</a>
           </p>
         </>
       )
@@ -130,9 +131,10 @@ export const data = [
       return (
         <>
           <p>
-            When it comes to the validation and auditing of smart contracts, Blocksec is a well-known brand name. We entered into a contract with them to have them perform, over the period of almost two months, a full security review of the smart contracts that serve as the foundation of the Neptune Mutual protocol.          </p>
+            When it comes to the validation and auditing of smart contracts, Blocksec is a well-known brand name. We entered into a contract with them to have them perform, over the period of almost two months, a full security review of the smart contracts that serve as the foundation of the Neptune Mutual protocol.
+          </p>
           <p>
-            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -152,7 +154,7 @@ export const data = [
           </p>
 
           <p>
-            <a target="_blank" href="https://www.npmjs.com/package/@neptunemutual/sdk" rel="nofollow noopener noreferrer" title="Neptune Mutual SDK on NPM Database">View on npmjs.com</a>
+            <a target='_blank' href='https://www.npmjs.com/package/@neptunemutual/sdk' rel='nofollow noopener noreferrer' title='Neptune Mutual SDK on NPM Database'>View on npmjs.com</a>
           </p>
         </>
       )
@@ -167,7 +169,7 @@ export const data = [
             The Cyraacs team was brought on board to perform security audit of the Neptune Mutual Typescript SDK.
           </p>
           <p>
-            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -186,8 +188,8 @@ export const data = [
             With this upgrade, cover pools can now be integrated into numerous baskets for enhanced capital efficiency and increased returns for liquidity providers. Due to the leverage element, diversified pools, unlike dedicated pools, do not have 1:1 liquidity.
           </p>
           <p>
-            <a target="_blank" href="https://test.neptunemutual.com/" title="View Testnet">View Testnet</a>
-          </p>        
+            <a target='_blank' href='https://test.neptunemutual.com/' title='View Testnet' rel='noreferrer'>View Testnet</a>
+          </p>
         </>
       )
     }
@@ -197,10 +199,10 @@ export const data = [
     Story: () => {
       return (
         <>
-        <p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>
-        <p>
-          <a href="/security" title="View Audit Reports">View Audit Reports</a>
-        </p>
+          <p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>
+          <p>
+            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
+          </p>
         </>
       )
     }
@@ -214,7 +216,7 @@ export const data = [
             Following the end of our Typescript SDK audit with Cyraacs, we contacted them to obtain greybox and blackbox penetration testing service on publicly-hosted instances of our frontend application and API backends.
           </p>
           <p>
-            <a href="/security" title="View Audit Reports">View Audit Reports</a>
+            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -227,9 +229,10 @@ export const data = [
       return (
         <>
           <p>
-            The Neptune Mutual protocol was launched on the Ethereum mainnet after the completion of an extensive internal security audit.          </p>
+            The Neptune Mutual protocol was launched on the Ethereum mainnet after the completion of an extensive internal security audit.
+          </p>
           <p>
-            <a target="_blank" href="https://app.neptunemutual.com/" title="View Marketplace">View Marketplace</a>
+            <a target='_blank' href='https://app.neptunemutual.com/' title='View Marketplace' rel='noreferrer'>View Marketplace</a>
           </p>
         </>
       )
@@ -245,7 +248,7 @@ export const data = [
             Neptune Mutual announces "Prime dApps," a diverse cover pool that includes industry-leading DeFi protocols such as Uniswap, Aave, Balancer, Curve, Gnosis Safe, MakerDAO, and Synthetix.
           </p>
           <p>
-            <a target="_blank" href="https://app.neptunemutual.com/covers/prime" title="View Prime dApps Diversified Insurance Cover Pool">View Prime dApps</a>
+            <a target='_blank' href='https://app.neptunemutual.com/covers/prime' title='View Prime dApps Diversified Insurance Cover Pool' rel='noreferrer'>View Prime dApps</a>
           </p>
         </>
       )
@@ -262,7 +265,7 @@ export const data = [
           </p>
 
           <p>
-            <a target="_blank" href="https://twitter.com/neptunemutual/status/1594910920228360192" rel="nofollow noopener noreferrer" title="View Announcement in Twitter">View Tweet</a>
+            <a target='_blank' href='https://twitter.com/neptunemutual/status/1594910920228360192' rel='nofollow noopener noreferrer' title='View Announcement in Twitter'>View Tweet</a>
           </p>
         </>
       )
@@ -278,12 +281,12 @@ export const data = [
             We listed Binance, one of the biggest and most popular exchange, on our marketplace. Binance exchange custody has been deployed as a dedicated standalone cover. A dedicated cover pool always has at least 1:1 or more liquidity available than policies underwritten.
           </p>
           <p>
-            <a target="_blank" href="https://app.neptunemutual.com/covers/binance/purchase" title="Purchase Binance Policy">Purchase Binance Policy</a>
-          </p>        
-        </>        
+            <a target='_blank' href='https://app.neptunemutual.com/covers/binance/purchase' title='Purchase Binance Policy' rel='noreferrer'>Purchase Binance Policy</a>
+          </p>
+        </>
       )
     }
-  }, 
+  },
   {
     name: <>Cover Pool Announcement</>,
     current: false,
@@ -312,12 +315,12 @@ export const data = [
     Story: () => {
       return (
         <>
-        <p>
-          We are presently putting the final touches to the guidelines for our bug bounty program, and as soon as they are finished, they will be published on the "Grants and Bounties" page of our website. Hang tight.
-        </p>
-        <p>
-          <a href="/grants-and-bounties" title="View Grants and Bounties Page">View Grants and Bounties</a>
-        </p>        
+          <p>
+            We are presently putting the final touches to the guidelines for our bug bounty program, and as soon as they are finished, they will be published on the "Grants and Bounties" page of our website. Hang tight.
+          </p>
+          <p>
+            <Link href='/grants-and-bounties' title='View Grants and Bounties Page'>View Grants and Bounties</Link>
+          </p>
         </>
       )
     }
@@ -387,7 +390,7 @@ export const data = [
         </p>
       )
     }
-  },  {
+  }, {
     name: <>POD Staking Pools</>,
     current: false,
     Story: () => {
@@ -397,7 +400,7 @@ export const data = [
         </p>
       )
     }
-  }, 
+  },
   {
     name: <>Bond Pool</>,
     current: false,
@@ -408,8 +411,8 @@ export const data = [
         </p>
       )
     }
-  }, 
-   {
+  },
+  {
     name: <>Staking Pools</>,
     current: false,
     Story: () => {

@@ -15,7 +15,6 @@ export const Card = ({ ecosystem }) => {
   )
 }
 
-
 const Container = styled.div`
   padding: 24px;
   border-radius: 8px;
