@@ -43,7 +43,7 @@ const transformDoc = async (doc) => {
       title: doc.meta?.title || '',
       description: doc.meta?.description || '',
       image: {
-        src: await helpers.storeOgImage(doc?.meta?.image?.filename, 'programs-og-images'),
+        src: await helpers.storeOgImage(doc?.meta?.image?.filename),
         alt: helpers.getOgImageAlt(doc?.meta?.image?.alt)
       }
     }

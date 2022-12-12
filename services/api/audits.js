@@ -34,7 +34,7 @@ const transformDoc = async (doc) => {
       text: helpers.getText(doc.description),
       html: helpers.serialize(doc.description)
     },
-    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'audits'),
+    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'pdfs'),
     reportAlt: doc.report.alt,
     startDate: doc.startDate,
     endDate: doc.endDate,
@@ -46,19 +46,19 @@ const transformDoc = async (doc) => {
         alt: doc.partner.logo.alt,
         description: doc.partner.logo.description,
         identifier: doc.partner.logo.identifier,
-        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'security-partners')
+        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'images')
       },
       icon: {
         alt: doc.partner.icon.alt,
         description: doc.partner.icon.description,
-        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.icon.filename}`, 'security-partners')
+        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.icon.filename}`, 'images')
       }
     },
     meta: {
       title: doc.meta.title,
       description: doc.meta.description,
       image: {
-        src: await helpers.storeOgImage(doc?.meta?.image?.filename, 'audits-og-images'),
+        src: await helpers.storeOgImage(doc?.meta?.image?.filename),
         alt: helpers.getOgImageAlt(doc?.meta?.image?.alt)
       }
     }

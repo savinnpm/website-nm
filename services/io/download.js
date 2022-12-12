@@ -19,7 +19,7 @@ const download = function (url, dest, cb) {
 }
 
 export const storeLocally = async (url, folder) => {
-  const parent = path.resolve('public', 'local-files', folder)
+  const parent = path.resolve('public', 'cdn', folder)
   const filename = (new URL(url)).pathname.split('/').pop()
 
   await ensureDirectory(parent)

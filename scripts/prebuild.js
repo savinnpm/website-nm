@@ -53,7 +53,7 @@ const udpateFileCache = () => {
     return
   }
 
-  const localCacheFolder = path.resolve('public', 'local-files')
+  const localCacheFolder = path.resolve('public', 'cdn')
   console.log('Clearing cache...')
   fs.rmSync(localCacheFolder, { recursive: true, force: true })
 }

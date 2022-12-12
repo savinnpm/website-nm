@@ -37,7 +37,7 @@ export const getLatestBlogPosts = async () => {
         id: doc.id,
         title: doc.title,
         featured: doc.featured,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'blog-images'),
+        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
@@ -67,7 +67,7 @@ export const getBlogPosts = async () => {
         id: doc.id,
         title: doc.title,
         featured: doc.featured,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'blog-images'),
+        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
@@ -96,7 +96,7 @@ export const getSinglePost = async (slug) => {
       id: match.id,
       title: match.title,
       featured: match.featured,
-      image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'blog-images'),
+      image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
@@ -105,7 +105,7 @@ export const getSinglePost = async (slug) => {
         title: match.meta.title,
         description: match.meta.description,
         image: {
-          src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename, 'blog-images'),
+          src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename, 'images'),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       },

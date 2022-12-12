@@ -45,7 +45,7 @@ const transformDoc = async (doc) => {
   return {
     id: doc.id,
     title: doc.title,
-    image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'video-thumbnails'),
+    image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'images'),
     videoId: doc.videoId,
     description: {
       // html: helpers.serialize(doc.description),

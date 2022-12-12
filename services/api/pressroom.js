@@ -36,7 +36,7 @@ export const getLatestPressroomPosts = async () => {
       return {
         id: doc.id,
         title: doc.title,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'pressroom-images'),
+        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
@@ -65,7 +65,7 @@ export const getPressroomPosts = async () => {
       return {
         id: doc.id,
         title: doc.title,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'pressroom-images'),
+        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
@@ -93,7 +93,7 @@ export const getSinglePressroomPost = async (slug) => {
     return {
       id: match.id,
       title: match.title,
-      image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'pressroom-images'),
+      image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
@@ -102,7 +102,7 @@ export const getSinglePressroomPost = async (slug) => {
         title: match?.meta?.title,
         description: match?.meta?.description,
         image: {
-          src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename, 'pressroom-images'),
+          src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       },

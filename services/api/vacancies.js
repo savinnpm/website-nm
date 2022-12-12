@@ -76,7 +76,7 @@ export const getSingleVacancy = async (slug) => {
         title: match.meta.title,
         description: match.meta.description,
         image: {
-          src: await helpers.storeOgImage(match?.meta?.image?.filename, 'vacancies-og-images'),
+          src: await helpers.storeOgImage(match?.meta?.image?.filename),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
         }
       }
