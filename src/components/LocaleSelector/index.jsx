@@ -9,7 +9,7 @@ import { localeNames } from './config'
 
 const options = [...Object.keys(localeNames), process.env.NODE_ENV.toLowerCase() === 'development' ? 'test' : undefined].filter(Boolean)
 
-export const LocaleSelector = () => {
+export const LocaleSelector = (props) => {
   const router = useRouter()
   const [showLanguages, setShowLanguages] = useState(false)
   const [langList, setLangList] = useState(options)
@@ -36,6 +36,9 @@ export const LocaleSelector = () => {
 
   const show = () => {
     setShowLanguages(!showLanguages)
+    if (props.setIsLocaleSelectorOpen && typeof props.setIsLocaleSelectorOpen === 'function') {
+      props.setIsLocaleSelectorOpen(!showLanguages)
+    }
   }
 
   return (

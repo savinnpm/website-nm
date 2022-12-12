@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { LocaleSelector } from '../../LocaleSelector'
@@ -7,6 +7,8 @@ import { data } from '../data'
 import { NavMenuItem } from './MenuItem'
 
 export const MobileNavigation = ({ isMenuOpen }) => {
+  const [isLocaleSelectorOpen, setIsLocaleSelectorOpen] = useState(false)
+
   useEffect(() => {
     return () => {
       document.body.style.overflow = 'visible'
@@ -23,10 +25,10 @@ export const MobileNavigation = ({ isMenuOpen }) => {
   }, [isMenuOpen])
 
   return (
-    <Container>
+    <Container isLocaleSelectorOpen={isLocaleSelectorOpen}>
       <Nav>
         <ActionsContainer>
-          <LocaleSelector />
+          <LocaleSelector setIsLocaleSelectorOpen={setIsLocaleSelectorOpen} />
           <ThemeSelector />
         </ActionsContainer>
         {data.map((item, idx) => {
@@ -46,7 +48,7 @@ const Container = styled.div`
   bottom: 0px;
   z-index: 1;
   width: 100%;
-  overflow-x: hidden;
+  overflow-x: ${props => props.isLocaleSelectorOpen ? 'visible' : 'hidden'};
   background-color: ${props => props.theme.primaryBackgroundColor};
   display: block;
   border-top: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
