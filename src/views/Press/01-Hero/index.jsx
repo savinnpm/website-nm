@@ -19,7 +19,7 @@ export const Hero = () => {
             hierarchy='secondary'
             size='xl'
           >
-            <a target='_blank' href='/local-files/audits/001-blocksec.pdf'>Download Press Kit</a>
+            <a target='_blank' href='https://docs.neptunemutual.com/usage/brand-assets' rel='nofollow noopener noreferrer'>Download Press Kit</a>
           </Button>
           <Button
             hierarchy='primary'
