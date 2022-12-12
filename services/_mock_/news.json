@@ -1,0 +1,64 @@
+{
+  "docs": [
+      {
+          "id": "6393a5ada16bf366e6c4c959",
+          "updatedAt": "2022-12-09T12:17:40.052Z",
+          "createdAt": "2022-12-09T12:17:40.052Z",
+          "press": {
+              "id": "6393a597a16bf366e6c4c955",
+              "updatedAt": "2022-12-09T11:59:39.408Z",
+              "createdAt": "2022-12-09T11:59:39.408Z",
+              "name": "Crypto Slate",
+              "badge": "rose",
+              "_status": "published"
+          },
+          "title": "Neptune Mutual Protocol raises 5.3M$ in a private funding round after successful testnet launch",
+          "publishedAt": "2022-05-11T07:15:00.000Z",
+          "link": "https://cryptoslate.com/press-releases/neptune-mutual-protocol-raises-5-3m-in-a-private-funding-round-after-successful-testnet-launch/",
+          "_status": "published"
+      },
+      {
+          "id": "6393a5b0a16bf366e6c4c95c",
+          "updatedAt": "2022-12-09T12:16:25.811Z",
+          "createdAt": "2022-12-09T12:16:25.811Z",
+          "press": {
+              "id": "6393a596a16bf366e6c4c951",
+              "updatedAt": "2022-12-09T12:14:16.314Z",
+              "createdAt": "2022-12-09T12:14:16.314Z",
+              "name": "EINPresswire",
+              "badge": "indigo",
+              "_status": "published"
+          },
+          "title": "Parametric Cover for Uniswap, Aave, Maker, Balancer & more, as Neptune Mutual Marketplace Launches on Ethereum Mainnet.",
+          "publishedAt": "2022-11-02T07:45:00.000Z",
+          "link": "https://www.einnews.com/pr_news/598962968/parametric-cover-for-uniswap-aave-maker-balancer-more-as-neptune-mutual-marketplace-launches-on-ethereum-mainnet",
+          "_status": "published"
+      },
+      {
+          "id": "6393a5b3a16bf366e6c4c95f",
+          "updatedAt": "2022-12-09T12:15:35.942Z",
+          "createdAt": "2022-12-09T12:15:35.942Z",
+          "press": {
+              "id": "6393a596a16bf366e6c4c951",
+              "updatedAt": "2022-12-09T12:14:16.314Z",
+              "createdAt": "2022-12-09T12:14:16.314Z",
+              "name": "EINPresswire",
+              "badge": "indigo",
+              "_status": "published"
+          },
+          "title": "Binance Decentralized Cover Pool Launches in Neptune Mutual Cover Marketplace",
+          "publishedAt": "2022-11-30T06:15:00.000Z",
+          "link": "https://www.einnews.com/pr_news/603982971/binance-decentralized-cover-pool-launches-in-neptune-mutual-cover-marketplace",
+          "_status": "published"
+      }
+  ],
+  "totalDocs": 3,
+  "limit": 1000,
+  "totalPages": 1,
+  "page": 1,
+  "pagingCounter": 1,
+  "hasPrevPage": false,
+  "hasNextPage": false,
+  "prevPage": null,
+  "nextPage": null
+}

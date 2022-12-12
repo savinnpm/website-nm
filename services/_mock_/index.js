@@ -5,6 +5,7 @@ const pages = require('./pages.json')
 const programs = require('./programs.json')
 const vacancies = require('./vacancies.json')
 const ecosystems = require('./ecosystems.json')
+const news = require('./news.json')
 const videos = require('./videos.json')
 
 export const mockData = {
@@ -15,5 +16,6 @@ export const mockData = {
   programs,
   vacancies,
   ecosystems,
+  news,
   videos
 }
