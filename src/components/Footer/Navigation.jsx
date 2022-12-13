@@ -122,6 +122,7 @@ const Li = styled.li`
   a:hover {
     text-decoration: none !important;
   }
+
 `
 const Badge = styled.div`
   ${typography.styles.textSm};
