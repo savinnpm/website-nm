@@ -5,6 +5,10 @@ import Slider from 'react-slick'
 import { ContentSlider } from '../ContentSlider'
 import styled from 'styled-components'
 import { TimelineItem } from './TimelineItem'
+import { colors } from '../../../../../styles/colors'
+import { blurs } from '../../../../../styles/blurs'
+import { utils } from '../../../../../styles/utils'
+import { Icon } from '../../../../components/Icon'
 
 const currentIndex = data.findIndex((x) => x.current)
 
@@ -20,6 +24,9 @@ export const MainCarousel = () => {
   const [shouldSetInitial, setShouldSetInitial] = useState(false)
 
   const sliderRef = useRef(null)
+
+  const onNext = () => sliderRef?.current?.slickNext()
+  const onPrev = () => sliderRef?.current?.slickPrev()
 
   useEffect(() => {
     // Get viewport width
@@ -41,7 +48,7 @@ export const MainCarousel = () => {
     // adaptiveHeight: true,
     initialSlide: currentIndex - 5,
     slidesToShow: 7,
-    slidesToScroll: 3,
+    slidesToScroll: 7,
     onInit: () => setShouldSetInitial(true),
 
     responsive: [
@@ -113,6 +120,22 @@ export const MainCarousel = () => {
         activeIndex={selected}
         onContentSlideUpdate={handleContentSlideUpdate}
       />
+
+      <ArrowsContainer>
+        <ArrowButton
+          onClick={onPrev}
+          title='Previous'
+        >
+          <Icon variant='arrow-left' size={24} />
+        </ArrowButton>
+
+        <ArrowButton
+          onClick={onNext}
+          title='Next'
+        >
+          <Icon variant='arrow-right' size={24} />
+        </ArrowButton>
+      </ArrowsContainer>
     </Container>
   )
 }
@@ -157,4 +180,46 @@ const TimelineInnerContainer = styled.div`
   margin-bottom: 3rem;
   position: relative;
   width: 100%;
+`
+
+const ArrowsContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+
+  @media screen and (max-width: 768px) {
+    display: none;
+  }
+`
+
+const ArrowButton = styled.button`
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  cursor: pointer;
+
+  background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
+  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['50']};
+  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
+  backdrop-filter: ${blurs.sm};
+  border-radius: 50%;
+
+  :not(:disabled):hover {
+    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
+    color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
+  }
+
+  :disabled {
+    border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
+    color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
+    cursor: not-allowed;
+  }
+
+  > span {
+    ${utils.srOnly};
+  }
 `

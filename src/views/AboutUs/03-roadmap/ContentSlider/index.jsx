@@ -6,11 +6,7 @@ import {
 import Slider from 'react-slick'
 import styled from 'styled-components'
 
-import { blurs } from '../../../../../styles/blurs'
-import { colors } from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
-import { utils } from '../../../../../styles/utils'
-import { Icon } from '../../../../components/Icon'
 import { data } from '../data'
 
 export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
@@ -31,9 +27,6 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
     sliderRef.current.slickGoTo(activeIndex)
   }, [activeIndex])
 
-  const onNext = () => sliderRef?.current?.slickNext()
-  const onPrev = () => sliderRef?.current?.slickPrev()
-
   return (
     <div>
       <Slider ref={sliderRef} {...settings}>
@@ -53,25 +46,6 @@ export const ContentSlider = ({ activeIndex, onContentSlideUpdate }) => {
           )
         })}
       </Slider>
-
-      <ArrowsContainer>
-
-        <ArrowButton
-          disabled={activeIndex <= 0}
-          onClick={onPrev}
-          title='Previous'
-        >
-          <Icon variant='arrow-left' size={24} />
-        </ArrowButton>
-
-        <ArrowButton
-          disabled={data.length - activeIndex <= sliderRef?.current?.props?.slidesToShow}
-          onClick={onNext}
-          title='Next'
-        >
-          <Icon variant='arrow-right' size={24} />
-        </ArrowButton>
-      </ArrowsContainer>
     </div>
   )
 }
@@ -121,47 +95,5 @@ const SlideContent = styled.div`
     font-weight: inherit;
     font-size: inherit;
     line-height: inherit;
-  }
-`
-
-const ArrowsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-const ArrowButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  cursor: pointer;
-
-  background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
-  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['50']};
-  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
-  backdrop-filter: ${blurs.sm};
-  border-radius: 50%;
-
-  :not(:disabled):hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
-    color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
-  }
-
-  :disabled {
-    border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
-    color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
-    cursor: not-allowed;
-  }
-
-  > span {
-    ${utils.srOnly};
   }
 `
