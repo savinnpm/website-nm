@@ -32,7 +32,7 @@ export const data = [
         links: [
           { title: 'About Us', href: '/about', description: 'Learn about our story and our mission statement', icon: 'flag-06' },
           { title: 'Grants and Bounties', href: '/grants-and-bounties', description: 'Learn about our referral, ambassador, and distributor programs', icon: 'stars-02' },
-          { title: 'Careers', href: '/careers', description: 'We’re always looking for talented people. Join our team!', icon: 'users-01', badge: 'We\'re Hiring!' },
+          { title: 'Careers', href: '/careers', description: 'We’re always looking for talented people. Join our team!', icon: 'users-01', badge: "We're Hiring!" },
           { title: 'Security', href: '/security', description: 'View our platform audit reports. Learn about our bug bounty program.', icon: 'glasses-02' },
           { title: 'Policy', href: '/policies', description: 'View our disclaimer, terms of service, and privacy policy', icon: 'folder' }
         ]

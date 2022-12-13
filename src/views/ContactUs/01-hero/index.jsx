@@ -1,18 +1,21 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
 export const Hero = () => {
+  const { t } = useTranslation('contact')
+
   return (
     <Container>
       <InnerContainer>
         <Text>
           <H1>
-            <Subheading>Contact Us</Subheading>
-            <Heading>Get In Touch</Heading>
+            <Subheading>{t('Contact Us')}</Subheading>
+            <Heading>{t('Get In Touch')}</Heading>
           </H1>
-          <Subtitle>We&apos;d love to hear from you. Please fill out this form.</Subtitle>
+          <Subtitle>{t('We&apos;d love to hear from you. Please fill out this form.')}</Subtitle>
         </Text>
       </InnerContainer>
     </Container>

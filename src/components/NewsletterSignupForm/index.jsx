@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
@@ -5,13 +6,15 @@ import { utils } from '../../../styles/utils'
 import { BlogSubscribe } from '../BlogSubscribe'
 
 export const NewsletterSignupForm = ({ paddingTop }) => {
+  const { t } = useTranslation('common')
+
   return (
     <Container paddingTop={paddingTop}>
       <InnerContainer>
         <Box>
           <ContentContainer>
-            <Heading>Sign up for our newsletter</Heading>
-            <Subtitle>Be the first to know about releases and industry news and insights.</Subtitle>
+            <Heading>{t('Sign up for our newsletter')}</Heading>
+            <Subtitle>{t('Be the first to know about releases and industry news and insights.')}</Subtitle>
           </ContentContainer>
 
           <FormContainer>

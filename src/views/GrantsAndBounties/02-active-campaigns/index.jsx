@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled, { useTheme } from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
@@ -54,6 +55,8 @@ const getBadgeIcon = (badge) => {
 }
 
 export const ActiveCampaigns = ({ programs }) => {
+  const { t } = useTranslation('grants')
+
   const { isLightMode } = useTheme()
 
   if (!programs?.length) return <></>
@@ -61,9 +64,9 @@ export const ActiveCampaigns = ({ programs }) => {
   return (
     <Container>
       <HeaderContainer>
-        <Heading>Active Campaigns and Promotions</Heading>
+        <Heading>{t('Active Campaigns and Promotions')}</Heading>
         <SubHeading>
-          Partners that provide value and increase adoption and usage of Neptune Mutual will be handsomely compensated for their efforts.
+          {t('Partners that provide value and increase adoption and usage of Neptune Mutual will be handsomely compensated for their efforts.')}
         </SubHeading>
       </HeaderContainer>
 

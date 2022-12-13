@@ -11,8 +11,10 @@ import {
   primaryColorKey
 } from '../../styles/colors'
 import { typography } from '../../styles/typography'
+import { useTranslation } from 'react-i18next'
 
 export const TableOfContents = ({ title, headers }) => {
+  const { t } = useTranslation('common')
   const [currentHeader, setCurrentHeader] = useState('')
   const router = useRouter()
 
@@ -36,7 +38,7 @@ export const TableOfContents = ({ title, headers }) => {
 
   return (
     <Container>
-      <Label>Table of Contents</Label>
+      <Label>{t('Table of Contents')}</Label>
 
       <TitleLink
         data-isactive={currentHeader === '' ? 'true' : 'false'}

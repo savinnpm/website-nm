@@ -1,4 +1,5 @@
 import { useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -6,6 +7,8 @@ import { utils } from '../../../../styles/utils'
 import { VacanciesList } from './VacanciesList'
 
 export const JobVacancies = ({ vacancies }) => {
+  const { t } = useTranslation('careers')
+
   const departments = useMemo(() => {
     const depts = vacancies.map(v => v.department)
     return ['', ...new Set(depts)]
@@ -16,10 +19,10 @@ export const JobVacancies = ({ vacancies }) => {
       <InnerContainer>
         <Content>
           <H2>
-            <Subheading>Careers</Subheading>
-            <Heading>Job Vacancies</Heading>
+            <Subheading>{t('Careers')}</Subheading>
+            <Heading>{t('Job Vacancies')}</Heading>
           </H2>
-          <SupportingText>Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.</SupportingText>
+          <SupportingText>{t('Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.')}</SupportingText>
         </Content>
 
         <Content>

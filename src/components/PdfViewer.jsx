@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors } from '../../styles/colors'
 import { typography } from '../../styles/typography'
@@ -5,13 +6,15 @@ import { utils } from '../../styles/utils'
 import { Button } from './Button'
 
 export const PdfViewer = ({ url }) => {
+  const { t } = useTranslation('security-detail')
+
   return (
     <Container>
       <InnerContainer>
         <StyledPdfEmbed data={`${url}#view=FitH&toolbar=0&toolbar=0&navpanes=0&scrollbar=0`} type='application/pdf' width='100%'>
           <TextContainer>
-            <Heading>Note</Heading>
-            <SupportingText>Your web browser doesn't have a PDF plugin. Instead you can click below to download the PDF file.</SupportingText>
+            <Heading>{t('Note')}</Heading>
+            <SupportingText>{t("Your web browser doesn't have a PDF plugin. Instead you can click below to download the PDF file.")}</SupportingText>
           </TextContainer>
 
           <ButtonContainer>
@@ -23,7 +26,7 @@ export const PdfViewer = ({ url }) => {
               iconLeading
               iconVariant='download-01'
             >
-              Download File
+              {t('Download File')}
             </Button>
           </ButtonContainer>
         </StyledPdfEmbed>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../styles/colors'
 import { shadows } from '../../styles/shadows'
@@ -6,6 +7,7 @@ import { useThemeContext } from '../theme/ThemeContext'
 import { Icon } from './Icon'
 
 export const ThemeSelector = () => {
+  const { t } = useTranslation('common')
   const { darkMode, setDarkMode } = useThemeContext()
 
   const handleChange = (e) => {
@@ -16,7 +18,7 @@ export const ThemeSelector = () => {
 
   return (
     <Label>
-      <span>Dark Mode</span>
+      <span>{t('Dark Mode')}</span>
       <Input checked={checked} type='checkbox' onChange={handleChange} />
       <Switch>
         <Icon size={12} variant={checked ? 'sun-filled' : 'moon-star-filled'} />

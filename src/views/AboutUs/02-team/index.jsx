@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -6,18 +7,20 @@ import { LinkExternal01 } from '../../../components/Icon/variants/General'
 import { TeamCarousel } from './TeamCarousel'
 
 export const Team = () => {
+  const { t } = useTranslation('about')
+
   return (
     <Container>
       <ContentContainer>
         <LinkText href='/careers'>
-          <span>We’re hiring!</span>
+          <span>{t('We’re hiring!')}</span>
           <LinkExternal01 width='16' height='16' />
         </LinkText>
 
-        <Title>Meet Our Team</Title>
+        <Title>{t('Meet Our Team')}</Title>
 
         <SubHeading>
-          We are a global and dynamic team with a mission to create a reliable, fast, and effective platform that protects digital assets.
+          {t('We are a global and dynamic team with a mission to create a reliable, fast, and effective platform that protects digital assets.')}
         </SubHeading>
       </ContentContainer>
 

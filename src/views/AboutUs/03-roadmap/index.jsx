@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -5,16 +6,18 @@ import { utils } from '../../../../styles/utils'
 import { MainCarousel } from './MainCarousel'
 
 export const Roadmap = () => {
+  const { t } = useTranslation('about')
+
   return (
     <Container>
       <InnerContainer>
 
         <TextContainer>
           <H2>
-            <Subheading>Roadmap</Subheading>
-            <Heading>Follow Our Story. Join Our Community.</Heading>
+            <Subheading>{t('Roadmap')}</Subheading>
+            <Heading>{t('Follow Our Story. Join Our Community.')}</Heading>
           </H2>
-          <SupportingText>Our roadmap for growing the Neptune Mutual Ecosystem.</SupportingText>
+          <SupportingText>{t('Our roadmap for growing the Neptune Mutual Ecosystem.')}</SupportingText>
         </TextContainer>
 
         <MainCarousel />

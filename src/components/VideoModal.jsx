@@ -1,16 +1,19 @@
 import { Dialog } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { blurs } from '../../styles/blurs'
 import { colors } from '../../styles/colors'
 import { utils } from '../../styles/utils'
 
 export const VideoModal = ({ videoId, setId }) => {
+  const { t } = useTranslation('common')
+
   return (
     <StyledDialog open={!!videoId} onClose={() => setId(null)}>
       <Panel>
-        <Title>Youtube Video</Title>
+        <Title>{t('Youtube Video')}</Title>
         <Description>
-          Playing the video that you've selected below in an iframe
+          {t("Playing the video that you've selected below in an iframe")}
         </Description>
 
         <iframe

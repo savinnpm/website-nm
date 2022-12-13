@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -5,12 +6,14 @@ import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
 
 export const Hero = () => {
+  const { t } = useTranslation('press')
+
   return (
     <Container>
       <InnerContainer>
         <Text>
-          <Heading>Neptune Mutual Press Room</Heading>
-          <Subtitle>Together, let&apos;s build a safer Ethereum DeFi ecosystem for everyone by decentralizing and democratizing crypto-native insurance.</Subtitle>
+          <Heading>{t('Neptune Mutual Press Room')}</Heading>
+          <Subtitle>{t('Together, let&apos;s build a safer Ethereum DeFi ecosystem for everyone by decentralizing and democratizing crypto-native insurance.')}</Subtitle>
         </Text>
 
         <FormContainer>

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import {
@@ -9,13 +10,15 @@ import { utils } from '../../../../styles/utils'
 import { BlogSubscribe } from '../../../components/BlogSubscribe'
 
 export const Hero = () => {
+  const { t } = useTranslation('blog')
+
   return (
     <Container>
       <InnerContainer>
         <Text>
           <H1>
-            <Subheader>Recent developments in the decentralized insurance space</Subheader>
-            <Heading>Neptune Mutual Blog</Heading>
+            <Subheader>{t('Recent developments in the decentralized insurance space')}</Subheader>
+            <Heading>{t('Neptune Mutual Blog')}</Heading>
           </H1>
           <Subtitle>
             The Neptune Mutual Blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.
