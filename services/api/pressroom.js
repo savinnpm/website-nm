@@ -72,8 +72,8 @@ export const getSinglePressroomPost = async (slug) => {
       date: match.updatedAt || match.createdAt,
       tags: match.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) })),
       meta: {
-        title: match?.meta?.title,
-        description: match?.meta?.description,
+        title: match?.meta?.title || match.title || '',
+        description: match?.meta?.description || match.intro.replace('&hellip;', '') || '',
         image: {
           src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)

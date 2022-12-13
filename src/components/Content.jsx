@@ -5,6 +5,7 @@ import {
   primaryColorKey
 } from '../../styles/colors'
 import { typography } from '../../styles/typography'
+import { utils } from '../../styles/utils'
 
 export const HtmlContent = ({ content }) => {
   return (
@@ -88,5 +89,111 @@ const Container = styled.div`
   & > *:first-child {
     margin-top: 0;
     padding-top: 0;
+  }
+
+  /* Legacy blog content */
+  /* Bookmarks
+   –––––––––––––––––––––––––––––––––––––––––––––––––––– */
+  .kg-bookmark-container {
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .kg-bookmark-container,
+  .kg-bookmark-content {
+    display: flex;
+  }
+
+  .kg-bookmark-description,
+  .kg-bookmark-metadata {
+    display: -webkit-box;
+    overflow-y: hidden;
+    -webkit-box-orient: vertical;
+  }
+
+  .kg-bookmark-card + .kg-bookmark-card {
+    margin-top: -35px;
+  }
+
+  .kg-bookmark-container {
+    position: relative;
+    z-index: 2;
+    min-height: 150px;
+    padding-bottom: 0;
+    transition: transform .2s ease;
+    text-decoration: none;
+    background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['700']};
+  }
+
+  .kg-bookmark-container:hover {
+    transform: translateY(-4px);
+  }
+
+  .kg-bookmark-content {
+    align-items: flex-start;
+    flex-direction: column;
+    flex-grow: 1;
+    justify-content: start;
+    padding: 20px;
+  }
+
+  .kg-bookmark-title {
+    ${typography.styles.textMd};
+    ${typography.weights.semibold};
+  }
+
+  .kg-bookmark-description {
+    ${typography.styles.textMd};
+    ${typography.weights.regular};
+
+    --max-lines: 2;
+    ${utils.maxLines};
+  }
+
+  .kg-bookmark-metadata {
+    ${typography.styles.textSm};
+    ${typography.weights.bold};
+    margin-top: 40px;
+
+    --max-lines: 1;
+    ${utils.maxLines};
+  }
+
+  .kg-bookmark-metadata .kg-bookmark-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+    margin-bottom: -5px;
+    border-radius: 0;
+  }
+
+  .kg-bookmark-metadata span:nth-of-type(2)::before {
+    margin-right: 6px;
+    margin-left: 6px;
+    content: '•';
+  }
+
+  .kg-bookmark-thumbnail {
+    position: relative;
+    min-width: 28%;
+    max-height: 100%;
+  }
+
+  .kg-bookmark-thumbnail img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+    -o-object-fit: cover;
+    object-fit: cover;
+    margin: 0;
+  }
+
+  /* These classes will be deprecated. Keep them for GScan validation. */
+  .kg-bookmark-author,
+  .kg-bookmark-publisher {
+    display: inline;
   }
 `
