@@ -79,20 +79,20 @@ export const ActiveCampaigns = ({ programs }) => {
 
             return (
               <Program key={i} href={`/grants-and-bounties/${p.slug}`}>
-                <FlexContainer>
+                <TitleAndBadgeContainer>
                   <ProgramTitle>{p.title}</ProgramTitle>
                   <BadgeContainer data-color={badge.color} data-islightmode={isLightMode}>
                     {BadgeIcon && <BadgeIcon width={8} height={8} />}
                     <span>{badge.text}</span>
                   </BadgeContainer>
-                </FlexContainer>
+                </TitleAndBadgeContainer>
 
                 <ProgramIntro>{p.intro}</ProgramIntro>
 
-                <FlexContainer data-topoffset='true'>
+                <CategoryContainer>
                   {CategoryIcon && <CategoryIcon width='20' height='20' />}
                   <ProgramCategory>{p.category}</ProgramCategory>
-                </FlexContainer>
+                </CategoryContainer>
               </Program>
             )
           }
@@ -110,10 +110,14 @@ const Container = styled.div`
 `
 
 const HeaderContainer = styled.div`
-  width: 768px;
+  max-width: 768px;
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
 `
 
 const Heading = styled.p`
@@ -135,9 +139,18 @@ const ProgramContainer = styled.div`
   width: 768px;
   margin-left: auto;
   margin-right: auto;
-
+  
   & > *:not(:first-child) {
     margin-top: 32px;
+  }
+  
+  @media screen and (max-width: 1024px) {
+    width: auto;
+    margin-top: 48px;
+
+    & > *:not(:first-child) {
+      margin-top: 24px;
+    }
   }
 `
 
@@ -154,15 +167,22 @@ const FlexContainer = styled.div`
   display: flex;
   gap: 8px;
   align-items: center;
-  
-  &[data-topoffset='true'] {
-    margin-top: 24px;
-  }
 
   & svg {
     color: ${props => props.theme.isLightMode ? colors.gray[400] : colors.gray[500]}
   }
 
+`
+
+const TitleAndBadgeContainer = styled(FlexContainer)`
+  @media screen and (max-width: 768px) {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+`
+
+const CategoryContainer = styled(FlexContainer)`
+  margin-top: 24px;
 `
 
 const ProgramTitle = styled.div`
@@ -178,6 +198,10 @@ const ProgramIntro = styled.div`
   
   margin-top: 8px;
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
+  
+  @media screen and (max-width: 768px) {
+    margin-top: 16px;
+  }
 `
 
 const ProgramCategory = styled.div`

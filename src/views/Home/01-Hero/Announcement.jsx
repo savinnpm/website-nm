@@ -11,7 +11,7 @@ export const Announcement = () => {
   // @todo: make dynamic
   return (
     // eslint-disable-next-line react/jsx-no-target-blank
-    <StyledLink href='http://example.com/' target='_blank'>
+    <StyledLink href='/pressroom'>
       <Category>{t('Press Room')}</Category>
       <Text>
         <span>{t('Ethereum DeFi Insurance Protocol Announcement')}</span>

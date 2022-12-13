@@ -35,6 +35,13 @@ const Container = styled.div`
   p{
     display: block;
     margin: 0 0 28px 0;
+
+    color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
+    ${typography.styles.textLg}
+  
+    @media screen and (max-width: 768px) {
+      ${typography.styles.textMd}
+    }
   }
   
   a{
@@ -44,6 +51,10 @@ const Container = styled.div`
       text-decoration: underline;
       color: ${colors.rose[600]}
     }
+  }
+
+  h2, h3, h4 {
+    color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
   }
 
   h2 {
