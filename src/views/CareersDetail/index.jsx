@@ -134,7 +134,6 @@ const Types = styled.div`
 `
 
 const Type = styled.div`
-  margin: 0 32px;
   display: flex;
   flex-direction: column;
   
@@ -170,6 +169,11 @@ const Header = styled.div`
   text-align: center;
   background-color: ${props => props.theme.isLightMode ? colors.indigo[25] : colors.gray[900]};
   padding: 96px 0;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    padding-left: 16px;
+  }
 `
 const Title = styled.h1`
   ${typography.styles.displayLg}

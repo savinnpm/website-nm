@@ -64,7 +64,11 @@ const ExternalLink = styled.a`
   ${typography.weights.semibold};
 
   :hover, :active{
-    color: ${colors.rose[600]}
+    color: ${colors.rose[600]};
+  }
+  
+  @media (max-width: 374px) {
+    justify-content: start;
   }
 `
 

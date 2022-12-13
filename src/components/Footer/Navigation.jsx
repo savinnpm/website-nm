@@ -85,11 +85,6 @@ const Nav = styled.nav`
 
 const ListContainer = styled.section`
   flex: 1;
-  
-  @media (max-width: 768px) {
-    flex: 1 1 auto;
-    width: calc(50% - var(--gap) / 2);
-  }
 `
 
 const H3 = styled.h3`
