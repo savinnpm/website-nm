@@ -42,6 +42,7 @@ const StyledDialog = styled(Dialog)`
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 0 24px;
 `
 
 const Title = styled(Dialog.Title)`
@@ -53,13 +54,15 @@ const Description = styled(Dialog.Description)`
 `
 
 const Panel = styled(Dialog.Panel)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   iframe {
     width: 1000px;
     min-height: 240px;
     max-height: 80%;
-    max-width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    max-width: 100%;
     aspect-ratio: 16 / 9;
   }
 `
