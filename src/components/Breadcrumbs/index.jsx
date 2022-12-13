@@ -23,6 +23,8 @@ const Trail = styled.div`
   display: flex;
   align-items: center;
   margin-bottom: 36px;
+  flex-wrap: wrap;
+  gap: 8px;
 
   svg {
     color: ${colors.gray[300]};
@@ -35,15 +37,12 @@ const Crumb = styled.a`
   ${typography.styles.textSm}
   ${typography.weights.medium}
   color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[300])};
-  margin:0 10px;
   padding: 4px 8px;
 
   &:nth-of-type(1) {
-    margin-left:0;
   }
 
   &:nth-last-of-type(1) {
-    margin-right:0;
     background-color: ${props => (props.theme.isLightMode ? colors.gray[200] : colors.gray[600])};
     color: ${props => (props.theme.isLightMode ? colors.gray[700] : colors.gray[25])};
     border-radius: 6px;

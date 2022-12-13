@@ -27,6 +27,11 @@ const Container = styled.div`
   padding-bottom: 96px;
   
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][25] : colors.gray[900]};
+  
+  @media screen and (max-width: 768px) {
+    padding-top: 56px;
+    padding-bottom: 26px;
+  }
   `
 
 const InnerContainer = styled.div`
@@ -34,11 +39,19 @@ const InnerContainer = styled.div`
 
   display: flex;
   gap: 40px;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+  }
 `
 
 const Heading = styled.div`
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
+  
+  @media screen and (max-width: 768px) {
+    ${typography.styles.displayMd}
+  }
   `
 
 const SubHeading = styled.div`
@@ -47,6 +60,10 @@ const SubHeading = styled.div`
 
   margin-top: 24px;
   color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
+
+  @media screen and (max-width: 768px) {
+    ${typography.styles.textLg}
+  }
 `
 
 const ImageContainer = styled.div`

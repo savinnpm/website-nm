@@ -23,6 +23,10 @@ const InnerContainer = styled.div`
   padding: 96px 0;
   ${utils.fullWidthContainer}
   text-align: center;
+  
+  @media screen and (max-width: 768px) {
+    text-align: left;
+  }
 `
 
 const Title = styled.h1`

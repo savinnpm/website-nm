@@ -112,55 +112,16 @@ const Title = styled.p`
 const SliderContainer = styled.div`
   margin-top: 32px;
 
-  @media screen and (min-width: 1024px) {
-    .slick-slide:not(.slick-active) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .slick-active {
-      padding-left: 16px;
-      padding-right: 0px;
-    }
-
-    .slick-active.slick-current {
-      padding-left: 0px;
-      padding-right: 16px;
-    }
-
-    .slick-active.slick-current + .slick-active:not(.slick-current) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
+  .slick-track {
+    display: flex;
   }
 
-  @media screen and (max-width: 1024px) {
-    .slick-slide:not(.slick-active) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .slick-active.slick-current {
-      padding-left: 0px;
-      padding-right: 16px;
-    }
-    
-    .slick-active:not(.slick-current) {
-      padding-left: 16px;
-      padding-right: 0px;
-    }
+  .slick-list {
+    margin: 0 -16px;
   }
 
-  @media screen and (max-width: 768px) {
-    .slick-slide:not(.slick-active) {
-      padding-left: 16px;
-      padding-right: 16px;
-    }
-
-    .slick-slide.slick-active {
-      padding-left: 0px;
-      padding-right: 0px;
-    }
+  .slick-slide {
+    margin: 0 16px;
   }
 `
 
