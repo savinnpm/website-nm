@@ -416,7 +416,7 @@ export const BrandCarousel = () => {
         {slidesToMap.map((brand, idx) => {
           return (
             <div key={idx}>
-              <Image src={brand.imgSrc} alt={brand.name + ' Logo'} width={230} height={64} />
+              <Image src={brand.imgSrc} alt={brand.name + ' Logo'} width={230} height={64} loading='lazy' />
             </div>
           )
         })}
