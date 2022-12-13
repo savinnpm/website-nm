@@ -6,7 +6,7 @@ import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
 
 export const Hero = () => {
-  const { t } = useTranslation('press')
+  const { t } = useTranslation('press-room')
 
   return (
     <Container>

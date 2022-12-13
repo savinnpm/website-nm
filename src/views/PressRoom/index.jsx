@@ -1,12 +1,12 @@
 import { Hero } from './01-hero'
-import { Annoucement } from './02-announcement'
+import { Announcement } from './02-announcement'
 import { Media } from './03-media'
 
-const PressRoom = ({ news, posts }) => {
+const PressRoom = ({ news, posts, num }) => {
   return (
     <>
       <Hero />
-      <Annoucement posts={posts} />
+      <Announcement posts={posts} num={num} />
       <Media news={news} />
     </>
   )

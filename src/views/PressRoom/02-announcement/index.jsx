@@ -13,10 +13,16 @@ import { Card } from './Card'
 
 const ITEM_PER_PAGE = 4
 
-const Annoucement = (props) => {
+const Announcement = (props) => {
   const router = useRouter()
   const [page, setPage] = useState(0)
   const [list, setList] = useState([])
+
+  useEffect(() => {
+    if (props.num) {
+      setPage(props.num - 1)
+    }
+  }, [props.num])
 
   useEffect(() => {
     if (Array.isArray(props.posts) && props.posts.length) {
@@ -25,32 +31,31 @@ const Annoucement = (props) => {
     }
   }, [props.posts])
 
-  const pushQuery = query => {
-    router.push({
-      query: {
-        ...router.query,
-        ...query
-      }
-    }, undefined, {
-      scroll: false
-    })
-  }
-
   const handlePrev = () => {
-    if (page > 0) {
-      pushQuery({ page: page })
-      setPage((prev) => prev - 1)
-    }
+    let queryString = '/pressroom'
+
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${page - 1 + 1}` // + 1 for url
+
+    router.push(queryString, undefined, { scroll: false })
   }
 
   const handleNext = () => {
-    pushQuery({ page: page + 2 })
-    setPage((prev) => prev + 1)
+    let queryString = '/pressroom'
+
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${page + 2}` // + 1 for url
+
+    router.push(queryString, undefined, { scroll: false })
   }
 
   const handleSetPage = (_page) => {
-    pushQuery({ page: _page + 1 })
-    setPage(_page)
+    let queryString = '/pressroom'
+
+    if (router.query.slug) queryString += `/tag/${router.query.slug}`
+    queryString += `/page/${_page + 1}` // + 1 for url
+
+    router.push(queryString, undefined, { scroll: false })
   }
 
   return (
@@ -118,4 +123,4 @@ const HeaderText = styled.h2`
 
 `
 
-export { Annoucement }
+export { Announcement }
