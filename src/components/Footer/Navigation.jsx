@@ -37,7 +37,7 @@ export const Navigation = ({ pages }) => {
                     <Li key={link.href}>
                       {link.isExternal
                         ? <a href={link.href} target='_blank' rel='noreferrer'>{t(link.text)}</a>
-                        : <StyledLink href={link.href}>{t(link.text)} {link?.badge && <Badge>{link.badge}</Badge>}</StyledLink>}
+                        : <StyledLink href={link.href}>{t(link.text)}</StyledLink>}{link?.badge && <Badge>{link.badge}</Badge>}
                     </Li>
                   )
                 })}
@@ -58,6 +58,10 @@ const Container = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
   }
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }  
 `
 
 const LogoContainer = styled(Link)`
@@ -79,6 +83,10 @@ const Nav = styled.nav`
   gap: var(--gap);
   
   @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `
