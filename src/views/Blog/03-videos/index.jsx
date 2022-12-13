@@ -48,7 +48,7 @@ const HeadingContainer = styled.div`
   justify-content: space-between;
   gap: 32px;
 
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
     flex-direction: column;
     justify-content: center;
   }
@@ -67,7 +67,7 @@ const ExternalLink = styled.a`
     color: ${colors.rose[600]};
   }
   
-  @media (max-width: 374px) {
+  @media (max-width: 375px) {
     justify-content: start;
   }
 `

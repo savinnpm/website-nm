@@ -189,7 +189,7 @@ const ButtonContainer = styled.div`
   margin-top: 56px;
   justify-content: center;
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     justify-content: start;
   }
 `
