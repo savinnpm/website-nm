@@ -40,7 +40,7 @@ export const Partners = () => {
   return (
     <Container>
       <InnerContainer>
-        <Heading>{t('POWERED_BY_YOU')}</Heading>
+        <Heading>{t('Powered by You, Trusted by Industry Leaders')}</Heading>
         <FeaturedPartners>
           {(isLightMode ? partnersLight : partnersDark).map((partner, ind) => (
             <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} />

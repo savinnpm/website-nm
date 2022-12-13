@@ -8,12 +8,13 @@ import { Icon } from '../../../components/Icon'
 export const Announcement = () => {
   const { t } = useTranslation('home')
 
+  // @todo: make dynamic
   return (
     // eslint-disable-next-line react/jsx-no-target-blank
     <StyledLink href='http://example.com/' target='_blank'>
-      <Category>{t('PRESS_ROOM')}</Category>
+      <Category>{t('Press Room')}</Category>
       <Text>
-        <span>{t('ANNOUNCEMENT')}</span>
+        <span>{t('Ethereum DeFi Insurance Protocol Announcement')}</span>
         <Icon size={16} variant='arrow-right' />
       </Text>
     </StyledLink>

@@ -44,7 +44,7 @@ const Shareit = (props) => {
     <Container>
 
       <Button hierarchy='secondary' size='md' iconLeading iconVariant='copy-01' onClick={copy} iconOnlyMobile>
-        {copied ? t('COPIED') : t('COPY_LINK')}
+        {copied ? t('Copied') : t('Copy Link')}
       </Button>
 
       <Button

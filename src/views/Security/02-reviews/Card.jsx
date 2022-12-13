@@ -26,7 +26,7 @@ const Card = (props) => {
         size='sm'
         iconTrailing
         iconVariant='arrow-right' as={Link} href={`/security/${props.audit.slug}`}
-      > {t('SHOW_RESULT')}
+      > {t('Show Result')}
       </Button>
     </Container>
   )

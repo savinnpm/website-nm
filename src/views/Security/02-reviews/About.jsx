@@ -12,8 +12,8 @@ const About = () => {
     <Container>
       <FeaturedIcon size='xl' variant='shield-tick' />
 
-      <AboutTitle>{t('SECURITY_REVIEW')}</AboutTitle>
-      <AboutContent>{t('SECURITY_REVIEW_TEXT')}</AboutContent>
+      <AboutTitle>{t('Security Reviews')}</AboutTitle>
+      <AboutContent>{t('Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing')}</AboutContent>
     </Container>
   )
 }

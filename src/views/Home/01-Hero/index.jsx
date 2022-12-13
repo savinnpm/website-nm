@@ -16,9 +16,9 @@ export const Hero = () => {
       <TextAndCta>
         <Announcement />
 
-        <Heading>{t('HERO_TITLE')}</Heading>
+        <Heading>{t('Covering Ethereum Decentralized Apps from Hacks')}</Heading>
 
-        <Subtitle>{t('HERO_DESCRIPTION')}</Subtitle>
+        <Subtitle>{t('Choose a DeFi insurance pool, select its duration, and enter how much you need to cover. Instantly receive your claims payout in stablecoin after incident resolution')}</Subtitle>
 
         <ButtonContainer>
           <Button
@@ -30,7 +30,7 @@ export const Hero = () => {
             iconTrailing
             iconVariant='arrow-narrow-right'
           >
-            {t('LAUNCH_APP')}
+            {t('Launch App')}
           </Button>
         </ButtonContainer>
       </TextAndCta>

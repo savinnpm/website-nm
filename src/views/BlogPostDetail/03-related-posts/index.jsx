@@ -24,7 +24,7 @@ export const RelatedPosts = ({ blogPosts }) => {
               hierarchy='primary'
               size='xl'
             >
-              {t('VIEW_ALL')}
+              {t('View All Posts')}
             </Button>
           </ButtonContainer>
 

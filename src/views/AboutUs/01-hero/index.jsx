@@ -25,11 +25,11 @@ const Hero = () => {
       <InnerContainer>
         <Content>
           <H1>
-            <Subheader>{t('HEADER_TAG')}</Subheader>
-            <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+            <Subheader>{t('About us')}</Subheader>
+            <HeaderTitle>{t('Simplifying Decentralized Insurance')}</HeaderTitle>
           </H1>
           <HeaderContent>
-            {t('HEADER_TEXT')}
+            {t('Watch out our 5-minute video to learn more about how Neptune Mutual contributes to the decentralized insurance industry.')}
           </HeaderContent>
         </Content>
       </InnerContainer>

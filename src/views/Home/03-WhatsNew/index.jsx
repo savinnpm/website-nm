@@ -15,8 +15,8 @@ export const WhatsNew = ({ blogPosts }) => {
       <InnerContainer>
         <TextAndCta>
           <TextContainer>
-            <Heading>{t('WHATS_NEW')}</Heading>
-            <SupportingText>{t('WHATS_NEW_SUBTEXT')}</SupportingText>
+            <Heading>{t('What’s New?')}</Heading>
+            <SupportingText>{t('The latest news, updates, and announcements from our team.')}</SupportingText>
           </TextContainer>
 
           <ButtonContainer>
@@ -26,7 +26,7 @@ export const WhatsNew = ({ blogPosts }) => {
               hierarchy='primary'
               size='xl'
             >
-              {commonT('VIEW_ALL')}
+              {commonT('View All Posts')}
             </Button>
           </ButtonContainer>
 

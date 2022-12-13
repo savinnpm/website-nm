@@ -14,8 +14,8 @@ export const LetsBuidl = () => {
     <Container>
       <InnerContainer>
         <TextContainer>
-          <Heading>{t('LETS_BUIDL')}</Heading>
-          <SupportingText>{t('LETS_BUIDL_DESC')}</SupportingText>
+          <Heading>{t('Let’s #buidl')}</Heading>
+          <SupportingText>{t('Don’t let your users ever leave your DeFi app. With a few lines of code, enable your users to access all cover features. Supply liquidity, purchase covers, and interact with your decentralized insurance pool directly within your own DeFi app, frontend, or backend.')}</SupportingText>
         </TextContainer>
 
         <CodeSnippetContainer>
@@ -34,7 +34,7 @@ export const LetsBuidl = () => {
               iconTrailing
               iconVariant='link-external-01'
             >
-              {t('GET_SDK')}
+              {t('Get the Neptune Mutual SDK')}
             </Button>
           </ButtonContainer>
         </FeaturesAndCta>

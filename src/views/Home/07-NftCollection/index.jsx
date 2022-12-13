@@ -16,10 +16,10 @@ export const NftCollection = () => {
         <TextAndCta>
           <TextContainer>
             <H2>
-              <Subheading>{t('COMING_SOON')}</Subheading>
-              <Heading>{t('NFT_SERIES')}</Heading>
+              <Subheading>{t('Coming Soon')}</Subheading>
+              <Heading>{t('NFT Series Collection')}</Heading>
             </H2>
-            <SupportingText>{t('NFT_SERIES_DESC')}</SupportingText>
+            <SupportingText>{t('We are developing an amazing collection of NFTs for our community. You can expect both tradeable and soulbound versions, some of which may have an economic benefit and utility within the marketplace. Be sure to join our Discord community to keep up to date with our NFT news.')}</SupportingText>
           </TextContainer>
 
           <Button
@@ -30,7 +30,7 @@ export const NftCollection = () => {
             iconTrailing
             iconVariant='discord'
           >
-            {t('JOIN_DISCORD')}
+            {t('Join Our Discord')}
           </Button>
         </TextAndCta>
 

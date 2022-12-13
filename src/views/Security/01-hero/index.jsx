@@ -15,11 +15,11 @@ const Hero = () => {
       <InnerContainer>
         <Content>
           <H1>
-            <Subheader>{t('HEADER_TAG')}</Subheader>
-            <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+            <Subheader>{t('Audits, Bug Bounty, and More')}</Subheader>
+            <HeaderTitle>{t('Security and Cyber Hygiene')}</HeaderTitle>
           </H1>
           <HeaderContent>
-            {t('HEADER_TEXT')}
+            {t('Here at Neptune Mutual, we value security and protection highly. We have spent a lot of time and resource doing code reviews of our smart contracts, frontend, and backend. We have security firms that we deal with on a regular basis to do security review and penetration testing on our hosting systems and applications. In addition, we have a stringent cyber hygiene policy that everyone must follow.')}
           </HeaderContent>
         </Content>
         <ImageContainer>

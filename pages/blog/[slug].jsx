@@ -30,7 +30,7 @@ export async function getStaticPaths ({ locales }) {
 }
 
 export async function getStaticProps ({ locale, params }) {
-  const s = await serverSideTranslations(locale, ['common', 'blog-post'])
+  const s = await serverSideTranslations(locale, ['common'])
 
   return {
     props: {

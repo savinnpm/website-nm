@@ -8,11 +8,10 @@
   "META_TWITTER_DESCRIPTION": "Review the results of security audits, penetration tests, and other assessments done on the Neptune Mutual platform by third-party cybersecurity firms.",
   "META_TWITTER_IMAGE": "/assets/images/meta/og/security-and-cyber.png",
   "META_TWITTER_IMAGE_ALT": "@todo",
-  "h1": "Security and Cyber Hygiene",
-  "SECURITY_REVIEW": "Security Reviews",
-  "SECURITY_REVIEW_TEXT": "Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing",
-  "SHOW_RESULT": "Show Result",
-  "HEADER_TAG": "Audits, Bug Bounty, and More",
-  "HEADER_TITLE": "Security and Cyber Hygiene",
-  "HEADER_TEXT": "Here at Neptune Mutual, we value security and protection highly. We have spent a lot of time and resource doing code reviews of our smart contracts, frontend, and backend. We have security firms that we deal with on a regular basis to do security review and penetration testing on our hosting systems and applications. In addition, we have a stringent cyber hygiene policy that everyone must follow."
+  "Security Reviews": "Security Reviews",
+  "Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing": "Our decentralized insurance marketplace has been subjected to a number of smart contract audits, as well as a code review and penetration testing",
+  "Show Result": "Show Result",
+  "Audits, Bug Bounty, and More": "Audits, Bug Bounty, and More",
+  "Security and Cyber Hygiene": "Security and Cyber Hygiene",
+  "Here at Neptune Mutual, we value security and protection highly. We have spent a lot of time and resource doing code reviews of our smart contracts, frontend, and backend. We have security firms that we deal with on a regular basis to do security review and penetration testing on our hosting systems and applications. In addition, we have a stringent cyber hygiene policy that everyone must follow.": "Here at Neptune Mutual, we value security and protection highly. We have spent a lot of time and resource doing code reviews of our smart contracts, frontend, and backend. We have security firms that we deal with on a regular basis to do security review and penetration testing on our hosting systems and applications. In addition, we have a stringent cyber hygiene policy that everyone must follow."
 }

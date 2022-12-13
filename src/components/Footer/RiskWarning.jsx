@@ -9,8 +9,8 @@ export const RiskWarning = () => {
   return (
     <Container>
       <InnerContainer>
-        <Heading>{t('RISK_WARNING')}</Heading>
-        <Content>{t('RISK_WARNING_DESC')}</Content>
+        <Heading>{t('Risk Warning')}</Heading>
+        <Content>{t('Trading crypto assets involves significant risk and can result in the loss of your capital. You should not invest more than you can afford to lose and you should ensure that you fully understand the risks involved. Before trading, please take into consideration your level of experience, investment objectives, and seek independent financial advice if necessary. It is your responsibility to ascertain whether you are permitted to use the services of Neptune Mutual based on the legal requirements in your country of residence.')}</Content>
       </InnerContainer>
     </Container>
   )

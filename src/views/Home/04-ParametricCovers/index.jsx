@@ -13,10 +13,10 @@ export const ParametricCovers = () => {
       <InnerContainer>
         <TextContainer>
           <H2>
-            <Subheading>{t('COMING_SOON')}</Subheading>
-            <Heading>{t('PARA_COVERS_TITLE')}</Heading>
+            <Subheading>{t('Coming Soon')}</Subheading>
+            <Heading>{t('Decentralized Parametric Insurance')}</Heading>
           </H2>
-          <SupportingText>{t('PARA_COVERS_SUPPORT_TEXT')}</SupportingText>
+          <SupportingText>{t('Neptune Mutual Protocol offers a couple of different flavors of decentralized parametric insurances.')}</SupportingText>
         </TextContainer>
 
         <Features />

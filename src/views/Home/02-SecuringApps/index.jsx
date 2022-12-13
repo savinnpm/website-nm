@@ -13,7 +13,7 @@ export const SecuringApps = () => {
     <Container>
       <InnerContainer>
         <ContentContainer>
-          <Heading>{t('SECURING_APPS_TITLE')}</Heading>
+          <Heading>{t('Securing your favorite DeFi, CeFi, and Metaverse Apps')}</Heading>
           <Carousel />
         </ContentContainer>
       </InnerContainer>

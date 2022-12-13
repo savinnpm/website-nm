@@ -31,15 +31,15 @@ const CareersDetail = (props) => {
 
           <Types>
             <Type>
-              <Label>{t('DEPARTMENT')}</Label>
+              <Label>{t('Department')}</Label>
               <TypeContent>{props.vacancy.department}</TypeContent>
             </Type>
             <Type>
-              <Label>{t('JOB_TYPE')}</Label>
+              <Label>{t('Job Type')}</Label>
               <TypeContent>{props.vacancy.type}</TypeContent>
             </Type>
             <Type>
-              <Label>{t('LOCATION')}</Label>
+              <Label>{t('Location')}</Label>
               <TypeContent>{props.vacancy.location}</TypeContent>
             </Type>
           </Types>
@@ -53,7 +53,7 @@ const CareersDetail = (props) => {
 
           <ButtonContainer>
             <Button hierarchy='primary' as='a' target='_blank' href={props.vacancy.form} rel='noreferrer' size='lg' iconTrailing iconVariant='arrow-square-up-right'>
-              {t('SUBMIT_JOB_APPLICATION')}
+              {t('Submit My Job Application')}
             </Button>
           </ButtonContainer>
 

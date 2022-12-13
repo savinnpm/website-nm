@@ -16,13 +16,13 @@ const Hero = () => {
       <InnerContainer>
         <Content>
           <H1>
-            <Subheading>{t('HEADER_TAG')}</Subheading>
-            <HeaderTitle>{t('HEADER_TITLE')}</HeaderTitle>
+            <Subheading>{t('Careers')}</Subheading>
+            <HeaderTitle>{t('Interested in Pursuing a Career with Neptune Mutual?')}</HeaderTitle>
           </H1>
           <HeaderContent>
-            {t('HEADER_TEXT_1')}<br /><br />
-            {t('HEADER_TEXT_2')}<br /><br />
-            {t('HEADER_TEXT_3')}
+            {t('If you are driven, passionate and an executor, then Neptune Mutual is for you!')}<br /><br />
+            {t('We are looking for amazing talents anywhere across the globe to join our diverse and dynamic team that is on a mission to build a reliable, fast and effective platform that protects digital assets.')}<br /><br />
+            {t('Hyper-talented experts from all over the world grow and thrive in our super dynamic, connected team. As a dedicated talent-nurturing workspace, we give each of our team members a fun and professional environment for them to do the work they enjoy.')}
           </HeaderContent>
         </Content>
         <ImageContainer>
