@@ -1,7 +1,7 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { typography } from '../../../../styles/typography'
-import { useMediaQuery } from '../../../hooks/useMediaQuery'
+import { colors, primaryColorKey } from '../../../styles/colors'
+import { typography } from '../../../styles/typography'
+import { useMediaQuery } from '../../hooks/useMediaQuery'
 
 const PAGINATION_INDEX = 3
 

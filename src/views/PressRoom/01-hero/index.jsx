@@ -6,7 +6,7 @@ import { utils } from '../../../../styles/utils'
 import { Button } from '../../../components/Button'
 
 export const Hero = () => {
-  const { t } = useTranslation('press')
+  const { t } = useTranslation('press-room')
 
   return (
     <Container>
@@ -104,7 +104,7 @@ const FormContainer = styled.div`
 `
 
 const StyledButton = styled(Button)`
-@media (max-width: 768px) {
-  width:100%
-}
+  @media (max-width: 768px) {
+    width:100%
+  }
 `

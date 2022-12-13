@@ -7,7 +7,7 @@ import { utils } from '../../../../styles/utils'
 import { ArticleCard } from '../../../components/ArticleCard'
 import { Filter } from '../../../components/Filter'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
-import { Pagination } from './Pagination'
+import { Pagination } from '../../../components/Pagination'
 
 export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) => {
   const router = useRouter()

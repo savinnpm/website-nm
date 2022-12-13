@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from '../../../../styles/colors'
-import { LinkGrayButton } from '../../../components/Button/LinkGrayButton'
+import { colors } from '../../../styles/colors'
+import { LinkGrayButton } from '../Button/LinkGrayButton'
 import { PageNumbers } from './PageNumbers'
 
 export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, totalPages }) => {

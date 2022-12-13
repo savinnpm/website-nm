@@ -4,13 +4,34 @@ import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../src/helpers'
-import { services } from '../../services'
-import { PressRoom } from '../../src/views/PressRoom'
+import { getFQDN } from '../../../src/helpers'
+import { services } from '../../../services'
+import { PressRoom } from '../../../src/views/PressRoom'
 
-export async function getStaticProps ({ locale }) {
+export async function getStaticPaths ({ locales }) {
+  const pages = await services.getFilteredPostPages()
+
+  const paths = []
+
+  locales.forEach(locale => {
+    pages.forEach(page => {
+      paths.push({
+        locale,
+        params: {
+          num: page
+        }
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-
   return {
     props: {
       ...(s),
@@ -18,14 +39,15 @@ export async function getStaticProps ({ locale }) {
       posts: await services.getPressroomPosts(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
-      headerStyle: 'colored'
+      headerStyle: 'colored',
+      ...params
       // Will be passed to the page component as props
     }
   }
 }
 
 export default function PressPage (props) {
-  const { t } = useTranslation('press-room')
+  const { t } = useTranslation('press')
   const router = useRouter()
 
   return (
@@ -51,7 +73,7 @@ export default function PressPage (props) {
       </Head>
 
       <main>
-        <PressRoom news={props.news} posts={props.posts} />
+        <PressRoom news={props.news} posts={props.posts} num={props.num} />
       </main>
     </>
   )
