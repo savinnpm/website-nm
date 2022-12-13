@@ -110,6 +110,11 @@ const Articles = styled.div`
     display: grid;
     grid-template-columns: 1fr;
   }
+
+  a:nth-of-type(-n+2){
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+  }
 `
 
 const HeaderText = styled.h2`
