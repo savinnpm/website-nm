@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import { useRef } from 'react'
 import Slider from 'react-slick'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 
 const coinbaseImg = '/assets/images/partners/coinbase.webp'
 const huobiImg = '/assets/images/partners/huobi.webp'
@@ -40,189 +40,189 @@ const icopantera = '/assets/images/partners/ico-pantera.webp'
 const bbs = '/assets/images/partners/bbs-finance.webp'
 const avstar = '/assets/images/partners/avstar-capital.webp'
 
-// const coinbaseImgDark = '/assets/images/partners/darkmode/coinbase.webp'
-// const huobiImgDark = '/assets/images/partners/darkmode/huobi.webp'
-// const okxImgDark = '/assets/images/partners/darkmode/okx.webp'
-// const gravityImgDark = '/assets/images/partners/darkmode/gravity.webp'
-// const hextrustDark = '/assets/images/partners/darkmode/hextrust.webp'
-// const gsrDark = '/assets/images/partners/darkmode/gsr.webp'
-// const fundamentalLabsDark = '/assets/images/partners/darkmode/fundamental-labs.webp'
-// const gbvDark = '/assets/images/partners/darkmode/gbv.webp'
-// const cambiumGroveDark = '/assets/images/partners/darkmode/cambium-grove.webp'
-// const xtDark = '/assets/images/partners/darkmode/xt.webp'
-// const bitmartDark = '/assets/images/partners/darkmode/bitmart.webp'
-// const gateDark = '/assets/images/partners/darkmode/gate.webp'
-// const newvisionDark = '/assets/images/partners/darkmode/new-vision.webp'
-// const baboonvcDark = '/assets/images/partners/darkmode/baboonvc.webp'
-// const pacificDark = '/assets/images/partners/darkmode/pacific-century.webp'
-// const titansDark = '/assets/images/partners/darkmode/titans-ventures.webp'
-// const mhventuresDark = '/assets/images/partners/darkmode/mh-ventures.webp'
-// const cabinvcDark = '/assets/images/partners/darkmode/cabinvc.webp'
-// const redlineDaoDark = '/assets/images/partners/darkmode/redline-dao.webp'
-// const dweb3Dark = '/assets/images/partners/darkmode/dweb3-capital.webp'
-// const alphabitDark = '/assets/images/partners/darkmode/alphabit.webp'
-// const mapleblockDark = '/assets/images/partners/darkmode/mapleblock.webp'
-// const ldcapitalDark = '/assets/images/partners/darkmode/ld-capital.webp'
-// const dwflabsDark = '/assets/images/partners/darkmode/dwf-labs.webp'
-// const twoacryptoDark = '/assets/images/partners/darkmode/2a-crypto.webp'
-// const barmyDark = '/assets/images/partners/darkmode/barmy.webp'
-// const vespertineDark = '/assets/images/partners/darkmode/vespertine-capital.webp'
-// const htrDark = '/assets/images/partners/darkmode/htr-group.webp'
-// const smoDark = '/assets/images/partners/darkmode/smo.webp'
-// const pulsarDark = '/assets/images/partners/darkmode/pulsar-trading.webp'
-// const gtsDark = '/assets/images/partners/darkmode/gts-ventures.webp'
-// const qudaxDark = '/assets/images/partners/darkmode/qudax.webp'
-// const luxDark = '/assets/images/partners/darkmode/lux-capital.webp'
-// const icopanteraDark = '/assets/images/partners/darkmode/ico-pantera.webp'
-// const bbsDark = '/assets/images/partners/darkmode/bbs-finance.webp'
-// const avstarDark = '/assets/images/partners/darkmode/avstar-capital.webp'
+const coinbaseImgDark = '/assets/images/partners/darkmode/coinbase.webp'
+const huobiImgDark = '/assets/images/partners/darkmode/huobi.webp'
+const okxImgDark = '/assets/images/partners/darkmode/okx.webp'
+const gravityImgDark = '/assets/images/partners/darkmode/gravity.webp'
+const hextrustDark = '/assets/images/partners/darkmode/hextrust.webp'
+const gsrDark = '/assets/images/partners/darkmode/gsr.webp'
+const fundamentalLabsDark = '/assets/images/partners/darkmode/fundamental-labs.webp'
+const gbvDark = '/assets/images/partners/darkmode/gbv.webp'
+const cambiumGroveDark = '/assets/images/partners/darkmode/cambium-grove.webp'
+const xtDark = '/assets/images/partners/darkmode/xt.webp'
+const bitmartDark = '/assets/images/partners/darkmode/bitmart.webp'
+const gateDark = '/assets/images/partners/darkmode/gate.webp'
+const newvisionDark = '/assets/images/partners/darkmode/new-vision.webp'
+const baboonvcDark = '/assets/images/partners/darkmode/baboonvc.webp'
+const pacificDark = '/assets/images/partners/darkmode/pacific-century.webp'
+const titansDark = '/assets/images/partners/darkmode/titans-ventures.webp'
+const mhventuresDark = '/assets/images/partners/darkmode/mh-ventures.webp'
+const cabinvcDark = '/assets/images/partners/darkmode/cabinvc.webp'
+const redlineDaoDark = '/assets/images/partners/darkmode/redline-dao.webp'
+const dweb3Dark = '/assets/images/partners/darkmode/dweb3-capital.webp'
+const alphabitDark = '/assets/images/partners/darkmode/alphabit.webp'
+const mapleblockDark = '/assets/images/partners/darkmode/mapleblock.webp'
+const ldcapitalDark = '/assets/images/partners/darkmode/ld-capital.webp'
+const dwflabsDark = '/assets/images/partners/darkmode/dwf-labs.webp'
+const twoacryptoDark = '/assets/images/partners/darkmode/2a-crypto.webp'
+const barmyDark = '/assets/images/partners/darkmode/barmy.webp'
+const vespertineDark = '/assets/images/partners/darkmode/vespertine-capital.webp'
+const htrDark = '/assets/images/partners/darkmode/htr-group.webp'
+const smoDark = '/assets/images/partners/darkmode/smo.webp'
+const pulsarDark = '/assets/images/partners/darkmode/pulsar-trading.webp'
+const gtsDark = '/assets/images/partners/darkmode/gts-ventures.webp'
+const qudaxDark = '/assets/images/partners/darkmode/qudax.webp'
+const luxDark = '/assets/images/partners/darkmode/lux-capital.webp'
+const icopanteraDark = '/assets/images/partners/darkmode/ico-pantera.webp'
+const bbsDark = '/assets/images/partners/darkmode/bbs-finance.webp'
+const avstarDark = '/assets/images/partners/darkmode/avstar-capital.webp'
 
-// const carouselItemsDark = [
-//   {
-//     name: 'Coinbase Ventures',
-//     imgSrc: coinbaseImgDark
-//   },
-//   {
-//     name: 'Huobi Ventures',
-//     imgSrc: huobiImgDark
-//   },
-//   {
-//     name: 'OKX',
-//     imgSrc: okxImgDark
-//   },
-//   {
-//     name: 'GravityX',
-//     imgSrc: gravityImgDark
-//   },
-//   {
-//     name: 'Hex Trust',
-//     imgSrc: hextrustDark
-//   },
-//   {
-//     name: 'GSR',
-//     imgSrc: gsrDark
-//   },
-//   {
-//     name: 'Fundamental Labs',
-//     imgSrc: fundamentalLabsDark
-//   },
-//   {
-//     name: 'GBV',
-//     imgSrc: gbvDark
-//   },
-//   {
-//     name: 'Cambium Grove',
-//     imgSrc: cambiumGroveDark
-//   },
-//   {
-//     name: 'XT.com',
-//     imgSrc: xtDark
-//   },
-//   {
-//     name: 'BitMart',
-//     imgSrc: bitmartDark
-//   },
-//   {
-//     name: 'Gate.io',
-//     imgSrc: gateDark
-//   },
-//   {
-//     name: 'New Vision',
-//     imgSrc: newvisionDark
-//   },
-//   {
-//     name: 'Baboon VC',
-//     imgSrc: baboonvcDark
-//   },
-//   {
-//     name: 'Pacific Century Group',
-//     imgSrc: pacificDark
-//   },
-//   {
-//     name: 'Titans',
-//     imgSrc: titansDark
-//   },
-//   {
-//     name: 'MH Ventures',
-//     imgSrc: mhventuresDark
-//   },
-//   {
-//     name: 'Cabin VC',
-//     imgSrc: cabinvcDark
-//   },
-//   {
-//     name: 'Redline DAO',
-//     imgSrc: redlineDaoDark
-//   },
-//   {
-//     name: 'DWEB3',
-//     imgSrc: dweb3Dark
-//   },
-//   {
-//     name: 'Alphabit',
-//     imgSrc: alphabitDark
-//   },
-//   {
-//     name: 'Maple Block',
-//     imgSrc: mapleblockDark
-//   },
-//   {
-//     name: 'LD Capital',
-//     imgSrc: ldcapitalDark
-//   },
-//   {
-//     name: 'DWF Labs',
-//     imgSrc: dwflabsDark
-//   },
-//   {
-//     name: '2A crypto',
-//     imgSrc: twoacryptoDark
-//   },
-//   {
-//     name: 'Barmy',
-//     imgSrc: barmyDark
-//   },
-//   {
-//     name: 'Vespertine Capital',
-//     imgSrc: vespertineDark
-//   },
-//   {
-//     name: 'Htr Group',
-//     imgSrc: htrDark
-//   },
-//   {
-//     name: 'SMO',
-//     imgSrc: smoDark
-//   },
-//   {
-//     name: 'Pulsar',
-//     imgSrc: pulsarDark
-//   },
-//   {
-//     name: 'Gts Ventures',
-//     imgSrc: gtsDark
-//   },
-//   {
-//     name: 'Qudax',
-//     imgSrc: qudaxDark
-//   },
-//   {
-//     name: 'Lux',
-//     imgSrc: luxDark
-//   },
-//   {
-//     name: 'Ico Panters',
-//     imgSrc: icopanteraDark
-//   },
-//   {
-//     name: 'BBS Finance',
-//     imgSrc: bbsDark
-//   },
-//   {
-//     name: 'AV Star Capital',
-//     imgSrc: avstarDark
-//   }
-// ]
+const carouselItemsDark = [
+  {
+    name: 'Coinbase Ventures',
+    imgSrc: coinbaseImgDark
+  },
+  {
+    name: 'Huobi Ventures',
+    imgSrc: huobiImgDark
+  },
+  {
+    name: 'OKX',
+    imgSrc: okxImgDark
+  },
+  {
+    name: 'GravityX',
+    imgSrc: gravityImgDark
+  },
+  {
+    name: 'Hex Trust',
+    imgSrc: hextrustDark
+  },
+  {
+    name: 'GSR',
+    imgSrc: gsrDark
+  },
+  {
+    name: 'Fundamental Labs',
+    imgSrc: fundamentalLabsDark
+  },
+  {
+    name: 'GBV',
+    imgSrc: gbvDark
+  },
+  {
+    name: 'Cambium Grove',
+    imgSrc: cambiumGroveDark
+  },
+  {
+    name: 'XT.com',
+    imgSrc: xtDark
+  },
+  {
+    name: 'BitMart',
+    imgSrc: bitmartDark
+  },
+  {
+    name: 'Gate.io',
+    imgSrc: gateDark
+  },
+  {
+    name: 'New Vision',
+    imgSrc: newvisionDark
+  },
+  {
+    name: 'Baboon VC',
+    imgSrc: baboonvcDark
+  },
+  {
+    name: 'Pacific Century Group',
+    imgSrc: pacificDark
+  },
+  {
+    name: 'Titans',
+    imgSrc: titansDark
+  },
+  {
+    name: 'MH Ventures',
+    imgSrc: mhventuresDark
+  },
+  {
+    name: 'Cabin VC',
+    imgSrc: cabinvcDark
+  },
+  {
+    name: 'Redline DAO',
+    imgSrc: redlineDaoDark
+  },
+  {
+    name: 'DWEB3',
+    imgSrc: dweb3Dark
+  },
+  {
+    name: 'Alphabit',
+    imgSrc: alphabitDark
+  },
+  {
+    name: 'Maple Block',
+    imgSrc: mapleblockDark
+  },
+  {
+    name: 'LD Capital',
+    imgSrc: ldcapitalDark
+  },
+  {
+    name: 'DWF Labs',
+    imgSrc: dwflabsDark
+  },
+  {
+    name: '2A crypto',
+    imgSrc: twoacryptoDark
+  },
+  {
+    name: 'Barmy',
+    imgSrc: barmyDark
+  },
+  {
+    name: 'Vespertine Capital',
+    imgSrc: vespertineDark
+  },
+  {
+    name: 'Htr Group',
+    imgSrc: htrDark
+  },
+  {
+    name: 'SMO',
+    imgSrc: smoDark
+  },
+  {
+    name: 'Pulsar',
+    imgSrc: pulsarDark
+  },
+  {
+    name: 'Gts Ventures',
+    imgSrc: gtsDark
+  },
+  {
+    name: 'Qudax',
+    imgSrc: qudaxDark
+  },
+  {
+    name: 'Lux',
+    imgSrc: luxDark
+  },
+  {
+    name: 'Ico Panters',
+    imgSrc: icopanteraDark
+  },
+  {
+    name: 'BBS Finance',
+    imgSrc: bbsDark
+  },
+  {
+    name: 'AV Star Capital',
+    imgSrc: avstarDark
+  }
+]
 
 const carouselItemsLight = [
   {
@@ -372,7 +372,7 @@ const carouselItemsLight = [
 ]
 
 export const BrandCarousel = () => {
-  // const { isLightMode } = useTheme()
+  const { isLightMode } = useTheme()
 
   const sliderRef = useRef(null)
 
@@ -404,8 +404,7 @@ export const BrandCarousel = () => {
     pauseOnHover: false
   }
 
-  // const slidesToMap = isLightMode ? carouselItemsLight : carouselItemsDark
-  const slidesToMap = carouselItemsLight
+  const slidesToMap = isLightMode ? carouselItemsLight : carouselItemsDark
 
   return (
     <LogosContainer>

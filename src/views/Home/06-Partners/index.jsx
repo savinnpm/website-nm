@@ -1,13 +1,13 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import styled from 'styled-components'
+import styled, { useTheme } from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BrandCarousel } from './Brand-Carousel'
 
-// const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.webp'
-// const animocaLight = '/assets/images/partners/animoca-brands.webp'
+const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.webp'
+const animocaLight = '/assets/images/partners/animoca-brands.webp'
 const fenbushiImgDark = '/assets/images/partners/darkmode/fenbushi-capital.webp'
 const animocaDark = '/assets/images/partners/darkmode/animoca-brands.webp'
 
@@ -21,28 +21,28 @@ const partnersDark = [
     imgSrc: animocaDark
   }
 ]
-// const partnersLight = [
-//   {
-//     name: 'Fenbushi Capital',
-//     imgSrc: fenbushiImgLight
-//   },
-//   {
-//     name: 'Animoca Brands',
-//     imgSrc: animocaLight
-//   }
-// ]
+const partnersLight = [
+  {
+    name: 'Fenbushi Capital',
+    imgSrc: fenbushiImgLight
+  },
+  {
+    name: 'Animoca Brands',
+    imgSrc: animocaLight
+  }
+]
 
 export const Partners = () => {
   const { t } = useTranslation('home')
 
-  // const { isLightMode } = useTheme()
+  const { isLightMode } = useTheme()
 
   return (
     <Container>
       <InnerContainer>
         <Heading>{t('Powered by You, Trusted by Industry Leaders')}</Heading>
         <FeaturedPartners>
-          {partnersDark.map((partner, ind) => (
+          {(isLightMode ? partnersLight : partnersDark).map((partner, ind) => (
             <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} loading='lazy' />
           ))}
         </FeaturedPartners>
