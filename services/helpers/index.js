@@ -36,7 +36,7 @@ const parseLegacyHtml = async ($) => {
 
   await Promise.allSettled(promises)
 
-  return $.html()
+  return $
 }
 
 const getTableOfContents = async ($) => {
@@ -78,11 +78,18 @@ const getTableOfContents = async ($) => {
   return h
 }
 
-const getMinsToRead = ($) => {
+const addHeadingAnchors = ($ = cheerioLoad('', null, false)) => {
+  $('h2, h3, h4, h5, h6').each(function () {
+    $(this).append(`<a aria-label="Direct link to heading" class="heading-anchor" href="#${$(this).attr('id')}">#</a>`)
+  })
+
+  return $
+}
+
+const getMinsToRead = (text) => {
   try {
     const wpm = 225
 
-    const text = $.text()
     const words = text.trim().split(/\s+/).length
 
     return Math.ceil(words / wpm)
@@ -94,14 +101,15 @@ const getMinsToRead = ($) => {
 }
 
 const parseHtml = async (html) => {
-  const $ = cheerioLoad(html, null, false)
+  let $ = cheerioLoad(html, null, false)
 
   const toc = await getTableOfContents($)
-  const updated = await parseLegacyHtml($)
-  const minsToRead = getMinsToRead($)
+  $ = await parseLegacyHtml($)
+  $ = addHeadingAnchors($)
   const text = $.text().trim()
+  const minsToRead = getMinsToRead(text)
 
-  return { toc, updated, minsToRead, text }
+  return { toc, updated: $.html(), minsToRead, text }
 }
 
 export const helpers = {

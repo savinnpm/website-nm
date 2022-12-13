@@ -39,6 +39,7 @@ const Container = styled.div`
   
   a{
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
+
     :hover, :active{
       text-decoration: underline;
       color: ${colors.rose[600]}
@@ -89,6 +90,20 @@ const Container = styled.div`
   & > *:first-child {
     margin-top: 0;
     padding-top: 0;
+  }
+
+  /* Custom classes */
+  h1, h2, h3, h4, h5, h6 {
+    .heading-anchor {
+      display: inline-block;
+      margin-left: 1rem;
+      opacity: 0;
+    }
+    
+    :hover .heading-anchor {
+      opacity: 1;
+      text-decoration: none;
+    }
   }
 
   /* Legacy blog content */
