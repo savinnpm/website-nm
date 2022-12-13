@@ -92,6 +92,7 @@ export const TeamCarousel = () => {
     slidesToShow: 4,
     slidesToScroll: 1,
     swipeToSlide: true,
+    afterChange: handleAfterChange,
     responsive: [
       {
         breakpoint: 769,
