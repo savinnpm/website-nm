@@ -43,7 +43,7 @@ export const Partners = () => {
         <Heading>{t('Powered by You, Trusted by Industry Leaders')}</Heading>
         <FeaturedPartners>
           {partnersDark.map((partner, ind) => (
-            <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} />
+            <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} loading='lazy' />
           ))}
         </FeaturedPartners>
         <BrandCarousel />
