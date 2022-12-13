@@ -1,47 +1,47 @@
 export const data = [
   {
-    title: 'HOME',
+    title: 'Home',
     href: '/'
   },
   {
-    title: 'BLOG',
+    title: 'Blog',
     href: '/blog'
   },
   {
-    title: 'CAREERS',
+    title: 'Careers',
     href: '/careers'
   },
   {
-    title: 'RESOURCES',
+    title: 'Resources',
     children: [
       {
         type: 'section',
-        title: 'RESOURCES',
+        title: 'Resources',
         links: [
-          { title: 'EXPLORE_MARKETPLACE', href: 'https://app.neptunemutual.com', description: 'EXPLORE_MARKETPLACE_DESC', icon: 'bank', isExternal: true },
-          { title: 'BLOG', href: '/blog', description: 'BLOG_DESC', icon: 'edit-03' },
-          { title: 'PRESS_ROOM', href: '/pressroom', description: 'PRESS_ROOM_DESC', icon: 'annotation-dots' },
-          { title: 'ECOSYSTEM', href: '/ecosystem', description: 'ECOSYSTEM_DESC', icon: 'database-01' },
-          { title: 'DOCUMENTATION', href: 'https://docs.neptunemutual.com', description: 'DOCUMENTATION_DESC', icon: 'file-code-01', isExternal: true },
-          { title: 'CONTACT', href: '/contact', description: 'CONTACT_DESC', icon: 'book-closed' }
+          { title: 'Explore Marketplace', href: 'https://app.neptunemutual.com', description: 'Explore the marketplace, purchase policies, and pool liquidity', icon: 'bank', isExternal: true },
+          { title: 'Blog ', href: '/blog', description: 'Visit our blog', icon: 'edit-03' },
+          { title: 'Press Room', href: '/pressroom', description: 'The source for news about Neptune Mutual', icon: 'annotation-dots' },
+          { title: 'Ecosystem', href: '/ecosystem', description: 'Learn how you can participate in our marketplace', icon: 'database-01' },
+          { title: 'Documentation', href: 'https://docs.neptunemutual.com', description: 'Learn more about decentralized insurance and Neptune Mutual protocol', icon: 'file-code-01', isExternal: true },
+          { title: 'Contact', href: '/contact', description: 'Reach out to us via email or our community channels', icon: 'book-closed' }
         ]
       },
       {
         type: 'section',
-        title: 'COMPANY',
+        title: 'Company',
         links: [
-          { title: 'ABOUT_US', href: '/about', description: 'ABOUT_US_DESC', icon: 'flag-06' },
-          { title: 'GRANTS_AND_BOUNTIES', href: '/grants-and-bounties', description: 'GRANTS_AND_BOUNTIES_DESC', icon: 'stars-02' },
-          { title: 'CAREERS', href: '/careers', description: 'CAREERS_DESC', icon: 'users-01', badge: 'We\'re Hiring!' },
-          { title: 'SECURITY', href: '/security', description: 'SECURITY_DESC', icon: 'glasses-02' },
-          { title: 'POLICIES', href: '/policies', description: 'POLICY_DESC', icon: 'folder' }
+          { title: 'About Us', href: '/about', description: 'Learn about our story and our mission statement', icon: 'flag-06' },
+          { title: 'Grants and Bounties', href: '/grants-and-bounties', description: 'Learn about our referral, ambassador, and distributor programs', icon: 'stars-02' },
+          { title: 'Careers', href: '/careers', description: 'We’re always looking for talented people. Join our team!', icon: 'users-01', badge: 'We\'re Hiring!' },
+          { title: 'Security', href: '/security', description: 'View our platform audit reports. Learn about our bug bounty program.', icon: 'glasses-02' },
+          { title: 'Policy', href: '/policies', description: 'View our disclaimer, terms of service, and privacy policy', icon: 'folder' }
         ]
       },
       {
         type: 'videos-section',
-        title: 'FROM_YOUTUBE',
+        title: 'From Our Youtube Channel',
         more: {
-          title: 'ALL_VIDEO_TUTS',
+          title: 'All Video Tutorials',
           href: 'https://youtube.com/neptune-mutual'
         }
       }

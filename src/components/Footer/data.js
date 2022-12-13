@@ -1,27 +1,26 @@
 export const nav = [
   {
-    title: 'RESOURCES',
+    title: 'Resources',
     links: [
-      { href: '/marketplace', text: 'MARKETPLACE', isExternal: false },
-      { href: '/blog', text: 'BLOG', isExternal: false },
-      { href: '/pressroom', text: 'PRESS', isExternal: false },
-      { href: '/ecosystem', text: 'ECOSYSTEM', isExternal: false },
-      { href: 'https://docs.neptunemutual.com', text: 'DOCUMENTATION', isExternal: false }
-      // { href: '/web3-tools', text: 'WEB3_TOOLS', isExternal: false }
+      { href: '/marketplace', text: 'Overview', isExternal: false },
+      { href: '/blog', text: 'Blog', isExternal: false },
+      { href: '/pressroom', text: 'Press Room', isExternal: false },
+      { href: '/ecosystem', text: 'Ecosystem', isExternal: false },
+      { href: 'https://docs.neptunemutual.com', text: 'Documentation', isExternal: true }
     ]
   },
   {
-    title: 'COMPANY',
+    title: 'Company',
     links: [
-      { href: '/about', text: 'ABOUT_US', isExternal: false },
-      { href: '/grants-and-bounties', text: 'PROGRAMS', isExternal: false },
-      { href: '/careers', text: 'CAREERS', isExternal: false, badge: 'We\'re Hiring!' },
-      { href: '/security', text: 'SECURITY', isExternal: false },
-      { href: '/contact', text: 'CONTACT', isExternal: true }
+      { href: '/about', text: 'About us', isExternal: false },
+      { href: '/grants-and-bounties', text: 'Grants and Bounties', isExternal: false },
+      { href: '/careers', text: 'Careers', isExternal: false, badge: 'We\'re Hiring!' },
+      { href: '/security', text: 'Security', isExternal: false },
+      { href: '/contact', text: 'Contact', isExternal: false }
     ]
   },
   {
-    title: 'POLICIES',
+    title: 'Policies',
     links: 'pages'
   }
 ]
