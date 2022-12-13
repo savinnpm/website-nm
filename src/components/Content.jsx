@@ -210,4 +210,15 @@ const Container = styled.div`
   .kg-bookmark-publisher {
     display: inline;
   }
+
+  /* Margin Elements */
+
+iframe,
+.kg-embed-card > div,
+.kg-embed-card > iframe,
+.kg-embed-card > .fb-post,
+.kg-embed-card > .twitter-tweet {
+   margin-right: auto !important;
+   margin-left: auto !important;
+}
 `
