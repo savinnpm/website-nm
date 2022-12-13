@@ -1,4 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
+import Script from 'next/script'
 import { ServerStyleSheet } from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -42,6 +43,20 @@ export default class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#01052D' />
           <meta name='msapplication-TileImage' content='/assets/images/meta/icons/ms-icon-144x144.webp' />
           <meta name='theme-color' content='#01052D' />
+          <Script src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID}`} strategy='afterInteractive' />
+          <Script
+            id='google-analytics'
+            strategy='afterInteractive'
+            dangerouslySetInnerHTML={{
+              __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID}');
+            `
+            }}
+          />
         </Head>
         <body>
           <Main />
