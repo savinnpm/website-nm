@@ -127,4 +127,7 @@ const Badge = styled.div`
 `
 const StyledLink = styled(Link)`
   display:flex;
+  :hover{
+    color: ${(props) => props.theme.secondaryColor};
+  }
 `
