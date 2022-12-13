@@ -37,7 +37,13 @@ const Container = styled.a`
   @media (max-width: 1280px) {
     width: auto;
   }
-  
+
+  @media (max-width: 768px) {
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+  }
 `
 
 const Time = styled.span`
