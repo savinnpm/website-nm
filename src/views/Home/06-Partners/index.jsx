@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -35,14 +35,14 @@ const partnersLight = [
 export const Partners = () => {
   const { t } = useTranslation('home')
 
-  const { isLightMode } = useTheme()
+  // const { isLightMode } = useTheme()
 
   return (
     <Container>
       <InnerContainer>
         <Heading>{t('Powered by You, Trusted by Industry Leaders')}</Heading>
         <FeaturedPartners>
-          {(isLightMode ? partnersLight : partnersDark).map((partner, ind) => (
+          {partnersDark.map((partner, ind) => (
             <Image key={ind} src={partner.imgSrc} alt={`${partner.name} Logo`} height={100} width={300} />
           ))}
         </FeaturedPartners>
