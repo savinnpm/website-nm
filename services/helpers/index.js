@@ -1,4 +1,5 @@
 import { load as cheerioLoad } from 'cheerio'
+import { request } from '../http/request'
 import { storeLocally } from '../io/download'
 import { storeOgImage, getOgImageAlt } from './meta'
 
@@ -78,6 +79,39 @@ const getTableOfContents = async ($) => {
   return h
 }
 
+const parseEmbeds = async ($ = cheerioLoad('', null, false)) => {
+  for (const elem of $('a[data-embed-type]')) {
+    try {
+      const embedType = $(elem).attr('data-embed-type')
+      const oEmbed = $(elem).attr('data-oembed')
+
+      if (embedType === 'twitter') {
+        const dataStr = await request.get(oEmbed)
+        const data = JSON.parse(dataStr)
+
+        $(elem).replaceWith(data.html)
+      }
+
+      if (embedType === 'youtube') {
+        const dataStr = await request.get(oEmbed)
+        const data = JSON.parse(dataStr)
+
+        $(elem).replaceWith(data.html)
+      }
+
+      if (embedType === 'github') {
+        $(elem).replaceWith($(`<script src="${oEmbed}" />`))
+      }
+    } catch (err) {
+      // do something with `err`
+      console.log('Failed: ', $(elem).attr('data-embed-type'))
+      console.log(err)
+    }
+  }
+
+  return $
+}
+
 const addHeadingAnchors = ($ = cheerioLoad('', null, false)) => {
   $('h2, h3, h4, h5, h6').each(function () {
     // Removes anything inside `heading` tags. Replace children with trimmed text
@@ -109,6 +143,7 @@ const parseHtml = async (html) => {
 
   const toc = await getTableOfContents($)
   $ = await parseLegacyHtml($)
+  $ = await parseEmbeds($)
   $ = addHeadingAnchors($)
   const text = $.text().trim()
   const minsToRead = getMinsToRead(text)

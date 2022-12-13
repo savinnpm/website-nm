@@ -2,6 +2,7 @@ import { helpers } from '../helpers'
 import { storeLocally } from '../io/download'
 import { request } from '../http/request'
 import { mockData } from '../_mock_'
+import { getApiHeaders } from './config'
 
 let docs = null
 
@@ -13,7 +14,7 @@ const getDocs = async () => {
   console.log('fetching all audits')
 
   if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000&depth=6`)
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000&depth=6`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs

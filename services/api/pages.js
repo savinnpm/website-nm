@@ -1,6 +1,7 @@
 import { mockData } from '../_mock_'
 import { helpers } from '../helpers'
 import { request } from '../http/request'
+import { getApiHeaders } from './config'
 
 let docs = null
 
@@ -12,7 +13,7 @@ const getDocs = async () => {
   console.log('fetching all pages')
 
   if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}pages?limit=1000`)
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}pages?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs

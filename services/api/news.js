@@ -1,6 +1,7 @@
 import { request } from '../http/request'
 import { storeLocally } from '../io/download'
 import { mockData } from '../_mock_'
+import { getApiHeaders } from './config'
 
 let docs = null
 
@@ -12,7 +13,7 @@ const getDocs = async () => {
   console.log('fetching all news')
 
   if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}news?limit=1000`)
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}news?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs

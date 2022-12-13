@@ -100,6 +100,18 @@ const Container = styled.div`
     padding-top: 0;
   }
 
+  iframe {
+    margin: 2rem 0;
+    width: 100%;
+    height: 400px;
+    max-height: 65vh;
+  }
+
+  /* External content */
+  .gist {width:100% !important;}
+  .gist-file
+  .gist-data {max-height: 100% !important; max-width: 100% !important;}
+
   /* Custom classes */
   h1, h2, h3, h4, h5, h6 {
     .heading-anchor {
@@ -220,13 +232,12 @@ const Container = styled.div`
   }
 
   /* Margin Elements */
-
-iframe,
-.kg-embed-card > div,
-.kg-embed-card > iframe,
-.kg-embed-card > .fb-post,
-.kg-embed-card > .twitter-tweet {
-   margin-right: auto !important;
-   margin-left: auto !important;
-}
+  iframe,
+  .kg-embed-card > div,
+  .kg-embed-card > iframe,
+  .kg-embed-card > .fb-post,
+  .kg-embed-card > .twitter-tweet {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
 `
