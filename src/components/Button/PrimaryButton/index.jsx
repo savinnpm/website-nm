@@ -89,6 +89,7 @@ const StyledButton = styled.button`
   
   :hover {
     transform: scale(1.0125);
+    color: ${colors.white};
   }
 `
 
