@@ -1,16 +1,20 @@
-import { useEffect, useState } from 'react'
-import { useTranslation } from 'react-i18next'
-
-import styled from 'styled-components'
+import {
+  useEffect,
+  useState
+} from 'react'
 
 import { useRouter } from 'next/router'
-
-import { copyToClipBoard, getDns } from '../../helpers'
+import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
 
 import { colors } from '../../../styles/colors'
+import {
+  copyToClipBoard,
+  getDns
+} from '../../helpers'
 import { Button } from '../Button'
 
-const Shareit = (props) => {
+const SocialShare = (props) => {
   const { asPath } = useRouter()
 
   const { t } = useTranslation('common')
@@ -104,4 +108,4 @@ const Container = styled.div`
   }
 `
 
-export { Shareit }
+export { SocialShare }

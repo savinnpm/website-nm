@@ -2,7 +2,7 @@ export const features = [
   {
     icon: 'target-05',
     title: 'Focused Team',
-    content: 'We are a tightly knit and focused team making steady progress toward our core mission and obective.'
+    content: 'We are a tightly knit and focused team making steady progress toward our core mission and objective.'
   },
   {
     icon: 'target-04',
@@ -16,7 +16,7 @@ export const features = [
   },
   {
     icon: 'face-smile',
-    title: 'Equal Oppurtunity',
+    title: 'Equal Opportunity',
     content: 'We do not treat individuals differently based on who they are or what they believe in any way, shape, or form.'
   }
 ]

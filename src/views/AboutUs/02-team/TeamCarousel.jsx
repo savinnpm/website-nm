@@ -1,15 +1,30 @@
-import { data } from './data'
-import { useRef, useState } from 'react'
-import Slider from 'react-slick'
+import {
+  useRef,
+  useState
+} from 'react'
 
+import Slider from 'react-slick'
 import styled from 'styled-components'
-import { Facebook, LinkedIn, Medium, Twitter } from '../../../components/Icon/variants/Socials/White'
-import { colors, primaryColorKey } from '../../../../styles/colors'
-import { ArrowLeft, ArrowRight } from '../../../components/Icon/variants/Arrows'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import {
+  ArrowLeft,
+  ArrowRight
+} from '../../../components/Icon/variants/Arrows'
+import {
+  Facebook,
+  LinkedIn,
+  Medium,
+  Twitter
+} from '../../../components/Icon/variants/Socials/White'
+import { data } from './data'
 
 const Details = ({ name, title, links, isMobile }) => (
-  <DetailsContainer data-ismobile={isMobile ? 'true' : 'false'}>
+  <DetailsContainer data-is-mobile={isMobile ? 'true' : 'false'}>
     <Name>{name}</Name>
     <Title>{title}</Title>
 
@@ -58,10 +73,10 @@ const TeamSliderItem = ({ team }) => {
   )
 }
 
-const INITITAL_SLIDE = 0
+const INITIAL_SLIDE = 0
 export const TeamCarousel = () => {
   const sliderRef = useRef(null)
-  const [currentSlide, setCurrentSlide] = useState(INITITAL_SLIDE)
+  const [currentSlide, setCurrentSlide] = useState(INITIAL_SLIDE)
 
   const handleAfterChange = i => {
     setCurrentSlide(i)
@@ -73,7 +88,7 @@ export const TeamCarousel = () => {
     arrows: false,
     speed: 500,
     // adaptiveHeight: true,
-    initialSlide: INITITAL_SLIDE,
+    initialSlide: INITIAL_SLIDE,
     slidesToShow: 4,
     slidesToScroll: 1,
 
@@ -196,7 +211,7 @@ const DetailsContainer = styled.div`
   text-align: center;
 
   @media screen and (max-width: 768px) {
-    &[data-ismobile="false"] {
+    &[data-is-mobile="false"] {
       display: none;
     }
   }
