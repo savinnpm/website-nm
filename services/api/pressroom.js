@@ -54,13 +54,19 @@ export const getPressroomPosts = async () => {
   return []
 }
 
+export const getRelatedPressroomPosts = async (slug) => {
+  const allPosts = await getPressroomPosts()
+
+  return allPosts.filter(x => x.slug !== slug).slice(0, 3)
+}
+
 export const getSinglePressroomPost = async (slug) => {
   try {
     const docs = await getDocs()
 
     const match = docs.find(doc => doc.slug === slug)
 
-    const htmlContent = match.content || ''
+    const htmlContent = match.contentHtml || match.html || ''
     const parsedHtml = await helpers.parseHtml(htmlContent)
 
     return {

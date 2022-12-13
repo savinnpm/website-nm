@@ -32,7 +32,7 @@ export const BlogPostDetail = (props) => {
         </ContentWrapper>
       </MainWrapper>
 
-      <RelatedPosts blogPosts={props.blogPosts} />
+      <RelatedPosts blogPosts={props.relatedPosts} />
 
       <NewsletterSignupForm />
     </>

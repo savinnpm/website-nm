@@ -54,7 +54,7 @@ export const getSingleVacancy = async (slug) => {
 
     const match = docs.find(doc => doc.slug === slug)
 
-    const htmlContent = match.description || ''
+    const htmlContent = match.descriptionHtml || ''
     const parsedHtml = await helpers.parseHtml(htmlContent)
 
     return {

@@ -80,6 +80,10 @@ const getTableOfContents = async ($) => {
 
 const addHeadingAnchors = ($ = cheerioLoad('', null, false)) => {
   $('h2, h3, h4, h5, h6').each(function () {
+    // Removes anything inside `heading` tags. Replace children with trimmed text
+    $(this).text($(this).text().trim())
+
+    // Append anchor inside `heading` tags
     $(this).append(`<a aria-label="Direct link to heading" class="heading-anchor" href="#${$(this).attr('id')}">#</a>`)
   })
 

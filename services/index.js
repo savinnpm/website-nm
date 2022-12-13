@@ -1,5 +1,6 @@
 import {
-  getBlogPosts,
+  getAllBlogPosts,
+  getRelatedBlogPosts,
   getLatestBlogPosts,
   getPostsSlugs,
   getSinglePost,
@@ -15,11 +16,12 @@ import { getAudits, getAuditSlugs, getSingleAudit } from './api/audits'
 import { getPrograms, getProgramSlugs, getSingleProgram } from './api/programs'
 import { getPages, getPageSlugs, getSinglePage } from './api/pages'
 import { getVacancies, getVacancySlugs, getSingleVacancy } from './api/vacancies'
-import { getPressroomPosts, getPressroomPostsSlugs, getSinglePressroomPost } from './api/pressroom'
+import { getPressroomPosts, getPressroomPostsSlugs, getSinglePressroomPost, getRelatedPressroomPosts } from './api/pressroom'
 
 export const services = {
-  getBlogPosts,
+  getAllBlogPosts,
   getLatestBlogPosts,
+  getRelatedBlogPosts,
   getPostsSlugs,
   getSinglePost,
   getPostFilters,
@@ -27,6 +29,7 @@ export const services = {
   getFeaturedPosts,
   getFilteredPostPages,
   getPressroomPosts,
+  getRelatedPressroomPosts,
   getPressroomPostsSlugs,
   getSinglePressroomPost,
   getNews,

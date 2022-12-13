@@ -78,7 +78,7 @@ export const getLatestBlogPosts = async () => {
   return []
 }
 
-export const getBlogPosts = async () => {
+export const getAllBlogPosts = async () => {
   try {
     const docs = await getDocs()
 
@@ -95,12 +95,20 @@ export const getBlogPosts = async () => {
       }
     }))
 
-    return result.map(x => x.value)
+    return result.map(x => x.value).sort((a, b) => {
+      return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
+    })
   } catch (error) {
     console.error(error)
   }
 
   return []
+}
+
+export const getRelatedBlogPosts = async (slug) => {
+  const allPosts = await getAllBlogPosts()
+
+  return allPosts.filter(x => x.slug !== slug).slice(0, 3)
 }
 
 export const getSinglePost = async (slug) => {
@@ -109,7 +117,7 @@ export const getSinglePost = async (slug) => {
 
     const match = docs.find(doc => doc.slug === slug)
 
-    const htmlContent = match.content || ''
+    const htmlContent = match.contentHtml || match.html || ''
     const parsedHtml = await helpers.parseHtml(htmlContent)
 
     return {
@@ -170,7 +178,7 @@ const getTotalPageCount = (posts) => {
 }
 
 export const getFeaturedPosts = async () => {
-  const allPosts = await getBlogPosts()
+  const allPosts = await getAllBlogPosts()
   return allPosts.filter(x => x.featured).slice(0, 3)
 }
 
@@ -178,7 +186,7 @@ export const getFilteredPosts = async (filter = 'all', page = 0) => {
   let filteredPosts = []; let totalLength
 
   try {
-    const docs = await getBlogPosts()
+    const docs = await getAllBlogPosts()
     filteredPosts = docs
 
     const _filter = filters.find(f => f.value === filter)
@@ -207,7 +215,7 @@ export const getFilteredPostPages = async (filter = 'all') => {
   let pages = []
 
   try {
-    const docs = await getBlogPosts()
+    const docs = await getAllBlogPosts()
     let filteredPosts = docs
 
     const _filter = filters.find(f => f.value === filter)
