@@ -1,6 +1,10 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Features } from './Features'
@@ -13,7 +17,7 @@ export const ParametricCovers = () => {
       <InnerContainer>
         <TextContainer>
           <H2>
-            <Subheading>{t('Coming Soon')}</Subheading>
+            <Subheading>{t('Reduce Your Exposure to Crypto Market Risks')}</Subheading>
             <Heading>{t('Decentralized Parametric Insurance')}</Heading>
           </H2>
           <SupportingText>{t('Neptune Mutual Protocol offers a couple of different flavors of decentralized parametric insurances.')}</SupportingText>
