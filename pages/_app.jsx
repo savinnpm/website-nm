@@ -13,7 +13,6 @@ import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { VideosProvider } from '../src/context/VideosContext'
 import { PageLoader } from '../src/components/PageLoader'
 import { Router } from 'next/router'
-import GlobalStyle from '../src/global.css'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -37,7 +36,6 @@ function MyApp ({ Component, pageProps }) {
           <Border />
         </HeaderContainer>
         <MainContainer>
-          <GlobalStyle />
           <Component {...pageProps} />
           <MobileNavContainer isMenuOpen={isMenuOpen} />
         </MainContainer>
