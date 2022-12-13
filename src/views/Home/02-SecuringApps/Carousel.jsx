@@ -2,6 +2,7 @@ import styled from 'styled-components'
 import { typography } from '../../../../styles/typography'
 import { data } from './data'
 import Slider from 'react-slick'
+import Image from 'next/image'
 
 const Carousel = () => {
   const settings = {
@@ -56,7 +57,7 @@ const Carousel = () => {
       {data.map((app) => {
         return (
           <AppContainer key={app.name}>
-            <AppImg src={app.src} alt={app.name} height='32' width='32' />
+            <Image src={app.src} alt={app.name} height='32' width='32' loading='lazy' />
             <AppName>{app.name}</AppName>
           </AppContainer>
         )
@@ -76,10 +77,6 @@ const AppContainer = styled.div`
   &:nth-last-of-type(1) {
     margin-left: 0;
   }
-`
-
-const AppImg = styled.img`
-  /* height: 32px; */
 `
 
 const AppName = styled.p`
