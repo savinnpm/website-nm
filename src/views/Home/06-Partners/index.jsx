@@ -6,8 +6,8 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { BrandCarousel } from './Brand-Carousel'
 
-const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.webp'
-const animocaLight = '/assets/images/partners/animoca-brands.webp'
+// const fenbushiImgLight = '/assets/images/partners/fenbushi-capital.webp'
+// const animocaLight = '/assets/images/partners/animoca-brands.webp'
 const fenbushiImgDark = '/assets/images/partners/darkmode/fenbushi-capital.webp'
 const animocaDark = '/assets/images/partners/darkmode/animoca-brands.webp'
 
@@ -21,16 +21,16 @@ const partnersDark = [
     imgSrc: animocaDark
   }
 ]
-const partnersLight = [
-  {
-    name: 'Fenbushi Capital',
-    imgSrc: fenbushiImgLight
-  },
-  {
-    name: 'Animoca Brands',
-    imgSrc: animocaLight
-  }
-]
+// const partnersLight = [
+//   {
+//     name: 'Fenbushi Capital',
+//     imgSrc: fenbushiImgLight
+//   },
+//   {
+//     name: 'Animoca Brands',
+//     imgSrc: animocaLight
+//   }
+// ]
 
 export const Partners = () => {
   const { t } = useTranslation('home')
