@@ -56,12 +56,21 @@
                 "updatedAt": "2022-12-09T19:47:02.692Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf"
             },
-            "description": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Smart Contract Audit by Open Zeppelin",
                 "description": "Open Zeppelin conducted a comprehensive security review of Neptune Mutual protocol smart contracts over the course of two months."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>"
         },
         {
             "id": "639393cb1904bf678b9088cb",
@@ -119,12 +128,21 @@
                 "updatedAt": "2022-12-09T19:47:02.692Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf"
             },
-            "description": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Smart Contract Audit by Open Zeppelin",
                 "description": "Open Zeppelin conducted a comprehensive security review of Neptune Mutual protocol smart contracts over the course of two months."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>"
         },
         {
             "id": "639393d11904bf678b9088fe",
@@ -182,12 +200,21 @@
                 "updatedAt": "2022-12-09T19:47:02.692Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf"
             },
-            "description": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Smart Contract Audit by Blocksec",
                 "description": "From April to June 2026, the Blocksec team inspected the security of all the smart contracts in the Neptune Mutual protocol."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>"
         },
         {
             "id": "639393d71904bf678b90890c",
@@ -245,12 +272,21 @@
                 "updatedAt": "2022-12-09T19:47:02.692Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf"
             },
-            "description": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Second Smart Contract Audit by Blocksec",
                 "description": "From April to June 2025, the Blocksec team inspected the security of all the smart contracts in the Neptune Mutual protocol."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>"
         },
         {
             "id": "639393dd1904bf678b908937",
@@ -308,12 +344,21 @@
                 "updatedAt": "2022-12-09T19:46:58.198Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-blocksec-audit.pdf"
             },
-            "description": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Smart Contract Audit by Blocksec",
                 "description": "From April to June 2022, the Blocksec team inspected the security of all the smart contracts in the Neptune Mutual protocol."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>"
         },
         {
             "id": "639393e21904bf678b90894b",
@@ -371,12 +416,21 @@
                 "updatedAt": "2022-12-09T19:47:07.812Z",
                 "url": "https://content.neptunedefi.com/media/neptune-mutual-open-zeppelin-audit.pdf"
             },
-            "description": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>",
+            "description": [
+                {
+                    "children": [
+                        {
+                            "text": "We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem."
+                        }
+                    ]
+                }
+            ],
             "meta": {
                 "title": "Neptune Mutual Smart Contract Audit by Open Zeppelin",
                 "description": "Open Zeppelin conducted a comprehensive security review of Neptune Mutual protocol smart contracts over the course of two months."
             },
-            "_status": "published"
+            "_status": "published",
+            "descriptionHtml": "<p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>"
         }
     ],
     "totalDocs": 6,

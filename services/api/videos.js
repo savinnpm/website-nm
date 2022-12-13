@@ -42,7 +42,7 @@ const getDocs = async () => {
 }
 
 const transformDoc = async (doc) => {
-  const htmlContent = doc.description || ''
+  const htmlContent = doc.descriptionHtml || ''
   const parsedHtml = await helpers.parseHtml(htmlContent)
 
   return {

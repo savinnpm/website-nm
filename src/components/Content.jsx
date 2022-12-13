@@ -132,7 +132,6 @@ const Container = styled.div`
 
   .kg-bookmark-container {
     position: relative;
-    z-index: 2;
     min-height: 150px;
     padding-bottom: 0;
     transition: transform .2s ease;
