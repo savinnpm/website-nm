@@ -1,14 +1,15 @@
-import { useState, useEffect } from 'react'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
+import { useState, useEffect } from 'react'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { Pagination } from '../../Blog/04-RecentPosts/Pagination'
 
-import { useRouter } from 'next/router'
+import { chunkArray } from '../../../helpers'
+import { Pagination } from '../../../components/Pagination'
 
 import { Card } from './Card'
-import { chunkArray } from '../../../helpers'
 
 const ITEM_PER_PAGE = 4
 
@@ -18,11 +19,11 @@ const Annoucement = (props) => {
   const [list, setList] = useState([])
 
   useEffect(() => {
-    if (Array.isArray(props.pressPosts) && props.pressPosts.length) {
-      const posts = chunkArray(props.pressPosts, ITEM_PER_PAGE)
+    if (Array.isArray(props.posts) && props.posts.length) {
+      const posts = chunkArray(props.posts, ITEM_PER_PAGE)
       setList(posts)
     }
-  }, [props.pressPosts])
+  }, [props.posts])
 
   const pushQuery = query => {
     router.push({
@@ -76,8 +77,12 @@ const Annoucement = (props) => {
 const Container = styled.div`
   ${utils.fullWidthContainer}
   padding-top: 96px;
-  padding-bottom: 106px;
-  border-bottom: 1px solid ${colors.gray[300]}
+  padding-bottom: 96px;
+
+  @media (max-width: 768px) {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
 `
 
 const Articles = styled.div`

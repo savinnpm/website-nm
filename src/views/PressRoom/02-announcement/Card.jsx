@@ -6,7 +6,7 @@ import { getFormattedDate } from '../../../helpers'
 
 const Card = (props) => {
   return (
-    <Container>
+    <Container href={`pressroom/${props.post.slug}`}>
       <Image
         alt={props.post.title}
         width={592}
@@ -29,8 +29,10 @@ const Card = (props) => {
   )
 }
 
-const Container = styled.div`
+const Container = styled.a`
+  disply: block;
   width: 592px;
+  cursor: pointer;
 
   @media (max-width: 1280px) {
     width: auto;
@@ -52,6 +54,8 @@ const CardTitle = styled.label`
   color: color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
   ${typography.weights.semibold}
   ${typography.styles.displayXs}
+  cursor: pointer;
+  
 
   @media (max-width: 768px) {
     ${typography.styles.textXl}

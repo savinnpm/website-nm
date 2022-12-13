@@ -15,6 +15,7 @@ export async function getStaticProps ({ locale }) {
     props: {
       ...(s),
       news: await services.getNews(),
+      posts: await services.getPressroomPosts(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -50,7 +51,7 @@ export default function PressPage (props) {
       </Head>
 
       <main>
-        <PressRoom news={props.news} />
+        <PressRoom news={props.news} posts={props.posts} />
       </main>
     </>
   )
