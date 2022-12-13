@@ -1,4 +1,3 @@
-import SvgTwitter from "./variants/Socials/White/Twitter";
 import {
   Check,
   Copy01,
@@ -48,12 +47,12 @@ import {
   Linkedin as LinkedinDefault,
   Facebook as FacebookDefault
 } from './variants/Socials/Default'
-import { CodeSquare01, Database01, FileCode01, FolderCode } from "./variants/Development";
+import { CodeSquare01, Database01, FileCode01 } from "./variants/Development";
 import { Bell02 } from "./variants/AlertsAndFeedback";
 import { ChartBreakoutSquare } from "./variants/Charts";
-import { Cube01, Cube02, Star02 } from "./variants/Shapes";
+import { Cube01, Cube02 } from "./variants/Shapes";
 import { BookClosed, Glasses02 } from "./variants/Education";
-import { Play } from "./variants/MediaDevices";
+import { Play, Rss01 } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
 import { Flag06, MarkerPin01, Globe01, MarkerPin02 } from "./variants/MapsAndTravel";
 import { FaceSmile, Users01 } from "./variants/Users";
@@ -346,6 +345,10 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'annotation-dots'){
     IconComponent = AnnotationDots;
+  }
+
+  if(variant === 'rss-01'){
+    IconComponent = Rss01;
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
