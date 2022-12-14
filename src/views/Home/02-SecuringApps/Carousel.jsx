@@ -57,7 +57,7 @@ const Carousel = () => {
       {data.map((app) => {
         return (
           <AppContainer key={app.name}>
-            <Image src={app.src} alt={app.name} height='32' width='32' loading='lazy' />
+            <Image src={app.src} alt='' height='32' width='32' loading='lazy' />
             <AppName>{app.name}</AppName>
           </AppContainer>
         )
@@ -79,7 +79,7 @@ const AppContainer = styled.div`
   }
 `
 
-const AppName = styled.p`
+const AppName = styled.span`
   color: ${(props) => props.theme.color};
 
   ${typography.styles.textXl};
