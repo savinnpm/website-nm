@@ -114,6 +114,10 @@ const Li = styled.li`
 
   a{
     color: ${(props) => props.theme.secondaryColor};
+
+    :hover{
+      color: ${(props) => props.theme.secondaryColor};
+    }
   }
 `
 const Badge = styled.div`
