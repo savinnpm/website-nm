@@ -45,7 +45,6 @@ export const MainCarousel = () => {
     infinite: false,
     arrows: false,
     speed: 500,
-    // adaptiveHeight: true,
     initialSlide: currentIndex - 5,
     slidesToShow: 7,
     slidesToScroll: 7,
