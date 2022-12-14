@@ -103,11 +103,12 @@ const LinkStyle = css`
 
   &[data-is-active='true'] {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]};
-    background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]}
+    background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]};
   }
 
-  &[data-is-active='false']:hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]}
+  &[data-isactive='false']:hover {
+    background-color: ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+    color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
   }
 `
 

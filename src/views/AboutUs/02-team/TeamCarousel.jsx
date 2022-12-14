@@ -123,11 +123,10 @@ export const TeamCarousel = () => {
       <Slider {...settings} ref={sliderRef}>
         {data.map((team, idx) => {
           return (
-            <div key={idx}>
-              <TeamSliderItem
-                team={team}
-              />
-            </div>
+            <TeamSliderItem
+              key={idx}
+              team={team}
+            />
           )
         })}
       </Slider>

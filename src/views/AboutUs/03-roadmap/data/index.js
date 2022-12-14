@@ -41,15 +41,14 @@ export const data = [
             We designed the protocol with these four key principles:
           </p>
 
-          <p>
-            <UnorderedList items={[
-              'Security',
-              'Minimizing risk',
-              'Scalability',
-              'User Experience (UX)'
-            ]}
-            />
-          </p>
+          <UnorderedList items={[
+            'Security',
+            'Minimizing risk',
+            'Scalability',
+            'User Experience (UX)'
+          ]}
+          />
+
         </>
       )
     }

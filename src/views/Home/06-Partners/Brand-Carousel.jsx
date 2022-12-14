@@ -381,10 +381,15 @@ export const BrandCarousel = () => {
     dots: false,
     arrows: false,
     infinite: true,
+    speed: 500,
     slidesToShow: 5,
-    rows: 1,
-    centerMode: false,
-    lazyLoad: true,
+    autoplay: true,
+    slidesToScroll: 1,
+    autoplaySpeed: 2000,
+    cssEase: 'linear',
+    adaptiveWidth: true,
+    swipeToSlide: true,
+    variableWidth: false,
     responsive: [
       {
         breakpoint: 1365,
@@ -398,11 +403,7 @@ export const BrandCarousel = () => {
           slidesToShow: 2
         }
       }
-    ],
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    pauseOnHover: false
+    ]
   }
 
   const slidesToMap = isLightMode ? carouselItemsLight : carouselItemsInverted
