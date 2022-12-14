@@ -13,6 +13,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
+      latestAnnouncement: await services.getPressroomLatestPost(),
       blogPosts: await services.getLatestBlogPosts(),
       videos: await services.getVideos(),
       pages: await services.getPages()
@@ -48,7 +49,7 @@ export default function HomePage (props) {
       </Head>
 
       <main>
-        <Home blogPosts={props.blogPosts} />
+        <Home blogPosts={props.blogPosts} latestAnnouncement={props.latestAnnouncement} />
       </main>
     </>
   )

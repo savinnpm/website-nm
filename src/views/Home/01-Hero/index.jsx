@@ -8,13 +8,13 @@ import { Button } from '../../../components/Button'
 import { getBlurDataURL } from '../../../helpers/images'
 import { Announcement } from './Announcement'
 
-export const Hero = () => {
+export const Hero = ({ latestAnnouncement }) => {
   const { t } = useTranslation('home')
 
   return (
     <Container>
       <TextAndCta>
-        <Announcement />
+        <Announcement latestAnnouncement={latestAnnouncement} />
 
         <Heading>{t('Covering Ethereum Decentralized Apps from Hacks')}</Heading>
 

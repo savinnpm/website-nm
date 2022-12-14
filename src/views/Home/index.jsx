@@ -6,10 +6,10 @@ import { LetsBuidl } from './05-LetsBuidl'
 import { Partners } from './06-Partners'
 import { NftCollection } from './07-NftCollection'
 
-export const Home = ({ blogPosts }) => {
+export const Home = ({ latestAnnouncement, blogPosts }) => {
   return (
     <>
-      <Hero />
+      <Hero latestAnnouncement={latestAnnouncement} />
 
       <SecuringApps />
 

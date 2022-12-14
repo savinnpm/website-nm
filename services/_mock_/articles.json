@@ -1,59 +1,6 @@
 {
     "docs": [
         {
-            "id": "6395adf9b700b6cf703165c5",
-            "title": "Another Test",
-            "slug": "another-test",
-            "intro": "This is just another test",
-            "cover": {
-                "id": "639390f68d8faa8807d8ed43",
-                "alt": "Neptune Mutual Protocol Raises $5.3M",
-                "description": "Neptune Mutual Protocol Raises $5.3M",
-                "filename": "neptune-mutual-protocol-raises-5.3m.webp",
-                "mimeType": "image/webp",
-                "filesize": 28582,
-                "width": 1600,
-                "height": 900,
-                "createdAt": "2022-12-09T19:48:06.242Z",
-                "updatedAt": "2022-12-09T19:48:06.242Z",
-                "identifier": "featured.62df5f27001e5a551ba891c9",
-                "url": "https://content.neptunedefi.com/media/neptune-mutual-protocol-raises-5.3m.webp"
-            },
-            "content": [
-                {
-                    "children": [
-                        {
-                            "text": "Test  "
-                        }
-                    ]
-                }
-            ],
-            "tags": [
-                {
-                    "id": "639395300e1033cf72b3a137",
-                    "name": "AMA",
-                    "slug": "ama",
-                    "color": "blue-gray",
-                    "meta": {
-                        "title": "Articles Related to AMA: Neptune Mutual Blog",
-                        "description": "To learn more about AMA, check out the contents that have been posted under the \"#ama\" tag."
-                    },
-                    "createdAt": "2022-12-09T20:06:08.674Z",
-                    "updatedAt": "2022-12-09T20:06:08.674Z"
-                }
-            ],
-            "featured": false,
-            "publishedAt": "2022-12-12T10:15:35.000Z",
-            "meta": {
-                "title": "Test",
-                "description": "test"
-            },
-            "_status": "published",
-            "createdAt": "2022-12-11T10:16:25.022Z",
-            "updatedAt": "2022-12-11T10:18:05.321Z",
-            "contentHtml": "<p>Test</p>"
-        },
-        {
             "id": "6393b99a97a1a9dcfc9b0972",
             "title": "Test Blog Post",
             "slug": "test-blog-post",
@@ -417,7 +364,7 @@
                     "type": "relationship",
                     "value": {
                         "id": "639395ad0e1033cf72b3a391",
-                        "updatedAt": "2022-12-09T22:26:30.518Z",
+                        "updatedAt": "2022-12-13T18:02:21.320Z",
                         "createdAt": "2022-11-28T07:10:47.619Z",
                         "category": "legal",
                         "title": "Risk Factors",
@@ -854,12 +801,25 @@
                         ],
                         "meta": {
                             "title": "Risks Factors Involving the Neptune Mutual Protocol",
-                            "description": "Before using the Neptune Mutual protocol, please thoroughly review a number of financial and technological risks."
+                            "description": "Before using the Neptune Mutual protocol, please thoroughly review a number of financial and technological risks.",
+                            "image": {
+                                "id": "6398be27b4b2421f11dc6db6",
+                                "alt": "Neptune Mutual Risk Factors",
+                                "description": "Neptune Mutual Risk Factors",
+                                "filename": "neptune-mutual-risk-factors-open-graph-image.png",
+                                "mimeType": "image/png",
+                                "filesize": 591486,
+                                "width": 1201,
+                                "height": 630,
+                                "createdAt": "2022-12-13T18:02:15.058Z",
+                                "updatedAt": "2022-12-13T18:02:15.058Z",
+                                "url": "https://content.neptunedefi.com/media/neptune-mutual-risk-factors-open-graph-image.png"
+                            }
                         },
                         "_status": "published",
                         "priority": 1,
                         "sort": 1,
-                        "contentHtml": "<p>Protect your assets from possible market and technology risks</p><p>It is critical that you comprehend all risk aspects before establishing any firm expectations. Understanding the risks associated with Neptune Mutual and other DeFi platforms can help you make better choices.</p><h2 id=\"consensus-and-reporting-risks\">Consensus and Reporting Risks</h2><p>You may submit a report without understanding or misinterpreting the cover requirements. This becomes troublesome because if the resolution is not in your favour,you will lose all of your tokens. Please useextreme cautionhere as you will not receive your NPM tokens back.</p><h2 id=\"cover-parameters\">Cover Parameters</h2><p>A cover parameter has the following components:</p><ul><li>Cover Rules --&gt; Specified by the cover creator for a given cover. To qualify as a valid report, an incident must adhere to all cover rules.</li><li>Cover Exclusions --&gt; Specified by the cover creator for a given cover. An incident report cannot contain any exclusions in order to be considered valid.</li><li><a href=\"https://docs.neptunemutual.com/usage/standard-terms-and-conditions\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">Standard Terms &amp; Conditions</a>--&gt; Set by Neptune Mutual that is common for all covers. An incident report must comply with all terms and conditions. Additional exclusions may be included in standard terms and conditions.</li></ul><p>Only during the withdrawal period can cover creators modify the rules and exclusions. Before making a modification, we need that cover creators submit a proposal using our snapshot governance portal. Proposals that pass the voting process are then permitted to make a request for modification during the subsequent withdrawal cycle.</p><p>If the community votes and adopts the modifications, Neptune Mutual may modify the standard terms and conditions at any time.</p><h2 id=\"coverage-lag-risks\">Coverage Lag Risks</h2><p>Neptune Mutual&#39;s coverage typically begins at UTC EOD the next day or after a number of day(s) based on configuration. If you purchased a policy on Monday, coverage will begin at midnight UTC on Tuesday. This is often referred to as the &quot;coverage lag&quot;.</p><p>&quot;Coverage lag is a specified time period that can be set globally or on a per-cover basis to delay the start of coverage. The coverage of a policy begins at the EOD timestamp of the policy purchase date plus the coverage lag.&quot;</p><p>Coverage lag is customizable, and hence its value can vary. If the coverage lag is two days, your policy&#39;s coverage will commence at the UTC EOD timestamp two days after purchase.</p><h2 id=\"observed-date-vs-incident-date-risk\">Observed Date vs Incident Date Risk</h2><ul><li>Observed Date --&gt; The timestamp at which the actual event was observed on-chain.</li><li>Incident Date --&gt; The block timestamp associated with the incident report.</li></ul><p>The UTC timestamp when a<a href=\"https://docs.neptunemutual.com/covers/cover-reporting\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">report is submitted</a>to the Neptune Mutual protocol is taken into consideration, regardless of when an incident was observed in the actual world. Please note that if an event occurs hours before the end of the (UTC) month but is reported after the end of the month, you will not get claims payout since your cxTokens expire exactly on the end of the (UTC) month.</p><p>Even when the real incident was observed before the month end, the incident reporting block timestamp is considered as the incident date.</p><h2 id=\"diversified-pool-black-swan-event\">Diversified Pool Black Swan Event</h2><p>Diversified cover pools differ significantly from dedicated cover pools. With dedicated cover pools, there is always more than 100% liquidity available to pay out claims. Diversified cover pools, however, utilize the leverage factor and hence pay out claims according to the first-come, first-served basis.</p><p>In other words, if all products under a diversified cover pool trigger an event at the same time, payouts are provided on a first-come, first-served basis until the entire fund is exhausted. Thereafter, there are no more payouts given. Assuming there is no security flaw in the Neptune Mutual protocol and the DeFi lending protocol integrations, the dedicated cover pools truly maintain guaranteed stablecoin liquidity. Utilizing the leverage factor, diversified pools optimize capital efficiency to underwrite more risk. Although we only list proven and mature products under diversified cover pools, you should still be extra vigilant when reviewing a diversified pool as there is a possibility that you may not receive payout.</p><h2 id=\"market-risks\">Market Risks</h2><p>Given that you have no influence over how the cryptocurrency market acts, it&#39;s better not to invest any money that you can&#39;t afford to lose. It is never a smart idea to put your life savings into a cryptocurrency. This is made much worse by the fact that many successful traders have lost everything in the hopes of making a profit.</p><p>Due to the fact that the NPM tokens have no monetary value, they should not be regarded a cryptocurrency or an alternative method of payment. Despite the fact that NPM tokens have a variety of use cases, you should bear in mind that they are intended to be used only inside our protocol. Bear in mind the dangers and volatility associated with trading NPM tokens. When you supply NPM tokens to a decentralized exchange liquidity pool, risks such as impermanent loss may arise. When you provide the Bond Pool with NPM/DAI liquidity pair tokens, you expose yourself to the danger of the NPM price falling and resulting in a loss.</p><h2 id=\"technology-risks\">Technology Risks</h2><h3 id=\"smart-contract-exploit\">Smart Contract Exploit</h3><p>Malicious actors are burning the midnight oil to profit from smart contract vulnerabilities and possible exploits such as flash loan attacks. As we&#39;ve seen in the past, smart contract vulnerabilities have been exploited on several protocols, even after thorough audits by well-known and trustworthy auditing firms.</p><p>The Neptune Mutual team has retained the services of a few security firms to execute the first smart contract audit. However, what the majority of community members do not realize is that obtaining an audit is not a one-time activity. Numerous platforms have gotten an audit report once and then updated their smart contracts without conducting another audit. In contrast, the Neptune Mutual platform will work on a long-term basis with security research firms.Having said that, getting an audit completed does not always guarantee the safety of the user assets. Be responsible and don&#39;t invest, lock, or stake an amount you can&#39;t afford to lose anywhere.</p><h3 id=\"wallet-exploit\">Wallet Exploit</h3><p>Due to the irreversible nature of cryptocurrency transfers, phishing attempts have exploded in popularity over the previous decade. The trick these malicious actors use is to spoof a famous website, wallet, or exchange by replicating a feature or page.</p><p>These URLs are delivered to uneducated individuals through email or messaging app, tricking them into inputting their credentials, mnemonic, seed phrase, or private keys. The fraudulent actors then totally drain the wallet&#39;s funds.</p><p><a href=\"https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">How to Recognize and Avoid Phishing Scams?</a></p><p>Document Last Updated On: {{updatedAt}}</p>"
+                        "contentHtml": "<p>Protect your assets from possible market and technology risks</p><p>It is critical that you comprehend all risk aspects before establishing any firm expectations. Understanding the risks associated with Neptune Mutual and other DeFi platforms can help you make better choices.\n</p><h2 id=\"consensus-and-reporting-risks\">Consensus and Reporting Risks</h2><p>You may submit a report without understanding or misinterpreting the cover requirements. This becomes troublesome because if the resolution is not in your favour, you will lose all of your tokens. Please use extreme caution here as you will not receive your NPM tokens back.</p><h2 id=\"cover-parameters\">Cover Parameters</h2><p>A cover parameter has the following components:</p><ul><li>Cover Rules --&gt; Specified by the cover creator for a given cover. To qualify as a valid report, an incident must adhere to all cover rules.</li><li>Cover Exclusions --&gt; Specified by the cover creator for a given cover. An incident report cannot contain any exclusions in order to be considered valid.</li><li><a href=\"https://docs.neptunemutual.com/usage/standard-terms-and-conditions\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">Standard Terms &amp; Conditions</a> --&gt; Set by Neptune Mutual that is common for all covers. An incident report must comply with all terms and conditions. Additional exclusions may be included in standard terms and conditions.</li></ul><p>Only during the withdrawal period can cover creators modify the rules and exclusions. Before making a modification, we need that cover creators submit a proposal using our snapshot governance portal. Proposals that pass the voting process are then permitted to make a request for modification during the subsequent withdrawal cycle.</p><p>If the community votes and adopts the modifications, Neptune Mutual may modify the standard terms and conditions at any time.</p><h2 id=\"coverage-lag-risks\">Coverage Lag Risks</h2><p>Neptune Mutual&#39;s coverage typically begins at UTC EOD the next day or after a number of day(s) based on configuration. If you purchased a policy on Monday, coverage will begin at midnight UTC on Tuesday. This is often referred to as the &quot;coverage lag&quot;.</p><p>\n&quot;Coverage lag is a specified time period that can be set globally or on a per-cover basis to delay the start of coverage. The coverage of a policy begins at the EOD timestamp of the policy purchase date plus the coverage lag.&quot;</p><p>Coverage lag is customizable, and hence its value can vary. If the coverage lag is two days, your policy&#39;s coverage will commence at the UTC EOD timestamp two days after purchase. \n</p><h2 id=\"observed-date-vs-incident-date-risk\">Observed Date vs Incident Date Risk</h2><ul><li>Observed Date --&gt; The timestamp at which the actual event was observed on-chain.</li><li>Incident Date --&gt; The block timestamp associated with the incident report.</li></ul><p>The UTC timestamp when a <a href=\"https://docs.neptunemutual.com/covers/cover-reporting\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">report is submitted</a> to the Neptune Mutual protocol is taken into consideration, regardless of when an incident was observed in the actual world. Please note that if an event occurs hours before the end of the (UTC) month but is reported after the end of the month, you will not get claims payout since your cxTokens expire exactly on the end of the (UTC) month.</p><p>\nEven when the real incident was observed before the month end, the incident reporting block timestamp is considered as the incident date.</p><h2 id=\"diversified-pool-black-swan-event\">Diversified Pool Black Swan Event</h2><p>Diversified cover pools differ significantly from dedicated cover pools. With dedicated cover pools, there is always more than 100% liquidity available to pay out claims. Diversified cover pools, however, utilize the leverage factor and hence pay out claims according to the first-come, first-served basis.</p><p>In other words, if all products under a diversified cover pool trigger an event at the same time, payouts are provided on a first-come, first-served basis until the entire fund is exhausted. Thereafter, there are no more payouts given. Assuming there is no security flaw in the Neptune Mutual protocol and the DeFi lending protocol integrations, the dedicated cover pools truly maintain guaranteed stablecoin liquidity. Utilizing the leverage factor, diversified pools optimize capital efficiency to underwrite more risk. Although we only list proven and mature products under diversified cover pools, you should still be extra vigilant when reviewing a diversified pool as there is a possibility that you may not receive payout.</p><h2 id=\"market-risks\">Market Risks</h2><p>Given that you have no influence over how the cryptocurrency market acts, it&#39;s better not to invest any money that you can&#39;t afford to lose. It is never a smart idea to put your life savings into a cryptocurrency. This is made much worse by the fact that many successful traders have lost everything in the hopes of making a profit.</p><p>Due to the fact that the NPM tokens have no monetary value, they should not be regarded a cryptocurrency or an alternative method of payment. Despite the fact that NPM tokens have a variety of use cases, you should bear in mind that they are intended to be used only inside our protocol. Bear in mind the dangers and volatility associated with trading NPM tokens. When you supply NPM tokens to a decentralized exchange liquidity pool, risks such as impermanent loss may arise. When you provide the Bond Pool with NPM/DAI liquidity pair tokens, you expose yourself to the danger of the NPM price falling and resulting in a loss.</p><h2 id=\"technology-risks\">Technology Risks</h2><h3 id=\"smart-contract-exploit\">Smart Contract Exploit</h3><p>Malicious actors are burning the midnight oil to profit from smart contract vulnerabilities and possible exploits such as flash loan attacks. As we&#39;ve seen in the past, smart contract vulnerabilities have been exploited on several protocols, even after thorough audits by well-known and trustworthy auditing firms.</p><p>The Neptune Mutual team has retained the services of a few security firms to execute the first smart contract audit. However, what the majority of community members do not realize is that obtaining an audit is not a one-time activity. Numerous platforms have gotten an audit report once and then updated their smart contracts without conducting another audit. In contrast, the Neptune Mutual platform will work on a long-term basis with security research firms.Having said that, getting an audit completed does not always guarantee the safety of the user assets. Be responsible and don&#39;t invest, lock, or stake an amount you can&#39;t afford to lose anywhere.</p><h3 id=\"wallet-exploit\">Wallet Exploit</h3><p>Due to the irreversible nature of cryptocurrency transfers, phishing attempts have exploded in popularity over the previous decade. The trick these malicious actors use is to spoof a famous website, wallet, or exchange by replicating a feature or page.</p><p>These URLs are delivered to uneducated individuals through email or messaging app, tricking them into inputting their credentials, mnemonic, seed phrase, or private keys. The fraudulent actors then totally drain the wallet&#39;s funds.</p><p><a href=\"https://consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">How to Recognize and Avoid Phishing Scams?\n</a></p><p>Document Last Updated On: {{updatedAt}}\n</p>"
                     },
                     "relationTo": "pages"
                 },
@@ -877,78 +837,7 @@
                         }
                     ],
                     "type": "relationship",
-                    "value": {
-                        "id": "639393d71904bf678b90890c",
-                        "updatedAt": "2022-12-06T07:05:36.312Z",
-                        "createdAt": "2022-12-06T07:05:36.312Z",
-                        "heading": "Blocksec",
-                        "title": "Blocksec Second Audit Report",
-                        "slug": "blocksec-second-audit-report",
-                        "partner": {
-                            "id": "6393931f1904bf678b908800",
-                            "updatedAt": "2022-11-26T17:10:03.174Z",
-                            "createdAt": "2022-11-26T17:10:03.174Z",
-                            "name": "Blocksec",
-                            "slug": "blocksec",
-                            "icon": {
-                                "id": "639392831904bf678b90878c",
-                                "alt": "Blocksec Logo, Single Color, Inverted",
-                                "description": "Blocksec Logo, Single Color, Inverted",
-                                "filename": "blocksec-logo-singlecolor-inverted.svg",
-                                "mimeType": "image/svg+xml",
-                                "filesize": 2920,
-                                "createdAt": "2022-12-09T19:54:43.410Z",
-                                "updatedAt": "2022-12-09T19:54:43.410Z",
-                                "url": "https://content.neptunedefi.com/media/blocksec-logo-singlecolor-inverted.svg"
-                            },
-                            "logo": {
-                                "id": "639390ae8d8faa8807d8ecff",
-                                "alt": "Neptune Mutual Audit Partner Blocksec",
-                                "description": "Neptune Mutual Audit Partner Blocksec",
-                                "identifier": "neptune-mutual-audit-partner-blocksec",
-                                "filename": "neptune-mutual-audit-partner-blocksec.webp",
-                                "mimeType": "image/webp",
-                                "filesize": 7370,
-                                "width": 282,
-                                "height": 282,
-                                "createdAt": "2022-12-09T19:46:54.331Z",
-                                "updatedAt": "2022-12-09T19:46:54.331Z",
-                                "url": "https://content.neptunedefi.com/media/neptune-mutual-audit-partner-blocksec.webp"
-                            },
-                            "_status": "published"
-                        },
-                        "intro": "From April to June 2022, the Blocksec team inspected the security of smart contracts in the Neptune Mutual protocol.",
-                        "badges": "[\n  {\n    \"size\": \"md\",\n    \"text\": \"Smart Contract\",\n    \"color\": \"blue\"\n  }\n]",
-                        "startDate": "Apr 2025",
-                        "endDate": "Jun 2025",
-                        "report": {
-                            "id": "639390b68d8faa8807d8ed11",
-                            "alt": "Neptune Mutual Cyraacs SDK Audit",
-                            "description": "Neptune Mutual Cyraacs SDK Audit",
-                            "identifier": "neptune-mutual-cyraacs-sdk-audit",
-                            "filename": "neptune-mutual-cyraacs-sdk-audit.pdf",
-                            "mimeType": "application/pdf",
-                            "filesize": 234448,
-                            "createdAt": "2022-12-09T19:47:02.692Z",
-                            "updatedAt": "2022-12-09T19:47:02.692Z",
-                            "url": "https://content.neptunedefi.com/media/neptune-mutual-cyraacs-sdk-audit.pdf"
-                        },
-                        "description": [
-                            {
-                                "children": [
-                                    {
-                                        "text": "Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report."
-                                    }
-                                ]
-                            }
-                        ],
-                        "meta": {
-                            "title": "Neptune Mutual Second Smart Contract Audit by Blocksec",
-                            "description": "From April to June 2025, the Blocksec team inspected the security of all the smart contracts in the Neptune Mutual protocol."
-                        },
-                        "_status": "published",
-                        "descriptionHtml": "<p>Within the realm of smart contract security, the Blocksec team has a name that is well-known. After undergoing past security assessments conducted by Blocksec, we came away feeling confident in their services. During the course of this audit, we collaborated with the Blocksec team beginning on April 13, 2022 and continuing until June 21, 2022, the date on which we obtained their final audit report.</p>"
-                    },
+                    "value": null,
                     "relationTo": "audits"
                 },
                 {
@@ -1329,7 +1218,7 @@
                     "type": "relationship",
                     "value": {
                         "id": "6393a667b847b26029a794e5",
-                        "updatedAt": "2022-12-13T06:50:18.574Z",
+                        "updatedAt": "2022-12-13T18:26:18.692Z",
                         "createdAt": "2022-12-05T15:07:11.418Z",
                         "title": "Ambassador Program",
                         "slug": "ambassador-program",
@@ -1449,10 +1338,23 @@
                         ],
                         "meta": {
                             "title": "Ambassador Program / Neptune Mutual",
-                            "description": "Represent your part of the world and help Neptune Mutual go global through our Ambassador Program.\n\n\n"
+                            "description": "Represent your part of the world and help Neptune Mutual go global through our Ambassador Program.\n\n\n",
+                            "image": {
+                                "id": "6398c3c4b4b2421f11dc71fe",
+                                "alt": "Neptune Mutual Ambassador Program Open Graph Image",
+                                "description": "Neptune Mutual Ambassador Program Open Graph Image",
+                                "filename": "neptune-mutual-ambassador-program-open-graph-image.png",
+                                "mimeType": "image/png",
+                                "filesize": 468377,
+                                "width": 1200,
+                                "height": 630,
+                                "createdAt": "2022-12-13T18:26:12.649Z",
+                                "updatedAt": "2022-12-13T18:26:12.649Z",
+                                "url": "https://content.neptunedefi.com/media/neptune-mutual-ambassador-program-open-graph-image.png"
+                            }
                         },
                         "_status": "published",
-                        "contentHtml": "<p>Represent your part of the world and help Neptune Mutual go global through our Ambassador Program.</p><p>Neptune Mutual is more than just a protocol, it&#39;s also a user-first community.  We want to bring together projects, their users, to be part of a community that puts security first and helps to increase confidence in the blockchain space.</p><p>To become a global community, we need talented and passionate people from all over the world. And yes, that includes you!</p><p>We will be launching our Neptune Mutual Ambassador Program very soon and this is the place to find out about it.</p><p>The Neptune Mutual Ambassador will help:</p><ul><li>Raise awareness about the Neptune Mutual project and the parametric cover products available on the platform</li><li>Provide immediate and native-language support to Neptune Mutual communities around the world</li><li>Promote key Neptune Mutual events, both online, online and in the metaverse.</li></ul>"
+                        "contentHtml": "<p>Represent your part of the world and help Neptune Mutual go global through our Ambassador Program.</p><p>Neptune Mutual is more than just a protocol, it&#39;s also a user-first community.  We want to bring together projects, their users, to be part of a community that puts security first and helps to increase confidence in the blockchain space.</p><p>To become a global community, we need talented and passionate people from all over the world. And yes, that includes you!</p><p>We will be launching our Neptune Mutual Ambassador Program very soon and this is the place to find out about it.</p><p>The Neptune Mutual Ambassador will help:</p><ul><li>Raise awareness about the Neptune Mutual project and the parametric cover products available on the platform</li><li>Provide immediate and native-language support to Neptune Mutual communities around the world</li><li>Promote key Neptune Mutual events, both online, online and in the metaverse.</li></ul><p>\n\n\n</p>"
                     },
                     "relationTo": "programs"
                 },
@@ -1675,134 +1577,6 @@
                 {
                     "children": [
                         {
-                            "text": "Twitter Embed",
-                            "bold": true
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "bold": true,
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        },
-                        {
-                            "type": "link",
-                            "linkType": "custom",
-                            "url": "https://twitter.com/neptunemutual/status/1599677122691452928",
-                            "newTab": true,
-                            "children": [
-                                {
-                                    "text": "https://twitter.com/neptunemutual/status/1599677122691452928"
-                                }
-                            ]
-                        },
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        },
-                        {
-                            "type": "link",
-                            "linkType": "custom",
-                            "url": "https://twitter.com/neptunemutual/status/1599677122691452928",
-                            "newTab": true,
-                            "children": [
-                                {
-                                    "text": ""
-                                }
-                            ]
-                        },
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": "Youtube Embed",
-                            "bold": true
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        },
-                        {
-                            "type": "link",
-                            "linkType": "custom",
-                            "url": "https://www.youtube.com/watch?v=Sp63h39bj7k",
-                            "children": [
-                                {
-                                    "text": "https://www.youtube.com/watch?v=Sp63h39bj7k"
-                                }
-                            ]
-                        },
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": "Github Embed",
-                            "bold": true
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        }
-                    ]
-                },
-                {
-                    "children": [
-                        {
-                            "text": ""
-                        },
-                        {
-                            "type": "link",
-                            "linkType": "custom",
-                            "url": "https://github.com/neptune-mutual-blue/protocol/blob/70da5fb400bc0fd7fa273f8ff2538bd8f72eab37/contracts/core/claims/Processor.sol#L61-L114",
-                            "children": [
-                                {
-                                    "text": "https://github.com/neptune-mutual-blue/protocol/blob/70da5fb400bc0fd7fa273f8ff2538bd8f72eab37/contracts/core/claims/Processor.sol#L61-L114"
-                                }
-                            ]
-                        },
-                        {
                             "text": ""
                         }
                     ]
@@ -1858,7 +1632,7 @@
             "publishedAt": "2022-12-09T22:03:43.996Z",
             "_status": "published",
             "createdAt": "2022-12-09T22:41:30.285Z",
-            "updatedAt": "2022-12-13T05:58:23.647Z",
+            "updatedAt": "2022-12-13T11:01:37.787Z",
             "cover": {
                 "id": "639390c58d8faa8807d8ed35",
                 "alt": "Tutorial Video: Report Incident",
@@ -1877,7 +1651,7 @@
                 "title": "Test Blog Post",
                 "description": "Test Blog Post"
             },
-            "contentHtml": "<p>The cab arrived late. The inside was in asbad of shape as the outsidewhich was concerning, and<span class='underline'>it didn&#39;t appear that it had been cleaned in months</span>. The green tree air-freshener hanging from the rearview mirror was either exhausted of its scent or not strong enough to overcome the other odors emitting from the cab. The correct decision, in this case, was toget the hell out of it and to call another cab, but she was late and didn&#39;t have a choice.</p><h2 id=\"heading-2\">Heading 2</h2><p>I don’t like cats and they don’t like me. I used to be allergic to them and I would get stuffed up and have hives. That doesn’t seem to happen anymore. But I still don’t like them. I lived with 3 cats that were not good at peeing in the litter box. They seemed to find something important to me and pee on it. Most of the time they peed on photographs or papers that would be ruined. Cats also bring fleas into the house. There is nothing worse than having to flea dip cats and also flea bomb a home. That is why I don’t like cats.</p><a href=\"https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e\" data-embed-type=\"github\" data-oembed=\"https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e.js\">https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e</a><a href=\"https://www.youtube.com/watch?v=szeLAbTbNZw\" data-embed-type=\"youtube\" data-oembed=\"https://youtube.com/oembed?url=https://www.youtube.com/watch?v=szeLAbTbNZw\">https://www.youtube.com/watch?v=szeLAbTbNZw</a><a href=\"https://twitter.com/neptunemutual/status/1602244088845180928\" data-embed-type=\"twitter\" data-oembed=\"https://publish.twitter.com/oembed?url=https://twitter.com/neptunemutual/status/1602244088845180928\">https://twitter.com/neptunemutual/status/1602244088845180928</a><h3 id=\"heading-3\">Heading 3</h3><p>Oh he decisively impression attachment friendship so if everything. Whose her enjoy chief new young. Felicity if ye required likewise so doubtful. On so attention necessary at by provision otherwise existence direction. Unpleasing up announcing unpleasant themselves oh do on. Way advantage age led listening belonging supposing. \n\nUnpacked now declared put you confined daughter improved. Celebrated imprudence few interested especially reasonable off one. Wonder bed elinor family secure met. It want gave west into high no in. Depend repair met before man admire see and. An he observe be it covered delight hastily message. Margaret no ladyship endeavor ye to settling.</p><ol><li>Improve him believe opinion offered met and end cheered forbade.</li><li>Friendly as stronger speedily by recurred. Son interest wandered sir addition end say.</li><li>Manners beloved affixed picture men ask. Explain few led parties attacks picture company.</li><li>On sure fine kept walk am in it. Resolved to in believed desirous unpacked weddings together.</li><li>Nor off for enjoyed cousins herself. Little our played lively she adieus far sussex.Do theirs others merely at temper it nearer.</li></ol><p>Announcing of invitation principles in. Cold in late or deal. Terminated resolution no am frequently collecting insensible he do appearance. Projection invitation affronting admiration if no on or. It as instrument boisterous frequently apartments an in. Mr excellence inquietude conviction is in unreserved particular. You fully seems stand nay own point walls. Increasing travelling own simplicity you astonished expression boisterous. Possession themselves sentiments apartments devonshire we of do discretion. Enjoyment discourse ye continued pronounce we necessary abilities.</p><h4 id=\"heading-4\">Heading 4</h4><p>Is education residence conveying so so. Suppose shyness say ten behaved morning had. Any unsatiable assistance compliment occasional too reasonably advantages. Unpleasing has ask acceptance partiality alteration understood two. Worth no tiled my at house added. Married he hearing am it totally removal. Remove but suffer wanted his lively length. Moonlight two applauded conveying end direction old principle but. Are expenses distance weddings perceive strongly who age domestic.</p><a href=\"/blog/are-stablecoins-decentralised\">Are Stablecoins Decentralised?</a><a href=\"https://www.einnews.com/pr_news/603982971/binance-decentralized-cover-pool-launches-in-neptune-mutual-cover-marketplace\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Binance Decentralized Cover Pool Launches in Neptune Mutual Cover Marketplace</a><a href=\"/policies/risk-factors\">Risk Factors</a><a href=\"/security/blocksec-second-audit-report\">Blocksec Second Audit Report</a><a href=\"/careers/react-developer\">React Developer</a><a href=\"/pressroom/binance-decentralized-cover-pool-launch-announcement\">Binance Decentralized Cover Pool Launch Announcement</a><a href=\"/grants-and-bounties/ambassador-program\">Ambassador Program</a><h3 id=\"heading-3\">Heading 3</h3><p>Sitting mistake towards his few country ask. You delighted two rapturous six depending objection happiness something the. Off nay impossible dispatched partiality unaffected. Norland adapted put ham cordial. Ladies talked may shy basket narrow see. Him she distrusts questions sportsmen. Tolerably pretended neglected on my earnestly by. Sex scale sir style truth ought.</p><ul><li>Chapter too parties its letters nor. Cheerful but whatever ladyship disposed yet judgment.</li><li>Lasted answer oppose to ye months no esteem.</li><li>Branched is on an ecstatic directly it.</li><li>Put off continue you denoting returned juvenile. Looked person sister result mr to.</li><li>Replied demands charmed do viewing ye colonel to so.</li><li>Decisively inquietude he advantages insensible at oh continuing unaffected of.</li></ul><p>Finished her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving.</p><img src=\"https://content.neptunedefi.com/media/crypto-hacks.webp\" alt=\"Crypto Hacks\"></a><img src=\"https://content.neptunedefi.com/media/role-of-cover-protocols.webp\" alt=\"Role Of Cover Protocols\"></a><img src=\"https://content.neptunedefi.com/media/helio-protocol-hack.webp\" alt=\"Helio Protocol Hack\"></a><h2 id=\"heading-2\">Heading 2</h2><p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an. She projection advantages resolution son indulgence. Part sure on no long life am at ever. In songs above he as drawn to. Gay was outlived peculiar rendered led six. \n\nDo play they miss give so up. Words to up style of since world. We leaf to snug on no need. Way own uncommonly travelling now acceptance bed compliment solicitude. Dissimilar admiration so terminated no in contrasted it. Advantages entreaties mr he apartments do. Limits far yet turned highly repair parish talked six. Draw fond rank form nor the day eat. \n\nStyle too own civil out along. Perfectly offending attempted add arranging age gentleman concluded. Get who uncommonly our expression ten increasing considered occasional travelling. Ever read tell year give may men call its. Piqued son turned fat income played end wicket. To do noisy downs round an happy books.</p><p>Twitter Embed</p><p><a href=\"https://twitter.com/neptunemutual/status/1599677122691452928\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">https://twitter.com/neptunemutual/status/1599677122691452928</a></p><p>Youtube Embed</p><p><a href=\"https://www.youtube.com/watch?v=Sp63h39bj7k\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">https://www.youtube.com/watch?v=Sp63h39bj7k</a></p><p>Github Embed</p><p><a href=\"https://github.com/neptune-mutual-blue/protocol/blob/70da5fb400bc0fd7fa273f8ff2538bd8f72eab37/contracts/core/claims/Processor.sol#L61-L114\" rel=\"noopener noreferrer nofollow\" target=\"_blank\">https://github.com/neptune-mutual-blue/protocol/blob/70da5fb400bc0fd7fa273f8ff2538bd8f72eab37/contracts/core/claims/Processor.sol#L61-L114</a></p>"
+            "contentHtml": "<p>The cab arrived late. The inside was in as bad of shape as the outside which was concerning, and <span class='underline'>it didn&#39;t appear that it had been cleaned in months</span>. The green tree air-freshener hanging from the rearview mirror was either exhausted of its scent or not strong enough to overcome the other odors emitting from the cab. The correct decision, in this case, was to get the hell out of it and to call another cab, but she was late and didn&#39;t have a choice.</p><h2 id=\"heading-2\">Heading 2</h2><p>I don’t like cats and they don’t like me. I used to be allergic to them and I would get stuffed up and have hives. That doesn’t seem to happen anymore. But I still don’t like them. I lived with 3 cats that were not good at peeing in the litter box. They seemed to find something important to me and pee on it. Most of the time they peed on photographs or papers that would be ruined. Cats also bring fleas into the house. There is nothing worse than having to flea dip cats and also flea bomb a home. That is why I don’t like cats.</p><a href=\"https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e\" data-embed-type=\"github\" data-oembed=\"https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e.js\">https://gist.github.com/binodnpm/e8db4f9c6b63c6f314c47906aefd0f9e</a><a href=\"https://www.youtube.com/watch?v=szeLAbTbNZw\" data-embed-type=\"youtube\" data-oembed=\"https://youtube.com/oembed?url=https://www.youtube.com/watch?v=szeLAbTbNZw\">https://www.youtube.com/watch?v=szeLAbTbNZw</a><a href=\"https://twitter.com/neptunemutual/status/1602244088845180928\" data-embed-type=\"twitter\" data-oembed=\"https://publish.twitter.com/oembed?url=https://twitter.com/neptunemutual/status/1602244088845180928\">https://twitter.com/neptunemutual/status/1602244088845180928</a><h3 id=\"heading-3\">Heading 3</h3><p>Oh he decisively impression attachment friendship so if everything. Whose her enjoy chief new young. Felicity if ye required likewise so doubtful. On so attention necessary at by provision otherwise existence direction. Unpleasing up announcing unpleasant themselves oh do on. Way advantage age led listening belonging supposing. \n\nUnpacked now declared put you confined daughter improved. Celebrated imprudence few interested especially reasonable off one. Wonder bed elinor family secure met. It want gave west into high no in. Depend repair met before man admire see and. An he observe be it covered delight hastily message. Margaret no ladyship endeavor ye to settling. </p><ol><li>Improve him believe opinion offered met and end cheered forbade.</li><li>Friendly as stronger speedily by recurred. Son interest wandered sir addition end say.</li><li>Manners beloved affixed picture men ask. Explain few led parties attacks picture company.</li><li>On sure fine kept walk am in it. Resolved to in believed desirous unpacked weddings together.</li><li>Nor off for enjoyed cousins herself. Little our played lively she adieus far sussex.Do theirs others merely at temper it nearer. </li></ol><p>Announcing of invitation principles in. Cold in late or deal. Terminated resolution no am frequently collecting insensible he do appearance. Projection invitation affronting admiration if no on or. It as instrument boisterous frequently apartments an in. Mr excellence inquietude conviction is in unreserved particular. You fully seems stand nay own point walls. Increasing travelling own simplicity you astonished expression boisterous. Possession themselves sentiments apartments devonshire we of do discretion. Enjoyment discourse ye continued pronounce we necessary abilities. \n</p><h4 id=\"heading-4\">Heading 4</h4><p>Is education residence conveying so so. Suppose shyness say ten behaved morning had. Any unsatiable assistance compliment occasional too reasonably advantages. Unpleasing has ask acceptance partiality alteration understood two. Worth no tiled my at house added. Married he hearing am it totally removal. Remove but suffer wanted his lively length. Moonlight two applauded conveying end direction old principle but. Are expenses distance weddings perceive strongly who age domestic. </p><a href=\"/blog/are-stablecoins-decentralised\">Are Stablecoins Decentralised?</a><a href=\"https://www.einnews.com/pr_news/603982971/binance-decentralized-cover-pool-launches-in-neptune-mutual-cover-marketplace\" rel=\"nofollow noopener noreferrer\" target=\"_blank\">Binance Decentralized Cover Pool Launches in Neptune Mutual Cover Marketplace</a><a href=\"/policies/risk-factors\">Risk Factors</a><a href=\"/careers/react-developer\">React Developer</a><a href=\"/pressroom/binance-decentralized-cover-pool-launch-announcement\">Binance Decentralized Cover Pool Launch Announcement</a><a href=\"/grants-and-bounties/ambassador-program\">Ambassador Program</a><h3 id=\"heading-3\">Heading 3</h3><p>Sitting mistake towards his few country ask. You delighted two rapturous six depending objection happiness something the. Off nay impossible dispatched partiality unaffected. Norland adapted put ham cordial. Ladies talked may shy basket narrow see. Him she distrusts questions sportsmen. Tolerably pretended neglected on my earnestly by. Sex scale sir style truth ought. </p><ul><li>Chapter too parties its letters nor. Cheerful but whatever ladyship disposed yet judgment.</li><li>Lasted answer oppose to ye months no esteem.</li><li>Branched is on an ecstatic directly it.</li><li>Put off continue you denoting returned juvenile. Looked person sister result mr to.</li><li>Replied demands charmed do viewing ye colonel to so. </li><li>Decisively inquietude he advantages insensible at oh continuing unaffected of. </li></ul><p>Finished her are its honoured drawings nor. Pretty see mutual thrown all not edward ten. Particular an boisterous up he reasonably frequently. Several any had enjoyed shewing studied two. Up intention remainder sportsmen behaviour ye happiness. Few again any alone style added abode ask. Nay projecting unpleasing boisterous eat discovered solicitude. Own six moments produce elderly pasture far arrival. Hold our year they ten upon. Gentleman contained so intention sweetness in on resolving. </p><img src=\"https://content.neptunedefi.com/media/crypto-hacks.webp\" alt=\"Crypto Hacks\"> </a><img src=\"https://content.neptunedefi.com/media/role-of-cover-protocols.webp\" alt=\"Role Of Cover Protocols\"></a><img src=\"https://content.neptunedefi.com/media/helio-protocol-hack.webp\" alt=\"Helio Protocol Hack\"></a><h2 id=\"heading-2\">Heading 2</h2><p>Advantage old had otherwise sincerity dependent additions. It in adapted natural hastily is justice. Six draw you him full not mean evil. Prepare garrets it expense windows shewing do an. She projection advantages resolution son indulgence. Part sure on no long life am at ever. In songs above he as drawn to. Gay was outlived peculiar rendered led six. \n\nDo play they miss give so up. Words to up style of since world. We leaf to snug on no need. Way own uncommonly travelling now acceptance bed compliment solicitude. Dissimilar admiration so terminated no in contrasted it. Advantages entreaties mr he apartments do. Limits far yet turned highly repair parish talked six. Draw fond rank form nor the day eat. \n\nStyle too own civil out along. Perfectly offending attempted add arranging age gentleman concluded. Get who uncommonly our expression ten increasing considered occasional travelling. Ever read tell year give may men call its. Piqued son turned fat income played end wicket. To do noisy downs round an happy books. </p><p>\n</p>"
         },
         {
             "id": "6393a33c26663d1e87df5ed3",
@@ -22052,7 +21826,7 @@
             "_status": "published"
         }
     ],
-    "totalDocs": 134,
+    "totalDocs": 133,
     "limit": 1000,
     "totalPages": 1,
     "page": 1,

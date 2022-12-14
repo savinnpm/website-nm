@@ -37,12 +37,6 @@ const StyledFooter = styled.footer`
 
 const InnerContainer = styled.div`
   ${utils.fullWidthContainer};
-
-  a {
-    :hover {
-      text-decoration: underline;
-    }
-  }
 `
 
 const CopyrightContainer = styled.div`
