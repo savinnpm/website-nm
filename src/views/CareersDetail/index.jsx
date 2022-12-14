@@ -78,6 +78,8 @@ const MainWrapper = styled.div`
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    padding-top: 28px;
+    padding-bottom: 56px;
     
     ${utils.fullWidthContainer};
   }
@@ -85,6 +87,9 @@ const MainWrapper = styled.div`
 
 const Sidebar = styled.div`
   border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const ContentWrapper = styled.div`
@@ -117,12 +122,19 @@ const AboutThisVacancy = styled.div`
 const Types = styled.div`
   display: flex;
   margin-bottom: 56px;
+  gap: 32px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+  }
 `
 
 const Type = styled.div`
-  margin: 0 32px;
   display: flex;
   flex-direction: column;
+  
 
   &:nth-of-type(1){
     margin-left: 0;
@@ -130,11 +142,19 @@ const Type = styled.div`
   &:nth-last-of-type(1){
     margin-right: 0;
   }
+
+  @media (max-width: 768px) {
+    margin: 0;
+  }
 `
 const Label = styled.label`
   color: ${colors.gray[400]};
   ${typography.styles.textSm}
   ${typography.weights.regular}
+  @media (max-width: 768px) {
+    display: block;
+    margin-bottom: 4px;
+  }
 `
 
 const TypeContent = styled.span`
@@ -147,6 +167,11 @@ const Header = styled.div`
   text-align: center;
   background-color: ${props => props.theme.isLightMode ? colors.indigo[25] : colors.gray[900]};
   padding: 96px 0;
+
+  @media (max-width: 768px) {
+    text-align: left;
+    padding-left: 16px;
+  }
 `
 const Title = styled.h1`
   ${typography.styles.displayLg}

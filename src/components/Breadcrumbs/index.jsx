@@ -31,6 +31,10 @@ const Trail = styled.div`
     flex-shrink: 0;
   }
 
+  @media (max-width: 768px) {
+    margin-bottom: 28px;
+  }
+
 `
 const Crumb = styled.a`
   display: inline-block;

@@ -44,8 +44,9 @@ const Container = styled.div`
   ${utils.fullWidthContainer};
 
   @media (max-width: 768px) {
-    padding: 16px 0;
-    flex-direction: column;
+    padding: 0;
+    flex-direction: column-reverse;
+    gap: 40px;
     align-items: stretch;
   }
 `
@@ -60,8 +61,10 @@ const Heading = styled.h1`
   ${typography.weights.semibold};
 
   @media (max-width: 768px) {
+    margin: 0;
+    padding: 0 16px;
+    padding-bottom: 32px;
     ${typography.styles.displayMd};
-    ${typography.weights.semibold};
   }
 `
 
@@ -70,12 +73,22 @@ const BlogInfoContainer = styled.div`
   align-items:center; 
   margin-bottom: 16px;
   gap: 8px; 
+
+  @media (max-width: 768px) {
+    svg {
+      display: none;
+    }
+  }
 `
 
 const BlogInfo = styled.span`
   ${typography.styles.textMd};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `
 
 const ImageContainer = styled.div`
@@ -83,6 +96,7 @@ const ImageContainer = styled.div`
   height: 560px;
   max-width: 100%;
   overflow: hidden;
+  position: relative;
 
   @media (max-width: 768px) {
     flex: 1 0 240px;
@@ -92,7 +106,6 @@ const ImageContainer = styled.div`
     margin-right: -16px;
   }
 
-  position: relative;
   img {
     object-fit: cover;
     display: block;
@@ -104,4 +117,8 @@ const Time = styled.time`
   ${typography.styles.textMd};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
+
+  @media (max-width: 768px) {
+    display: none;
+  }
 `

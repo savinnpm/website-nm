@@ -37,7 +37,7 @@ export const Navigation = ({ pages }) => {
                     <Li key={link.href}>
                       {link.isExternal
                         ? <a href={link.href} target='_blank' rel='noreferrer'>{t(link.text)}</a>
-                        : <StyledLink href={link.href}>{t(link.text)} {link?.badge && <Badge>{link.badge}</Badge>}</StyledLink>}
+                        : <StyledLink href={link.href}>{t(link.text)}</StyledLink>}{link?.badge && <Badge>{link.badge}</Badge>}
                     </Li>
                   )
                 })}
@@ -55,9 +55,9 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 48px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
-  }
+  }  
 `
 
 const LogoContainer = styled(Link)`
@@ -77,15 +77,14 @@ const Nav = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+  }
 `
 
 const ListContainer = styled.section`
   flex: 1;
-  
-  @media (max-width: 768px) {
-    flex: 1 1 auto;
-    width: calc(50% - var(--gap) / 2);
-  }
 `
 
 const H3 = styled.h3`
@@ -119,6 +118,7 @@ const Li = styled.li`
       color: ${(props) => props.theme.secondaryColor};
     }
   }
+
 `
 const Badge = styled.div`
   ${typography.styles.textSm};
