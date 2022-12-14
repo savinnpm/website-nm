@@ -6,6 +6,8 @@ import { mockData } from '../_mock_'
 
 let docs = null
 
+export const filters = []
+
 const getDocs = async () => {
   if (docs) {
     return docs
@@ -26,6 +28,15 @@ const getDocs = async () => {
 
 const getValidColorKey = (colorKey) => {
   return Object.keys(colors).filter(x => x !== 'white' && x !== 'black').includes(colorKey) ? colorKey : primaryColorKey
+}
+
+const getTotalPageCount = (posts, itemPerPage) => {
+  const actualDividend = parseInt(posts.length / itemPerPage)
+  if (posts.length % itemPerPage === 0) {
+    return actualDividend
+  }
+
+  return actualDividend + 1
 }
 
 export const getPressroomPosts = async () => {
@@ -52,6 +63,35 @@ export const getPressroomPosts = async () => {
   }
 
   return []
+}
+
+export const getFilteredPressroomPosts = async (filter = 'all', page, itemPerPage = 4) => {
+  let filteredPosts = []; let totalLength
+
+  try {
+    const docs = await getPressroomPosts()
+    filteredPosts = docs
+
+    const _filter = filters.find(f => f.value === filter)
+    if (filter !== 'all' && _filter) {
+      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
+    }
+
+    totalLength = getTotalPageCount(filteredPosts, itemPerPage)
+
+    if (page >= 0) {
+      filteredPosts = filteredPosts.slice(page * itemPerPage, itemPerPage + page * itemPerPage)
+    } else {
+      filteredPosts = filteredPosts.slice(0, itemPerPage)
+    }
+  } catch (error) {
+    console.error(error)
+  }
+
+  return {
+    posts: filteredPosts,
+    total: totalLength
+  }
 }
 
 export const getRelatedPressroomPosts = async (slug) => {

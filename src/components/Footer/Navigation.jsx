@@ -111,6 +111,10 @@ const Li = styled.li`
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
+
+  a:hover {
+    text-decoration: none !important;
+  }
 `
 const Badge = styled.div`
   ${typography.styles.textSm};

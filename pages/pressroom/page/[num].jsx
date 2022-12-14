@@ -32,11 +32,15 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
+  const pressRoom = await services.getFilteredPressroomPosts(undefined, parseInt(params.num - 1))
+
   return {
     props: {
       ...(s),
       news: await services.getNews(),
-      posts: await services.getPressroomPosts(),
+      pressRoomPosts: pressRoom.posts,
+      pressRoomPostsTotal: pressRoom.total,
+      pressRoomPage: parseInt(params.num - 1),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored',
@@ -47,9 +51,8 @@ export async function getStaticProps ({ locale, params }) {
 }
 
 export default function PressPage (props) {
-  const { t } = useTranslation('press')
+  const { t } = useTranslation('press-room')
   const router = useRouter()
-
   return (
     <>
       <Head>
@@ -73,7 +76,12 @@ export default function PressPage (props) {
       </Head>
 
       <main>
-        <PressRoom news={props.news} posts={props.posts} num={props.num} />
+        <PressRoom
+          news={props.news}
+          pressRoomPosts={props.pressRoomPosts}
+          pressRoomPostsTotal={props.pressRoomPostsTotal}
+          pressRoomPage={props.pressRoomPage}
+        />
       </main>
     </>
   )
