@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -5,23 +6,23 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 
-export const Announcement = () => {
+export const Announcement = ({ latestAnnouncement }) => {
   const { t } = useTranslation('home')
 
   // @todo: make dynamic
   return (
     // eslint-disable-next-line react/jsx-no-target-blank
-    <StyledLink href='/pressroom'>
+    <StyledLink href={`/pressroom/${latestAnnouncement.slug}`}>
       <Category>{t('Press Room')}</Category>
       <Text>
-        <span>{t('Ethereum DeFi Insurance Protocol Announcement')}</span>
+        <span>{t(latestAnnouncement.title)}</span>
         <Icon size={16} variant='arrow-right' />
       </Text>
     </StyledLink>
   )
 }
 
-const StyledLink = styled.a`
+const StyledLink = styled(Link)`
   max-width: 100%;
 
   display: inline-flex;

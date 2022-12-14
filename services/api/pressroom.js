@@ -66,6 +66,12 @@ export const getPressroomPosts = async () => {
   return []
 }
 
+export const getPressroomLatestPost = async () => {
+  const docs = await getPressroomPosts()
+
+  return docs[0]
+}
+
 export const getFilteredPressroomPosts = async (filter = 'all', page, itemPerPage = 4) => {
   let filteredPosts = []; let totalLength
 
