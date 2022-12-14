@@ -55,10 +55,6 @@ const Container = styled.div`
   justify-content: space-between;
   gap: 48px;
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-
   @media (max-width: 1024px) {
     flex-direction: column;
   }  
@@ -81,10 +77,6 @@ const Nav = styled.nav`
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
-  
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
 
   @media (max-width: 1024px) {
     flex-direction: column;

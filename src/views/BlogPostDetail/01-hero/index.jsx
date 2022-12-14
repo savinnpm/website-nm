@@ -65,7 +65,6 @@ const Heading = styled.h1`
     padding: 0 16px;
     padding-bottom: 32px;
     ${typography.styles.displayMd};
-    ${typography.weights.semibold};  
   }
 `
 
@@ -97,6 +96,7 @@ const ImageContainer = styled.div`
   height: 560px;
   max-width: 100%;
   overflow: hidden;
+  position: relative;
 
   @media (max-width: 768px) {
     flex: 1 0 240px;
@@ -106,7 +106,6 @@ const ImageContainer = styled.div`
     margin-right: -16px;
   }
 
-  position: relative;
   img {
     object-fit: cover;
     display: block;
