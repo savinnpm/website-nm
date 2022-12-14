@@ -5,9 +5,11 @@ import { colors } from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
 import { Icon } from '../../../Icon'
 import { DesktopSubmenu } from '../../DesktopNavigation/Submenu'
+import { useMediaQuery } from '../../../../hooks/useMediaQuery'
 
 export const SubmenuItem = ({ item }) => {
   const { t } = useTranslation('common')
+  const isMobile = useMediaQuery('(max-width: 768px)')
 
   return (
     <Container>
@@ -18,9 +20,13 @@ export const SubmenuItem = ({ item }) => {
             {t(item.title)}
             <Icon size={20} variant={open ? 'chevron-up' : 'chevron-down'} />
           </Button>
-          <Popover.Panel>
-            {({ close }) => <DesktopSubmenu item={item} close={close} />}
-          </Popover.Panel>
+
+          {!isMobile && (
+            <Popover.Panel>
+              {({ close }) => <DesktopSubmenu item={item} close={close} />}
+            </Popover.Panel>
+          )}
+
         </>
       )}
     </Container>
