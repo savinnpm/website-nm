@@ -1,41 +1,22 @@
 import styled from 'styled-components'
 import { useRouter } from 'next/router'
-import { useState, useEffect } from 'react'
 
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
-import { chunkArray } from '../../../helpers'
 import { Pagination } from '../../../components/Pagination'
 
 import { Card } from './Card'
 
-const ITEM_PER_PAGE = 4
-
 const Announcement = (props) => {
   const router = useRouter()
-  const [page, setPage] = useState(0)
-  const [list, setList] = useState([])
-
-  useEffect(() => {
-    if (props.num) {
-      setPage(props.num - 1)
-    }
-  }, [props.num])
-
-  useEffect(() => {
-    if (Array.isArray(props.posts) && props.posts.length) {
-      const posts = chunkArray(props.posts, ITEM_PER_PAGE)
-      setList(posts)
-    }
-  }, [props.posts])
 
   const handlePrev = () => {
     let queryString = '/pressroom'
 
     if (router.query.slug) queryString += `/tag/${router.query.slug}`
-    queryString += `/page/${page - 1 + 1}` // + 1 for url
+    queryString += `/page/${props.page - 1 + 1}` // + 1 for url
 
     router.push(queryString, undefined, { scroll: false })
   }
@@ -44,7 +25,7 @@ const Announcement = (props) => {
     let queryString = '/pressroom'
 
     if (router.query.slug) queryString += `/tag/${router.query.slug}`
-    queryString += `/page/${page + 2}` // + 1 for url
+    queryString += `/page/${props.page + 2}` // + 1 for url
 
     router.push(queryString, undefined, { scroll: false })
   }
@@ -62,18 +43,18 @@ const Announcement = (props) => {
     <Container>
       <HeaderText>Press Room / Latest Announcements</HeaderText>
       <Articles>
-        {(list[page] || []).map((post, i) => {
+        {(props.posts || []).map((post, i) => {
           return <Card key={i} post={post} />
         })}
       </Articles>
 
       <Pagination
-        page={page}
+        page={props.page}
         setPage={handleSetPage}
-        isLast={page === (list.length - 1)} // we can handle this inside of the component
+        isLast={props.page === (props.totalPage - 1)} // we can handle this inside of the component
         handleNext={handleNext}
         handlePrev={handlePrev}
-        totalPages={list.length}
+        totalPages={props.totalPage}
       />
     </Container>
   )
@@ -109,11 +90,23 @@ const Articles = styled.div`
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
+    gap: 34px;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
   }
 
   a:nth-of-type(-n+2){
     margin-bottom: 18px;
     padding-bottom: 18px;
+
+    @media (max-width: 768px) {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
   }
 `
 
