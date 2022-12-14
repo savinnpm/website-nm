@@ -22,8 +22,6 @@ export const FeaturedPostCard = ({ post }) => {
 
         <Title>{post.title}</Title>
 
-        {console.log(post.intro)}
-
         <Intro>{post.intro}&hellip;</Intro>
 
         <TagsContainer>
