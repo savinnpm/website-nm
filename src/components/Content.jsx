@@ -1,4 +1,8 @@
-import { useRef, useEffect } from 'react'
+import {
+  useEffect,
+  useRef
+} from 'react'
+
 import styled from 'styled-components'
 
 import {
@@ -44,17 +48,18 @@ const Container = styled.div`
     text-decoration: underline;
   }
 
-  p{
+  p, ul, ol {
     display: block;
     margin: 0 0 28px 0;
 
     color: ${props => props.theme.isLightMode ? colors.gray[600] : colors.gray[25]};
     ${typography.styles.textLg}
   
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       ${typography.styles.textMd}
     }
   }
+
   
   a{
     :hover, :active{
@@ -117,7 +122,7 @@ const Container = styled.div`
     width: 100%;
     min-height: 400px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 767px) {
       min-height: 300px;
     }
   }
@@ -129,15 +134,23 @@ const Container = styled.div`
 
   /* Custom classes */
   h1, h2, h3, h4, h5, h6 {
+    display: flex;
+    
     .heading-anchor {
       display: inline-block;
-      margin-left: 1rem;
+      margin-left: 0.5rem;
       opacity: 0;
+      color: ${colors.gray[400]};
+      font-weight: 300;
     }
     
     :hover .heading-anchor {
       opacity: 1;
       text-decoration: none;
+
+      :hover {
+        color: ${props => props.theme.isLightMode ? colors.gray['600'] : colors.gray['300']};
+      }  
     }
   }
 

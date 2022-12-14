@@ -124,7 +124,7 @@ const Types = styled.div`
   margin-bottom: 56px;
   gap: 32px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 767px) {
     flex-direction: column;
     gap: 16px;
     margin-bottom: 24px;

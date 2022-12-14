@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { FeaturedPostCard } from './FeaturedPostCard'
@@ -21,7 +22,7 @@ export const FeaturedPosts = ({ posts }) => {
 const Container = styled.div`
   ${utils.fullWidthContainer};
   margin: 56px auto 96px;
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     margin-bottom: 34px;
   }
 `
@@ -40,7 +41,7 @@ const GridContainer = styled.div`
   grid-template-rows: 1fr 1fr;
   gap: 32px;
   
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr;
   }

@@ -47,9 +47,7 @@ const Container = styled(Link)`
     }
   }
   
-  // if container is a first child
   &:nth-of-type(1) {
-    // if first child & screen size is above 1024px
     @media screen and (min-width: 1024px) {
       grid-row-start: 1;
       grid-row-end: 3;
@@ -78,8 +76,7 @@ const Container = styled(Link)`
 
   }
   
-  // if screen size is below 1024px
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     // change font style of <Title> component of 2nd/3rd children
     & > div:nth-of-type(2) > h3 {
       ${typography.styles.textLg};
@@ -114,7 +111,7 @@ const Contents = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  min-height: 240px;
+  min-height: 200px;
 
   @media screen and (min-width: 1024px) {
     width: 320px;
@@ -124,19 +121,9 @@ const ImageContainer = styled.div`
     width: 100%;
 
     @media screen and (min-width: 1280px) {
-      /* flex-basis: 280%; */
       height: 240px;
       width: 592px;
     }
-  }
-
-  @media screen and (max-width: 1024px) {
-    flex-basis: 50%;
-    
-  }
-  
-  @media screen and (max-width: 860px) {
-    min-height: 240px;
   }
   
   img {
@@ -175,7 +162,7 @@ const TagsContainer = styled.div`
   display: flex;
   margin-top: 24px;
   
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     margin-top: auto;
     margin-bottom: 0px;
   }

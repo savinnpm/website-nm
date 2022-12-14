@@ -6,12 +6,14 @@ import {
 } from 'styled-components'
 
 import {
+  colors,
+  primaryColorKey
+} from '../../styles/colors'
+import {
   darkTheme,
   lightTheme
 } from '../../styles/theme'
 import { useDarkMode } from '../hooks/useDarkMode'
-
-import { colors, primaryColorKey } from '../../styles/colors'
 
 const GlobalStyle = createGlobalStyle`
   :root {
@@ -69,6 +71,29 @@ const GlobalStyle = createGlobalStyle`
   img {
     max-width: 100%;
     max-height: 100%;
+  }
+
+  figure:has(figcaption) {
+    border: 1px dashed ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
+    margin: 0.5rem 0 1.5rem 0;
+    border-radius: 1rem;
+    padding: 0.5rem;
+
+    img{
+      margin:unset!important;
+    }
+
+    figcaption {
+      color: ${colors.gray['500']};
+      font-size: 0.78rem;
+      line-height: 1rem;
+      text-align: center;
+    }
+    
+
+    figcaption a, figcaption a:hover {
+      color: unset;
+    }
   }
 
   svg.icon {

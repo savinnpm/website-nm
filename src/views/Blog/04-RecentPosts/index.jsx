@@ -139,7 +139,7 @@ const BlogsContainer = styled.div`
   gap: 32px;
   margin-top: 32px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     grid-template-columns: repeat(2,1fr);
   }
 

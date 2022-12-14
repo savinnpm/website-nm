@@ -22,9 +22,9 @@ const add = async () => {
   const amount = 150_000 * 1e18
 
   // First approve the Policy contract to spend your DAI
-  await liquidity.approve(ChainId.Kovan, key, { amount })
+  await liquidity.approve(ChainId.Ethereum, key, { amount })
 
-  const response = await liquidity.add(ChainId.Kovan, key, amount)
+  const response = await liquidity.add(ChainId.Ethereum, key, amount)
   console.info(response)
 }
 
@@ -47,9 +47,9 @@ export const codeSnippetHtml = `<div data-line=" " class="line"></span>
 </div><div data-line="4" class="line">  <span class="token keyword">const</span> amount <span class="token operator">=</span> <span class="token number">150_000</span> <span class="token operator">*</span> <span class="token number">1e18</span>
 </div><div data-line="5" class="line">
 </div><div data-line="6" class="line">  <span class="token comment">// First approve the Policy contract to spend your DAI</span>
-</div><div data-line="7" class="line">  <span class="token keyword">await</span> liquidity<span class="token punctuation">.</span><span class="token function">approve</span><span class="token punctuation">(</span>ChainId<span class="token punctuation">.</span>Kovan<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span> amount <span class="token punctuation">}</span><span class="token punctuation">)</span>
+</div><div data-line="7" class="line">  <span class="token keyword">await</span> liquidity<span class="token punctuation">.</span><span class="token function">approve</span><span class="token punctuation">(</span>ChainId<span class="token punctuation">.</span>Ethereum<span class="token punctuation">,</span> key<span class="token punctuation">,</span> <span class="token punctuation">{</span> amount <span class="token punctuation">}</span><span class="token punctuation">)</span>
 </div><div data-line="8" class="line">
-</div><div data-line="9" class="line">  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> liquidity<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>ChainId<span class="token punctuation">.</span>Kovan<span class="token punctuation">,</span> key<span class="token punctuation">,</span> amount<span class="token punctuation">)</span>
+</div><div data-line="9" class="line">  <span class="token keyword">const</span> response <span class="token operator">=</span> <span class="token keyword">await</span> liquidity<span class="token punctuation">.</span><span class="token function">add</span><span class="token punctuation">(</span>ChainId<span class="token punctuation">.</span>Ethereum<span class="token punctuation">,</span> key<span class="token punctuation">,</span> amount<span class="token punctuation">)</span>
 </div><div data-line="10" class="line">  console<span class="token punctuation">.</span><span class="token function">info</span><span class="token punctuation">(</span>response<span class="token punctuation">)</span>
 </div><div data-line="11" class="line"><span class="token punctuation">}</span>
 </div><div data-line="12" class="line">
