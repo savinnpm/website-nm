@@ -11,7 +11,7 @@ export const NavMenuItemLink = ({ item }) => {
   return (
     <Container href={item.href} as={item.isExternal ? 'a' : Link} target={item.isExternal ? '_blank' : null}>
       {item.icon && <Icon size={24} variant={item.icon} />}
-      {t(item.title)}
+      {t(item.title)}  {item?.badge && <Badge>{item.badge}</Badge>} {item.isExternal && <Icon size={18} variant='link-external-01' />}
     </Container>
   )
 }
@@ -27,10 +27,28 @@ const Container = styled.a`
   ${typography.weights.semibold};
 
   :hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
+    background-color: ${colors[primaryColorKey]['600']};
+     color: ${colors.white};
+    h3,
+    svg {
+      color: white;
+    }
+
+    p {
+      color: ${colors.gray['50']};
+    }
   }
 
   svg {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
   }
+`
+
+const Badge = styled.div`
+  ${typography.styles.textSm};
+  ${typography.weights.medium};
+  color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
+  background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
+  padding: 2px 10px;
+  border-radius: 16px;
 `

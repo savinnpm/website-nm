@@ -12,7 +12,7 @@ export const DesktopNavMenuItemLink = ({ item }) => {
     <Container href={item.href} as={item.isExternal ? 'a' : Link} target={item.isExternal ? '_blank' : null}>
       {item.icon && <Icon size={24} variant={item.icon} />}
       <div>
-        <Title>{t(item.title)} {item?.badge && <Badge>{item.badge}</Badge>}</Title>
+        <Title>{t(item.title)} {item?.badge && <Badge>{item.badge}</Badge>} {item.isExternal && <Icon size={18} variant='link-external-01' />} </Title>
         <Description>{t(item.description)}</Description>
       </div>
     </Container>
@@ -28,7 +28,16 @@ const Container = styled.a`
   border-radius: 8px;
 
   :hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['700']};
+    background-color: ${colors[primaryColorKey]['600']};
+
+    h3,
+    svg {
+      color: white;
+    }
+
+    p {
+      color: ${colors.gray['50']};
+    }
   }
 
   svg {
@@ -40,9 +49,14 @@ const Container = styled.a`
 const Title = styled.h3`
   color: ${props => props.theme.color};
   display:flex;
+  align-items: center;
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
+
+  svg {
+    margin-left: 10px;
+  }
 `
 
 const Description = styled.p`
