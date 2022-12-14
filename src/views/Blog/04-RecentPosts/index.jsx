@@ -43,6 +43,14 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
     router.push(queryString, undefined, { scroll: false })
   }
 
+  const getHeadingToShow = () => {
+    const currentTab = filters.filter((tag) => tag.value === filter)[0]
+    if (currentTab.text === 'All') {
+      return 'Recent Posts'
+    }
+    return currentTab.text
+  }
+
   return (
     <Container>
       <InnerContainer>
@@ -63,7 +71,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
 
         <TextAndCta>
           <TextContainer>
-            <Heading>Recent Posts</Heading>
+            <Heading>{getHeadingToShow()}</Heading>
           </TextContainer>
         </TextAndCta>
         <BlogsContainer>
