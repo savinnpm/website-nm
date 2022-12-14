@@ -9,7 +9,26 @@ import { Filter } from '../../../components/Filter'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from '../../../components/Pagination'
 
-export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) => {
+const filters = [
+  {
+    text: 'All',
+    value: 'all'
+  },
+  {
+    text: 'Exploit Analysis',
+    value: 'exploit-analysis'
+  },
+  {
+    text: 'Weekly Report',
+    value: 'weekly-report'
+  },
+  {
+    text: 'Monthly Review',
+    value: 'monthly-review'
+  }
+]
+
+export const RecentPosts = ({ blogPosts, page, totalPages, filter }) => {
   const router = useRouter()
 
   const handleFilterChange = option => {
@@ -44,7 +63,12 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
   }
 
   const getHeadingToShow = () => {
-    const currentTab = filters.filter((tag) => tag.value === filter)[0]
+    const currentTab = filters.find((tag) => tag.value === filter)
+
+    if (!currentTab) {
+      return ''
+    }
+
     if (currentTab.text === 'All') {
       return 'Recent Posts'
     }
@@ -63,7 +87,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
         <FilterMobileContainer>
           <Filter
             options={filters.map(f => f.value)}
-            selectedOption={filter}
+            selectedOption={filters.map(f => f.value).includes(filter) ? filter : undefined}
             getOptionText={x => filters.find(f => f.value === x).text}
             setSelectedOption={handleFilterChange}
           />

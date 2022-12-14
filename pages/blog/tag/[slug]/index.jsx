@@ -9,7 +9,7 @@ import { getFQDN } from '../../../../src/helpers'
 import { Blog } from '../../../../src/views/Blog'
 
 export async function getStaticPaths ({ locales }) {
-  const slugs = await services.getPostFilters()
+  const slugs = await services.getBlogPostTagSlugs()
 
   const paths = []
 
@@ -18,7 +18,7 @@ export async function getStaticPaths ({ locales }) {
       paths.push({
         locale,
         params: {
-          slug: slug.value
+          slug
         }
       })
     })
@@ -32,17 +32,16 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const filteredPosts = await services.getFilteredPosts(params.slug)
   const featuredPosts = await services.getFeaturedPosts()
+  const filteredPosts = await services.getBlogPaginatedData(params.slug, 0)
 
   return {
     props: {
       ...(s),
       featuredPosts,
       blogPosts: filteredPosts.posts,
-      totalPages: filteredPosts.total,
+      totalPages: filteredPosts.totalPages,
       filter: params.slug,
-      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -84,7 +83,6 @@ export default function FilteredBlogPage (props) {
           filter={props.filter}
           totalPages={props.totalPages}
           page={0}
-          filters={props.filters}
         />
       </main>
     </>

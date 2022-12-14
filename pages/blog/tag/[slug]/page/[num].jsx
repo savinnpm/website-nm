@@ -9,29 +9,26 @@ import { getFQDN } from '../../../../../src/helpers'
 import { Blog } from '../../../../../src/views/Blog'
 
 export async function getStaticPaths ({ locales }) {
-  const slugs = await services.getPostFilters()
+  const data = await services.getBlogPostTagsData()
 
   const paths = []
 
-  // Use Promise.all to wait for all async operations in the forEach loop to complete
-  const promises = locales.map(locale => {
-    return Promise.all(slugs.map(async (slug) => {
-      const pages = await services.getFilteredPostPages(slug.value)
+  data.forEach(tagInfo => {
+    const slug = tagInfo.slug
+    const pageNumbers = new Array(tagInfo.totalPages).fill(1).map((_, idx) => idx + 1)
 
-      pages.forEach(page => {
+    locales.forEach(locale => {
+      pageNumbers.forEach(pageNum => {
         paths.push({
           locale,
           params: {
-            slug: slug.value,
-            num: page
+            slug,
+            num: pageNum.toString()
           }
         })
       })
-    }))
+    })
   })
-
-  // Wait for all promises to resolve, then return the paths array
-  await Promise.all(promises)
 
   return {
     paths,
@@ -41,18 +38,17 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const filteredPosts = await services.getFilteredPosts(params.slug, parseInt(params.num - 1))
   const featuredPosts = await services.getFeaturedPosts()
+  const data = await services.getBlogPaginatedData(params.slug, parseInt(params.num - 1))
 
   return {
     props: {
       ...(s),
       featuredPosts,
-      blogPosts: filteredPosts.posts,
-      totalPages: filteredPosts.total,
+      blogPosts: data.posts,
+      totalPages: data.totalPages,
       filter: params.slug,
       page: parseInt(params.num - 1),
-      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'

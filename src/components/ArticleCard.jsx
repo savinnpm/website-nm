@@ -9,7 +9,7 @@ import { getBlurDataURL } from '../helpers/images'
 
 export const ArticleCard = ({ post }) => {
   return (
-    <Container href={`/blog/${post.slug}`}>
+    <Container>
       <ImageContainer>
         <Image
           src={`${post.image}`}
@@ -23,20 +23,22 @@ export const ArticleCard = ({ post }) => {
 
       <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
 
-      <Title>{post.title}</Title>
+      <TitleContainer href={`/blog/${post.slug}`}>
+        <Title>{post.title}</Title>
+      </TitleContainer>
 
       <Intro>{post.intro}&hellip;</Intro>
 
       <TagsContainer>
         {post.tags.slice(0, 1).map((tag) => (
-          <Tag key={tag.name} tag={tag}>{tag.name}</Tag>
+          <Tag key={tag.name} tag={tag} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
         ))}
       </TagsContainer>
     </Container>
   )
 }
 
-const Container = styled(Link)`
+const Container = styled.div`
   display: block;
   text-align: left;
 `
@@ -57,6 +59,8 @@ const Time = styled.time`
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
 `
+
+const TitleContainer = styled(Link)``
 
 const Title = styled.h3`
   margin-top: 8px;
@@ -85,7 +89,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
 `
 
-export const Tag = styled.div`
+export const Tag = styled(Link)`
   display: inline-flex;
   padding: 2px 10px;
   border-radius: 9999px;

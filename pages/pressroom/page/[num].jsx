@@ -9,20 +9,22 @@ import { services } from '../../../services'
 import { PressRoom } from '../../../src/views/PressRoom'
 
 export async function getStaticPaths ({ locales }) {
-  const pages = await services.getFilteredPostPages()
+  // const pages = await services.getFilteredPostPages()
+
+  console.log(locales)
 
   const paths = []
 
-  locales.forEach(locale => {
-    pages.forEach(page => {
-      paths.push({
-        locale,
-        params: {
-          num: page
-        }
-      })
-    })
-  })
+  // locales.forEach(locale => {
+  //   pages.forEach(page => {
+  //     paths.push({
+  //       locale,
+  //       params: {
+  //         num: page
+  //       }
+  //     })
+  //   })
+  // })
 
   return {
     paths,

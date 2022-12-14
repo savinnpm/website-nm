@@ -3,11 +3,11 @@ import {
   getRelatedBlogPosts,
   getLatestBlogPosts,
   getPostsSlugs,
+  getBlogPostTagSlugs,
+  getBlogPaginatedData,
+  getBlogPostTagsData,
   getSinglePost,
-  getPostFilters,
-  getFilteredPosts,
-  getFeaturedPosts,
-  getFilteredPostPages
+  getFeaturedPosts
 } from './api/blog'
 import { getVideos } from './api/videos'
 import { getNews } from './api/news'
@@ -23,11 +23,11 @@ export const services = {
   getLatestBlogPosts,
   getRelatedBlogPosts,
   getPostsSlugs,
+  getBlogPostTagSlugs,
+  getBlogPaginatedData,
+  getBlogPostTagsData,
   getSinglePost,
-  getPostFilters,
-  getFilteredPosts,
   getFeaturedPosts,
-  getFilteredPostPages,
   getPressroomPosts,
   getPressroomLatestPost,
   getRelatedPressroomPosts,

@@ -16,7 +16,10 @@ export const Filter = ({ options, selectedOption, setSelectedOption, label, icon
           <ListboxButton>
             <Left>
               {iconVariant && <Icon variant={iconVariant} size={20} />}
-              <span>{getOptionText(selectedOption) || defaultOption}</span>
+              <span>{selectedOption
+                ? (getOptionText(selectedOption) || defaultOption)
+                : 'Select...'}
+              </span>
             </Left>
             <Right>
               <Icon variant='chevron-down' size={20} />
@@ -29,7 +32,8 @@ export const Filter = ({ options, selectedOption, setSelectedOption, label, icon
                   <OptionContent data-active={active.toString()}>
                     <Left>
                       {iconVariant && <Icon variant={iconVariant} size={20} />}
-                      <span>{getOptionText(option) || defaultOption}</span>
+                      <span>{getOptionText(option) || defaultOption}
+                      </span>
                     </Left>
                     {selected && (
                       <Right>

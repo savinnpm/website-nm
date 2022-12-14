@@ -10,18 +10,16 @@ import { getFQDN } from '../../src/helpers'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const blogPosts = await services.getFilteredPosts()
   const featuredPosts = await services.getFeaturedPosts()
+  const filteredPosts = await services.getBlogPaginatedData(null, 0)
 
   return {
     props: {
       ...(s),
-      featuredPosts: featuredPosts,
-      blogPosts: blogPosts.posts,
-      totalPages: blogPosts.total,
+      featuredPosts,
+      blogPosts: filteredPosts.posts,
+      totalPages: filteredPosts.totalPages,
       filter: 'all',
-      page: 0,
-      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -62,8 +60,7 @@ export default function BlogPage (props) {
           blogPosts={props.blogPosts}
           filter={props.filter}
           totalPages={props.totalPages}
-          page={props.page}
-          filters={props.filters}
+          page={0}
         />
       </main>
     </>

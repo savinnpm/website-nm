@@ -9,16 +9,18 @@ import { getFQDN } from '../../../src/helpers'
 import { Blog } from '../../../src/views/Blog'
 
 export async function getStaticPaths ({ locales }) {
-  const pages = await services.getFilteredPostPages()
+  const data = await services.getBlogPaginatedData(null, 0)
+
+  const pageNumbers = new Array(data.totalPages).fill(1).map((_, idx) => idx + 1)
 
   const paths = []
 
   locales.forEach(locale => {
-    pages.forEach(page => {
+    pageNumbers.forEach(pageNum => {
       paths.push({
         locale,
         params: {
-          num: page
+          num: pageNum.toString()
         }
       })
     })
@@ -32,18 +34,17 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const filteredPosts = await services.getFilteredPosts(undefined, parseInt(params.num - 1))
+  const data = await services.getBlogPaginatedData(null, parseInt(params.num - 1))
   const featuredPosts = await services.getFeaturedPosts()
 
   return {
     props: {
       ...(s),
       featuredPosts,
-      blogPosts: filteredPosts.posts,
-      totalPages: filteredPosts.total,
+      blogPosts: data.posts,
+      totalPages: data.totalPages,
       filter: 'all',
       page: parseInt(params.num - 1),
-      filters: await services.getPostFilters(),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -85,7 +86,6 @@ export default function FilteredAndPaginatedBlogPage (props) {
           filter={props.filter}
           totalPages={props.totalPages}
           page={props.page}
-          filters={props.filters}
         />
       </main>
     </>

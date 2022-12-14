@@ -3,7 +3,9 @@ import { typography } from '../../../styles/typography'
 import { Tag } from '../../components/ArticleCard'
 
 export const Tags = ({ tags }) => {
-  if (!tags?.length) return <></>
+  if (!tags?.length) {
+    return null
+  }
 
   return (
     <Container>
@@ -12,7 +14,7 @@ export const Tags = ({ tags }) => {
       <TagsContainer>
         {
           tags.map((tag, i) => (
-            <Tag key={i} tag={tag}>{tag.name}</Tag>
+            <Tag key={i} tag={tag} href={tag.slug}>{tag.name}</Tag>
           ))
         }
       </TagsContainer>
