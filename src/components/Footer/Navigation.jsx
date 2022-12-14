@@ -52,11 +52,12 @@ export const Navigation = ({ pages }) => {
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   gap: 48px;
 
-  @media (max-width: 1024px) {
-    flex-direction: column;
+  @media (min-width: 1024px) {
+    flex-direction: row;
   }  
 `
 
@@ -69,17 +70,17 @@ const LogoContainer = styled(Link)`
 `
 
 const Nav = styled.nav`
+  display: flex;
+  flex-direction: column;
   --gap: 32px;
   flex: 1;
   max-width: 768px;
-
-  display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
 
-  @media (max-width: 1024px) {
-    flex-direction: column;
+  @media (min-width: 1024px) {
+    flex-direction: row;
   }
 `
 
@@ -116,7 +117,6 @@ const Li = styled.li`
 
     :hover{
       color: ${(props) => props.theme.secondaryColor};
-      text-decoration: none;
     }
   }
 
