@@ -49,7 +49,7 @@ const MainWrapper = styled.div`
   gap: 64px;
   grid-template-columns: 4fr 9fr;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: flex;
     flex-direction: column;
   }
@@ -59,7 +59,7 @@ const Sidebar = styled.div`
   border-right: 1px solid ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]};
   width: 324px;
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `

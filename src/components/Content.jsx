@@ -103,8 +103,11 @@ const Container = styled.div`
   iframe {
     margin: 2rem 0;
     width: 100%;
-    height: 400px;
-    max-height: 65vh;
+    min-height: 400px;
+
+    @media (max-width: 768px) {
+      min-height: 300px;
+    }
   }
 
   /* External content */
