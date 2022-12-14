@@ -7,7 +7,7 @@
   "META_TWITTER_TITLE": "Decentralized Insurance Protocol / Neptune Mutual",
   "META_TWITTER_DESCRIPTION": "Need Crypto Insurance? You don't need to submit loss proof to receive payouts. No need to wait after creating a claim. Get a free price quote now.",
   "META_TWITTER_IMAGE": "/assets/images/meta/og/home.png",
-  "META_TWITTER_IMAGE_ALT": "Neptune Mutual",
+  "META_TWITTER_IMAGE_ALT": "Neptune Mutual Open Graph Banner",
   "Covering Ethereum Decentralized Apps from Hacks": "Covering Ethereum Decentralized Apps from Hacks",
   "Choose a DeFi insurance pool, select its duration, and enter how much you need to cover. Instantly receive your claims payout in stablecoin after incident resolution": "Choose a DeFi insurance pool, select its duration, and enter how much you need to cover. Instantly receive your claims payout in stablecoin after incident resolution",
   "Launch App": "Launch App",
@@ -17,6 +17,7 @@
   "Press Room": "Press Room",
   "Ethereum DeFi Insurance Protocol Announcement": "Ethereum DeFi Insurance Protocol Announcement",
   "Coming Soon": "Coming Soon",
+  "Reduce Your Exposure to Crypto Market Risks": "Reduce Your Exposure to Crypto Market Risks",
   "Decentralized Parametric Insurance": "Decentralized Parametric Insurance",
   "Neptune Mutual Protocol offers a couple of different flavors of decentralized parametric insurances.": "Neptune Mutual Protocol offers a couple of different flavors of decentralized parametric insurances.",
   "Let’s #buidl": "Let’s #buidl",
@@ -35,6 +36,5 @@
   "Use Anywhere": "Use Anywhere",
   "Built on Typescript, the Cover SDK works on both frontend and backend environments, on any framework.": "Built on Typescript, the Cover SDK works on both frontend and backend environments, on any framework.",
   "Attract Liquidity": "Attract Liquidity",
-  "With our support, you can get more visibility to bootstrap liquidity into your own DeFi insurance pool.": "With our support, you can get more visibility to bootstrap liquidity into your own DeFi insurance pool.",
-  "Reduce your exposure to crypto market risks": "Reduce your exposure to crypto market risks"
+  "With our support, you can get more visibility to bootstrap liquidity into your own DeFi insurance pool.": "With our support, you can get more visibility to bootstrap liquidity into your own DeFi insurance pool."
 }

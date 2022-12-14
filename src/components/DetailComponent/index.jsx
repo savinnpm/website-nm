@@ -2,12 +2,12 @@ import styled from 'styled-components'
 
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
-import { HtmlContent } from '../Content'
-import { TableOfContents } from '../TableOfContents'
 import { Breadcrumbs } from '../Breadcrumbs'
-import { Shareit } from '../Shareit'
+import { HtmlContent } from '../Content'
+import { SocialShare } from '../SocialShare'
+import { TableOfContents } from '../TableOfContents'
 
-export const DetailComponent = ({ title, intro, html, breadcrumbs, headers, sharelinks = true }) => {
+export const DetailComponent = ({ title, intro, html, breadcrumbs, headers, shareLinks = true }) => {
   return (
     <MainWrapper>
       <Sidebar>
@@ -19,7 +19,7 @@ export const DetailComponent = ({ title, intro, html, breadcrumbs, headers, shar
 
         <HtmlContent content={html} />
 
-        {sharelinks && <Shareit title={title} intro={(intro || '').substr(0, 100)} />}
+        {shareLinks && <SocialShare title={title} intro={(intro || '').substr(0, 100)} />}
       </ContentWrapper>
     </MainWrapper>
   )

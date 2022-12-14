@@ -81,7 +81,7 @@ export const ActiveCampaigns = ({ programs }) => {
               <Program key={i} href={`/grants-and-bounties/${p.slug}`}>
                 <TitleAndBadgeContainer>
                   <ProgramTitle>{p.title}</ProgramTitle>
-                  <BadgeContainer data-color={badge.color} data-islightmode={isLightMode}>
+                  <BadgeContainer data-color={badge.color} data-is-lightmode={isLightMode}>
                     {BadgeIcon && <BadgeIcon width={8} height={8} />}
                     <span>{badge.text}</span>
                   </BadgeContainer>
@@ -222,7 +222,7 @@ const BadgeContainer = styled.div`
   background-color: ${colors.gray[600]};
 
   &[data-color="success"] {
-    &[data-islightmode="true"] {
+    &[data-is-lightmode="true"] {
       background-color: ${colors.pink[50]};
     }
 
@@ -236,7 +236,7 @@ const BadgeContainer = styled.div`
   }
   
   &[data-color="blue"] {
-    &[data-islightmode="true"] {
+    &[data-is-lightmode="true"] {
       background-color: ${colors.blue[50]};
     }
 

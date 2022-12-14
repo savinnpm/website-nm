@@ -1,9 +1,11 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import { useTranslation } from 'react-i18next'
-
-import { colors, primaryColorKey } from '../../../../styles/colors'
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
@@ -23,7 +25,7 @@ const Hero = () => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt='Sheild' src='/assets/images/hero/shield.png' width={300} height={300} />
+          <Image alt='Shield' src='/assets/images/hero/shield.png' width={300} height={300} />
         </ImageContainer>
 
       </InnerContainer>

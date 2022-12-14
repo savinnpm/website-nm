@@ -4,6 +4,7 @@ import React, {
 } from 'react'
 
 import { useRouter } from 'next/router'
+import { useTranslation } from 'react-i18next'
 import styled, { css } from 'styled-components'
 
 import {
@@ -11,7 +12,6 @@ import {
   primaryColorKey
 } from '../../styles/colors'
 import { typography } from '../../styles/typography'
-import { useTranslation } from 'react-i18next'
 
 export const TableOfContents = ({ title, headers }) => {
   const { t } = useTranslation('common')
@@ -41,7 +41,7 @@ export const TableOfContents = ({ title, headers }) => {
       <Label>{t('Table of Contents')}</Label>
 
       <TitleLink
-        data-isactive={currentHeader === '' ? 'true' : 'false'}
+        data-is-active={currentHeader === '' ? 'true' : 'false'}
         href={router.asPath.split('#')[0] + '#'}
       >
         {title}
@@ -55,7 +55,7 @@ export const TableOfContents = ({ title, headers }) => {
                 headers.map((e, i) => (
                   <HeaderContainer key={i}>
                     <HeaderLink
-                      data-isactive={(e.id && currentHeader === e.id) ? 'true' : 'false'}
+                      data-is-active={(e.id && currentHeader === e.id) ? 'true' : 'false'}
                       href={`#${e.id || ''}`}
                       headerType={e.type}
                     >
@@ -101,12 +101,12 @@ const LinkStyle = css`
   color: ${props => (props.theme.isLightMode ? colors.gray[600] : colors.gray[25])};
   background-color: transparent;
 
-  &[data-isactive='true'] {
+  &[data-is-active='true'] {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors.gray[25]};
     background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][100] : colors.gray[600]}
   }
 
-  &[data-isactive='false']:hover {
+  &[data-is-active='false']:hover {
     background-color: ${props => props.theme.isLightMode ? colors.gray[200] : colors.gray[700]}
   }
 `

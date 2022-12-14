@@ -1,7 +1,12 @@
 import { useMemo } from 'react'
+
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { VacanciesList } from './VacanciesList'
@@ -10,8 +15,8 @@ export const JobVacancies = ({ vacancies }) => {
   const { t } = useTranslation('careers')
 
   const departments = useMemo(() => {
-    const depts = vacancies.map(v => v.department)
-    return ['', ...new Set(depts)]
+    const allDepartments = vacancies.map(v => v.department)
+    return ['', ...new Set(allDepartments)]
   }, [vacancies])
 
   return (

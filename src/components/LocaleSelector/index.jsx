@@ -1,11 +1,19 @@
-import { useRouter } from 'next/router'
 import { useState } from 'react'
+
+import { useRouter } from 'next/router'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { Icon } from '../Icon'
 import { InputWithIcon } from '../Input/InputWithIcon'
-import { availableLocales, localeNames } from './config'
+import {
+  availableLocales,
+  localeNames
+} from './config'
 
 const options = availableLocales
 
@@ -77,7 +85,7 @@ export const LocaleSelector = (props) => {
           </LanguageContainer>
         )}
       </Container>
-      {showLanguages && <CheatBackgroud onClick={show} />}
+      {showLanguages && <PlaceholderBackground onClick={show} />}
     </>
   )
 }
@@ -105,7 +113,7 @@ const InnerContainer = styled.div`
   ${typography.weights.semibold};
 `
 
-const CheatBackgroud = styled.div`
+const PlaceholderBackground = styled.div`
   position: absolute;
   width: 100vw;
   height: 100vh;

@@ -1,4 +1,5 @@
 import Link from 'next/link'
+
 import { Command } from './Command'
 import { UnorderedList } from './UnorderedList'
 
@@ -72,7 +73,7 @@ export const data = [
         <>
           <p>
             Check out the Cover SDK source code on the Neptune Mutual Github
-            repository. <a target='_blank' rel='noreferrer' href={links.SDK}>Read the SDK documentation</a>
+            repository. <a target='_blank' rel='noreferrer noopener nofollow' href={links.SDK}>Read the SDK documentation</a>
             &nbsp;to find out how to get access to cover feature on your own frontend app or backend API.
             Built on Typescript, developers can use the SDK in both frontend and backend environments using any popular framework.
             The SDK is also available as an NPM package.
@@ -114,7 +115,7 @@ export const data = [
       return (
         <>
           <p>
-            The Neptune Mutual protocol launches on a couple of test networks like Ropsten and Mumbai testnet. Community members participate in the protocol by becoming cover purchasers,  liquidity providers, and concensus witenesses. We develop <a target='_blank' rel='noreferrer' href={links.FAUCET}>Neptune Mutual faucet</a> to provide users with testnet DAI and NPM tokens.
+            The Neptune Mutual protocol launches on a couple of test networks like Ropsten and Mumbai testnet. Community members participate in the protocol by becoming cover purchasers,  liquidity providers, and consensus witnesses. We develop <a target='_blank' rel='noreferrer' href={links.FAUCET}>Neptune Mutual faucet</a> to provide users with testnet DAI and NPM tokens.
           </p>
           <p>
             <a target='_blank' href='https://faucet.neptunemutual.com/' title='Neptune Mutual Faucet' rel='noreferrer'>View Faucet</a>
@@ -150,7 +151,7 @@ export const data = [
           </p>
 
           <p>
-            Furthermore, the app, Github, hosting, CI/CD pipelines, DNS, HTTP security, and more is thoroughly audited as well. A proper cyber hygine is implemented across the team and organization.
+            Furthermore, the app, Github, hosting, CI/CD pipelines, DNS, HTTP security, and more is thoroughly audited as well. A proper cyber hygiene is implemented across the team and organization.
           </p>
 
           <p>
@@ -213,7 +214,7 @@ export const data = [
       return (
         <>
           <p>
-            Following the end of our Typescript SDK audit with Cyraacs, we contacted them to obtain greybox and blackbox penetration testing service on publicly-hosted instances of our frontend application and API backends.
+            Following the end of our Typescript SDK audit with Cyraacs, we contacted them to obtain grey-box and black-box penetration testing service on publicly-hosted instances of our frontend application and API backends.
           </p>
           <p>
             <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>

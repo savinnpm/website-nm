@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { getFormattedDate } from '../../../helpers'
@@ -30,7 +31,7 @@ const Card = (props) => {
 }
 
 const Container = styled.a`
-  disply: block;
+  display: block;
   width: 592px;
   cursor: pointer;
 

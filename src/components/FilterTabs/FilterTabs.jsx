@@ -1,6 +1,10 @@
 import Link from 'next/link'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 
 export const FilterTabs = ({ filters, activeFilter, mapUrl = (x) => x }) => {
@@ -10,7 +14,7 @@ export const FilterTabs = ({ filters, activeFilter, mapUrl = (x) => x }) => {
         filters.map((f, i) => (
           <FilterItem
             key={i}
-            data-isactive={activeFilter === f.value}
+            data-is-active={activeFilter === f.value}
             href={mapUrl(f.value)}
             scroll={false}
           >
@@ -41,7 +45,7 @@ const FilterItem = styled(Link)`
 
   color: ${props => props.theme.isLightMode ? colors.gray[500] : colors.gray[300]};
   
-  &[data-isactive='true'] {
+  &[data-is-active='true'] {
     color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors.white};
     background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][50] : colors[primaryColorKey][700]};
   }

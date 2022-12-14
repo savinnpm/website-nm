@@ -1,16 +1,14 @@
-import styled from 'styled-components'
 import { useTranslation } from 'react-i18next'
+import styled from 'styled-components'
 
-import { typography } from '../../../styles/typography'
 import { colors } from '../../../styles/colors'
+import { typography } from '../../../styles/typography'
 import { utils } from '../../../styles/utils'
-
-import { Button } from '../../components/Button'
 import { Breadcrumbs } from '../../components/Breadcrumbs'
-import { TableOfContents } from '../../components/TableOfContents'
-import { Shareit } from '../../components/Shareit'
-
+import { Button } from '../../components/Button'
 import { HtmlContent } from '../../components/Content'
+import { SocialShare } from '../../components/SocialShare'
+import { TableOfContents } from '../../components/TableOfContents'
 
 const CareersDetail = (props) => {
   const { t } = useTranslation('careers-detail')
@@ -49,7 +47,7 @@ const CareersDetail = (props) => {
             <div>About this Vacancy</div>
           </AboutThisVacancy>
           <HtmlContent content={props.vacancy.description.html} />
-          <Shareit title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
+          <SocialShare title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />
 
           <ButtonContainer>
             <Button hierarchy='primary' as='a' target='_blank' href={props.vacancy.form} rel='noreferrer' size='lg' iconTrailing iconVariant='arrow-square-up-right'>

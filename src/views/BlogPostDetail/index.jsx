@@ -1,14 +1,13 @@
-
 import styled from 'styled-components'
 
 import { colors } from '../../../styles/colors'
 import { utils } from '../../../styles/utils'
-import { TableOfContents } from '../../components/TableOfContents'
+import { HtmlContent } from '../../components/Content'
 import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
-import { Shareit } from '../../components/Shareit'
+import { SocialShare } from '../../components/SocialShare'
+import { TableOfContents } from '../../components/TableOfContents'
 import { BlogHero } from './01-hero'
 import { RelatedPosts } from './03-related-posts'
-import { HtmlContent } from '../../components/Content'
 import { Tags } from './Tags'
 
 export const BlogPostDetail = (props) => {
@@ -28,7 +27,7 @@ export const BlogPostDetail = (props) => {
 
           <Tags tags={props.post.tags} />
 
-          <Shareit title={props.post.title} intro={props.post.intro} />
+          <SocialShare title={props.post.title} intro={props.post.intro} />
         </ContentWrapper>
       </MainWrapper>
 
