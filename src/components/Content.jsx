@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -6,11 +7,22 @@ import {
 } from '../../styles/colors'
 import { typography } from '../../styles/typography'
 import { utils } from '../../styles/utils'
+import { parseEmbeds } from '../helpers/embed'
 
 export const HtmlContent = ({ content }) => {
+  const ref = useRef()
+
+  useEffect(() => {
+    parseEmbeds(ref.current)
+
+    if (window.twttr) {
+      window.twttr.widgets.load()
+    }
+  }, [content])
+
   return (
     <Container>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div ref={ref} dangerouslySetInnerHTML={{ __html: content }} />
     </Container>
   )
 }

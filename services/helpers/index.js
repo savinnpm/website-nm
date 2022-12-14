@@ -91,17 +91,6 @@ const parseEmbeds = async ($ = cheerioLoad('', null, false)) => {
 
         $(elem).replaceWith(data.html)
       }
-
-      if (embedType === 'youtube') {
-        const dataStr = await request.get(oEmbed)
-        const data = JSON.parse(dataStr)
-
-        $(elem).replaceWith(data.html)
-      }
-
-      if (embedType === 'github') {
-        $(elem).replaceWith($(`<script src="${oEmbed}" />`))
-      }
     } catch (err) {
       // do something with `err`
       console.log('Failed: ', $(elem).attr('data-embed-type'))
