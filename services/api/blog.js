@@ -3,6 +3,7 @@ import { helpers } from '../helpers'
 import { storeLocally } from '../io/download'
 import { request } from '../http/request'
 import { mockData } from '../_mock_'
+import { getApiHeaders } from './config'
 
 export const BLOGS_PER_PAGE = 12
 export const filters = [
@@ -34,7 +35,7 @@ const getDocs = async () => {
   console.log('fetching all articles')
 
   if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}articles?limit=1000`)
+    const dataStr = await request.get(`${process.env.API_URL_PREFIX}articles?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs

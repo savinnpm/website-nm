@@ -1,3 +1,4 @@
+import { useRef, useEffect } from 'react'
 import styled from 'styled-components'
 
 import {
@@ -6,11 +7,22 @@ import {
 } from '../../styles/colors'
 import { typography } from '../../styles/typography'
 import { utils } from '../../styles/utils'
+import { parseEmbeds } from '../helpers/embed'
 
 export const HtmlContent = ({ content }) => {
+  const ref = useRef()
+
+  useEffect(() => {
+    parseEmbeds(ref.current)
+
+    if (window.twttr) {
+      window.twttr.widgets.load()
+    }
+  }, [content])
+
   return (
     <Container>
-      <div dangerouslySetInnerHTML={{ __html: content }} />
+      <div ref={ref} dangerouslySetInnerHTML={{ __html: content }} />
     </Container>
   )
 }
@@ -99,6 +111,21 @@ const Container = styled.div`
     margin-top: 0;
     padding-top: 0;
   }
+
+  iframe {
+    margin: 2rem 0;
+    width: 100%;
+    min-height: 400px;
+
+    @media (max-width: 768px) {
+      min-height: 300px;
+    }
+  }
+
+  /* External content */
+  .gist {width:100% !important;}
+  .gist-file
+  .gist-data {max-height: 100% !important; max-width: 100% !important;}
 
   /* Custom classes */
   h1, h2, h3, h4, h5, h6 {
@@ -220,13 +247,12 @@ const Container = styled.div`
   }
 
   /* Margin Elements */
-
-iframe,
-.kg-embed-card > div,
-.kg-embed-card > iframe,
-.kg-embed-card > .fb-post,
-.kg-embed-card > .twitter-tweet {
-   margin-right: auto !important;
-   margin-left: auto !important;
-}
+  iframe,
+  .kg-embed-card > div,
+  .kg-embed-card > iframe,
+  .kg-embed-card > .fb-post,
+  .kg-embed-card > .twitter-tweet {
+    margin-right: auto !important;
+    margin-left: auto !important;
+  }
 `

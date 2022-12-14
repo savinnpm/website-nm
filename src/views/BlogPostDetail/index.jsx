@@ -49,11 +49,9 @@ const MainWrapper = styled.div`
   gap: 64px;
   grid-template-columns: 4fr 9fr;
 
-
   @media (max-width: 1023px) {
-    grid-template-columns: 1fr;
-    
-    ${utils.fullWidthContainer};
+    display: flex;
+    flex-direction: column;
   }
 `
 
@@ -66,7 +64,7 @@ const Sidebar = styled.div`
   }
 `
 
-const ContentWrapper = styled.div`   
+const ContentWrapper = styled.div`
   img {
     height: auto;
     width: 100%;

@@ -35,7 +35,7 @@ export async function getStaticProps ({ locale, params }) {
   return {
     props: {
       ...(s),
-      relatedPosts: await services.getRelatedPressroomPosts(),
+      relatedPosts: await services.getRelatedPressroomPosts(params.slug),
       post: await services.getSinglePressroomPost(params.slug),
       videos: await services.getVideos(),
       pages: await services.getPages()

@@ -1,6 +1,6 @@
 const https = require('https')
 
-const get = (url) => {
+const get = (url, headers = {}) => {
   const urlObj = new URL(url)
 
   return new Promise(function (resolve, reject) {
@@ -9,7 +9,7 @@ const get = (url) => {
       hostname: urlObj.hostname,
       path: urlObj.pathname + urlObj.search,
       headers: {
-        Authorization: `Bearer ${process.env.API_AUTH_TOKEN}`
+        ...headers
       },
       maxRedirects: 20
     }

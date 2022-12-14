@@ -40,10 +40,8 @@ const MainWrapper = styled.div`
   grid-template-columns: 4fr 9fr;
 
   @media (max-width: 1023px) {
-    grid-template-columns: 1fr;
-    padding-bottom: 56px;
-    
-    ${utils.fullWidthContainer};
+    display: flex;
+    flex-direction: column;
   }
 `
 
