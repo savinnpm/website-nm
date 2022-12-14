@@ -116,6 +116,7 @@ const Li = styled.li`
 
     :hover{
       color: ${(props) => props.theme.secondaryColor};
+      text-decoration: none !important;
     }
   }
 
