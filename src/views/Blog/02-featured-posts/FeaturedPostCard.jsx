@@ -166,7 +166,8 @@ const Intro = styled.p`
   color: ${props => props.theme.secondaryColor};
   ${typography.styles.textSm};
   ${typography.weights.regular};
-
+  
+  --max-lines: 2;
   ${utils.maxLines};
 `
 
