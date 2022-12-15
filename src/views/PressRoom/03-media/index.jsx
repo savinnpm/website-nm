@@ -9,10 +9,8 @@ import styled from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import {
-  ArrowLeft,
-  ArrowRight
-} from '../../../components/Icon/variants/Arrows'
+import { Icon } from '../../../components/Icon'
+
 import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import { NewsCard } from './NewsCard'
 
@@ -23,15 +21,8 @@ export const Media = ({ news }) => {
   const isMobile = useMediaQuery('(max-width: 768px)')
   const isTablet = useMediaQuery('(max-width: 1023px)')
 
-  const handleArrowClick = dir => {
-    if (dir === 'left') {
-      sliderRef.current.slickPrev()
-    }
-
-    if (dir === 'right') {
-      sliderRef.current.slickNext()
-    }
-  }
+  const onPrev = () => sliderRef.current.slickPrev()
+  const onNext = () => sliderRef.current.slickNext()
 
   const settings = {
     dots: false,
@@ -86,17 +77,17 @@ export const Media = ({ news }) => {
         <ArrowsContainer>
           <ArrowButton
             disabled={prevButtonDisabled}
-            title='Left'
-            onClick={() => handleArrowClick('left')}
+            onClick={onPrev}
+            title='Previous'
           >
-            <ArrowLeft width='24' height='24' />
+            <Icon variant='arrow-left' size={24} />
           </ArrowButton>
           <ArrowButton
             disabled={nextButtonDisabled}
-            title='Right'
-            onClick={() => handleArrowClick('right')}
+            onClick={onNext}
+            title='Next'
           >
-            <ArrowRight width='24' height='24' />
+            <Icon variant='arrow-right' size={24} />
           </ArrowButton>
         </ArrowsContainer>
       </InnerContainer>

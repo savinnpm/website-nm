@@ -127,15 +127,11 @@ const ImageContainer = styled.div`
 
   img {
     object-position: center;
-    object-fit: cover;
+    object-fit: contain;
   }
 
   @media (max-width: 768px) {
     flex: 1 0 240px;
     height: 240px;
-
-    img {
-      object-fit: contain;
-    }
   }
 `
