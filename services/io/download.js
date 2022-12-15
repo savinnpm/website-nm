@@ -4,16 +4,26 @@ import path from 'path'
 import { ensureDirectory, exists } from '.'
 
 const download = function (url, dest, cb) {
-  const file = fs.createWriteStream(dest)
   const request = https.get(url, function (response) {
+    if (response.statusCode !== 200) {
+      return
+    }
+
+    const file = fs.createWriteStream(dest)
     response.pipe(file)
+
     file.on('finish', function () {
       file.close(() => cb(null)) // close() is async, call cb after close completes.
     })
   })
 
   request.on('error', function (err) { // Handle errors
-    fs.unlink(dest) // Delete the file async. (But we don't check the result)
+    // Delete the file async. (But we don't check the result)
+    fs.unlink(dest, (err) => {
+      console.warn('Could not delete')
+      cb(err)
+    })
+
     if (cb) cb(err)
   })
 }
