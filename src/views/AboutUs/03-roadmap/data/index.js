@@ -134,7 +134,7 @@ export const data = [
             When it comes to the validation and auditing of smart contracts, Blocksec is a well-known brand name. We entered into a contract with them to have them perform, over the period of almost two months, a full security review of the smart contracts that serve as the foundation of the Neptune Mutual protocol.
           </p>
           <p>
-            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
+            <Link href='/security'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -169,7 +169,7 @@ export const data = [
             The Cyraacs team was brought on board to perform security audit of the Neptune Mutual Typescript SDK.
           </p>
           <p>
-            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
+            <Link href='/security'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -188,7 +188,7 @@ export const data = [
             With this upgrade, cover pools can now be integrated into numerous baskets for enhanced capital efficiency and increased returns for liquidity providers. Due to the leverage element, diversified pools, unlike dedicated pools, do not have 1:1 liquidity.
           </p>
           <p>
-            <a target='_blank' href='https://test.neptunemutual.com/' title='View Testnet' rel='noreferrer'>View Testnet</a>
+            <a target='_blank' href='https://test.neptunemutual.com/' rel='noreferrer'>View Testnet</a>
           </p>
         </>
       )
@@ -201,7 +201,7 @@ export const data = [
         <>
           <p>We have always prioritized security from the beginning. We studied a number of audit firms, their adoption, and track records when looking for a new smart contract audit partner. The contribution of OpenZeppelin to open source has helped the whole Ethereum community, and their support paves the way for a more secure DeFi industry. We chose OpenZeppelin because of their track record, outstanding reputation, and commitment to the Ethereum ecosystem.</p>
           <p>
-            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
+            <Link href='/security'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -216,7 +216,7 @@ export const data = [
             Following the end of our Typescript SDK audit with Cyraacs, we contacted them to obtain grey-box and black-box penetration testing service on publicly-hosted instances of our frontend application and API backends.
           </p>
           <p>
-            <Link href='/security' title='View Audit Reports'>View Audit Reports</Link>
+            <Link href='/security'>View Audit Reports</Link>
           </p>
         </>
       )
@@ -232,7 +232,7 @@ export const data = [
             The Neptune Mutual protocol was launched on the Ethereum mainnet after the completion of an extensive internal security audit.
           </p>
           <p>
-            <a target='_blank' href='https://app.neptunemutual.com/' title='View Marketplace' rel='noreferrer'>View Marketplace</a>
+            <a target='_blank' href='https://app.neptunemutual.com/' rel='noreferrer'>View Marketplace</a>
           </p>
         </>
       )
@@ -281,7 +281,7 @@ export const data = [
             We listed Binance, one of the biggest and most popular exchange, on our marketplace. Binance exchange custody has been deployed as a dedicated standalone cover. A dedicated cover pool always has at least 1:1 or more liquidity available than policies underwritten.
           </p>
           <p>
-            <a target='_blank' href='https://app.neptunemutual.com/covers/binance/purchase' title='Purchase Binance Policy' rel='noreferrer'>Purchase Binance Policy</a>
+            <a target='_blank' href='https://app.neptunemutual.com/covers/binance/purchase' rel='noreferrer'>Purchase Binance Policy</a>
           </p>
         </>
       )

@@ -72,7 +72,7 @@ const Content = styled.div`
 `
 
 const Subheader = styled.span`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
   margin-bottom: 12px;
@@ -126,7 +126,7 @@ const Overlay = styled.div`
   }
 `
 
-const VideoContainer = styled.button`
+const VideoContainer = styled.div`
   width: 887px;
   height: 499px;
   
