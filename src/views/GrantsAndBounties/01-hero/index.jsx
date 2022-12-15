@@ -15,7 +15,7 @@ export const Hero = () => {
         </div>
 
         <ImageContainer>
-          <img src='/assets/images/hero/grants-hero.webp' alt='Grants and Bounties hero image' />
+          <img src='/assets/images/hero/grants-hero.webp' alt='@todo' />
         </ImageContainer>
       </InnerContainer>
     </Container>

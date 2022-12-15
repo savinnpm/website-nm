@@ -37,7 +37,7 @@ export const NftCollection = () => {
         <ImageContainer>
           <Image
             src='/assets/images/nft/promo.webp'
-            alt='nft collection'
+            alt='@todo'
             fill
             sizes='(max-width: 768px) 100vw, 1280px'
             placeholder='blur'

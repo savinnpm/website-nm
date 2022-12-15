@@ -4,6 +4,7 @@ import { useRouter } from 'next/router'
 import { useTranslation } from 'react-i18next'
 import { services } from '../services'
 import { getFQDN } from '../src/helpers'
+import { NotFound } from '../src/views/NotFound'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', '404'])
@@ -47,7 +48,7 @@ export default function NotFoundPage () {
       </Head>
 
       <main>
-        Page Not Found
+        <NotFound />
       </main>
     </>
   )

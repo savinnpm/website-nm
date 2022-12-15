@@ -9,7 +9,7 @@ import { getBlurDataURL } from '../../../helpers/images'
 
 export const NewsCard = ({ newsItem }) => {
   return (
-    <Container href={newsItem.link} target='_blank' rel='noreferrer nofollow'>
+    <Container>
       <ImageContainer>
         <Image
           src={`${newsItem.image}`}
@@ -23,7 +23,9 @@ export const NewsCard = ({ newsItem }) => {
 
       <Time itemprop='published' datetime={newsItem.date}>{getFormattedDate(new Date(newsItem.date).toString())}</Time>
 
-      <Title>{newsItem.title}</Title>
+      <TitleContainer href={newsItem.link} target='_blank' rel='noreferrer nofollow'>
+        <Title>{newsItem.title}</Title>
+      </TitleContainer>
 
       <TagsContainer>
         <Tag tag={{ color: newsItem.press.badge }}>
@@ -34,7 +36,7 @@ export const NewsCard = ({ newsItem }) => {
   )
 }
 
-const Container = styled(Link)`
+const Container = styled.div`
   display: block;
   text-align: left;
 `
@@ -46,6 +48,10 @@ const ImageContainer = styled.div`
   img {
     object-fit: cover;
   }
+
+  @media (max-width: 768px) {
+    height: 200px;
+  }
 `
 
 const Time = styled.time`
@@ -54,6 +60,10 @@ const Time = styled.time`
   ${typography.styles.textSm};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `
 
 const Title = styled.h3`
@@ -66,6 +76,9 @@ const Title = styled.h3`
   ${utils.maxLines};
 `
 
+const TitleContainer = styled(Link)`
+`
+
 const TagsContainer = styled.div`
   margin-top: 24px;
 
@@ -73,7 +86,7 @@ const TagsContainer = styled.div`
   flex-wrap: wrap;
 `
 
-export const Tag = styled.div`
+const Tag = styled.div`
   display: inline-flex;
   padding: 2px 10px;
   border-radius: 9999px;

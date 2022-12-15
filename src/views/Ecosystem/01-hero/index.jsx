@@ -33,7 +33,7 @@ export const Hero = () => {
         <ImageContainer>
           <Image
             src='/assets/images/hero/ecosystem.png'
-            alt='ecosystem'
+            alt='@todo'
             fill
             sizes='(max-width: 768px) 100vw, 1280px'
             placeholder='blur'

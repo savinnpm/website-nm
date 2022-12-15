@@ -25,7 +25,7 @@ const Hero = () => {
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image alt='Shield' src='/assets/images/hero/shield.png' width={300} height={300} />
+          <Image alt='@todo' src='/assets/images/hero/shield.png' width={300} height={300} />
         </ImageContainer>
 
       </InnerContainer>
