@@ -31,28 +31,28 @@ const Details = ({ name, title, links, isMobile }) => (
     <LinksContainer>
       {
         links.linkedIn && (
-          <a href={links.linkedIn} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.linkedIn} title={`${name} LinkedIn`} target='_blank' rel='nofollow noreferrer'>
             <LinkedIn width='16' height='16' />
           </a>
         )
       }
       {
         links.twitter && (
-          <a href={links.twitter} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.twitter} target='_blank' title={`${name} Twitter`} rel='nofollow noreferrer'>
             <Twitter width='16' height='16' />
           </a>
         )
       }
       {
         links.medium && (
-          <a href={links.medium} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.medium} target='_blank' title={`${name} Medium`} rel='nofollow noreferrer'>
             <Medium width='16' height='16' />
           </a>
         )
       }
       {
         links.facebook && (
-          <a href={links.facebook} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.facebook} target='_blank' title={`${name} Facebook`} rel='nofollow noreferrer'>
             <Facebook width='16' height='16' />
           </a>
         )
