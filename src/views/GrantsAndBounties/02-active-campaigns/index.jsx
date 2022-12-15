@@ -107,6 +107,11 @@ const Container = styled.div`
   padding-top: 96px;
   padding-bottom: 96px;
   ${utils.fullWidthContainer}
+
+  @media screen and (max-width: 768px) {
+    padding-top: 64px;;
+    padding-bottom: 48px;
+  }
 `
 
 const HeaderContainer = styled.div`
