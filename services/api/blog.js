@@ -155,15 +155,10 @@ export const getBlogPostTagSlugs = async () => {
   try {
     const docs = await getDocs()
 
-    const slugs = []
+    const allTags = docs.map((doc) => doc.tags || []).flat()
+    const uniqueTags = [...new Map(allTags.map((item) => [item.id, item])).values()]
 
-    docs.map((doc) => doc.tags || []).forEach(tags => {
-      tags.forEach(tag => {
-        slugs.push(tag.slug)
-      })
-    })
-
-    return [...(new Set(slugs))]
+    return uniqueTags
   } catch (error) {
     console.error(error)
   }
@@ -177,17 +172,25 @@ export const getBlogPostTagsData = async () => {
   const result = []
 
   for (let i = 0; i < tagSlugs.length; i++) {
-    const tagSlug = tagSlugs[i]
+    const tagSlug = tagSlugs[i].slug
+    const tagName = tagSlugs[i].name
     const firstPageData = await getBlogPaginatedData(tagSlug, 0)
 
     result.push({
       slug: tagSlug,
+      name: tagName,
       totalPages: firstPageData.totalPages,
       totalPosts: firstPageData.totalPosts
     })
   }
 
   return result
+}
+
+export const getBlogPostTagDataBySlug = async (tagSlug) => {
+  const data = await getBlogPostTagsData()
+
+  return data.find(x => x.slug === tagSlug)
 }
 
 export const getBlogPaginatedData = async (tagSlug, pageIndex) => {

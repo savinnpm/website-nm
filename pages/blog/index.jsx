@@ -19,7 +19,6 @@ export async function getStaticProps ({ locale }) {
       featuredPosts,
       blogPosts: filteredPosts.posts,
       totalPages: filteredPosts.totalPages,
-      filter: 'all',
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -58,7 +57,6 @@ export default function BlogPage (props) {
         <Blog
           featuredPosts={props.featuredPosts}
           blogPosts={props.blogPosts}
-          filter={props.filter}
           totalPages={props.totalPages}
           page={0}
         />

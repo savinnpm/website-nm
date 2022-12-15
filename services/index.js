@@ -6,6 +6,7 @@ import {
   getBlogPostTagSlugs,
   getBlogPaginatedData,
   getBlogPostTagsData,
+  getBlogPostTagDataBySlug,
   getSinglePost,
   getFeaturedPosts
 } from './api/blog'
@@ -26,6 +27,7 @@ export const services = {
   getBlogPostTagSlugs,
   getBlogPaginatedData,
   getBlogPostTagsData,
+  getBlogPostTagDataBySlug,
   getSinglePost,
   getFeaturedPosts,
   getPressroomPosts,

@@ -28,7 +28,7 @@ const filters = [
   }
 ]
 
-export const RecentPosts = ({ blogPosts, page, totalPages, filter }) => {
+export const RecentPosts = ({ blogPosts, page, totalPages, tag }) => {
   const router = useRouter()
 
   const handleFilterChange = option => {
@@ -62,32 +62,22 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter }) => {
     router.push(queryString, undefined, { scroll: false })
   }
 
-  const getHeadingToShow = () => {
-    const currentTab = filters.find((tag) => tag.value === filter)
-
-    if (!currentTab) {
-      return ''
-    }
-
-    if (currentTab.text === 'All') {
-      return 'Recent Posts'
-    }
-    return currentTab.text
-  }
+  const activeFilter = tag?.slug || 'all'
+  const heading = tag?.name || 'Recent Posts'
 
   return (
     <Container>
       <InnerContainer>
         <FilterTabs
           filters={filters}
-          activeFilter={filter}
-          mapUrl={slug => `/blog/tag/${slug}`}
+          activeFilter={activeFilter}
+          mapUrl={slug => slug === 'all' ? '/blog' : `/blog/tag/${slug}`}
         />
 
         <FilterMobileContainer>
           <Filter
             options={filters.map(f => f.value)}
-            selectedOption={filters.map(f => f.value).includes(filter) ? filter : undefined}
+            selectedOption={filters.map(f => f.value).includes(activeFilter) ? activeFilter : undefined}
             getOptionText={x => filters.find(f => f.value === x).text}
             setSelectedOption={handleFilterChange}
           />
@@ -95,7 +85,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter }) => {
 
         <TextAndCta>
           <TextContainer>
-            <Heading>{getHeadingToShow()}</Heading>
+            <Heading>{heading}</Heading>
           </TextContainer>
         </TextAndCta>
         <BlogsContainer>

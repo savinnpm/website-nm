@@ -10,9 +10,6 @@ import { Home } from '../src/views/Home'
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'home'])
 
-  const tagsData = await services.getBlogPostTagsData()
-  console.log(tagsData)
-
   return {
     props: {
       ...(s),

@@ -14,7 +14,7 @@ export const Tags = ({ tags }) => {
       <TagsContainer>
         {
           tags.map((tag, i) => (
-            <Tag key={i} tag={tag} href={tag.slug}>{tag.name}</Tag>
+            <Tag key={i} tag={tag} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
           ))
         }
       </TagsContainer>

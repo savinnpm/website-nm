@@ -47,7 +47,7 @@ export async function getStaticProps ({ locale, params }) {
       featuredPosts,
       blogPosts: data.posts,
       totalPages: data.totalPages,
-      filter: params.slug,
+      tag: await services.getBlogPostTagDataBySlug(params.slug),
       page: parseInt(params.num - 1),
       videos: await services.getVideos(),
       pages: await services.getPages(),
@@ -87,10 +87,9 @@ export default function FilteredAndPaginatedBlogPage (props) {
         <Blog
           featuredPosts={props.featuredPosts}
           blogPosts={props.blogPosts}
-          filter={props.filter}
+          tag={props.tag}
           totalPages={props.totalPages}
           page={props.page}
-          filters={props.filters}
         />
       </main>
     </>
