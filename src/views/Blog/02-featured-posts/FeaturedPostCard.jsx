@@ -85,10 +85,10 @@ const Container = styled.div`
     }
   }
   
-  // if screen size is below 860px
-  @media (max-width: 860px) {
+  // if screen size is below 768px
+  @media (max-width: 768px) {
     flex-direction: column;
-    gap: 21px;
+    gap: 20px;
 
     --max-lines: 2;
   }
@@ -114,6 +114,10 @@ const ImageContainer = styled.div`
   position: relative;
   min-height: 200px;
   width: 320px;
+
+  @media (max-width: 1024px) {
+    width: auto;
+  }
   
   ${Container}:nth-of-type(1) > & {
     height: 240px;
@@ -121,6 +125,10 @@ const ImageContainer = styled.div`
     
     @media (max-width: 1280px) {
       width: 100%;
+    }
+
+    @media (max-width: 1024px) {
+      width: auto;
     }
   }
   
