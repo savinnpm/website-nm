@@ -74,13 +74,15 @@ const Nav = styled.nav`
   flex-direction: column;
   --gap: 32px;
   flex: 1;
-  max-width: 768px;
+  max-width: 767px;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: var(--gap);
 
-  @media (min-width: 1024px) {
-    flex-direction: row;
+  flex-direction: row;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
   }
 `
 

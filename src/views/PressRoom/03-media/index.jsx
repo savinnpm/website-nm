@@ -1,19 +1,27 @@
-import { useRef, useState } from 'react'
+import {
+  useRef,
+  useState
+} from 'react'
+
 import Slider from 'react-slick'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { NewsCard } from './NewsCard'
-import { ArrowLeft, ArrowRight } from '../../../components/Icon/variants/Arrows'
+import {
+  ArrowLeft,
+  ArrowRight
+} from '../../../components/Icon/variants/Arrows'
 import { useMediaQuery } from '../../../hooks/useMediaQuery'
+import { NewsCard } from './NewsCard'
 
 export const Media = ({ news }) => {
   const sliderRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
   const isMobile = useMediaQuery('(max-width: 768px)')
-  const isTablet = useMediaQuery('(max-width: 1024px)')
+  const isTablet = useMediaQuery('(max-width: 1023px)')
 
   const handleArrowClick = dir => {
     if (dir === 'left') {

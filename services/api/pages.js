@@ -31,6 +31,7 @@ const transformDoc = async (doc) => {
     id: doc.id,
     title: doc.title,
     slug: doc.slug,
+    sort: doc.sort,
     category: doc.category,
     content: {
       html: parsedHtml.updated,
@@ -60,6 +61,7 @@ export const getPages = async () => {
         return {
           slug: x.slug,
           title: x.title,
+          sort: x.sort,
           id: x.id
         }
       })

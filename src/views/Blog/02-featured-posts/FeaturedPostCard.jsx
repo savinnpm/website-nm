@@ -49,9 +49,7 @@ const Container = styled.div`
     }
   }
   
-  // if container is a first child
   &:nth-of-type(1) {
-    // if first child & screen size is above 1024px
     @media (min-width: 1024px) {
       grid-row-start: 1;
       grid-row-end: 3;
@@ -80,8 +78,7 @@ const Container = styled.div`
 
   }
   
-  // if screen size is below 1024px
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     // change font style of <Title> component of 2nd/3rd children
     & > div:nth-of-type(2) h3 {
       ${typography.styles.textLg};
@@ -115,7 +112,7 @@ const Contents = styled.div`
 
 const ImageContainer = styled.div`
   position: relative;
-  min-height: 240px;
+  min-height: 200px;
   width: 320px;
   
   ${Container}:nth-of-type(1) > & {
@@ -126,15 +123,6 @@ const ImageContainer = styled.div`
       width: 100%;
     }
   }
-
-  @media (max-width: 1024px) {
-    width: 100%;
-    flex-basis: 50%;
-  }
-
-  @media (max-width: 768px) {
-    min-height: 240px;
-  }
   
   img {
     object-fit: cover;
@@ -143,9 +131,7 @@ const ImageContainer = styled.div`
     @media (max-width: 1024px) {
         height: 240px !important;
     }
-  }
-
-  
+  }  
 `
 
 const Time = styled.time`
@@ -171,6 +157,7 @@ const Intro = styled.p`
   --max-lines: 2;
   ${utils.maxLines};
 `
+
 const TagsContainer = styled.div`
   margin-top: 24px;
 

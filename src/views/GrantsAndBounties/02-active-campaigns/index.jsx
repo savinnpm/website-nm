@@ -144,7 +144,7 @@ const ProgramContainer = styled.div`
     margin-top: 32px;
   }
   
-  @media screen and (max-width: 1024px) {
+  @media screen and (max-width: 1023px) {
     width: auto;
     margin-top: 48px;
 
