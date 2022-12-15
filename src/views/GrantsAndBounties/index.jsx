@@ -9,7 +9,7 @@ export const GrantsAndBounties = ({ programs }) => {
 
       <ActiveCampaigns programs={programs} />
 
-      <NewsletterSignupForm paddingTop />
+      <NewsletterSignupForm paddingTop='48px' />
     </>
   )
 }
