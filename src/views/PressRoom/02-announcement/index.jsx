@@ -78,7 +78,7 @@ const Articles = styled.div`
   margin-top: 32px;
 
   img {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   @media (max-width: 1280px) {
@@ -97,16 +97,6 @@ const Articles = styled.div`
       object-fit: cover;
     }
 
-  }
-
-  a:nth-of-type(-n+2){
-    margin-bottom: 18px;
-    padding-bottom: 18px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
   }
 `
 

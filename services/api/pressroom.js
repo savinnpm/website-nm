@@ -5,9 +5,9 @@ import { request } from '../http/request'
 import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
 
-let docs = null
+const POSTS_PER_PAGE = 4
 
-export const filters = []
+let docs = null
 
 const getDocs = async () => {
   if (docs) {
@@ -31,32 +31,52 @@ const getValidColorKey = (colorKey) => {
   return Object.keys(colors).filter(x => x !== 'white' && x !== 'black').includes(colorKey) ? colorKey : primaryColorKey
 }
 
-const getTotalPageCount = (posts, itemPerPage) => {
-  const actualDividend = parseInt(posts.length / itemPerPage)
-  if (posts.length % itemPerPage === 0) {
-    return actualDividend
-  }
-
-  return actualDividend + 1
-}
-
-export const getPressroomPosts = async () => {
+// For article cards
+const getMetaData = async (docs) => {
   try {
-    const docs = await getDocs()
-
     const result = await Promise.allSettled(docs.map(async (doc) => {
       return {
         id: doc.id,
         title: doc.title,
+        // featured: doc.featured,
         image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
+        tags: doc.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) }))
       }
     }))
 
-    return result.map(x => x.value).sort((a, b) => {
+    return result.map(x => x.value)
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
+const getTagSlugs = async () => {
+  try {
+    const docs = await getDocs()
+
+    const allTags = docs.map((doc) => doc.tags || []).flat()
+    const uniqueTags = [...new Map(allTags.map((item) => [item.id, item])).values()]
+
+    return uniqueTags
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
+export const getAllPosts = async () => {
+  try {
+    const docs = await getDocs()
+
+    const result = await getMetaData(docs)
+
+    return result.sort((a, b) => {
       return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
     })
   } catch (error) {
@@ -66,48 +86,17 @@ export const getPressroomPosts = async () => {
   return []
 }
 
-export const getPressroomLatestPost = async () => {
-  const docs = await getPressroomPosts()
+export const getRelatedPosts = async (tags, postSlug) => {
+  const docs = await getDocs()
 
-  return docs[0]
+  const relatedDocs = docs.filter(doc => {
+    return (doc.tags || []).map(tag => tag.slug).includes(tags[0]?.slug || '')
+  }).filter(doc => doc.slug !== postSlug).slice(0, 3)
+
+  return getMetaData(relatedDocs)
 }
 
-export const getFilteredPressroomPosts = async (filter = 'all', page, itemPerPage = 4) => {
-  let filteredPosts = []; let totalLength
-
-  try {
-    const docs = await getPressroomPosts()
-    filteredPosts = docs
-
-    const _filter = filters.find(f => f.value === filter)
-    if (filter !== 'all' && _filter) {
-      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
-    }
-
-    totalLength = getTotalPageCount(filteredPosts, itemPerPage)
-
-    if (page >= 0) {
-      filteredPosts = filteredPosts.slice(page * itemPerPage, itemPerPage + page * itemPerPage)
-    } else {
-      filteredPosts = filteredPosts.slice(0, itemPerPage)
-    }
-  } catch (error) {
-    console.error(error)
-  }
-
-  return {
-    posts: filteredPosts,
-    total: totalLength
-  }
-}
-
-export const getRelatedPressroomPosts = async (slug) => {
-  const allPosts = await getPressroomPosts()
-
-  return allPosts.filter(x => x.slug !== slug).slice(0, 3)
-}
-
-export const getSinglePressroomPost = async (slug) => {
+export const getSinglePost = async (slug) => {
   try {
     const docs = await getDocs()
 
@@ -119,11 +108,12 @@ export const getSinglePressroomPost = async (slug) => {
     return {
       id: match.id,
       title: match.title,
+      // featured: match.featured,
       image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
-      tags: match.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) })),
+      tags: match.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) })),
       meta: {
         title: match?.meta?.title || match.title || '',
         description: match?.meta?.description || match.intro.replace('&hellip;', '') || '',
@@ -145,7 +135,7 @@ export const getSinglePressroomPost = async (slug) => {
   return []
 }
 
-export const getPressroomPostsSlugs = async () => {
+export const getPostsSlugs = async () => {
   try {
     const docs = await getDocs()
 
@@ -157,4 +147,57 @@ export const getPressroomPostsSlugs = async () => {
   }
 
   return []
+}
+
+export const getTagsData = async () => {
+  const tagSlugs = await getTagSlugs()
+
+  const result = []
+
+  for (let i = 0; i < tagSlugs.length; i++) {
+    const tagSlug = tagSlugs[i].slug
+    const tagName = tagSlugs[i].name
+    const firstPageData = await getPaginatedData(tagSlug, 0)
+
+    result.push({
+      slug: tagSlug,
+      name: tagName,
+      totalPages: firstPageData.totalPages,
+      totalPosts: firstPageData.totalPosts
+    })
+  }
+
+  return result
+}
+
+export const getTagDataBySlug = async (tagSlug) => {
+  const data = await getTagsData()
+
+  return data.find(x => x.slug === tagSlug)
+}
+
+// When tag slug is empty return all posts
+export const getPaginatedData = async (tagSlug, pageIndex) => {
+  const allPosts = await getDocs()
+
+  let postsByTag = allPosts
+
+  if (tagSlug) {
+    postsByTag = allPosts.filter(post => {
+      const matchedTag = post.tags.find(tag => tag.slug === tagSlug)
+      return matchedTag
+    })
+  }
+
+  pageIndex = pageIndex || 0
+
+  const total = postsByTag.length
+
+  const sliced = postsByTag.slice(pageIndex * POSTS_PER_PAGE, (pageIndex + 1) * POSTS_PER_PAGE)
+
+  return {
+    posts: await getMetaData(sliced),
+    totalPosts: total,
+    totalPages: Math.ceil(total / POSTS_PER_PAGE)
+  }
 }

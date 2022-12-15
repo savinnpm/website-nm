@@ -55,6 +55,21 @@ const getMetaData = async (docs) => {
   return []
 }
 
+const getBlogPostTagSlugs = async () => {
+  try {
+    const docs = await getDocs()
+
+    const allTags = docs.map((doc) => doc.tags || []).flat()
+    const uniqueTags = [...new Map(allTags.map((item) => [item.id, item])).values()]
+
+    return uniqueTags
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
 export const getLatestBlogPosts = async () => {
   try {
     const docs = await getDocs()
@@ -70,6 +85,15 @@ export const getLatestBlogPosts = async () => {
   }
 
   return []
+}
+
+export const getFeaturedPosts = async () => {
+  const docs = await getDocs()
+  const featuredDocs = docs.filter(x => x.featured)
+
+  const sliced = featuredDocs.slice(0, 3)
+  const result = await getMetaData(sliced)
+  return result
 }
 
 export const getAllBlogPosts = async () => {
@@ -117,8 +141,8 @@ export const getSinglePost = async (slug) => {
       date: match.updatedAt || match.createdAt,
       tags: match.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) })),
       meta: {
-        title: match.meta.title,
-        description: match.meta.description,
+        title: match?.meta?.title || match.title || '',
+        description: match?.meta?.description || match.intro.replace('&hellip;', '') || '',
         image: {
           src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
@@ -144,21 +168,6 @@ export const getPostsSlugs = async () => {
     const result = docs.map((doc) => doc.slug).filter(x => !!x)
 
     return result
-  } catch (error) {
-    console.error(error)
-  }
-
-  return []
-}
-
-export const getBlogPostTagSlugs = async () => {
-  try {
-    const docs = await getDocs()
-
-    const allTags = docs.map((doc) => doc.tags || []).flat()
-    const uniqueTags = [...new Map(allTags.map((item) => [item.id, item])).values()]
-
-    return uniqueTags
   } catch (error) {
     console.error(error)
   }
@@ -193,6 +202,7 @@ export const getBlogPostTagDataBySlug = async (tagSlug) => {
   return data.find(x => x.slug === tagSlug)
 }
 
+// When tag slug is empty return all posts
 export const getBlogPaginatedData = async (tagSlug, pageIndex) => {
   const allPosts = await getDocs()
 
@@ -216,13 +226,4 @@ export const getBlogPaginatedData = async (tagSlug, pageIndex) => {
     totalPosts: total,
     totalPages: Math.ceil(total / POSTS_PER_PAGE)
   }
-}
-
-export const getFeaturedPosts = async () => {
-  const docs = await getDocs()
-  const featuredDocs = docs.filter(x => x.featured)
-
-  const sliced = featuredDocs.slice(0, 3)
-  const result = await getMetaData(sliced)
-  return result
 }

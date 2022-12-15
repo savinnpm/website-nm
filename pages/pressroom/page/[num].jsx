@@ -9,22 +9,22 @@ import { services } from '../../../services'
 import { PressRoom } from '../../../src/views/PressRoom'
 
 export async function getStaticPaths ({ locales }) {
-  // const pages = await services.getFilteredPostPages()
+  const data = await services.pressroom.getPaginatedData(null, 0)
 
-  console.log(locales)
+  const pageNumbers = new Array(data.totalPages).fill(1).map((_, idx) => idx + 1)
 
   const paths = []
 
-  // locales.forEach(locale => {
-  //   pages.forEach(page => {
-  //     paths.push({
-  //       locale,
-  //       params: {
-  //         num: page
-  //       }
-  //     })
-  //   })
-  // })
+  locales.forEach(locale => {
+    pageNumbers.forEach(pageNum => {
+      paths.push({
+        locale,
+        params: {
+          num: pageNum.toString()
+        }
+      })
+    })
+  })
 
   return {
     paths,
@@ -34,19 +34,18 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-  const pressRoom = await services.getFilteredPressroomPosts(undefined, parseInt(params.num - 1))
+  const data = await services.pressroom.getPaginatedData(null, parseInt(params.num - 1))
 
   return {
     props: {
       ...(s),
       news: await services.getNews(),
-      pressRoomPosts: pressRoom.posts,
-      pressRoomPostsTotal: pressRoom.total,
-      pressRoomPage: parseInt(params.num - 1),
+      posts: data.posts,
+      totalPages: data.totalPages,
+      page: parseInt(params.num - 1),
       videos: await services.getVideos(),
       pages: await services.getPages(),
-      headerStyle: 'colored',
-      ...params
+      headerStyle: 'colored'
       // Will be passed to the page component as props
     }
   }
@@ -80,9 +79,9 @@ export default function PressPage (props) {
       <main>
         <PressRoom
           news={props.news}
-          pressRoomPosts={props.pressRoomPosts}
-          pressRoomPostsTotal={props.pressRoomPostsTotal}
-          pressRoomPage={props.pressRoomPage}
+          pressRoomPosts={props.posts}
+          pressRoomPostsTotal={props.totalPages}
+          page={props.page}
         />
       </main>
     </>

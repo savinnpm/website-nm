@@ -10,14 +10,14 @@ import { PressRoom } from '../../src/views/PressRoom'
 
 export async function getStaticProps ({ locale }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-  const pressRoom = await services.getFilteredPressroomPosts()
+  const filteredPosts = await services.pressroom.getPaginatedData(null, 0)
+
   return {
     props: {
       ...(s),
       news: await services.getNews(),
-      pressRoomPosts: pressRoom.posts,
-      pressRoomPostsTotal: pressRoom.total,
-      pressRoomPage: 0,
+      pressRoomPosts: filteredPosts.posts,
+      pressRoomPostsTotal: filteredPosts.totalPages,
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -56,7 +56,7 @@ export default function PressPage (props) {
           news={props.news}
           pressRoomPosts={props.pressRoomPosts}
           pressRoomPostsTotal={props.pressRoomPostsTotal}
-          pressRoomPage={props.pressRoomPage}
+          page={0}
         />
       </main>
     </>
