@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../styles/colors'
+import { colors } from '../../styles/colors'
 import { typography } from '../../styles/typography'
 import { utils } from '../../styles/utils'
 import { getFormattedDate } from '../helpers'
 import { getBlurDataURL } from '../helpers/images'
+import { Tag } from './Tag'
 
 export const ArticleCard = ({ post, type = 'blog' }) => {
   return (
@@ -31,7 +32,7 @@ export const ArticleCard = ({ post, type = 'blog' }) => {
 
       <TagsContainer>
         {post.tags.slice(0, 1).map((tag) => (
-          <Tag key={tag.name} tag={tag} href={`/${type}/tag/${tag.slug}`}>{tag.name}</Tag>
+          <Tag key={tag.name} color={tag.color} href={`/${type}/tag/${tag.slug}`}>{tag.name}</Tag>
         ))}
       </TagsContainer>
     </Container>
@@ -91,18 +92,4 @@ const TagsContainer = styled.div`
 
   display: flex;
   flex-wrap: wrap;
-`
-
-export const Tag = styled(Link)`
-  display: inline-flex;
-  padding: 2px 10px;
-  border-radius: 9999px;
-  background-color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['50'] : colors.gray['700']};
-  color: ${props => props.theme.isLightMode ? colors[props.tag.color || primaryColorKey]['700'] : colors[props.tag.color || primaryColorKey]['400']};
-
-  min-width: 0;
-
-  ${typography.styles.textSm};
-  ${typography.weights.medium};
-  ${utils.ellipsis};
 `

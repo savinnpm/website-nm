@@ -7,7 +7,7 @@ import {
 } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { Tag } from '../../../components/ArticleCard'
+import { Tag } from '../../../components/Tag'
 import { getFormattedDate } from '../../../helpers'
 
 export const FeaturedPostCard = ({ post }) => {
@@ -28,7 +28,7 @@ export const FeaturedPostCard = ({ post }) => {
 
         <TagsContainer>
           {post.tags.slice(0, 1).map((tag) => (
-            <Tag key={tag.name} tag={tag} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
+            <Tag key={tag.name} color={tag.color} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
           ))}
         </TagsContainer>
       </Contents>
