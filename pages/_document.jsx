@@ -43,7 +43,7 @@ export default class MyDocument extends Document {
           <meta name='msapplication-TileImage' content='/assets/images/meta/icons/ms-icon-144x144.webp' />
           <meta name='theme-color' content='#01052D' />
 
-          <script defer async='' src='https://platform.twitter.com/widgets.js' charset='utf-8' />
+          <script defer async='' src='https://platform.twitter.com/widgets.js' />
         </Head>
         <body>
           <Main />
