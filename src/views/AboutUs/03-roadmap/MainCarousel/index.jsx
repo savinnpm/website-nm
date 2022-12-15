@@ -59,9 +59,10 @@ export const MainCarousel = () => {
       {
         breakpoint: 768,
         settings: {
-          swipeToSlide: false,
-          swipe: false,
-          touchMove: false,
+          // @todo: check for usability problem, we can slide and click on same thing
+          // swipeToSlide: false,
+          // swipe: false,
+          // touchMove: false,
           slidesToShow: 3,
           slidesToScroll: 3
         }
