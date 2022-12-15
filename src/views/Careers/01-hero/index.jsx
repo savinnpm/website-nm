@@ -16,7 +16,9 @@ const Hero = () => {
       <InnerContainer>
         <Content>
           <H1>
-            <Subheading>{t('Careers')}</Subheading>
+            <SubheadingWithBadge>
+              <Subheading>{t('Careers')}</Subheading><Badge>{t("We're Hiring!")}</Badge>
+            </SubheadingWithBadge>
             <HeaderTitle>{t('Interested in Pursuing a Career with Neptune Mutual?')}</HeaderTitle>
           </H1>
           <HeaderContent>
@@ -41,6 +43,21 @@ const Hero = () => {
 }
 
 const H1 = styled.h1``
+
+const SubheadingWithBadge = styled.div`
+  display: inline-flex;
+  justify-content: flex-start;
+`
+
+const Badge = styled.div`
+  ${typography.styles.textSm};
+  ${typography.weights.medium};
+  color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
+  background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
+  padding: 2px 10px;
+  border-radius: 16px;
+  margin-left: 8px;
+`
 
 const Container = styled.div`
   background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['25'] : colors.gray['900']};
