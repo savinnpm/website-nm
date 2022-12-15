@@ -14,11 +14,10 @@ export const Hero = () => {
       <InnerContainer>
         <Text>
           <Heading>{t('Neptune Mutual Press Room')}</Heading>
-          <Subtitle>{t('Together, let&apos;s build a safer Ethereum DeFi ecosystem for everyone by decentralizing and democratizing crypto-native insurance.')}</Subtitle>
+          <Subtitle>{t('Together, let’s build a safer Ethereum DeFi ecosystem for everyone by decentralizing and democratizing crypto-native insurance.')}</Subtitle>
         </Text>
 
         <FormContainer>
-
           <Button
             hierarchy='secondary'
             size='xl'
@@ -26,7 +25,8 @@ export const Hero = () => {
             target='_blank'
             href='https://docs.neptunemutual.com/usage/brand-assets'
             rel='nofollow noopener noreferrer'
-          >Download Press Kit
+          >
+            {t('Download Press Kit')}
           </Button>
           <Button
             hierarchy='primary'
@@ -34,7 +34,7 @@ export const Hero = () => {
             as={Link}
             href='/contact'
           >
-            Media Inquiries
+            {t('Media Inquiries')}
           </Button>
         </FormContainer>
 
@@ -105,6 +105,6 @@ const FormContainer = styled.div`
   gap:12px;
 
   @media (max-width: 768px) {
-    flex-wrap: wrap;
+    flex-direction: column;
   }
 `

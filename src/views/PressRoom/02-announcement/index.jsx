@@ -72,31 +72,16 @@ const Container = styled.div`
 `
 
 const Articles = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
   gap: 32px;
   margin-top: 32px;
-
-  img {
-    object-fit: cover;
-  }
-
-  @media (max-width: 1280px) {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-  }
 
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
     gap: 32px;
-
-    img {
-      width: 100%;
-      object-fit: cover;
-    }
-
   }
 `
 

@@ -10,13 +10,14 @@ import { getFormattedDate } from '../../../helpers'
 const Card = (props) => {
   return (
     <Container>
-      <Image
-        alt={props.post.title}
-        width={592}
-        height={333}
-        sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
-        src={props.post.image}
-      />
+      <ImageContainer>
+        <Image
+          alt={props.post.title}
+          fill
+          sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
+          src={props.post.image}
+        />
+      </ImageContainer>
 
       <Time>{getFormattedDate(new Date(props.post.date).toString())}</Time>
 
@@ -35,15 +36,25 @@ const Card = (props) => {
 }
 
 const Container = styled.div`
-  width: 592px;
-
   @media (max-width: 1280px) {
     width: auto;
+  }
+
+
+`
+
+const ImageContainer = styled.div`
+  position: relative;
+  height: 333px;
+
+  @media (max-width: 768px) { 
+    height: 200px;
   }
 
   @media (max-width: 768px) {
     img {
       width: 100%;
+      height: 100%;
       object-fit: cover;
     }
   }
