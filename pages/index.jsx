@@ -13,7 +13,7 @@ export async function getStaticProps ({ locale }) {
   return {
     props: {
       ...(s),
-      latestAnnouncement: (await services.getAllPosts())[0],
+      latestAnnouncement: (await services.pressroom.getAllPosts())[0],
       blogPosts: await services.getLatestBlogPosts(),
       videos: await services.getVideos(),
       pages: await services.getPages()
