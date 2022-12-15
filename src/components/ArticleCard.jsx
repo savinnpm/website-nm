@@ -58,6 +58,10 @@ const Time = styled.time`
   ${typography.styles.textSm};
   ${typography.weights.semibold};
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['200']};
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `
 
 const TitleContainer = styled(Link)``

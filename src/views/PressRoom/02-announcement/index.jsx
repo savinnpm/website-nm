@@ -88,9 +88,9 @@ const Articles = styled.div`
   }
 
   @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
     img {
       width: 100%;

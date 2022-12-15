@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -18,18 +19,23 @@ export const Hero = () => {
 
         <FormContainer>
 
-          <StyledButton
+          <Button
             hierarchy='secondary'
             size='xl'
-          >
-            <a target='_blank' href='https://docs.neptunemutual.com/usage/brand-assets' rel='nofollow noopener noreferrer'>Download Press Kit</a>
-          </StyledButton>
-          <StyledButton
+            as='a'
+            target='_blank'
+            href='https://docs.neptunemutual.com/usage/brand-assets'
+            rel='nofollow noopener noreferrer'
+          >Download Press Kit
+          </Button>
+          <Button
             hierarchy='primary'
             size='xl'
+            as={Link}
+            href='/contact'
           >
             Media Inquiries
-          </StyledButton>
+          </Button>
         </FormContainer>
 
       </InnerContainer>
@@ -100,11 +106,5 @@ const FormContainer = styled.div`
 
   @media (max-width: 768px) {
     flex-wrap: wrap;
-  }
-`
-
-const StyledButton = styled(Button)`
-  @media (max-width: 768px) {
-    width:100%
   }
 `

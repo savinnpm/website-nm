@@ -43,7 +43,6 @@ export const SecondaryGrayButton = ({
 }
 
 const StyledButton = styled.button`
-  --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['50']};
   --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['600']};
   --backgroundColor: ${(props) => props.theme.primaryBackgroundColor};
 
@@ -56,21 +55,21 @@ const StyledButton = styled.button`
   ${padding};
   cursor: pointer;
 
-  color: var(--textColor);
+  color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['50']};
   background-color: var(--backgroundColor);
   border: 1px solid var(--borderColor);
   border-radius: 8px;
   box-shadow: ${shadows.xs};
 
   &:disabled {
-    --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['300']};
+    color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['300'] : getBgColor(props.destructive)['300']};
     --borderColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['200'] : getBgColor(props.destructive)['200']};
     cursor: not-allowed;
   }
 
   &:not(&:disabled) {
     &[data-state="hover"], :hover {
-      --textColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['800'] : getBgColor(props.destructive)['100']};
+      color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['800'] : getBgColor(props.destructive)['100']};
       --backgroundColor: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['50'] : getBgColor(props.destructive)['600']};
     }
 

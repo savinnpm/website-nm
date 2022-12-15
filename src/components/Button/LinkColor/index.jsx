@@ -40,8 +40,6 @@ export const LinkColor = ({
 }
 
 const StyledButton = styled.button`
-  --color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['500']};
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -49,23 +47,23 @@ const StyledButton = styled.button`
   ${iconSize};
   ${textStyle};
 
-  color: var(--color);
+  color: ${(props) => props.theme.isLightMode ? getBgColor(props.destructive)['700'] : getBgColor(props.destructive)['500']};
   border-radius: 8px;
 
   &:disabled {
-    --color: ${(props) => getBgColor(props.destructive)['200']};
+    color: ${(props) => getBgColor(props.destructive)['200']};
   }
 
   &:not(&:disabled) {
     &[data-state="hover"], :hover {
-      --color: ${(props) => getBgColor(props.destructive)['700']};
+      color: ${(props) => getBgColor(props.destructive)['700']};
     }
 
     &[data-state="focussed"],
     :focus,
     :active,
     :focus-visible {
-      --color: ${(props) => getBgColor(props.destructive)['600']};
+      color: ${(props) => getBgColor(props.destructive)['600']};
 
       outline: none;
     }
