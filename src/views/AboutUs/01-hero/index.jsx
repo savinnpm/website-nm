@@ -33,8 +33,8 @@ const Hero = () => {
           </HeaderContent>
         </Content>
       </InnerContainer>
-      <VideoContainer onClick={showVideo}>
-        <img alt='' src='/assets/images/hero/reduce-exposure.webp' />
+      <VideoContainer title='@todo' onClick={showVideo}>
+        <img alt='@todo' src='/assets/images/hero/reduce-exposure.webp' />
         <Overlay>
           <PlayIcon />
         </Overlay>
@@ -72,7 +72,7 @@ const Content = styled.div`
 `
 
 const Subheader = styled.span`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
   margin-bottom: 12px;

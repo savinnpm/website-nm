@@ -22,7 +22,7 @@ export const Command = ({ text }) => {
 
   return (
     <CodeContainer>
-      {text} <StyledButton onClick={copyText} copied={copied}><Icon variant='copy-01' size={12} /></StyledButton>
+      {text} <StyledButton onClick={copyText} title={text} copied={copied}><Icon variant='copy-01' size={12} /></StyledButton>
     </CodeContainer>
   )
 }

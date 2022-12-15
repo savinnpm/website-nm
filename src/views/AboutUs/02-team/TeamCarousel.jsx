@@ -25,34 +25,34 @@ import { data } from './data'
 
 const Details = ({ name, title, links, isMobile }) => (
   <DetailsContainer data-is-mobile={isMobile ? 'true' : 'false'}>
-    <Name>{name}</Name>
+    <Name id={name.split(' ').join('_')}>{name}</Name>
     <Title>{title}</Title>
 
     <LinksContainer>
       {
         links.linkedIn && (
-          <a href={links.linkedIn} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.linkedIn} title={`${name} LinkedIn`} target='_blank' rel='nofollow noreferrer'>
             <LinkedIn width='16' height='16' />
           </a>
         )
       }
       {
         links.twitter && (
-          <a href={links.twitter} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.twitter} target='_blank' title={`${name} Twitter`} rel='nofollow noreferrer'>
             <Twitter width='16' height='16' />
           </a>
         )
       }
       {
         links.medium && (
-          <a href={links.medium} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.medium} target='_blank' title={`${name} Medium`} rel='nofollow noreferrer'>
             <Medium width='16' height='16' />
           </a>
         )
       }
       {
         links.facebook && (
-          <a href={links.facebook} target='_blank' rel='nofollow noreferrer'>
+          <a href={links.facebook} target='_blank' title={`${name} Facebook`} rel='nofollow noreferrer'>
             <Facebook width='16' height='16' />
           </a>
         )
@@ -66,8 +66,7 @@ const TeamSliderItem = ({ team }) => {
 
   return (
     <ItemContainer>
-      <img src={imgSrc} alt={`${name} image`} />
-
+      <img src={imgSrc} aria-labelledby={name.split(' ').join('_')} />
       <Details name={name} title={title} links={links} />
     </ItemContainer>
   )
@@ -152,12 +151,14 @@ export const TeamCarousel = () => {
 
       <ArrowsContainer>
         <ArrowButton
+          title='Left'
           onClick={() => handleArrowClick('left')}
         >
           <ArrowLeft width='24' height='24' />
         </ArrowButton>
 
         <ArrowButton
+          title='Right'
           onClick={() => handleArrowClick('right')}
         >
           <ArrowRight width='24' height='24' />
@@ -229,6 +230,7 @@ const DetailsContainer = styled.div`
 const Name = styled.p`
   ${typography.styles.textLg}
   ${typography.weights.semibold}
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey][900] : colors.white};
   
   @media screen and (max-width: 768px) {
     ${typography.styles.textXl}
@@ -236,7 +238,7 @@ const Name = styled.p`
 `
 
 const Title = styled.p`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors[primaryColorKey][500]};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey][700] : colors[primaryColorKey][300]};
   ${typography.styles.textMd}
   ${typography.weights.regular}
 `

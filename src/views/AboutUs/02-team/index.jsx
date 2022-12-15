@@ -67,14 +67,14 @@ const LinkText = styled.a`
   ${typography.styles.textMd}
   ${typography.weights.semibold}
 
-  color: ${colors[primaryColorKey][600]};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey][600] : colors[primaryColorKey]['300']};
 
   :hover, :active{
     color: ${colors.rose[600]}
   }
 `
 
-const Title = styled.p`
+const Title = styled.h2`
   margin-top: 12px;
   ${typography.styles.displayMd}
   ${typography.weights.semibold}
