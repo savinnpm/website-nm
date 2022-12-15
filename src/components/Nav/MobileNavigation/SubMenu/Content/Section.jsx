@@ -27,7 +27,7 @@ export const Section = ({ section }) => {
 
 const Title = styled.h4`
   padding: 0 16px;
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['300']};
 
   ${typography.styles.textSm};
   ${typography.weights.semibold};
