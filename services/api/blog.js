@@ -40,11 +40,7 @@ const getMetaData = async (docs) => {
         title: doc.title,
         featured: doc.featured,
         image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
-<<<<<<< HEAD
         alt: doc.cover.alt || '',
-=======
-        alt: doc.meta?.image?.alt || '',
->>>>>>> 22c8de2 (update on image alt)
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
