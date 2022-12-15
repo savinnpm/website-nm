@@ -1,8 +1,8 @@
 import styled from 'styled-components'
-import { typography } from '../../../styles/typography'
-import { Tag } from '../../components/ArticleCard'
+import { typography } from '../../styles/typography'
+import { Tag } from './ArticleCard'
 
-export const Tags = ({ tags }) => {
+export const Tags = ({ tags, type = 'blog' }) => {
   if (!tags?.length) {
     return null
   }
@@ -14,7 +14,7 @@ export const Tags = ({ tags }) => {
       <TagsContainer>
         {
           tags.map((tag, i) => (
-            <Tag key={i} tag={tag} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
+            <Tag key={i} tag={tag} href={`/${type}/tag/${tag.slug}`}>{tag.name}</Tag>
           ))
         }
       </TagsContainer>

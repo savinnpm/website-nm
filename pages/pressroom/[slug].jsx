@@ -3,9 +3,9 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { BlogPostDetail } from '../../src/views/BlogPostDetail'
 import { getFQDN } from '../../src/helpers'
 import { useRouter } from 'next/router'
+import { PressroomPostDetail } from '../../src/views/PressroomPostDetail'
 
 export async function getStaticPaths ({ locales }) {
   const slugs = await services.pressroom.getPostsSlugs()
@@ -72,7 +72,7 @@ export default function BlogPostPage (props) {
       </Head>
 
       <main>
-        <BlogPostDetail post={props.post} relatedPosts={props.relatedPosts} />
+        <PressroomPostDetail post={props.post} relatedPosts={props.relatedPosts} />
       </main>
     </>
   )

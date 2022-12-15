@@ -7,7 +7,7 @@ import { utils } from '../../styles/utils'
 import { getFormattedDate } from '../helpers'
 import { getBlurDataURL } from '../helpers/images'
 
-export const ArticleCard = ({ post }) => {
+export const ArticleCard = ({ post, type = 'blog' }) => {
   return (
     <Container>
       <ImageContainer>
@@ -23,7 +23,7 @@ export const ArticleCard = ({ post }) => {
 
       <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
 
-      <TitleContainer href={`/blog/${post.slug}`}>
+      <TitleContainer href={`/${type}/${post.slug}`}>
         <Title>{post.title}</Title>
       </TitleContainer>
 
@@ -31,7 +31,7 @@ export const ArticleCard = ({ post }) => {
 
       <TagsContainer>
         {post.tags.slice(0, 1).map((tag) => (
-          <Tag key={tag.name} tag={tag} href={`/blog/tag/${tag.slug}`}>{tag.name}</Tag>
+          <Tag key={tag.name} tag={tag} href={`/${type}/tag/${tag.slug}`}>{tag.name}</Tag>
         ))}
       </TagsContainer>
     </Container>

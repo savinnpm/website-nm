@@ -41,7 +41,7 @@ const Announcement = (props) => {
 
   return (
     <Container>
-      <HeaderText>Press Room / Latest Announcements</HeaderText>
+      <HeaderText>{props.tag?.name || 'Press Room / Latest Announcements'}</HeaderText>
       <Articles>
         {(props.posts || []).map((post, i) => {
           return <Card key={i} post={post} />

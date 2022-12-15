@@ -27,7 +27,7 @@ const Card = (props) => {
       <CardText>{props.post.intro}</CardText>
 
       <CardTags>
-        <Tag color={props.post.tags[0].color} href={`/blog/tag/${props.post.tags[0].slug}`}>{props.post.tags[0].name}</Tag>
+        <Tag color={props.post.tags[0].color} href={`/pressroom/tag/${props.post.tags[0].slug}`}>{props.post.tags[0].name}</Tag>
       </CardTags>
 
     </Container>

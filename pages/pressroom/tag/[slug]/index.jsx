@@ -2,22 +2,46 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { services } from '../../../../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../src/helpers'
-import { services } from '../../services'
-import { PressRoom } from '../../src/views/PressRoom'
+import { getFQDN } from '../../../../src/helpers'
+import { PressRoom } from '../../../../src/views/PressRoom'
 
-export async function getStaticProps ({ locale }) {
+export async function getStaticPaths ({ locales }) {
+  const data = await services.pressroom.getTagsData()
+  const slugs = data.map(item => item.slug)
+
+  const paths = []
+
+  locales.forEach(locale => {
+    slugs.forEach(slug => {
+      paths.push({
+        locale,
+        params: {
+          slug
+        }
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-  const filteredPosts = await services.pressroom.getPaginatedData(null, 0)
+  const data = await services.pressroom.getPaginatedData(params.slug, 0)
 
   return {
     props: {
       ...(s),
       news: await services.getNews(),
-      pressRoomPosts: filteredPosts.posts,
-      pressRoomPostsTotal: filteredPosts.totalPages,
+      posts: data.posts,
+      totalPages: data.totalPages,
+      tag: await services.pressroom.getTagDataBySlug(params.slug),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -26,7 +50,7 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function PressPage (props) {
+export default function FilteredBlogPage (props) {
   const { t } = useTranslation('press-room')
   const router = useRouter()
 
@@ -55,9 +79,10 @@ export default function PressPage (props) {
       <main>
         <PressRoom
           news={props.news}
-          pressRoomPosts={props.pressRoomPosts}
-          pressRoomPostsTotal={props.pressRoomPostsTotal}
+          pressRoomPosts={props.posts}
+          pressRoomPostsTotal={props.totalPages}
           page={0}
+          tag={props.tag}
         />
       </main>
     </>

@@ -2,22 +2,52 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { services } from '../../../../../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../src/helpers'
-import { services } from '../../services'
-import { PressRoom } from '../../src/views/PressRoom'
+import { getFQDN } from '../../../../../src/helpers'
+import { PressRoom } from '../../../../../src/views/PressRoom'
 
-export async function getStaticProps ({ locale }) {
+export async function getStaticPaths ({ locales }) {
+  const data = await services.pressroom.getTagsData()
+
+  const paths = []
+
+  data.forEach(tagInfo => {
+    const slug = tagInfo.slug
+    const pageNumbers = new Array(tagInfo.totalPages).fill(1).map((_, idx) => idx + 1)
+
+    locales.forEach(locale => {
+      pageNumbers.forEach(pageNum => {
+        paths.push({
+          locale,
+          params: {
+            slug,
+            num: pageNum.toString()
+          }
+        })
+      })
+    })
+  })
+
+  return {
+    paths,
+    fallback: false // can also be true or 'blocking'
+  }
+}
+
+export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-  const filteredPosts = await services.pressroom.getPaginatedData(null, 0)
+  const data = await services.pressroom.getPaginatedData(params.slug, parseInt(params.num - 1))
 
   return {
     props: {
       ...(s),
       news: await services.getNews(),
-      pressRoomPosts: filteredPosts.posts,
-      pressRoomPostsTotal: filteredPosts.totalPages,
+      posts: data.posts,
+      totalPages: data.totalPages,
+      tag: await services.pressroom.getTagDataBySlug(params.slug),
+      page: parseInt(params.num - 1),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -26,8 +56,8 @@ export async function getStaticProps ({ locale }) {
   }
 }
 
-export default function PressPage (props) {
-  const { t } = useTranslation('press-room')
+export default function FilteredAndPaginatedBlogPage (props) {
+  const { t } = useTranslation('blog')
   const router = useRouter()
 
   return (
@@ -55,9 +85,10 @@ export default function PressPage (props) {
       <main>
         <PressRoom
           news={props.news}
-          pressRoomPosts={props.pressRoomPosts}
-          pressRoomPostsTotal={props.pressRoomPostsTotal}
-          page={0}
+          pressRoomPosts={props.posts}
+          pressRoomPostsTotal={props.totalPages}
+          page={props.page}
+          tag={props.tag}
         />
       </main>
     </>
