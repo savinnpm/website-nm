@@ -64,7 +64,7 @@ const Container = styled.div`
   }
 `
 
-const FilterLabel = styled(Listbox.Label)`
+const FilterLabel = styled.span`
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.white};
 
   ${typography.styles.textMd};
