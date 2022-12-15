@@ -55,7 +55,7 @@ const HeadingContainer = styled.div`
 `
 
 const ExternalLink = styled.a`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
   display: flex;
   justify-content: center;
   align-items: center;

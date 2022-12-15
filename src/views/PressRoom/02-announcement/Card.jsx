@@ -1,13 +1,15 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import styled from 'styled-components'
 
-import { colors } from '../../../../styles/colors'
+import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
+import { utils } from '../../../../styles/utils'
 import { getFormattedDate } from '../../../helpers'
 
 const Card = (props) => {
   return (
-    <Container href={`pressroom/${props.post.slug}`}>
+    <Container>
       <Image
         alt={props.post.title}
         width={592}
@@ -18,22 +20,22 @@ const Card = (props) => {
 
       <Time>{getFormattedDate(new Date(props.post.date).toString())}</Time>
 
-      <CardTitle>{props.post.title}</CardTitle>
+      <TitleContainer href={`/pressroom/${props.post.slug}`}>
+        <Title>{props.post.title}</Title>
+      </TitleContainer>
 
       <CardText>{props.post.intro}</CardText>
 
       <CardTags>
-        <Tag color={props.post.tags[0].color}>{props.post.tags[0].name}</Tag>
+        <Tag color={props.post.tags[0].color} href={`/pressroom/tag/${props.post.tags[0].slug}`}>{props.post.tags[0].name}</Tag>
       </CardTags>
 
     </Container>
   )
 }
 
-const Container = styled.a`
-  display: block;
+const Container = styled.div`
   width: 592px;
-  cursor: pointer;
 
   @media (max-width: 1280px) {
     width: auto;
@@ -53,12 +55,18 @@ const Time = styled.span`
   color: ${props => props.theme.isLightMode ? colors.gray[500] : colors.gray[400]};
   ${typography.weights.semibold}
   ${typography.styles.textSm}
+
+  @media (max-width: 768px) {
+    margin-top: 20px;
+  }
 `
 
-const CardTitle = styled.label`
+const TitleContainer = styled(Link)``
+
+const Title = styled.h3`
   margin-top: 8px;
   display: block;
-  color: color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
+  color: ${props => props.theme.isLightMode ? colors.gray[900] : colors.white};
   ${typography.weights.semibold}
   ${typography.styles.displayXs}
   cursor: pointer;
@@ -76,17 +84,25 @@ const CardText = styled.p`
   ${typography.weights.regular}
 `
 
-const CardTags = styled.div``
-
-const Tag = styled.span`
-  display: block;
+const CardTags = styled.div`
   margin-top: 26px;
-  background-color: ${props => props.theme.isLightMode ? colors[props.color][50] : colors.gray[700]};
-  color: ${props => props.theme.isLightMode ? colors[props.color][700] : colors[props.color][400]};
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+`
+
+const Tag = styled(Link)`
+  display: inline-flex;
   padding: 2px 10px;
-  ${typography.weights.medium}
-  width: fit-content;
-  border-radius: 16px;
+  border-radius: 9999px;
+  background-color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['50'] : colors.gray['700']};
+  color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['700'] : colors[props.color || primaryColorKey]['400']};
+
+  min-width: 0;
+
+  ${typography.styles.textSm};
+  ${typography.weights.medium};
+  ${utils.ellipsis};
 `
 
 export { Card }

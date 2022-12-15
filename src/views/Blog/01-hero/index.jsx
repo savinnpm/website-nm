@@ -31,7 +31,7 @@ export const Hero = () => {
         </FormContainer>
 
       </InnerContainer>
-      <RssLink href='/rss.xml' target='_blank'>
+      <RssLink href='/rss.xml' target='_blank' title='rss'>
         <Icon variant='rss-01' size={16} />
       </RssLink>
     </Container>
@@ -83,7 +83,7 @@ const Heading = styled.div`
   }
 `
 const Subheader = styled.div`
-  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};

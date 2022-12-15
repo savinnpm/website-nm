@@ -32,11 +32,13 @@ export async function getStaticPaths ({ locales }) {
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common'])
 
+  const post = await services.getSinglePost(params.slug)
+
   return {
     props: {
       ...(s),
-      relatedPosts: await services.getRelatedBlogPosts(params.slug),
-      post: await services.getSinglePost(params.slug),
+      post,
+      relatedPosts: await services.getRelatedBlogPosts(post.tags, params.slug),
       videos: await services.getVideos(),
       pages: await services.getPages()
       // Will be passed to the page component as props

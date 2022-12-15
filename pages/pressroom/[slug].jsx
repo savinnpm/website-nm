@@ -3,12 +3,12 @@ import Head from 'next/head'
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
 import { services } from '../../services'
-import { BlogPostDetail } from '../../src/views/BlogPostDetail'
 import { getFQDN } from '../../src/helpers'
 import { useRouter } from 'next/router'
+import { PressroomPostDetail } from '../../src/views/PressroomPostDetail'
 
 export async function getStaticPaths ({ locales }) {
-  const slugs = await services.getPressroomPostsSlugs()
+  const slugs = await services.pressroom.getPostsSlugs()
 
   const paths = []
 
@@ -32,11 +32,13 @@ export async function getStaticPaths ({ locales }) {
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common'])
 
+  const post = await services.pressroom.getSinglePost(params.slug)
+
   return {
     props: {
       ...(s),
-      relatedPosts: await services.getRelatedPressroomPosts(params.slug),
-      post: await services.getSinglePressroomPost(params.slug),
+      post,
+      relatedPosts: await services.pressroom.getRelatedPosts(post.tags, params.slug),
       videos: await services.getVideos(),
       pages: await services.getPages()
       // Will be passed to the page component as props
@@ -70,7 +72,7 @@ export default function BlogPostPage (props) {
       </Head>
 
       <main>
-        <BlogPostDetail post={props.post} relatedPosts={props.relatedPosts} />
+        <PressroomPostDetail post={props.post} relatedPosts={props.relatedPosts} />
       </main>
     </>
   )

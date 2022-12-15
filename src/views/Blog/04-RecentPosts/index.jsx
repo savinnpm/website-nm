@@ -9,7 +9,26 @@ import { Filter } from '../../../components/Filter'
 import { FilterTabs } from '../../../components/FilterTabs/FilterTabs'
 import { Pagination } from '../../../components/Pagination'
 
-export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) => {
+const filters = [
+  {
+    text: 'All',
+    value: 'all'
+  },
+  {
+    text: 'Exploit Analysis',
+    value: 'exploit-analysis'
+  },
+  {
+    text: 'Weekly Report',
+    value: 'weekly-report'
+  },
+  {
+    text: 'Monthly Review',
+    value: 'monthly-review'
+  }
+]
+
+export const RecentPosts = ({ blogPosts, page, totalPages, tag }) => {
   const router = useRouter()
 
   const handleFilterChange = option => {
@@ -43,19 +62,22 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
     router.push(queryString, undefined, { scroll: false })
   }
 
+  const activeFilter = tag?.slug || 'all'
+  const heading = tag?.name || 'Recent Posts'
+
   return (
     <Container>
       <InnerContainer>
         <FilterTabs
           filters={filters}
-          activeFilter={filter}
-          mapUrl={slug => `/blog/tag/${slug}`}
+          activeFilter={activeFilter}
+          mapUrl={slug => slug === 'all' ? '/blog' : `/blog/tag/${slug}`}
         />
 
         <FilterMobileContainer>
           <Filter
             options={filters.map(f => f.value)}
-            selectedOption={filter}
+            selectedOption={filters.map(f => f.value).includes(activeFilter) ? activeFilter : undefined}
             getOptionText={x => filters.find(f => f.value === x).text}
             setSelectedOption={handleFilterChange}
           />
@@ -63,7 +85,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, filter, filters }) =>
 
         <TextAndCta>
           <TextContainer>
-            <Heading>Recent Posts</Heading>
+            <Heading>{heading}</Heading>
           </TextContainer>
         </TextAndCta>
         <BlogsContainer>

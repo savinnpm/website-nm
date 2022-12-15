@@ -13,6 +13,8 @@ import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { VideosProvider } from '../src/context/VideosContext'
 import { PageLoader } from '../src/components/PageLoader'
 import { Router } from 'next/router'
+import * as ga from '../src/helpers/ga'
+import { GTMCode } from '../src/components/GTMCode'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -20,7 +22,13 @@ function MyApp ({ Component, pageProps }) {
   useEffect(() => {
     // Close menu after navigating to a new page
     const onClose = () => setIsMenuOpen(false)
-    Router.events.on('routeChangeComplete', onClose)
+    const handleRouteChange = (url) => {
+      ga.pageview(url)
+    }
+    Router.events.on('routeChangeComplete', (url) => {
+      onClose()
+      handleRouteChange(url)
+    })
 
     return () => {
       Router.events.off('routeChangeComplete', onClose)
@@ -28,20 +36,23 @@ function MyApp ({ Component, pageProps }) {
   }, [])
 
   return (
-    <ThemeProvider>
-      <VideosProvider videos={pageProps.videos}>
-        <HeaderContainer>
-          <PageLoader />
-          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
-          <Border />
-        </HeaderContainer>
-        <MainContainer>
-          <Component {...pageProps} />
-          <MobileNavContainer isMenuOpen={isMenuOpen} />
-        </MainContainer>
-        <Footer pages={pageProps.pages} />
-      </VideosProvider>
-    </ThemeProvider>
+    <>
+      <GTMCode />
+      <ThemeProvider>
+        <VideosProvider videos={pageProps.videos}>
+          <HeaderContainer>
+            <PageLoader />
+            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
+            <Border />
+          </HeaderContainer>
+          <MainContainer>
+            <Component {...pageProps} />
+            <MobileNavContainer isMenuOpen={isMenuOpen} />
+          </MainContainer>
+          <Footer pages={pageProps.pages} />
+        </VideosProvider>
+      </ThemeProvider>
+    </>
   )
 }
 

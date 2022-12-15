@@ -5,25 +5,7 @@ import { request } from '../http/request'
 import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
 
-export const BLOGS_PER_PAGE = 12
-export const filters = [
-  {
-    text: 'All',
-    value: 'all'
-  },
-  {
-    text: 'Exploit Analysis',
-    value: 'exploit-analysis'
-  },
-  {
-    text: 'Weekly Report',
-    value: 'weekly-report'
-  },
-  {
-    text: 'Monthly Review',
-    value: 'monthly-review'
-  }
-]
+const POSTS_PER_PAGE = 12
 
 let docs = null
 
@@ -49,25 +31,52 @@ const getValidColorKey = (colorKey) => {
   return Object.keys(colors).filter(x => x !== 'white' && x !== 'black').includes(colorKey) ? colorKey : primaryColorKey
 }
 
-export const getLatestBlogPosts = async () => {
+// For article cards
+const getMetaData = async (docs) => {
   try {
-    const docs = await getDocs()
-
     const result = await Promise.allSettled(docs.map(async (doc) => {
       return {
         id: doc.id,
         title: doc.title,
         featured: doc.featured,
         image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
+        alt: doc.cover.alt || '',
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
         date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
+        tags: doc.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) }))
       }
     }))
 
-    const allPosts = result.map(x => x.value)
-    const latestPosts = allPosts.sort((a, b) => {
+    return result.map(x => x.value)
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
+const getBlogPostTagSlugs = async () => {
+  try {
+    const docs = await getDocs()
+
+    const allTags = docs.map((doc) => doc.tags || []).flat()
+    const uniqueTags = [...new Map(allTags.map((item) => [item.id, item])).values()]
+
+    return uniqueTags
+  } catch (error) {
+    console.error(error)
+  }
+
+  return []
+}
+
+export const getLatestBlogPosts = async () => {
+  try {
+    const docs = await getDocs()
+
+    const result = await getMetaData(docs)
+    const latestPosts = result.sort((a, b) => {
       return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
     }).slice(0, 10)
 
@@ -79,24 +88,22 @@ export const getLatestBlogPosts = async () => {
   return []
 }
 
+export const getFeaturedPosts = async () => {
+  const docs = await getDocs()
+  const featuredDocs = docs.filter(x => x.featured)
+
+  const sliced = featuredDocs.slice(0, 3)
+  const result = await getMetaData(sliced)
+  return result
+}
+
 export const getAllBlogPosts = async () => {
   try {
     const docs = await getDocs()
 
-    const result = await Promise.allSettled(docs.map(async (doc) => {
-      return {
-        id: doc.id,
-        title: doc.title,
-        featured: doc.featured,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
-        slug: doc.slug,
-        intro: doc.intro.replace('&hellip;', ''),
-        date: doc.updatedAt || doc.createdAt,
-        tags: doc.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) }))
-      }
-    }))
+    const result = await getMetaData(docs)
 
-    return result.map(x => x.value).sort((a, b) => {
+    return result.sort((a, b) => {
       return (new Date(a.date) < new Date(b.date) ? 1 : new Date(a.date) > new Date(b.date) ? -1 : 0)
     })
   } catch (error) {
@@ -106,10 +113,14 @@ export const getAllBlogPosts = async () => {
   return []
 }
 
-export const getRelatedBlogPosts = async (slug) => {
-  const allPosts = await getAllBlogPosts()
+export const getRelatedBlogPosts = async (tags, postSlug) => {
+  const docs = await getDocs()
 
-  return allPosts.filter(x => x.slug !== slug).slice(0, 3)
+  const relatedDocs = docs.filter(doc => {
+    return (doc.tags || []).map(tag => tag.slug).includes(tags[0]?.slug || '')
+  }).filter(doc => doc.slug !== postSlug).slice(0, 3)
+
+  return getMetaData(relatedDocs)
 }
 
 export const getSinglePost = async (slug) => {
@@ -129,10 +140,10 @@ export const getSinglePost = async (slug) => {
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,
-      tags: match.tags.map((tag) => ({ name: tag.name, color: getValidColorKey(tag.color) })),
+      tags: match.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) })),
       meta: {
-        title: match.meta.title,
-        description: match.meta.description,
+        title: match?.meta?.title || match.title || '',
+        description: match?.meta?.description || match.intro.replace('&hellip;', '') || '',
         image: {
           src: await helpers.storeOgImage(match?.meta?.image?.filename || match.cover.filename),
           alt: helpers.getOgImageAlt(match?.meta?.image?.alt)
@@ -165,70 +176,55 @@ export const getPostsSlugs = async () => {
   return []
 }
 
-export const getPostFilters = async () => {
-  return filters
-}
+export const getBlogPostTagsData = async () => {
+  const tagSlugs = await getBlogPostTagSlugs()
 
-const getTotalPageCount = (posts) => {
-  const actualDividend = parseInt(posts.length / BLOGS_PER_PAGE)
-  if (posts.length % BLOGS_PER_PAGE === 0) {
-    return actualDividend
+  const result = []
+
+  for (let i = 0; i < tagSlugs.length; i++) {
+    const tagSlug = tagSlugs[i].slug
+    const tagName = tagSlugs[i].name
+    const firstPageData = await getBlogPaginatedData(tagSlug, 0)
+
+    result.push({
+      slug: tagSlug,
+      name: tagName,
+      totalPages: firstPageData.totalPages,
+      totalPosts: firstPageData.totalPosts
+    })
   }
 
-  return actualDividend + 1
+  return result
 }
 
-export const getFeaturedPosts = async () => {
-  const allPosts = await getAllBlogPosts()
-  return allPosts.filter(x => x.featured).slice(0, 3)
+export const getBlogPostTagDataBySlug = async (tagSlug) => {
+  const data = await getBlogPostTagsData()
+
+  return data.find(x => x.slug === tagSlug)
 }
 
-export const getFilteredPosts = async (filter = 'all', page = 0) => {
-  let filteredPosts = []; let totalLength
+// When tag slug is empty return all posts
+export const getBlogPaginatedData = async (tagSlug, pageIndex) => {
+  const allPosts = await getDocs()
 
-  try {
-    const docs = await getAllBlogPosts()
-    filteredPosts = docs
+  let postsByTag = allPosts
 
-    const _filter = filters.find(f => f.value === filter)
-    if (filter !== 'all' && _filter) {
-      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
-    }
-
-    totalLength = getTotalPageCount(filteredPosts)
-
-    if (page >= 0) {
-      filteredPosts = filteredPosts.slice(page * BLOGS_PER_PAGE, BLOGS_PER_PAGE + page * BLOGS_PER_PAGE)
-    } else {
-      filteredPosts = filteredPosts.slice(0, BLOGS_PER_PAGE)
-    }
-  } catch (error) {
-    console.error(error)
+  if (tagSlug) {
+    postsByTag = allPosts.filter(post => {
+      const matchedTag = post.tags.find(tag => tag.slug === tagSlug)
+      return matchedTag
+    })
   }
+
+  pageIndex = pageIndex || 0
+
+  const total = postsByTag.length
+
+  const sliced = postsByTag.slice(pageIndex * POSTS_PER_PAGE, (pageIndex + 1) * POSTS_PER_PAGE)
 
   return {
-    posts: filteredPosts,
-    total: totalLength
+    posts: await getMetaData(sliced),
+    totalPosts: total,
+    totalPages: Math.ceil(total / POSTS_PER_PAGE)
   }
-}
-
-export const getFilteredPostPages = async (filter = 'all') => {
-  let pages = []
-
-  try {
-    const docs = await getAllBlogPosts()
-    let filteredPosts = docs
-
-    const _filter = filters.find(f => f.value === filter)
-    if (filter !== 'all' && _filter) {
-      filteredPosts = docs.filter(doc => Boolean(doc.tags?.find(tag => tag.name === _filter.text)))
-    }
-
-    const totalLength = getTotalPageCount(filteredPosts)
-    pages = new Array(totalLength).fill().map((_, i) => (i + 1).toString())
-  } catch (error) {
-    console.error(error)
-  }
-
-  return pages
 }

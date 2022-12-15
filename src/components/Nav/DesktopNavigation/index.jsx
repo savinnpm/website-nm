@@ -16,7 +16,7 @@ const NavLinksContainer = styled.div`
   display: flex;
   /* gap: 32px; */
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     display: none;
   }
 `

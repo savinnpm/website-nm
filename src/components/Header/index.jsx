@@ -73,7 +73,7 @@ const Actions = styled.div`
   align-items: center;
   gap: 12px;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
    display: none; 
   }
 `

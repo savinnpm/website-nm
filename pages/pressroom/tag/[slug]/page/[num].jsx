@@ -2,26 +2,30 @@ import Head from 'next/head'
 
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
+import { services } from '../../../../../services'
 import { useTranslation } from 'react-i18next'
 import { useRouter } from 'next/router'
-import { getFQDN } from '../../../src/helpers'
-import { services } from '../../../services'
-import { PressRoom } from '../../../src/views/PressRoom'
+import { getFQDN } from '../../../../../src/helpers'
+import { PressRoom } from '../../../../../src/views/PressRoom'
 
 export async function getStaticPaths ({ locales }) {
-  const data = await services.pressroom.getPaginatedData(null, 0)
-
-  const pageNumbers = new Array(data.totalPages).fill(1).map((_, idx) => idx + 1)
+  const data = await services.pressroom.getTagsData()
 
   const paths = []
 
-  locales.forEach(locale => {
-    pageNumbers.forEach(pageNum => {
-      paths.push({
-        locale,
-        params: {
-          num: pageNum.toString()
-        }
+  data.forEach(tagInfo => {
+    const slug = tagInfo.slug
+    const pageNumbers = new Array(tagInfo.totalPages).fill(1).map((_, idx) => idx + 1)
+
+    locales.forEach(locale => {
+      pageNumbers.forEach(pageNum => {
+        paths.push({
+          locale,
+          params: {
+            slug,
+            num: pageNum.toString()
+          }
+        })
       })
     })
   })
@@ -34,7 +38,7 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'press-room'])
-  const data = await services.pressroom.getPaginatedData(null, parseInt(params.num - 1))
+  const data = await services.pressroom.getPaginatedData(params.slug, parseInt(params.num - 1))
 
   return {
     props: {
@@ -42,6 +46,7 @@ export async function getStaticProps ({ locale, params }) {
       news: await services.getNews(),
       posts: data.posts,
       totalPages: data.totalPages,
+      tag: await services.pressroom.getTagDataBySlug(params.slug),
       page: parseInt(params.num - 1),
       videos: await services.getVideos(),
       pages: await services.getPages(),
@@ -51,9 +56,10 @@ export async function getStaticProps ({ locale, params }) {
   }
 }
 
-export default function PressPage (props) {
-  const { t } = useTranslation('press-room')
+export default function FilteredAndPaginatedBlogPage (props) {
+  const { t } = useTranslation('blog')
   const router = useRouter()
+
   return (
     <>
       <Head>
@@ -82,6 +88,7 @@ export default function PressPage (props) {
           pressRoomPosts={props.posts}
           pressRoomPostsTotal={props.totalPages}
           page={props.page}
+          tag={props.tag}
         />
       </main>
     </>

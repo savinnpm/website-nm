@@ -3,11 +3,11 @@ import {
   getRelatedBlogPosts,
   getLatestBlogPosts,
   getPostsSlugs,
+  getBlogPaginatedData,
+  getBlogPostTagsData,
+  getBlogPostTagDataBySlug,
   getSinglePost,
-  getPostFilters,
-  getFilteredPosts,
-  getFeaturedPosts,
-  getFilteredPostPages
+  getFeaturedPosts
 } from './api/blog'
 import { getVideos } from './api/videos'
 import { getNews } from './api/news'
@@ -16,24 +16,20 @@ import { getAudits, getAuditSlugs, getSingleAudit } from './api/audits'
 import { getPrograms, getProgramSlugs, getSingleProgram } from './api/programs'
 import { getPages, getPageSlugs, getSinglePage } from './api/pages'
 import { getVacancies, getVacancySlugs, getSingleVacancy } from './api/vacancies'
-import { getPressroomPosts, getPressroomLatestPost, getPressroomPostsSlugs, getSinglePressroomPost, getRelatedPressroomPosts, getFilteredPressroomPosts } from './api/pressroom'
+import * as pressroom from './api/pressroom'
 
 export const services = {
+  pressroom,
+
   getAllBlogPosts,
   getLatestBlogPosts,
   getRelatedBlogPosts,
   getPostsSlugs,
+  getBlogPaginatedData,
+  getBlogPostTagsData,
+  getBlogPostTagDataBySlug,
   getSinglePost,
-  getPostFilters,
-  getFilteredPosts,
   getFeaturedPosts,
-  getFilteredPostPages,
-  getPressroomPosts,
-  getPressroomLatestPost,
-  getRelatedPressroomPosts,
-  getPressroomPostsSlugs,
-  getFilteredPressroomPosts,
-  getSinglePressroomPost,
   getNews,
   getVideos,
   getEcosystems,

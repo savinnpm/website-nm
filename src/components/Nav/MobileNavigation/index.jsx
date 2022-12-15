@@ -5,7 +5,7 @@ import { useMediaQuery } from '../../../hooks/useMediaQuery'
 const MobileNavigation = dynamic(() => import('./MobileNavigation').then((mod) => mod.MobileNavigation))
 
 export const MobileNavContainer = ({ isMenuOpen }) => {
-  const isMobile = useMediaQuery('(max-width: 768px)')
+  const isMobile = useMediaQuery('(max-width: 1023px)')
 
   if (!isMenuOpen) {
     return null

@@ -6,16 +6,16 @@ import { HtmlContent } from '../../components/Content'
 import { NewsletterSignupForm } from '../../components/NewsletterSignupForm'
 import { SocialShare } from '../../components/SocialShare'
 import { TableOfContents } from '../../components/TableOfContents'
-import { Tags } from '../../components/Tags'
-import { BlogHero } from './01-hero'
+import { Hero } from './01-hero'
 import { RelatedPosts } from './03-related-posts'
+import { Tags } from '../../components/Tags'
 
-export const BlogPostDetail = (props) => {
+export const PressroomPostDetail = (props) => {
   const timeToRead = `${props.post.content.minsToRead} min`
 
   return (
     <>
-      <BlogHero title={props.post.title} featuredImage={props.post.image} createdAt={props.post.date} timeToRead={timeToRead} />
+      <Hero title={props.post.title} featuredImage={props.post.image} createdAt={props.post.date} timeToRead={timeToRead} />
 
       <MainWrapper>
         <Sidebar>
@@ -25,7 +25,7 @@ export const BlogPostDetail = (props) => {
         <ContentWrapper>
           <HtmlContent content={props.post.content.html} />
 
-          <Tags tags={props.post.tags} />
+          <Tags tags={props.post.tags} type='pressroom' />
 
           <SocialShare title={props.post.title} intro={props.post.intro} />
         </ContentWrapper>

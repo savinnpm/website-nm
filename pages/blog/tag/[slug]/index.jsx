@@ -9,7 +9,8 @@ import { getFQDN } from '../../../../src/helpers'
 import { Blog } from '../../../../src/views/Blog'
 
 export async function getStaticPaths ({ locales }) {
-  const slugs = await services.getPostFilters()
+  const data = await services.getBlogPostTagsData()
+  const slugs = data.map(item => item.slug)
 
   const paths = []
 
@@ -18,7 +19,7 @@ export async function getStaticPaths ({ locales }) {
       paths.push({
         locale,
         params: {
-          slug: slug.value
+          slug
         }
       })
     })
@@ -32,17 +33,16 @@ export async function getStaticPaths ({ locales }) {
 
 export async function getStaticProps ({ locale, params }) {
   const s = await serverSideTranslations(locale, ['common', 'blog'])
-  const filteredPosts = await services.getFilteredPosts(params.slug)
   const featuredPosts = await services.getFeaturedPosts()
+  const filteredPosts = await services.getBlogPaginatedData(params.slug, 0)
 
   return {
     props: {
       ...(s),
       featuredPosts,
       blogPosts: filteredPosts.posts,
-      totalPages: filteredPosts.total,
-      filter: params.slug,
-      filters: await services.getPostFilters(),
+      totalPages: filteredPosts.totalPages,
+      tag: await services.getBlogPostTagDataBySlug(params.slug),
       videos: await services.getVideos(),
       pages: await services.getPages(),
       headerStyle: 'colored'
@@ -81,10 +81,9 @@ export default function FilteredBlogPage (props) {
         <Blog
           featuredPosts={props.featuredPosts}
           blogPosts={props.blogPosts}
-          filter={props.filter}
+          tag={props.tag}
           totalPages={props.totalPages}
           page={0}
-          filters={props.filters}
         />
       </main>
     </>

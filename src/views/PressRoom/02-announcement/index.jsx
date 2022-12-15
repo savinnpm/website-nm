@@ -41,7 +41,7 @@ const Announcement = (props) => {
 
   return (
     <Container>
-      <HeaderText>Press Room / Latest Announcements</HeaderText>
+      <HeaderText>{props.tag?.name || 'Press Room / Latest Announcements'}</HeaderText>
       <Articles>
         {(props.posts || []).map((post, i) => {
           return <Card key={i} post={post} />
@@ -78,7 +78,7 @@ const Articles = styled.div`
   margin-top: 32px;
 
   img {
-    object-fit: contain;
+    object-fit: cover;
   }
 
   @media (max-width: 1280px) {
@@ -88,25 +88,15 @@ const Articles = styled.div`
   }
 
   @media (max-width: 768px) {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 34px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
 
     img {
       width: 100%;
       object-fit: cover;
     }
 
-  }
-
-  a:nth-of-type(-n+2){
-    margin-bottom: 18px;
-    padding-bottom: 18px;
-
-    @media (max-width: 768px) {
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
   }
 `
 

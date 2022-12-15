@@ -1,9 +1,11 @@
 import styled from 'styled-components'
-import { typography } from '../../../styles/typography'
-import { Tag } from '../../components/ArticleCard'
+import { typography } from '../../styles/typography'
+import { Tag } from './Tag'
 
-export const Tags = ({ tags }) => {
-  if (!tags?.length) return <></>
+export const Tags = ({ tags, type = 'blog' }) => {
+  if (!tags?.length) {
+    return null
+  }
 
   return (
     <Container>
@@ -12,7 +14,7 @@ export const Tags = ({ tags }) => {
       <TagsContainer>
         {
           tags.map((tag, i) => (
-            <Tag key={i} tag={tag}>{tag.name}</Tag>
+            <Tag key={i} color={tag.color} href={`/${type}/tag/${tag.slug}`}>{tag.name}</Tag>
           ))
         }
       </TagsContainer>

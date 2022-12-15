@@ -12,13 +12,13 @@ export const InputHint = ({ children }) => {
 
 const Container = styled.p`
   margin-top: 6px;
-  color: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['400']};
+  color: ${props => props.theme.isLightMode ? colors.gray['400'] : colors.gray['50']};
   ${typography.styles.textSm};
   ${typography.weights.regular};
 
   a {
     text-decoration: underline;
-    color: ${colors[primaryColorKey]['600']};
+    color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors.gray['50']};
 
     :hover, :active{
       color: ${colors.rose[600]};

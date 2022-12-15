@@ -1,14 +1,17 @@
+import { useId } from 'react'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { shadows } from '../../../styles/shadows'
 import { typography } from '../../../styles/typography'
+import { utils } from '../../../styles/utils'
 
 export const Input = ({ children, placeholder, ...props }) => {
+  const id = useId()
+
   return (
     <Container>
-      <Label>
-        <StyledInput placeholder={placeholder} {...props} />
-      </Label>
+      <Label htmlFor={id}>{placeholder}</Label>
+      <StyledInput id={id} placeholder={placeholder} {...props} />
 
       {/* Hint as children */}
       {children}
@@ -24,6 +27,8 @@ const Container = styled.div`
 
 const Label = styled.label`
   flex: 1;
+
+  ${utils.srOnly};
 `
 
 const StyledInput = styled.input`
