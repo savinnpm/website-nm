@@ -1,15 +1,15 @@
 export const data = [
   {
-    title: 'Home',
-    href: '/'
-  },
-  {
     title: 'Blog',
     href: '/blog'
   },
   {
     title: 'Careers',
     href: '/careers'
+  },
+  {
+    title: 'About Us',
+    href: '/about'
   },
   {
     title: 'Resources',

@@ -54,11 +54,11 @@ const Carousel = () => {
 
   return (
     <Slider {...settings}>
-      {data.map((app) => {
+      {data.map((app, i) => {
         return (
           <AppContainer key={app.name}>
-            <Image src={app.src} alt={app.name} height='32' width='32' loading='lazy' />
-            <AppName>{app.name}</AppName>
+            <Image aria-labelledby={`img-${i}`} src={app.src} height='32' width='32' loading='lazy' />
+            <AppName id={`img-${i}`}>{app.name}</AppName>
           </AppContainer>
         )
       })}
@@ -79,7 +79,7 @@ const AppContainer = styled.div`
   }
 `
 
-const AppName = styled.p`
+const AppName = styled.span`
   color: ${(props) => props.theme.color};
 
   ${typography.styles.textXl};
