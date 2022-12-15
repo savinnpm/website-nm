@@ -45,7 +45,7 @@ const InnerContainer = styled.div`
   }
 `
 
-const Heading = styled.div`
+const Heading = styled.h1`
   ${typography.styles.displayLg}
   ${typography.weights.semibold}
   
