@@ -14,7 +14,7 @@ export const FeatureTabContent = ({ icon, title, text }) => {
   )
 }
 
-const Heading = styled.p`
+const Heading = styled.h3`
   margin-top: 8px;
   color: ${props => props.theme.color};
   ${typography.styles.textXl}

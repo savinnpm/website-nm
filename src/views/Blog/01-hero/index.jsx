@@ -31,7 +31,7 @@ export const Hero = () => {
         </FormContainer>
 
       </InnerContainer>
-      <RssLink href='/rss.xml' target='_blank'>
+      <RssLink href='/rss.xml' target='_blank' title='rss'>
         <Icon variant='rss-01' size={16} />
       </RssLink>
     </Container>
