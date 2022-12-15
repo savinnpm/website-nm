@@ -13,7 +13,7 @@ export const ArticleCard = ({ post, type = 'blog' }) => {
       <ImageContainer>
         <Image
           src={`${post.image}`}
-          alt=''
+          alt={post?.alt || ''}
           fill
           sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
           placeholder='blur'
