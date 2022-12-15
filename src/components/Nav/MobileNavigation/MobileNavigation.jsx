@@ -53,7 +53,7 @@ const Container = styled.div`
   display: block;
   border-top: 1px solid ${(props) => props.theme.isLightMode ? colors.gray['100'] : colors.gray['700']};
 
-  @media (max-width: 768px) { 
+  @media (max-width: 1023px) { 
     z-index: 2;
   }
 `

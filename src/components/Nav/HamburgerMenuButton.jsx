@@ -26,7 +26,7 @@ const Container = styled.button`
     ${utils.srOnly};
   }
 
-  @media (max-width: 768px) {
+  @media (max-width: 1023px) {
     display: inline-flex;
     justify-content: center;
     align-items: center;
