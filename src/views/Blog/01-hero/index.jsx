@@ -83,7 +83,7 @@ const Heading = styled.div`
   }
 `
 const Subheader = styled.div`
-  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['500']};
+  color: ${(props) => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
 
   ${typography.styles.textMd};
   ${typography.weights.semibold};
