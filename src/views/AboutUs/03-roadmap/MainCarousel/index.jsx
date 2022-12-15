@@ -11,6 +11,8 @@ import { utils } from '../../../../../styles/utils'
 import { Icon } from '../../../../components/Icon'
 
 const currentIndex = data.findIndex((x) => x.current)
+const DESKTOP_INITIAL_SLIDE = currentIndex - 5
+const MOBILE_INITIAL_SLIDE = currentIndex - 1
 
 const getVW = () => {
   return Math.max(
@@ -21,7 +23,8 @@ const getVW = () => {
 
 export const MainCarousel = () => {
   const [selected, setSelected] = useState(currentIndex)
-  const [shouldSetInitial, setShouldSetInitial] = useState(false)
+  const [initialized, setInitialized] = useState(false)
+  const [sliderIndex, setSliderIndex] = useState(DESKTOP_INITIAL_SLIDE)
 
   const sliderRef = useRef(null)
 
@@ -29,26 +32,28 @@ export const MainCarousel = () => {
   const onPrev = () => sliderRef?.current?.slickPrev()
 
   useEffect(() => {
-    // Get viewport width
-
-    // Change initial slide to show the current item
-    // Cannot use initialSlide setting in react-slick
-    if (shouldSetInitial && sliderRef.current) {
+    // Change initial slide to show the current item on mobile
+    // Reason: Cannot use different initialSlide for mobile
+    if (initialized && sliderRef.current) {
       if (getVW() < 768) {
-        sliderRef.current.slickGoTo(currentIndex - 1)
+        sliderRef.current.slickGoTo(MOBILE_INITIAL_SLIDE)
+      } else {
+        // This is not required. But it fixes a strange bug for now.
+        sliderRef.current.slickGoTo(DESKTOP_INITIAL_SLIDE)
       }
     }
-  }, [shouldSetInitial])
+  }, [initialized])
 
   const settings = {
     dots: false,
     infinite: false,
     arrows: false,
     speed: 500,
-    initialSlide: currentIndex - 5,
+    initialSlide: DESKTOP_INITIAL_SLIDE,
     slidesToShow: 7,
     slidesToScroll: 7,
-    onInit: () => setShouldSetInitial(true),
+    afterChange: (index) => setSliderIndex(index),
+    onInit: () => setInitialized(true),
 
     responsive: [
       {
@@ -122,6 +127,7 @@ export const MainCarousel = () => {
 
       <ArrowsContainer>
         <ArrowButton
+          disabled={sliderIndex <= 0}
           onClick={onPrev}
           title='Previous'
         >
