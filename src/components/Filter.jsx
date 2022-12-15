@@ -13,7 +13,7 @@ export const Filter = ({ options, selectedOption, setSelectedOption, label, icon
       <Listbox value={selectedOption} onChange={setSelectedOption}>
         <FilterLabel>{label}</FilterLabel>
         <ButtonContainer>
-          <ListboxButton>
+          <ListboxButton id='filter'>
             <Left>
               {iconVariant && <Icon variant={iconVariant} size={20} />}
               <span>{selectedOption
@@ -64,7 +64,7 @@ const Container = styled.div`
   }
 `
 
-const FilterLabel = styled.span`
+const FilterLabel = styled(Listbox.Label)`
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.white};
 
   ${typography.styles.textMd};
