@@ -15,7 +15,7 @@ export const Hero = () => {
             <Subheading>{t('Contact Us')}</Subheading>
             <Heading>{t('Get In Touch')}</Heading>
           </H1>
-          <Subtitle>{t('We&apos;d love to hear from you. Please fill out this form.')}</Subtitle>
+          <Subtitle>{t('We’d love to hear from you. Please fill out this form.')}</Subtitle>
         </Text>
       </InnerContainer>
     </Container>

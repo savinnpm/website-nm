@@ -78,7 +78,7 @@ const Tag = styled.span`
   border-radius: 16px;
   background-color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['50'] : colors.gray['600']};
   color: ${props => props.theme.isLightMode ? colors[props.color || primaryColorKey]['700'] : colors[props.color || primaryColorKey]['400']};
-  ${typography.weights.medium}
+  ${typography.weights.semibold};
   ${typography.styles.textSm}
 `
 
