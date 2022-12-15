@@ -6,9 +6,9 @@ import { typography } from '../../../styles/typography'
 export const Input = ({ children, placeholder, ...props }) => {
   return (
     <Container>
-      <Label>
-        <StyledInput placeholder={placeholder} {...props} />
-      </Label>
+      <LabelDiv>
+        <StyledInput title={placeholder} placeholder={placeholder} {...props} />
+      </LabelDiv>
 
       {/* Hint as children */}
       {children}
@@ -22,7 +22,7 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-const Label = styled.label`
+const LabelDiv = styled.div`
   flex: 1;
 `
 
