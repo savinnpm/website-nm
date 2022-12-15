@@ -33,8 +33,8 @@ const Hero = () => {
           </HeaderContent>
         </Content>
       </InnerContainer>
-      <VideoContainer onClick={showVideo}>
-        <img alt='' src='/assets/images/hero/reduce-exposure.webp' />
+      <VideoContainer title='@todo' onClick={showVideo}>
+        <img alt='@todo' src='/assets/images/hero/reduce-exposure.webp' />
         <Overlay>
           <PlayIcon />
         </Overlay>
@@ -126,7 +126,7 @@ const Overlay = styled.div`
   }
 `
 
-const VideoContainer = styled.div`
+const VideoContainer = styled.button`
   width: 887px;
   height: 499px;
   
