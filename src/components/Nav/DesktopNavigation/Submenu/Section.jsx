@@ -48,7 +48,7 @@ export const Section = ({ section }) => {
 }
 
 const Title = styled.h4`
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['300']};
 
   ${typography.styles.textSm};
   ${typography.weights.semibold};
@@ -64,7 +64,7 @@ const Content = styled.div`
 const More = styled.a`
   margin-top: 16px;
   display: inline-flex;
-  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
+  color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['300']};
   gap: 8px;
 
   ${typography.styles.textSm};

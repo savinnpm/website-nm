@@ -42,7 +42,7 @@ const Container = styled.a`
 
   svg {
     flex-shrink: 0;
-    color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['500']};
+    color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['600'] : colors[primaryColorKey]['300']};
   }
 `
 
