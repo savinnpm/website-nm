@@ -42,12 +42,13 @@ export default class MyDocument extends Document {
           <meta name='msapplication-TileColor' content='#01052D' />
           <meta name='msapplication-TileImage' content='/assets/images/meta/icons/ms-icon-144x144.webp' />
           <meta name='theme-color' content='#01052D' />
-
-          <script defer async='' src='https://platform.twitter.com/widgets.js' />
         </Head>
+
         <body>
           <Main />
           <NextScript />
+          <noscript>We’re sorry, some parts of the Neptune Mutual website don’t work properly without JavaScript enabled.</noscript>
+          <script defer async src='https://platform.twitter.com/widgets.js' />
         </body>
       </Html>
     )
