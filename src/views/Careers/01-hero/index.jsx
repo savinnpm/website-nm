@@ -50,16 +50,17 @@ const SubheadingWithBadge = styled.div`
   display: inline-flex;
   flex-wrap: wrap;
   justify-content: flex-start;
+  gap: 8px;
 `
 
 const Badge = styled.div`
+  display: inline-flex;
   ${typography.styles.textSm};
   ${typography.weights.medium};
   color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
   background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
   padding: 2px 10px;
   border-radius: 16px;
-  margin-left: 8px;
 `
 
 const Container = styled.div`
@@ -92,7 +93,7 @@ const Subheading = styled.span`
   color: ${props => props.theme.isLightMode ? colors[primaryColorKey]['700'] : colors[primaryColorKey]['300']};
   ${typography.weights.semibold}
   ${typography.styles.textMd}
-  display: block;
+  display: inline-flex;
 `
 const HeaderTitle = styled.div`
   margin-top: 12px;
