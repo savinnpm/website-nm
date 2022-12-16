@@ -57,7 +57,8 @@ const Carousel = () => {
       {data.map((app, i) => {
         return (
           <AppContainer key={app.name}>
-            <Image aria-labelledby={`img-${i}`} src={app.src} alt={app.name} height='32' width='32' loading='lazy' />
+            {/* @note - alt is empty because the content of the image is already provided in context through text */}
+            <Image aria-labelledby={`img-${i}`} src={app.src} alt='' height='32' width='32' loading='lazy' />
             <AppName id={`img-${i}`}>{app.name}</AppName>
           </AppContainer>
         )
