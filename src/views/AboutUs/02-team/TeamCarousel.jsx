@@ -11,10 +11,7 @@ import {
   primaryColorKey
 } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
-import {
-  ArrowLeft,
-  ArrowRight
-} from '../../../components/Icon/variants/Arrows'
+import { Icon } from '../../../components/Icon'
 import {
   Facebook,
   LinkedIn,
@@ -154,14 +151,14 @@ export const TeamCarousel = () => {
           title='Left'
           onClick={() => handleArrowClick('left')}
         >
-          <ArrowLeft width='24' height='24' />
+          <Icon variant='arrow-left' size={24} />
         </ArrowButton>
 
         <ArrowButton
           title='Right'
           onClick={() => handleArrowClick('right')}
         >
-          <ArrowRight width='24' height='24' />
+          <Icon variant='arrow-right' size={24} />
         </ArrowButton>
       </ArrowsContainer>
     </Container>

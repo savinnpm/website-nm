@@ -179,6 +179,7 @@ const Container = styled.div`
   }
 
   .kg-bookmark-container {
+    color: currentColor;
     position: relative;
     min-height: 150px;
     padding-bottom: 0;

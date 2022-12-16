@@ -1,3 +1,5 @@
+import * as ga from './ga'
+
 const getFormattedDate = (x) => {
   // Safari doesn't like dashes
   const normalized = x.replace(/-/g, '/')
@@ -50,4 +52,11 @@ const chunkArray = (arr, size) => {
   )
 }
 
-export { copyToClipBoard, getFormattedDate, getFQDN, getDns, chunkArray }
+export {
+  copyToClipBoard,
+  getFormattedDate,
+  getFQDN,
+  getDns,
+  chunkArray,
+  ga
+}

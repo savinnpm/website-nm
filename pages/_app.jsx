@@ -1,20 +1,19 @@
 import { useEffect, useState } from 'react'
 import { appWithTranslation } from 'next-i18next'
+import { Router } from 'next/router'
+import styled from 'styled-components'
 
 import '@fontsource/inter/latin.css'
 import 'slick-carousel/slick/slick.css'
 
 import { ThemeProvider } from '../src/theme/ThemeContext'
+import { VideosProvider } from '../src/context/VideosContext'
 import { Footer } from '../src/components/Footer'
 import { Header } from '../src/components/Header'
-import styled from 'styled-components'
 import { colors } from '../styles/colors'
 import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
-import { VideosProvider } from '../src/context/VideosContext'
 import { PageLoader } from '../src/components/PageLoader'
-import { Router } from 'next/router'
-import * as ga from '../src/helpers/ga'
-import { GTMCode } from '../src/components/GTMCode'
+import { CookiesAndAnalytics } from '../src/components/CookiesAndAnalytics'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -22,13 +21,8 @@ function MyApp ({ Component, pageProps }) {
   useEffect(() => {
     // Close menu after navigating to a new page
     const onClose = () => setIsMenuOpen(false)
-    const handleRouteChange = (url) => {
-      ga.pageview(url)
-    }
-    Router.events.on('routeChangeComplete', (url) => {
-      onClose()
-      handleRouteChange(url)
-    })
+
+    Router.events.on('routeChangeComplete', onClose)
 
     return () => {
       Router.events.off('routeChangeComplete', onClose)
@@ -36,23 +30,21 @@ function MyApp ({ Component, pageProps }) {
   }, [])
 
   return (
-    <>
-      <GTMCode />
-      <ThemeProvider>
-        <VideosProvider videos={pageProps.videos}>
-          <HeaderContainer>
-            <PageLoader />
-            <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
-            <Border />
-          </HeaderContainer>
-          <MainContainer>
-            <Component {...pageProps} />
-            <MobileNavContainer isMenuOpen={isMenuOpen} />
-          </MainContainer>
-          <Footer pages={pageProps.pages} />
-        </VideosProvider>
-      </ThemeProvider>
-    </>
+    <ThemeProvider>
+      <VideosProvider videos={pageProps.videos}>
+        <HeaderContainer>
+          <PageLoader />
+          <Header isMenuOpen={isMenuOpen} setIsMenuOpen={setIsMenuOpen} colored={pageProps.headerStyle === 'colored'} />
+          <Border />
+        </HeaderContainer>
+        <MainContainer>
+          <Component {...pageProps} />
+          <MobileNavContainer isMenuOpen={isMenuOpen} />
+        </MainContainer>
+        <Footer pages={pageProps.pages} />
+      </VideosProvider>
+      <CookiesAndAnalytics />
+    </ThemeProvider>
   )
 }
 
