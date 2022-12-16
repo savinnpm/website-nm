@@ -32,7 +32,7 @@ export const BlogPostDetail = (props) => {
 
       <RelatedPosts blogPosts={props.relatedPosts} />
 
-      <NewsletterSignupForm showRSS atomLink='/atom.xml' rssLink='/rss.xml' />
+      <NewsletterSignupForm showRSS atomLink='/blog/atom.xml' rssLink='/blog/rss.xml' />
     </>
   )
 }

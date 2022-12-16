@@ -20,7 +20,7 @@ export const Blog = ({ featuredPosts, blogPosts, totalPages, page, tag }) => {
         tag={tag}
       />
 
-      <NewsletterSignupForm showRSS atomLink='/atom.xml' rssLink='/rss.xml' />
+      <NewsletterSignupForm showRSS atomLink='/blog/atom.xml' rssLink='/blog/rss.xml' />
     </>
   )
 }

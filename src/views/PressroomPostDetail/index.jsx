@@ -33,7 +33,7 @@ export const PressroomPostDetail = (props) => {
 
       <RelatedPosts blogPosts={props.relatedPosts} />
 
-      <NewsletterSignupForm showRSS />
+      <NewsletterSignupForm heading='Subscribe to Our Pressroom' showRSS atomLink='/pressroom/atom.xml' rssLink='/pressroom/rss.xml' />
     </>
   )
 }
