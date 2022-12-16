@@ -99,6 +99,7 @@ const ImageContainer = styled.div`
     height: 90%;
     max-height: 350px;
     display: block;
+    object-fit: contain;
   }
 
 `

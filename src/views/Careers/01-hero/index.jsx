@@ -48,6 +48,7 @@ const H1 = styled.h1``
 
 const SubheadingWithBadge = styled.div`
   display: inline-flex;
+  flex-wrap: wrap;
   justify-content: flex-start;
 `
 

@@ -1,11 +1,14 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../styles/colors'
 import { shadows } from '../../../styles/shadows'
 import { Icon } from '../Icon'
 
 export const CloseButton = (props) => {
+  const { t } = useTranslation('common')
+
   return (
-    <Container {...props}>
+    <Container {...props} title={t('Close')}>
       <Icon variant='x-close' size={24} />
     </Container>
   )
