@@ -12,10 +12,14 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
     e.preventDefault()
     const formData = new FormData(e.target)
     const email = formData.get('email')
+
     try {
       const res = await fetch('https://api2.neptunemutual.net/subscribe', {
         method: 'POST',
-        body: JSON.stringify({ email: email })
+        body: JSON.stringify({ email: email }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
       console.log(res)
     } catch (error) {
@@ -40,11 +44,11 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
       </FormContainer>
       {showRSS && (
         <SubscribeContainer>
-          <AtomContainer href={atomLink}>
+          <AtomContainer href={atomLink} target='_blank'>
             <Icon variant='rss-01' size={16} />
             Atom
           </AtomContainer>
-          <RSSContainer href={rssLink}>
+          <RSSContainer href={rssLink} target='_blank'>
             <Icon variant='rss-01' size={16} />
             RSS
           </RSSContainer>
@@ -88,7 +92,7 @@ const SubscribeContainer = styled.div`
   gap:6px;
 `
 
-const AtomContainer = styled(Link)`
+const AtomContainer = styled.a`
   display: flex;
   align-items: center;
   gap:6px;
@@ -106,7 +110,7 @@ const AtomContainer = styled(Link)`
   }
 `
 
-const RSSContainer = styled(Link)`
+const RSSContainer = styled.a`
   display: flex;
   gap:6px;
   padding: 2px 8px;
