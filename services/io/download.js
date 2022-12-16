@@ -1,7 +1,7 @@
 import fs from 'fs'
 import https from 'https'
 import path from 'path'
-import { ensureDirectory, exists } from '.'
+import { ensureDirectory, exists } from './index'
 
 const download = function (url, dest) {
   return new Promise((resolve, reject) => {

@@ -8,6 +8,7 @@ import { colors, primaryColorKey } from '../../../styles/colors'
 import { Button } from '../Button'
 import { CloseButton } from './CloseButton'
 import { DeclineButton } from './DeclineButton'
+import Link from 'next/link'
 
 export const ConsentPopup = ({ setAccepted }) => {
   const [open, setOpen] = useState(true)
@@ -44,6 +45,8 @@ export const ConsentPopup = ({ setAccepted }) => {
             <Description>
               {t('By clicking “Accept All Cookies”, you agree to the storing of cookies on your device to enhance site navigation, analyze site usage and assist in our marketing efforts.')}
             </Description>
+
+            <StyledLink href='/policies'>{t('More info')}</StyledLink>
           </TextContainer>
 
           <ActionsContainer>
@@ -105,6 +108,12 @@ const Description = styled(Dialog.Description)`
 
   ${typography.styles.textMd};
   ${typography.weights.regular};
+`
+
+const StyledLink = styled(Link)`
+  display: inline-flex;
+  text-decoration: underline;
+  color: ${props => props.theme.color};
 `
 
 const Panel = styled(Dialog.Panel)`
