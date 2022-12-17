@@ -13,7 +13,8 @@ import {
   CheckCircle,
   SearchSm,
   SearchMd,
-  SearchLg
+  SearchLg,
+  CheckCircleBroken
 } from "./variants/General";
 import {
   ArrowLeft,
@@ -309,6 +310,10 @@ export const Icon = ({ size, variant }) => {
 
   if (variant === "check") {
     IconComponent = Check;
+  }
+
+  if (variant === "check-circle-broken") {
+    IconComponent = CheckCircleBroken;
   }
 
   if (variant === "download-01") {
