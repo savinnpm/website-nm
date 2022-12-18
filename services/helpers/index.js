@@ -50,6 +50,8 @@ const getTableOfContents = async ($) => {
     const el = this
     const elName = el.tagName
 
+    // Removes extra whitespaces
+    // ` a bb     ccc dddd  ` => `a bb ccc dddd`
     const elText = $(el).text().replace(/^(\s)+|(\s)+$/g, '')
     // .replace(/^(\d+\.\s)/g, '') to remove preceeding numbers
 

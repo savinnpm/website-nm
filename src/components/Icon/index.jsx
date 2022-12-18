@@ -60,31 +60,75 @@ import { Lightbulb03, Phone01, Play, Rss01 } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
 import { Flag06, MarkerPin01, Globe01, MarkerPin02 } from "./variants/MapsAndTravel";
 import { FaceSmile, Users01, UserSquare } from "./variants/Users";
-
-// custom icons
-import MoonStarFilled from "./variants/moon-star-filled";
-import SunFilled from "./variants/sun-filled";
-import Dot from "./variants/dot"
 import { Folder, FolderPlus } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
 import { ShieldTick } from "./variants/Security";
 import { AnnotationDots, Mail02, MessageDotsCircle } from "./variants/Communication";
 import { PencilLine } from "./variants/Editor"
-import { Arbitrum, ArbitrumDark, Avalanche, AvalancheDark, BNBChain, BNBChainDark, Ethereum, EthereumDark, Polygon, PolygonDark } from "./variants/Brands";
+
+// custom icons
+import Dot from "./custom/dot"
+import SunFilled from "./custom/sun-filled";
+import MoonStarFilled from "./custom/moon-star-filled";
+import { Arbitrum, ArbitrumDark, Avalanche, AvalancheDark, BNBChain, BNBChainDark, Ethereum, EthereumDark, Polygon, PolygonDark } from "./custom/Brands";
 
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
 
-  // custom icon
+  // custom icons
   if (variant === "moon-star-filled") {
     IconComponent = MoonStarFilled;
   }
 
-  // custom icon
   if (variant === "sun-filled") {
     IconComponent = SunFilled;
   }
 
+  if (variant === "dot") {
+    IconComponent = Dot;
+  }
+
+  if(variant === 'ethereum') {
+    IconComponent = Ethereum;
+  }
+
+  if(variant === 'ethereum-dark') {
+    IconComponent = EthereumDark;
+  }
+
+  if(variant === 'arbitrum') {
+    IconComponent = Arbitrum;
+  }
+
+  if(variant === 'arbitrum-dark') {
+    IconComponent = ArbitrumDark;
+  }
+
+  if(variant === 'bnbchain') {
+    IconComponent = BNBChain;
+  }
+
+  if(variant === 'bnbchain-dark') {
+    IconComponent = BNBChainDark;
+  }
+
+  if(variant === 'avalanche') {
+    IconComponent = Avalanche;
+  }
+
+  if(variant === 'avalanche-dark') {
+    IconComponent = AvalancheDark;
+  }
+
+  if(variant === 'polygon') {
+    IconComponent = Polygon;
+  }
+
+  if(variant === 'polygon-dark') {
+    IconComponent = PolygonDark;
+  }
+
+  // icon from set
   if (variant === "placeholder") {
     IconComponent = Placeholder;
   }
@@ -329,10 +373,6 @@ export const Icon = ({ size, variant }) => {
     IconComponent = FolderPlus
   }
 
-  if (variant === "dot") {
-    IconComponent = Dot;
-  }
-
   if(variant === 'shield-tick') {
     IconComponent = ShieldTick
   }
@@ -363,46 +403,6 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'pencil-line') {
     IconComponent = PencilLine;
-  }
-
-  if(variant === 'ethereum') {
-    IconComponent = Ethereum;
-  }
-
-  if(variant === 'ethereum-dark') {
-    IconComponent = EthereumDark;
-  }
-
-  if(variant === 'arbitrum') {
-    IconComponent = Arbitrum;
-  }
-
-  if(variant === 'arbitrum-dark') {
-    IconComponent = ArbitrumDark;
-  }
-
-  if(variant === 'bnbchain') {
-    IconComponent = BNBChain;
-  }
-
-  if(variant === 'bnbchain-dark') {
-    IconComponent = BNBChainDark;
-  }
-
-  if(variant === 'avalanche') {
-    IconComponent = Avalanche;
-  }
-
-  if(variant === 'avalanche-dark') {
-    IconComponent = AvalancheDark;
-  }
-
-  if(variant === 'polygon') {
-    IconComponent = Polygon;
-  }
-
-  if(variant === 'polygon-dark') {
-    IconComponent = PolygonDark;
   }
 
   if(variant === 'check-circle-filled') {

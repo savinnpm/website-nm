@@ -1,12 +1,12 @@
-const articles = require('./articles.json')
-const pressroom = require('./pressroom.json')
-const audits = require('./audits.json')
-const pages = require('./pages.json')
-const programs = require('./programs.json')
-const vacancies = require('./vacancies.json')
-const ecosystems = require('./ecosystems.json')
-const news = require('./news.json')
-const videos = require('./videos.json')
+import articles from './articles.json'
+import pressroom from './pressroom.json'
+import audits from './audits.json'
+import pages from './pages.json'
+import programs from './programs.json'
+import vacancies from './vacancies.json'
+import ecosystems from './ecosystems.json'
+import news from './news.json'
+import videos from './videos.json'
 
 export const mockData = {
   articles,

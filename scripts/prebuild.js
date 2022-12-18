@@ -39,34 +39,36 @@ const updateXmlFiles = async () => {
     return
   }
 
+  const urlPrefix = process.env.SITEMAP_API_URL_PREFIX // ends with `/`
+
   // pathToStore is relative - DO NOT START WITH `/`
   const files = [
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}sitemap.xml`,
+      url: `${urlPrefix}sitemap.xml`,
       pathToStore: './sitemap.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}atom.xml`,
+      url: `${urlPrefix}atom.xml`,
       pathToStore: './atom.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}rss.xml`,
+      url: `${urlPrefix}rss.xml`,
       pathToStore: './rss.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}blog/atom.xml`,
+      url: `${urlPrefix}blog/atom.xml`,
       pathToStore: './blog/atom.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}blog/rss.xml`,
+      url: `${urlPrefix}blog/rss.xml`,
       pathToStore: './blog/rss.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}pressroom/atom.xml`,
+      url: `${urlPrefix}pressroom/atom.xml`,
       pathToStore: './pressroom/atom.xml'
     },
     {
-      url: `${process.env.SITEMAP_API_URL_PREFIX}pressroom/rss.xml`,
+      url: `${urlPrefix}pressroom/rss.xml`,
       pathToStore: './pressroom/rss.xml'
     }
   ]
