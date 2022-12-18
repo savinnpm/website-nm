@@ -11,7 +11,7 @@ export const SocialLinks = () => {
         return (
           <ExternalLink key={link.href} href={link.href} target='_blank' rel='nofollow noopener noreferrer'>
             <span>{link.text}</span>
-            <Icon size='24' variant={link.icon} />
+            <Icon size={24} variant={link.icon} />
           </ExternalLink>
         )
       })}

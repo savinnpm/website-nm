@@ -12,12 +12,6 @@ import {
 } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { Icon } from '../../../components/Icon'
-import {
-  Facebook,
-  LinkedIn,
-  Medium,
-  Twitter
-} from '../../../components/Icon/variants/Socials/White'
 import { data } from './data'
 
 const Details = ({ id, name, title, links, isMobile }) => (
@@ -29,28 +23,28 @@ const Details = ({ id, name, title, links, isMobile }) => (
       {
         links.linkedIn && (
           <a href={links.linkedIn} title={`${name} LinkedIn`} target='_blank' rel='nofollow noreferrer'>
-            <LinkedIn width='16' height='16' />
+            <Icon variant='linkedin' size={16} />
           </a>
         )
       }
       {
         links.twitter && (
           <a href={links.twitter} target='_blank' title={`${name} Twitter`} rel='nofollow noreferrer'>
-            <Twitter width='16' height='16' />
+            <Icon variant='twitter' size={16} />
           </a>
         )
       }
       {
         links.medium && (
           <a href={links.medium} target='_blank' title={`${name} Medium`} rel='nofollow noreferrer'>
-            <Medium width='16' height='16' />
+            <Icon variant='medium' size={16} />
           </a>
         )
       }
       {
         links.facebook && (
           <a href={links.facebook} target='_blank' title={`${name} Facebook`} rel='nofollow noreferrer'>
-            <Facebook width='16' height='16' />
+            <Icon variant='facebook' size={16} />
           </a>
         )
       }

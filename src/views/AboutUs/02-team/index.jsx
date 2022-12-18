@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { LinkExternal01 } from '../../../components/Icon/variants/General'
+import { Icon } from '../../../components/Icon'
 import { TeamCarousel } from './TeamCarousel'
 
 export const Team = () => {
@@ -14,7 +14,7 @@ export const Team = () => {
       <ContentContainer>
         <LinkText href='/careers'>
           <span>{t('We’re hiring!')}</span>
-          <LinkExternal01 width='16' height='16' />
+          <Icon variant='link-external-01' size={16} />
         </LinkText>
 
         <Title>{t('Meet Our Team')}</Title>

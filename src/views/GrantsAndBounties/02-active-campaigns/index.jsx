@@ -4,62 +4,14 @@ import styled, { useTheme } from 'styled-components'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import {
-  MessageChatCircle
-} from '../../../components/Icon/variants/Communication'
-import { CodeCircle03 } from '../../../components/Icon/variants/Development'
-import SvgDot from '../../../components/Icon/variants/dot'
-import { Tag03 } from '../../../components/Icon/variants/FinanceAndEcommerce'
-import { Share07 } from '../../../components/Icon/variants/General'
-
-const getIcon = (program) => {
-  let Icon
-
-  switch (program.category) {
-    case 'Partnerships and Business Development':
-      Icon = Share07
-      break
-
-    case 'Sales and Promotion':
-      Icon = Tag03
-      break
-
-    case 'Marketing and Growth':
-      Icon = MessageChatCircle
-      break
-
-    case 'Technology and Cybersecurity':
-      Icon = CodeCircle03
-      break
-
-    default:
-      break
-  }
-
-  return Icon
-}
-
-const getBadgeIcon = (badge) => {
-  let Icon
-
-  switch (badge.icon) {
-    case 'Dot':
-      Icon = SvgDot
-      break
-
-    default:
-      break
-  }
-
-  return Icon
-}
+import { Icon } from '../../../components/Icon'
 
 export const ActiveCampaigns = ({ programs }) => {
   const { t } = useTranslation('grants')
 
   const { isLightMode } = useTheme()
 
-  if (!programs?.length) return <></>
+  if (!programs?.length) return null
 
   return (
     <Container>
@@ -72,26 +24,24 @@ export const ActiveCampaigns = ({ programs }) => {
 
       <ProgramContainer>
         {
-          programs.map((p, i) => {
-            const CategoryIcon = getIcon(p)
-            const badge = p.badges[0]
-            const BadgeIcon = getBadgeIcon(badge)
+          programs.map((program, i) => {
+            const badge = program.badges[0]
 
             return (
-              <Program key={i} href={`/grants-and-bounties/${p.slug}`}>
+              <Program key={i} href={`/grants-and-bounties/${program.slug}`}>
                 <TitleAndBadgeContainer>
-                  <ProgramTitle>{p.title}</ProgramTitle>
+                  <ProgramTitle>{program.title}</ProgramTitle>
                   <BadgeContainer data-color={badge.color} data-is-lightmode={isLightMode}>
-                    {BadgeIcon && <BadgeIcon width={8} height={8} />}
+                    {badge.icon && <Icon variant={badge.icon.toLowerCase()} size={8} />}
                     <span>{badge.text}</span>
                   </BadgeContainer>
                 </TitleAndBadgeContainer>
 
-                <ProgramIntro>{p.intro}</ProgramIntro>
+                <ProgramIntro>{program.intro}</ProgramIntro>
 
                 <CategoryContainer>
-                  {CategoryIcon && <CategoryIcon width='20' height='20' />}
-                  <ProgramCategory>{p.category}</ProgramCategory>
+                  {program.icon && <Icon variant={program.icon} size={20} />}
+                  <ProgramCategory>{program.category}</ProgramCategory>
                 </CategoryContainer>
               </Program>
             )

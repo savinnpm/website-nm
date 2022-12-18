@@ -17,7 +17,8 @@ import {
   CheckCircleFilled,
   DotsGrid,
   HeartHand,
-  CheckCircleBroken
+  CheckCircleBroken,
+  Share07
 } from "./variants/General";
 import {
   ArrowLeft,
@@ -51,7 +52,7 @@ import {
   Linkedin as LinkedinDefault,
   Facebook as FacebookDefault
 } from './variants/Socials/Default'
-import { CodeSquare01, Database01, FileCode01 } from "./variants/Development";
+import { CodeCircle03, CodeSquare01, Database01, FileCode01 } from "./variants/Development";
 import { Bell02 } from "./variants/AlertsAndFeedback";
 import { ChartBreakoutSquare, LineChartUp03 } from "./variants/Charts";
 import { Cube01, Cube02 } from "./variants/Shapes";
@@ -61,9 +62,9 @@ import { Clock } from "./variants/Time";
 import { Flag06, MarkerPin01, Globe01, MarkerPin02 } from "./variants/MapsAndTravel";
 import { FaceSmile, Users01, UserSquare } from "./variants/Users";
 import { Folder, FolderPlus } from "./variants/Files";
-import { Bank } from "./variants/FinanceAndEcommerce";
+import { Bank, Tag03 } from "./variants/FinanceAndEcommerce";
 import { ShieldTick } from "./variants/Security";
-import { AnnotationDots, Mail02, MessageDotsCircle } from "./variants/Communication";
+import { AnnotationDots, Mail02, MessageChatCircle, MessageDotsCircle } from "./variants/Communication";
 import { PencilLine } from "./variants/Editor"
 
 // custom icons
@@ -439,6 +440,22 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'phone-01') {
     IconComponent = Phone01
+  }
+
+  if(variant === 'share-07') {
+    IconComponent = Share07
+  }
+
+  if(variant === "tag-03") {
+    IconComponent = Tag03
+  }
+
+  if(variant === "message-chat-circle") {
+    IconComponent = MessageChatCircle
+  }
+
+  if(variant === "code-circle-03") {
+    IconComponent = CodeCircle03
   }
 
   if(variant === 'check-circle-broken') {
