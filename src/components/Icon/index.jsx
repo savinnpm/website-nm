@@ -14,6 +14,9 @@ import {
   SearchSm,
   SearchMd,
   SearchLg,
+  CheckCircleFilled,
+  DotsGrid,
+  HeartHand,
   CheckCircleBroken
 } from "./variants/General";
 import {
@@ -50,13 +53,13 @@ import {
 } from './variants/Socials/Default'
 import { CodeSquare01, Database01, FileCode01 } from "./variants/Development";
 import { Bell02 } from "./variants/AlertsAndFeedback";
-import { ChartBreakoutSquare } from "./variants/Charts";
+import { ChartBreakoutSquare, LineChartUp03 } from "./variants/Charts";
 import { Cube01, Cube02 } from "./variants/Shapes";
 import { BookClosed, Glasses02 } from "./variants/Education";
-import { Play, Rss01 } from "./variants/MediaDevices";
+import { Lightbulb03, Phone01, Play, Rss01 } from "./variants/MediaDevices";
 import { Clock } from "./variants/Time";
 import { Flag06, MarkerPin01, Globe01, MarkerPin02 } from "./variants/MapsAndTravel";
-import { FaceSmile, Users01 } from "./variants/Users";
+import { FaceSmile, Users01, UserSquare } from "./variants/Users";
 
 // custom icons
 import MoonStarFilled from "./variants/moon-star-filled";
@@ -65,7 +68,9 @@ import Dot from "./variants/dot"
 import { Folder, FolderPlus } from "./variants/Files";
 import { Bank } from "./variants/FinanceAndEcommerce";
 import { ShieldTick } from "./variants/Security";
-import { AnnotationDots } from "./variants/Communication";
+import { AnnotationDots, Mail02, MessageDotsCircle } from "./variants/Communication";
+import { PencilLine } from "./variants/Editor"
+import { Arbitrum, ArbitrumDark, Avalanche, AvalancheDark, BNBChain, BNBChainDark, Ethereum, EthereumDark, Polygon, PolygonDark } from "./variants/Brands";
 
 export const Icon = ({ size, variant }) => {
   let IconComponent = null;
@@ -348,12 +353,96 @@ export const Icon = ({ size, variant }) => {
     IconComponent = SearchLg;
   }
 
-  if(variant === 'annotation-dots'){
+  if(variant === 'annotation-dots') {
     IconComponent = AnnotationDots;
   }
 
-  if(variant === 'rss-01'){
+  if(variant === 'rss-01') {
     IconComponent = Rss01;
+  }
+
+  if(variant === 'pencil-line') {
+    IconComponent = PencilLine;
+  }
+
+  if(variant === 'ethereum') {
+    IconComponent = Ethereum;
+  }
+
+  if(variant === 'ethereum-dark') {
+    IconComponent = EthereumDark;
+  }
+
+  if(variant === 'arbitrum') {
+    IconComponent = Arbitrum;
+  }
+
+  if(variant === 'arbitrum-dark') {
+    IconComponent = ArbitrumDark;
+  }
+
+  if(variant === 'bnbchain') {
+    IconComponent = BNBChain;
+  }
+
+  if(variant === 'bnbchain-dark') {
+    IconComponent = BNBChainDark;
+  }
+
+  if(variant === 'avalanche') {
+    IconComponent = Avalanche;
+  }
+
+  if(variant === 'avalanche-dark') {
+    IconComponent = AvalancheDark;
+  }
+
+  if(variant === 'polygon') {
+    IconComponent = Polygon;
+  }
+
+  if(variant === 'polygon-dark') {
+    IconComponent = PolygonDark;
+  }
+
+  if(variant === 'check-circle-filled') {
+    IconComponent = CheckCircleFilled
+  }
+
+  if(variant === 'message-dots-circle') {
+    IconComponent = MessageDotsCircle
+  }
+
+  if(variant === 'lightbulb-03') {
+    IconComponent = Lightbulb03
+  }
+
+  if(variant === 'line-chart-up-03') {
+    IconComponent = LineChartUp03
+  }
+
+  if(variant === 'user-square') {
+    IconComponent = UserSquare
+  }
+
+  if(variant === 'dots-grid') {
+    IconComponent = DotsGrid
+  }
+
+  if(variant === 'heart-hand') {
+    IconComponent = HeartHand
+  }
+
+  if(variant === 'mail-02') {
+    IconComponent = Mail02
+  }
+
+  if(variant === 'phone-01') {
+    IconComponent = Phone01
+  }
+
+  if(variant === 'check-circle-broken') {
+    IconComponent = CheckCircleBroken
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
