@@ -13,8 +13,11 @@ import { Icon } from '../Icon'
 import { Input } from '../Input'
 import { InputHint } from '../Input/Hint'
 import { SuccessMessage } from './SuccessMessage'
+import { useTranslation, Trans } from 'react-i18next'
 
 export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink = '/rss.xml' }) => {
+  const { t } = useTranslation('common')
+
   const [isPending, setIsPending] = useState(false)
   const [isSuccess, setIsSuccess] = useState(false)
   const formRef = useRef()
@@ -47,7 +50,7 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
     }
   }
 
-  const buttonText = isPending ? 'Subscribing...' : isSuccess ? 'Subscribed' : 'Subscribe'
+  const buttonText = isPending ? t('Subscribing...') : isSuccess ? t('Subscribed') : t('Subscribe')
 
   return (
     <Container ref={formRef} onSubmit={handleSubmit}>
@@ -55,7 +58,11 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
         <InputContainer>
           <Input placeholder='Enter your email' type='email' name='email' autoComplete='off' disabled={isPending || isSuccess}>
             {isSuccess && <SuccessMessage />}
-            <InputHint>Our <Link href='/policies/privacy-policy'>privacy policy</Link>  explains how we handle your data</InputHint>
+            <InputHint>
+              <Trans>
+                Our <Link href='/policies/privacy-policy'>privacy policy</Link> explains how we handle your data
+              </Trans>
+            </InputHint>
           </Input>
         </InputContainer>
         <Button
