@@ -11,7 +11,7 @@ export const Input = ({ children, placeholder, ...props }) => {
   return (
     <Container>
       <Label htmlFor={id}>{placeholder}</Label>
-      <StyledInput id={id} placeholder={placeholder} {...props} />
+      <StyledInput id={id} placeholder={placeholder} autoComplete='off' {...props} />
 
       {/* Hint as children */}
       {children}

@@ -8,7 +8,7 @@ const InputWithIcon = ({ placeholder, iconProps = {}, containerClassName = '', .
   return (
     <Container className={containerClassName}>
       {Object.keys(iconProps).length > 0 && <Icon {...iconProps} />}
-      <StyledInput placeholder={placeholder} {...props} />
+      <StyledInput placeholder={placeholder} autoComplete='off' {...props} />
     </Container>
   )
 }

@@ -50,15 +50,6 @@ ref
     onChange(_selectedOptions)
   }
 
-  const handleOtherInputChange = e => {
-    const name = e.target.value
-    const _selectedOptions = [...selectedOptions]
-    const otherIndex = _selectedOptions.findIndex(o => o.value === 'other')
-    _selectedOptions[otherIndex].textValue = name
-    setSelectedOptions(_selectedOptions)
-    onChange(_selectedOptions)
-  }
-
   useEffect(() => {
     if (reset) {
       setFilteredOptions(prev => {
@@ -83,22 +74,10 @@ ref
           selectedOptions?.length
             ? selectedOptions.map((o, i) => (
               <DisplayOption key={i}>
-                {
-                  o.value === 'other'
-                    ? (
-                      <OtherInput
-                        onChange={handleOtherInputChange}
-                        placeholder='Enter name...'
-                        value={o?.textValue ?? ''}
-                      />
-                      )
-                    : (
-                      <>
-                        <Icon variant={getIconName(o)} size={20} />
-                        <span>{o.text}</span>
-                      </>
-                      )
-                }
+                <>
+                  <Icon variant={getIconName(o)} size={20} />
+                  <span>{o.text}</span>
+                </>
                 <CloseButton
                   type='button'
                   onClick={() => handleOptionRemove(o)}
@@ -288,10 +267,4 @@ const Placeholder = styled.div`
   color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['300']};
   ${typography.styles.textMd}
   ${typography.weights.regular}
-`
-
-const OtherInput = styled.input`
-  height: 20px;
-  max-width: 110px;
-  outline: none;
 `

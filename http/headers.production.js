@@ -1,4 +1,6 @@
 const connectSources = [
+  'https://api.neptunemutual.net/',
+  'https://api2.neptunemutual.net/',
   'https://blog.neptunemutual.com',
   'https://*.clarity.ms',
   'https://youtube.com/',

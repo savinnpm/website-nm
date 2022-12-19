@@ -52,10 +52,10 @@ export const blockchainOptions = [
 ]
 
 const initialState = {
-  firstName: '',
-  lastName: '',
+  firstname: '',
+  lastname: '',
   email: '',
-  company_name: '',
+  company: '',
   website: '',
   purpose: purposeOptions[0],
   contactMethod: contactMethodOptions[0],
@@ -85,7 +85,10 @@ export const ContactForm = () => {
     try {
       const res = await fetch(API_URL, {
         method: 'POST',
-        body: JSON.stringify(data)
+        body: JSON.stringify(data),
+        headers: {
+          'Content-Type': 'application/json'
+        }
       })
 
       if (res.ok) {
@@ -96,7 +99,8 @@ export const ContactForm = () => {
     }
   }
 
-  const onSubmit = () => {
+  const onSubmit = (ev) => {
+    ev.preventDefault()
     setSubmitClicked(true)
 
     const { validated, firstErrorKey } = validateForm(formData, setError)
@@ -109,11 +113,15 @@ export const ContactForm = () => {
       const _data = JSON.parse(JSON.stringify(formData))
 
       _data.captcha = captchaCode
-      _data.contactMethod = formData.contactMethod.otherValue || formData.contactMethod.value
-      _data.purpose = formData.purpose.otherValue || formData.purpose.value
-      _data.role = formData.role.otherValue || formData.role.value
+      _data.contactMethod = formData.contactMethod.text
+      _data.purpose = formData.purpose.text
+      _data.role = formData.role.text
+      _data.blockchains = _data.blockchain
+      _data.company_name = undefined
+      _data.blockchain = undefined
+      _data.phone = undefined
 
-      makeRequest(formData, () => {
+      makeRequest(_data, () => {
         setSubmitSuccess(true)
         setFormData(initialState)
         setSubmitClicked(false)
@@ -168,40 +176,41 @@ export const ContactForm = () => {
   }, [formData, submitClicked])
 
   return (
-    <Form
-      onSubmit={e => e.preventDefault()}
-    >
+    <Form onSubmit={onSubmit}>
       <FirstRow>
         <WrappedInput>
           <InputWithLabel
+            required
             label='First Name*'
             placeholder='John'
-            value={formData.firstName}
-            onChange={(e) => handleNameChange('firstName', e.target.value)}
-            error={error?.firstName}
+            value={formData.firstname}
+            onChange={(e) => handleNameChange('firstname', e.target.value)}
+            error={error?.firstname}
             ref={el => {
-              itemsRef.current.firstName = el
+              itemsRef.current.firstname = el
             }}
-            id='firstName'
+            id='firstname'
           />
         </WrappedInput>
 
         <WrappedInput>
           <InputWithLabel
+            required
             label='Last Name*'
             placeholder='Doe'
-            value={formData.lastName}
-            onChange={(e) => handleNameChange('lastName', e.target.value)}
-            error={error?.lastName}
+            value={formData.lastname}
+            onChange={(e) => handleNameChange('lastname', e.target.value)}
+            error={error?.lastname}
             ref={el => {
-              itemsRef.current.lastName = el
+              itemsRef.current.lastname = el
             }}
-            id='lastName'
+            id='lastname'
           />
         </WrappedInput>
       </FirstRow>
 
       <InputWithLabel
+        required
         label='Email*'
         placeholder='john@example.com'
         type='email'
@@ -215,15 +224,16 @@ export const ContactForm = () => {
       />
 
       <InputWithLabel
+        required
         label='What is the name of your business or project?*'
         placeholder='Example Inc.'
-        value={formData.company_name}
-        onChange={(e) => setFormData((prev) => ({ ...prev, company_name: e.target.value }))}
-        error={error?.company_name}
+        value={formData.company}
+        onChange={(e) => setFormData((prev) => ({ ...prev, company: e.target.value }))}
+        error={error?.company}
         ref={el => {
-          itemsRef.current.company_name = el
+          itemsRef.current.company = el
         }}
-        id='company_name'
+        id='company'
       />
 
       <FilterContainer>
@@ -242,8 +252,10 @@ export const ContactForm = () => {
       </FilterContainer>
 
       <InputWithLabel
+        required
         label='What is the website of your business or project?*'
         placeholder='https://example.com'
+        type='url'
         value={formData.website}
         onChange={(e) => setFormData((prev) => ({ ...prev, website: e.target.value }))}
         error={error?.website}
@@ -260,7 +272,6 @@ export const ContactForm = () => {
           setSelectedOption={(_s) => setFormData((prev) => ({ ...prev, purpose: _s }))}
           defaultOption={purposeOptions[0]}
           label='Please select a purpose of this contact request*'
-          inputPlaceholder='Enter other purpose of contact'
           error={error?.purpose}
           ref={el => {
             itemsRef.current.purpose = el
@@ -277,7 +288,6 @@ export const ContactForm = () => {
           defaultOption={contactMethodOptions[0]}
           filterlabelposition='top'
           label='What’s the best way to get in touch with you?*'
-          inputPlaceholder='Enter other contact method'
           error={error?.contactMethod}
           ref={el => {
             itemsRef.current.contactMethod = el
@@ -289,6 +299,7 @@ export const ContactForm = () => {
           ['telegram', 'phone'].includes(formData.contactMethod.value) && (
             <SubInputs>
               <InputWithLabel
+                required
                 placeholder='Enter your Whatsapp/Telegram Id'
                 value={formData.phone}
                 onChange={(e) => handlePhoneChange('phone', e.target.value)}
@@ -312,7 +323,6 @@ export const ContactForm = () => {
           defaultOption={roleOptions[0]}
           filterlabelposition='top'
           label='What role best describes you?*'
-          inputPlaceholder='Enter other role that describes you'
           error={error?.role}
           ref={el => {
             itemsRef.current.role = el
@@ -322,6 +332,7 @@ export const ContactForm = () => {
       </FilterContainer>
 
       <TextArea
+        required
         label='Message*'
         placeholder='Kindly write your message'
         value={formData.message}
@@ -351,7 +362,6 @@ export const ContactForm = () => {
       <StyledButton
         hierarchy='primary'
         size='xl'
-        onClick={onSubmit}
         // disabled={error || !captchaCode || !acceptTerms}
       >
         <span>Send Message</span>
