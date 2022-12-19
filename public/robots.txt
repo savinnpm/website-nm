@@ -1,8 +1,21 @@
-# Block Adsbot
-User-agent: AdsBot-Google
-User-agent: AdsBot-Google-Mobile
-Disallow: /
+sitemap: https://neptunemutual.com/sitemap.xml
+Sitemap: https://neptunemutual.com/sitemap.xml
 
-# Block all crawlers except AdsBot (AdsBot crawlers must be named explicitly)
+User-agent: rogerbot
+Crawl-delay: 10
+
+User-agent: AhrefsBot
+Crawl-delay: 10
+
 User-agent: *
-Disallow: /
+Allow: /
+Allow: /blog/*
+Allow: /pressroom/*
+Disallow: /blog/search/*
+Disallow: /blog/tag/*
+Disallow: /blog/page/*
+Disallow: /pressroom/tag/*
+Disallow: /pressroom/page/*
+Disallow: /policies/*
+Disallow: /videos/*
+
