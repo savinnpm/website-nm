@@ -26,7 +26,7 @@ const Hero = () => {
         </Content>
         <ImageContainer>
           <Image
-            src='/assets/images/hero/shield.png'
+            src='/assets/images/hero/shield.webp'
             alt='An image that depicts a blue shield or armor that appears to be floating in mid-air.'
             width={300} height={300}
           />

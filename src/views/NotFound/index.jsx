@@ -43,7 +43,7 @@ export const NotFound = () => {
 
       <ImageContainer>
         <Image
-          src='/assets/images/hero/not-found-alert.png'
+          src='/assets/images/hero/not-found-alert.webp'
           alt='A 404 Not Found Image Showing a Three-Dimensional Traffic Cone'
           fill loading='eager' priority
           sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
