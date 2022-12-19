@@ -13,7 +13,7 @@ export const NewsCard = ({ newsItem }) => {
       <ImageContainer>
         <Image
           src={`${newsItem.image}`}
-          alt={newsItem.alt}
+          alt={newsItem.title.toLowerCase() === newsItem.alt.toLowerCase() ? '' : newsItem.alt}
           fill
           sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
           placeholder='blur'

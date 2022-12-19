@@ -12,7 +12,7 @@ const Card = (props) => {
     <Container>
       <ImageContainer>
         <Image
-          alt={props.post.alt}
+          alt={props.post.title.toLowerCase() === props.post.alt.toLowerCase() ? '' : props.post.alt}
           fill
           sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 420px'
           src={props.post.image}
