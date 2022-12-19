@@ -126,8 +126,8 @@ const Li = styled.li`
 const Badge = styled.div`
   ${typography.styles.textSm};
   ${typography.weights.medium};
-  color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
-  background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
+  color: ${props => props.theme.isLightMode ? colors['blue-dark'][700] : colors['blue-dark'][50]};
+  background: ${props => props.theme.isLightMode ? colors['blue-dark'][100] : colors['blue-dark'][700]};
   padding: 2px 10px;
   border-radius: 16px;
   margin-left: 8px;

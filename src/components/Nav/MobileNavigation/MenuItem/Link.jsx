@@ -1,7 +1,11 @@
 import Link from 'next/link'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../../styles/colors'
 import { typography } from '../../../../../styles/typography'
 import { Icon } from '../../../Icon'
 
@@ -47,8 +51,8 @@ const Container = styled.a`
 const Badge = styled.div`
   ${typography.styles.textSm};
   ${typography.weights.medium};
-  color: ${props => props.theme.isLightMode ? colors.success[700] : colors.success[400]};
-  background: ${props => props.theme.isLightMode ? colors.success[50] : colors.gray[700]};
+  color: ${props => props.theme.isLightMode ? colors['blue-dark'][700] : colors['blue-dark'][400]};
+  background: ${props => props.theme.isLightMode ? colors['blue-dark'][100] : colors.gray[700]};
   padding: 2px 10px;
   border-radius: 16px;
 `
