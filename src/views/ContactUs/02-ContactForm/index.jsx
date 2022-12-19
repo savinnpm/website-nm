@@ -1,13 +1,7 @@
-import {
-  useEffect,
-  useRef,
-  useState
-} from 'react'
-
 import Link from 'next/link'
+import { useEffect, useRef, useState } from 'react'
 import ReCAPTCHA from 'react-google-recaptcha'
 import styled from 'styled-components'
-
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { Button } from '../../../components/Button'
@@ -102,9 +96,7 @@ export const ContactForm = () => {
     }
   }
 
-  const onSubmit = (e) => {
-    e.preventDefault()
-
+  const onSubmit = () => {
     setSubmitClicked(true)
 
     const { validated, firstErrorKey } = validateForm(formData, setError)
@@ -114,12 +106,12 @@ export const ContactForm = () => {
     }
 
     if (validated && captchaCode && acceptTerms) {
-      const _data = formData
+      const _data = JSON.parse(JSON.stringify(formData))
 
       _data.captcha = captchaCode
       _data.contactMethod = formData.contactMethod.otherValue || formData.contactMethod.value
       _data.purpose = formData.purpose.otherValue || formData.purpose.value
-      _data.role = formData.role.value
+      _data.role = formData.role.otherValue || formData.role.value
 
       makeRequest(formData, () => {
         setSubmitSuccess(true)
@@ -176,7 +168,9 @@ export const ContactForm = () => {
   }, [formData, submitClicked])
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form
+      onSubmit={e => e.preventDefault()}
+    >
       <FirstRow>
         <WrappedInput>
           <InputWithLabel
@@ -357,6 +351,7 @@ export const ContactForm = () => {
       <StyledButton
         hierarchy='primary'
         size='xl'
+        onClick={onSubmit}
         // disabled={error || !captchaCode || !acceptTerms}
       >
         Send Message
