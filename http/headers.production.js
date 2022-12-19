@@ -2,6 +2,7 @@ const connectSources = [
   process.env.NEXT_PUBLIC_FORMS_API_SERVER,
   'https://blog.neptunemutual.com',
   'https://*.clarity.ms',
+  'https://www.google-analytics.com',
   'https://youtube.com/',
   process.env.API_URL_PREFIX
 ]
@@ -15,7 +16,9 @@ const scriptSources = [
   'https://www.google.com/recaptcha/api.js',
   'https://www.gstatic.com/recaptcha/',
   'https://platform.twitter.com/',
-  'https://gist.github.com/'
+  'https://gist.github.com/',
+  "'sha256-JqYO2e+vKshpSJIL6vXWyHELsI/pvKIy/md6/D76vCE='",
+  "'sha256-3xtbv6ivRONYxlH8P0T35lyVzSbw6bA6uFrtQf4b/4E='"
 
 ]
   .map((x) => (x || '').trim())
