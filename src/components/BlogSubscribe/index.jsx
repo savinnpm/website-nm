@@ -29,7 +29,7 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
 
     try {
       setIsPending(true)
-      const res = await fetch('https://api2.neptunemutual.net/subscribe', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_FORMS_API_SERVER}/subscribe`, {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: {

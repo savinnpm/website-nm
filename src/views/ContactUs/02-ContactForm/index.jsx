@@ -80,7 +80,7 @@ export const ContactForm = () => {
   const itemsRef = useRef([])
 
   const makeRequest = async (data, cb = () => {}) => {
-    const API_URL = 'https://api.neptunemutual.net/contact'
+    const API_URL = `${process.env.NEXT_PUBLIC_FORMS_API_SERVER}/contact`
 
     try {
       const res = await fetch(API_URL, {

@@ -1,6 +1,5 @@
 const connectSources = [
-  'https://api.neptunemutual.net/',
-  'https://api2.neptunemutual.net/',
+  process.env.NEXT_PUBLIC_FORMS_API_SERVER,
   'https://blog.neptunemutual.com',
   'https://*.clarity.ms',
   'https://youtube.com/',
@@ -11,6 +10,7 @@ const connectSources = [
   .join(' ')
 
 const scriptSources = [
+  'https://www.googletagmanager.com/',
   'https://www.clarity.ms/',
   'https://www.google.com/recaptcha/api.js',
   'https://www.gstatic.com/recaptcha/',
