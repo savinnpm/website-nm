@@ -5,10 +5,6 @@ import Slider from 'react-slick'
 import { ContentSlider } from '../ContentSlider'
 import styled from 'styled-components'
 import { TimelineItem } from './TimelineItem'
-import { colors } from '../../../../../styles/colors'
-import { blurs } from '../../../../../styles/blurs'
-import { utils } from '../../../../../styles/utils'
-import { Icon } from '../../../../components/Icon'
 
 const currentIndex = data.findIndex((x) => x.current)
 const DESKTOP_INITIAL_SLIDE = currentIndex - 5
@@ -24,12 +20,14 @@ const getVW = () => {
 export const MainCarousel = () => {
   const [selected, setSelected] = useState(currentIndex)
   const [initialized, setInitialized] = useState(false)
-  const [sliderIndex, setSliderIndex] = useState(DESKTOP_INITIAL_SLIDE)
+  // const [sliderIndex, setSliderIndex] = useState(DESKTOP_INITIAL_SLIDE)
 
   const sliderRef = useRef(null)
 
-  const onNext = () => sliderRef?.current?.slickNext()
-  const onPrev = () => sliderRef?.current?.slickPrev()
+  // Just some random code to avoid linting errors
+  // if (typeof sliderIndex === 'undefined') {
+  //   console.log(sliderIndex)
+  // }
 
   useEffect(() => {
     // Change initial slide to show the current item on mobile
@@ -52,7 +50,7 @@ export const MainCarousel = () => {
     initialSlide: DESKTOP_INITIAL_SLIDE,
     slidesToShow: 7,
     slidesToScroll: 7,
-    afterChange: (index) => setSliderIndex(index),
+    // afterChange: (index) => setSliderIndex(index),
     onInit: () => setInitialized(true),
 
     responsive: [
@@ -126,22 +124,6 @@ export const MainCarousel = () => {
         onContentSlideUpdate={handleContentSlideUpdate}
       />
 
-      <ArrowsContainer>
-        <ArrowButton
-          disabled={sliderIndex <= 0}
-          onClick={onPrev}
-          title='Previous'
-        >
-          <Icon variant='arrow-left' size={24} />
-        </ArrowButton>
-
-        <ArrowButton
-          onClick={onNext}
-          title='Next'
-        >
-          <Icon variant='arrow-right' size={24} />
-        </ArrowButton>
-      </ArrowsContainer>
     </Container>
   )
 }
@@ -186,46 +168,4 @@ const TimelineInnerContainer = styled.div`
   margin-bottom: 3rem;
   position: relative;
   width: 100%;
-`
-
-const ArrowsContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
-
-
-  @media screen and (max-width: 768px) {
-    display: none;
-  }
-`
-
-const ArrowButton = styled.button`
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 56px;
-  height: 56px;
-  cursor: pointer;
-
-  background-color: ${props => props.theme.isLightMode ? colors.white : colors.gray['700']};
-  color: ${props => props.theme.isLightMode ? colors.gray['500'] : colors.gray['50']};
-  border: 1px solid ${props => props.theme.isLightMode ? colors.gray['200'] : colors.gray['600']};
-  backdrop-filter: ${blurs.sm};
-  border-radius: 50%;
-
-  :not(:disabled):hover {
-    background-color: ${props => props.theme.isLightMode ? colors.gray['50'] : colors.gray['600']};
-    color: ${props => props.theme.isLightMode ? colors.gray['700'] : colors.white};
-  }
-
-  :disabled {
-    border: 1px solid ${props => props.theme.isLightMode ? colors.gray['100'] : colors.gray['600']};
-    color: ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['600']};
-    cursor: not-allowed;
-  }
-
-  > span {
-    ${utils.srOnly};
-  }
 `
