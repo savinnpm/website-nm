@@ -12,11 +12,25 @@ const parseLegacyHtml = async ($) => {
   $('img').each(function () {
     const oldSrc = $(this).attr('src')
 
-    if (
-      !oldSrc.startsWith('https://blog.neptunemutual.com') &&
-      !oldSrc.startsWith('https://content.neptunedefi.com') &&
-      !oldSrc.startsWith('https://example.com')
-    ) {
+    const imageOrigins = process.env.NEXT_PUBLIC_IMAGE_ORIGINS
+      ? process.env.NEXT_PUBLIC_IMAGE_ORIGINS.split(',')
+        .map((x) => x.trim())
+        .filter(Boolean)
+      : [
+          (new URL(process.env.API_URL_PREFIX)).origin,
+          (new URL(process.env.COVER_FILE_URI_PREFIX)).origin,
+          'https://blog.neptunemutual.com'
+        ]
+
+    let originMatched = false
+
+    imageOrigins.forEach(origin => {
+      if (oldSrc.startsWith(origin)) {
+        originMatched = true
+      }
+    })
+
+    if (!originMatched) {
       console.log('Skipped: ' + oldSrc)
       return
     }
