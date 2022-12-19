@@ -15,10 +15,10 @@ import { validateForm } from './validateForm'
 
 export const purposeOptions = [
   { text: 'Choose your reason for contacting us', value: '' },
-  { text: 'Provide Liquidity', value: 'providing-liquidity', iconVariant: 'chart-breakout-square' },
+  { text: 'Providing Liquidity', value: 'providing-liquidity', iconVariant: 'chart-breakout-square' },
   { text: 'Purchasing Policy', value: 'purchasing-policy', iconVariant: 'shield-tick' },
   { text: 'Creating Cover', value: 'creating-cover', iconVariant: 'folder-plus' },
-  { text: 'Press Reachout', value: 'creating-cover', iconVariant: 'message-dots-circle' },
+  { text: 'Media Reachout', value: 'creating-cover', iconVariant: 'message-dots-circle' },
   { text: 'Other', value: 'other', iconVariant: 'edit-03' }
 ]
 
@@ -38,7 +38,7 @@ export const roleOptions = [
   { text: 'Co-founder/CXO', value: 'co-founder-cxo', iconVariant: 'user-square' },
   { text: 'Engineering', value: 'engineering', iconVariant: 'cube-01' },
   { text: 'Operations', value: 'operations', iconVariant: 'dots-grid' },
-  { text: 'Product Manager', value: 'product-manager', iconVariant: 'heart-hand' },
+  { text: 'Product Management', value: 'product-manager', iconVariant: 'heart-hand' },
   { text: 'Other', value: 'other', iconVariant: 'pencil-line' }
 ]
 
@@ -79,7 +79,7 @@ export const ContactForm = () => {
   const recaptchaRef = useRef()
   const itemsRef = useRef([])
 
-  const makeRequest = async (data, cb = () => {}) => {
+  const makeRequest = async (data) => {
     const API_URL = `${process.env.NEXT_PUBLIC_FORMS_API_SERVER}/contact`
 
     try {
@@ -91,15 +91,16 @@ export const ContactForm = () => {
         }
       })
 
-      if (res.ok) {
-        cb()
+      if (!res.ok) {
+        const data = await res.json()
+        window.alert(data.data)
       }
     } catch (err) {
-      console.log({ err })
+      throw error
     }
   }
 
-  const onSubmit = (ev) => {
+  const onSubmit = async (ev) => {
     ev.preventDefault()
     setSubmitClicked(true)
 
@@ -109,7 +110,12 @@ export const ContactForm = () => {
       itemsRef.current?.[firstErrorKey]?.focus()
     }
 
-    if (validated && captchaCode && acceptTerms) {
+    if (!captchaCode) {
+      window.alert('Invalid Captcha')
+      return
+    }
+
+    if (validated && acceptTerms) {
       const _data = JSON.parse(JSON.stringify(formData))
 
       _data.captcha = captchaCode
@@ -121,13 +127,17 @@ export const ContactForm = () => {
       _data.blockchain = undefined
       _data.phone = undefined
 
-      makeRequest(_data, () => {
+      try {
+        await makeRequest(_data)
+
         setSubmitSuccess(true)
         setFormData(initialState)
         setSubmitClicked(false)
-
         setResetBlockchains(val => val + 1)
-      })
+      } catch (error) {
+        console.log('error')
+        console.error(error)
+      }
     }
   }
 

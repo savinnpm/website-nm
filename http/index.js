@@ -4,6 +4,15 @@ const production = require('./headers.production')
 const get = (config) => {
   return [
     {
+      source: '/(.*)',
+      headers: config.map((x) => {
+        return {
+          key: x.key,
+          value: x.values.join('; ')
+        }
+      })
+    },
+    {
       source: '/:path*',
       headers: config.map((x) => {
         return {

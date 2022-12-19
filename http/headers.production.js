@@ -33,13 +33,13 @@ module.exports = [
       `connect-src 'self' ${connectSources}`,
       "style-src 'self' 'unsafe-inline' https://github.githubassets.com/",
       'upgrade-insecure-requests',
-      "frame-ancestors 'none'",
-      'default-src https://www.google.com https://platform.twitter.com/ https://www.youtube.com/',
+      "frame-ancestors 'self'",
+      "default-src 'self' https://www.google.com https://platform.twitter.com/ https://www.youtube.com/",
       "prefetch-src 'self'",
       "manifest-src 'self'",
       "base-uri 'none'",
       "form-action 'none'",
-      "object-src 'none'",
+      "object-src 'self'",
       "img-src 'self' data: https://*.clarity.ms https://*.bing.com https://blog.neptunemutual.com",
       "font-src 'self'"
     ]
