@@ -65,8 +65,6 @@ const initialState = {
   website: '',
   purpose: purposeOptions[0],
   contactMethod: contactMethodOptions[0],
-  contactMethodName: '',
-  contactAddress: '',
   role: roleOptions[0],
   blockchain: blockchainOptions[0],
   phone: '',
@@ -82,19 +80,23 @@ export const ContactForm = () => {
   const [submitClicked, setSubmitClicked] = useState(false)
   const [submitSuccess, setSubmitSuccess] = useState(false)
 
+  const [resetBlockchains, setResetBlockchains] = useState(0)
+
   const recaptchaRef = useRef()
   const itemsRef = useRef([])
 
   const makeRequest = async (data, cb = () => {}) => {
     const API_URL = 'https://api.neptunemutual.net/contact'
+
     try {
-      await fetch(API_URL, {
+      const res = await fetch(API_URL, {
         method: 'POST',
         body: JSON.stringify(data)
       })
 
-      setSubmitSuccess(true)
-      cb()
+      if (res.ok) {
+        cb()
+      }
     } catch (err) {
       console.log({ err })
     }
@@ -114,14 +116,17 @@ export const ContactForm = () => {
     if (validated && captchaCode && acceptTerms) {
       const _data = formData
 
-      _data.contactMethod = formData.contactMethod.value
-      _data.purpose = formData.purpose.value
-      _data.role = formData.role.value
       _data.captcha = captchaCode
+      _data.contactMethod = formData.contactMethod.otherValue || formData.contactMethod.value
+      _data.purpose = formData.purpose.otherValue || formData.purpose.value
+      _data.role = formData.role.value
 
       makeRequest(formData, () => {
-        setSubmitClicked(false)
+        setSubmitSuccess(true)
         setFormData(initialState)
+        setSubmitClicked(false)
+
+        setResetBlockchains(val => val + 1)
       })
     }
   }
@@ -238,6 +243,7 @@ export const ContactForm = () => {
             itemsRef.current.blockchain = el
           }}
           id='blockchain'
+          reset={resetBlockchains}
         />
       </FilterContainer>
 
@@ -260,6 +266,7 @@ export const ContactForm = () => {
           setSelectedOption={(_s) => setFormData((prev) => ({ ...prev, purpose: _s }))}
           defaultOption={purposeOptions[0]}
           label='Please select a purpose of this contact request*'
+          inputPlaceholder='Enter other purpose of contact'
           error={error?.purpose}
           ref={el => {
             itemsRef.current.purpose = el
@@ -276,6 +283,7 @@ export const ContactForm = () => {
           defaultOption={contactMethodOptions[0]}
           filterlabelposition='top'
           label='What’s the best way to get in touch with you?*'
+          inputPlaceholder='Enter other contact method'
           error={error?.contactMethod}
           ref={el => {
             itemsRef.current.contactMethod = el
@@ -284,46 +292,20 @@ export const ContactForm = () => {
         />
 
         {
-          formData.contactMethod.value === 'other'
-            ? (
-              <SubInputs>
-                <InputWithLabel
-                  placeholder='1. What contact method are you using?'
-                  value={formData.contactMethodName}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, contactMethodName: e.target.value }))}
-                  error={error?.contactMethodName}
-                  ref={el => {
-                    itemsRef.current.contactMethodName = el
-                  }}
-                  id='contactMethodName'
-                />
-
-                <InputWithLabel
-                  placeholder='2. Enter your contact number/address'
-                  value={formData.contactAddress}
-                  onChange={(e) => setFormData((prev) => ({ ...prev, contactAddress: e.target.value }))}
-                  error={error?.contactAddress}
-                  ref={el => {
-                    itemsRef.current.contactAddress = el
-                  }}
-                  id='contactAddress'
-                />
-              </SubInputs>
-              )
-            : ['telegram', 'phone'].includes(formData.contactMethod.value) && (
-              <SubInputs>
-                <InputWithLabel
-                  placeholder='Enter your Whatsapp/Telegram Id'
-                  value={formData.phone}
-                  onChange={(e) => handlePhoneChange('phone', e.target.value)}
-                  error={error?.phone}
-                  ref={el => {
-                    itemsRef.current.phone = el
-                  }}
-                  id='phone'
-                />
-              </SubInputs>
-              )
+          ['telegram', 'phone'].includes(formData.contactMethod.value) && (
+            <SubInputs>
+              <InputWithLabel
+                placeholder='Enter your Whatsapp/Telegram Id'
+                value={formData.phone}
+                onChange={(e) => handlePhoneChange('phone', e.target.value)}
+                error={error?.phone}
+                ref={el => {
+                  itemsRef.current.phone = el
+                }}
+                id='phone'
+              />
+            </SubInputs>
+          )
 
         }
       </FilterContainer>
@@ -336,6 +318,7 @@ export const ContactForm = () => {
           defaultOption={roleOptions[0]}
           filterlabelposition='top'
           label='What role best describes you?*'
+          inputPlaceholder='Enter other role that describes you'
           error={error?.role}
           ref={el => {
             itemsRef.current.role = el

@@ -50,18 +50,20 @@ export const validateForm = (formData, setError) => {
     set('purpose', 'Please select an option')
   } else set('purpose')
 
+  if (formData.purpose.value === 'other') {
+    if (!formData.purpose.otherValue) {
+      set('purpose', 'Please enter your purpose')
+    } else set('purpose')
+  }
+
   if (formData.contactMethod.value === '') {
     set('contactMethod', 'Please select an option')
   } else set('contactMethod')
 
   if (formData.contactMethod.value === 'other') {
-    if (!formData.contactMethodName) {
-      set('contactMethodName', 'Please enter the contact method')
-    } else set('contactMethodName')
-
-    if (!formData.contactAddress) {
-      set('contactAddress', 'Please enter the contact address')
-    } else set('contactAddress')
+    if (!formData.contactMethod.otherValue) {
+      set('contactMethod', 'Please enter your contact method')
+    } else set('contactMethod')
   }
 
   const phoneRegex = /^(\+\d{1,3})?\s?\d{10}$/

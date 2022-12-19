@@ -1,4 +1,4 @@
-import React, { forwardRef, useState } from 'react'
+import React, { forwardRef, useEffect, useState } from 'react'
 import styled, { useTheme } from 'styled-components'
 import { Icon } from '../../../components/Icon'
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -11,6 +11,7 @@ const FormSelector = forwardRef(({
   label,
   error,
   onChange,
+  reset,
   ...props
 },
 ref
@@ -57,6 +58,16 @@ ref
     setSelectedOptions(_selectedOptions)
     onChange(_selectedOptions)
   }
+
+  useEffect(() => {
+    if (reset) {
+      setFilteredOptions(prev => {
+        const _filteredOptions = [...prev].map(option => ({ ...option, selected: false }))
+        return [..._filteredOptions]
+      })
+      setSelectedOptions([])
+    }
+  }, [reset])
 
   return (
     <Container>
@@ -144,7 +155,7 @@ const Container = styled.div`
   width:100%;
 `
 
-const Label = styled.label`
+const Label = styled.p`
   flex: 1;
   margin-bottom: 6px;
 
@@ -207,6 +218,8 @@ const OptionsContainer = styled.div`
 
 const DisplayOption = styled.div`
   padding: 2px 4px 2px 9px;
+  height: 24px;
+  box-sizing: border-box;
   border: 1px solid ${props => props.theme.isLightMode ? colors.gray['300'] : colors.gray['500']};
   display: flex;
   align-items: center;
@@ -232,7 +245,7 @@ const SelectOption = styled.button`
   cursor: pointer;
   
   &[data-isselected="true"] {
-    border: 1.5px solid ${props => props.theme.isLightMode ? colors.primary[600] : 'transparent'};
+    border: 1px solid ${props => props.theme.isLightMode ? colors.primary[600] : 'transparent'};
     color: ${props => props.theme.isLightMode ? colors.gray[700] : colors.gray[900]};
     background-color: ${props => props.theme.isLightMode ? colors.primary[50] : colors.gray[300]};
   }
