@@ -1,6 +1,7 @@
 const connectSources = [
   'https://blog.neptunemutual.com',
   'https://*.clarity.ms',
+  'https://youtube.com/',
   process.env.API_URL_PREFIX
 ]
   .map((x) => (x || '').trim())
@@ -11,7 +12,9 @@ const scriptSources = [
   'https://www.clarity.ms/',
   'https://www.google.com/recaptcha/api.js',
   'https://www.gstatic.com/recaptcha/',
-  'https://platform.twitter.com/'
+  'https://platform.twitter.com/',
+  'https://gist.github.com/'
+
 ]
   .map((x) => (x || '').trim())
   .filter((x) => !!x)
@@ -23,10 +26,10 @@ module.exports = [
     values: [
       `script-src 'self' ${scriptSources}`,
       `connect-src 'self' ${connectSources}`,
-      "style-src 'self' 'unsafe-inline'",
+      "style-src 'self' 'unsafe-inline' https://github.githubassets.com/",
       'upgrade-insecure-requests',
       "frame-ancestors 'none'",
-      'default-src https://www.google.com https://platform.twitter.com/',
+      'default-src https://www.google.com https://platform.twitter.com/ https://www.youtube.com/',
       "prefetch-src 'self'",
       "manifest-src 'self'",
       "base-uri 'none'",
