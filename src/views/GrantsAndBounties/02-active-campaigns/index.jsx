@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import styled, { useTheme } from 'styled-components'
+import styled from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
@@ -8,8 +8,6 @@ import { Icon } from '../../../components/Icon'
 
 export const ActiveCampaigns = ({ programs }) => {
   const { t } = useTranslation('grants')
-
-  const { isLightMode } = useTheme()
 
   if (!programs?.length) return null
 
@@ -31,7 +29,7 @@ export const ActiveCampaigns = ({ programs }) => {
               <Program key={i} href={`/grants-and-bounties/${program.slug}`}>
                 <TitleAndBadgeContainer>
                   <ProgramTitle>{program.title}</ProgramTitle>
-                  <BadgeContainer data-color={badge.color} data-is-lightmode={isLightMode}>
+                  <BadgeContainer color={badge.color}>
                     {badge.icon && <Icon variant={badge.icon.toLowerCase()} size={8} />}
                     <span>{badge.text}</span>
                   </BadgeContainer>
@@ -175,13 +173,13 @@ const BadgeContainer = styled.div`
   align-items: center;
   padding: 2px 10px 2px 8px;
   border-radius: 16px;
-  background-color: ${props => props.theme.isLightMode ? colors[props['data-color']][50] : colors.gray[600]};
+  background-color: ${props => props.theme.isLightMode ? colors[props.color][50] : colors.gray[600]};
 
   & svg {
-    color: ${props => colors[props['data-color']][500]};
+    color: ${props => colors[props.color][500]};
   }
   
   & span {
-    color: ${props => props.theme.isLightMode ? colors[props['data-color']][700] : colors[props['data-color']][50]};
+    color: ${props => props.theme.isLightMode ? colors[props.color][700] : colors[props.color][50]};
   }
 `
