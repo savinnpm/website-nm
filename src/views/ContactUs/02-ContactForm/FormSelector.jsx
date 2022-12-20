@@ -224,9 +224,9 @@ const SelectOption = styled.button`
   cursor: pointer;
   
   &[data-isselected="true"] {
-    border: 1px solid ${props => props.theme.isLightMode ? colors.primary[600] : 'transparent'};
+    border: 1px solid ${props => props.theme.isLightMode ? colors[primaryColorKey][600] : 'transparent'};
     color: ${props => props.theme.isLightMode ? colors.gray[700] : colors.gray[900]};
-    background-color: ${props => props.theme.isLightMode ? colors.primary[50] : colors.gray[300]};
+    background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][50] : colors.gray[300]};
   }
 `
 
@@ -235,7 +235,7 @@ const CheckFilled = styled.div`
   display: flex;
   align-items: center;
   border-radius: 50%;
-  background-color: ${props => props.theme.isLightMode ? colors.primary[600] : colors.gray[900]};
+  background-color: ${props => props.theme.isLightMode ? colors[primaryColorKey][600] : colors.gray[900]};
   margin-left: auto;
 
   svg {

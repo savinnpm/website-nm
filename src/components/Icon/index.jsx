@@ -14,7 +14,6 @@ import {
   SearchSm,
   SearchMd,
   SearchLg,
-  CheckCircleFilled,
   DotsGrid,
   HeartHand,
   CheckCircleBroken,
@@ -404,10 +403,6 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'pencil-line') {
     IconComponent = PencilLine;
-  }
-
-  if(variant === 'check-circle-filled') {
-    IconComponent = CheckCircleFilled
   }
 
   if(variant === 'message-dots-circle') {
