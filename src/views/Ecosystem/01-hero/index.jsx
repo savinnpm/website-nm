@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
@@ -8,24 +9,25 @@ import CheckIcon from '../../../components/Icon/custom/CheckIcon'
 import { getBlurDataURL } from '../../../helpers/images'
 
 export const Hero = () => {
+  const { t } = useTranslation('ecosystem')
   return (
     <Container>
       <InnerContainer>
         <TextAndFeatures>
           <TextContainer>
-            <Heading>Neptune Mutual Ecosystem</Heading>
-            <SupportingText>Neptune Mutual is designed to protect your project from any potential hacking or security issues. Make sure your community is aware of the advantages of a parametric insurance model. Unlike other insurance products, policyholders do not need to request another user to confirm their proof of loss.</SupportingText>
+            <Heading>{t('Neptune Mutual Ecosystem')}</Heading>
+            <SupportingText>{t('Neptune Mutual is designed to protect your project from any potential hacking or security issues. Make sure your community is aware of the advantages of a parametric insurance model. Unlike other insurance products, policyholders do not need to request another user to confirm their proof of loss.')}</SupportingText>
           </TextContainer>
 
           <Features>
             <Feature>
-              <CheckIcon /> <span>Liquidity providers</span>
+              <CheckIcon /> <span>{t('Liquidity providers')}</span>
             </Feature>
             <Feature>
-              <CheckIcon /> <span>Policyholders</span>
+              <CheckIcon /> <span>{t('Policyholders')}</span>
             </Feature>
             <Feature>
-              <CheckIcon /> <span>Cover creators</span>
+              <CheckIcon /> <span>{t('Cover creators')}</span>
             </Feature>
           </Features>
         </TextAndFeatures>

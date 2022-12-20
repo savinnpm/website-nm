@@ -28,18 +28,18 @@ export const ActiveCampaigns = ({ programs }) => {
             return (
               <Program key={i} href={`/grants-and-bounties/${program.slug}`}>
                 <TitleAndBadgeContainer>
-                  <ProgramTitle>{program.title}</ProgramTitle>
+                  <ProgramTitle>{t(`${program.title}`)}</ProgramTitle>
                   <BadgeContainer color={badge.color}>
                     {badge.icon && <Icon variant={badge.icon.toLowerCase()} size={8} />}
                     <span>{badge.text}</span>
                   </BadgeContainer>
                 </TitleAndBadgeContainer>
 
-                <ProgramIntro>{program.intro}</ProgramIntro>
+                <ProgramIntro>{t(`${program.intro}`)}</ProgramIntro>
 
                 <CategoryContainer>
                   {program.icon && <Icon variant={program.icon} size={20} />}
-                  <ProgramCategory>{program.category}</ProgramCategory>
+                  <ProgramCategory>{t(`${program.category}`)}</ProgramCategory>
                 </CategoryContainer>
               </Program>
             )

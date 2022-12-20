@@ -8,8 +8,10 @@ import { utils } from '../../../../styles/utils'
 import { Pagination } from '../../../components/Pagination'
 
 import { Card } from './Card'
+import { useTranslation } from 'react-i18next'
 
 const Announcement = (props) => {
+  const { t } = useTranslation('press-room')
   const router = useRouter()
 
   const handlePrev = () => {
@@ -41,7 +43,7 @@ const Announcement = (props) => {
 
   return (
     <Container>
-      <HeaderText>{props.tag?.name || 'Press Room / Latest Announcements'}</HeaderText>
+      <HeaderText>{props.tag?.name || t('Press Room / Latest Announcements')}</HeaderText>
       <Articles>
         {(props.posts || []).map((post, i) => {
           return <Card key={i} post={post} />

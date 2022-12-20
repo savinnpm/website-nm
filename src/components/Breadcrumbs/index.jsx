@@ -1,16 +1,19 @@
 import { Fragment } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { typography } from '../../../styles/typography'
 import { Icon } from '../Icon'
 
 const Breadcrumbs = (props) => {
+  const { t } = useTranslation('common')
+
   return (
     <Trail className={props?.className}>
       {props.crumbs.map((link, i) => {
         return (
           <Fragment key={`link-${i}`}>
-            <Crumb isLast={props.crumbs.length === i} href={link.link}>{link.name}</Crumb>
+            <Crumb isLast={props.crumbs.length === i} href={link.link}>{t(`${link.name}`)}</Crumb>
             {i < (props.crumbs.length - 1) && <Icon size='15' variant='chevron-right' />}
           </Fragment>
         )

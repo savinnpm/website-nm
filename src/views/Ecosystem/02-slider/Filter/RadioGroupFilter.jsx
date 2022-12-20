@@ -1,4 +1,5 @@
 import { RadioGroup } from '@headlessui/react'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors, primaryColorKey } from '../../../../../styles/colors'
 import { shadows } from '../../../../../styles/shadows'
@@ -6,13 +7,14 @@ import { typography } from '../../../../../styles/typography'
 import { utils } from '../../../../../styles/utils'
 
 export const RadioGroupFilter = ({ options, selectedOption, setSelectedOption, label, defaultOption, getOptionText = (x) => x }) => {
+  const { t } = useTranslation('ecosystem')
   return (
     <Container value={selectedOption} onChange={setSelectedOption}>
       {label && <RadioGroupLabel>{label}</RadioGroupLabel>}
       {options.map(option => {
         return (
           <RadioGroupOption key={option} value={option}>
-            <span>{getOptionText(option) || defaultOption}</span>
+            <span>{t(`${getOptionText(option) || defaultOption}`)}</span>
           </RadioGroupOption>
         )
       })}
