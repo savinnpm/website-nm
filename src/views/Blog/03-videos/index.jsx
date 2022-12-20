@@ -1,5 +1,9 @@
 import styled from 'styled-components'
-import { colors, primaryColorKey } from '../../../../styles/colors'
+
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
@@ -14,7 +18,7 @@ export const RecentVideos = () => {
       <InnerContainer>
         <HeadingContainer>
           <Heading>Recent Videos</Heading>
-          <ExternalLink href='https://youtube.com/neptune-mutual' rel='noreferrer' target='_blank'>View All Videos <Icon size={20} variant='link-external-01' /></ExternalLink>
+          <ExternalLink href='https://www.youtube.com/neptune-mutual' rel='noreferrer' target='_blank'>View All Videos <Icon size={20} variant='link-external-01' /></ExternalLink>
         </HeadingContainer>
 
         <VideosContainer>

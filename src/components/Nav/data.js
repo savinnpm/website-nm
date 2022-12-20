@@ -42,7 +42,7 @@ export const data = [
         title: 'From Our Youtube Channel',
         more: {
           title: 'All Video Tutorials',
-          href: 'https://youtube.com/neptune-mutual'
+          href: 'https://www.youtube.com/neptune-mutual'
         }
       }
     ]
