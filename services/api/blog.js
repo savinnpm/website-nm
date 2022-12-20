@@ -44,7 +44,7 @@ const getMetaData = async (docs) => {
         alt: doc.cover.alt || '',
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
-        date: doc.updatedAt || doc.createdAt,
+        date: doc.publishedAt || doc.updatedAt || doc.createdAt,
         tags: doc.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) }))
       }
     }))
@@ -140,7 +140,7 @@ export const getSinglePost = async (slug) => {
       image: await storeLocally(`${env.coverFileUrlPrefix}${match.cover.filename}`, 'images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
-      date: match.updatedAt || match.createdAt,
+      date: match.publishedAt || match.updatedAt || match.createdAt,
       tags: match.tags.map((tag) => ({ name: tag.name, slug: tag.slug, color: getValidColorKey(tag.color) })),
       meta: {
         title: match?.meta?.title || match.title || '',
