@@ -19,8 +19,7 @@ const scriptSources = [
   'https://platform.twitter.com/',
   'https://gist.github.com/',
   "'sha256-JqYO2e+vKshpSJIL6vXWyHELsI/pvKIy/md6/D76vCE='",
-  "'sha256-3xtbv6ivRONYxlH8P0T35lyVzSbw6bA6uFrtQf4b/4E='"
-
+  "'sha256-vX1AzZwrRXe3WIKC1noobJVjWYOhWrP4j2Igf4V3fzA='"
 ]
   .map((x) => (x || '').trim())
   .filter((x) => !!x)
@@ -34,6 +33,7 @@ module.exports = [
       `connect-src 'self' ${connectSources}`,
       "style-src 'self' 'unsafe-inline' https://github.githubassets.com/",
       'upgrade-insecure-requests',
+      'frame-src https://platform.twitter.com/ https://www.youtube.com/',
       "frame-ancestors 'self'",
       "default-src 'none'",
       "prefetch-src 'self'",
