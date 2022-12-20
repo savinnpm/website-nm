@@ -59,7 +59,7 @@ const transformDoc = async (doc) => {
     },
     length: doc.length,
     duration: getVideoDurationText(doc.length),
-    date: doc.updatedAt || doc.createdAt
+    date: doc.publishedAt || doc.updatedAt || doc.createdAt
   }
 }
 
