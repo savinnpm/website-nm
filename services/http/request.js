@@ -1,12 +1,16 @@
 const https = require('https')
+const http = require('http')
 
 const get = (url, headers = {}) => {
   const urlObj = new URL(url)
+
+  const httpCore = urlObj.protocol === 'http:' ? http : https
 
   return new Promise(function (resolve, reject) {
     const options = {
       method: 'GET',
       hostname: urlObj.hostname,
+      port: urlObj.port,
       path: urlObj.pathname + urlObj.search,
       headers: {
         ...headers
@@ -14,7 +18,7 @@ const get = (url, headers = {}) => {
       maxRedirects: 20
     }
 
-    const req = https.request(options, function (res) {
+    const req = httpCore.request(options, function (res) {
       // reject on bad status
       if (res.statusCode < 200 || res.statusCode >= 300) {
         return reject(new Error('statusCode=' + res.statusCode))
