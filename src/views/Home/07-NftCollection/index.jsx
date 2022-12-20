@@ -27,7 +27,7 @@ export const NftCollection = () => {
           </TextContainer>
 
           <Button
-            href='https://discord.gg/2qMGTtJtnW'
+            href='https://discord.com/invite/2qMGTtJtnW'
             as='a'
             hierarchy='primary'
             size='xl'
