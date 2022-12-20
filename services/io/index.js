@@ -95,7 +95,7 @@ const exists = async (filePath) => {
     await fs.access(filePath)
     return true
   } catch (error) {
-    console.error(error.message)
+    // console.error(error.message)
     // file not found
   }
 

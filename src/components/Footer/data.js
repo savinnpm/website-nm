@@ -2,7 +2,7 @@ export const nav = [
   {
     title: 'Resources',
     links: [
-      { href: '/marketplace', text: 'Marketplace', isExternal: false },
+      { href: 'https://app.neptunemutual.com', text: 'Marketplace', isExternal: true },
       { href: '/blog', text: 'Blog', isExternal: false },
       { href: '/pressroom', text: 'Press Room', isExternal: false },
       { href: '/ecosystem', text: 'Ecosystem', isExternal: false },
