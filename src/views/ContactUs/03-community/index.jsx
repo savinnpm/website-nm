@@ -1,4 +1,5 @@
 import styled, { useTheme } from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -49,7 +50,7 @@ const links = [
   },
   {
     name: 'Discord',
-    href: 'https://discord.gg/2qMGTtJtnW',
+    href: 'https://discord.com/invite/2qMGTtJtnW',
     Icon: <Icon variant='discord-default' />,
     IconWhite: <Icon variant='discord' />
   }

@@ -5,7 +5,7 @@ import { UnorderedList } from './UnorderedList'
 
 const links = {
   SDK: 'https://www.npmjs.com/package/@neptunemutual/sdk',
-  DISCORD: 'https://discord.gg/2qMGTtJtnW',
+  DISCORD: 'https://discord.com/invite/2qMGTtJtnW',
   BLOG: 'https://blog.neptunemutual.com/',
   DOCUMENTATION: 'https://docs.neptunemutual.com/',
   PRIVACY_POLICY: 'https://docs.neptunemutual.com/usage/privacy-policy',

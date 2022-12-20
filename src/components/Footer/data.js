@@ -65,7 +65,7 @@ export const social = [
   {
     icon: 'discord',
     text: 'discord',
-    href: 'https://discord.gg/2qMGTtJtnW',
+    href: 'https://discord.com/invite/2qMGTtJtnW',
     isExternal: true
   }
 ]
