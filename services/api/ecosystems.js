@@ -1,5 +1,5 @@
+import { env } from '../environment'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
 
 let docs = null
@@ -9,17 +9,18 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all ecosystems')
+  try {
+    console.log('fetching all ecosystems')
 
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}ecosystems?limit=1000&depth=6`, getApiHeaders())
+    const dataStr = await request.get(`${env.websiteApiServer}/api/ecosystems?limit=1000&depth=6`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.ecosystems.docs
-  return docs
+  return []
 }
 
 const transformDoc = (doc) => {

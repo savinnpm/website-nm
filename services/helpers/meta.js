@@ -1,3 +1,4 @@
+import { env } from '../environment'
 import { storeLocally } from '../io/download'
 
 export const storeOgImage = async (filename, folder = 'images') => {
@@ -5,7 +6,7 @@ export const storeOgImage = async (filename, folder = 'images') => {
     return '/assets/images/meta/og/home.png'
   }
 
-  const relativePath = await storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, folder)
+  const relativePath = await storeLocally(`${env.fileUrlPrefix}${filename}`, folder)
   return relativePath
 }
 

@@ -1,6 +1,6 @@
+import { env } from '../environment'
 import { helpers } from '../helpers'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
 
 let docs = null
@@ -10,17 +10,18 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all vacancies')
+  try {
+    console.log('fetching all vacancies')
 
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}vacancies?limit=1000`, getApiHeaders())
+    const dataStr = await request.get(`${env.websiteApiServer}/api/vacancies?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.vacancies.docs
-  return docs
+  return []
 }
 
 export const getVacancies = async () => {

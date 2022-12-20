@@ -1,6 +1,6 @@
+import { env } from '../environment'
 import { helpers } from '../helpers'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
 
 let docs = null
@@ -10,17 +10,18 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all programs')
+  try {
+    console.log('fetching all programs')
 
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}programs?limit=1000`, getApiHeaders())
+    const dataStr = await request.get(`${env.websiteApiServer}/api/programs?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.programs.docs
-  return docs
+  return []
 }
 
 const transformDoc = async (doc) => {

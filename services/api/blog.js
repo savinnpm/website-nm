@@ -2,8 +2,8 @@ import { colors, primaryColorKey } from '../../styles/colors'
 import { helpers } from '../helpers'
 import { storeLocally } from '../io/download'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
+import { env } from '../environment'
 
 const POSTS_PER_PAGE = 12
 
@@ -14,17 +14,18 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all articles')
+  try {
+    console.log('fetching all articles')
 
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}articles?limit=1000`, getApiHeaders())
+    const dataStr = await request.get(`${env.websiteApiServer}/api/articles?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.articles.docs
-  return docs
+  return []
 }
 
 const getValidColorKey = (colorKey) => {
@@ -39,7 +40,7 @@ const getMetaData = async (docs) => {
         id: doc.id,
         title: doc.title,
         featured: doc.featured,
-        image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${doc.cover.filename}`, 'images'),
+        image: await storeLocally(`${env.coverFileUrlPrefix}${doc.cover.filename}`, 'images'),
         alt: doc.cover.alt || '',
         slug: doc.slug,
         intro: doc.intro.replace('&hellip;', ''),
@@ -136,7 +137,7 @@ export const getSinglePost = async (slug) => {
       id: match.id,
       title: match.title,
       featured: match.featured,
-      image: await storeLocally(`${process.env.COVER_FILE_URI_PREFIX}${match.cover.filename}`, 'images'),
+      image: await storeLocally(`${env.coverFileUrlPrefix}${match.cover.filename}`, 'images'),
       slug: match.slug,
       intro: match.intro.replace('&hellip;', ''),
       date: match.updatedAt || match.createdAt,

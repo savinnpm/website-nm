@@ -1,8 +1,8 @@
-import { mockData } from '../_mock_'
 import { helpers } from '../helpers'
 import { request } from '../http/request'
 import { storeLocally } from '../io/download'
 import { getApiHeaders } from './config'
+import { env } from '../environment'
 
 const getVideoDurationText = (timestamp) => {
   // 2
@@ -29,18 +29,19 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all videos')
+  try {
+    console.log('fetching all videos')
 
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}videos?limit=1000`, getApiHeaders())
+    const dataStr = await request.get(`${env.websiteApiServer}/api/videos?limit=1000`, getApiHeaders())
     const data = JSON.parse(dataStr)
 
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.videos.docs
-  return docs
+  return []
 }
 
 const transformDoc = async (doc) => {
@@ -50,7 +51,7 @@ const transformDoc = async (doc) => {
   return {
     id: doc.id,
     title: doc.title,
-    image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.thumbnail.filename}`, 'images'),
+    image: await storeLocally(`${env.fileUrlPrefix}${doc.thumbnail.filename}`, 'images'),
     videoId: doc.videoId,
     sort: doc.sort,
     description: {

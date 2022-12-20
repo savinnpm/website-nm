@@ -1,3 +1,5 @@
+import { env } from '../environment'
+
 export const getApiHeaders = () => {
-  return { Authorization: `Bearer ${process.env.API_AUTH_TOKEN}` }
+  return { Authorization: `Bearer ${env.websiteApiAuthToken}` }
 }

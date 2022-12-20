@@ -9,6 +9,7 @@ import { Checkbox } from '../../../components/Checkbox'
 import { Icon } from '../../../components/Icon'
 import { InputWithLabel } from '../../../components/InputWithLabel'
 import { TextArea } from '../../../components/TextArea'
+import { publicEnv } from '../../../environment'
 import { FormOptions } from './FormOptions'
 import { FormSelector } from './FormSelector'
 import { validateForm } from './validateForm'
@@ -80,7 +81,7 @@ export const ContactForm = () => {
   const itemsRef = useRef([])
 
   const makeRequest = async (data) => {
-    const API_URL = `${process.env.NEXT_PUBLIC_FORMS_API_SERVER}/contact`
+    const API_URL = `${publicEnv.formsApiServer}/contact`
 
     try {
       const res = await fetch(API_URL, {
@@ -365,7 +366,7 @@ export const ContactForm = () => {
       <ReCAPTCHA
         ref={recaptchaRef}
         size='normal'
-        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}
+        sitekey={publicEnv.recaptchaSiteKey}
         onChange={onReCAPTCHAChange}
       />
 
