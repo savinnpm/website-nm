@@ -1,10 +1,11 @@
+const { publicEnv } = require('../src/environment')
+
 const connectSources = [
-  process.env.NEXT_PUBLIC_FORMS_API_SERVER,
+  publicEnv.formsApiServer,
   'https://blog.neptunemutual.com',
   'https://*.clarity.ms',
   'https://www.google-analytics.com',
-  'https://youtube.com/',
-  process.env.API_URL_PREFIX
+  'https://youtube.com/'
 ]
   .map((x) => (x || '').trim())
   .filter((x) => !!x)
@@ -34,7 +35,7 @@ module.exports = [
       "style-src 'self' 'unsafe-inline' https://github.githubassets.com/",
       'upgrade-insecure-requests',
       "frame-ancestors 'self'",
-      "default-src 'self' https://www.google.com https://platform.twitter.com/ https://www.youtube.com/",
+      "default-src 'none'",
       "prefetch-src 'self'",
       "manifest-src 'self'",
       "base-uri 'none'",

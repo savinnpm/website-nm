@@ -1,9 +1,11 @@
+import { publicEnv } from '../environment'
+
 export const pageview = (url) => {
-  if (!process.env.NEXT_PUBLIC_GA_ID) {
+  if (!publicEnv.googleAnalyticsId) {
     throw Error('GA: not configured')
   }
 
-  return window.gtag('config', process.env.NEXT_PUBLIC_GA_ID, {
+  return window.gtag('config', publicEnv.googleAnalyticsId, {
     path_url: url
   })
 }

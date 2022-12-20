@@ -14,6 +14,7 @@ import { Input } from '../Input'
 import { InputHint } from '../Input/Hint'
 import { SuccessMessage } from './SuccessMessage'
 import { useTranslation, Trans } from 'react-i18next'
+import { publicEnv } from '../../environment'
 
 export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink = '/rss.xml' }) => {
   const { t } = useTranslation('common')
@@ -29,7 +30,7 @@ export const BlogSubscribe = ({ showRSS = false, atomLink = '/atom.xml', rssLink
 
     try {
       setIsPending(true)
-      const res = await fetch(`${process.env.NEXT_PUBLIC_FORMS_API_SERVER}/subscribe`, {
+      const res = await fetch(`${publicEnv.formsApiServer}/subscribe`, {
         method: 'POST',
         body: JSON.stringify({ email }),
         headers: {

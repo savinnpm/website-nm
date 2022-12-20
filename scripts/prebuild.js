@@ -1,6 +1,7 @@
 const fs = require('fs')
 const https = require('https')
 const path = require('path')
+const { env } = require('../services/environment')
 
 const download = function (url, dest) {
   return new Promise((resolve, reject) => {
@@ -35,40 +36,40 @@ const download = function (url, dest) {
 }
 
 const updateXmlFiles = async () => {
-  if (!process.env.SITEMAP_API_URL_PREFIX || !process.env.SITEMAP_API_URL_PREFIX.trim()) {
+  const urlPrefix = env.websiteApiServer
+
+  if (!urlPrefix || !urlPrefix.trim()) {
     return
   }
-
-  const urlPrefix = process.env.SITEMAP_API_URL_PREFIX // ends with `/`
 
   // pathToStore is relative - DO NOT START WITH `/`
   const files = [
     {
-      url: `${urlPrefix}sitemap.xml`,
+      url: `${urlPrefix}/sitemap.xml`,
       pathToStore: './sitemap.xml'
     },
     {
-      url: `${urlPrefix}atom.xml`,
+      url: `${urlPrefix}/atom.xml`,
       pathToStore: './atom.xml'
     },
     {
-      url: `${urlPrefix}rss.xml`,
+      url: `${urlPrefix}/rss.xml`,
       pathToStore: './rss.xml'
     },
     {
-      url: `${urlPrefix}blog/atom.xml`,
+      url: `${urlPrefix}/blog/atom.xml`,
       pathToStore: './blog/atom.xml'
     },
     {
-      url: `${urlPrefix}blog/rss.xml`,
+      url: `${urlPrefix}/blog/rss.xml`,
       pathToStore: './blog/rss.xml'
     },
     {
-      url: `${urlPrefix}pressroom/atom.xml`,
+      url: `${urlPrefix}/pressroom/atom.xml`,
       pathToStore: './pressroom/atom.xml'
     },
     {
-      url: `${urlPrefix}pressroom/rss.xml`,
+      url: `${urlPrefix}/pressroom/rss.xml`,
       pathToStore: './pressroom/rss.xml'
     }
   ]
@@ -88,7 +89,7 @@ const updateXmlFiles = async () => {
 }
 
 const udpateFileCache = () => {
-  if (!process.env.RESET_FILE_CACHE || !process.env.RESET_FILE_CACHE.trim()) {
+  if (env.resetFileCache !== 'true') {
     return
   }
 

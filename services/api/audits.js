@@ -1,8 +1,8 @@
 import { helpers } from '../helpers'
 import { storeLocally } from '../io/download'
 import { request } from '../http/request'
-import { mockData } from '../_mock_'
 import { getApiHeaders } from './config'
+import { env } from '../environment'
 
 let docs = null
 
@@ -11,17 +11,17 @@ const getDocs = async () => {
     return docs
   }
 
-  console.log('fetching all audits')
-
-  if (process.env.PROD === 'true') {
-    const dataStr = await request.get(`${process.env.API_URL_PREFIX}audits?limit=1000&depth=6`, getApiHeaders())
+  try {
+    console.log('fetching all audits')
+    const dataStr = await request.get(`${env.websiteApiServer}/api/audits?limit=1000&depth=6`, getApiHeaders())
     const data = JSON.parse(dataStr)
     docs = data.docs
     return docs
+  } catch (error) {
+
   }
 
-  docs = mockData.audits.docs
-  return docs
+  return []
 }
 
 const transformDoc = async (doc) => {
@@ -34,7 +34,7 @@ const transformDoc = async (doc) => {
     description: {
       html: doc.descriptionHtml
     },
-    report: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.report.filename}`, 'pdfs'),
+    report: await storeLocally(`${env.fileUrlPrefix}${doc.report.filename}`, 'pdfs'),
     reportAlt: doc.report.alt,
     startDate: doc.startDate,
     endDate: doc.endDate,
@@ -46,12 +46,12 @@ const transformDoc = async (doc) => {
         alt: doc.partner.logo.alt,
         description: doc.partner.logo.description,
         identifier: doc.partner.logo.identifier,
-        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.logo.filename}`, 'images')
+        image: await storeLocally(`${env.fileUrlPrefix}${doc.partner.logo.filename}`, 'images')
       },
       icon: {
         alt: doc.partner.icon.alt,
         description: doc.partner.icon.description,
-        image: await storeLocally(`${process.env.FILE_URL_PREFIX}${doc.partner.icon.filename}`, 'images')
+        image: await storeLocally(`${env.fileUrlPrefix}${doc.partner.icon.filename}`, 'images')
       }
     },
     meta: {

@@ -1,3 +1,4 @@
+import { publicEnv } from '../environment'
 import * as ga from './ga'
 
 const getFormattedDate = (x) => {
@@ -38,11 +39,11 @@ const copyToClipBoard = (text) => {
   navigator?.clipboard?.writeText(text)
 }
 
-const getDns = () => process.env.NEXT_PUBLIC_DOMAIN_NAME || 'https://neptunemutual.com'
+const getDns = () => new URL(publicEnv.domain).origin
 
 // fully qualified domain name
 const getFQDN = (path) => {
-  const dns = process.env.NEXT_PUBLIC_DOMAIN_NAME || 'https://neptunemutual.com'
+  const dns = getDns()
   return new URL(path, dns).href
 }
 

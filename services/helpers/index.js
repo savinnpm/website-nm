@@ -1,4 +1,5 @@
 import { load as cheerioLoad } from 'cheerio'
+import { env } from '../environment'
 import { request } from '../http/request'
 import { storeLocally } from '../io/download'
 import { storeOgImage, getOgImageAlt } from './meta'
@@ -12,15 +13,7 @@ const parseLegacyHtml = async ($) => {
   $('img').each(function () {
     const oldSrc = $(this).attr('src')
 
-    const imageOrigins = process.env.NEXT_PUBLIC_IMAGE_ORIGINS
-      ? process.env.NEXT_PUBLIC_IMAGE_ORIGINS.split(',')
-        .map((x) => x.trim())
-        .filter(Boolean)
-      : [
-          (new URL(process.env.API_URL_PREFIX)).origin,
-          (new URL(process.env.COVER_FILE_URI_PREFIX)).origin,
-          'https://blog.neptunemutual.com'
-        ]
+    const imageOrigins = env.imageOrigins
 
     let originMatched = false
 
@@ -46,7 +39,7 @@ const parseLegacyHtml = async ($) => {
     $(this).removeAttr('width')
     $(this).removeAttr('height')
 
-    promises.push(storeLocally(`${process.env.FILE_URL_PREFIX}${filename}`, 'images'))
+    promises.push(storeLocally(`${env.fileUrlPrefix}${filename}`, 'images'))
   })
 
   await Promise.allSettled(promises)
