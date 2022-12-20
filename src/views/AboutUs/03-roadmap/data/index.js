@@ -4,7 +4,7 @@ import { Command } from './Command'
 import { UnorderedList } from './UnorderedList'
 
 const links = {
-  SDK: 'https://www.npmjs.com/package/@neptunemutual/sdk',
+  SDK: 'https://docs.neptunemutual.com/sdk/quickstart',
   DISCORD: 'https://discord.com/invite/2qMGTtJtnW',
   BLOG: 'https://blog.neptunemutual.com/',
   DOCUMENTATION: 'https://docs.neptunemutual.com/',
@@ -12,7 +12,7 @@ const links = {
   TERMS_OF_USE: 'https://docs.neptunemutual.com/usage/terms-of-use',
   FAUCET: 'https://faucet.neptunemutual.com/',
   LIGHTPAPER: '/files/lightpaper.v1.pdf',
-  TESTNET: 'https://test.neptunemutual.com/',
+  TESTNET: 'https://test.neptunemutual.net/',
   CONTACT: 'https://forms.clickup.com/f/6vvfh-4624/UVJHEDAS2T3P6DCFJM'
 }
 
@@ -119,7 +119,7 @@ export const data = [
           <p>
             <a target='_blank' href='https://faucet.neptunemutual.com/' title='Neptune Mutual Faucet' rel='noreferrer'>View Faucet</a>
             &nbsp;/&nbsp;
-            <a target='_blank' href='https://test.neptunemutual.com/' title='Neptune Mutual Testnet' rel='noreferrer'>View Testnet</a>
+            <a target='_blank' href='https://test.neptunemutual.net/' title='Neptune Mutual Testnet' rel='noreferrer'>View Testnet</a>
           </p>
         </>
       )
@@ -188,7 +188,7 @@ export const data = [
             With this upgrade, cover pools can now be integrated into numerous baskets for enhanced capital efficiency and increased returns for liquidity providers. Due to the leverage element, diversified pools, unlike dedicated pools, do not have 1:1 liquidity.
           </p>
           <p>
-            <a target='_blank' href='https://test.neptunemutual.com/' rel='noreferrer'>View Testnet</a>
+            <a target='_blank' href='https://test.neptunemutual.net/' rel='noreferrer'>View Testnet</a>
           </p>
         </>
       )
@@ -232,7 +232,7 @@ export const data = [
             The Neptune Mutual protocol was launched on the Ethereum mainnet after the completion of an extensive internal security audit.
           </p>
           <p>
-            <a target='_blank' href='https://app.neptunemutual.com/' rel='noreferrer'>View Marketplace</a>
+            <a target='_blank' href='https://app.neptunemutual.net' rel='noreferrer'>View Marketplace</a>
           </p>
         </>
       )
@@ -245,10 +245,10 @@ export const data = [
       return (
         <>
           <p>
-            Neptune Mutual announces "Prime dApps," a diverse cover pool that includes industry-leading DeFi protocols such as Uniswap, Aave, Balancer, Curve, Gnosis Safe, MakerDAO, and Synthetix.
+            Neptune Mutual announces "Prime dApps," a diversified cover pool that includes industry-leading DeFi protocols such as Uniswap, Aave, Balancer, Curve, Gnosis Safe, MakerDAO, and Synthetix.
           </p>
           <p>
-            <a target='_blank' href='https://app.neptunemutual.com/covers/prime' title='View Prime dApps Diversified Insurance Cover Pool' rel='noreferrer'>View Prime dApps</a>
+            <a target='_blank' href='https://app.neptunemutual.net/covers/prime' title='View Prime dApps Diversified Insurance Cover Pool' rel='noreferrer'>View Prime dApps</a>
           </p>
         </>
       )
@@ -281,7 +281,7 @@ export const data = [
             We listed Binance, one of the biggest and most popular exchange, on our marketplace. Binance exchange custody has been deployed as a dedicated standalone cover. A dedicated cover pool always has at least 1:1 or more liquidity available than policies underwritten.
           </p>
           <p>
-            <a target='_blank' href='https://app.neptunemutual.com/covers/binance/purchase' rel='noreferrer'>Purchase Binance Policy</a>
+            <a target='_blank' href='https://app.neptunemutual.net/covers/binance/purchase' rel='noreferrer'>Purchase Binance Policy</a>
           </p>
         </>
       )

@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
+
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -22,7 +23,7 @@ export const Hero = ({ latestAnnouncement }) => {
 
         <ButtonContainer>
           <Button
-            href='https://app.neptunemutual.com/'
+            href='https://app.neptunemutual.net/'
             as='a'
             target='_blank'
             hierarchy='primary'
