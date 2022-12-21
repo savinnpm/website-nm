@@ -1,13 +1,13 @@
 {
-  "META_TITLE": "Web3 Tools / Neptune Mutual",
-  "META_DESCRIPTION": "Neptune Mutual is an excellent place to work if you are interested in the web3 industry. Check out the job openings that are currently available.",
-  "META_OG_TITLE": "Careers / Neptune Mutual",
-  "META_OG_DESCRIPTION": "Neptune Mutual is an excellent place to work if you are interested in the web3 industry. Check out the job openings that are currently available.",
-  "META_OG_IMAGE": "/assets/images/meta/og/careers.png",
-  "META_TWITTER_TITLE": "Careers / Neptune Mutual",
-  "META_TWITTER_DESCRIPTION": "Neptune Mutual is an excellent place to work if you are interested in the web3 industry. Check out the job openings that are currently available.",
-  "META_TWITTER_IMAGE": "/assets/images/meta/og/careers.png",
-  "META_TWITTER_IMAGE_ALT": "Neptune Mutual Careers Open Graph Banner",
+  "META_TITLE": "@todo",
+  "META_DESCRIPTION": "@todo",
+  "META_OG_TITLE": "@todo",
+  "META_OG_DESCRIPTION": "@todo",
+  "META_OG_IMAGE": "@todo",
+  "META_TWITTER_TITLE": "@todo",
+  "META_TWITTER_DESCRIPTION": "@todo",
+  "META_TWITTER_IMAGE": "@todo",
+  "META_TWITTER_IMAGE_ALT": "@todo",
   "String to Bytes32 Converter Online": "String to Bytes32 Converter Online",
   "Bytes32 format is used in smart contracts with specific length of 64 characters, most commonly using the solidity programming language.": "Bytes32 format is used in smart contracts with specific length of 64 characters, most commonly using the solidity programming language."
 }
