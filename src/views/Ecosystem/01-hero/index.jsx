@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
@@ -6,7 +5,6 @@ import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import CheckIcon from '../../../components/Icon/custom/CheckIcon'
-import { getBlurDataURL } from '../../../helpers/images'
 
 export const Hero = () => {
   const { t } = useTranslation('ecosystem')
@@ -33,13 +31,10 @@ export const Hero = () => {
         </TextAndFeatures>
 
         <ImageContainer>
-          <Image
+          <img
             src='/assets/images/hero/ecosystem.webp'
             alt='A banner image featuring a couple of cards labeled "Dedicated Cover" and "Diversified Pool," as well as a progress bar showing the utilization amount and utilization ratio'
-            fill
-            sizes='(max-width: 768px) 100vw, 1280px'
-            placeholder='blur'
-            blurDataURL={getBlurDataURL(1280, 720)}
+            loading='eager'
           />
         </ImageContainer>
 
@@ -120,6 +115,8 @@ const ImageContainer = styled.div`
   }
 
   img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 `
