@@ -100,7 +100,6 @@ const SupportingText = styled.p`
 `
 
 const ImageContainer = styled.div`
-  position: relative;
   margin-top: 64px;
   height: 480px;
   border-radius: 16px;

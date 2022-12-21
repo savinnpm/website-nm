@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import styled from 'styled-components'
 
 import { getSlug } from '../../../../services/helpers/slug'
@@ -7,7 +6,6 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Icon } from '../../../components/Icon'
 import { getFormattedDate } from '../../../helpers'
-import { getBlurDataURL } from '../../../helpers/images'
 
 export const Hero = ({ title, createdAt, timeToRead, featuredImage }) => {
   return (
@@ -23,12 +21,7 @@ export const Hero = ({ title, createdAt, timeToRead, featuredImage }) => {
         </Heading>
       </Header>
       <ImageContainer>
-        <Image
-          src={`${featuredImage}`} alt={title} fill loading='eager' priority
-          sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
-          placeholder='blur'
-          blurDataURL={getBlurDataURL(1280, 1280)}
-        />
+        <img src={featuredImage} alt={title} loading='eager' />
       </ImageContainer>
     </Container>
   )
@@ -97,7 +90,6 @@ const ImageContainer = styled.div`
   height: 560px;
   max-width: 100%;
   overflow: hidden;
-  position: relative;
 
   @media (max-width: 768px) {
     flex: 1 0 240px;
@@ -106,6 +98,8 @@ const ImageContainer = styled.div`
   }
 
   img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     display: block;
   }

@@ -13,11 +13,15 @@ export const Team = () => {
     <Container>
       <ContentContainer>
         <LinkText href='/careers'>
-          <span>{t('We’re hiring!')}</span>
+          <span>
+            {t('We’re hiring!')}
+          </span>
           <Icon variant='link-external-01' size={16} />
         </LinkText>
 
-        <Title>{t('Meet Our Team')}</Title>
+        <Title>
+          {t('Meet Our Team')}
+        </Title>
 
         <SubHeading>
           {t('We are a global and dynamic team with a mission to create a reliable, fast, and effective platform that protects digital assets.')}

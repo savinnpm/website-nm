@@ -24,10 +24,16 @@ export const JobVacancies = ({ vacancies }) => {
       <InnerContainer>
         <Content>
           <H2>
-            <Subheading>{t('Careers')}</Subheading>
-            <Heading>{t('Job Vacancies')}</Heading>
+            <Subheading>
+              {t('Careers')}
+            </Subheading>
+            <Heading>
+              {t('Job Vacancies')}
+            </Heading>
           </H2>
-          <SupportingText>{t('Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.')}</SupportingText>
+          <SupportingText>
+            {t('Our philosophy is simple — hire a team of diverse, passionate people and foster a culture that empowers you to do you best work.')}
+          </SupportingText>
         </Content>
 
         <Content>

@@ -40,7 +40,6 @@ const Container = styled.div`
 `
 
 const ImageContainer = styled.div`
-  position: relative;
   height: 240px;
 
   img {

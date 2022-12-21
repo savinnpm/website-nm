@@ -14,10 +14,16 @@ export const Roadmap = () => {
 
         <TextContainer>
           <H2>
-            <Subheading>{t('Roadmap')}</Subheading>
-            <Heading>{t('Follow Our Story. Join Our Community.')}</Heading>
+            <Subheading>
+              {t('Roadmap')}
+            </Subheading>
+            <Heading>
+              {t('Follow Our Story. Join Our Community.')}
+            </Heading>
           </H2>
-          <SupportingText>{t('Our roadmap for growing the Neptune Mutual Ecosystem.')}</SupportingText>
+          <SupportingText>
+            {t('Our roadmap for growing the Neptune Mutual Ecosystem.')}
+          </SupportingText>
         </TextContainer>
 
         <MainCarousel />

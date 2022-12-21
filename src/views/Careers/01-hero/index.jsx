@@ -1,4 +1,3 @@
-import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
@@ -8,7 +7,6 @@ import {
 } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
-import { getBlurDataURL } from '../../../helpers/images'
 
 const Hero = () => {
   const { t } = useTranslation('careers')
@@ -19,23 +17,30 @@ const Hero = () => {
         <Content>
           <H1 id='interested-in-pursuing-a-career-with-neptune-mutual'>
             <SubheadingWithBadge>
-              <Subheading>{t('DeFi Insurance is the Future!')}</Subheading><Badge>{t("We're Hiring!")}</Badge>
+              <Subheading>
+                {t('DeFi Insurance is the Future!')}
+              </Subheading>
+              <Badge>
+                {t("We're Hiring!")}
+              </Badge>
             </SubheadingWithBadge>
-            <HeaderTitle>{t('Interested in Pursuing a Career with Neptune Mutual?')}</HeaderTitle>
+            <HeaderTitle>
+              {t('Interested in Pursuing a Career with Neptune Mutual?')}
+            </HeaderTitle>
           </H1>
           <HeaderContent>
-            {t('If you are driven, passionate and an executor, then Neptune Mutual is for you!')}<br /><br />
-            {t('We are looking for amazing talents anywhere across the globe to join our diverse and dynamic team that is on a mission to build a reliable, fast and effective platform that protects digital assets.')}<br /><br />
+            {t('If you are driven, passionate and an executor, then Neptune Mutual is for you!')}
+            <br /><br />
+            {t('We are looking for amazing talents anywhere across the globe to join our diverse and dynamic team that is on a mission to build a reliable, fast and effective platform that protects digital assets.')}
+            <br /><br />
             {t('Hyper-talented experts from all over the world grow and thrive in our super dynamic, connected team. As a dedicated talent-nurturing workspace, we give each of our team members a fun and professional environment for them to do the work they enjoy.')}
           </HeaderContent>
         </Content>
         <ImageContainer>
-          <Image
-            alt='Neptune Mutual Careers Banner Image' src='/assets/images/hero/careers.webp'
-            fill loading='eager' priority
-            sizes='(max-width: 768px) 80vw, (max-width: 1280px) 40vw, 640px'
-            placeholder='blur'
-            blurDataURL={getBlurDataURL(1280, 1280)}
+          <img
+            src='/assets/images/hero/careers.webp'
+            alt={t('Neptune Mutual Careers Banner Image')}
+            loading='eager'
           />
         </ImageContainer>
 
@@ -123,7 +128,6 @@ const HeaderContent = styled.p`
 const ImageContainer = styled.div`
   flex: 1;
   max-width: 100%;
-  position: relative;
   display: inline-block;
 
   @media (max-width: 768px) {
@@ -135,6 +139,8 @@ const ImageContainer = styled.div`
   }
 
   img {
+    width: 100%;
+    height: 100%;
     object-position: top center;
     object-fit: cover;
 
