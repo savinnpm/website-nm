@@ -64,6 +64,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, tag }) => {
 
   const activeFilter = tag?.slug || 'all'
   const heading = tag?.name || 'Recent Posts'
+  const headingId = tag?.slug || undefined
 
   return (
     <Container>
@@ -85,7 +86,7 @@ export const RecentPosts = ({ blogPosts, page, totalPages, tag }) => {
 
         <TextAndCta>
           <TextContainer>
-            <Heading>{heading}</Heading>
+            <Heading id={headingId}>{heading}</Heading>
           </TextContainer>
         </TextAndCta>
         <BlogsContainer>

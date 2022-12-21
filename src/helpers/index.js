@@ -1,5 +1,6 @@
 import { publicEnv } from '../environment'
 import * as ga from './ga'
+import { scrollToHash } from './hash'
 
 const getFormattedDate = (x) => {
   // Safari doesn't like dashes
@@ -59,5 +60,6 @@ export {
   getFQDN,
   getDns,
   chunkArray,
-  ga
+  ga,
+  scrollToHash
 }

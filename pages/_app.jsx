@@ -14,6 +14,7 @@ import { colors } from '../styles/colors'
 import { MobileNavContainer } from '../src/components/Nav/MobileNavigation'
 import { PageLoader } from '../src/components/PageLoader'
 import { CookiesAndAnalytics } from '../src/components/CookiesAndAnalytics'
+import { scrollToHash } from '../src/helpers'
 
 function MyApp ({ Component, pageProps }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -27,6 +28,10 @@ function MyApp ({ Component, pageProps }) {
     return () => {
       Router.events.off('routeChangeComplete', onClose)
     }
+  }, [])
+
+  useEffect(() => {
+    scrollToHash()
   }, [])
 
   return (
