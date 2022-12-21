@@ -66,6 +66,7 @@ export default function FilteredAndPaginatedBlogPage (props) {
       <Head>
         <title>{t('META_TITLE')}</title>
         <meta name='description' content={t('META_DESCRIPTION')} />
+        <link rel='canonical' href={getFQDN(router.asPath)} />
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:type' content='website' />

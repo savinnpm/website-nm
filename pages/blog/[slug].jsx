@@ -54,6 +54,7 @@ export default function BlogPostPage (props) {
       <Head>
         <title>{props.post.meta.title}</title>
         <meta name='description' content={props.post.meta.description} />
+        <link rel='canonical' href={getFQDN(router.asPath)} />
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:type' content='article' />

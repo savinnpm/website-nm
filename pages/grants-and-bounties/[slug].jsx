@@ -52,6 +52,7 @@ export default function SingleProgramPage (props) {
       <Head>
         <title>{props.program.meta.title}</title>
         <meta name='description' content={props.program.meta.description} />
+        <link rel='canonical' href={getFQDN(router.asPath)} />
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:type' content='website' />

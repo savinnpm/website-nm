@@ -52,6 +52,7 @@ export default function SinglePolicyPage (props) {
       <Head>
         <title>{props.page.meta.title}</title>
         <meta name='description' content={props.page.meta.description} />
+        <link rel='canonical' href={getFQDN(router.asPath)} />
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:type' content='website' />

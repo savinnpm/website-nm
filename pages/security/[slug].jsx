@@ -52,6 +52,7 @@ export default function AuditPage (props) {
       <Head>
         <title>{props.audit.meta.title}</title>
         <meta name='description' content={props.audit.meta.description} />
+        <link rel='canonical' href={getFQDN(router.asPath)} />
         <link rel='icon' href='/favicon.ico' />
 
         <meta property='og:type' content='website' />
