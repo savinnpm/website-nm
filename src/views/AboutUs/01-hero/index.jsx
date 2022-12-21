@@ -27,16 +27,26 @@ const Hero = () => {
       <InnerContainer>
         <Content>
           <H1>
-            <Subheader>{t('DeFi Insurance Protocol Based on Parametric Insurance Model')}</Subheader>
-            <HeaderTitle>{t('Simplifying Decentralized Insurance')}</HeaderTitle>
+            <Subheader>
+              {t('DeFi Insurance Protocol Based on Parametric Insurance Model')}
+            </Subheader>
+            <HeaderTitle>
+              {t('Simplifying Decentralized Insurance')}
+            </HeaderTitle>
           </H1>
           <HeaderContent>
             {t('Watch out our 5-minute video to learn more about how Neptune Mutual contributes to the decentralized insurance industry.')}
           </HeaderContent>
         </Content>
       </InnerContainer>
-      <VideoContainer title="Check out our 5-minute video to learn more about Neptune Mutual's contributions to the decentralized insurance industry" onClick={showVideo}>
-        <img alt='Neptune Mutual Explainer Youtube Video Thumbnail' src='/assets/images/hero/reduce-exposure.webp' />
+      <VideoContainer
+        title={t("Check out our 5-minute video to learn more about Neptune Mutual's contributions to the decentralized insurance industry")}
+        onClick={showVideo}
+      >
+        <img
+          alt={t('Neptune Mutual Explainer Youtube Video Thumbnail')}
+          src='/assets/images/hero/reduce-exposure.webp'
+        />
         <Overlay>
           <PlayIcon />
         </Overlay>

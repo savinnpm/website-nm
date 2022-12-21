@@ -17,11 +17,15 @@ export const Hero = () => {
       <InnerContainer>
         <Text>
           <H1>
-            <Subheader>{t('Recent developments in the decentralized insurance space')}</Subheader>
-            <Heading>{t('Neptune Mutual Blog')}</Heading>
+            <Subheader>
+              {t('Recent developments in the decentralized insurance space')}
+            </Subheader>
+            <Heading>
+              {t('Neptune Mutual Blog')}
+            </Heading>
           </H1>
           <Subtitle>
-            The Neptune Mutual Blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.
+            {t('The Neptune Mutual Blog is the go-to location for learning about web3 and smart contract vulnerabilities, decentralized insurance, security best practices, and industry news. Enter your address to get weekly updates.')}
           </Subtitle>
         </Text>
 

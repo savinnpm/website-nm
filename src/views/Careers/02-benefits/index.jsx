@@ -17,10 +17,16 @@ export const Benefits = () => {
       <InnerContainer>
         <TextContainer>
           <H2>
-            <Subheading>{t('Work together with the brightest minds in decentralized insurance space')}</Subheading>
-            <Heading>{t('Why should you apply for a position at Neptune Mutual?')}</Heading>
+            <Subheading>
+              {t('Work together with the brightest minds in decentralized insurance space')}
+            </Subheading>
+            <Heading>
+              {t('Why should you apply for a position at Neptune Mutual?')}
+            </Heading>
           </H2>
-          <SupportingText>{t('Inspiring unity and cooperation, our common principles serve as the bedrock of our company culture.')}</SupportingText>
+          <SupportingText>
+            {t('Inspiring unity and cooperation, our common principles serve as the bedrock of our company culture.')}
+          </SupportingText>
         </TextContainer>
 
         <Features />

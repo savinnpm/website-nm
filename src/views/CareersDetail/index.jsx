@@ -29,22 +29,30 @@ const CareersDetail = (props) => {
 
           <Types>
             <Type>
-              <Label>{t('Department')}</Label>
+              <Label>
+                {t('Department')}
+              </Label>
               <TypeContent>{props.vacancy.department}</TypeContent>
             </Type>
             <Type>
-              <Label>{t('Job Type')}</Label>
+              <Label>
+                {t('Job Type')}
+              </Label>
               <TypeContent>{props.vacancy.type}</TypeContent>
             </Type>
             <Type>
-              <Label>{t('Location')}</Label>
+              <Label>
+                {t('Location')}
+              </Label>
               <TypeContent>{props.vacancy.location}</TypeContent>
             </Type>
           </Types>
 
           <AboutThisVacancy>
             <span />
-            <div>About this Vacancy</div>
+            <div>
+              {t('About this Vacancy')}
+            </div>
           </AboutThisVacancy>
           <HtmlContent content={props.vacancy.description.html} />
           <SocialShare title={props.vacancy.title} intro={(props.vacancy.text || '').substr(0, 100)} />

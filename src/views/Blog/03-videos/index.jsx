@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import {
@@ -11,14 +12,20 @@ import { useVideosContext } from '../../../context/VideosContext'
 import { Video } from './Video'
 
 export const RecentVideos = () => {
+  const { t } = useTranslation('blog')
   const { videos } = useVideosContext()
 
   return (
     <Container>
       <InnerContainer>
         <HeadingContainer>
-          <Heading>Recent Videos</Heading>
-          <ExternalLink href='https://www.youtube.com/neptune-mutual' rel='noreferrer' target='_blank'>View All Videos <Icon size={20} variant='link-external-01' /></ExternalLink>
+          <Heading>
+            {t('Recent Videos')}
+          </Heading>
+          <ExternalLink href='https://www.youtube.com/neptune-mutual' rel='noreferrer' target='_blank'>
+            {t('View All Videos')}
+            <Icon size={20} variant='link-external-01' />
+          </ExternalLink>
         </HeadingContainer>
 
         <VideosContainer>
