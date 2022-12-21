@@ -21,7 +21,7 @@ export const FeaturedPostCard = ({ post }) => {
       </ImageContainer>
 
       <Contents>
-        <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
+        <Time itemProp='published' dateTime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
 
         <Link href={`/blog/${post.slug}`}>
           <Title>{post.title}</Title>

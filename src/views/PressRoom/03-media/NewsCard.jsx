@@ -21,7 +21,7 @@ export const NewsCard = ({ newsItem }) => {
         />
       </ImageContainer>
 
-      <Time itemprop='published' datetime={newsItem.date}>{getFormattedDate(new Date(newsItem.date).toString())}</Time>
+      <Time itemProp='published' dateTime={newsItem.date}>{getFormattedDate(new Date(newsItem.date).toUTCString())}</Time>
 
       <TitleContainer href={newsItem.link} target='_blank' rel='noreferrer nofollow'>
         <Title>{newsItem.title}</Title>

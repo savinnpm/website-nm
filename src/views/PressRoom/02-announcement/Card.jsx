@@ -19,7 +19,7 @@ const Card = (props) => {
         />
       </ImageContainer>
 
-      <Time>{getFormattedDate(new Date(props.post.date).toString())}</Time>
+      <Time itemProp='published' dateTime={props.post.date}>{getFormattedDate(new Date(props.post.date).toUTCString())}</Time>
 
       <TitleContainer href={`/pressroom/${props.post.slug}`}>
         <Title>{props.post.title}</Title>
@@ -60,7 +60,7 @@ const ImageContainer = styled.div`
   }
 `
 
-const Time = styled.span`
+const Time = styled.time`
   display: block;
   margin-top: 32px;
   color: ${props => props.theme.isLightMode ? colors.gray[500] : colors.gray[400]};

@@ -22,7 +22,7 @@ export const ArticleCard = ({ post, type = 'blog' }) => {
         />
       </ImageContainer>
 
-      <Time itemprop='published' datetime={post.date}>{getFormattedDate(new Date(post.date).toString())}</Time>
+      <Time itemProp='published' dateTime={post.date}>{getFormattedDate(new Date(post.date).toUTCString())}</Time>
 
       <TitleContainer href={`/${type}/${post.slug}`}>
         <Title>{post.title}</Title>

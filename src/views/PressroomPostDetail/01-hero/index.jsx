@@ -13,7 +13,7 @@ export const Hero = ({ title, createdAt, timeToRead, featuredImage }) => {
     <Container>
       <Header>
         <BlogInfoContainer>
-          <Time itemprop='published' datetime={createdAt}>{getFormattedDate(new Date(createdAt).toString())}</Time>
+          <Time itemProp='published' dateTime={createdAt}>{getFormattedDate(new Date(createdAt).toUTCString())}</Time>
           <Icon size={8} variant='dot' />
           <BlogInfo>{timeToRead} read</BlogInfo>
         </BlogInfoContainer>
