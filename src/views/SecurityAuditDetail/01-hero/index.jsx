@@ -2,7 +2,11 @@ import Image from 'next/image'
 import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
-import { colors, primaryColorKey } from '../../../../styles/colors'
+import { getSlug } from '../../../../services/helpers/slug'
+import {
+  colors,
+  primaryColorKey
+} from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 import { Breadcrumbs } from '../../../components/Breadcrumbs'
@@ -14,7 +18,7 @@ const Hero = (props) => {
     <Container>
       <InnerContainer>
         <Content>
-          <H1>
+          <H1 id={getSlug(props.audit.title)}>
             <Subheader>{`${props.audit.startDate} - ${props.audit.endDate}`}</Subheader>
             <HeaderTitle>{t(`${props.audit.title}`)}</HeaderTitle>
           </H1>
@@ -27,7 +31,7 @@ const Hero = (props) => {
         </ImageContainer>
       </InnerContainer>
       <BreadcrumbsContainer>
-        <Breadcrumbs className='bread' crumbs={[...props.crumbs, { name: props.audit.title, link: '#' }]} />
+        <Breadcrumbs className='bread' crumbs={[...props.crumbs, { name: props.audit.title }]} />
       </BreadcrumbsContainer>
     </Container>
   )

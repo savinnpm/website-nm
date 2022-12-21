@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import styled from 'styled-components'
 
+import { getSlug } from '../../../../services/helpers/slug'
 import { colors } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
@@ -17,7 +18,7 @@ export const Hero = ({ title, createdAt, timeToRead, featuredImage }) => {
           <Icon size={8} variant='dot' />
           <BlogInfo>{timeToRead} read</BlogInfo>
         </BlogInfoContainer>
-        <Heading>
+        <Heading id={getSlug(title)}>
           {title}
         </Heading>
       </Header>

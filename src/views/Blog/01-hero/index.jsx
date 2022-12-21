@@ -16,7 +16,7 @@ export const Hero = () => {
     <Container>
       <InnerContainer>
         <Text>
-          <H1>
+          <H1 id='neptune-mutual-blog'>
             <Subheader>{t('Recent developments in the decentralized insurance space')}</Subheader>
             <Heading>{t('Neptune Mutual Blog')}</Heading>
           </H1>

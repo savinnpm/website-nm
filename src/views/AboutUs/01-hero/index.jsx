@@ -26,7 +26,7 @@ const Hero = () => {
     <Container>
       <InnerContainer>
         <Content>
-          <H1>
+          <H1 id='simplifying-decentralized-insurance'>
             <Subheader>{t('DeFi Insurance Protocol Based on Parametric Insurance Model')}</Subheader>
             <HeaderTitle>{t('Simplifying Decentralized Insurance')}</HeaderTitle>
           </H1>

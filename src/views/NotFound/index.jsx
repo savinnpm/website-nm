@@ -20,7 +20,7 @@ export const NotFound = () => {
 
       <TextAndCta>
 
-        <H1>
+        <H1 id='somethings-gone-missing'>
           <Subheading>{t('404 Error')}</Subheading>
           <Heading>{t('Something’s gone missing...')}</Heading>
         </H1>

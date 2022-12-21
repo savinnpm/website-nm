@@ -17,7 +17,7 @@ export const Hero = ({ latestAnnouncement }) => {
       <TextAndCta>
         <Announcement latestAnnouncement={latestAnnouncement} />
 
-        <Heading>{t('Covering Ethereum Decentralized Apps from Hacks')}</Heading>
+        <Heading id='covering-ethereum-decentralized-apps-from-hacks'>{t('Covering Ethereum Decentralized Apps from Hacks')}</Heading>
 
         <Subtitle>{t('Choose a DeFi insurance pool, select its duration, and enter how much you need to cover. Instantly receive your claims payout in stablecoin after incident resolution')}</Subtitle>
 
