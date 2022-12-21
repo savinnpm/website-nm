@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled, { useTheme } from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
@@ -58,14 +59,15 @@ const links = [
 
 export const CommunityChannels = () => {
   const theme = useTheme()
+  const { t } = useTranslation('contact')
 
   return (
     <Wrapper>
       <Container>
         <IntroContainer>
-          <Title>Community Channels</Title>
+          <Title>{t('Community Channels')}</Title>
           <SubHeading>
-            Don't be a stranger! Join and interact with us and our growing social media communities. Stay up to date on our latest developments and progress.
+            {t('Don’t be a stranger! Join and interact with us and our growing social media communities. Stay up to date on our latest developments and progress.')}
           </SubHeading>
         </IntroContainer>
         <LinksContainer>

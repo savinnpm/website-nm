@@ -1,9 +1,11 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 import { colors } from '../../../styles/colors'
 import { LinkGrayButton } from '../Button/LinkGrayButton'
 import { PageNumbers } from './PageNumbers'
 
 export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, totalPages }) => {
+  const { t } = useTranslation('common')
   const getPageNumbers = () => {
     return [...Array(totalPages).keys()]
   }
@@ -14,11 +16,11 @@ export const Pagination = ({ page = 0, setPage, isLast, handlePrev, handleNext, 
     <Container>
       <PaginationContainer>
 
-        <LinkGrayButton onClick={handlePrev} iconLeading iconVariant='arrow-left' disabled={page === 0}>Previous</LinkGrayButton>
+        <LinkGrayButton onClick={handlePrev} iconLeading iconVariant='arrow-left' disabled={page === 0}>{t('Previous')}</LinkGrayButton>
 
         <PageNumbers page={page} pages={pages} setPage={setPage} />
 
-        <LinkGrayButton onClick={handleNext} iconTrailing iconVariant='arrow-right' disabled={isLast}>Next</LinkGrayButton>
+        <LinkGrayButton onClick={handleNext} iconTrailing iconVariant='arrow-right' disabled={isLast}>{t('Next')}</LinkGrayButton>
 
       </PaginationContainer>
     </Container>

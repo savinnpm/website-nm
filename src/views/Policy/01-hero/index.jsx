@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import {
@@ -9,10 +10,11 @@ import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
 const Hero = ({ slugs, activeSlug }) => {
+  const { t } = useTranslation('policy')
   return (
     <Container>
       <InnerContainer>
-        <Title>Policies</Title>
+        <Title>{t('Policies')}</Title>
 
         <HorizontalTabs>
           {
@@ -21,7 +23,7 @@ const Hero = ({ slugs, activeSlug }) => {
                 key={i} href={`/policies/${slug}`}
                 isactive={(activeSlug === slug) ? 'true' : 'false'}
               >
-                {title}
+                {t(`${title}`)}
               </Tab>
             ))
           }

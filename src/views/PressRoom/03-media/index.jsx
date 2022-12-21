@@ -2,6 +2,7 @@ import {
   useRef,
   useState
 } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import Slider from 'react-slick'
 import styled from 'styled-components'
@@ -15,6 +16,7 @@ import { useMediaQuery } from '../../../hooks/useMediaQuery'
 import { NewsCard } from './NewsCard'
 
 export const Media = ({ news }) => {
+  const { t } = useTranslation('press-room')
   const sliderRef = useRef(null)
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -61,7 +63,7 @@ export const Media = ({ news }) => {
   return (
     <Container>
       <InnerContainer>
-        <Title>Neptune Mutual in the Media</Title>
+        <Title>{t('Neptune Mutual in the Media')}</Title>
 
         <SliderContainer>
           <Slider {...settings} ref={sliderRef}>

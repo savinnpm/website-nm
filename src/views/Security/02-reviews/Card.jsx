@@ -16,9 +16,9 @@ const Card = (props) => {
         <IconContainer>
           <Image alt={props.audit.partner.icon.alt} width='48' height='48' src={`${props.audit.partner.icon.image}`} />
         </IconContainer>
-        <Tag color={props.audit.badges[0].color}>{props.audit.badges[0].text}</Tag>
+        <Tag color={props.audit.badges[0].color}>{t(`${props.audit.badges[0].text}`)}</Tag>
       </IconNTag>
-      <CardTitle>{props.audit.title}</CardTitle>
+      <CardTitle>{t(`${props.audit.title}`)}</CardTitle>
       <CardContent>{props.audit.intro}</CardContent>
 
       <Link href={`/security/${props.audit.slug}`}> {t('Show Result')} <Icon variant='arrow-right' size={18} /> </Link>

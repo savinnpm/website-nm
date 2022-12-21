@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import { colors } from '../../../../styles/colors'
@@ -7,10 +8,11 @@ import { Badge } from '../../../components/Badge'
 import { data } from './data'
 
 export const Card = ({ ecosystem }) => {
+  const { t } = useTranslation('ecosystem')
   return (
     <Container>
-      <Badge icon={data.icons[ecosystem.type]} color={data.colors[ecosystem.type]}>{data.labels[ecosystem.type]}</Badge>
-      <Content>{ecosystem.content}</Content>
+      <Badge icon={data.icons[ecosystem.type]} color={data.colors[ecosystem.type]}>{t(`${data.labels[ecosystem.type]}`)}</Badge>
+      <Content>{t(`${ecosystem.content}`)}</Content>
     </Container>
   )
 }

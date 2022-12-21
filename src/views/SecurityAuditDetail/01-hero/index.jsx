@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { useTranslation } from 'react-i18next'
 import styled from 'styled-components'
 
 import { colors, primaryColorKey } from '../../../../styles/colors'
@@ -7,6 +8,7 @@ import { utils } from '../../../../styles/utils'
 import { Breadcrumbs } from '../../../components/Breadcrumbs'
 
 const Hero = (props) => {
+  const { t } = useTranslation('security')
   return (
 
     <Container>
@@ -14,7 +16,7 @@ const Hero = (props) => {
         <Content>
           <H1>
             <Subheader>{`${props.audit.startDate} - ${props.audit.endDate}`}</Subheader>
-            <HeaderTitle>{props.audit.title}</HeaderTitle>
+            <HeaderTitle>{t(`${props.audit.title}`)}</HeaderTitle>
           </H1>
           <HeaderContent>
             {props.audit.intro}

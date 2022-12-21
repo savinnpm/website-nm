@@ -9,8 +9,8 @@ const get = (url, headers = {}) => {
   return new Promise(function (resolve, reject) {
     const options = {
       method: 'GET',
-      hostname: urlObj.hostname,
       port: urlObj.port,
+      hostname: urlObj.hostname,
       path: urlObj.pathname + urlObj.search,
       headers: {
         ...headers
