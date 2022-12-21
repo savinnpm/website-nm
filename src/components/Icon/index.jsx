@@ -17,7 +17,8 @@ import {
   DotsGrid,
   HeartHand,
   CheckCircleBroken,
-  Share07
+  Share07,
+  Tool01
 } from "./variants/General";
 import {
   ArrowLeft,
@@ -28,7 +29,7 @@ import {
   ChevronRight,
   ChevronUp,
 } from "./variants/Arrows";
-import { MoonStar, Stars02, Sun } from "./variants/Weather";
+import { MoonStar, Stars01, Stars02, Sun } from "./variants/Weather";
 import {
   Discord,
   Facebook,
@@ -297,6 +298,10 @@ export const Icon = ({ size, variant }) => {
     IconComponent = Target04;
   }
 
+  if (variant === "stars-01") {
+    IconComponent = Stars01;
+  }
+
   if (variant === "stars-02") {
     IconComponent = Stars02;
   }
@@ -459,6 +464,10 @@ export const Icon = ({ size, variant }) => {
 
   if(variant === 'send-03') {
     IconComponent = Send03
+  }
+
+  if(variant === 'tool-01') {
+    IconComponent = Tool01
   }
 
   return IconComponent ? <IconComponent width={size} height={size} /> : null;
