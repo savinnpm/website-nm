@@ -4,18 +4,15 @@ import { colors, primaryColorKey } from '../../../../styles/colors'
 import { typography } from '../../../../styles/typography'
 import { utils } from '../../../../styles/utils'
 
-export const Hero = ({
-  title = 'String to Bytes32 Converter Online',
-  subtitle = 'Bytes32 format is used in smart contracts with specific length of 64 characters, most commonly using the solidity programming language.'
-}) => {
-  const { t } = useTranslation('string-to-bytes32-converter-online')
+export const Hero = () => {
+  const { t } = useTranslation('bytes32-to-string-converter')
 
   return (
     <Container>
       <InnerContainer>
         <Text>
-          <Heading>{t(`${title}`)}</Heading>
-          <Subtitle>{t(`${subtitle}`)}</Subtitle>
+          <Heading>{t('Bytes32 to String Converter Online')}</Heading>
+          <Subtitle>{t('Bytes32 format is used in smart contracts with specific length of 64 characters, most commonly using the solidity programming language.')}</Subtitle>
         </Text>
       </InnerContainer>
     </Container>
@@ -65,7 +62,7 @@ const Heading = styled.h1`
 `
 
 const Subtitle = styled.p`
-  margin-top: 24px;
+  margin: 24px auto 0 auto;
   max-width: 768px;
   color: ${(props) => props.theme.secondaryColor};
   ${typography.styles.textXl};
