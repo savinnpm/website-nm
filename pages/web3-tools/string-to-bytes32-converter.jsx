@@ -1,11 +1,26 @@
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations.js'
 import Head from 'next/head'
 import { useRouter } from 'next/router.js'
 import { useTranslation } from 'react-i18next'
+import { services } from '../../services/index.js'
 import { getFQDN } from '../../src/helpers/index.js'
 import { ToolsDetail } from '../../src/views/ToolsDetail/index.jsx'
 
+export async function getStaticProps ({ locale }) {
+  const s = await serverSideTranslations(locale, ['common', 'web3'])
+  return {
+    props: {
+      ...(s),
+      videos: await services.getVideos(),
+      pages: await services.getPages(),
+      headerStyle: 'colored'
+      // Will be passed to the page component as props
+    }
+  }
+}
+
 export default function Web3Pages () {
-  const { t } = useTranslation()
+  const { t } = useTranslation('web3')
   const router = useRouter()
 
   return (
