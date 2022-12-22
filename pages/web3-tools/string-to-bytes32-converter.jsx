@@ -7,7 +7,7 @@ import { getFQDN } from '../../src/helpers/index.js'
 import { ToolsDetail } from '../../src/views/ToolsDetail/index.jsx'
 
 export async function getStaticProps ({ locale }) {
-  const s = await serverSideTranslations(locale, ['common', 'web3'])
+  const s = await serverSideTranslations(locale, ['common', 'string-to-bytes32-converter'])
   return {
     props: {
       ...(s),
@@ -20,7 +20,7 @@ export async function getStaticProps ({ locale }) {
 }
 
 export default function Web3Pages () {
-  const { t } = useTranslation('web3')
+  const { t } = useTranslation('string-to-bytes32-converter')
   const router = useRouter()
 
   return (
