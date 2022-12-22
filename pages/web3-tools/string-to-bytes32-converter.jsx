@@ -6,8 +6,7 @@ import { ToolsDetail } from '../../src/views/ToolsDetail/index.jsx'
 
 export default function Web3Pages () {
   const router = useRouter()
-  const { t } = useTranslation('web3'
-  )
+  const { t } = useTranslation('web3')
   return (
     <>
       <Head>
