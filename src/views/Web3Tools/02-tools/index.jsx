@@ -20,10 +20,18 @@ const tools = [
     }]
   },
   {
-    slug: 'abi-encoder',
+    slug: 'solidity-abi-encoder-online',
     title: 'Online Solidity ABI Encoder',
     intro: 'Enter your Solidity smart contract or interface ABI code and access them easily.',
     category: 'Solidity',
+    icon: 'code-square-one',
+    badges: []
+  },
+  {
+    slug: 'ethereum-unit-converter',
+    title: 'Ethereum Unit Converter',
+    intro: 'Convert the different ethereum denominations (wei, gwei, ether).',
+    category: 'Ethereum',
     icon: 'code-square-one',
     badges: []
   }
